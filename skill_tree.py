@@ -20,7 +20,6 @@ from typing import Dict, Iterator, List, Optional
 
 from skill import Skill
 import json
-from skill import Skill
 
 
 class SkillTree:
