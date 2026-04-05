@@ -1,250 +1,480 @@
 """
 mastery_updater.py
 ------------------
-The central update algorithm for the adaptive tutor.
+Policy-aligned mastery updates for a BKT + prerequisite DAG model.
 
-Algorithm overview (per answered question)
-==========================================
+This module implements the policy in `BKT-DAG Policy For Skill Mastery.txt`:
 
-For each skill tagged in the question:
+Phase 1 (Bloom-conditioned BKT):
+    Guess/slip are chosen from the Bloom level of the question.
 
-  1. BKT UPDATE
-     Run the Bayesian Knowledge Tracing model to get an updated P(Lₙ₊₁).
-     The *signed BKT delta* (Δp = P(Lₙ₊₁) − P(Lₙ)) is the raw learning signal.
+Phase 2 (Prerequisite validation):
+    If answer is correct on skill C, recursively enforce
+        P(parent) >= P(C)
+    over all ancestors (pull-up rule).
 
-         Δp > 0  when the observation increases our confidence the skill is known.
-         Δp < 0  when the observation decreases it.
+    If answer is incorrect on skill C, no penalty is propagated to ancestors.
 
-  2. BLOOM-WEIGHTED MASTERY DELTA
-     The mastery change is proportional to three factors:
+Phase 3 (Successor transition gating):
+    For each immediate child S of the updated skill, set transition P(T_S):
+        base_transition  if all prerequisites of S are mastered
+        locked_transition otherwise
 
-         Δmastery = Δp × bloom_weight(question.bloom_level)
-                       × BASE_MASTERY_SCALE
-                       × diminishing_returns_factor(current_mastery, bloom_ceiling)
+    Conjunctive readiness check uses:
+        min(P(prerequisites)) >= mastery_threshold
 
-     bloom_weight       — higher cognitive levels (Analyze, Create) produce
-                          larger deltas, rewarding deeper thinking.
-     BASE_MASTERY_SCALE — tunable constant (~20) that converts probability deltas
-                          to mastery-point deltas.
-     diminishing_returns— on a correct answer the gain is attenuated as mastery
-                          approaches the bloom ceiling, so progress naturally slows
-                          near the top of each band.
+State contract
+--------------
+The updater is storage-agnostic and operates via two callbacks:
 
-  3. MASTERY CAPPING
-     • Correct answer: mastery is hard-capped at the question's Bloom band ceiling.
-       The student cannot jump past a band without being assessed at the higher level.
-     • Incorrect answer: no cap applied; mastery can fall below the current band floor.
+    db_fetch(userid, skill_id) -> dict
+        Expected keys:
+            mastery: float in [0, 100]      (optional if p_learned provided)
+            p_learned: float in [0, 1]      (optional if mastery provided)
+            p_transition: float in [0, 1]   (optional; inferred if missing)
 
-  4. ANCESTOR PROPAGATION
-     After updating the direct skill(s), the mastery delta is propagated upward
-     through the skill DAG.  Each hop applies an exponential decay:
-
-         Δmastery_ancestor = Δmastery_direct × decay^hop_distance
-
-     BFS is used to avoid double-counting in diamond-shaped dependency graphs.
-     For ancestors we propagate the raw mastery delta (no bloom ceiling cap),
-     since the parent skill is not directly being assessed.
-
-Design notes
-============
-• This class holds *no student state* — it reads from and writes to StudentModel.
-• The BKT model used is injected at construction (open/closed principle).
-• All tuneable constants are exposed as constructor parameters.
+    db_update(userid, skill_id, mastery, p_learned[, p_transition]) -> None
+        The updater first tries the 5-argument form (with p_transition).
+        If the callback only accepts 4 arguments, it falls back automatically.
 """
 
 from __future__ import annotations
 
 from collections import deque
+from dataclasses import dataclass
+from enum import Enum, auto
+from typing import Callable, Dict, Optional
 
 from bkt import BKTModel, BKTParams
+from bloom_taxonomy import BloomLevel
 from skill_tree import SkillTree
-from bloom_taxonomy import get_level_from_mastery
 
-from enum import Enum, auto
+
+DbFetch = Callable[[str, str], Dict[str, float]]
+DbUpdate = Callable[..., None]
+
+
 class UpdateMode(Enum):
     DIAGNOSE = auto()
     REGULAR = auto()
 
+
+@dataclass(frozen=True)
+class BloomGuessSlip:
+    p_g: float
+    p_s: float
+
+
+@dataclass(frozen=True)
+class _SkillState:
+    p_learned: float
+    mastery: float
+    p_transition: float
+
+
+@dataclass(frozen=True)
+class SkillUpdateResult:
+    skill_id: str
+    old_p_learned: float
+    new_p_learned: float
+    mastery: float
+    bloom_level: BloomLevel
+    is_correct: bool
+    used_guess: float
+    used_slip: float
+    used_transition: float
+    pulled_up_ancestors: list[str]
+    successor_transition_updates: Dict[str, float]
+
+
 class MasteryUpdater:
     """
-    Updates a StudentModel after a student answers a question.
-
-    Parameters
-    ----------
-    skill_tree              : The shared SkillTree for the session.
-    base_mastery_scale      : Scales BKT probability deltas to mastery points.
-                              Higher → more volatile mastery scores.
-    propagate_to_ancestors  : Whether to push a decayed delta up the skill DAG.
-    ancestor_decay          : Fraction of mastery delta passed to each ancestor level.
-                              E.g. 0.4 means grandparent gets 0.4² × delta.
+    Strict policy implementation for updating a single answered skill or a batch.
     """
 
-    DEFAULT_ANCESTOR_DECAY: float = 0.40
-    DEFAULT_SUCCESSOR_DECAY: float = 0.20
-    DEFAULT_DECAY_THRESHOLD: float = 0.01
+    DEFAULT_MASTERY_THRESHOLD: float = 0.95
+    DEFAULT_BASE_TRANSITION: float = 0.10
+    DEFAULT_DIAGNOSE_BASE_TRANSITION: float = 0.20
+    DEFAULT_LOCKED_TRANSITION: float = 0.01
+
+    DEFAULT_BLOOM_GUESS_SLIP: Dict[BloomLevel, BloomGuessSlip] = {
+        BloomLevel.REMEMBER:   BloomGuessSlip(p_g=0.30, p_s=0.05),
+        BloomLevel.UNDERSTAND: BloomGuessSlip(p_g=0.25, p_s=0.08),
+        BloomLevel.APPLY:      BloomGuessSlip(p_g=0.18, p_s=0.12),
+        BloomLevel.ANALYZE:    BloomGuessSlip(p_g=0.12, p_s=0.18),
+        BloomLevel.EVALUATE:   BloomGuessSlip(p_g=0.08, p_s=0.22),
+        BloomLevel.CREATE:     BloomGuessSlip(p_g=0.05, p_s=0.25),
+    }
 
     def __init__(
         self,
         skill_tree: SkillTree,
-        ancestor_decay:         float = DEFAULT_ANCESTOR_DECAY,
-        successor_decay:        float = DEFAULT_SUCCESSOR_DECAY,
-        threshold:              float = DEFAULT_DECAY_THRESHOLD,
+        mastery_threshold: float = DEFAULT_MASTERY_THRESHOLD,
+        base_transition: float = DEFAULT_BASE_TRANSITION,
+        diagnose_base_transition: float = DEFAULT_DIAGNOSE_BASE_TRANSITION,
+        locked_transition: float = DEFAULT_LOCKED_TRANSITION,
+        bloom_guess_slip: Optional[Dict[BloomLevel, BloomGuessSlip]] = None,
     ) -> None:
-        if not 0.0 <= ancestor_decay <= 1.0:
-            raise ValueError("ancestor_decay must be in [0, 1].")
-        if not 0.0 <= successor_decay <= 1.0:
-            raise ValueError("successor_decay must be in [0, 1].")
-        self.skill_tree             = skill_tree
-        self.ancestor_decay         = ancestor_decay
-        self.successor_decay        = successor_decay
-        self.threshold              = threshold
+        if not 0.0 <= mastery_threshold <= 1.0:
+            raise ValueError("mastery_threshold must be in [0, 1].")
+        for name, value in (
+            ("base_transition", base_transition),
+            ("diagnose_base_transition", diagnose_base_transition),
+            ("locked_transition", locked_transition),
+        ):
+            if not 0.0 <= value <= 1.0:
+                raise ValueError(f"{name} must be in [0, 1].")
+
+        self.skill_tree = skill_tree
+        self.mastery_threshold = mastery_threshold
+        self.base_transition = base_transition
+        self.diagnose_base_transition = diagnose_base_transition
+        self.locked_transition = locked_transition
+        self.bloom_guess_slip = dict(bloom_guess_slip or self.DEFAULT_BLOOM_GUESS_SLIP)
+
+        missing_levels = set(BloomLevel) - set(self.bloom_guess_slip.keys())
+        if missing_levels:
+            raise ValueError(
+                "Missing Bloom guess/slip configuration for levels: "
+                + ", ".join(level.name for level in sorted(missing_levels, key=lambda x: x.value))
+            )
 
     # ================================================================== public
-    def update_skills(
+    def update_answer(
         self,
         userid: str,
-        skills: list,
-        bloom_levels: list,
-        masteries: list,
-        mode: UpdateMode,
+        skill_id: str,
+        bloom_level: BloomLevel,
         is_correct: bool,
-    ):
+        db_fetch: DbFetch,
+        db_update: DbUpdate,
+        mode: UpdateMode = UpdateMode.REGULAR,
+        topic: Optional[str] = None,
+    ) -> SkillUpdateResult:
         """
-        Update the student's mastery and BKT state for a set of skills.
+        Update one answered skill according to the policy.
 
         Parameters
         ----------
-        userid        : The user ID (for DB context).
-        skills        : List of skill IDs.
-        bloom_levels  : List of BloomLevel (one per skill).
-        bkt_params    : BKTParams object (shared for all skills).
-        is_correct    : Whether the MCQ was answered correctly.
-        db_fetch      : Function to fetch current state for a skill_id (returns dict with 'mastery', 'p_learned').
-        db_update     : Function to update state for a skill_id (mastery, p_learned).
+        userid       : Student identifier used by db_fetch/db_update.
+        skill_id     : Answered skill node.
+        bloom_level  : Bloom tag attached to the question.
+        is_correct   : Whether the submitted answer is correct.
+        db_fetch     : Fetch callback.
+        db_update    : Update callback.
+        mode         : REGULAR/DIAGNOSE, used to choose base transition.
+        topic        : Accepted for request compatibility; not used in logic.
 
         Returns
         -------
-        List of dicts: [{ 'skill_id': ..., 'mastery': ..., 'p_learned': ... }, ...]
+        SkillUpdateResult containing direct update details and propagated effects.
         """
-        updated_masteries = []
-        # Select BKTParams based on mode
-        if mode == UpdateMode.DIAGNOSE:
-            bkt_params = BKTParams.fast_learner()
-        else:
-            bkt_params = BKTParams.default()
+        del topic  # topic is currently metadata only; policy logic is skill-centric.
 
-        for skill_id, bloom_level, mastery in zip(skills, bloom_levels, masteries):
-            old_p = mastery
+        self._require_skill(skill_id)
 
-            bkt_model = BKTModel(bkt_params)
-            raw_new_p = bkt_model.update(old_p, is_correct)
+        current = self._read_state(userid, skill_id, db_fetch, mode)
+        effective_transition = self._compute_transition_for_skill(
+            userid=userid,
+            skill_id=skill_id,
+            db_fetch=db_fetch,
+            mode=mode,
+        )
 
-            new_p = max(0.0, min(1.0, raw_new_p))
-            new_mast = new_p * 100.0
-
-            updated_masteries.append({'skill_id': skill_id, 'mastery': new_mast})
-
-            self._propagate_to_ancestors(
+        # Keep persisted transition aligned with current prerequisite readiness.
+        if abs(effective_transition - current.p_transition) > 1e-12:
+            self._write_state(
                 userid=userid,
                 skill_id=skill_id,
-                delta_p=new_p - old_p
+                p_learned=current.p_learned,
+                p_transition=effective_transition,
+                db_update=db_update,
             )
 
-            self._propagate_to_successors(
+        params = self._params_for_bloom(bloom_level, effective_transition)
+        bkt_model = BKTModel(params)
+        new_p = bkt_model.update(current.p_learned, is_correct)
+
+        self._write_state(
+            userid=userid,
+            skill_id=skill_id,
+            p_learned=new_p,
+            p_transition=effective_transition,
+            db_update=db_update,
+        )
+
+        # Phase 2A: Correct answers pull ancestors up to at least child probability.
+        pulled_up_ancestors: list[str] = []
+        if is_correct:
+            pulled_up_ancestors = self._pull_up_ancestors(
                 userid=userid,
                 skill_id=skill_id,
-                delta_p=new_p - old_p
+                floor_p=new_p,
+                db_fetch=db_fetch,
+                db_update=db_update,
+                mode=mode,
             )
 
-        return updated_masteries
+        # Phase 3: Recompute transition gates for immediate successors.
+        successor_transition_updates = self._refresh_immediate_successor_transitions(
+            userid=userid,
+            skill_id=skill_id,
+            db_fetch=db_fetch,
+            db_update=db_update,
+            mode=mode,
+        )
 
-    def _propagate_to_ancestors(
+        return SkillUpdateResult(
+            skill_id=skill_id,
+            old_p_learned=current.p_learned,
+            new_p_learned=new_p,
+            mastery=new_p * 100.0,
+            bloom_level=bloom_level,
+            is_correct=is_correct,
+            used_guess=params.p_g,
+            used_slip=params.p_s,
+            used_transition=effective_transition,
+            pulled_up_ancestors=pulled_up_ancestors,
+            successor_transition_updates=successor_transition_updates,
+        )
+
+    def update_skills(
+        self,
+        userid: str,
+        skills: list[str],
+        bloom_levels: list[BloomLevel],
+        is_correct: bool,
+        db_fetch: DbFetch,
+        db_update: DbUpdate,
+        mode: UpdateMode = UpdateMode.REGULAR,
+        topics: Optional[list[Optional[str]]] = None,
+    ) -> list[SkillUpdateResult]:
+        """
+        Batch wrapper over update_answer for multi-tagged questions.
+        """
+        if len(skills) != len(bloom_levels):
+            raise ValueError("skills and bloom_levels must have the same length.")
+        if topics is not None and len(topics) != len(skills):
+            raise ValueError("topics must be None or have same length as skills.")
+
+        results: list[SkillUpdateResult] = []
+        for idx, skill_id in enumerate(skills):
+            topic = topics[idx] if topics else None
+            results.append(
+                self.update_answer(
+                    userid=userid,
+                    skill_id=skill_id,
+                    bloom_level=bloom_levels[idx],
+                    is_correct=is_correct,
+                    db_fetch=db_fetch,
+                    db_update=db_update,
+                    mode=mode,
+                    topic=topic,
+                )
+            )
+        return results
+
+    # ================================================================== private
+    def _params_for_bloom(self, bloom_level: BloomLevel, p_t: float) -> BKTParams:
+        profile = self.bloom_guess_slip[bloom_level]
+        return BKTParams(
+            p_l0=0.0,
+            p_t=p_t,
+            p_s=profile.p_s,
+            p_g=profile.p_g,
+        )
+
+    def _read_state(
         self,
         userid: str,
         skill_id: str,
-        delta_p: float,
-        db_fetch,
-        db_update
-    ):
+        db_fetch: DbFetch,
+        mode: UpdateMode,
+    ) -> _SkillState:
+        raw = db_fetch(userid, skill_id) or {}
+
+        p_learned = raw.get("p_learned")
+        mastery = raw.get("mastery")
+
+        if p_learned is None and mastery is None:
+            p_learned = 0.0
+            mastery = 0.0
+        elif p_learned is None:
+            p_learned = float(mastery) / 100.0
+        elif mastery is None:
+            mastery = float(p_learned) * 100.0
+
+        p_learned = self._clamp01(float(p_learned))
+        mastery = self._clamp100(float(mastery))
+
+        p_transition = raw.get("p_transition")
+        if p_transition is None:
+            p_transition = self._compute_transition_for_skill(
+                userid=userid,
+                skill_id=skill_id,
+                db_fetch=db_fetch,
+                mode=mode,
+            )
+        p_transition = self._clamp01(float(p_transition))
+
+        return _SkillState(
+            p_learned=p_learned,
+            mastery=mastery,
+            p_transition=p_transition,
+        )
+
+    def _pull_up_ancestors(
+        self,
+        userid: str,
+        skill_id: str,
+        floor_p: float,
+        db_fetch: DbFetch,
+        db_update: DbUpdate,
+        mode: UpdateMode,
+    ) -> list[str]:
         """
-        Propagate probability delta to all ancestor skills via BFS, applying exponential decay at each hop.
-        Mastery is always set to 100 * p_learned.
-        Stops propagation when the decayed delta_p is below a threshold.
+        Recursively enforce P(ancestor) >= floor_p for all ancestors of skill_id.
         """
-        visited = set()
-        queue = deque()
-        skill = self.skill_tree.get_skill(skill_id)
-        for parent_id in skill.parent_ids:
-            queue.append((parent_id, self.ancestor_decay))
+        visited: set[str] = set()
+        updated: list[str] = []
+
+        skill = self._require_skill(skill_id)
+        queue: deque[str] = deque(skill.parent_ids)
 
         while queue:
-            pid, decay = queue.popleft()
-            if pid in visited:
+            ancestor_id = queue.popleft()
+            if ancestor_id in visited:
                 continue
-            visited.add(pid)
+            visited.add(ancestor_id)
 
-            anc_delta_p = delta_p * decay
-            if abs(anc_delta_p) < self.threshold:
-                continue
+            state = self._read_state(userid, ancestor_id, db_fetch, mode)
+            promoted_p = max(state.p_learned, floor_p)
 
-            state = db_fetch(userid, pid)
-            old_p = state['p_learned']
-            new_p = max(0.0, min(1.0, old_p + anc_delta_p))
-            new_mast = new_p * 100.0
+            if promoted_p > state.p_learned + 1e-12:
+                self._write_state(
+                    userid=userid,
+                    skill_id=ancestor_id,
+                    p_learned=promoted_p,
+                    p_transition=state.p_transition,
+                    db_update=db_update,
+                )
+                updated.append(ancestor_id)
 
-            db_update(userid, pid, new_mast, new_p)
+            ancestor = self._require_skill(ancestor_id)
+            for parent_id in ancestor.parent_ids:
+                if parent_id not in visited:
+                    queue.append(parent_id)
 
-            parent_skill = self.skill_tree.get_skill(pid)
-            for grandparent_id in parent_skill.parent_ids:
-                if grandparent_id not in visited:
-                    queue.append((grandparent_id, decay * self.ancestor_decay))
+        return updated
 
-    def _propagate_to_successors(
+    def _refresh_immediate_successor_transitions(
         self,
         userid: str,
         skill_id: str,
-        delta_p: float,
-        db_fetch,
-        db_update
-    ):
+        db_fetch: DbFetch,
+        db_update: DbUpdate,
+        mode: UpdateMode,
+    ) -> Dict[str, float]:
         """
-        Propagate probability delta to all child (successor) skills via BFS, applying exponential decay at each hop.
-        Mastery is always set to 100 * p_learned.
-        Stops propagation when the decayed delta_p is below a threshold.
+        Recalculate P(T) for each immediate child of skill_id using conjunctive gating.
         """
-        visited = set()
-        queue = deque()
-        skill = self.skill_tree.get_skill(skill_id)
+        updates: Dict[str, float] = {}
+
+        skill = self._require_skill(skill_id)
         for child_id in skill.child_ids:
-            queue.append((child_id, self.successor_decay))
+            state = self._read_state(userid, child_id, db_fetch, mode)
+            new_p_transition = self._compute_transition_for_skill(
+                userid=userid,
+                skill_id=child_id,
+                db_fetch=db_fetch,
+                mode=mode,
+            )
 
-        while queue:
-            cid, decay = queue.popleft()
-            if cid in visited:
-                continue
-            visited.add(cid)
+            if abs(new_p_transition - state.p_transition) > 1e-12:
+                self._write_state(
+                    userid=userid,
+                    skill_id=child_id,
+                    p_learned=state.p_learned,
+                    p_transition=new_p_transition,
+                    db_update=db_update,
+                )
+                updates[child_id] = new_p_transition
 
-            succ_delta_p = delta_p * decay
-            if abs(succ_delta_p) < self.threshold:
-                continue
+        return updates
 
-            state = db_fetch(userid, cid)
-            old_p = state['p_learned']
-            new_p = max(0.0, min(1.0, old_p + succ_delta_p))
-            new_mast = new_p * 100.0
+    def _compute_transition_for_skill(
+        self,
+        userid: str,
+        skill_id: str,
+        db_fetch: DbFetch,
+        mode: UpdateMode,
+    ) -> float:
+        """
+        Conjunctive readiness gate:
+            base transition if all prerequisites >= mastery_threshold,
+            otherwise locked transition.
+        """
+        skill = self._require_skill(skill_id)
+        base_transition = self._base_transition(mode)
 
-            db_update(userid, cid, new_mast, new_p)
+        if not skill.parent_ids:
+            return base_transition
 
-            child_skill = self.skill_tree.get_skill(cid)
-            for grandchild_id in child_skill.child_ids:
-                if grandchild_id not in visited:
-                    queue.append((grandchild_id, decay * self.successor_decay))
+        min_prereq = 1.0
+        for parent_id in skill.parent_ids:
+            parent_state = db_fetch(userid, parent_id) or {}
+            parent_p = parent_state.get("p_learned")
+            if parent_p is None:
+                parent_mastery = parent_state.get("mastery", 0.0)
+                parent_p = float(parent_mastery) / 100.0
+            min_prereq = min(min_prereq, self._clamp01(float(parent_p)))
 
-    # ================================================================== dunder
+        if min_prereq >= self.mastery_threshold:
+            return base_transition
+        return self.locked_transition
+
+    def _write_state(
+        self,
+        userid: str,
+        skill_id: str,
+        p_learned: float,
+        p_transition: float,
+        db_update: DbUpdate,
+    ) -> None:
+        p_learned = self._clamp01(p_learned)
+        p_transition = self._clamp01(p_transition)
+        mastery = p_learned * 100.0
+
+        try:
+            db_update(userid, skill_id, mastery, p_learned, p_transition)
+        except TypeError:
+            # Backward-compatible path for stores that don't persist p_transition yet.
+            db_update(userid, skill_id, mastery, p_learned)
+
+    def _base_transition(self, mode: UpdateMode) -> float:
+        if mode == UpdateMode.DIAGNOSE:
+            return self.diagnose_base_transition
+        return self.base_transition
+
+    def _require_skill(self, skill_id: str):
+        skill = self.skill_tree.get_skill(skill_id)
+        if skill is None:
+            raise KeyError(f"Skill '{skill_id}' not found in skill tree.")
+        return skill
+
+    @staticmethod
+    def _clamp01(value: float) -> float:
+        return max(0.0, min(1.0, value))
+
+    @staticmethod
+    def _clamp100(value: float) -> float:
+        return max(0.0, min(100.0, value))
+
     def __repr__(self) -> str:
         return (
-            f"MasteryUpdater("
-            f"scale={self.base_mastery_scale}, "
-            f"propagate={self.propagate_to_ancestors}, "
-            f"decay={self.ancestor_decay})"
+            "MasteryUpdater("
+            f"threshold={self.mastery_threshold}, "
+            f"base_transition={self.base_transition}, "
+            f"locked_transition={self.locked_transition}"
+            ")"
         )

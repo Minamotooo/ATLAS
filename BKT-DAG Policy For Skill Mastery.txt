@@ -1,0 +1,34 @@
+﻿Here is the formalized blueprint of your BKT-DAG traversal strategy. You can use this as your foundational policy document for implementation.
+________________
+Knowledge Tracing Policy: Strict Prerequisite DAG Integration
+Core Architecture: A Bayesian Knowledge Tracing (BKT) system integrated with a Directed Acyclic Graph (DAG) operating under a Conjunctive Prerequisite Model. Skills are treated as strict, independent prerequisites.
+Phase 1: Node-Level BKT Parameter Initialization
+Pedagogical Theory: Subsumption Theory & Cognitive Load Theory.
+Higher-order cognitive tasks subsume foundational knowledge and impose a higher cognitive load, affecting the likelihood of guessing correctly or slipping.
+* Policy: Dynamically adjust the standard BKT Guess ($P(G)$) and Slip ($P(S)$) parameters based on the question's Bloom's Taxonomy tag.
+* Implementation:
+   * Low Bloom's (e.g., Remember, Understand): Assign a higher $P(G)$ (easier to guess) and a lower $P(S)$ (lower cognitive load, harder to slip).
+   * High Bloom's (e.g., Analyze, Evaluate): Assign a lower $P(G)$ (hard to guess) and a higher $P(S)$ (higher working memory tax, easier to make a careless error despite mastery).
+Phase 2: Downward Propagation (Validating Prerequisites)
+Pedagogical Theory: Gagne’s Hierarchy of Learning & Subsumption Theory.
+Higher-order intellectual skills cannot be acquired without prior mastery of subordinate skills. Evidence of advanced mastery is undeniable evidence of prerequisite mastery.
+* Policy 2A (The "Pull-Up" Rule): The probability of knowing a child node can never exceed the probability of knowing its parent (prerequisite) nodes.
+* Implementation: When a student answers a question correctly on Skill $C$, update $P(L_C)$ using standard BKT. Then, recursively update all immediate parent nodes ($A$ and $B$) to ensure they are at least equal to $P(L_C)$:
+$$P(L_A)_{updated} = \max(P(L_A)_{current}, P(L_C)_{updated})$$
+$$P(L_B)_{updated} = \max(P(L_B)_{current}, P(L_C)_{updated})$$
+* Policy 2B (The "Slip" Isolation): Failing a higher-level skill indicates a failure to synthesize or transfer knowledge, not a sudden loss of foundational prerequisites.
+* Implementation: When a student answers a question incorrectly on Skill $C$, lower $P(L_C)$ via standard BKT. Do not propagate this penalty downward to $P(L_A)$ or $P(L_B)$.
+Phase 3: Upward Propagation (Unlocking Successors)
+Pedagogical Theory: Vygotsky’s Zone of Proximal Development (ZPD) & Constructivism.
+Mastering foundational knowledge does not automatically grant advanced knowledge; it merely places the advanced knowledge within the learner's ZPD, making them ready to learn it.
+   * Policy 3A (Transition Gating): Correctly answering questions on prerequisite skills ($A$ and $B$) does not increase the mastery probability ($P(L_C)$) of the successor skill. Instead, it unlocks or scales the successor's Transition Probability ($P(T_C)$).
+   * Policy 3B (Conjunctive Readiness): Because the DAG relies on a Conjunctive Prerequisite Model, a student must cross the mastery threshold for all independent prerequisites to effectively transition to the new skill.
+   * Implementation: Calculate the joint readiness of the prerequisites using a min() threshold function. Lock the base transition probability of the child node ($P(T_C)$) at a near-zero state until the weakest prerequisite crosses your defined mastery threshold (e.g., 0.95).
+$$P(T_C) = \begin{cases} P(T_C)_{base} & \text{if } \min(P(L_A), P(L_B)) \ge 0.95 \\ 0.01 & \text{otherwise} \end{cases}$$
+________________
+Execution Workflow Summary
+Whenever an answer is submitted tagged with (Bloom's Level, Topic, Skill_N):
+      1. Fetch $P(G)$ and $P(S)$ based on the Bloom's Level.
+      2. Update $P(L_N)$ using the standard BKT equation.
+      3. If the answer was Correct, trigger Phase 2: Recursively apply the $\max()$ function to all downward prerequisite branches.
+      4. If $P(L_N)$ crosses the mastery threshold, trigger Phase 3: Update the transition probability $P(T)$ of any immediate upward succeeding nodes, provided all of their other prerequisites are also mastered.
