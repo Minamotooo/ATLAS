@@ -54,16 +54,16 @@ Design notes
 
 from __future__ import annotations
 
-import math
 from collections import deque
-from typing import Optional
 
-from bloom_taxonomy import BLOOM_WEIGHT, get_band
 from bkt import BKTModel, BKTParams
-from question import Question
 from skill_tree import SkillTree
-from student_model import StudentModel
+from bloom_taxonomy import get_level_from_mastery
 
+from enum import Enum, auto
+class UpdateMode(Enum):
+    DIAGNOSE = auto()
+    REGULAR = auto()
 
 class MasteryUpdater:
     """
@@ -79,146 +79,116 @@ class MasteryUpdater:
                               E.g. 0.4 means grandparent gets 0.4² × delta.
     """
 
-    DEFAULT_BASE_SCALE:   float = 20.0
     DEFAULT_ANCESTOR_DECAY: float = 0.40
+    DEFAULT_SUCCESSOR_DECAY: float = 0.20
+    DEFAULT_DECAY_THRESHOLD: float = 0.01
 
     def __init__(
         self,
         skill_tree: SkillTree,
-        base_mastery_scale:     float = DEFAULT_BASE_SCALE,
-        propagate_to_ancestors: bool  = True,
         ancestor_decay:         float = DEFAULT_ANCESTOR_DECAY,
+        successor_decay:        float = DEFAULT_SUCCESSOR_DECAY,
+        threshold:              float = DEFAULT_DECAY_THRESHOLD,
     ) -> None:
         if not 0.0 <= ancestor_decay <= 1.0:
             raise ValueError("ancestor_decay must be in [0, 1].")
+        if not 0.0 <= successor_decay <= 1.0:
+            raise ValueError("successor_decay must be in [0, 1].")
         self.skill_tree             = skill_tree
-        self.base_mastery_scale     = base_mastery_scale
-        self.propagate_to_ancestors = propagate_to_ancestors
         self.ancestor_decay         = ancestor_decay
+        self.successor_decay        = successor_decay
+        self.threshold              = threshold
 
     # ================================================================== public
-    def process_answer(
+    def update_skills(
         self,
-        student: StudentModel,
-        question: Question,
+        userid: str,
+        skills: list,
+        bloom_levels: list,
+        mode: UpdateMode,
         is_correct: bool,
-    ) -> None:
+        db_fetch,
+        db_update,
+    ):
         """
-        Process the student's answer and update all relevant skill states.
+        Update the student's mastery and BKT state for a set of skills.
 
         Parameters
         ----------
-        student     : The student whose model is being updated.
-        question    : The question that was answered.
-        is_correct  : Whether the student answered correctly.
+        userid        : The user ID (for DB context).
+        skills        : List of skill IDs.
+        bloom_levels  : List of BloomLevel (one per skill).
+        bkt_params    : BKTParams object (shared for all skills).
+        is_correct    : Whether the MCQ was answered correctly.
+        db_fetch      : Function to fetch current state for a skill_id (returns dict with 'mastery', 'p_learned').
+        db_update     : Function to update state for a skill_id (mastery, p_learned).
+
+        Returns
+        -------
+        List of dicts: [{ 'skill_id': ..., 'mastery': ..., 'p_learned': ... }, ...]
         """
-        bloom_band   = get_band(question.bloom_level)
-        bloom_weight = BLOOM_WEIGHT[question.bloom_level]
+        updated = []
+        # Select BKTParams based on mode
+        if mode == UpdateMode.DIAGNOSE:
+            bkt_params = BKTParams.fast_learner()
+        else:
+            bkt_params = BKTParams.default()
 
-        for skill_id in question.skill_ids:
-            if skill_id not in self.skill_tree:
-                # Gracefully skip unknown skills rather than raising.
-                continue
+        for skill_id, bloom_level in zip(skills, bloom_levels):
+            state = db_fetch(userid, skill_id)
+            old_p = state['p_learned']
 
-            state       = student.get_skill_state(skill_id)
-            bkt_params  = student.get_bkt_params(skill_id)
-            bkt_model   = BKTModel(bkt_params)
+            bkt_model = BKTModel(bkt_params)
+            raw_new_p = bkt_model.update(old_p, is_correct)
+            # Compute current mastery band using p_learned
+            current_band = get_level_from_mastery(old_p * 100.0)
+            band_diff = bloom_level.value - current_band.value
 
-            old_p    = state.p_learned
-            old_mast = state.mastery
+            # Transform the new probability based on band_diff
+            scale = self._bloom_band_scaling(band_diff, is_correct)
+            new_p = old_p + (raw_new_p - old_p) * scale
+            new_p = max(0.0, min(1.0, new_p))
+            new_mast = new_p * 100.0
 
-            # ---------------------------------------------------------- 1. BKT
-            new_p   = bkt_model.update(old_p, is_correct)
-            delta_p = new_p - old_p      # signed; positive → learned, negative → unlearned
+            db_update(userid, skill_id, new_mast, new_p)
+            updated.append({'skill_id': skill_id, 'mastery': new_mast})
 
-            # ------------------------------------------- 2. Mastery delta
-            mastery_delta = self._compute_mastery_delta(
-                delta_p      = delta_p,
-                bloom_weight = bloom_weight,
-                current_mastery = old_mast,
-                bloom_ceiling   = bloom_band.upper,
-                is_correct   = is_correct,
+            self._propagate_to_ancestors(
+                userid=userid,
+                skill_id=skill_id,
+                delta_p=new_p - old_p,
+                db_fetch=db_fetch,
+                db_update=db_update,
             )
 
-            # ------------------------------------------- 3. Cap & apply
-            new_mast = old_mast + mastery_delta
-            if is_correct:
-                # Can't exceed the question's Bloom band ceiling.
-                new_mast = min(new_mast, bloom_band.upper)
-                # Don't accidentally decrease mastery on a correct answer
-                # (can happen when the bloom band is below current mastery).
-                new_mast = max(new_mast, old_mast)
-            else:
-                # No floor on incorrect — mastery can drop, but not below zero.
-                new_mast = max(new_mast, 0.0)
+        return updated
 
-            student.update_skill_state(skill_id, new_mast, new_p, is_correct)
-
-            # ------------------------------------------- 4. Ancestors
-            if self.propagate_to_ancestors:
-                self._propagate_to_ancestors(
-                    student    = student,
-                    skill_id   = skill_id,
-                    delta_mast = mastery_delta,
-                    delta_p    = delta_p,
-                    is_correct = is_correct,
-                )
-
-    # ================================================================== private: delta
-    def _compute_mastery_delta(
-        self,
-        delta_p:         float,
-        bloom_weight:    float,
-        current_mastery: float,
-        bloom_ceiling:   float,
-        is_correct:      bool,
-    ) -> float:
+    def _bloom_band_scaling(self, band_diff: int, is_correct: bool) -> float:
         """
-        Compute the raw mastery delta before capping.
-
-        Incorporates:
-          • Bloom weight (higher cognitive levels → bigger delta)
-          • Diminishing returns on correct answers as mastery approaches ceiling
-          • A symmetric penalty on incorrect answers (no diminishing returns)
+        Compute the scaling factor for mastery delta based on the difference between
+        the evaluated Bloom level and the student's current mastery band.
         """
-        raw_delta = delta_p * bloom_weight * self.base_mastery_scale
-
-        if is_correct and raw_delta > 0:
-            # Diminishing-returns factor: gain → 0 as mastery → bloom_ceiling.
-            # Uses a linear attenuation: (ceiling - current) / ceiling_width
-            # so that the last few points before the ceiling are earned slowly.
-            headroom = max(0.0, bloom_ceiling - current_mastery)
-            attenuation = headroom / max(bloom_ceiling, 1.0)
-            return raw_delta * attenuation
+        if is_correct:
+            scale = 1.0 + 0.3 * band_diff
         else:
-            # Wrong answer or unexpected negative delta: apply full magnitude.
-            return raw_delta
+            scale = 1.0 - 0.3 * band_diff
+        return max(0.2, scale)
 
-    # ================================================================== private: propagation
     def _propagate_to_ancestors(
         self,
-        student:    StudentModel,
-        skill_id:   str,
-        delta_mast: float,
-        delta_p:    float,
-        is_correct: bool,
-    ) -> None:
+        userid: str,
+        skill_id: str,
+        delta_p: float,
+        db_fetch,
+        db_update
+    ):
         """
-        Propagate mastery and BKT deltas to all ancestor skills via BFS,
-        applying exponential decay at each hop.
-
-        BFS guarantees each ancestor is visited at most once, so diamond
-        shapes in the DAG are handled correctly (no double-counting).
-
-        We propagate a *decayed* version of the direct skill's delta
-        because parents are not directly being assessed — we infer a weak
-        signal that the prerequisite is likely solid (or shaky).
+        Propagate probability delta to all ancestor skills via BFS, applying exponential decay at each hop.
+        Mastery is always set to 100 * p_learned.
+        Stops propagation when the decayed delta_p is below a threshold.
         """
-        visited: set[str] = set()
-
-        # Queue entries: (skill_id_to_update, decay_factor_at_this_hop)
-        queue: deque[tuple[str, float]] = deque()
-
+        visited = set()
+        queue = deque()
         skill = self.skill_tree.get_skill(skill_id)
         for parent_id in skill.parent_ids:
             queue.append((parent_id, self.ancestor_decay))
@@ -229,24 +199,62 @@ class MasteryUpdater:
                 continue
             visited.add(pid)
 
-            parent_state = student.get_skill_state(pid)
-            old_p_anc    = parent_state.p_learned
-            old_mast_anc = parent_state.mastery
+            anc_delta_p = delta_p * decay
+            if abs(anc_delta_p) < self.threshold:
+                continue
 
-            # Decayed deltas
-            anc_delta_mast = delta_mast * decay
-            anc_delta_p    = delta_p    * decay
+            state = db_fetch(userid, pid)
+            old_p = state['p_learned']
+            new_p = max(0.0, min(1.0, old_p + anc_delta_p))
+            new_mast = new_p * 100.0
 
-            new_mast_anc = max(0.0, min(100.0, old_mast_anc + anc_delta_mast))
-            new_p_anc    = max(0.0, min(1.0,   old_p_anc    + anc_delta_p))
+            db_update(userid, pid, new_mast, new_p)
 
-            student.update_skill_state(pid, new_mast_anc, new_p_anc, is_correct)
-
-            # Continue BFS upward with compounded decay
             parent_skill = self.skill_tree.get_skill(pid)
             for grandparent_id in parent_skill.parent_ids:
                 if grandparent_id not in visited:
                     queue.append((grandparent_id, decay * self.ancestor_decay))
+
+    def _propagate_to_successors(
+        self,
+        userid: str,
+        skill_id: str,
+        delta_p: float,
+        db_fetch,
+        db_update
+    ):
+        """
+        Propagate probability delta to all child (successor) skills via BFS, applying exponential decay at each hop.
+        Mastery is always set to 100 * p_learned.
+        Stops propagation when the decayed delta_p is below a threshold.
+        """
+        visited = set()
+        queue = deque()
+        skill = self.skill_tree.get_skill(skill_id)
+        for child_id in skill.child_ids:
+            queue.append((child_id, self.successor_decay))
+
+        while queue:
+            cid, decay = queue.popleft()
+            if cid in visited:
+                continue
+            visited.add(cid)
+
+            succ_delta_p = delta_p * decay
+            if abs(succ_delta_p) < self.threshold:
+                continue
+
+            state = db_fetch(userid, cid)
+            old_p = state['p_learned']
+            new_p = max(0.0, min(1.0, old_p + succ_delta_p))
+            new_mast = new_p * 100.0
+
+            db_update(userid, cid, new_mast, new_p)
+
+            child_skill = self.skill_tree.get_skill(cid)
+            for grandchild_id in child_skill.child_ids:
+                if grandchild_id not in visited:
+                    queue.append((grandchild_id, decay * self.successor_decay))
 
     # ================================================================== dunder
     def __repr__(self) -> str:
