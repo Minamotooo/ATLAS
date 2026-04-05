@@ -16,8 +16,8 @@ Mastery and p_learned are always kept in sync:
 
 This matches the convention established in MasteryUpdater.
 
-Algorithm
----------
+Diagnostic flow
+---------------
 1.  INIT
     Write a depth-based prior to every skill via db_update:
         root skills  (depth 0) → DEFAULT_MASTERY_ROOT  (70%)
@@ -26,49 +26,29 @@ Algorithm
 
 2.  SELECT SKILL
     Among all untested skills, pick the one whose count of unknown ancestors
-    and unknown descendants is most balanced (weighted-median strategy):
-
-        score(node) = 1 / (1 + |unknown_ancestors − unknown_descendants|)
+    and unknown descendants is most balanced.
 
 3.  SELECT BLOOM LEVEL
     Derive the skill's current Bloom level from p_learned × 100, then
     test one level above (Zone of Proximal Development), clamped to CREATE.
 
-4.  SELECT TOPIC
-    Return a random topic from the skill's topic list.
+4.  RECORD ANSWER
+    Delegate the update to MasteryUpdater in DIAGNOSE mode so the same
+    strict policy (Bloom-conditioned BKT, pull-up prerequisites, transition
+    gating for successors) is used in both diagnostic and regular flows.
 
-5.  RECORD ANSWER  (each skill tested at most once)
-
-    a.  Compute new p_learned from the Bloom band midpoint:
-            correct   → midpoint of the tested Bloom band  / 100
-            incorrect → midpoint of the band one level below / 100
-        Write via db_update.
-
-    b.  Compute delta_p = new_p - old_p.
-
-    c.  Propagate delta_p to ANCESTORS:
-            correct   → large positive delta   (decays with hop distance)
-            incorrect → small negative delta   (decays with hop distance)
-
-    d.  Propagate delta_p to DESCENDANTS:
-            correct   → small positive delta   (decays with hop distance)
-            incorrect → large negative delta   (decays with hop distance)
-
-    Propagation stops when |decayed_delta_p| < threshold.
-    BFS ensures each node is updated at most once per propagation pass.
-
-6.  STOP
+5.  STOP
     When the fraction of untested skills falls below stop_threshold (default
-    15%), the remaining unknowns are left at their propagated estimates.
+    15%), the remaining unknowns are left at their inferred estimates.
 """
 
 from __future__ import annotations
 
 import random
-from collections import deque
 from typing import Callable, Dict, NamedTuple, Optional, Tuple
 
-from bloom_taxonomy import BloomLevel, get_band, get_level_from_mastery
+from bloom_taxonomy import BloomLevel, get_level_from_mastery
+from mastery_updater import MasteryUpdater, UpdateMode
 from skill_tree import SkillTree
 
 
@@ -84,10 +64,6 @@ DbUpdate = Callable[[str, str, float, float], None]         # (userid, skill_id,
 # ---------------------------------------------------------------------------
 _DEFAULT_MASTERY_ROOT: float = 70.0   # prior mastery % for root (depth-0) skills
 _DEFAULT_MASTERY_LEAF: float = 20.0   # prior mastery % for deepest skills
-_BASE_DELTA_P_LARGE:   float = 0.25   # primary propagation delta   (p_learned units)
-_BASE_DELTA_P_SMALL:   float = 0.10   # secondary propagation delta (p_learned units)
-_PROPAGATION_DECAY:    float = 0.50   # exponential decay per hop
-_DECAY_THRESHOLD:      float = 0.01   # matches MasteryUpdater.DEFAULT_DECAY_THRESHOLD
 _STOP_THRESHOLD:       float = 0.15   # stop when < 15% of skills remain untested
 
 
@@ -119,11 +95,9 @@ class DiagnosticSession:
     userid          : Student identifier, forwarded to db_fetch / db_update.
     db_fetch        : Callable(userid, skill_id) → {'mastery': float, 'p_learned': float}
     db_update       : Callable(userid, skill_id, mastery, p_learned) → None
+    mastery_updater : Optional policy updater instance. If not provided,
+              a default MasteryUpdater(skill_tree) is created.
     stop_threshold  : Session ends when the untested fraction drops below this.
-    base_large_p    : Primary propagation magnitude in p_learned units.
-    base_small_p    : Secondary propagation magnitude in p_learned units.
-    decay           : Exponential decay factor per hop.
-    threshold       : Propagation stops when |delta_p| drops below this value.
 
     Usage
     -----
@@ -141,26 +115,18 @@ class DiagnosticSession:
         userid:         str,
         db_fetch:       DbFetch,
         db_update:      DbUpdate,
+        mastery_updater: Optional[MasteryUpdater] = None,
         stop_threshold: float = _STOP_THRESHOLD,
-        base_large_p:   float = _BASE_DELTA_P_LARGE,
-        base_small_p:   float = _BASE_DELTA_P_SMALL,
-        decay:          float = _PROPAGATION_DECAY,
-        threshold:      float = _DECAY_THRESHOLD,
     ) -> None:
         if not 0.0 <= stop_threshold < 1.0:
             raise ValueError("stop_threshold must be in [0, 1).")
-        if not 0.0 < decay <= 1.0:
-            raise ValueError("decay must be in (0, 1].")
 
         self.skill_tree     = skill_tree
         self.userid         = userid
         self.db_fetch       = db_fetch
         self.db_update      = db_update
+        self.mastery_updater = mastery_updater or MasteryUpdater(skill_tree)
         self.stop_threshold = stop_threshold
-        self.base_large_p   = base_large_p
-        self.base_small_p   = base_small_p
-        self.decay          = decay
-        self.threshold      = threshold
 
         # True once record_answer() has been called for that skill.
         self.tested: Dict[str, bool] = {
@@ -220,39 +186,17 @@ class DiagnosticSession:
                 f"Skill '{skill_id}' has already been tested in this session."
             )
 
-        # ---- 1. Set the directly-tested skill -----------------------------
-        old_p = self.db_fetch(self.userid, skill_id)['p_learned']
+        self.mastery_updater.update_answer(
+            userid=self.userid,
+            skill_id=skill_id,
+            bloom_level=bloom_level,
+            is_correct=is_correct,
+            db_fetch=self.db_fetch,
+            db_update=self.db_update,
+            mode=UpdateMode.DIAGNOSE,
+        )
 
-        if is_correct:
-            new_mastery = _band_midpoint(bloom_level)
-        else:
-            lower_level = BloomLevel(max(1, bloom_level.value - 1))
-            new_mastery = _band_midpoint(lower_level)
-
-        new_p = new_mastery / 100.0
-        self.db_update(self.userid, skill_id, new_mastery, new_p)
         self.tested[skill_id] = True
-
-        # >>> START OF INSERTED FIX <<<
-        # If correct, assume mastery of all prerequisites (ancestors).
-        # If incorrect, assume non-mastery of all advanced concepts (descendants).
-        if is_correct:
-            for anc in self.skill_tree.get_all_ancestors(skill_id):
-                self.tested[anc.skill_id] = True
-        else:
-            for desc in self.skill_tree.get_all_descendants(skill_id):
-                self.tested[desc.skill_id] = True
-        # >>> END OF INSERTED FIX <<<
-
-        delta_p = new_p - old_p
-
-        # ---- 2. Ancestors: large if correct, small if incorrect -----------
-        anc_base = self.base_large_p if is_correct else -self.base_small_p
-        self._propagate(skill_id, anc_base, direction="up")
-
-        # ---- 3. Descendants: small if correct, large if incorrect ---------
-        desc_base = self.base_small_p if is_correct else -self.base_large_p
-        self._propagate(skill_id, desc_base, direction="down")
 
     def mastery_snapshot(self) -> Dict[str, float]:
         """
@@ -322,50 +266,6 @@ class DiagnosticSession:
         """Random topic from the skill's topic list."""
         return random.choice(self.skill_tree.get_skill(skill_id).topics)
 
-    # ================================================================== private: propagation
-    def _propagate(
-        self,
-        skill_id:  str,
-        base_p:    float,   # signed magnitude in p_learned units
-        direction: str,     # "up" = ancestors, "down" = descendants
-    ) -> None:
-        """
-        BFS propagation of a decayed delta_p in the given direction.
-
-        `base_p` encodes sign (positive = boost, negative = penalty) and
-        primary/secondary magnitude.  Decay is applied per hop.
-        Propagation stops when |decayed delta_p| < threshold. ??
-        BFS means diamond-shaped DAGs are handled without double-counting.
-        """
-        visited: set[str] = set()
-        queue: deque[Tuple[str, float]] = deque()
-
-        start    = self.skill_tree.get_skill(skill_id)
-        seed_ids = start.parent_ids if direction == "up" else start.child_ids
-        for nid in seed_ids:
-            queue.append((nid, self.decay))   # first hop already decayed
-
-        while queue:
-            nid, decay_factor = queue.popleft()
-            if nid in visited:
-                continue
-            visited.add(nid)
-
-            delta_p = base_p * decay_factor
-            if abs(delta_p) < self.threshold:
-                continue
-
-            state = self.db_fetch(self.userid, nid)
-            old_p = state['p_learned']
-            new_p = max(0.0, min(1.0, old_p + delta_p))
-            self.db_update(self.userid, nid, new_p * 100.0, new_p)
-
-            node     = self.skill_tree.get_skill(nid)
-            next_ids = node.parent_ids if direction == "up" else node.child_ids
-            for next_id in next_ids:
-                if next_id not in visited:
-                    queue.append((next_id, decay_factor * self.decay))
-
     # ================================================================== dunder
     def __repr__(self) -> str:
         tested, total = self.progress()
@@ -399,9 +299,3 @@ def _depth_to_mastery(depth: int, max_depth: int) -> float:
         return _DEFAULT_MASTERY_ROOT
     ratio = depth / max_depth
     return _DEFAULT_MASTERY_ROOT - (_DEFAULT_MASTERY_ROOT - _DEFAULT_MASTERY_LEAF) * ratio
-
-
-def _band_midpoint(level: BloomLevel) -> float:
-    """Mastery % at the centre of a Bloom band."""
-    band = get_band(level)
-    return (band.lower + band.upper) / 2.0

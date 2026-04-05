@@ -18,17 +18,28 @@ from skill_tree import SkillTree
 
 # ============================================================= in-memory DB
 # Simulates the persistence layer.
-# Schema: {(userid, skill_id): {'mastery': float, 'p_learned': float}}
+# Schema: {(userid, skill_id): {'mastery': float, 'p_learned': float, 'p_transition': float}}
 _db: dict = {}
 
 def db_fetch(userid: str, skill_id: str) -> dict:
     key = (userid, skill_id)
     if key not in _db:
-        _db[key] = {'mastery': 0.0, 'p_learned': 0.0}
+        _db[key] = {'mastery': 0.0, 'p_learned': 0.0, 'p_transition': 0.01}
     return _db[key]
 
-def db_update(userid: str, skill_id: str, mastery: float, p_learned: float) -> None:
-    _db[(userid, skill_id)] = {'mastery': mastery, 'p_learned': p_learned}
+def db_update(
+    userid: str,
+    skill_id: str,
+    mastery: float,
+    p_learned: float,
+    p_transition: float | None = None,
+) -> None:
+    previous = _db.get((userid, skill_id), {'p_transition': 0.01})
+    _db[(userid, skill_id)] = {
+        'mastery': mastery,
+        'p_learned': p_learned,
+        'p_transition': previous['p_transition'] if p_transition is None else p_transition,
+    }
 
 def db_reset():
     """Clear all state between student simulations."""
@@ -68,7 +79,7 @@ def simulate(userid: str, skill_tree: SkillTree, answer_map: dict[str, bool]) ->
 
     session = DiagnosticSession(skill_tree, userid, db_fetch, db_update)
 
-    print(f"\n  {'Skill':<25} {'Bloom tested':<16} {'Correct?':<12} {'p_learned':>10}  {'Mastery':>8}")
+    print(f"\n  {'Skill':<25} {'Bloom tested':<16} {'Correct?':<12} {'p_learned':>10}  {'Mastery':>8}  {'P(T)':>7}")
     print(f"  {SEP}")
 
     q_count = 0
@@ -85,7 +96,7 @@ def simulate(userid: str, skill_tree: SkillTree, answer_map: dict[str, bool]) ->
         result = "✓ correct" if is_correct else "✗ incorrect"
         print(
             f"  {spec.skill_id:<25} {spec.bloom_level.name:<16}"
-            f" {result:<12}  {state['p_learned']:>9.4f}   {state['mastery']:>6.1f}%"
+            f" {result:<12}  {state['p_learned']:>9.4f}   {state['mastery']:>6.1f}%  {state['p_transition']:>6.3f}"
         )
 
     # ---- final profile ---------------------------------------------------
@@ -95,7 +106,7 @@ def simulate(userid: str, skill_tree: SkillTree, answer_map: dict[str, bool]) ->
     print(f"  Inferred        : {total_n - tested_n} skills")
 
     print(f"\n  {SEP}")
-    print(f"  {'Skill':<25} {'p_learned':>10}  {'Mastery':>8}  {'Bloom Level':<14}  {'Source'}")
+    print(f"  {'Skill':<25} {'p_learned':>10}  {'Mastery':>8}  {'P(T)':>7}  {'Bloom Level':<14}  {'Source'}")
     print(f"  {SEP}")
 
     snapshot = session.mastery_snapshot()
@@ -104,9 +115,10 @@ def simulate(userid: str, skill_tree: SkillTree, answer_map: dict[str, bool]) ->
         state   = db_fetch(userid, sid)
         mastery = state['mastery']
         p       = state['p_learned']
+        p_t     = state['p_transition']
         bloom   = get_level_from_mastery(mastery).name
         source  = "tested" if session.tested[sid] else "inferred"
-        print(f"  {sid:<25} {p:>10.4f}   {mastery:>6.1f}%  {bloom:<14}  {source}")
+        print(f"  {sid:<25} {p:>10.4f}   {mastery:>6.1f}%  {p_t:>6.3f}  {bloom:<14}  {source}")
 
     print(f"\n{DSEP}\n")
 
