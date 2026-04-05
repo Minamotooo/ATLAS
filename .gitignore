@@ -1,0 +1,3 @@
+# Local secrets
+Backend/env
+data-gen/credentials.json
