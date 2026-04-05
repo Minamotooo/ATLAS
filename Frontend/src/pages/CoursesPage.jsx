@@ -1,11 +1,10 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import { coursesData } from '../data/courseData';
+import { useAuth, buildApiUrl } from '../context/AuthContext';
 import {
   Search, BookOpen, TrendingUp, Clock, ArrowRight,
-  BarChart3
+  BarChart3, AlertCircle
 } from 'lucide-react';
 
 export default function CoursesPage() {
@@ -14,6 +13,9 @@ export default function CoursesPage() {
   const navigate = useNavigate();
   const [search, setSearch] = useState('');
   const [activeFilter, setActiveFilter] = useState('All');
+  const [catalogCourses, setCatalogCourses] = useState([]);
+  const [catalogLoading, setCatalogLoading] = useState(true);
+  const [catalogError, setCatalogError] = useState('');
 
   useEffect(() => {
     if (!loading && !user) {
@@ -21,7 +23,73 @@ export default function CoursesPage() {
     }
   }, [user, loading, navigate]);
 
-  const courses = coursesData[lang] || coursesData.en;
+  useEffect(() => {
+    let ignore = false;
+
+    async function loadCatalog() {
+      setCatalogLoading(true);
+      setCatalogError('');
+
+      try {
+        const response = await fetch(buildApiUrl('/catalog'));
+        if (!response.ok) {
+          throw new Error(`Catalog request failed (${response.status})`);
+        }
+
+        const payload = await response.json();
+        const rawCourses = Array.isArray(payload?.courses) ? payload.courses : [];
+        if (!ignore) {
+          setCatalogCourses(rawCourses);
+        }
+      } catch (error) {
+        if (!ignore) {
+          setCatalogError(error.message || 'Failed to load catalog');
+          setCatalogCourses([]);
+        }
+      } finally {
+        if (!ignore) {
+          setCatalogLoading(false);
+        }
+      }
+    }
+
+    if (user) {
+      loadCatalog();
+    }
+
+    return () => {
+      ignore = true;
+    };
+  }, [user]);
+
+  const courses = useMemo(() => {
+    const colorPalette = [
+      'from-atlas-500 to-atlas-700',
+      'from-emerald-400 to-emerald-600',
+      'from-blue-400 to-indigo-600',
+      'from-orange-400 to-red-500',
+    ];
+
+    return catalogCourses.map((course, index) => {
+      const sections = Array.isArray(course.sections) ? course.sections : [];
+      const enabledSections = sections.filter((section) => section.enabled).length;
+      const title = lang === 'bn' && course.title_bn ? course.title_bn : course.title;
+
+      return {
+        id: course.id,
+        title,
+        description: `${enabledSections} section${enabledSections === 1 ? '' : 's'} currently available`,
+        subject: 'Mathematics',
+        icon: '∑',
+        code: course.id?.toUpperCase() || 'COURSE',
+        color: colorPalette[index % colorPalette.length],
+        totalLessons: sections.length,
+        mastery: 0,
+        status: enabledSections > 0 ? 'in-progress' : 'not-started',
+        enabled: !!course.enabled,
+      };
+    });
+  }, [catalogCourses, lang]);
 
   const filters = [
     { key: 'All', label: t('courses.allSubjects') },
@@ -41,7 +109,8 @@ export default function CoursesPage() {
 
   const filteredCourses = useMemo(() => {
     return courses.filter((c) => {
-      const matchesSearch = c.title.toLowerCase().includes(search.toLowerCase()) ||
+      const matchesSearch =
+        c.title.toLowerCase().includes(search.toLowerCase()) ||
         c.description.toLowerCase().includes(search.toLowerCase());
       const matchesFilter = activeFilter === 'All' ||
         (subjectMap[activeFilter] && subjectMap[activeFilter].includes(c.subject));
@@ -155,7 +224,18 @@ export default function CoursesPage() {
             <BookOpen size={20} className="text-gray-400" />
             {t('courses.allCourses')}
           </h2>
-          {filteredCourses.length === 0 ? (
+          {catalogError && (
+            <div className="card p-4 mb-4 border border-red-200 bg-red-50 text-red-700 flex items-start gap-2">
+              <AlertCircle size={18} className="mt-0.5" />
+              <div>
+                <p className="font-semibold text-sm">Unable to load course catalog.</p>
+                <p className="text-sm opacity-90">{catalogError}</p>
+              </div>
+            </div>
+          )}
+          {catalogLoading ? (
+            <div className="card p-12 text-center text-gray-500">Loading courses...</div>
+          ) : filteredCourses.length === 0 ? (
             <div className="card p-12 text-center">
               <Search size={40} className="mx-auto text-gray-300 mb-4" />
               <p className="text-gray-500">{t('courses.noResults')}</p>
@@ -174,7 +254,7 @@ export default function CoursesPage() {
 }
 
 function CourseCard({ course, t, highlight }) {
-  const hasLessons = course.id === 'class3-math'; // only class3-math has lessons data
+  const hasLessons = course.enabled;
 
   return (
     <Link

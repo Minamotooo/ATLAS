@@ -1,0 +1,93 @@
+{
+  "courses": [
+    {
+      "id": "mathematical_reasoning",
+      "title": "Mathematical Reasoning",
+      "title_bn": "গাণিতিক যুক্তি",
+      "enabled": true,
+      "sections": [
+        {
+          "id": "section_1_arithmetic_real_numbers",
+          "title": "Arithmetic & Real Numbers",
+          "title_bn": "বাস্তব সংখ্যা ও পাটিগণিত",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "real_numbers",
+              "title": "Real Numbers",
+              "title_bn": "বাস্তব সংখ্যা",
+              "skill_topic_code": "RNUM"
+            },
+            {
+              "id": "hcf",
+              "title": "HCF",
+              "title_bn": "গ.সা.গু",
+              "skill_topic_code": "HCF"
+            },
+            {
+              "id": "lcm",
+              "title": "LCM",
+              "title_bn": "ল.সা.গু",
+              "skill_topic_code": "LCM"
+            },
+            {
+              "id": "percentage",
+              "title": "Percentage",
+              "title_bn": "শতকরা",
+              "skill_topic_code": "PCT"
+            },
+            {
+              "id": "simple_compound_profit",
+              "title": "Simple and Compound Profit",
+              "title_bn": "সরল ও চক্রবৃদ্ধি মুনাফা",
+              "skill_topic_code": "SCP"
+            },
+            {
+              "id": "ratio_proportion",
+              "title": "Ratio and Proportions",
+              "title_bn": "অনুপাত ও সমানুপাত",
+              "skill_topic_code": "RAP"
+            },
+            {
+              "id": "profit_loss",
+              "title": "Profit and Loss",
+              "title_bn": "লাভ-ক্ষতি",
+              "skill_topic_code": "PAL"
+            }
+          ],
+          "additional_skill_topic_codes": [
+            "EXT"
+          ]
+        },
+        {
+          "id": "section_2_algebra",
+          "title": "Algebra",
+          "title_bn": "বীজগণিত",
+          "enabled": false,
+          "topics": []
+        },
+        {
+          "id": "section_3_indices_logs_sequences_series",
+          "title": "Indices & Logarithms / Sequences & Series",
+          "title_bn": "সূচক, লগারিদম এবং ধারা",
+          "enabled": false,
+          "topics": []
+        },
+        {
+          "id": "section_4_geometry",
+          "title": "Geometry",
+          "title_bn": "জ্যামিতি",
+          "enabled": false,
+          "topics": []
+        },
+        {
+          "id": "section_5_set_permutation_combination_statistics_probability",
+          "title": "Set, Permutation & Combination, Statistics & Probability",
+          "title_bn": "সেট, বিন্যাস ও সমাবেশ, পরিসংখ্যান ও সম্ভাব্যতা",
+          "enabled": false,
+          "topics": []
+        }
+      ]
+    }
+  ]
+}
