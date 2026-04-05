@@ -2,7 +2,12 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 const AuthContext = createContext(null);
 const storageKey = 'atlasUser';
-const apiBase = import.meta.env.VITE_API_BASE_URL || '';
+const apiBase = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+const buildApiUrl = (path) => {
+  const trimmedBase = apiBase.replace(/\/$/, '');
+  const trimmedPath = path.replace(/^\//, '');
+  return `${trimmedBase}/${trimmedPath}`;
+};
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
@@ -27,7 +32,7 @@ export function AuthProvider({ children }) {
   };
 
   const signIn = async (username) => {
-    const response = await fetch(`${apiBase}/users/${encodeURIComponent(username)}`);
+    const response = await fetch(buildApiUrl(`/users/${encodeURIComponent(username)}/`));
     if (!response.ok) {
       throw new Error(response.status === 404 ? 'not_found' : 'server_error');
     }
@@ -37,7 +42,7 @@ export function AuthProvider({ children }) {
   };
 
   const signUp = async (username) => {
-    const response = await fetch(`${apiBase}/users/`, {
+    const response = await fetch(buildApiUrl('/users/'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ user_name: username }),
