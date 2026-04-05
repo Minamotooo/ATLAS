@@ -21,6 +21,7 @@ load_dotenv()
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 from supabase import create_client
 
 from bkt import BKTModel, BKTParams
@@ -45,7 +46,6 @@ class UserCreate(BaseModel):
 # ------------------------------------------------------------------ endpoint
 @app.get("/users/{user_name}/")
 def get_user(user_name: str):
-
     result = (
         db.table("users")
         .select("*")
@@ -54,12 +54,14 @@ def get_user(user_name: str):
         .execute()
     )
 
-    if result.data is None:
+    if result.get("error"):
+        raise HTTPException(status_code=500, detail=result["error"])
+
+    if result.get("data") is None:
         raise HTTPException(status_code=404,
                             detail=f"No data for user '{user_name}'.")
 
-    row = result.data
-
+    row = result["data"]
     return {
         "user_id": row["user_id"],
         "user_name": row["user_name"]
@@ -68,32 +70,50 @@ def get_user(user_name: str):
 
 @app.post("/users/")
 def create_user(user: UserCreate):
-    result = (
-        db.table("users")
-        .select("*")
-        .eq("user_name", user.user_name)
-        .maybe_single()
-        .execute()
-    )
+    try:
+        result = (
+            db.table("users")
+            .select("*")
+            .eq("user_name", user.user_name)
+            .maybe_single()
+            .execute()
+        )
 
-    if result.data is not None:
-        raise HTTPException(status_code=409,
-                            detail=f"User '{user.user_name}' already exists.")
+        # Check for None (old client behavior)
+        if result is None:
+            raise HTTPException(status_code=500, detail="Supabase query returned None. Check your URL and service key.")
 
-    insert_result = (
-        db.table("users")
-        .insert({"user_name": user.user_name})
-        .select("*")
-        .single()
-        .execute()
-    )
+        # Support new client: result is a dict with 'data' and 'error'
+        data = getattr(result, "data", None) or result.get("data", None)  # works with object or dict
+        error = getattr(result, "error", None) or result.get("error", None)
 
-    if insert_result.data is None:
-        raise HTTPException(status_code=500,
-                            detail="Unable to create user.")
+        if error:
+            raise HTTPException(status_code=500, detail=str(error))
 
-    row = insert_result.data
-    return {
-        "user_id": row["user_id"],
-        "user_name": row["user_name"]
-    }
+        if data is not None:
+            raise HTTPException(status_code=409, detail=f"User '{user.user_name}' already exists.")
+
+        # Insert user
+        insert_result = (
+            db.table("users")
+            .insert({"user_name": user.user_name})
+            .select("*")
+            .single()
+            .execute()
+        )
+
+        if insert_result is None:
+            raise HTTPException(status_code=500, detail="Supabase insert returned None.")
+
+        insert_data = getattr(insert_result, "data", None) or insert_result.get("data", None)
+        insert_error = getattr(insert_result, "error", None) or insert_result.get("error", None)
+
+        if insert_error or insert_data is None:
+            raise HTTPException(status_code=500, detail=f"Insert failed: {insert_error}")
+
+        row = insert_data
+        return {"user_id": row["user_id"], "user_name": row["user_name"]}
+
+    except Exception as e:
+        print("ERROR:", e)
+        raise HTTPException(status_code=500, detail=str(e))
