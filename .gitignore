@@ -1,2 +1,5 @@
 prompt.md
 skill_map.json
+.env
+server-ref.py
+__pycache__

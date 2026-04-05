@@ -105,10 +105,9 @@ class MasteryUpdater:
         userid: str,
         skills: list,
         bloom_levels: list,
+        masteries: list,
         mode: UpdateMode,
         is_correct: bool,
-        db_fetch,
-        db_update,
     ):
         """
         Update the student's mastery and BKT state for a set of skills.
@@ -127,16 +126,15 @@ class MasteryUpdater:
         -------
         List of dicts: [{ 'skill_id': ..., 'mastery': ..., 'p_learned': ... }, ...]
         """
-        updated = []
+        updated_masteries = []
         # Select BKTParams based on mode
         if mode == UpdateMode.DIAGNOSE:
             bkt_params = BKTParams.fast_learner()
         else:
             bkt_params = BKTParams.default()
 
-        for skill_id, bloom_level in zip(skills, bloom_levels):
-            state = db_fetch(userid, skill_id)
-            old_p = state['p_learned']
+        for skill_id, bloom_level, mastery in zip(skills, bloom_levels, masteries):
+            old_p = mastery
 
             bkt_model = BKTModel(bkt_params)
             raw_new_p = bkt_model.update(old_p, is_correct)
@@ -150,18 +148,21 @@ class MasteryUpdater:
             new_p = max(0.0, min(1.0, new_p))
             new_mast = new_p * 100.0
 
-            db_update(userid, skill_id, new_mast, new_p)
-            updated.append({'skill_id': skill_id, 'mastery': new_mast})
+            updated_masteries.append({'skill_id': skill_id, 'mastery': new_mast})
 
             self._propagate_to_ancestors(
                 userid=userid,
                 skill_id=skill_id,
-                delta_p=new_p - old_p,
-                db_fetch=db_fetch,
-                db_update=db_update,
+                delta_p=new_p - old_p
             )
 
-        return updated
+            self._propagate_to_successors(
+                userid=userid,
+                skill_id=skill_id,
+                delta_p=new_p - old_p
+            )
+
+        return updated_masteries
 
     def _bloom_band_scaling(self, band_diff: int, is_correct: bool) -> float:
         """
