@@ -1,12 +1,13 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { Menu, X, Globe, Search } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
+import { Menu, X, Globe } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Navbar({ variant = 'default' }) {
   const { t, lang, toggleLang } = useLanguage();
+  const { user, signOut } = useAuth();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
   const location = useLocation();
 
   return (
@@ -59,12 +60,34 @@ export default function Navbar({ variant = 'default' }) {
 
             {/* Auth Buttons — desktop */}
             <div className="hidden md:flex items-center gap-2">
-              <button className="px-4 py-2 text-sm font-medium text-atlas-200 hover:text-white rounded-lg hover:bg-white/10 transition-colors">
-                {t('nav.login')}
-              </button>
-              <button className="px-4 py-2 text-sm font-semibold text-atlas-700 bg-white rounded-xl hover:bg-atlas-100 transition-all shadow-md hover:shadow-lg">
-                {t('nav.signup')}
-              </button>
+              {user ? (
+                <>
+                  <span className="px-4 py-2 rounded-lg text-sm font-medium text-white/90 bg-white/10">
+                    {t('nav.hello')}, {user.user_name}
+                  </span>
+                  <button
+                    onClick={signOut}
+                    className="px-4 py-2 text-sm font-semibold text-atlas-700 bg-white rounded-xl hover:bg-atlas-100 transition-all shadow-md hover:shadow-lg"
+                  >
+                    {t('nav.logout')}
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    to="/login"
+                    className="px-4 py-2 text-sm font-medium text-atlas-200 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
+                  >
+                    {t('nav.login')}
+                  </Link>
+                  <Link
+                    to="/signup"
+                    className="px-4 py-2 text-sm font-semibold text-atlas-700 bg-white rounded-xl hover:bg-atlas-100 transition-all shadow-md hover:shadow-lg"
+                  >
+                    {t('nav.signup')}
+                  </Link>
+                </>
+              )}
             </div>
 
             {/* Mobile Menu Button */}
@@ -97,12 +120,39 @@ export default function Navbar({ variant = 'default' }) {
               {t('nav.courses')}
             </Link>
             <hr className="my-2 border-white/10" />
-            <button className="w-full text-left px-4 py-3 rounded-xl text-sm font-medium text-atlas-200 hover:bg-white/10 transition-colors">
-              {t('nav.login')}
-            </button>
-            <button className="w-full px-4 py-3 text-sm font-semibold text-atlas-700 bg-white rounded-xl">
-              {t('nav.signup')}
-            </button>
+            {user ? (
+              <>
+                <span className="block px-4 py-3 rounded-xl text-sm font-medium text-atlas-200 bg-white/10">
+                  {t('nav.hello')}, {user.user_name}
+                </span>
+                <button
+                  onClick={() => {
+                    signOut();
+                    setMobileOpen(false);
+                  }}
+                  className="w-full text-left px-4 py-3 rounded-xl text-sm font-semibold text-atlas-700 bg-white"
+                >
+                  {t('nav.logout')}
+                </button>
+              </>
+            ) : (
+              <>
+                <Link
+                  to="/login"
+                  onClick={() => setMobileOpen(false)}
+                  className="block w-full text-left px-4 py-3 rounded-xl text-sm font-medium text-atlas-200 hover:bg-white/10 transition-colors"
+                >
+                  {t('nav.login')}
+                </Link>
+                <Link
+                  to="/signup"
+                  onClick={() => setMobileOpen(false)}
+                  className="block w-full px-4 py-3 text-sm font-semibold text-atlas-700 bg-white rounded-xl"
+                >
+                  {t('nav.signup')}
+                </Link>
+              </>
+            )}
           </div>
         </div>
       )}
