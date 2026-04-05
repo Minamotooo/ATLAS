@@ -138,14 +138,8 @@ class MasteryUpdater:
 
             bkt_model = BKTModel(bkt_params)
             raw_new_p = bkt_model.update(old_p, is_correct)
-            # Compute current mastery band using p_learned
-            current_band = get_level_from_mastery(old_p * 100.0)
-            band_diff = bloom_level.value - current_band.value
 
-            # Transform the new probability based on band_diff
-            scale = self._bloom_band_scaling(band_diff, is_correct)
-            new_p = old_p + (raw_new_p - old_p) * scale
-            new_p = max(0.0, min(1.0, new_p))
+            new_p = max(0.0, min(1.0, raw_new_p))
             new_mast = new_p * 100.0
 
             updated_masteries.append({'skill_id': skill_id, 'mastery': new_mast})
@@ -163,17 +157,6 @@ class MasteryUpdater:
             )
 
         return updated_masteries
-
-    def _bloom_band_scaling(self, band_diff: int, is_correct: bool) -> float:
-        """
-        Compute the scaling factor for mastery delta based on the difference between
-        the evaluated Bloom level and the student's current mastery band.
-        """
-        if is_correct:
-            scale = 1.0 + 0.3 * band_diff
-        else:
-            scale = 1.0 - 0.3 * band_diff
-        return max(0.2, scale)
 
     def _propagate_to_ancestors(
         self,

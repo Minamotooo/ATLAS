@@ -19,6 +19,8 @@ from collections import defaultdict, deque
 from typing import Dict, Iterator, List, Optional
 
 from skill import Skill
+import json
+from skill import Skill
 
 
 class SkillTree:
@@ -83,6 +85,51 @@ class SkillTree:
                 f"Adding prerequisite '{parent_id}' → '{child_id}' "
                 f"would introduce a cycle in the skill tree."
             )
+    
+    def build_tree_json(self, topic_skills_path: str, skill_edges_path: str, skill_descriptions_path: str) -> None:
+        """
+        Build the SkillTree from topic_skills.json, skill_edges.json, and skill_descriptions.json.
+        This will clear the current tree and rebuild it from the provided files.
+        """
+
+        # Clear current tree
+        self._skills.clear()
+        self._topic_index.clear()
+
+        # Load data
+        with open(topic_skills_path, 'r', encoding='utf-8') as f:
+            topic_skills = json.load(f)
+        with open(skill_edges_path, 'r', encoding='utf-8') as f:
+            skill_edges = json.load(f)
+        with open(skill_descriptions_path, 'r', encoding='utf-8') as f:
+            skill_descriptions = json.load(f)
+
+        # Build skill_id → topics mapping
+        skill_to_topics = {}
+        for topic, skill_ids in topic_skills.items():
+            for sid in skill_ids:
+                skill_to_topics.setdefault(sid, []).append(topic)
+
+        # Build skill_id → name mapping (use skill_id as name if not found)
+        def skill_name_from_id(sid):
+            # Try to extract a short name from the skill_id (e.g., 'PRE8' → 'PRE-8 Algebraic manipulation')
+            # If not available, just use the skill_id
+            return sid
+
+        # Create all Skill nodes
+        for sid in skill_to_topics:
+            name = skill_name_from_id(sid)
+            description = skill_descriptions.get(sid, "")
+            topics = skill_to_topics[sid]
+            skill = Skill(sid, name, description, topics)
+            self.add_skill(skill)
+
+        # Add edges (prerequisites)
+        for edge in skill_edges:
+            parent_id = edge['source']
+            child_id = edge['target']
+            if parent_id in self._skills and child_id in self._skills:
+                self.add_prerequisite(child_id=child_id, parent_id=parent_id)
 
     # ================================================================== queries
     def get_skill(self, skill_id: str) -> Optional[Skill]:
