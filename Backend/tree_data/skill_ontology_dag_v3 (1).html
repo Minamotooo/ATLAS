@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arithmetic & Real Numbers — Skill Ontology DAG</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:#f0f2f5;display:flex;flex-direction:column;height:100vh;overflow:hidden}
+
+/* ── top bar ── */
+#topbar{background:#1c1c2e;color:#fff;padding:9px 16px;display:flex;align-items:center;gap:12px;flex-shrink:0;z-index:10;box-shadow:0 2px 6px rgba(0,0,0,.4)}
+#topbar h1{font-size:13px;font-weight:600;white-space:nowrap}
+#topbar .sep{color:#555;font-size:18px}
+#stat{font-size:11px;color:#8a8aaa;white-space:nowrap}
+#search{padding:5px 10px;border-radius:5px;border:1px solid #3a3a5c;background:#2a2a44;color:#ddd;font-size:11px;width:190px}
+#search::placeholder{color:#666}
+.tbtn{background:#2a2a44;border:1px solid #3a3a5c;color:#ccc;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:11px;white-space:nowrap}
+.tbtn:hover{background:#3a3a5c}
+#layout-label{font-size:10px;color:#666;white-space:nowrap}
+
+/* ── layout ── */
+#main{display:flex;flex:1;overflow:hidden}
+
+/* ── left sidebar ── */
+#sidebar{width:230px;background:#fff;border-right:1px solid #e0e4ea;overflow-y:auto;flex-shrink:0;display:flex;flex-direction:column}
+#sidebar-head{padding:10px 12px 6px;font-size:11px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #eee}
+#legend{padding:8px 10px;flex:1}
+.leg-item{display:flex;align-items:center;gap:7px;padding:4px 6px;border-radius:5px;cursor:pointer;user-select:none;transition:background .15s}
+.leg-item:hover{background:#f5f7fa}
+.leg-item.off{opacity:.35}
+.leg-dot{width:13px;height:13px;border-radius:3px;flex-shrink:0;border-width:1.5px;border-style:solid}
+.leg-text{font-size:11px;color:#3a3a3a;line-height:1.35;flex:1}
+.leg-n{font-size:10px;color:#aaa;margin-left:auto;font-variant-numeric:tabular-nums}
+#filter-hint{font-size:10px;color:#bbb;padding:4px 10px 8px;line-height:1.5}
+
+/* ── cy canvas ── */
+#cy{flex:1;background:#fafbfc}
+
+/* ── right detail panel ── */
+#detail{width:270px;background:#fff;border-left:1px solid #e0e4ea;overflow-y:auto;flex-shrink:0;display:none;position:relative}
+#det-inner{padding:14px 14px 20px}
+#det-close{position:absolute;top:8px;right:10px;background:none;border:none;font-size:18px;cursor:pointer;color:#bbb;line-height:1}
+#det-close:hover{color:#555}
+#det-id{font-size:16px;font-weight:700;color:#1c1c2e;margin-bottom:4px}
+#det-badge{font-size:10px;font-weight:600;padding:3px 9px;border-radius:12px;display:inline-block;margin-bottom:10px;border-width:1px;border-style:solid}
+#det-sub{font-size:10px;color:#888;margin-bottom:8px;margin-top:-6px}
+#det-skill{font-size:12px;color:#333;line-height:1.65;margin-bottom:14px;padding:8px 10px;background:#f8f9fa;border-radius:6px;border-left:3px solid #ccc}
+.det-sec{font-size:10px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.dep-list{list-style:none;margin-bottom:14px}
+.dep-list li{font-size:11px;color:#444;padding:5px 8px;background:#f8f9fb;border-radius:4px;margin-bottom:3px;cursor:pointer;border-left:3px solid #ddd;line-height:1.4;transition:background .12s}
+.dep-list li:hover{background:#eef2ff}
+.dep-list li span.dep-id{font-weight:700;margin-right:4px}
+.dep-empty{color:#bbb!important;cursor:default!important;border-left-color:#eee!important}
+
+/* ── tooltip ── */
+#tip{position:fixed;background:rgba(20,20,35,.88);color:#eee;padding:7px 11px;border-radius:6px;font-size:11px;max-width:270px;line-height:1.55;pointer-events:none;display:none;z-index:9999;box-shadow:0 3px 12px rgba(0,0,0,.3)}
+#tip strong{color:#fff;display:block;margin-bottom:2px}
+
+/* ── mini scrollbar ── */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:#f0f2f5}
+::-webkit-scrollbar-thumb{background:#ccc;border-radius:3px}
+
+/* ── dark mode ── */
+body.dark{background:#12131a}
+body.dark #sidebar{background:#1a1b26;border-right-color:#2e2f45}
+body.dark #sidebar-head{color:#8a8aaa;border-bottom-color:#2e2f45}
+body.dark .leg-text{color:#c0c0d8}
+body.dark .leg-n{color:#555}
+body.dark #filter-hint{color:#555}
+body.dark .leg-item:hover{background:#22233a}
+body.dark #cy{background:#12131a}
+body.dark #detail{background:#1a1b26;border-left-color:#2e2f45}
+body.dark #det-id{color:#e0e0f0}
+body.dark #det-sub{color:#666}
+body.dark #det-skill{background:#12131a;color:#c0c0d8;border-left-color:#3a3a5c}
+body.dark .det-sec{color:#555}
+body.dark .dep-list li{background:#12131a;color:#b0b0cc;border-left-color:#3a3a5c}
+body.dark .dep-list li:hover{background:#1e1f30}
+body.dark .dep-empty{color:#444!important}
+body.dark #det-close{color:#555}
+body.dark #det-close:hover{color:#aaa}
+body.dark ::-webkit-scrollbar-track{background:#12131a}
+body.dark ::-webkit-scrollbar-thumb{background:#3a3a5c}
+
+/* ── dark toggle button ── */
+#dark-btn{background:#2a2a44;border:1px solid #3a3a5c;color:#ccc;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:13px;white-space:nowrap;line-height:1}
+#dark-btn:hover{background:#3a3a5c}
+</style>
+</head>
+<body>
+
+<div id="topbar">
+  <h1>Arithmetic &amp; Real Numbers &mdash; Skill Ontology DAG</h1>
+  <span class="sep">|</span>
+  <span id="stat">128 nodes &middot; 203 edges</span>
+  <input id="search" type="text" placeholder="Search ID or keyword&hellip;" autocomplete="off">
+  <button class="tbtn" onclick="cy.fit(null,40)">&#8861; Fit all</button>
+  <button class="tbtn" onclick="cy.zoom(cy.zoom()*1.35)">+ Zoom</button>
+  <button class="tbtn" onclick="cy.zoom(cy.zoom()*0.75)">&minus; Zoom</button>
+  <button class="tbtn" onclick="clearSel()">&#10005; Clear</button>
+  <button id="dark-btn" onclick="toggleDark()" title="Toggle dark mode">🌙</button>
+</div>
+
+<div id="main">
+  <div id="sidebar">
+    <div id="sidebar-head">Topics &mdash; click to toggle</div>
+    <div id="legend"></div>
+    <div id="filter-hint">Click a topic colour to hide or show its nodes on the graph</div>
+  </div>
+
+  <div id="cy"></div>
+
+  <div id="detail">
+    <button id="det-close" onclick="closePanel()">&#215;</button>
+    <div id="det-inner">
+      <div id="det-id"></div>
+      <span id="det-badge"></span>
+      <div id="det-sub"></div>
+      <div id="det-skill"></div>
+      <div class="det-sec">Prerequisites &mdash; incoming</div>
+      <ul class="dep-list" id="det-pre"></ul>
+      <div class="det-sec">Leads to &mdash; outgoing</div>
+      <ul class="dep-list" id="det-out"></ul>
+    </div>
+  </div>
+</div>
+
+<div id="tip"></div>
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.26.0/cytoscape.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dagre@0.8.5/dist/dagre.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js"></script>
+
+<script>
+cytoscape.use(cytoscapeDagre);
+
+// ─────────────────────────────────────────────
+// TOPIC PALETTE
+// ─────────────────────────────────────────────
+const T = {
+  EXT:{ label:'External Prerequisites',        bg:'#EAECEE', bd:'#717D7E', fg:'#424949' },
+  T1: { label:'1 · Real Numbers',              bg:'#D6EAF8', bd:'#2E86C1', fg:'#1A5276' },
+  T2: { label:'2 · HCF',                       bg:'#D5F5E3', bd:'#1E8449', fg:'#145A32' },
+  T3: { label:'3 · LCM',                       bg:'#FDEBD0', bd:'#CA6F1E', fg:'#784212' },
+  T4: { label:'4 · Percentage',                bg:'#FADBD8', bd:'#C0392B', fg:'#7B241C' },
+  T5: { label:'5 · Simple & Compound Profit',  bg:'#E8DAEF', bd:'#7D3C98', fg:'#4A235A' },
+  T6: { label:'6 · Ratio & Proportions',       bg:'#D1F2EB', bd:'#148F77', fg:'#0E6655' },
+  T7: { label:'7 · Profit & Loss',             bg:'#FEF9E7', bd:'#B7950B', fg:'#7D6608' },
+};
+
+// ─────────────────────────────────────────────
+// NODE DATA
+// ─────────────────────────────────────────────
+const ND = [
+  // EXT
+  {id:'PRE8', lbl:'PRE-8\nAlgebraic\nmanipulation',    full:'Basic algebraic manipulation — solve for a single variable',                                          tp:'EXT', sub:'External'},
+  {id:'PRE9', lbl:'PRE-9\nSystems of\nequations',      full:'Set up and solve a system of two linear equations with two unknowns',                                  tp:'EXT', sub:'External'},
+  // T1 — 1.1
+  {id:'PRE1', lbl:'PRE-1\nWhole numbers',              full:'Identify and write whole numbers up to large values (lakhs/crores)',                                    tp:'T1',  sub:'1.1 Number Sense & Operations'},
+  {id:'PRE2', lbl:'PRE-2\nAdd & subtract',             full:'Add and subtract whole numbers',                                                                       tp:'T1',  sub:'1.1 Number Sense & Operations'},
+  {id:'PRE3', lbl:'PRE-3\nMultiply',                   full:'Multiply whole numbers',                                                                               tp:'T1',  sub:'1.1 Number Sense & Operations'},
+  {id:'PRE4', lbl:'PRE-4\nDivide',                     full:'Divide whole numbers (including remainders and non-integer results)',                                   tp:'T1',  sub:'1.1 Number Sense & Operations'},
+  {id:'PRE5', lbl:'PRE-5\nFractions ↔\ndecimals',     full:'Convert between fractions and decimals',                                                               tp:'T1',  sub:'1.1 Number Sense & Operations'},
+  {id:'PRE6', lbl:'PRE-6\nDecimal\narithmetic',        full:'Multiply and divide decimal numbers',                                                                  tp:'T1',  sub:'1.1 Number Sense & Operations'},
+  // T1 — 1.2
+  {id:'LG2',  lbl:'LG-2\nExact\ndivisibility',         full:'Check exact divisibility of one number by another',                                                    tp:'T1',  sub:'1.2 Divisibility & Number Properties'},
+  {id:'LG4',  lbl:'LG-4\nDivisibility\nrules 2,3,4,5,9',full:'Apply divisibility rules for 2, 3, 4, 5, and 9',                                                    tp:'T1',  sub:'1.2 Divisibility & Number Properties'},
+  {id:'LG5',  lbl:'LG-5\nPrime or\ncomposite',         full:'Identify whether a number is prime or composite',                                                      tp:'T1',  sub:'1.2 Divisibility & Number Properties'},
+  {id:'LG9',  lbl:'LG-9\nCo-prime\nnumbers',           full:'Identify whether two or more numbers are co-prime',                                                    tp:'T1',  sub:'1.2 Divisibility & Number Properties'},
+  // T1 — 1.3
+  {id:'LG1',  lbl:'LG-1\nList\nmultiples',             full:'List multiples of a given number',                                                                     tp:'T1',  sub:'1.3 Factors, Multiples & Prime Factorization'},
+  {id:'LG3',  lbl:'LG-3\nList all\nfactors',           full:'List all factors of a number by trial division',                                                       tp:'T1',  sub:'1.3 Factors, Multiples & Prime Factorization'},
+  {id:'LG8',  lbl:'LG-8\nPrime\nfactorization',        full:'Express a number as a product of prime factors (factor tree or repeated division)',                     tp:'T1',  sub:'1.3 Factors, Multiples & Prime Factorization'},
+  // T2
+  {id:'LG7',  lbl:'LG-7\nCommon\nfactors',             full:'Find common factors of two numbers',                                                                   tp:'T2',  sub:'2.1 Common Factors'},
+  {id:'LG10', lbl:'LG-10\nHCF by\nenumeration',        full:'Find HCF of two numbers by factor enumeration (list all factors, pick greatest common)',               tp:'T2',  sub:'2.2 Methods of Finding HCF'},
+  {id:'LG11', lbl:'LG-11\nHCF by prime\nfactors',      full:'Find HCF of two numbers by common prime factors (prime factorize both, multiply common primes)',       tp:'T2',  sub:'2.2 Methods of Finding HCF'},
+  {id:'LG12', lbl:'LG-12\nHCF by division\n(Euclidean)',full:'Find HCF of two numbers by division method (Euclidean algorithm)',                                    tp:'T2',  sub:'2.2 Methods of Finding HCF'},
+  {id:'LG16', lbl:'LG-16\nHCF of\n3+ numbers',         full:'Find HCF of three or more numbers',                                                                    tp:'T2',  sub:'2.3 Extension & Applications'},
+  {id:'LG18', lbl:'LG-18\nHCF\napplications',          full:'Apply HCF to equal-distribution problems (e.g., divide items into largest equal groups)',              tp:'T2',  sub:'2.3 Extension & Applications'},
+  // T3
+  {id:'LG6',  lbl:'LG-6\nCommon\nmultiples',           full:'Find common multiples of two numbers',                                                                 tp:'T3',  sub:'3.1 Common Multiples'},
+  {id:'LG13', lbl:'LG-13\nLCM by listing\nmultiples',  full:'Find LCM of two numbers by listing and comparing multiples',                                           tp:'T3',  sub:'3.2 Methods of Finding LCM'},
+  {id:'LG14', lbl:'LG-14\nLCM by prime\nfactorization',full:'Find LCM of two numbers by prime factorization (take highest power of each prime)',                    tp:'T3',  sub:'3.2 Methods of Finding LCM'},
+  {id:'LG15', lbl:'LG-15\nLCM by\nladder method',      full:"Find LCM of two numbers by Euclid's ladder method (successive division by common/remaining primes)",   tp:'T3',  sub:'3.2 Methods of Finding LCM'},
+  {id:'LG17', lbl:'LG-17\nLCM of\n3+ numbers',         full:'Find LCM of three or more numbers',                                                                    tp:'T3',  sub:'3.3 Extension'},
+  {id:'LG19', lbl:'LG-19\nLCM scheduling\napplications',full:'Apply LCM to scheduling and synchronization problems (e.g., when two periodic events next coincide)', tp:'T3',  sub:'3.4 Applications & Relationships'},
+  {id:'LG20', lbl:'LG-20\nProduct =\nHCF × LCM',       full:'Use the relationship: Product of two numbers = HCF × LCM',                                             tp:'T3',  sub:'3.4 Applications & Relationships'},
+  {id:'LG22', lbl:'LG-22\nFind unknown\nvia HCF & LCM',full:'Find an unknown number given the other number, the HCF, and the LCM, using the product relationship',  tp:'T3',  sub:'3.4 Applications & Relationships'},
+  {id:'LG21', lbl:'LG-21\nHCF & LCM\nof fractions',    full:'Find HCF and LCM of fractions: HCF=(HCF of numerators)/(LCM of denominators); LCM=(LCM of numerators)/(HCF of denominators)', tp:'T3', sub:'3.5 HCF & LCM of Fractions & Decimals'},
+  {id:'LG23', lbl:'LG-23\nHCF & LCM\nof decimals',     full:'Find HCF and LCM of decimal fractions (equalize decimal places, treat as integers, reposition decimal point)', tp:'T3', sub:'3.5 HCF & LCM of Fractions & Decimals'},
+  // T4
+  {id:'PC1',  lbl:'PC-1\nDefine\npercentage',           full:'Define percentage as parts per hundred',                                                               tp:'T4',  sub:'4.1 Concept & Definition'},
+  {id:'PC2',  lbl:'PC-2\nFraction → %',                 full:'Express a fraction as a percentage',                                                                  tp:'T4',  sub:'4.2 Conversions'},
+  {id:'PC3',  lbl:'PC-3\n% → fraction',                 full:'Express a percentage as a fraction',                                                                  tp:'T4',  sub:'4.2 Conversions'},
+  {id:'PC4',  lbl:'PC-4\nDecimal → %',                  full:'Express a decimal as a percentage',                                                                   tp:'T4',  sub:'4.2 Conversions'},
+  {id:'PC5',  lbl:'PC-5\n% → decimal',                  full:'Express a percentage as a decimal',                                                                   tp:'T4',  sub:'4.2 Conversions'},
+  {id:'PC6',  lbl:'PC-6\nConvert all\nforms',            full:'Convert fluently between ratio, fraction, decimal, and percentage',                                   tp:'T4',  sub:'4.2 Conversions'},
+  {id:'PCA1', lbl:'PCA-1\nCalculate\nx% of qty',         full:'Calculate a percentage of a given quantity',                                                          tp:'T4',  sub:'4.3 Percentage Calculations'},
+  {id:'PCA2', lbl:'PCA-2\nQty as %\nof another',         full:'Express one quantity as a percentage of another',                                                     tp:'T4',  sub:'4.3 Percentage Calculations'},
+  {id:'PCA3', lbl:'PCA-3\nFind original\nvalue from %',  full:'Find the original value given a percentage of it',                                                    tp:'T4',  sub:'4.3 Percentage Calculations'},
+  {id:'PCA4', lbl:'PCA-4\n% increase',                   full:'Calculate percentage increase',                                                                       tp:'T4',  sub:'4.4 Percentage Change'},
+  {id:'PCA5', lbl:'PCA-5\n% decrease',                   full:'Calculate percentage decrease',                                                                       tp:'T4',  sub:'4.4 Percentage Change'},
+  {id:'PCA6', lbl:'PCA-6\n% change',                     full:'Calculate percentage change (increase or decrease) between two values',                               tp:'T4',  sub:'4.4 Percentage Change'},
+  // T5 SI
+  {id:'SI1',  lbl:'SI-1\nIdentify P',                   full:'Identify and label the principal (P) in a word problem',                                              tp:'T5',  sub:'5.1.1 Identifying Variables'},
+  {id:'SI2',  lbl:'SI-2\nIdentify R',                   full:'Identify and label the rate of profit/interest (R) in a word problem',                                tp:'T5',  sub:'5.1.1 Identifying Variables'},
+  {id:'SI3',  lbl:'SI-3\nIdentify T',                   full:'Identify and label the time period (T) in a word problem',                                            tp:'T5',  sub:'5.1.1 Identifying Variables'},
+  {id:'SI4',  lbl:'SI-4\nFormula\nSI = PRT/100',        full:'State the simple profit formula: SI = PRT/100',                                                       tp:'T5',  sub:'5.1.2 Core Formula'},
+  {id:'SI5',  lbl:'SI-5\nCompute SI',                   full:'Substitute known values into SI = PRT/100 and compute the result',                                    tp:'T5',  sub:'5.1.2 Core Formula'},
+  {id:'SI6',  lbl:'SI-6\nTotal amount\nA = P + SI',     full:'Calculate total amount under simple profit: A = P + SI',                                              tp:'T5',  sub:'5.1.2 Core Formula'},
+  {id:'SI7',  lbl:'SI-7\nIsolate P',                    full:'Isolate P given SI, R, and T (rearrange formula)',                                                    tp:'T5',  sub:'5.1.3 Rearranging Formula'},
+  {id:'SI8',  lbl:'SI-8\nIsolate R',                    full:'Isolate R given SI, P, and T (rearrange formula)',                                                    tp:'T5',  sub:'5.1.3 Rearranging Formula'},
+  {id:'SI9',  lbl:'SI-9\nIsolate T',                    full:'Isolate T given SI, P, and R (rearrange formula)',                                                    tp:'T5',  sub:'5.1.3 Rearranging Formula'},
+  {id:'SI10', lbl:'SI-10\nMulti-step\nword problems',   full:'Solve multi-step word problems combining SI formula with one unknown',                                 tp:'T5',  sub:'5.1.4 Advanced Simple Profit'},
+  {id:'SI11', lbl:'SI-11\nFractional\nrate or time',    full:'Calculate SI when rate or time is given as a fraction (e.g., 2.5 years, 7.5%)',                       tp:'T5',  sub:'5.1.4 Advanced Simple Profit'},
+  {id:'SI12', lbl:'SI-12\nSI for part\nof a year',      full:'Calculate SI for part of a year (e.g., 9 months = 9/12 years)',                                       tp:'T5',  sub:'5.1.4 Advanced Simple Profit'},
+  {id:'SI13', lbl:'SI-13\nFind P for\ntarget SI',       full:'Determine the principal required to earn a given SI at given R and T',                                 tp:'T5',  sub:'5.1.4 Advanced Simple Profit'},
+  {id:'SI14', lbl:'SI-14\nCompare\nSI schemes',         full:'Compare two simple profit schemes and identify the better one',                                        tp:'T5',  sub:'5.1.4 Advanced Simple Profit'},
+  // T5 CI
+  {id:'CI1',  lbl:'CI-1\nUnderstand\ncompounding',      full:"Understand how interest compounds: each period's profit is added to the principal",                   tp:'T5',  sub:'5.2.1 Compound Concept'},
+  {id:'CI2',  lbl:'CI-2\nManual CI\nyear-by-year',      full:'Compute CI manually year-by-year for T = 2 and T = 3',                                                tp:'T5',  sub:'5.2.1 Compound Concept'},
+  {id:'CI3',  lbl:'CI-3\nFormula\nA=P(1+R/100)^T',     full:'State the annual compounding formula: A = P(1 + R/100)^T',                                            tp:'T5',  sub:'5.2.2 Annual Compounding Formula'},
+  {id:'CI4',  lbl:'CI-4\nEvaluate\n(1+R/100)^T',       full:'Evaluate (1 + R/100)^T for integer T using repeated multiplication',                                  tp:'T5',  sub:'5.2.2 Annual Compounding Formula'},
+  {id:'CI5',  lbl:'CI-5\nCompute A & CI\n(annual)',     full:'Compute A and CI using A = P(1 + R/100)^T for annual compounding',                                    tp:'T5',  sub:'5.2.2 Annual Compounding Formula'},
+  {id:'CI6',  lbl:'CI-6\nCompounding\nperiod',          full:'Identify the compounding period (annual, half-yearly, quarterly)',                                     tp:'T5',  sub:'5.2.3 Compounding Periods'},
+  {id:'CI7',  lbl:'CI-7\nAdjust for\nhalf-yearly',      full:'Adjust rate and time for half-yearly compounding (R→R/2, T→2T)',                                      tp:'T5',  sub:'5.2.3 Compounding Periods'},
+  {id:'CI8',  lbl:'CI-8\nAdjust for\nquarterly',        full:'Adjust rate and time for quarterly compounding (R→R/4, T→4T)',                                        tp:'T5',  sub:'5.2.3 Compounding Periods'},
+  {id:'CI9',  lbl:'CI-9\nCI half-yearly\n& quarterly',  full:'Compute A and CI for half-yearly and quarterly compounding periods',                                   tp:'T5',  sub:'5.2.3 Compounding Periods'},
+  {id:'CI10', lbl:'CI-10\nFind P\nfrom CI',             full:'Find original principal P given A, R, and T under CI',                                                 tp:'T5',  sub:'5.2.4 Reverse & Comparison'},
+  {id:'CI11', lbl:'CI-11\nFind R\nfrom CI',             full:'Find rate R given P, A, and T under CI (integer T = 2)',                                               tp:'T5',  sub:'5.2.4 Reverse & Comparison'},
+  {id:'CI12', lbl:'CI-12\nFind T\nfrom CI',             full:'Find T given P, A, and R under CI by trial or pattern (small integer T)',                              tp:'T5',  sub:'5.2.4 Reverse & Comparison'},
+  {id:'CI13', lbl:'CI-13\nCI(T=1)\nequals SI',          full:'Compute CI for T = 1 and verify it equals SI for the same values',                                    tp:'T5',  sub:'5.2.4 Reverse & Comparison'},
+  {id:'CI14', lbl:'CI-14\nCompare CI\nand SI',          full:'Compare CI and SI for same P, R, T and explain the difference',                                        tp:'T5',  sub:'5.2.4 Reverse & Comparison'},
+  {id:'CI15', lbl:'CI-15\nCI−SI =\nP(R/100)²',         full:'Calculate the difference CI − SI = P(R/100)² for T = 2',                                              tp:'T5',  sub:'5.2.4 Reverse & Comparison'},
+  {id:'CI16', lbl:'CI-16\nReal-world CI\napplications', full:'Apply CI to real-world contexts: population growth, depreciation, investment',                         tp:'T5',  sub:'5.2.5 Real-World Applications'},
+  {id:'CI17', lbl:'CI-17\nCI word\nproblems',           full:'Solve two-step word problems requiring CI computation and comparison',                                  tp:'T5',  sub:'5.2.5 Real-World Applications'},
+  // T6 Ratio
+  {id:'RF1',  lbl:'RF-1\nDefine ratio',                 full:'Define ratio as a comparison of two quantities of the same kind and unit by division',                 tp:'T6',  sub:'6.1.1 Ratio Concept & Notation'},
+  {id:'RF2',  lbl:'RF-2\nAntecedent &\nconsequent',     full:'Identify antecedent and consequent in a ratio',                                                       tp:'T6',  sub:'6.1.1 Ratio Concept & Notation'},
+  {id:'RF3',  lbl:'RF-3\nRatio as\nfraction',           full:'Express a ratio as a fraction and vice versa',                                                        tp:'T6',  sub:'6.1.1 Ratio Concept & Notation'},
+  {id:'RF4',  lbl:'RF-4\nCommon\nunit',                 full:'Convert quantities to a common unit before forming a ratio',                                           tp:'T6',  sub:'6.1.1 Ratio Concept & Notation'},
+  {id:'RF5',  lbl:'RF-5\nEquivalent\nratios',           full:'Find equivalent ratios',                                                                              tp:'T6',  sub:'6.1.2 Operations on Ratios'},
+  {id:'RF6',  lbl:'RF-6\nSimplify ratio\nusing HCF',    full:'Simplify a ratio to lowest terms using HCF',                                                          tp:'T6',  sub:'6.1.2 Operations on Ratios'},
+  {id:'RF7',  lbl:'RF-7\nCompare by\nratio',            full:'Compare two quantities using ratio',                                                                  tp:'T6',  sub:'6.1.2 Operations on Ratios'},
+  {id:'RF8',  lbl:'RF-8\nTypes of\nratio',              full:'Distinguish between ratio of less inequality, greater inequality, and unit ratio',                     tp:'T6',  sub:'6.1.3 Types of Ratio'},
+  {id:'RF9',  lbl:'RF-9\nInverse\nratio',               full:'Form the inverse ratio by interchanging antecedent and consequent',                                   tp:'T6',  sub:'6.1.3 Types of Ratio'},
+  {id:'RF10', lbl:'RF-10\nCompound\nratio',             full:'Calculate the compound (mixed) ratio of two or more simple ratios',                                   tp:'T6',  sub:'6.1.3 Types of Ratio'},
+  {id:'RF11', lbl:'RF-11\nDivide qty\nin ratio',        full:'Divide a quantity in a given ratio',                                                                  tp:'T6',  sub:'6.1.4 Ratio Application'},
+  // T6 Proportion
+  {id:'PF1',  lbl:'PF-1\nDefine\nproportion',           full:'Define proportion as the equality of two ratios (a:b = c:d)',                                         tp:'T6',  sub:'6.2.1 Proportion Concept'},
+  {id:'PF2',  lbl:'PF-2\nMeans &\nextremes',            full:'Identify the four terms of a proportion and distinguish means from extremes',                         tp:'T6',  sub:'6.2.1 Proportion Concept'},
+  {id:'PF3',  lbl:'PF-3\nCross-\nmultiplication',       full:'Apply the cross-multiplication property (product of means = product of extremes)',                     tp:'T6',  sub:'6.2.2 Proportion Properties'},
+  {id:'PF4',  lbl:'PF-4\nVerify\nproportion',           full:'Determine if four numbers are in proportion',                                                         tp:'T6',  sub:'6.2.2 Proportion Properties'},
+  {id:'PF5',  lbl:'PF-5\nMissing 4th\nterm',            full:'Find the missing fourth term in a proportion',                                                        tp:'T6',  sub:'6.2.2 Proportion Properties'},
+  {id:'PF6',  lbl:'PF-6\nContinued\nproportion',        full:'Define and identify continued proportion (a:b = b:c, so b² = ac)',                                    tp:'T6',  sub:'6.2.3 Continued Proportion'},
+  {id:'PF7',  lbl:'PF-7\nMean & third\nproportional',   full:'Calculate the mean proportional and third proportional in a continued proportion',                    tp:'T6',  sub:'6.2.3 Continued Proportion'},
+  // T6 Types
+  {id:'TP1',  lbl:'TP-1\nDefine direct\nproportion',    full:'Define direct proportion',                                                                            tp:'T6',  sub:'6.3 Types of Proportion'},
+  {id:'TP2',  lbl:'TP-2\nIdentify direct\nproportion',  full:'Identify if two quantities are in direct proportion',                                                 tp:'T6',  sub:'6.3 Types of Proportion'},
+  {id:'TP3',  lbl:'TP-3\nSolve direct\nproportion',     full:'Solve problems using direct proportion',                                                              tp:'T6',  sub:'6.3 Types of Proportion'},
+  {id:'TP4',  lbl:'TP-4\nDefine inverse\nproportion',   full:'Define inverse proportion',                                                                           tp:'T6',  sub:'6.3 Types of Proportion'},
+  {id:'TP5',  lbl:'TP-5\nIdentify inverse\nproportion', full:'Identify if two quantities are in inverse proportion',                                                tp:'T6',  sub:'6.3 Types of Proportion'},
+  {id:'TP6',  lbl:'TP-6\nSolve inverse\nproportion',    full:'Solve problems using inverse proportion',                                                             tp:'T6',  sub:'6.3 Types of Proportion'},
+  // T6 Algebraic
+  {id:'AT1',  lbl:'AT-1\nInvertendo',                   full:'Apply Invertendo: if a:b = c:d, then b:a = d:c',                                                      tp:'T6',  sub:'6.4 Algebraic Transformations'},
+  {id:'AT2',  lbl:'AT-2\nAlternendo',                   full:'Apply Alternendo: if a:b = c:d, then a:c = b:d',                                                      tp:'T6',  sub:'6.4 Algebraic Transformations'},
+  {id:'AT3',  lbl:'AT-3\nComponendo',                   full:'Apply Componendo: if a/b = c/d, then (a+b)/b = (c+d)/d',                                              tp:'T6',  sub:'6.4 Algebraic Transformations'},
+  {id:'AT4',  lbl:'AT-4\nDividendo',                    full:'Apply Dividendo: if a/b = c/d, then (a-b)/b = (c-d)/d',                                               tp:'T6',  sub:'6.4 Algebraic Transformations'},
+  {id:'AT5',  lbl:'AT-5\nComponendo-\nDividendo',       full:'Apply Componendo-Dividendo: if a/b = c/d, then (a+b)/(a-b) = (c+d)/(c-d)',                            tp:'T6',  sub:'6.4 Algebraic Transformations'},
+  // T7
+  {id:'PL1',  lbl:'PL-1\nIdentify CP',                  full:'Identify Cost Price (CP) in a word problem, including overhead costs (rent, transport, etc.)',         tp:'T7',  sub:'7.1 Core Concepts'},
+  {id:'PL2',  lbl:'PL-2\nIdentify SP',                  full:'Identify Selling Price (SP) in a word problem',                                                       tp:'T7',  sub:'7.1 Core Concepts'},
+  {id:'PL3',  lbl:'PL-3\nProfit or\nloss?',             full:'Determine whether a transaction results in profit, loss, or no profit/loss by comparing CP and SP',   tp:'T7',  sub:'7.1 Core Concepts'},
+  {id:'PL4',  lbl:'PL-4\nProfit / loss\namount',        full:'Calculate profit or loss amount (Profit = SP − CP; Loss = CP − SP)',                                   tp:'T7',  sub:'7.1 Core Concepts'},
+  {id:'PL5',  lbl:'PL-5\nProfit / loss\n% on CP',       full:'Calculate profit or loss percentage on CP',                                                           tp:'T7',  sub:'7.2 Percentage Calculations'},
+  {id:'PL6',  lbl:'PL-6\nFind SP\nfrom %',              full:'Calculate SP given CP and a profit or loss percentage',                                                tp:'T7',  sub:'7.2 Percentage Calculations'},
+  {id:'PL7',  lbl:'PL-7\nFind CP\nfrom %',              full:'Calculate CP given SP and a profit or loss percentage',                                                tp:'T7',  sub:'7.2 Percentage Calculations'},
+  {id:'PL8',  lbl:'PL-8\nUnit price\nfrom bulk',        full:'Calculate CP or SP per unit from a bulk rate',                                                        tp:'T7',  sub:'7.3 Unit-Rate Problems'},
+  {id:'PL9',  lbl:'PL-9\nOverall %\n(unit-rate)',       full:'Calculate overall profit% or loss% when buying and selling are both expressed in unit-rate form',      tp:'T7',  sub:'7.3 Unit-Rate Problems'},
+  {id:'PL10', lbl:'PL-10\nTarget\nselling rate',        full:'Determine the required selling rate (items per taka) to achieve a target profit%',                     tp:'T7',  sub:'7.3 Unit-Rate Problems'},
+  {id:'PL11', lbl:'PL-11\nCP: two SP\nscenarios',       full:'Find CP when two different SP scenarios and their difference in value are given',                      tp:'T7',  sub:'7.4 Multi-Condition & Reverse'},
+  {id:'PL12', lbl:'PL-12\nCP from\nproportional parts', full:'Find CP when SP and total amount are both expressed as proportional parts',                            tp:'T7',  sub:'7.4 Multi-Condition & Reverse'},
+  {id:'PL13', lbl:'PL-13\nCP via chain\nof profit %',   full:'Find original CP through a chain of successive profit percentages (e.g., wholesaler → retailer)',     tp:'T7',  sub:'7.4 Multi-Condition & Reverse'},
+  {id:'PL14', lbl:'PL-14\nVAT\nproblems',               full:'Solve VAT problems: find original CP given SP inclusive of VAT, or calculate VAT payable given SP and VAT rate', tp:'T7', sub:'7.4 Multi-Condition & Reverse'},
+  {id:'PL15', lbl:'PL-15\nTwo buy rates\nuniform sell',  full:'Solve problems where items are bought at two different rates and sold at a uniform rate',              tp:'T7',  sub:'7.5 Advanced Composite'},
+  {id:'PL16', lbl:'PL-16\nCP with\nprincipal & time',   full:'Find CP and profit% when profit, principal fraction, and time are given together',                     tp:'T7',  sub:'7.5 Advanced Composite'},
+  {id:'PL17', lbl:'PL-17\nMulti-part\ncomposite',       full:'Solve multi-part problems combining percentage, profit/loss, and algebraic equation-setting',          tp:'T7',  sub:'7.5 Advanced Composite'},
+];
+
+// ─────────────────────────────────────────────
+// EDGE DATA
+// ─────────────────────────────────────────────
+const ED = [
+  // T1
+  ['PRE3','PRE5'],['PRE4','PRE5'],['PRE5','PRE6'],
+  ['PRE4','LG2'],['LG2','LG4'],['LG2','LG5'],['LG3','LG5'],['LG5','LG9'],
+  ['PRE3','LG1'],['PRE4','LG3'],['LG5','LG8'],['LG3','LG8'],
+  // T2
+  ['LG3','LG7'],['LG7','LG10'],['LG8','LG11'],['LG7','LG11'],
+  ['PRE4','LG12'],['LG2','LG12'],
+  ['LG10','LG16'],['LG11','LG16'],['LG12','LG16'],
+  ['LG16','LG18'],
+  // T3
+  ['LG1','LG6'],['LG6','LG13'],['LG8','LG14'],['LG12','LG15'],
+  ['LG13','LG17'],['LG14','LG17'],['LG15','LG17'],
+  ['LG17','LG19'],
+  ['LG16','LG20'],['LG17','LG20'],['LG20','LG22'],
+  ['LG16','LG21'],['LG17','LG21'],['PRE5','LG21'],
+  ['LG21','LG23'],['PRE6','LG23'],
+  // T4
+  ['PRE4','PC1'],
+  ['PC1','PC2'],['PRE5','PC2'],
+  ['PC1','PC3'],
+  ['PC1','PC4'],['PRE5','PC4'],
+  ['PC1','PC5'],
+  ['PC2','PC6'],['PC3','PC6'],['PC4','PC6'],['PC5','PC6'],
+  ['PC1','PCA1'],['PRE3','PCA1'],
+  ['PC1','PCA2'],['PRE4','PCA2'],
+  ['PCA1','PCA3'],
+  ['PCA2','PCA4'],['PCA2','PCA5'],
+  ['PCA4','PCA6'],['PCA5','PCA6'],
+  // T5 SI
+  ['PRE1','SI1'],['PC1','SI2'],['PRE1','SI3'],
+  ['SI1','SI4'],['SI2','SI4'],['SI3','SI4'],
+  ['SI4','SI5'],['PRE3','SI5'],
+  ['SI5','SI6'],['PRE2','SI6'],
+  ['SI5','SI7'],['PRE8','SI7'],
+  ['SI5','SI8'],['PRE8','SI8'],
+  ['SI5','SI9'],['PRE8','SI9'],
+  ['SI6','SI10'],['SI7','SI10'],['SI8','SI10'],['SI9','SI10'],
+  ['SI5','SI11'],['PRE5','SI11'],
+  ['SI5','SI12'],['PRE5','SI12'],
+  ['SI7','SI13'],
+  ['SI5','SI14'],
+  // T5 CI
+  ['SI6','CI1'],
+  ['CI1','CI2'],['PCA1','CI2'],
+  ['CI1','CI3'],
+  ['CI3','CI4'],['PRE3','CI4'],
+  ['CI4','CI5'],
+  ['CI1','CI6'],
+  ['CI6','CI7'],['CI6','CI8'],
+  ['CI5','CI9'],['CI7','CI9'],['CI8','CI9'],
+  ['CI5','CI10'],['PRE8','CI10'],
+  ['CI5','CI11'],['PRE8','CI11'],
+  ['CI5','CI12'],
+  ['SI5','CI13'],['CI5','CI13'],
+  ['CI13','CI14'],['CI14','CI15'],
+  ['CI9','CI16'],
+  ['CI9','CI17'],['CI14','CI17'],
+  // T6 Ratio
+  ['PRE4','RF1'],
+  ['RF1','RF2'],
+  ['RF1','RF3'],['PRE5','RF3'],
+  ['PRE1','RF4'],
+  ['RF1','RF5'],['PRE3','RF5'],
+  ['RF1','RF6'],['LG11','RF6'],
+  ['RF3','RF7'],
+  ['RF7','RF8'],
+  ['RF2','RF9'],
+  ['RF1','RF10'],['PRE3','RF10'],
+  ['RF6','RF11'],['PRE3','RF11'],
+  // T6 Proportion
+  ['RF1','PF1'],
+  ['PF1','PF2'],['RF2','PF2'],
+  ['PF2','PF3'],['PRE3','PF3'],
+  ['PF3','PF4'],['PF3','PF5'],
+  ['PF1','PF6'],['RF3','PF6'],
+  ['PF6','PF7'],
+  // T6 Types of Proportion
+  ['PF1','TP1'],
+  ['TP1','TP2'],['RF7','TP2'],
+  ['TP2','TP3'],
+  ['PF1','TP4'],
+  ['TP4','TP5'],['RF7','TP5'],
+  ['TP5','TP6'],
+  // T6 Algebraic
+  ['PF3','AT1'],['PF3','AT2'],['PF3','AT3'],['PF3','AT4'],
+  ['AT3','AT5'],['AT4','AT5'],
+  // T7
+  ['PRE1','PL1'],['PRE1','PL2'],
+  ['PL1','PL3'],['PL2','PL3'],
+  ['PL3','PL4'],['PRE2','PL4'],
+  ['PL4','PL5'],['PCA2','PL5'],
+  ['PL5','PL6'],['PCA1','PL6'],
+  ['PL5','PL7'],['PCA1','PL7'],['PRE8','PL7'],
+  ['PL1','PL8'],['PL2','PL8'],['PRE4','PL8'],
+  ['PL8','PL9'],['PL5','PL9'],
+  ['PL9','PL10'],
+  ['PL7','PL11'],['PRE8','PL11'],
+  ['PL7','PL12'],
+  ['PL7','PL13'],['PL5','PL13'],
+  ['PL5','PL14'],['PC6','PL14'],
+  ['PL9','PL15'],
+  ['PL7','PL16'],['SI5','PL16'],
+  ['PL15','PL17'],['PL16','PL17'],['PL11','PL17'],
+  // ── NEW: PRE8 (algebraic manipulation) missing connections ──
+  ['PRE8','PF5'],   // find missing 4th proportional — needs algebraic rearrangement
+  ['PRE8','PF7'],   // mean & 3rd proportional — involves algebraic steps
+  ['PRE8','SI13'],  // find P for target SI — isolating a variable
+  ['PRE8','PCA3'],  // find original value from % — reverse percentage requires algebra
+  ['PRE8','LG22'],  // find unknown via HCF×LCM product relationship — algebraic solve
+  ['PRE8','AT1'],   // Invertendo — algebraic proof/application
+  ['PRE8','AT2'],   // Alternendo — algebraic proof/application
+  ['PRE8','AT3'],   // Componendo — algebraic proof/application
+  ['PRE8','AT4'],   // Dividendo — algebraic proof/application
+  ['PRE8','TP3'],   // solve direct proportion problems — needs to isolate variable
+  ['PRE8','TP6'],   // solve inverse proportion problems — needs to isolate variable
+  ['PRE8','PL16'],  // find CP/profit% with principal & time — algebraic rearrangement
+  // ── NEW: PRE9 (systems of equations) connections ──
+  ['PRE9','PL11'],  // find CP from two SP scenarios — sets up two equations, two unknowns
+  ['PRE9','PL17'],  // multi-part composite P&L + algebra — can require simultaneous equations
+];
+
+// ─────────────────────────────────────────────
+// BUILD LEGEND
+// ─────────────────────────────────────────────
+const nodeMap = {};
+ND.forEach(n => { nodeMap[n.id] = n; });
+
+const leg = document.getElementById('legend');
+Object.entries(T).forEach(([k, v]) => {
+  const d = document.createElement('div');
+  d.className = 'leg-item';
+  d.id = 'leg-' + k;
+  d.dataset.k = k;
+  d.innerHTML = `<span class="leg-dot" style="background:${v.bg};border-color:${v.bd}"></span>
+    <span class="leg-text">${v.label}</span>
+    <span class="leg-n" id="leg-n-${k}">…</span>`;
+  d.onclick = () => toggleTopic(k, d);
+  leg.appendChild(d);
+});
+
+// ─────────────────────────────────────────────
+// TOPIC NODE DEFINITIONS
+// ─────────────────────────────────────────────
+// For each topic, find the root skill nodes (those with no incoming edges within that topic,
+// or incoming edges only from other topics). Topic nodes connect to the first skills in their group.
+const TOPIC_NODES = Object.entries(T).map(([k, v]) => ({
+  id: 'TOPIC_' + k,
+  label: v.label,
+  tp: k,
+  isTopic: true,
+  full: v.label + ' — topic overview node',
+  sub: 'Topic',
+}));
+
+// ─────────────────────────────────────────────
+// CROSS-TOPIC MEMBERSHIP
+// Skills that are closely depended on by a second topic are
+// explicitly listed here so topic nodes connect to them too.
+// Rationale for each entry is in the comment.
+// ─────────────────────────────────────────────
+const CROSS_TOPIC = {
+  // LG8 (Prime factorization) is the backbone of BOTH HCF-by-prime-factors (T2)
+  // AND LCM-by-prime-factorization (T3). It directly unlocks LG11 and LG14.
+  'LG8':  ['T2', 'T3'],
+
+  // LG12 (Euclidean division for HCF) is T2, but it also unlocks LG15
+  // (LCM ladder method) in T3 — the ladder IS the Euclidean method repurposed.
+  'LG12': ['T2', 'T3'],
+
+  // LG16 (HCF of 3+ numbers) is T2, but it feeds LG20 (Product = HCF×LCM)
+  // and LG21 (HCF & LCM of fractions) which are T3 skills.
+  'LG16': ['T2', 'T3'],
+
+  // LG20 (Product = HCF × LCM) is placed in T3 but it equally
+  // represents the relationship between HCF (T2) and LCM (T3).
+  'LG20': ['T2', 'T3'],
+
+  // LG21 (HCF & LCM of fractions) straddles both topics —
+  // requires HCF of numerators (T2) and LCM of denominators (T3).
+  'LG21': ['T2', 'T3'],
+
+  // LG11 (HCF by prime factors) is T2, but RF6 (Simplify ratio using HCF) in T6
+  // directly calls on it. HCF is a working tool inside Ratio & Proportions.
+  'LG11': ['T2', 'T6'],
+
+  // PC1 (Define percentage) is T4, but is a direct prerequisite of SI2
+  // (Identify rate R) in T5 — the rate IS a percentage.
+  'PC1':  ['T4', 'T5'],
+
+  // PCA1 (Calculate x% of qty) is T4, but feeds CI2 (Manual CI year-by-year,
+  // T5) and PL6/PL7 (Find SP/CP from %, T7) directly.
+  'PCA1': ['T4', 'T5', 'T7'],
+
+  // PCA2 (Qty as % of another) is T4, but directly feeds PL5
+  // (Profit/loss % on CP) in T7 — that formula IS PCA2 applied to trade.
+  'PCA2': ['T4', 'T7'],
+
+  // PCA3 (Find original value from %) is T4, but the same reverse-percentage
+  // skill underlies PL7 (Find CP from %) in T7.
+  'PCA3': ['T4', 'T7'],
+
+  // PC6 (Convert all forms) is T4 but is a direct prerequisite of PL14
+  // (VAT problems) in T7, where fluent conversion is essential.
+  'PC6':  ['T4', 'T7'],
+
+  // SI5 (Compute SI) is T5, but directly feeds PL16
+  // (CP with principal & time, T7) — that problem type fuses SI and P&L.
+  'SI5':  ['T5', 'T7'],
+
+  // PL5 (Profit/loss % on CP) is T7, but is also a direct application of
+  // percentage change (T4 — PCA4/PCA5). It belongs equally to both.
+  'PL5':  ['T4', 'T7'],
+
+  // PL6 (Find SP from %) and PL7 (Find CP from %) are T7 but are
+  // direct applications of PCA1 (T4) — calculate x% of a quantity.
+  'PL6':  ['T4', 'T7'],
+  'PL7':  ['T4', 'T7'],
+};
+
+// Build a map: skillId → Set of all topic keys it belongs to
+const skillTopics = {};
+ND.forEach(n => {
+  skillTopics[n.id] = new Set([n.tp]);
+});
+Object.entries(CROSS_TOPIC).forEach(([skillId, topics]) => {
+  topics.forEach(tp => {
+    if (!skillTopics[skillId]) skillTopics[skillId] = new Set();
+    skillTopics[skillId].add(tp);
+  });
+});
+
+// Build topic → all-skill edges (primary + cross-topic)
+const TOPIC_EDGES = [];
+Object.keys(T).forEach(k => {
+  // All skills whose topic-set includes k
+  const allSkills = ND.filter(n => skillTopics[n.id]?.has(k)).map(n => n.id);
+  allSkills.forEach(skillId => {
+    TOPIC_EDGES.push(['TOPIC_' + k, skillId]);
+  });
+});
+
+// Update legend counts to reflect cross-topic membership
+Object.keys(T).forEach(k => {
+  const cnt = ND.filter(n => skillTopics[n.id]?.has(k)).length;
+  const el = document.getElementById('leg-n-' + k);
+  if (el) el.textContent = cnt;
+});
+
+// ─────────────────────────────────────────────
+// BUILD CYTOSCAPE ELEMENTS
+// ─────────────────────────────────────────────
+const els = [];
+
+// Add topic nodes
+TOPIC_NODES.forEach(n => {
+  els.push({ data:{ id:n.id, label:n.label, tp:n.tp, sub:n.sub, full:n.full, isTopic:true } });
+  nodeMap[n.id] = n;
+});
+
+ND.forEach(n => {
+  const extraTopics = [...(skillTopics[n.id] || [])].filter(t => t !== n.tp);
+  nodeMap[n.id] = { ...n, extraTopics }; // update nodeMap with extraTopics
+  els.push({ data:{ id:n.id, label:n.lbl, tp:n.tp, sub:n.sub, full:n.full, extraTopics } });
+});
+
+// Topic → skill edges
+TOPIC_EDGES.forEach(([s, t], i) => {
+  els.push({ data:{ id:'te'+i, source:s, target:t, isTopicEdge:true } });
+});
+
+ED.forEach(([s,t], i) => {
+  els.push({ data:{ id:'e'+i, source:s, target:t } });
+});
+
+// ─────────────────────────────────────────────
+// INIT CYTOSCAPE
+// ─────────────────────────────────────────────
+const cy = cytoscape({
+  container: document.getElementById('cy'),
+  elements: els,
+  style: [
+    {
+      selector: 'node',
+      style: {
+        'shape':'roundrectangle',
+        'width': 118,
+        'height': 50,
+        'label':'data(label)',
+        'text-valign':'center',
+        'text-halign':'center',
+        'font-size':'8.5px',
+        'font-family':'-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif',
+        'text-wrap':'wrap',
+        'text-max-width':'106px',
+        'border-width':1.5,
+        'background-color': n => T[n.data('tp')]?.bg || '#eee',
+        'border-color':     n => T[n.data('tp')]?.bd || '#999',
+        'color':            n => T[n.data('tp')]?.fg || '#333',
+        'font-weight':500,
+      }
+    },
+    {
+      selector: 'node[?isTopic]',
+      style: {
+        'shape': 'round-rectangle',
+        'width': 200,
+        'height': 42,
+        'label': 'data(label)',
+        'text-valign': 'center',
+        'text-halign': 'center',
+        'font-size': '11px',
+        'font-weight': 700,
+        'text-wrap': 'wrap',
+        'text-max-width': '186px',
+        'border-width': 2.5,
+        'background-color': n => T[n.data('tp')]?.bg || '#eee',
+        'border-color':     n => T[n.data('tp')]?.bd || '#999',
+        'color':            n => T[n.data('tp')]?.fg || '#333',
+        'border-style': 'solid',
+        'background-opacity': 0.95,
+        'text-letter-spacing': 0.3,
+      }
+    },
+    {
+      selector:'edge',
+      style:{
+        'width':1.4,
+        'line-color':'#7a8bbd',
+        'target-arrow-color':'#7a8bbd',
+        'target-arrow-shape':'triangle',
+        'curve-style':'bezier',
+        'arrow-scale':0.85,
+        'opacity':0.75,
+      }
+    },
+    {
+      selector: 'edge[?isTopicEdge]',
+      style: {
+        'width': 1.8,
+        'line-color': n => T[n.data('tp') || n.source()?.data('tp')]?.bd || '#7a8bbd',
+        'line-color': '#7a8bbd',
+        'target-arrow-color': '#7a8bbd',
+        'target-arrow-shape': 'triangle',
+        'curve-style': 'bezier',
+        'arrow-scale': 0.9,
+        'opacity': 0.55,
+        'line-style': 'dashed',
+        'line-dash-pattern': [6, 3],
+      }
+    },
+    { selector:'node.hl',   style:{ 'border-width':3, 'border-color':'#1c1c2e', 'z-index':10 } },
+    { selector:'node.sel',  style:{ 'border-width':3, 'border-color':'#e74c3c', 'z-index':20 } },
+    { selector:'node.dim',  style:{ 'opacity':0.18 } },
+    { selector:'edge.hl',   style:{ 'line-color':'#e74c3c','target-arrow-color':'#e74c3c','width':2.2,'opacity':1,'z-index':10 } },
+    { selector:'edge.dim',  style:{ 'opacity':0.04 } },
+  ],
+  layout:{
+    name:'dagre',
+    rankDir:'TB',
+    nodeSep:22,
+    rankSep:50,
+    edgeSep:8,
+    padding:40,
+    animate:false,
+  },
+  minZoom:0.04,
+  maxZoom:4,
+  wheelSensitivity:0.25,
+});
+
+// ─────────────────────────────────────────────
+// DARK PALETTE + THEME TOGGLE
+// ─────────────────────────────────────────────
+const TD = {
+  EXT:{ label:'External Prerequisites',        bg:'#25272e', bd:'#8a9299', fg:'#adb5bd' },
+  T1: { label:'1 · Real Numbers',              bg:'#152030', bd:'#5dade2', fg:'#aed6f1' },
+  T2: { label:'2 · HCF',                       bg:'#0f2318', bd:'#27ae60', fg:'#a9dfbf' },
+  T3: { label:'3 · LCM',                       bg:'#28180a', bd:'#e67e22', fg:'#f0b27a' },
+  T4: { label:'4 · Percentage',                bg:'#2a1010', bd:'#e74c3c', fg:'#f1948a' },
+  T5: { label:'5 · Simple & Compound Profit',  bg:'#1e1030', bd:'#9b59b6', fg:'#d2b4de' },
+  T6: { label:'6 · Ratio & Proportions',       bg:'#0a2220', bd:'#1abc9c', fg:'#a2d9ce' },
+  T7: { label:'7 · Profit & Loss',             bg:'#211a00', bd:'#f1c40f', fg:'#f9e79f' },
+};
+
+let isDark = false;
+
+function toggleDark() {
+  isDark = !isDark;
+  document.body.classList.toggle('dark', isDark);
+  document.getElementById('dark-btn').textContent = isDark ? '☀️' : '🌙';
+
+  const palette = isDark ? TD : T;
+  const edgeCol  = isDark ? '#6e82d4' : '#7a8bbd';
+  const hlCol    = isDark ? '#e0e0f0' : '#1c1c2e';
+
+  // Update node colours
+  cy.nodes().forEach(n => {
+    const p = palette[n.data('tp')] || {};
+    n.style({
+      'background-color': p.bg || '#222',
+      'border-color':     p.bd || '#666',
+      'color':            p.fg || '#ccc',
+    });
+  });
+
+  // Update edge colours
+  cy.edges().style({
+    'line-color': edgeCol,
+    'target-arrow-color': edgeCol,
+  });
+
+  // Update hl/sel styles
+  cy.style()
+    .selector('node.hl').style({ 'border-width':3, 'border-color': hlCol, 'z-index':10 })
+    .selector('edge.hl').style({ 'line-color': '#e74c3c',
+                                  'target-arrow-color': '#e74c3c',
+                                  'width':2.2, 'opacity':1, 'z-index':10 })
+    .update();
+
+  // Re-render legend dots
+  document.querySelectorAll('.leg-item').forEach(el => {
+    const k = el.dataset.k;
+    const p = palette[k];
+    if (!p) return;
+    el.querySelector('.leg-dot').style.background = p.bg;
+    el.querySelector('.leg-dot').style.borderColor = p.bd;
+  });
+}
+
+// ─────────────────────────────────────────────
+// PREFIX FULL-FORM MAP
+// ─────────────────────────────────────────────
+const PREFIX_FULL = {
+  'PRE':  'Prerequisite',
+  'LG':   'LCM and GCD (HCF)',
+  'PC':   'Percentage Concept',
+  'PCA':  'Percentage Calculation and Application',
+  'SI':   'Simple Interest (Simple Profit)',
+  'CI':   'Compound Interest (Compound Profit)',
+  'RF':   'Ratio Fundamentals',
+  'PF':   'Proportion Fundamentals',
+  'TP':   'Types of Proportion',
+  'AT':   'Algebraic Transformations of Proportion',
+  'PL':   'Profit and Loss',
+  'GS':   'Geometry (Similar Figures / Ratios)',
+  'TR':   'Trigonometric Ratios',
+};
+
+function getPrefixFull(id) {
+  // Extract alphabetic prefix (e.g. "PCA" from "PCA3", "PRE" from "PRE10")
+  const match = id.match(/^([A-Z]+)/);
+  if (!match) return null;
+  // Try longest match first (PCA before PC)
+  const raw = match[1];
+  for (let len = raw.length; len >= 1; len--) {
+    const key = raw.substring(0, len);
+    if (PREFIX_FULL[key]) return { prefix: key, full: PREFIX_FULL[key] };
+  }
+  return null;
+}
+
+// ─────────────────────────────────────────────
+// TOOLTIP
+// ─────────────────────────────────────────────
+const tip = document.getElementById('tip');
+cy.on('mouseover','node', e => {
+  const d = e.target.data();
+  if (d.isTopic) {
+    tip.innerHTML = `<strong>${d.label}</strong><span style="display:block;font-size:10px;color:#aac4ff;margin-top:3px;">Topic node — click for details</span>`;
+    tip.style.display = 'block';
+    moveTip(e.originalEvent);
+    return;
+  }
+  const pf = getPrefixFull(d.id);
+  const pfHtml = pf
+    ? `<span style="display:block;font-size:10px;color:#aac4ff;margin-bottom:5px;font-style:italic;">${pf.prefix} = ${pf.full}</span>`
+    : '';
+  const extras = (d.extraTopics || []).filter(t => T[t]);
+  const crossHtml = extras.length
+    ? `<span style="display:block;font-size:10px;color:#f0b070;margin-top:5px;">Also in: ${extras.map(t => T[t].label).join(', ')}</span>`
+    : '';
+  tip.innerHTML = `<strong>${d.id}</strong>${pfHtml}${d.full}${crossHtml}`;
+  tip.style.display = 'block';
+  moveTip(e.originalEvent);
+});
+cy.on('mousemove','node', e => moveTip(e.originalEvent));
+cy.on('mouseout','node',  () => { tip.style.display='none'; });
+function moveTip(ev){
+  tip.style.left=(ev.clientX+14)+'px';
+  tip.style.top=(ev.clientY+14)+'px';
+}
+
+// ─────────────────────────────────────────────
+// SELECTION
+// ─────────────────────────────────────────────
+cy.on('tap','node', e => selectNode(e.target));
+cy.on('tap', e => { if(e.target===cy){ clearSel(); closePanel(); } });
+
+function selectNode(n){
+  clearSel();
+  cy.nodes().addClass('dim');
+  cy.edges().addClass('dim');
+  const nb = n.neighborhood();
+  nb.nodes().removeClass('dim').addClass('hl');
+  nb.edges().removeClass('dim').addClass('hl');
+  n.removeClass('dim').addClass('sel');
+  showPanel(n);
+}
+
+function clearSel(){
+  cy.nodes().removeClass('dim hl sel');
+  cy.edges().removeClass('dim hl');
+}
+
+// ─────────────────────────────────────────────
+// DETAIL PANEL
+// ─────────────────────────────────────────────
+function showPanel(n){
+  const id = n.id();
+  const nd = nodeMap[id];
+  if (!nd) return;
+  const t  = T[nd.tp];
+
+  document.getElementById('det-id').textContent = nd.isTopic ? t.label : id;
+
+  const badge = document.getElementById('det-badge');
+  badge.textContent = nd.isTopic ? 'Topic' : t.label;
+  badge.style.background = t.bg;
+  badge.style.color = t.fg;
+  badge.style.borderColor = t.bd;
+
+  // Show extra topic badges for cross-topic skills
+  const existingExtras = document.getElementById('det-extra-topics');
+  if (existingExtras) existingExtras.remove();
+  if (!nd.isTopic) {
+    const extras = (nd.extraTopics || []).filter(tk => T[tk]);
+    if (extras.length > 0) {
+      const extraDiv = document.createElement('div');
+      extraDiv.id = 'det-extra-topics';
+      extraDiv.style.cssText = 'margin-bottom:8px;display:flex;flex-wrap:wrap;gap:4px;';
+      extras.forEach(tk => {
+        const tp = T[tk];
+        const span = document.createElement('span');
+        span.style.cssText = `font-size:10px;font-weight:600;padding:2px 7px;border-radius:10px;border:1px solid ${tp.bd};background:${tp.bg};color:${tp.fg}`;
+        span.textContent = 'Also: ' + tp.label;
+        extraDiv.appendChild(span);
+      });
+      badge.insertAdjacentElement('afterend', extraDiv);
+    }
+  }
+
+  document.getElementById('det-sub').textContent = nd.isTopic ? 'Topic overview' : nd.sub;
+
+  const sk = document.getElementById('det-skill');
+  sk.textContent = nd.isTopic ? t.label + ' — click a skill node below for details' : nd.full;
+  sk.style.borderLeftColor = t.bd;
+
+  // Prereqs
+  const preList = document.getElementById('det-pre');
+  preList.innerHTML = '';
+  const ins = n.incomers('edge');
+  if(ins.length === 0){
+    preList.innerHTML = '<li class="dep-empty">None — root skill</li>';
+  } else {
+    ins.forEach(e => {
+      const src = e.source();
+      const snd = nodeMap[src.id()];
+      if(!snd) return;
+      const li = document.createElement('li');
+      li.style.borderLeftColor = T[snd.tp]?.bd || '#ddd';
+      li.innerHTML = `<span class="dep-id">${src.id()}</span>${snd.full.substring(0,62)}${snd.full.length>62?'…':''}`;
+      li.onclick = () => selectNode(src);
+      preList.appendChild(li);
+    });
+  }
+
+  // Leads to
+  const outList = document.getElementById('det-out');
+  outList.innerHTML = '';
+  const outs = n.outgoers('edge');
+  if(outs.length === 0){
+    outList.innerHTML = '<li class="dep-empty">None — terminal skill</li>';
+  } else {
+    outs.forEach(e => {
+      const tgt = e.target();
+      const tnd = nodeMap[tgt.id()];
+      if(!tnd) return;
+      const li = document.createElement('li');
+      li.style.borderLeftColor = T[tnd.tp]?.bd || '#ddd';
+      li.innerHTML = `<span class="dep-id">${tgt.id()}</span>${tnd.full.substring(0,62)}${tnd.full.length>62?'…':''}`;
+      li.onclick = () => selectNode(tgt);
+      outList.appendChild(li);
+    });
+  }
+
+  document.getElementById('detail').style.display = 'block';
+}
+
+function closePanel(){
+  document.getElementById('detail').style.display = 'none';
+  clearSel();
+}
+
+// ─────────────────────────────────────────────
+// TOPIC FILTER
+// ─────────────────────────────────────────────
+const hidden = new Set();
+function toggleTopic(k, div){
+  if(hidden.has(k)){
+    hidden.delete(k);
+    div.classList.remove('off');
+    // Show topic node + all skill nodes for this topic
+    cy.nodes('[tp="'+k+'"]').style('display','element');
+    cy.edges().forEach(e => {
+      if(e.source().style('display')!=='none' && e.target().style('display')!=='none')
+        e.style('display','element');
+    });
+  } else {
+    hidden.add(k);
+    div.classList.add('off');
+    // Hide topic node + all skill nodes for this topic
+    cy.nodes('[tp="'+k+'"]').style('display','none');
+    cy.edges().filter(e =>
+      e.source().data('tp')===k || e.target().data('tp')===k
+    ).style('display','none');
+  }
+}
+
+// ─────────────────────────────────────────────
+// SEARCH
+// ─────────────────────────────────────────────
+document.getElementById('search').addEventListener('input', function(){
+  const q = this.value.trim().toLowerCase();
+  if(!q){ clearSel(); return; }
+  clearSel();
+  cy.nodes().addClass('dim');
+  cy.edges().addClass('dim');
+  cy.nodes().filter(n => {
+    const d = n.data();
+    return d.id.toLowerCase().includes(q)
+        || (d.full||'').toLowerCase().includes(q)
+        || (d.label||'').toLowerCase().includes(q);
+  }).forEach(n => {
+    n.removeClass('dim').addClass('hl');
+    n.neighborhood().edges().removeClass('dim').addClass('hl');
+  });
+});
+</script>
+</body>
+</html>

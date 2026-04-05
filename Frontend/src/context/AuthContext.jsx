@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 const AuthContext = createContext(null);
 const storageKey = 'atlasUser';
 const apiBase = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
-const buildApiUrl = (path) => {
+export const buildApiUrl = (path) => {
   const trimmedBase = apiBase.replace(/\/$/, '');
   const trimmedPath = path.replace(/^\//, '');
   return `${trimmedBase}/${trimmedPath}`;
