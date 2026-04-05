@@ -40,6 +40,24 @@ app.add_middleware(
 
 db = create_client(os.environ["SUPABASE_URL"], os.environ["SUPABASE_SERVICE_KEY"])
 
+
+def _extract_supabase_payload(response):
+    """
+    Normalize Supabase execute() responses across client versions.
+
+    Returns
+    -------
+    (data, error)
+    """
+    if response is None:
+        return None, None
+
+    if isinstance(response, dict):
+        return response.get("data"), response.get("error")
+
+    return getattr(response, "data", None), getattr(response, "error", None)
+
+
 class UserCreate(BaseModel):
     user_name: str
 
@@ -54,14 +72,16 @@ def get_user(user_name: str):
         .execute()
     )
 
-    if result.get("error"):
-        raise HTTPException(status_code=500, detail=result["error"])
+    data, error = _extract_supabase_payload(result)
 
-    if result.get("data") is None:
+    if error:
+        raise HTTPException(status_code=500, detail=str(error))
+
+    if data is None:
         raise HTTPException(status_code=404,
                             detail=f"No data for user '{user_name}'.")
 
-    row = result["data"]
+    row = data
     return {
         "user_id": row["user_id"],
         "user_name": row["user_name"]
@@ -79,13 +99,8 @@ def create_user(user: UserCreate):
             .execute()
         )
 
-        # Check for None (old client behavior)
-        if result is None:
-            raise HTTPException(status_code=500, detail="Supabase query returned None. Check your URL and service key.")
-
-        # Support new client: result is a dict with 'data' and 'error'
-        data = getattr(result, "data", None) or result.get("data", None)  # works with object or dict
-        error = getattr(result, "error", None) or result.get("error", None)
+        # maybe_single() can return None-style empty responses when user doesn't exist.
+        data, error = _extract_supabase_payload(result)
 
         if error:
             raise HTTPException(status_code=500, detail=str(error))
@@ -97,22 +112,38 @@ def create_user(user: UserCreate):
         insert_result = (
             db.table("users")
             .insert({"user_name": user.user_name})
-            .select("*")
-            .single()
             .execute()
         )
 
-        if insert_result is None:
-            raise HTTPException(status_code=500, detail="Supabase insert returned None.")
+        insert_data, insert_error = _extract_supabase_payload(insert_result)
 
-        insert_data = getattr(insert_result, "data", None) or insert_result.get("data", None)
-        insert_error = getattr(insert_result, "error", None) or insert_result.get("error", None)
-
-        if insert_error or insert_data is None:
+        if insert_error:
+            # Optional graceful conflict handling when DB has unique constraints.
+            if "duplicate" in str(insert_error).lower() or "unique" in str(insert_error).lower():
+                raise HTTPException(status_code=409, detail=f"User '{user.user_name}' already exists.")
             raise HTTPException(status_code=500, detail=f"Insert failed: {insert_error}")
 
-        row = insert_data
+        if insert_data is None:
+            # Some Supabase/PostgREST configurations return minimal response on insert.
+            # In that case, fetch the newly created user explicitly.
+            lookup_result = (
+                db.table("users")
+                .select("*")
+                .eq("user_name", user.user_name)
+                .maybe_single()
+                .execute()
+            )
+            insert_data, lookup_error = _extract_supabase_payload(lookup_result)
+            if lookup_error:
+                raise HTTPException(status_code=500, detail=f"Insert lookup failed: {lookup_error}")
+            if insert_data is None:
+                raise HTTPException(status_code=500, detail="Insert succeeded but no user row was returned.")
+
+        row = insert_data[0] if isinstance(insert_data, list) else insert_data
         return {"user_id": row["user_id"], "user_name": row["user_name"]}
+
+    except HTTPException:
+        raise
 
     except Exception as e:
         print("ERROR:", e)

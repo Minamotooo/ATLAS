@@ -2,3 +2,5 @@ prompt.md
 .env
 server-ref.py
 __pycache__
+.venv/
+*.py[cod]
