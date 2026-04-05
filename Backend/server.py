@@ -39,6 +39,9 @@ app.add_middleware(
 
 db = create_client(os.environ["SUPABASE_URL"], os.environ["SUPABASE_SERVICE_KEY"])
 
+class UserCreate(BaseModel):
+    user_name: str
+
 # ------------------------------------------------------------------ endpoint
 @app.get("/users/{user_name}/")
 def get_user(user_name: str):
@@ -57,6 +60,39 @@ def get_user(user_name: str):
 
     row = result.data
 
+    return {
+        "user_id": row["user_id"],
+        "user_name": row["user_name"]
+    }
+
+
+@app.post("/users/")
+def create_user(user: UserCreate):
+    result = (
+        db.table("users")
+        .select("*")
+        .eq("user_name", user.user_name)
+        .maybe_single()
+        .execute()
+    )
+
+    if result.data is not None:
+        raise HTTPException(status_code=409,
+                            detail=f"User '{user.user_name}' already exists.")
+
+    insert_result = (
+        db.table("users")
+        .insert({"user_name": user.user_name})
+        .select("*")
+        .single()
+        .execute()
+    )
+
+    if insert_result.data is None:
+        raise HTTPException(status_code=500,
+                            detail="Unable to create user.")
+
+    row = insert_result.data
     return {
         "user_id": row["user_id"],
         "user_name": row["user_name"]

@@ -1,17 +1,25 @@
-import { useState, useMemo } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import { coursesData } from '../data/courseData';
 import {
   Search, BookOpen, TrendingUp, Clock, ArrowRight,
-  BarChart3, Filter
+  BarChart3
 } from 'lucide-react';
-import Navbar from '../components/Navbar';
 
 export default function CoursesPage() {
   const { t, lang } = useLanguage();
+  const { user, loading, signOut } = useAuth();
+  const navigate = useNavigate();
   const [search, setSearch] = useState('');
   const [activeFilter, setActiveFilter] = useState('All');
+
+  useEffect(() => {
+    if (!loading && !user) {
+      navigate('/login');
+    }
+  }, [user, loading, navigate]);
 
   const courses = coursesData[lang] || coursesData.en;
 
@@ -59,12 +67,21 @@ export default function CoursesPage() {
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div>
               <h1 className="font-display text-2xl sm:text-3xl font-bold mb-1">
-                {t('courses.welcome')}, {t('courses.studentName')}! 👋
+                {t('courses.welcome')}, {user?.user_name || t('courses.studentName')}! 👋
               </h1>
               <p className="text-atlas-200 text-sm sm:text-base">
                 {t('courses.dashboardSubtitle')}
               </p>
             </div>
+            <button
+              onClick={() => {
+                signOut();
+                navigate('/login');
+              }}
+              className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-atlas-700 shadow-sm hover:bg-atlas-50 transition"
+            >
+              {t('nav.logout')}
+            </button>
           </div>
 
           {/* Stats */}
