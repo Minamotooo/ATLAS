@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import { useAuth, buildApiUrl } from "../context/AuthContext";
@@ -13,177 +13,47 @@ import {
   Table2,
 } from "lucide-react";
 
+// ─── Mastery colour helpers ──────────────────────────────────────────────────
+// Mirrors the HTML's per-topic palette: light bg + coloured border + dark fg.
+function masteryPalette(mastery) {
+  if (mastery >= 95) return { bg: "#D5F5E3", bd: "#1E8449", fg: "#145A32" }; // green
+  if (mastery >= 70) return { bg: "#D6EAF8", bd: "#2E86C1", fg: "#1A5276" }; // blue
+  if (mastery >= 40) return { bg: "#FDEBD0", bd: "#CA6F1E", fg: "#784212" }; // orange
+  return { bg: "#EAECEE", bd: "#717D7E", fg: "#424949" }; // gray
+}
+
 function masteryColor(mastery) {
-  if (mastery >= 95) {
-    return "bg-emerald-500";
-  }
-  if (mastery >= 70) {
-    return "bg-atlas-500";
-  }
-  if (mastery >= 40) {
-    return "bg-amber-500";
-  }
+  if (mastery >= 95) return "bg-emerald-500";
+  if (mastery >= 70) return "bg-atlas-500";
+  if (mastery >= 40) return "bg-amber-500";
   return "bg-gray-400";
 }
 
-function masteryColorHex(mastery) {
-  if (mastery >= 95) {
-    return "#10b981";
-  }
-  if (mastery >= 70) {
-    return "#2f7ff8";
-  }
-  if (mastery >= 40) {
-    return "#f59e0b";
-  }
-  return "#9ca3af";
+// ─── Cytoscape script loader ─────────────────────────────────────────────────
+function loadScript(src) {
+  return new Promise((resolve) => {
+    if (document.querySelector(`script[src="${src}"]`)) {
+      resolve();
+      return;
+    }
+    const s = document.createElement("script");
+    s.src = src;
+    s.onload = resolve;
+    document.head.appendChild(s);
+  });
 }
 
-function buildDependencyGraphLayout(nodes, edges) {
-  const nodeIds = nodes.map((node) => node.skill_id);
-  const outgoing = new Map(nodeIds.map((id) => [id, []]));
-  const incoming = new Map(nodeIds.map((id) => [id, []]));
-  const indegree = new Map(nodeIds.map((id) => [id, 0]));
-  const level = new Map(nodeIds.map((id) => [id, 0]));
+// ─── Legend tiers ─────────────────────────────────────────────────────────────
+const MASTERY_TIERS = [
+  { label: "Mastered (95%+)", ...masteryPalette(95) },
+  { label: "Proficient (70–94%)", ...masteryPalette(70) },
+  { label: "Developing (40–69%)", ...masteryPalette(40) },
+  { label: "Beginning (<40%)", ...masteryPalette(0) },
+];
 
-  for (const edge of edges) {
-    if (!outgoing.has(edge.source) || !indegree.has(edge.target)) {
-      continue;
-    }
-    outgoing.get(edge.source).push(edge.target);
-    incoming.get(edge.target).push(edge.source);
-    indegree.set(edge.target, (indegree.get(edge.target) || 0) + 1);
-  }
+const GRAPH_FONT_FAMILY = 'Inter, "Noto Sans Bengali", system-ui, sans-serif';
 
-  const queue = nodeIds.filter((id) => (indegree.get(id) || 0) === 0);
-  if (queue.length === 0 && nodeIds.length > 0) {
-    queue.push(nodeIds[0]);
-  }
-
-  const visited = new Set();
-  for (let i = 0; i < queue.length; i += 1) {
-    const current = queue[i];
-    visited.add(current);
-    const currentLevel = level.get(current) || 0;
-
-    for (const next of outgoing.get(current) || []) {
-      level.set(next, Math.max(level.get(next) || 0, currentLevel + 1));
-      indegree.set(next, (indegree.get(next) || 0) - 1);
-      if ((indegree.get(next) || 0) === 0) {
-        queue.push(next);
-      }
-    }
-  }
-
-  // Ensure nodes in cyclic/isolated subgraphs still appear.
-  for (const id of nodeIds) {
-    if (!visited.has(id)) {
-      level.set(id, level.get(id) || 0);
-    }
-  }
-
-  const maxLevel = Math.max(0, ...Array.from(level.values()));
-  const rows = Array.from({ length: maxLevel + 1 }, () => []);
-  const nodeById = new Map(nodes.map((node) => [node.skill_id, node]));
-
-  for (const id of nodeIds) {
-    rows[level.get(id) || 0].push(id);
-  }
-
-  // Root row: higher fan-out and mastery appear more central/early.
-  rows[0].sort((a, b) => {
-    const fanOutDiff =
-      (outgoing.get(b)?.length || 0) - (outgoing.get(a)?.length || 0);
-    if (fanOutDiff !== 0) {
-      return fanOutDiff;
-    }
-    const masteryDiff =
-      (nodeById.get(b)?.mastery || 0) - (nodeById.get(a)?.mastery || 0);
-    if (masteryDiff !== 0) {
-      return masteryDiff;
-    }
-    return a.localeCompare(b);
-  });
-
-  const orderById = new Map(rows[0].map((id, idx) => [id, idx]));
-
-  // Child rows: sort by average parent order to preserve tree-like branching.
-  for (let rowIndex = 1; rowIndex < rows.length; rowIndex += 1) {
-    const row = rows[rowIndex];
-    row.sort((a, b) => {
-      const parentA = incoming.get(a) || [];
-      const parentB = incoming.get(b) || [];
-
-      const scoreA = parentA.length
-        ? parentA.reduce((sum, pid) => sum + (orderById.get(pid) ?? 0), 0) /
-          parentA.length
-        : Number.MAX_SAFE_INTEGER;
-      const scoreB = parentB.length
-        ? parentB.reduce((sum, pid) => sum + (orderById.get(pid) ?? 0), 0) /
-          parentB.length
-        : Number.MAX_SAFE_INTEGER;
-
-      if (scoreA !== scoreB) {
-        return scoreA - scoreB;
-      }
-
-      const masteryDiff =
-        (nodeById.get(b)?.mastery || 0) - (nodeById.get(a)?.mastery || 0);
-      if (masteryDiff !== 0) {
-        return masteryDiff;
-      }
-      return a.localeCompare(b);
-    });
-
-    row.forEach((id, idx) => {
-      if (!orderById.has(id)) {
-        orderById.set(id, idx);
-      }
-    });
-  }
-
-  const nodeRadius = 44;
-  const nodeDiameter = nodeRadius * 2;
-  const siblingGap = 64;
-  const levelGap = 110;
-  const paddingX = 56;
-  const paddingY = 52;
-
-  const maxColumns = Math.max(1, ...rows.map((row) => row.length));
-  const contentWidth =
-    maxColumns * nodeDiameter + (maxColumns - 1) * siblingGap;
-
-  const contentHeight =
-    rows.length * nodeDiameter + Math.max(0, rows.length - 1) * levelGap;
-
-  const width = Math.max(980, paddingX * 2 + contentWidth);
-  const height = Math.max(500, paddingY * 2 + contentHeight);
-
-  const positions = new Map();
-
-  rows.forEach((row, rowIndex) => {
-    const y = paddingY + rowIndex * (nodeDiameter + levelGap);
-    const rowWidth =
-      row.length * nodeDiameter + Math.max(0, row.length - 1) * siblingGap;
-    const startX = paddingX + Math.max(0, (contentWidth - rowWidth) / 2);
-
-    row.forEach((id, columnIndex) => {
-      positions.set(id, {
-        x: startX + columnIndex * (nodeDiameter + siblingGap),
-        y,
-      });
-    });
-  });
-
-  return {
-    width,
-    height,
-    nodeRadius,
-    nodeDiameter,
-    positions,
-  };
-}
-
+// ─── Main component ───────────────────────────────────────────────────────────
 export default function SectionMasteryPage() {
   const { courseId, sectionId } = useParams();
   const { lang } = useLanguage();
@@ -197,84 +67,84 @@ export default function SectionMasteryPage() {
   const [viewMode, setViewMode] = useState("table");
   const [refreshing, setRefreshing] = useState(false);
 
+  // ── Cytoscape state ──────────────────────────────────────────────────────
+  const cyRef = useRef(null);
+  const cyInstance = useRef(null);
+  const cyDagreRegistered = useRef(false);
+  const [selectedNode, setSelectedNode] = useState(null); // { id, mastery, description, topics, prereqs, leadsTo }
+  const [searchQuery, setSearchQuery] = useState("");
+
   useEffect(() => {
-    if (!loading && !user) {
-      navigate("/login");
-    }
+    if (!loading && !user) navigate("/login");
   }, [loading, user, navigate]);
 
-  async function loadPageData(silent = false) {
-    if (!user) {
-      return;
-    }
+  const loadPageData = useCallback(
+    async (silent = false) => {
+      if (!user) return;
+      if (silent) {
+        setRefreshing(true);
+        setPageError("");
+      } else {
+        setPageLoading(true);
+        setPageError("");
+      }
 
-    if (silent) {
-      setRefreshing(true);
-      setPageError("");
-    } else {
-      setPageLoading(true);
-      setPageError("");
-    }
-
-    try {
-      const [catalogResponse, masteryResponse] = await Promise.all([
-        fetch(buildApiUrl("/catalog")),
-        fetch(
-          buildApiUrl(
-            `/users/${encodeURIComponent(user.user_id)}/sections/${encodeURIComponent(sectionId)}/mastery`,
+      try {
+        const [catalogResponse, masteryResponse] = await Promise.all([
+          fetch(buildApiUrl("/catalog")),
+          fetch(
+            buildApiUrl(
+              `/users/${encodeURIComponent(user.user_id)}/sections/${encodeURIComponent(sectionId)}/mastery`,
+            ),
           ),
-        ),
-      ]);
+        ]);
 
-      if (!catalogResponse.ok) {
-        throw new Error(`Catalog request failed (${catalogResponse.status})`);
-      }
-      if (!masteryResponse.ok) {
-        let detail = `Mastery request failed (${masteryResponse.status})`;
-        try {
-          const errorPayload = await masteryResponse.json();
-          if (
-            typeof errorPayload?.detail === "string" &&
-            errorPayload.detail.trim()
-          ) {
-            detail = errorPayload.detail;
+        if (!catalogResponse.ok)
+          throw new Error(`Catalog request failed (${catalogResponse.status})`);
+        if (!masteryResponse.ok) {
+          let detail = `Mastery request failed (${masteryResponse.status})`;
+          try {
+            const errorPayload = await masteryResponse.json();
+            if (
+              typeof errorPayload?.detail === "string" &&
+              errorPayload.detail.trim()
+            ) {
+              detail = errorPayload.detail;
+            }
+          } catch {
+            /* ignore */
           }
-        } catch {
-          // Ignore parse failures and keep HTTP status-based message.
+          throw new Error(detail);
         }
-        throw new Error(detail);
+
+        const catalogPayload = await catalogResponse.json();
+        const masteryData = await masteryResponse.json();
+        const courses = Array.isArray(catalogPayload?.courses)
+          ? catalogPayload.courses
+          : [];
+        const course = courses.find((item) => item.id === courseId) || null;
+        const section =
+          course?.sections?.find((item) => item.id === sectionId) || null;
+
+        setSectionMeta(section);
+        setMasteryPayload(masteryData);
+      } catch (error) {
+        setPageError(error.message || "Failed to load section mastery");
+        setMasteryPayload(null);
+      } finally {
+        setPageLoading(false);
+        setRefreshing(false);
       }
-
-      const catalogPayload = await catalogResponse.json();
-      const masteryData = await masteryResponse.json();
-
-      const courses = Array.isArray(catalogPayload?.courses)
-        ? catalogPayload.courses
-        : [];
-      const course = courses.find((item) => item.id === courseId) || null;
-      const section =
-        course?.sections?.find((item) => item.id === sectionId) || null;
-
-      setSectionMeta(section);
-      setMasteryPayload(masteryData);
-    } catch (error) {
-      setPageError(error.message || "Failed to load section mastery");
-      setMasteryPayload(null);
-    } finally {
-      setPageLoading(false);
-      setRefreshing(false);
-    }
-  }
+    },
+    [courseId, sectionId, user],
+  );
 
   useEffect(() => {
     loadPageData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [courseId, sectionId, user]);
+  }, [loadPageData]);
 
   const sectionTitle = useMemo(() => {
-    if (!sectionMeta) {
-      return sectionId;
-    }
+    if (!sectionMeta) return sectionId;
     return lang === "bn" && sectionMeta.title_bn
       ? sectionMeta.title_bn
       : sectionMeta.title;
@@ -297,13 +167,6 @@ export default function SectionMasteryPage() {
     return Array.isArray(nodes) ? nodes : [];
   }, [masteryPayload]);
 
-  const graphLayout = useMemo(() => {
-    if (mapNodes.length === 0) {
-      return null;
-    }
-    return buildDependencyGraphLayout(mapNodes, edgeRows);
-  }, [mapNodes, edgeRows]);
-
   const summary = useMemo(() => {
     const totalSkills = tableRows.length;
     const average =
@@ -313,14 +176,252 @@ export default function SectionMasteryPage() {
           )
         : 0;
     const mastered = tableRows.filter((row) => row.mastery >= 95).length;
-
-    return {
-      totalSkills,
-      average,
-      mastered,
-    };
+    return { totalSkills, average, mastered };
   }, [tableRows]);
 
+  // ── Cytoscape initialisation ─────────────────────────────────────────────
+  useEffect(() => {
+    if (viewMode !== "map") {
+      if (cyInstance.current) {
+        cyInstance.current.destroy();
+        cyInstance.current = null;
+      }
+      return;
+    }
+    if (mapNodes.length === 0) return;
+
+    const initCy = () => {
+      if (!cyRef.current) return;
+      if (cyInstance.current) {
+        cyInstance.current.destroy();
+        cyInstance.current = null;
+      }
+
+      // Register dagre layout extension once
+      if (
+        !cyDagreRegistered.current &&
+        window.cytoscape &&
+        window.cytoscapeDagre
+      ) {
+        try {
+          window.cytoscape.use(window.cytoscapeDagre);
+        } catch {
+          // ignore duplicate registration attempts
+        }
+        cyDagreRegistered.current = true;
+      }
+
+      const elements = [
+        ...mapNodes.map((node) => {
+          const m = Math.round(node.mastery || 0);
+          const pal = masteryPalette(m);
+          return {
+            data: {
+              id: node.skill_id,
+              mastery: m,
+              description: node.skill_description || "",
+              topics: node.topics || [],
+              label: `${node.skill_id}\n${m}%`,
+              bg: pal.bg,
+              bd: pal.bd,
+              fg: pal.fg,
+            },
+          };
+        }),
+        ...edgeRows.map((edge, i) => ({
+          data: { id: `e${i}`, source: edge.source, target: edge.target },
+        })),
+      ];
+
+      const cy = window.cytoscape({
+        container: cyRef.current,
+        elements,
+        layout: {
+          name: "dagre",
+          rankDir: "TB",
+          nodeSep: 22,
+          rankSep: 50,
+          edgeSep: 8,
+          padding: 40,
+          animate: false,
+        },
+        minZoom: 0.05,
+        maxZoom: 4,
+        wheelSensitivity: 0.25,
+        style: [
+          {
+            selector: "node",
+            style: {
+              shape: "roundrectangle",
+              width: 118,
+              height: 50,
+              label: "data(label)",
+              "text-valign": "center",
+              "text-halign": "center",
+              "font-size": "8.5px",
+              "font-family": GRAPH_FONT_FAMILY,
+              "text-wrap": "wrap",
+              "text-max-width": "106px",
+              "border-width": 1.5,
+              "font-weight": 500,
+              "background-color": (n) => n.data("bg"),
+              "border-color": (n) => n.data("bd"),
+              color: (n) => n.data("fg"),
+            },
+          },
+          {
+            selector: "edge",
+            style: {
+              width: 1.4,
+              "line-color": "#7a8bbd",
+              "target-arrow-color": "#7a8bbd",
+              "target-arrow-shape": "triangle",
+              "curve-style": "bezier",
+              "arrow-scale": 0.85,
+              opacity: 0.75,
+            },
+          },
+          // Selection / highlight / dim — exact match to HTML
+          {
+            selector: "node.hl",
+            style: {
+              "border-width": 3,
+              "border-color": "#1c1c2e",
+              "z-index": 10,
+            },
+          },
+          {
+            selector: "node.sel",
+            style: {
+              "border-width": 3,
+              "border-color": "#e74c3c",
+              "z-index": 20,
+            },
+          },
+          { selector: "node.dim", style: { opacity: 0.18 } },
+          {
+            selector: "edge.hl",
+            style: {
+              "line-color": "#e74c3c",
+              "target-arrow-color": "#e74c3c",
+              width: 2.2,
+              opacity: 1,
+              "z-index": 10,
+            },
+          },
+          { selector: "edge.dim", style: { opacity: 0.04 } },
+        ],
+      });
+
+      function clearSel() {
+        cy.nodes().removeClass("dim hl sel");
+        cy.edges().removeClass("dim hl");
+      }
+
+      cy.on("tap", "node", (e) => {
+        const n = e.target;
+        clearSel();
+        cy.nodes().addClass("dim");
+        cy.edges().addClass("dim");
+        n.neighborhood().nodes().removeClass("dim").addClass("hl");
+        n.neighborhood().edges().removeClass("dim").addClass("hl");
+        n.removeClass("dim").addClass("sel");
+
+        const d = n.data();
+        setSelectedNode({
+          id: d.id,
+          mastery: d.mastery,
+          description: d.description,
+          topics: d.topics,
+          prereqs: n.incomers("edge").map((edge) => ({
+            id: edge.source().id(),
+            mastery: edge.source().data("mastery"),
+            bg: edge.source().data("bd"),
+          })),
+          leadsTo: n.outgoers("edge").map((edge) => ({
+            id: edge.target().id(),
+            mastery: edge.target().data("mastery"),
+            bg: edge.target().data("bd"),
+          })),
+        });
+      });
+
+      cy.on("tap", (e) => {
+        if (e.target === cy) {
+          clearSel();
+          setSelectedNode(null);
+        }
+      });
+
+      cyInstance.current = cy;
+    };
+
+    loadScript(
+      "https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.26.0/cytoscape.min.js",
+    )
+      .then(() =>
+        loadScript(
+          "https://cdn.jsdelivr.net/npm/dagre@0.8.5/dist/dagre.min.js",
+        ),
+      )
+      .then(() =>
+        loadScript(
+          "https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js",
+        ),
+      )
+      .then(initCy);
+
+    return () => {
+      if (cyInstance.current) {
+        cyInstance.current.destroy();
+        cyInstance.current = null;
+      }
+    };
+  }, [viewMode, mapNodes, edgeRows]);
+
+  // ── Search handler (wired to topbar input) ───────────────────────────────
+  useEffect(() => {
+    const cy = cyInstance.current;
+    if (!cy) return;
+    cy.nodes().removeClass("dim hl sel");
+    cy.edges().removeClass("dim hl");
+    if (!searchQuery) return;
+    const q = searchQuery.toLowerCase();
+    cy.nodes().addClass("dim");
+    cy.edges().addClass("dim");
+    cy.nodes()
+      .filter((n) => {
+        const d = n.data();
+        return (
+          d.id.toLowerCase().includes(q) ||
+          (d.description || "").toLowerCase().includes(q)
+        );
+      })
+      .forEach((n) => {
+        n.removeClass("dim").addClass("hl");
+        n.neighborhood().edges().removeClass("dim").addClass("hl");
+      });
+  }, [searchQuery]);
+
+  // ── Helpers for detail-panel node navigation ─────────────────────────────
+  function jumpToNode(id) {
+    const cy = cyInstance.current;
+    if (!cy) return;
+    const n = cy.getElementById(id);
+    if (n && n.length) n.trigger("tap");
+  }
+
+  function clearSelection() {
+    const cy = cyInstance.current;
+    if (cy) {
+      cy.nodes().removeClass("dim hl sel");
+      cy.edges().removeClass("dim hl");
+    }
+    setSelectedNode(null);
+    setSearchQuery("");
+  }
+
+  // ── Loading / error screens ──────────────────────────────────────────────
   if (pageLoading) {
     return (
       <div className="min-h-screen bg-atlas-50/50 flex items-center justify-center">
@@ -347,15 +448,13 @@ export default function SectionMasteryPage() {
               onClick={() => loadPageData()}
               className="btn-primary"
             >
-              <RefreshCw size={16} />
-              Retry
+              <RefreshCw size={16} /> Retry
             </button>
             <Link
               to={`/courses/${courseId}/sections/${sectionId}`}
               className="btn-secondary"
             >
-              <ArrowLeft size={16} />
-              Back to Section
+              <ArrowLeft size={16} /> Back to Section
             </Link>
           </div>
         </div>
@@ -365,8 +464,10 @@ export default function SectionMasteryPage() {
 
   const isLocked = !!masteryPayload?.locked;
 
+  // ── Render ────────────────────────────────────────────────────────────────
   return (
     <div className="min-h-screen bg-atlas-50/50">
+      {/* Page header */}
       <div className="bg-gradient-to-r from-atlas-700 via-atlas-800 to-atlas-900 text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
           <Link
@@ -432,6 +533,7 @@ export default function SectionMasteryPage() {
           </div>
         ) : (
           <>
+            {/* Summary cards */}
             <div className="grid sm:grid-cols-3 gap-4">
               <div className="card p-4 border border-atlas-100">
                 <div className="text-xs text-gray-500 uppercase tracking-wide">
@@ -459,6 +561,7 @@ export default function SectionMasteryPage() {
               </div>
             </div>
 
+            {/* View toggle */}
             <div className="card p-3">
               <div className="flex flex-wrap gap-2">
                 <button
@@ -470,8 +573,7 @@ export default function SectionMasteryPage() {
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`}
                 >
-                  <Table2 size={15} />
-                  Mastery Table
+                  <Table2 size={15} /> Mastery Table
                 </button>
                 <button
                   type="button"
@@ -482,12 +584,12 @@ export default function SectionMasteryPage() {
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`}
                 >
-                  <GitBranch size={15} />
-                  Dependency Map
+                  <GitBranch size={15} /> Dependency Map
                 </button>
               </div>
             </div>
 
+            {/* ── TABLE VIEW ─────────────────────────────────────────────── */}
             {viewMode === "table" && (
               <div className="card overflow-hidden">
                 <div className="overflow-x-auto">
@@ -547,206 +649,460 @@ export default function SectionMasteryPage() {
               </div>
             )}
 
+            {/* ── MAP VIEW ───────────────────────────────────────────────── */}
             {viewMode === "map" && (
-              <div className="card p-4">
-                <h3 className="font-semibold text-gray-900 mb-1 flex items-center gap-2">
-                  <BarChart3 size={16} />
-                  Dependency Graph Preview
-                </h3>
-                <p className="text-xs text-gray-500 mb-3">
-                  {mapNodes.length} skills and {edgeRows.length} prerequisite
-                  relations.
-                </p>
+              <div className="card overflow-hidden">
+                {/* ── Atlas topbar (aligned with navbar theme) ── */}
+                <div
+                  style={{
+                    background: "#4338ca",
+                    color: "#ffffff",
+                    padding: "9px 16px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "12px",
+                    flexWrap: "wrap",
+                    boxShadow: "0 2px 8px rgba(49, 46, 129, .35)",
+                    fontFamily: GRAPH_FONT_FAMILY,
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: "13px",
+                      fontWeight: 600,
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    <BarChart3
+                      size={14}
+                      style={{
+                        display: "inline",
+                        marginRight: 6,
+                        verticalAlign: "text-bottom",
+                      }}
+                    />
+                    Dependency Graph
+                  </span>
+                  <span style={{ color: "#c7d2fe", fontSize: "18px" }}>|</span>
+                  <span
+                    style={{
+                      fontSize: "11px",
+                      color: "#e0e7ff",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {mapNodes.length} nodes · {edgeRows.length} edges
+                  </span>
 
-                {graphLayout ? (
-                  <div className="overflow-auto rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 via-indigo-50/40 to-white">
-                    <svg
-                      width={graphLayout.width}
-                      height={graphLayout.height}
-                      viewBox={`0 0 ${graphLayout.width} ${graphLayout.height}`}
-                      role="img"
-                      aria-label="Skill dependency graph"
-                      className="block"
+                  <input
+                    type="text"
+                    placeholder="Search ID or keyword…"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    style={{
+                      padding: "5px 10px",
+                      borderRadius: "5px",
+                      border: "1px solid rgba(224,231,255,0.45)",
+                      background: "rgba(255,255,255,0.14)",
+                      color: "#ffffff",
+                      fontSize: "11px",
+                      width: "190px",
+                      outline: "none",
+                      fontFamily: GRAPH_FONT_FAMILY,
+                    }}
+                  />
+
+                  {[
+                    {
+                      label: "⊡ Fit all",
+                      action: () => cyInstance.current?.fit(null, 40),
+                    },
+                    {
+                      label: "+ Zoom",
+                      action: () => {
+                        const cy = cyInstance.current;
+                        if (cy) cy.zoom(cy.zoom() * 1.35);
+                      },
+                    },
+                    {
+                      label: "− Zoom",
+                      action: () => {
+                        const cy = cyInstance.current;
+                        if (cy) cy.zoom(cy.zoom() * 0.75);
+                      },
+                    },
+                    { label: "✕ Clear", action: clearSelection },
+                  ].map(({ label, action }) => (
+                    <button
+                      key={label}
+                      type="button"
+                      onClick={action}
+                      style={{
+                        background: "rgba(255,255,255,0.16)",
+                        border: "1px solid rgba(224,231,255,0.4)",
+                        color: "#ffffff",
+                        padding: "4px 10px",
+                        borderRadius: "4px",
+                        cursor: "pointer",
+                        fontSize: "11px",
+                        whiteSpace: "nowrap",
+                        fontFamily: GRAPH_FONT_FAMILY,
+                      }}
                     >
-                      <defs>
-                        <linearGradient
-                          id="graph-background"
-                          x1="0"
-                          y1="0"
-                          x2="1"
-                          y2="1"
-                        >
-                          <stop offset="0%" stopColor="#f8fafc" />
-                          <stop offset="100%" stopColor="#eef2ff" />
-                        </linearGradient>
+                      {label}
+                    </button>
+                  ))}
+                </div>
 
-                        <pattern
-                          id="graph-dot-grid"
-                          width="24"
-                          height="24"
-                          patternUnits="userSpaceOnUse"
-                        >
-                          <circle
-                            cx="1.2"
-                            cy="1.2"
-                            r="1.2"
-                            fill="#cbd5e1"
-                            opacity="0.55"
-                          />
-                        </pattern>
-
-                        <filter
-                          id="node-glow"
-                          x="-50%"
-                          y="-50%"
-                          width="200%"
-                          height="200%"
-                        >
-                          <feDropShadow
-                            dx="0"
-                            dy="3"
-                            stdDeviation="4"
-                            floodColor="#0f172a"
-                            floodOpacity="0.28"
-                          />
-                        </filter>
-
-                        <marker
-                          id="dependency-arrow"
-                          markerWidth="10"
-                          markerHeight="10"
-                          refX="8"
-                          refY="5"
-                          orient="auto"
-                          markerUnits="strokeWidth"
-                        >
-                          <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b" />
-                        </marker>
-                      </defs>
-
-                      <rect
-                        width={graphLayout.width}
-                        height={graphLayout.height}
-                        fill="url(#graph-background)"
-                      />
-                      <rect
-                        width={graphLayout.width}
-                        height={graphLayout.height}
-                        fill="url(#graph-dot-grid)"
-                        opacity="0.35"
-                      />
-
-                      {edgeRows.map((edge, idx) => {
-                        const sourcePos = graphLayout.positions.get(
-                          edge.source,
-                        );
-                        const targetPos = graphLayout.positions.get(
-                          edge.target,
-                        );
-                        if (!sourcePos || !targetPos) {
-                          return null;
-                        }
-
-                        const sourceCenterX =
-                          sourcePos.x + graphLayout.nodeRadius;
-                        const sourceCenterY =
-                          sourcePos.y + graphLayout.nodeRadius;
-                        const targetCenterX =
-                          targetPos.x + graphLayout.nodeRadius;
-                        const targetCenterY =
-                          targetPos.y + graphLayout.nodeRadius;
-
-                        const startX = sourceCenterX;
-                        const startY = sourceCenterY + graphLayout.nodeRadius;
-                        const endX = targetCenterX;
-                        const endY = targetCenterY - graphLayout.nodeRadius;
-
-                        const branchDepth = Math.max(
-                          28,
-                          (endY - startY) * 0.44,
-                        );
-                        const control1X = startX;
-                        const control1Y = startY + branchDepth;
-                        const control2X = endX;
-                        const control2Y = endY - branchDepth;
-
-                        return (
-                          <path
-                            key={`graph-edge-${idx}-${edge.source}-${edge.target}`}
-                            d={`M ${startX} ${startY} C ${control1X} ${control1Y}, ${control2X} ${control2Y}, ${endX} ${endY}`}
-                            fill="none"
-                            stroke="#64748b"
-                            strokeOpacity="0.82"
-                            strokeWidth="1.8"
-                            markerEnd="url(#dependency-arrow)"
-                          />
-                        );
-                      })}
-
-                      {mapNodes.map((node) => {
-                        const pos = graphLayout.positions.get(node.skill_id);
-                        if (!pos) {
-                          return null;
-                        }
-
-                        const mastery = Math.round(node.mastery || 0);
-                        const fill = masteryColorHex(mastery);
-                        const centerX = pos.x + graphLayout.nodeRadius;
-                        const centerY = pos.y + graphLayout.nodeRadius;
-
-                        return (
-                          <g key={`graph-node-${node.skill_id}`}>
-                            <circle
-                              cx={centerX}
-                              cy={centerY}
-                              r={graphLayout.nodeRadius + 8}
-                              fill={fill}
-                              opacity="0.18"
-                            />
-                            <circle
-                              cx={centerX}
-                              cy={centerY}
-                              r={graphLayout.nodeRadius}
-                              fill={fill}
-                              stroke="#ffffff"
-                              strokeWidth="2.2"
-                              filter="url(#node-glow)"
-                            />
-                            <circle
-                              cx={centerX}
-                              cy={centerY}
-                              r={graphLayout.nodeRadius - 6}
-                              fill="#ffffff"
-                              opacity="0.08"
-                            />
-                            <text
-                              x={centerX}
-                              y={centerY - 5}
-                              textAnchor="middle"
-                              fontSize="13"
-                              fontWeight="700"
-                              fill="#ffffff"
-                            >
-                              {node.skill_id}
-                            </text>
-                            <text
-                              x={centerX}
-                              y={centerY + 14}
-                              textAnchor="middle"
-                              fontSize="11"
-                              fill="#f8fafc"
-                            >
-                              {mastery}%
-                            </text>
-                            <title>{`${node.skill_id} - ${mastery}% mastery`}</title>
-                          </g>
-                        );
-                      })}
-                    </svg>
+                {mapNodes.length === 0 ? (
+                  <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-5 text-sm text-gray-600 m-4">
+                    No dependency graph data available for this section.
                   </div>
                 ) : (
-                  <div className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-5 text-sm text-gray-600">
-                    No dependency graph data available for this section.
+                  /* ── Main 3-column area ── */
+                  <div
+                    style={{
+                      display: "flex",
+                      height: "600px",
+                      fontFamily: GRAPH_FONT_FAMILY,
+                    }}
+                  >
+                    {/* ── Left sidebar: legend ── */}
+                    <div
+                      style={{
+                        width: "200px",
+                        background: "#fff",
+                        borderRight: "1px solid #e0e4ea",
+                        overflowY: "auto",
+                        flexShrink: 0,
+                        display: "flex",
+                        flexDirection: "column",
+                      }}
+                    >
+                      <div
+                        style={{
+                          padding: "10px 12px 6px",
+                          fontSize: "11px",
+                          fontWeight: 700,
+                          color: "#555",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.5px",
+                          borderBottom: "1px solid #eee",
+                        }}
+                      >
+                        Mastery Levels
+                      </div>
+                      <div style={{ padding: "8px 10px", flex: 1 }}>
+                        {MASTERY_TIERS.map((tier) => (
+                          <div
+                            key={tier.label}
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "7px",
+                              padding: "5px 6px",
+                              borderRadius: "5px",
+                            }}
+                          >
+                            <div
+                              style={{
+                                width: "13px",
+                                height: "13px",
+                                borderRadius: "3px",
+                                background: tier.bg,
+                                flexShrink: 0,
+                                border: `1.5px solid ${tier.bd}`,
+                              }}
+                            />
+                            <span
+                              style={{
+                                fontSize: "11px",
+                                color: "#3a3a3a",
+                                lineHeight: "1.35",
+                              }}
+                            >
+                              {tier.label}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                      <div
+                        style={{
+                          fontSize: "10px",
+                          color: "#bbb",
+                          padding: "4px 10px 10px",
+                          lineHeight: "1.5",
+                        }}
+                      >
+                        Click a node to see its prerequisites and connections
+                      </div>
+                    </div>
+
+                    {/* ── Cytoscape canvas ── */}
+                    <div
+                      ref={cyRef}
+                      style={{ flex: 1, background: "#fafbfc", minWidth: 0 }}
+                    />
+
+                    {/* ── Right detail panel (mirrors HTML's #detail) ── */}
+                    {selectedNode && (
+                      <div
+                        style={{
+                          width: "260px",
+                          background: "#fff",
+                          borderLeft: "1px solid #e0e4ea",
+                          overflowY: "auto",
+                          flexShrink: 0,
+                          position: "relative",
+                        }}
+                      >
+                        {/* Close button */}
+                        <button
+                          type="button"
+                          onClick={clearSelection}
+                          style={{
+                            position: "absolute",
+                            top: "8px",
+                            right: "10px",
+                            background: "none",
+                            border: "none",
+                            fontSize: "18px",
+                            cursor: "pointer",
+                            color: "#bbb",
+                            lineHeight: 1,
+                          }}
+                        >
+                          ×
+                        </button>
+
+                        <div style={{ padding: "14px 14px 20px" }}>
+                          {/* Node ID */}
+                          <div
+                            style={{
+                              fontSize: "16px",
+                              fontWeight: 700,
+                              color: "#1c1c2e",
+                              marginBottom: "4px",
+                            }}
+                          >
+                            {selectedNode.id}
+                          </div>
+
+                          {/* Mastery badge */}
+                          <span
+                            style={{
+                              fontSize: "10px",
+                              fontWeight: 600,
+                              padding: "3px 9px",
+                              borderRadius: "12px",
+                              display: "inline-block",
+                              marginBottom: "10px",
+                              background: masteryPalette(selectedNode.mastery)
+                                .bg,
+                              color: masteryPalette(selectedNode.mastery).fg,
+                              border: `1px solid ${masteryPalette(selectedNode.mastery).bd}`,
+                            }}
+                          >
+                            {selectedNode.mastery}% mastery
+                          </span>
+
+                          {/* Description */}
+                          {selectedNode.description && (
+                            <div
+                              style={{
+                                fontSize: "12px",
+                                color: "#333",
+                                lineHeight: "1.65",
+                                marginBottom: "14px",
+                                padding: "8px 10px",
+                                background: "#f8f9fa",
+                                borderRadius: "6px",
+                                borderLeft: `3px solid ${masteryPalette(selectedNode.mastery).bd}`,
+                              }}
+                            >
+                              {selectedNode.description}
+                            </div>
+                          )}
+
+                          {/* Topics */}
+                          {selectedNode.topics?.length > 0 && (
+                            <div style={{ marginBottom: "12px" }}>
+                              <div
+                                style={{
+                                  fontSize: "10px",
+                                  fontWeight: 700,
+                                  color: "#999",
+                                  textTransform: "uppercase",
+                                  letterSpacing: "0.5px",
+                                  marginBottom: "5px",
+                                }}
+                              >
+                                Topics
+                              </div>
+                              <div
+                                style={{
+                                  display: "flex",
+                                  flexWrap: "wrap",
+                                  gap: "4px",
+                                }}
+                              >
+                                {selectedNode.topics.map((t) => (
+                                  <span
+                                    key={t}
+                                    style={{
+                                      fontSize: "10px",
+                                      padding: "2px 7px",
+                                      borderRadius: "10px",
+                                      background: "#eef2ff",
+                                      color: "#4338ca",
+                                      border: "1px solid #c7d2fe",
+                                    }}
+                                  >
+                                    {t}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Prerequisites */}
+                          <div
+                            style={{
+                              fontSize: "10px",
+                              fontWeight: 700,
+                              color: "#999",
+                              textTransform: "uppercase",
+                              letterSpacing: "0.5px",
+                              marginBottom: "5px",
+                            }}
+                          >
+                            Prerequisites — incoming
+                          </div>
+                          <ul
+                            style={{ listStyle: "none", marginBottom: "14px" }}
+                          >
+                            {selectedNode.prereqs.length === 0 ? (
+                              <li
+                                style={{
+                                  fontSize: "11px",
+                                  color: "#bbb",
+                                  padding: "5px 8px",
+                                  background: "#f8f9fb",
+                                  borderRadius: "4px",
+                                  borderLeft: "3px solid #eee",
+                                }}
+                              >
+                                None — root skill
+                              </li>
+                            ) : (
+                              selectedNode.prereqs.map((p) => (
+                                <li
+                                  key={p.id}
+                                  onClick={() => jumpToNode(p.id)}
+                                  style={{
+                                    fontSize: "11px",
+                                    color: "#444",
+                                    padding: "5px 8px",
+                                    background: "#f8f9fb",
+                                    borderRadius: "4px",
+                                    marginBottom: "3px",
+                                    cursor: "pointer",
+                                    borderLeft: `3px solid ${masteryPalette(p.mastery).bd}`,
+                                    lineHeight: "1.4",
+                                    transition: "background .12s",
+                                  }}
+                                  onMouseEnter={(e) =>
+                                    (e.currentTarget.style.background =
+                                      "#eef2ff")
+                                  }
+                                  onMouseLeave={(e) =>
+                                    (e.currentTarget.style.background =
+                                      "#f8f9fb")
+                                  }
+                                >
+                                  <span
+                                    style={{
+                                      fontWeight: 700,
+                                      marginRight: "4px",
+                                    }}
+                                  >
+                                    {p.id}
+                                  </span>
+                                  {p.mastery}%
+                                </li>
+                              ))
+                            )}
+                          </ul>
+
+                          {/* Leads to */}
+                          <div
+                            style={{
+                              fontSize: "10px",
+                              fontWeight: 700,
+                              color: "#999",
+                              textTransform: "uppercase",
+                              letterSpacing: "0.5px",
+                              marginBottom: "5px",
+                            }}
+                          >
+                            Leads to — outgoing
+                          </div>
+                          <ul style={{ listStyle: "none" }}>
+                            {selectedNode.leadsTo.length === 0 ? (
+                              <li
+                                style={{
+                                  fontSize: "11px",
+                                  color: "#bbb",
+                                  padding: "5px 8px",
+                                  background: "#f8f9fb",
+                                  borderRadius: "4px",
+                                  borderLeft: "3px solid #eee",
+                                }}
+                              >
+                                None — terminal skill
+                              </li>
+                            ) : (
+                              selectedNode.leadsTo.map((l) => (
+                                <li
+                                  key={l.id}
+                                  onClick={() => jumpToNode(l.id)}
+                                  style={{
+                                    fontSize: "11px",
+                                    color: "#444",
+                                    padding: "5px 8px",
+                                    background: "#f8f9fb",
+                                    borderRadius: "4px",
+                                    marginBottom: "3px",
+                                    cursor: "pointer",
+                                    borderLeft: `3px solid ${masteryPalette(l.mastery).bd}`,
+                                    lineHeight: "1.4",
+                                    transition: "background .12s",
+                                  }}
+                                  onMouseEnter={(e) =>
+                                    (e.currentTarget.style.background =
+                                      "#eef2ff")
+                                  }
+                                  onMouseLeave={(e) =>
+                                    (e.currentTarget.style.background =
+                                      "#f8f9fb")
+                                  }
+                                >
+                                  <span
+                                    style={{
+                                      fontWeight: 700,
+                                      marginRight: "4px",
+                                    }}
+                                  >
+                                    {l.id}
+                                  </span>
+                                  {l.mastery}%
+                                </li>
+                              ))
+                            )}
+                          </ul>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
