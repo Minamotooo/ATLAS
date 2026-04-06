@@ -1,14 +1,95 @@
-import { Link, useLocation } from 'react-router-dom';
-import { useLanguage } from '../context/LanguageContext';
-import { useAuth } from '../context/AuthContext';
-import { Menu, X, Globe } from 'lucide-react';
-import { useState } from 'react';
+import { Link, useLocation } from "react-router-dom";
+import { useLanguage } from "../context/LanguageContext";
+import { useAuth, buildApiUrl } from "../context/AuthContext";
+import { Menu, X, Globe, Lock } from "lucide-react";
+import { useEffect, useState } from "react";
 
-export default function Navbar({ variant = 'default' }) {
+export default function Navbar() {
   const { t, lang, toggleLang } = useLanguage();
   const { user, signOut } = useAuth();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [masteryLinkPath, setMasteryLinkPath] = useState("");
   const location = useLocation();
+  const isMasteryRoute = location.pathname.includes("/mastery");
+  const isCoursesRoute =
+    location.pathname.startsWith("/courses") && !isMasteryRoute;
+
+  useEffect(() => {
+    let ignore = false;
+
+    async function resolveMasteryShortcut() {
+      if (!user?.user_id) {
+        setMasteryLinkPath("");
+        return;
+      }
+
+      try {
+        const catalogResponse = await fetch(buildApiUrl("/catalog"));
+        if (!catalogResponse.ok) {
+          throw new Error(`Catalog request failed (${catalogResponse.status})`);
+        }
+
+        const catalogPayload = await catalogResponse.json();
+        const courses = Array.isArray(catalogPayload?.courses)
+          ? catalogPayload.courses
+          : [];
+        const enabledSections = courses.flatMap((course) =>
+          (Array.isArray(course?.sections) ? course.sections : [])
+            .filter((section) => section?.enabled)
+            .map((section) => ({ courseId: course.id, sectionId: section.id })),
+        );
+
+        if (enabledSections.length === 0) {
+          if (!ignore) {
+            setMasteryLinkPath("");
+          }
+          return;
+        }
+
+        const sectionStates = await Promise.all(
+          enabledSections.map(async ({ courseId, sectionId }) => {
+            try {
+              const response = await fetch(
+                buildApiUrl(
+                  `/users/${encodeURIComponent(user.user_id)}/sections/${encodeURIComponent(sectionId)}/state`,
+                ),
+              );
+              if (!response.ok) {
+                return { courseId, sectionId, unlocked: false };
+              }
+              const payload = await response.json();
+              return {
+                courseId,
+                sectionId,
+                unlocked: !payload?.mastery_locked,
+              };
+            } catch {
+              return { courseId, sectionId, unlocked: false };
+            }
+          }),
+        );
+
+        const firstUnlocked = sectionStates.find((entry) => entry.unlocked);
+        if (!ignore) {
+          setMasteryLinkPath(
+            firstUnlocked
+              ? `/courses/${firstUnlocked.courseId}/sections/${firstUnlocked.sectionId}/mastery`
+              : "",
+          );
+        }
+      } catch {
+        if (!ignore) {
+          setMasteryLinkPath("");
+        }
+      }
+    }
+
+    resolveMasteryShortcut();
+
+    return () => {
+      ignore = true;
+    };
+  }, [user?.user_id, location.pathname]);
 
   return (
     <nav className="sticky top-0 z-50 bg-atlas-700 shadow-lg">
@@ -27,23 +108,46 @@ export default function Navbar({ variant = 'default' }) {
             <Link
               to="/"
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                location.pathname === '/'
-                  ? 'text-white bg-white/15'
-                  : 'text-atlas-200 hover:text-white hover:bg-white/10'
+                location.pathname === "/"
+                  ? "text-white bg-white/15"
+                  : "text-atlas-200 hover:text-white hover:bg-white/10"
               }`}
             >
-              {t('nav.home')}
+              {t("nav.home")}
             </Link>
             <Link
               to="/courses"
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                location.pathname.startsWith('/courses')
-                  ? 'text-white bg-white/15'
-                  : 'text-atlas-200 hover:text-white hover:bg-white/10'
+                isCoursesRoute
+                  ? "text-white bg-white/15"
+                  : "text-atlas-200 hover:text-white hover:bg-white/10"
               }`}
             >
-              {t('nav.courses')}
+              {t("nav.courses")}
             </Link>
+            {user &&
+              (masteryLinkPath ? (
+                <Link
+                  to={masteryLinkPath}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    isMasteryRoute
+                      ? "text-white bg-white/15"
+                      : "text-atlas-200 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  {t("courses.mastery")}
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  disabled
+                  title="Complete diagnostic to unlock mastery"
+                  className="px-4 py-2 rounded-lg text-sm font-medium text-atlas-300 bg-white/5 cursor-not-allowed inline-flex items-center gap-1.5"
+                >
+                  <Lock size={14} />
+                  {t("courses.mastery")}
+                </button>
+              ))}
           </div>
 
           {/* Right Actions */}
@@ -52,10 +156,14 @@ export default function Navbar({ variant = 'default' }) {
             <button
               onClick={toggleLang}
               className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium text-atlas-200 hover:text-white hover:bg-white/10 transition-colors"
-              title={lang === 'en' ? 'বাংলায় পরিবর্তন করুন' : 'Switch to English'}
+              title={
+                lang === "en" ? "বাংলায় পরিবর্তন করুন" : "Switch to English"
+              }
             >
               <Globe size={16} />
-              <span className="hidden sm:inline">{lang === 'en' ? 'বাং' : 'EN'}</span>
+              <span className="hidden sm:inline">
+                {lang === "en" ? "বাং" : "EN"}
+              </span>
             </button>
 
             {/* Auth Buttons — desktop */}
@@ -63,13 +171,13 @@ export default function Navbar({ variant = 'default' }) {
               {user ? (
                 <>
                   <span className="px-4 py-2 rounded-lg text-sm font-medium text-white/90 bg-white/10">
-                    {t('nav.hello')}, {user.user_name}
+                    {t("nav.hello")}, {user.user_name}
                   </span>
                   <button
                     onClick={signOut}
                     className="px-4 py-2 text-sm font-semibold text-atlas-700 bg-white rounded-xl hover:bg-atlas-100 transition-all shadow-md hover:shadow-lg"
                   >
-                    {t('nav.logout')}
+                    {t("nav.logout")}
                   </button>
                 </>
               ) : (
@@ -78,13 +186,13 @@ export default function Navbar({ variant = 'default' }) {
                     to="/login"
                     className="px-4 py-2 text-sm font-medium text-atlas-200 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
                   >
-                    {t('nav.login')}
+                    {t("nav.login")}
                   </Link>
                   <Link
                     to="/signup"
                     className="px-4 py-2 text-sm font-semibold text-atlas-700 bg-white rounded-xl hover:bg-atlas-100 transition-all shadow-md hover:shadow-lg"
                   >
-                    {t('nav.signup')}
+                    {t("nav.signup")}
                   </Link>
                 </>
               )}
@@ -110,20 +218,37 @@ export default function Navbar({ variant = 'default' }) {
               onClick={() => setMobileOpen(false)}
               className="block px-4 py-3 rounded-xl text-sm font-medium text-atlas-200 hover:bg-white/10 hover:text-white transition-colors"
             >
-              {t('nav.home')}
+              {t("nav.home")}
             </Link>
             <Link
               to="/courses"
               onClick={() => setMobileOpen(false)}
               className="block px-4 py-3 rounded-xl text-sm font-medium text-atlas-200 hover:bg-white/10 hover:text-white transition-colors"
             >
-              {t('nav.courses')}
+              {t("nav.courses")}
             </Link>
+            {user &&
+              (masteryLinkPath ? (
+                <Link
+                  to={masteryLinkPath}
+                  onClick={() => setMobileOpen(false)}
+                  className="block px-4 py-3 rounded-xl text-sm font-medium text-atlas-200 hover:bg-white/10 hover:text-white transition-colors"
+                >
+                  {t("courses.mastery")}
+                </Link>
+              ) : (
+                <span
+                  title="Complete diagnostic to unlock mastery"
+                  className="block px-4 py-3 rounded-xl text-sm font-medium text-atlas-300 bg-white/5 cursor-not-allowed"
+                >
+                  {t("courses.mastery")} (Locked)
+                </span>
+              ))}
             <hr className="my-2 border-white/10" />
             {user ? (
               <>
                 <span className="block px-4 py-3 rounded-xl text-sm font-medium text-atlas-200 bg-white/10">
-                  {t('nav.hello')}, {user.user_name}
+                  {t("nav.hello")}, {user.user_name}
                 </span>
                 <button
                   onClick={() => {
@@ -132,7 +257,7 @@ export default function Navbar({ variant = 'default' }) {
                   }}
                   className="w-full text-left px-4 py-3 rounded-xl text-sm font-semibold text-atlas-700 bg-white"
                 >
-                  {t('nav.logout')}
+                  {t("nav.logout")}
                 </button>
               </>
             ) : (
@@ -142,14 +267,14 @@ export default function Navbar({ variant = 'default' }) {
                   onClick={() => setMobileOpen(false)}
                   className="block w-full text-left px-4 py-3 rounded-xl text-sm font-medium text-atlas-200 hover:bg-white/10 transition-colors"
                 >
-                  {t('nav.login')}
+                  {t("nav.login")}
                 </Link>
                 <Link
                   to="/signup"
                   onClick={() => setMobileOpen(false)}
                   className="block w-full px-4 py-3 text-sm font-semibold text-atlas-700 bg-white rounded-xl"
                 >
-                  {t('nav.signup')}
+                  {t("nav.signup")}
                 </Link>
               </>
             )}

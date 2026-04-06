@@ -53,7 +53,8 @@ SKILL_EDGES_PATH = TREE_DIR / "skill_edges.json"
 SKILL_DESCRIPTIONS_PATH = TREE_DIR / "skill_descriptions.json"
 PLATFORM_CATALOG_PATH = TREE_DIR / "platform_catalog.json"
 
-DIAGNOSTIC_QUESTION_COUNT = 30
+# DIAGNOSTIC_QUESTION_COUNT = 30
+DIAGNOSTIC_QUESTION_COUNT = 5  # Use smaller number for testing; set to 30 for real diagnostic flow.
 MASTERY_NOTIFY_THRESHOLD = 95.0
 TOPIC_PRACTICE_MASTERY_THRESHOLD = 95.0
 
