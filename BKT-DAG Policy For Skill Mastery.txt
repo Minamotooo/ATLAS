@@ -1,0 +1,195 @@
+﻿ATLAS BKT-DAG Policy (Current Implemented State)
+
+Version scope
+- This document reflects the current code behavior in Backend/server.py, Backend/diagnostic.py, and Backend/mastery_updater.py.
+- It includes section diagnostic policy, topic practice policy, spillover policy, retake/reset behavior, and runtime debug instrumentation.
+
+==================================================
+1) Core Knowledge Tracing Model
+==================================================
+
+Architecture
+- Bayesian Knowledge Tracing (BKT) integrated with a strict prerequisite DAG.
+- Conjunctive prerequisite readiness is enforced for transition gating.
+
+Mastery representation
+- mastery is persisted as percentage [0, 100].
+- p_learned is the probability form [0, 1] and is mapped as:
+   p_learned = mastery / 100.
+
+Bloom-conditioned BKT (implemented)
+- Guess/slip depend on Bloom level.
+- Default mapping:
+   REMEMBER   -> p_g=0.30, p_s=0.05
+   UNDERSTAND -> p_g=0.25, p_s=0.08
+   APPLY      -> p_g=0.18, p_s=0.12
+   ANALYZE    -> p_g=0.12, p_s=0.18
+   EVALUATE   -> p_g=0.08, p_s=0.22
+   CREATE     -> p_g=0.05, p_s=0.25
+
+Propagation policy
+- Correct answer on skill C triggers ancestor pull-up recursively:
+   P(parent) := max(P(parent), P(C)).
+- Incorrect answer on C does not push negative penalties to ancestors.
+
+Transition gating policy
+- For child skill S with prerequisites parents(S):
+   base transition if min(P(parent_i)) >= mastery_threshold,
+   else locked transition.
+- Defaults:
+   mastery_threshold = 0.95
+   base_transition (regular mode) = 0.10
+   base_transition (diagnose mode) = 0.20
+   locked_transition = 0.01
+
+==================================================
+2) Section Diagnostic Policy
+==================================================
+
+Gate and objective
+- Section diagnostic must be completed before mastery views are unlocked.
+- Target length is fixed at 30 questions.
+
+Session initialization
+- DiagnosticSession is created with stop_threshold=0.0 (no early stop by untested-fraction rule).
+- Depth-based priors are initialized internally by DiagnosticSession.
+
+Skill selection inside DiagnosticSession
+- Uses balanced-volume heuristic over untested skills:
+   score = (unknown_ancestors + unknown_descendants + 1) / (1 + abs(unknown_ancestors - unknown_descendants)).
+- Picks the max-scoring skill.
+
+Bloom and topic for the selected skill
+- Bloom level chosen as one level above current estimated level (ZPD-style), clamped to max Bloom.
+- Topic is sampled from the skill's topic list.
+
+Question row search policy (actual/default mode)
+- Env flag DIAGNOSTIC_RANDOM_SELECTION controls mode.
+- Default is false (actual policy mode).
+- Search tiers for each selected spec:
+
+   Tier 1
+   - Same skill + nearby Bloom labels + topic filter.
+
+   Tier 1 fallback
+   - Same skill + nearby Bloom labels without topic filter.
+
+   Tier 2
+   - Same topic + DAG-nearby skills by distance + nearby Bloom labels.
+   - Among unseen candidates, choose lowest-mastery skill candidate first.
+
+- If no question found for that spec, the skill is marked tested and the loop continues to the next spec.
+
+Nearby Bloom labels ordering
+- [0, +1, -1, +2, -2, +3, -3] around selected Bloom level.
+
+Answer update behavior
+- Uses MasteryUpdater with mode=DIAGNOSE.
+- /diagnostic/{session_id}/answer updates mastery and increments answered count.
+- /diagnostic/{session_id}/next performs the next-question search (one-by-one flow).
+
+Diagnostic random/profiling mode (non-default)
+- If DIAGNOSTIC_RANDOM_SELECTION=true:
+   - Selection relaxes progressively for sparse banks.
+   - May reuse tested skills and eventually seen questions.
+   - Absolute fallback may sample any question from DB.
+- Intended for latency testing, not strict policy operation.
+
+==================================================
+3) Topic Practice Policy (Post-Diagnostic)
+==================================================
+
+Entry condition
+- Topic practice can start only after section diagnostic is completed.
+
+Mastery threshold
+- Topic completion threshold is 95% mastery per skill.
+
+Start skill (ZPD policy)
+- For selected topic, choose the skill with highest mastery still below 95%.
+- If all topic skills are already >= 95%, topic practice returns completed immediately.
+
+Traversal policy
+- Build reduced DAG from skills belonging to the selected topic (within section scope).
+- Use global DAG topological order filtered to topic skills.
+- Rotate traversal so start skill is first.
+- Traverse cyclically from pointer, but skip:
+   - skills already >= 95%,
+   - skills marked exhausted (no viable question found).
+
+Question selection for a target practice skill
+- Compute ZPD Bloom for that skill (one level above current mastery level).
+- Try unseen question with nearby Bloom labels first.
+- Fallback: unseen question for that skill at any Bloom.
+- Final fallback for that skill: any question for that skill.
+
+Completion policy
+- Complete when all topic skills are >= 95%.
+- Also completes with explicit reason if unresolved skills remain but all are exhausted by question coverage.
+
+==================================================
+4) Prerequisite Spillover Policy (Implemented)
+==================================================
+
+Trigger rules
+- Spillover activates if either:
+
+   Rule A
+   - In last 5 topic attempts, there are >= 3 wrong attempts where the same missing prerequisite skill is indicated by selected wrong options.
+
+   Rule B
+   - Rolling topic accuracy over last 8 topic attempts is < 40%,
+   - and at least one candidate missing prerequisite has p_learned < 0.60.
+   - The weakest such prerequisite is selected.
+
+Spillover action
+- Inject 2 prerequisite-focused questions.
+- After injection finishes, return to topic traversal flow.
+
+Data source for missing prerequisite evidence
+- Reads option_missing_prerequisites from selected wrong option metadata.
+
+==================================================
+5) Reset/Retake Policy
+==================================================
+
+Section retake endpoint behavior
+- Resets user_skill rows for the section scope.
+- Clears in-memory diagnostic sessions for that user+section.
+- Clears in-memory topic-practice sessions for that user+section.
+- Clears section progress gate state.
+- User can restart diagnostic from question 1.
+
+==================================================
+6) Observability and Debug Policy
+==================================================
+
+Runtime debug toggle
+- NEXT_QUESTION_DEBUG_LOGS controls search instrumentation logs.
+- When true, backend prints [nextq-debug] lines with timing and tier outcomes.
+
+Instrumentation coverage
+- Question query latency per DB fetch.
+- Diagnostic tier misses/hits (Tier 1, Tier 1 fallback, Tier 2).
+- Diagnostic and topic next-question endpoint elapsed time.
+- Topic-practice state transitions including spillover path.
+
+==================================================
+7) Canonical Constants (Current)
+==================================================
+
+- Diagnostic question count: 30
+- Mastery notify threshold: 95%
+- Topic practice mastery threshold: 95%
+- Spillover Rule A window/count: last 5, threshold 3
+- Spillover Rule B accuracy window/threshold: last 8, threshold 40%
+- Spillover prerequisite mastery trigger: p_learned < 0.60
+- Spillover injection count: 2 questions
+
+==================================================
+8) Notes
+==================================================
+
+- Topic practice flow is backend-driven through /topic-practice/* endpoints.
+- Legacy frontend lesson practice page is separate and not the canonical policy engine.
+- If strict production behavior is required, keep DIAGNOSTIC_RANDOM_SELECTION=false.
