@@ -1,0 +1,14 @@
+# Local secrets
+Backend/env
+data-gen/credentials.json
+
+# Python virtual environments
+.venv/
+Backend/.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.env
+prompt.md
+server-ref.py
