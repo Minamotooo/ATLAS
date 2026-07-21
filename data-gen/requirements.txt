@@ -1,0 +1,10 @@
+# Naive RAG question generation (local)
+numpy>=1.26.0
+sentence-transformers>=3.0.0
+torch>=2.1.0
+requests>=2.31.0
+tqdm>=4.66.0
+
+# Optional: keep if you still run the old Gemini script
+# google-genai
+# google-auth
