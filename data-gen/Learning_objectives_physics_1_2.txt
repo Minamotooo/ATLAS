@@ -1,0 +1,333 @@
+﻿Here are the learning objectives of all of the chapters from HSC physics books : 
+chapter 1.1 (Physical world and measurement) : 
+1. Explain the nature of physical quantities.
+2. Measure physical quantities and express the results appropriately.
+3. Understand and explain the concepts of dimensions, formulas, principles, hypotheses, theories, and laws in physics.
+4. Analyze the relationship between physics and other branches of knowledge.
+5. Explain the cause-and-effect relationships among different topics, events, and processes in physics.
+6. Explain the significance of measurement accuracy and precision.
+7. Relate basic and derived physical quantities (units).
+8. Explain the classification and importance of observations and measurements.
+9. Use measuring instruments correctly.
+10. Apply proper techniques to minimize errors in measurements.
+Practical Skills:
+* Measure the radius of curvature of a spherical surface using a spherometer.
+* Determine the mass of an object using the oscillation method with a spring.
+
+
+Chapter 1.2 (vector) :
+1. Explain the properties of vectors.
+2. Represent various physical quantities in physics as vectors.
+3. Perform addition of vectors.
+4. Explain the graphical methods of vector addition.
+5. Analyze vector addition and subtraction using components.
+6. Resolve a vector into rectangular (perpendicular) components.
+7. Use the scalar and vector (dot and cross) products of two vectors.
+8. Explain the importance and applications of vector resolution in physics.
+9. Explain the multiplication of vectors.
+10. Use vector operators in solving problems.
+
+
+
+
+Chapter 1.3 (Dynamics) : 
+1. Explain the concept of a frame of reference.
+2. Explain the basic concepts of translational and rotational motion.
+3. Analyze displacement–time and velocity–time graphs.
+4. Analyze the motion of freely falling objects.
+5. Analyze projectile motion.
+6. Explain uniform circular motion.
+
+
+
+
+Chapter 1.4 (Newtonian Mechanics) : 
+1. Explain the fundamental concept of force.
+2. Analyze Newton’s Second Law using calculus.
+3. Explain the relationships among Newton’s laws of motion.
+4. Apply Newton’s laws of motion to solve problems.
+5. Explain the limitations of Newton’s laws of motion.
+6. Explain the concepts of force, field, and interaction.
+7. Explain the law of conservation of linear momentum.
+8. Verify the conservation of momentum in all situations.
+9. Analyze the relationship between Newton’s Third Law and the conservation of momentum.
+10. Explain the concepts of torque and angular momentum.
+11. Explain the law of conservation of angular momentum.
+12. Explain torque.
+13. Analyze the relationship among torque, angular momentum, and angular velocity.
+14. Explain the conservation of angular momentum as a universal law.
+15. Apply the concepts of centripetal and centrifugal forces.
+16. Explain the necessity of banking on curved roads.
+17. Explain static and kinetic friction.
+18. Solve problems involving static friction between two objects.
+Practical Skill:
+* Determine the moment of inertia of a flywheel.
+
+
+
+
+Chapter 1.5 (Work, Energy and Power) : 
+1. Explain the general concepts of work and energy.
+2. Analyze the relationship between force, displacement, and work.
+3. Analyze the work done by constant and variable forces.
+4. Compare the work done by conservative and non-conservative forces.
+5. Derive the mathematical expression of the work–energy theorem and apply it to solve problems.
+6. Derive the mathematical expression of the conservation of energy and apply it to solve problems.
+7. Apply the principle of conservation of energy to solve various practical problems.
+8. Analyze the relationship between momentum, work, and kinetic energy.
+9. Explain conservative and non-conservative forces.
+10. Calculate the efficiency of a system.
+Practical Skill : 
+* Measure the power output of a pump. 
+
+
+
+
+
+
+Chapter 1.6 (Gravitation and Gravity) : 
+1. Explain Galileo’s law for freely falling bodies.
+2. State and explain Kepler’s laws of planetary motion.
+3. Derive and analyze Kepler’s laws mathematically using Newton’s laws.
+4. Establish the mathematical relationship between gravitational force and gravitational acceleration, and apply this relationship to solve problems.
+5. Apply the law of universal gravitation.
+6. Determine the magnitudes of gravitational force, gravitational field strength, and gravitational potential, and explain the relationships among them.
+7. Analyze the causes of variations in gravitational acceleration.
+8. Explain the concept of the center of gravity.
+9. Derive and analyze the mathematical conditions of equilibrium.
+10. Describe the applications of the law of universal gravitation.
+Practical Skill:
+*  Determine the acceleration due to gravity by measuring the distance and time of a freely falling object dropped through a solenoid coil. 
+
+
+
+
+Chapter 1.7 (Structural Properties of Matter) : 
+1. Explain the nature of intermolecular forces in matter.
+2. Explain the different types of bonding in matter.
+3. Explain the elastic behavior of materials in terms of intermolecular forces.
+4. Explain the quantities related to elasticity.
+5. Explain Hooke’s Law.
+6. Explain the relationship between stress and strain.
+7. Explain the coefficient (modulus) of elasticity.
+8. Explain Poisson’s ratio.
+9. Explain fluid flow.
+10. Explain terminal velocity.
+11. Explain viscosity and the coefficient of viscosity.
+12. Explain the relationship between friction and viscosity.
+13. Explain Stokes’ law for a body moving through a fluid.
+14. Apply Bernoulli’s principle.
+15. Explain surface tension.
+16. Explain cohesive and adhesive forces.
+17. Explain the angle of contact.
+18. Describe capillary action.
+Practical Skill:
+* Determine Young’s modulus of a wire using Searle’s method. 
+
+
+Chapter 1.8 (Periodic Motion): 
+1. Explain the concept of periodic motion.
+2. Explain periodic motion.
+3. Explain the nature and characteristics of force in simple harmonic motion (SHM).
+4. Explain the characteristics of simple harmonic motion.
+5. Derive the equation of motion for a body undergoing simple harmonic motion and analyze it mathematically.
+6. Explain the applications of simple harmonic motion in everyday life.
+7. Use graphs to demonstrate the conservation of total mechanical energy in simple harmonic motion.
+8. Explain simple harmonic motion as the projection of uniform circular motion in a different context.
+9. Establish the relationship between simple harmonic motion and circular motion.
+Practical Skills:
+10. Determine the spring constant of a spring.
+11. Compare the masses of different objects using a spring as an oscillating system.
+
+
+
+
+Chapter 1.9 (Waves) : 
+1. Explain the origin of waves.
+2. Explain the process of wave propagation.
+3. Explain the characteristics of different types of waves.
+4. Derive and analyze the mathematical equation of a wave.
+5. Derive and analyze the mathematical equation of wave velocity.
+6. Explain the principle of superposition.
+7. Derive and analyze the mathematical equation of stationary (standing) waves.
+8. Explain resonance.
+9. Explain the intensity and loudness of sound.
+10. Derive and analyze the Doppler effect mathematically.
+11. Explain reverberation and echo.
+12. Explain diffraction in terms of Huygens’ principle.
+13. Explain polarization and its significance in transverse waves.
+Practical Skill:
+14. Determine the wavelength of a tuning fork using Melde’s experiment.
+
+
+Chapter 1.10 (Ideal Gas and Kinetic Theory of Gas) : 
+1. Explain the ideal gas law.
+2. Derive the equation PV=RTPV = RTPV=RT by combining Boyle’s law and Charles’s law.
+3. Describe the fundamental properties of gas molecules.
+4. Explain the molecular motion of gases in terms of the fundamental properties of gas molecules.
+5. Explain the ideal gas equation using the kinetic theory of gases.
+6. Explain the law of equipartition of energy.
+7. Analyze the relationship between water vapor and air pressure.
+8. Analyze the relationship between dew point and relative humidity.
+Practical Skill:
+9. Verify Boyle’s law experimentally.
+10. Determine the latent heat of vaporization of water using Newton’s law of cooling.
+
+
+Chapter 2.1 (Thermodynamics) : 
+
+1. Explain the concepts of thermal equilibrium and temperature using the principles of temperature measurement.
+2. Explain the First Law of Thermodynamics.
+3. Explain the concept of a thermodynamic system.
+4. Explain the concept of internal energy.
+5. Analyze the relationship among heat, internal energy, and work done in a thermodynamic system.
+6. Explain the Second Law of Thermodynamics.
+7. Explain the difference between reversible and irreversible processes.
+8. Explain the efficiency of a heat engine.
+9. Explain the principles governing the operation of heat engines based on the laws of thermodynamics.
+10. Explain the efficiency of a refrigerator.
+11. Explain entropy and disorder.
+
+
+Chapter 2.2 (Statical Electricity) : 
+1. Explain electric field in the light of Coulomb’s law.
+2. Analyze the relationship among electric force, electric field strength, and electric potential for a point charge.
+3. Explain electric flux.
+4. Explain electric dipoles.
+5. Determine the magnitude of the electric field strength due to an electric dipole.
+6. Determine the electric potential due to an electric dipole.
+7. Explain capacitance and the law of conservation of charge.
+8. Explain dielectrics and polarization.
+9. Explain capacitors and capacitance.
+10. Explain types of capacitors and their combinations.
+11. Calculate the equivalent capacitance of capacitor combinations.
+12. Calculate the energy stored in a capacitor.
+13. Explain the uses of capacitors in everyday life.
+14. Derive Gauss’s law from Coulomb’s law.
+15. Use Gauss’s law to determine electric field strength in various cases.
+16. Explain the limitations of Coulomb’s law.
+
+
+Chapter 2.3 (Current Electricity) : 
+1. Explain the effect of temperature on electrical resistance.
+2. Explain Joule’s law of heating in electric current.
+3. Analyze the mathematical relationship between a cell’s internal resistance and electromotive force (EMF).
+4. Explain the classification of electric cells and their series and parallel combinations.
+5. Apply Kirchhoff’s laws to determine current and potential difference in electrical circuits.
+6. Explain the applications of shunts in electrical circuits.
+Practical Skills:
+7. Determine the mechanical equivalent of heat.
+8. Compare electromotive force (EMF) using a potentiometer.
+9. Determine the specific resistance (resistivity) of a wire using a meter bridge.
+10. Determine the resistance of an object using a Post Office Box (Wheatstone bridge).
+
+
+Chapter 2.4 (MAGNETIC EFFECTS OF ELECTRIC CURRENT & MAGNETISM ): 
+1. Explain the concept of the magnetic field using experiments with iron filings.
+2. Explain Biot–Savart’s law.
+3. Explain Ampère’s law.
+4. Determine the magnitude and direction of the magnetic force acting on a moving charged particle.
+5. Determine the magnetic field due to the Earth.
+6. Explain the Hall effect.
+7. Explain the force on a current-carrying conductor in a magnetic field (Motor Effect / Fleming’s Left-Hand Rule).
+8. Describe the magnetic field produced by a current-carrying solenoid.
+9. Describe the magnetic field of a toroid.
+10. Explain the Earth's magnetic field and the elements of terrestrial magnetism.
+11. Describe different types of magnetic materials.
+12. Describe the concept of magnetic domains.
+13. Explain magnetic hysteresis.
+14. Explain the uses of permanent magnets and electromagnets.
+
+
+
+
+
+
+Chapter 2.5 (ELECTROMAGNETIC INDUCTION AND ALTERNATING CURRENT):
+1. Explain electrostatic charge.
+2. Describe the generation of electrical energy using flux.
+3. Explain the generation of induced electromotive force (EMF).
+4. Explain Faraday’s laws of electromagnetic induction.
+5. Explain Lenz’s law.
+6. Explain the relationship between Lenz’s law and the law of conservation of energy.
+7. Explain self-inductance and mutual inductance.
+8. Explain the principles of generating alternating current (AC).
+9. Explain RMS (root mean square), peak (maximum), and instantaneous values of alternating current.
+
+
+Chapter 2.6 (Geometrical Optics) : 
+1. Explain Fermat’s principle.
+2. Use Fermat’s principle to analyze the laws of reflection and refraction of light.
+3. Derive the mathematical equation of a lens.
+4. Explain the principles of microscopes and magnifying glasses.
+6. Explain the principle of a telescope.
+7. Explain the principle of a reflecting telescope.
+8. Explain reflection and refraction of light in prisms.
+Practical Skills:
+9. Determine the focal length of a lens using convex and concave lenses.
+10. Determine the focal length of a lens using the lens displacement method.
+
+
+Chapter 2.7 (Physical Optics) : 
+1. Explain the properties of electromagnetic waves.
+2. Explain visible light as a part of the electromagnetic spectrum.
+3. Explain the concept of wavefronts.
+4. Apply Huygens’ principle to explain the formation of wavefronts.
+5. Use Huygens’ principle to analyze the laws of reflection and refraction of light.
+6. Explain the polarization of light.
+7. Explain Young’s double-slit experiment.
+8. Explain the diffraction of light.
+9. Explain the dispersion of light.
+
+
+Chapter 2.8 (Beginning of modern physics) : 
+1. Explain the concept of modern physics.
+2. Explain the concepts of inertial and non-inertial frames of reference.
+3. Analyze the results of the Michelson–Morley experiment.
+4. Explain Einstein’s theory of relativity.
+5. Explain Galilean transformations and Lorentz transformations.
+6. Describe the relativistic effects of time dilation, length contraction, and relativistic mass increase.
+7. Explain the relationship between mass and energy.
+8. Explain the four fundamental forces of nature.
+9. Apply the principles of time dilation and length contraction in space travel.
+10. Explain blackbody radiation.
+11. Describe Planck’s quantum theory.
+12. Describe Einstein’s explanation of the photoelectric effect.
+13. Explain de Broglie’s matter-wave concept.
+14. Explain the Compton effect (Compton scattering).
+15. Explain Heisenberg’s uncertainty principle.
+
+
+Chapter 2.9 (Atomic Model and nuclear physics) : 
+1. Describe the historical development of the concept of atomic structure.
+2. Describe Rutherford’s alpha-particle scattering experiment.
+3. Explain Rutherford’s model of the atom.
+4. Explain the limitations of Rutherford’s atomic model.
+5. Explain how Bohr’s atomic model overcame the limitations of Rutherford’s model.
+6. Explain the structure of the nucleus.
+7. Explain the major achievements and applications of nuclear physics.
+
+
+Chapter 2.10 (SEMI CONDUCTOR AND ELECTRONICS ) : 
+1. Explain band theory in solids.
+2. Use band theory to explain conductors, insulators, and semiconductors.
+3. Explain intrinsic and extrinsic semiconductors.
+4. Explain the concepts of electrons and holes in semiconductors.
+5. Explain the construction of p-type and n-type semiconductors.
+6. Explain the structure and operation of a junction diode.
+7. Explain rectification.
+8. Explain the structure and operation of a junction transistor.
+9. Explain the use of transistors as amplifiers.
+10. Use Boolean algebra to simplify various logic expressions.
+11. Use binary operations.
+12. Analyze the operation of different types of logic gates.
+Practical skills : 
+13. Verify the operation (truth table) of logic gate circuits using a simulation board (practical).
+14. Demonstrate full-wave rectification of alternating current using four diodes (practical).
+
+
+Chapter 2.11 (Astronomy) :
+   1. Explain the origin of the universe.
+   2. Explain the fate (ultimate destiny) of the universe in the light of modern physics.
+   3. Explain the structure and evolution of the universe.
+   4. Explain the principles of the instruments used by space researchers (astronomers) for space observation.
