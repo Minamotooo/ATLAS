@@ -1,61 +1,46 @@
 [
   {
-    "bloom_level": "Remember",
-    "skill_id": "CHEM_TEST1",
-    "skill_description": "Identify common laboratory glassware and their uses",
-    "subject": "Chemistry",
-    "topic": "Laboratory Safety and Apparatus",
-    "question_stem": "লাইব্রেয়রি সুরক্ষা ও বাস্তিনটি পর্যালোচনা করুন। আয়তনি শব্দীভাবে জলের মধ্যে একটি উপাদান বিতরণ করা হলো। পারমাণবিক সংখ্যা সহ এই ভিত্তিটি আয়তনের কেবল মধ্যে বিদ্যমান নেই। কোনটি লাইব্রেয়রি সুরক্ষা এবং বাস্তিনটির জন্য প্রচলিত আয়তনি শব্দ ?",
+    "bloom_level": "Apply",
+    "skill_id": "PHY_DIM_1",
+    "skill_description": "Determine the dimensional formula of a physical quantity",
+    "subject": "Physics",
+    "topic": "Physical Quantities, Units and Dimensions",
+    "question_stem": "একটি বৃত্তের ক্ষেত্রফলের ডিমেনশিয়াল ফরমুলাটি কী?",
     "options": [
       {
         "label": "A",
-        "text": "মেপে",
-        "is_correct": false,
-        "explanation": "মেপা একটি পদার্থ মোড়াইয়ার উপাদান বিতরণ করা হলো, এটি জল না হলেও সম্ভব।",
-        "missing_prerequisites": [
-          {
-            "id": "SKILL01",
-            "full": "Identify common laboratory glassware and their uses"
-          }
-        ]
+        "text": "$[L^2]$",
+        "is_correct": true,
+        "explanation": "বৃত্তের ক্ষেত্রফলের ডিমেনশিয়াল ফরমুলা $[L^2]$ হয়, যেখানে $L$ পরিসীমার দিকের ডিমেনশিয়াল একক।",
+        "missing_prerequisites": []
       },
       {
         "label": "B",
-        "text": "পিপেট",
-        "is_correct": true,
-        "explanation": "পিপেট জল বা আরও নাম্বারের অন্য পাত্র থেকে জল হতে দেয়।",
+        "text": "$[M^1]\"",
+        "is_correct": false,
+        "explanation": "বৃত্তের ক্ষেত্রফলের ডিমেনশিয়াল ফরমুলাটি $[M^0L^2T^0]$ হয়, এটি ব্যবহার করা হয় না।",
         "missing_prerequisites": []
       },
       {
         "label": "C",
-        "text": "বিকার (ফ্লাস্ক)",
+        "text": "$[M^1L^{-2}T^{0}]$",
         "is_correct": false,
-        "explanation": "বিকার জলের পুনর্মূলণ এবং বহন পদক্ষেপ হিসেবে ব্যবহৃত হয়।",
-        "missing_prerequisites": [
-          {
-            "id": "SKILL02",
-            "full": "Identify common laboratory glassware and their uses"
-          }
-        ]
+        "explanation": "বৃত্তের ক্ষেত্রফলের ডিমেনশিয়াল ফরমুলাটি $[L^2]$ হয়, এটি ব্যবহার করা হয় না।",
+        "missing_prerequisites": []
       },
       {
         "label": "D",
-        "text": "ব্যুরেট (ফ্লাস্ক)",
+        "text": "$[M^0L^1T^{-2}]$",
         "is_correct": false,
-        "explanation": "ব্যুরেট শব্দীভাবে জলের মধ্যে পড়া অন্য পাত্র থেকে জল হওয়ার উপাদান বিতরণ করে।",
-        "missing_prerequisites": [
-          {
-            "id": "SKILL03",
-            "full": "Identify common laboratory glassware and their uses"
-          }
-        ]
+        "explanation": "বৃত্তের ক্ষেত্রফলের ডিমেনশিয়াল ফরমুলাটি $[L^2]$ হয়, এটি ব্যবহার করা হয় না।",
+        "missing_prerequisites": []
       }
     ],
     "source_refs": [
       {
-        "item_id": "1-20__p3__q03__8",
-        "source_file": "[SUST'16-17]",
-        "page_number": 3,
+        "item_id": "PhyBook1__p62__q21__402",
+        "source_file": "[RUET'14-15]",
+        "page_number": 62,
         "score": 1
       }
     ],
