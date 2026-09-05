@@ -12,3 +12,18 @@ __pycache__/
 .env
 prompt.md
 server-ref.py
+
+# Local agent/working notes (not shared)
+CLAUDE.md
+.claude/
+
+# Ontology build scratch output (the real artifacts live in Backend/tree_data/)
+Backend/tree_data/generated/
+
+# Generated question banks and RAG artifacts
+data-gen/output_questions.json
+data-gen/raw_responses/
+data-gen/raw_responses_rag/
+
+# Corpus repair backups
+*.orig
