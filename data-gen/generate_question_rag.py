@@ -37,6 +37,10 @@ if str(_DATA_GEN) not in sys.path:
     sys.path.insert(0, str(_DATA_GEN))
 
 from rag.config import (
+    BLOOM_LEVELS,
+    OLLAMA_NUM_CTX,
+    OLLAMA_NUM_PREDICT,
+    EXPAND_ALL_BLOOM_LEVELS,
     MAX_JSON_RETRIES,
     N_QUESTIONS,
     OLLAMA_BASE_URL,
@@ -59,6 +63,28 @@ with TUPLES_PATH.open("r", encoding="utf-8") as f:
 
 with PREREQS_PATH.open("r", encoding="utf-8") as f:
     prereqs_raw = json.load(f)
+
+
+def expand_bloom_levels(tuple_list: list) -> list:
+    """
+    Emit one tuple per (skill x Bloom level) instead of the single level the
+    ontology assigns. The adaptive engine selects questions one Bloom level above
+    a learner's current band, so a bank covering one level per skill leaves the
+    ladder with nothing to climb. Disable with env RAG_EXPAND_BLOOMS=0.
+    """
+    expanded = []
+    for tup in tuple_list:
+        for bloom in BLOOM_LEVELS:
+            item = dict(tup)
+            item["bloom"] = bloom
+            expanded.append(item)
+    return expanded
+
+
+if EXPAND_ALL_BLOOM_LEVELS and os.environ.get("RAG_EXPAND_BLOOMS", "1") != "0":
+    _before = len(tuples)
+    tuples = expand_bloom_levels(tuples)
+    print(f"Bloom expansion: {_before} tuples -> {len(tuples)} (all {len(BLOOM_LEVELS)} levels)")
 
 
 def build_prereq_list(prereqs):
@@ -235,7 +261,13 @@ def ollama_chat(messages: list[dict], model: str | None = None, temperature: flo
         "messages": messages,
         "stream": False,
         "format": "json",
-        "options": {"temperature": temperature},
+        "options": {
+            "temperature": temperature,
+            # Without an explicit num_ctx Ollama uses 2048 and silently drops the
+            # tail of the prompt - which is exactly where the reference material is.
+            "num_ctx": OLLAMA_NUM_CTX,
+            "num_predict": OLLAMA_NUM_PREDICT,
+        },
     }
     try:
         resp = requests.post(url, json=payload, timeout=OLLAMA_TIMEOUT_SEC)
@@ -591,7 +623,7 @@ def tuple_subject(tup: dict) -> str:
         return "Physics"
     if any(k in label for k in ("chem", "রসায়ন", "রসায়ন")):
         return "Chemistry"
-    if any(k in label for k in ("math", "গণিত", "real numbers", "hcf", "lcm")):
+    if any(k in label for k in ("math", "গণিত", "algebra", "calculus", "trigonom", "matri", "geometry")):
         return "Mathematics"
     return "Mathematics"
 

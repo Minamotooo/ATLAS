@@ -141,6 +141,51 @@ def repair_json_escapes(chunk: str) -> str:
     return "".join(out)
 
 
+def salvage_objects(chunk: str, offset: int) -> list:
+    """
+    Rescue whatever parses when a whole array will not.
+
+    Source books are machine-extracted and occasionally contain a corrupt record -
+    e.g. an extraction loop that emits \quad 32k times and never closes its
+    string. A single such record desynchronises string/brace tracking for
+    everything after it, so a structural scan would discard the whole array; one
+    real incident cost 334 Chemistry items from one file.
+
+    So instead of tracking structure, resynchronise: walk to each '{' and let the
+    JSON decoder consume exactly one object from there. A record that will not
+    decode costs only itself - the scan picks up again at the next '{'.
+    """
+    decoder = json.JSONDecoder()
+    salvaged: list = []
+
+    # Escape repair first, so ordinary LaTeX backslashes are not counted as damage.
+    for payload in (repair_json_escapes(chunk), chunk):
+        salvaged = []
+        i = payload.find("{")
+        while i >= 0:
+            try:
+                obj, end = decoder.raw_decode(payload, i)
+            except ValueError:
+                # Not an object start (a LaTeX brace, or the damaged record itself).
+                i = payload.find("{", i + 1)
+                continue
+            if isinstance(obj, dict):
+                salvaged.append(obj)
+                i = payload.find("{", max(end, i + 1))
+            else:
+                i = payload.find("{", i + 1)
+        if salvaged:
+            break
+
+    if salvaged:
+        expected = chunk.count('"question_number"')
+        print(
+            f"  note: salvaged {len(salvaged)} of ~{expected} records from malformed "
+            f"array near offset {offset}"
+        )
+    return salvaged
+
+
 def parse_json_array_chunk(chunk: str, offset: int) -> list | None:
     """Parse one array chunk; retry after repairing LaTeX-style escapes."""
     for attempt, payload in enumerate((chunk, repair_json_escapes(chunk))):
@@ -149,6 +194,10 @@ def parse_json_array_chunk(chunk: str, offset: int) -> list | None:
         except json.JSONDecodeError as exc:
             if attempt == 0:
                 continue
+            # Last resort: pull out the individual records that are still intact.
+            salvaged = salvage_objects(chunk, offset)
+            if salvaged:
+                return salvaged
             print(f"  warn: skipped invalid JSON array near offset {offset}: {exc}")
             return None
         if isinstance(parsed, list):

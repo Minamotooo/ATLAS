@@ -1,10 +1,10 @@
-# Naive RAG for BUET / admission MCQ generation
+# Naive RAG for admission-test MCQ generation
 
 ## Scope
 
 - Exams: BUET and other engineering university admission tests
 - Subjects: **Mathematics, Physics, Chemistry** (Bangla + LaTeX)
-- KB: `bktback/documents/*.txt` (final format; legacy `*.json` still accepted)
+- KB: `documents/*.txt` (final format; legacy `*.json` still accepted)
   - File may contain **multiple JSON arrays** concatenated (page batches)
   - Each object: `question_number`, `question_type` (`MCQ`|`Written`), `subject`,
     `source_tag`, `question_text`, `options` (`{}` for Written, or a/b/c/...),
@@ -18,9 +18,11 @@
    - Soft subject boost only (never hard-filters out other subjects).
 3. **Generate** new MCQs with local Ollama.
 
-## Tuple format for ontology teammate
+## Ontology input
 
-See [TUPLE_FORMAT.md](TUPLE_FORMAT.md). Same as before + required `subject` field.
+Tuples and prereqs are read from `Backend/tree_data/ontology_source/` — the same
+source the Backend compiles its skill DAG from, so generation and serving can never
+drift onto different ontologies. See [TUPLE_FORMAT.md](TUPLE_FORMAT.md).
 
 ## Setup
 
@@ -54,8 +56,12 @@ python -m rag.ingest
 # 2) Smoke-test retrieval across subjects
 python -m rag.retriever
 
-# 3) Generate questions (needs new tuples.json with subject field)
+# 3) Generate questions
 python generate_question_rag.py
+
+# 4) Load them into Supabase for the engine to serve
+python load_questions_to_supabase.py --dry-run
+python load_questions_to_supabase.py --create-missing-skills
 ```
 
 ## Config knobs
@@ -63,5 +69,9 @@ python generate_question_rag.py
 See `config.py`:
 
 - `EMBEDDING_MODEL_NAME` (default multilingual MiniLM)
-- `TOP_K`, `SUBJECT_MATCH_BOOST`
+- `TOP_K`, `SUBJECT_MATCH_BOOST`, `MCQ_MATCH_BOOST`
 - `OLLAMA_MODEL`, `N_QUESTIONS`, `START_TUPLE_INDEX`
+- `EXPAND_ALL_BLOOM_LEVELS` — generate every skill at all six Bloom levels
+  (430 tuples -> 2580). The engine asks for a question one Bloom level above the
+  learner's current band, so partial coverage weakens the adaptive ladder.
+  Disable for a quick run with `RAG_EXPAND_BLOOMS=0`.

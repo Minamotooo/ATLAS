@@ -28,7 +28,9 @@ This project targets **BUET / university admission** exams for **Mathematics, Ph
 | `topicLabel` | string | Human-readable topic name |
 | `subject` | string | **Required for multi-subject RAG.** One of: `Mathematics`, `Physics`, `Chemistry` |
 
-Generate one tuple for **each** Bloom level × skill × topic (same pattern as the old BCS math ontology).
+Generate one tuple for **each** Bloom level × skill × topic. The adaptive engine
+selects a question one Bloom level above the learner's current band, so partial
+Bloom coverage leaves that ladder with nothing to climb.
 
 ## `prereqs.json` — ancestors per skill (unchanged idea)
 
