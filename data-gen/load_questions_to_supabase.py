@@ -360,30 +360,49 @@ def fetch_skill_ids(db) -> Set[str]:
 
 
 def fetch_existing_keys(db, skill_ids: List[str]) -> Set[Tuple[str, str, str, str]]:
-    """Existing (skill_id, bloom_level, topic, stem) tuples, for dedup."""
+    """
+    Existing (skill_id, bloom_level, topic, stem) tuples, for dedup.
+
+    PostgREST silently caps a response at its project's max-rows setting
+    (1000 on this Supabase project) regardless of what `.limit()` asks for -
+    it is NOT an error, just a truncated result. A single unpaged select
+    used to work fine when the table was small; once it grew past ~1000
+    matching rows, later pages went missing from `existing`, dedup stopped
+    recognizing already-loaded questions as duplicates, and a rerun
+    quietly re-inserted them. Page explicitly with `.range()` until a page
+    comes back under the page size, so this doesn't reappear as the table
+    keeps growing.
+    """
     existing: Set[Tuple[str, str, str, str]] = set()
     chunk = 200
+    page_size = 1000
     for i in range(0, len(skill_ids), chunk):
         batch = skill_ids[i : i + chunk]
-        result = (
-            db.table("questions")
-            .select("skill_id, bloom_level, topic, question_stem")
-            .in_("skill_id", batch)
-            .limit(100000)
-            .execute()
-        )
-        data, error = payload(result)
-        if error:
-            raise SystemExit(f"ERROR: could not read questions for dedup: {error}")
-        for r in rows_of(data):
-            existing.add(
-                (
-                    r["skill_id"],
-                    r["bloom_level"],
-                    r["topic"],
-                    normalize_stem(r["question_stem"]),
-                )
+        offset = 0
+        while True:
+            result = (
+                db.table("questions")
+                .select("skill_id, bloom_level, topic, question_stem")
+                .in_("skill_id", batch)
+                .range(offset, offset + page_size - 1)
+                .execute()
             )
+            data, error = payload(result)
+            if error:
+                raise SystemExit(f"ERROR: could not read questions for dedup: {error}")
+            page = rows_of(data)
+            for r in page:
+                existing.add(
+                    (
+                        r["skill_id"],
+                        r["bloom_level"],
+                        r["topic"],
+                        normalize_stem(r["question_stem"]),
+                    )
+                )
+            if len(page) < page_size:
+                break
+            offset += page_size
     return existing
 
 
@@ -405,69 +424,93 @@ def upsert_skills(db, skills: Dict[str, str]) -> int:
     return len(rows)
 
 
-def insert_question(db, record: dict, known_skills: Set[str], stats: Counter) -> None:
+def insert_questions_batch(
+    db, records: List[dict], known_skills: Set[str], stats: Counter, batch_size: int = 250
+) -> None:
     """
-    Insert one question with its options and missing-prerequisite links.
-
-    Done per question rather than in bulk because we need each question's
-    generated id to attach options, and each option's id to attach prereq rows.
-    ON DELETE CASCADE means a failure partway leaves at most one orphaned
-    question row, which the dedup pass will reuse rather than duplicate.
+    Bulk-insert many questions (with their options and missing-prerequisite
+    links) using one INSERT per table per batch, instead of one question ->
+    4 options -> N prereqs round trip per question. A single multi-row
+    INSERT with no ON CONFLICT/trigger reordering returns its rows in the
+    same order as the VALUES list, so generated ids are zipped back
+    positionally rather than looked up - that's what makes batching safe
+    here. If a batch fails outright (network blip, one bad row), the whole
+    batch is skipped and logged; already-inserted batches are unaffected,
+    and a retry is safe because the dedup pass treats them as already loaded.
     """
-    result = (
-        db.table("questions")
-        .insert(
-            {
-                "skill_id": record["skill_id"],
-                "bloom_level": record["bloom_level"],
-                "topic": record["topic"],
-                "question_stem": record["question_stem"],
-            }
-        )
-        .execute()
-    )
-    data, error = payload(result)
-    if error:
-        raise RuntimeError(f"questions insert failed: {error}")
-    inserted = rows_of(data)
-    if not inserted or "id" not in inserted[0]:
-        raise RuntimeError("questions insert returned no id")
-    question_id = inserted[0]["id"]
+    for start in range(0, len(records), batch_size):
+        batch = records[start : start + batch_size]
+        try:
+            question_rows = [
+                {
+                    "skill_id": r["skill_id"],
+                    "bloom_level": r["bloom_level"],
+                    "topic": r["topic"],
+                    "question_stem": r["question_stem"],
+                }
+                for r in batch
+            ]
+            result = db.table("questions").insert(question_rows).execute()
+            data, error = payload(result)
+            if error:
+                raise RuntimeError(f"questions bulk insert failed: {error}")
+            inserted = rows_of(data)
+            if len(inserted) != len(batch):
+                raise RuntimeError(f"expected {len(batch)} question ids back, got {len(inserted)}")
+            question_ids = [row["id"] for row in inserted]
 
-    option_rows = [
-        {
-            "question_id": question_id,
-            "option_label": o["option_label"],
-            "option_text": o["option_text"],
-            "is_correct": o["is_correct"],
-            "explanation": o["explanation"],
-        }
-        for o in record["options"]
-    ]
-    result = db.table("question_options").insert(option_rows).execute()
-    data, error = payload(result)
-    if error:
-        raise RuntimeError(f"question_options insert failed: {error}")
+            option_rows = []
+            option_owners = []  # same order as option_rows, for zipping ids back
+            for rec, qid in zip(batch, question_ids):
+                for o in rec["options"]:
+                    option_rows.append(
+                        {
+                            "question_id": qid,
+                            "option_label": o["option_label"],
+                            "option_text": o["option_text"],
+                            "is_correct": o["is_correct"],
+                            "explanation": o["explanation"],
+                        }
+                    )
+                    option_owners.append(o)
 
-    label_to_id = {r["option_label"]: r["id"] for r in rows_of(data)}
-    if len(label_to_id) != 4:
-        raise RuntimeError(f"expected 4 option ids back, got {len(label_to_id)}")
+            try:
+                result = db.table("question_options").insert(option_rows).execute()
+                data, error = payload(result)
+                if error:
+                    raise RuntimeError(f"question_options bulk insert failed: {error}")
+                inserted_opts = rows_of(data)
+                if len(inserted_opts) != len(option_rows):
+                    raise RuntimeError(f"expected {len(option_rows)} option ids back, got {len(inserted_opts)}")
+            except Exception:
+                # Options failed after the questions committed - those rows
+                # would otherwise sit with zero options, yet still look
+                # "already loaded" to the dedup pass on any future retry
+                # (which only checks the questions table), permanently
+                # hiding the gap. Delete them so a retry actually redoes them.
+                db.table("questions").delete().in_("id", question_ids).execute()
+                raise
 
-    prereq_rows = []
-    for o in record["options"]:
-        option_id = label_to_id.get(o["option_label"])
-        for mid in o["missing_prerequisites"]:
-            if mid not in known_skills:
-                stats["missing_prereq_refs_dropped"] += 1
-                continue
-            prereq_rows.append({"option_id": option_id, "missing_skill_id": mid})
+            prereq_rows = []
+            for owner, opt_row in zip(option_owners, inserted_opts):
+                for mid in owner["missing_prerequisites"]:
+                    if mid not in known_skills:
+                        stats["missing_prereq_refs_dropped"] += 1
+                        continue
+                    prereq_rows.append({"option_id": opt_row["id"], "missing_skill_id": mid})
 
-    if prereq_rows:
-        result = db.table("option_missing_prerequisites").insert(prereq_rows).execute()
-        _, error = payload(result)
-        if error:
-            raise RuntimeError(f"option_missing_prerequisites insert failed: {error}")
-        stats["prereq_links"] += len(prereq_rows)
+            if prereq_rows:
+                result = db.table("option_missing_prerequisites").insert(prereq_rows).execute()
+                _, error = payload(result)
+                if error:
+                    raise RuntimeError(f"option_missing_prerequisites bulk insert failed: {error}")
+                stats["prereq_links"] += len(prereq_rows)
+
+            stats["questions"] += len(batch)
+        except Exception as exc:
+            stats["failed"] += len(batch)
+            print(f"  ERROR batch [{start}:{start + len(batch)}]: {exc}")
+        print(f"  {min(start + batch_size, len(records))}/{len(records)} ...")
 
 
 # ---------------------------------------------------------------------------
@@ -618,16 +661,8 @@ def main() -> int:
     if skipped_fk:
         print(f"skipping {skipped_fk} questions whose skill_id is not in the skills table")
 
-    print(f"\ninserting {len(to_insert)} questions ...")
-    for n, record in enumerate(to_insert, start=1):
-        try:
-            insert_question(db, record, known_skills, stats)
-            stats["questions"] += 1
-        except Exception as exc:
-            stats["failed"] += 1
-            print(f"  ERROR q[{n}] skill={record['skill_id']}: {exc}")
-        if n % 50 == 0:
-            print(f"  {n}/{len(to_insert)} ...")
+    print(f"\ninserting {len(to_insert)} questions (bulk) ...")
+    insert_questions_batch(db, to_insert, known_skills, stats)
 
     print("\n--- summary ---")
     print(f"  questions inserted        : {stats['questions']}")
