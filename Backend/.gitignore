@@ -4,3 +4,4 @@ server-ref.py
 __pycache__
 .venv/
 *.py[cod]
+venv/
