@@ -1,6 +1,5 @@
 """Paths and hyperparameters for the naive RAG pipeline."""
 
-import os
 from pathlib import Path
 
 # data-gen/
@@ -47,30 +46,10 @@ SUBJECT_ALIASES = {
     "রসায়ন": "Chemistry",
 }
 
-# Local generator (Ollama)
-OLLAMA_BASE_URL = "http://localhost:11434"
-OLLAMA_MODEL = "qwen2.5:7b-instruct-q4_K_M"
-OLLAMA_FALLBACK_MODEL = "qwen2.5:3b-instruct"
-# Generous because a single call is ~5-6k prompt tokens + ~3k generated tokens.
-# On a GPU that is well under a minute; on CPU it can exceed 15 minutes, and the
-# old 300s ceiling made every call time out and produce nothing.
-OLLAMA_TIMEOUT_SEC = int(os.environ.get("OLLAMA_TIMEOUT_SEC", "1800"))
-OLLAMA_TEMPERATURE = 0.7
-
-# Ollama defaults num_ctx to 2048. Our prompt (system + 5 retrieved reference
-# blocks) measures ~4-6k tokens, so leaving this unset SILENTLY TRUNCATES the
-# retrieved material - questions still generate, but ungrounded and off-schema.
-# Must comfortably exceed prompt + num_predict.
-OLLAMA_NUM_CTX = int(os.environ.get("OLLAMA_NUM_CTX", "8192"))
-OLLAMA_NUM_PREDICT = int(os.environ.get("OLLAMA_NUM_PREDICT", "3072"))
-
-# Generation loop defaults (mirrors generate_question.py)
+# Generation loop defaults
 N_QUESTIONS = 3
-OUTPUT_PATH = DATA_GEN_DIR / "output_questions.json"
-RAW_OUTPUT_DIR = DATA_GEN_DIR / "raw_responses_rag"
 TUPLES_PATH = ONTOLOGY_SOURCE_DIR / "tuples.json"
 PREREQS_PATH = ONTOLOGY_SOURCE_DIR / "prereqs.json"
-START_TUPLE_INDEX = 1  # 1-based; set higher to resume
 MAX_JSON_RETRIES = 2
 
 # The ontology assigns ONE Bloom level per skill (mostly "Apply"). Both the

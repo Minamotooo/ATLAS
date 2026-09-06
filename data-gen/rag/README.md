@@ -16,7 +16,8 @@
 1. **Ingest** all `documents/*.txt` (and legacy `*.json`) into a local vector KB (not Chemistry-only).
 2. **Retrieve** top-k similar units for each skill/topic/Bloom/`subject` tuple.
    - Soft subject boost only (never hard-filters out other subjects).
-3. **Generate** new MCQs with local Ollama.
+3. **Generate** new MCQs via the Gemini API (`generate_question_gemini.py`) — see the
+   repo root `HANDOFF.md` for the two-model generate/verify pipeline and key setup.
 
 ## Ontology input
 
@@ -33,14 +34,8 @@ From `data-gen/`:
 pip install -r requirements.txt
 ```
 
-Install [Ollama](https://ollama.com), then:
-
-```powershell
-ollama pull qwen2.5:7b-instruct-q4_K_M
-# If 4GB VRAM is too tight / too slow:
-ollama pull qwen2.5:3b-instruct
-$env:OLLAMA_MODEL = "qwen2.5:3b-instruct"
-```
+A Gemini API key (or several — see `keys/.gemini_keys`, one key per line, gitignored)
+is required for generation. See `HANDOFF.md` for how keys/rate limits/models are used.
 
 ## Run
 
@@ -56,12 +51,15 @@ python -m rag.ingest
 # 2) Smoke-test retrieval across subjects
 python -m rag.retriever
 
-# 3) Generate questions
-python generate_question_rag.py
+# 3) Generate questions (Gemini, two-phase generate + batch-verify)
+python generate_question_gemini.py --batch-size 200 --real
 
-# 4) Load them into Supabase for the engine to serve
-python load_questions_to_supabase.py --dry-run
-python load_questions_to_supabase.py --create-missing-skills
+# 4) Check progress / ETA on a long run
+python check_progress.py
+
+# 5) Load them into Supabase for the engine to serve
+python load_questions_to_supabase.py --input output_questions_gemini.json --dry-run
+python load_questions_to_supabase.py --input output_questions_gemini.json --create-missing-skills
 ```
 
 ## Config knobs
@@ -70,7 +68,7 @@ See `config.py`:
 
 - `EMBEDDING_MODEL_NAME` (default multilingual MiniLM)
 - `TOP_K`, `SUBJECT_MATCH_BOOST`, `MCQ_MATCH_BOOST`
-- `OLLAMA_MODEL`, `N_QUESTIONS`, `START_TUPLE_INDEX`
+- `N_QUESTIONS`
 - `EXPAND_ALL_BLOOM_LEVELS` — generate every skill at all six Bloom levels
   (430 tuples -> 2580). The engine asks for a question one Bloom level above the
   learner's current band, so partial coverage weakens the adaptive ladder.

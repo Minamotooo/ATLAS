@@ -16,82 +16,77 @@ demo practice page — all removed. Anything BCS you remember is no longer here.
 
 | Piece | State |
 |---|---|
-| Ontology (430 skills / 66 topics / 471 edges) | Done, compiled, loads into the engine |
+| Ontology (430 skills / 66 topics / 471 edges, admission-test pivot) | Done, compiled, synced to Supabase (old BCS ontology rows left intact, not deleted) |
 | Catalog (3 courses / 20 sections) | Done |
 | Backend adaptive engine | Done, boots clean, 18/18 smoke tests pass |
 | Frontend | Builds clean |
-| Supabase schema | Documented (`Backend/schema.sql`), **ontology not yet synced** |
-| Question loader | Written and validated offline, **never run against a live DB** |
-| **Question bank** | **EMPTY — this is the remaining work** |
+| Supabase schema | `Backend/schema.sql`, ontology synced (insert-only — nothing old was deleted) |
+| Question loader | `load_questions_to_supabase.py`, validated against a live DB, has run for real |
+| **Question bank** | **In progress** — generation is a long-running batch job, see §2 |
 
-The one thing missing is generated questions. Everything upstream and downstream of
-that is wired and tested.
+Local Ollama generation was tried and abandoned (too slow on non-GPU hardware, and it
+had a subtle JSON-corruption bug — see §5). Generation now runs against the **Gemini
+API** instead, key-pooled across multiple free-tier keys for throughput.
 
 ---
 
-## 2. The immediate job (you have the GPU)
-
-Generation was blocked on hardware. It was scoped on a Ryzen 7 5700U with no usable
-GPU: **~4–6k prompt tokens and ~3k generated tokens per call**, 2,580 calls, which
-came to roughly **15 days on a 3B model and 30+ on a 7B**, before retries. Not viable.
-On a real GPU this is hours, not weeks.
+## 2. Generating the question bank (Gemini pipeline)
 
 ### Setup
 
 ```bash
-# 1. Ollama
-#    https://ollama.com  — then:
-ollama pull qwen2.5:7b-instruct-q4_K_M     # default; you have the VRAM for it
-
-# 2. Python env
 cd data-gen
 python -m venv .venv && .venv/Scripts/activate       # Windows
 pip install -r requirements.txt                      # torch + sentence-transformers, ~2.5 GB
 
-# 3. Build the retrieval KB from documents/ (4,474 items, one-off, a few minutes)
+# Build the retrieval KB from documents/ (4,474 items, one-off, a few minutes)
 python -m rag.ingest
-
-# 4. Sanity-check retrieval before spending GPU hours
-python -m rag.retriever
-python smoke_test_rag.py          # full end-to-end on ONE tuple; writes output_questions_rag_test.json
+python -m rag.retriever          # sanity-check retrieval across subjects
 ```
+
+Gemini keys: create `keys/.gemini_keys` at the repo root (gitignored), one API key per
+line. The pipeline round-robins across all of them concurrently — each key/model pair
+has its own independent rate limit, so more keys ~linearly raises throughput. Ask
+whoever ran the last batch for the key list, or generate your own free-tier keys.
 
 ### Generate
 
 ```bash
 cd data-gen
-python generate_question_rag.py
+python generate_question_gemini.py --limit 6            # tiny pilot, cheap test model
+python generate_question_gemini.py --sample-topics 5    # broader pilot, cheap test model
+python generate_question_gemini.py --batch-size 200 --real   # real run, production model
+python check_progress.py                                 # progress % and ETA at any time
 ```
 
 - Reads tuples from `Backend/tree_data/ontology_source/` — the *same* source the
   Backend compiles its DAG from, so generation and serving cannot drift apart.
-- **Bloom expansion is ON**: 430 skills × 6 Bloom levels = **2,580 tuples**, 3 questions
-  each ≈ 7,700 questions. See §5 for why this matters. Set `RAG_EXPAND_BLOOMS=0` for a
-  quick narrow run first.
-- Writes incrementally to `output_questions.json` after every tuple. **Resume after a
-  crash** by setting `START_TUPLE_INDEX` in `rag/config.py` (1-based).
-- Do a `--limit`-style trial first: set `START_TUPLE_INDEX` and kill it after a few
-  tuples, then eyeball the output before committing to the full run.
+- **Bloom expansion is ON**: 430 skills × 6 Bloom levels = **2,580 tuples** total.
+  `--batch-size N` processes the next N not-yet-done tuples each invocation, so a full
+  run is just re-invoking with `--real` until `check_progress.py` shows 100%.
+- Two-phase pipeline per tuple: generate (production model) → batch-verify (cheaper
+  model does an independent on-topic check + a blind answer re-solve, batched several
+  tuples per call to cut call count). Only questions that pass verification are written.
+- Writes incrementally to `output_questions_gemini.json` / `gemini_progress.json` after
+  each tuple finalizes — safe to kill and resume, nothing is corrupted mid-write, you
+  just redo whatever was still in-flight.
+- Rate-limited (429) keys back off adaptively and are retried, never permanently
+  disabled; only an actual 401/403 (project blocked) retires a key for the run.
 
 ### Load into Supabase
 
 ```bash
-# ontology first — questions.topic is FK'd to ontology_topics, so this must exist
-node Backend/tree_data/generate_ontology_sync_sql.js
-#   then run Backend/tree_data/sync_ontology_to_supabase.sql in the Supabase SQL editor
-
 cd data-gen
-python load_questions_to_supabase.py --dry-run          # validates everything, writes nothing
-python load_questions_to_supabase.py --create-missing-skills
+python load_questions_to_supabase.py --input output_questions_gemini.json --dry-run
+python load_questions_to_supabase.py --input output_questions_gemini.json --create-missing-skills
 ```
 
 The loader validates every constraint in `Backend/schema.sql` *before* writing,
 normalizes Bloom casing to exactly what `server.py` filters on, resolves raw topic
-labels to canonical codes, and dedups against existing rows. Run `--dry-run` first,
-always — it prints a full validation report.
-
-**It has never executed a real INSERT.** Needs `Backend/.env` with `SUPABASE_URL` and
-`SUPABASE_SERVICE_KEY`. Expect to iterate once on the first live run.
+labels to canonical codes, and dedups against existing rows (safe to re-run after each
+new batch — already-loaded questions are skipped). Run `--dry-run` first, always — it
+prints a full validation report. Needs `Backend/.env` with `SUPABASE_URL` and
+`SUPABASE_SERVICE_KEY`.
 
 ---
 
@@ -211,8 +206,11 @@ Backend/
     sync_ontology_to_supabase.sql
 data-gen/
   rag/                          ingest, embeddings, retriever, config
-  generate_question_rag.py      Ollama generation
+  question_gen_common.py        shared prompts, ontology loading, schema/LaTeX validation
+  generate_question_gemini.py   Gemini generation (key-pooled, generate + batch-verify)
+  check_progress.py             progress %/ETA for a running or paused generation batch
   load_questions_to_supabase.py question bank loader
+keys/.gemini_keys                Gemini API keys, one per line (gitignored, not in repo)
 documents/                      6 source books, 4,474 KB items
 Frontend/                       React + Vite
 BKT-DAG Policy For Skill Mastery.txt    the policy spec — describes real code
