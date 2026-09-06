@@ -156,12 +156,17 @@ class KeyState:
 
     def wait_for_turn(self, model: str) -> None:
         lim = self._limiter(model)
+        # Compute-and-reserve under the lock, but sleep OUTSIDE it. This key's
+        # generation and verification models share one KeyState (and one
+        # lock) - holding the lock across a multi-second/minute sleep would
+        # block the other model's calls on this same key for no reason, since
+        # each model has its own independent _ModelLimiter budget.
         with self.lock:
             now = time.monotonic()
             wait = lim.next_allowed - now
-            if wait > 0:
-                time.sleep(wait)
-            lim.next_allowed = time.monotonic() + lim.min_interval
+            lim.next_allowed = max(lim.next_allowed, now) + lim.min_interval
+        if wait > 0:
+            time.sleep(wait)
 
     def note_success(self, model: str) -> None:
         lim = self._limiter(model)
@@ -189,8 +194,18 @@ class KeyState:
             # Adaptive: each 429 means our pacing for this (key, model) is
             # still too fast, so slow it down permanently, not just once.
             lim.min_interval = min(60.0, lim.min_interval * 1.6)
-            backoff = retry_after if retry_after else min(45.0, 2.0 ** lim.consecutive_429s)
+            # Cap even the server-provided retryDelay. Gemini sometimes hands
+            # back a RetryInfo.retryDelay measured in TENS OF MINUTES (a
+            # different quota bucket resetting, e.g. RPD) - honoring that
+            # literally means one `time.sleep()` call blocks this key/model
+            # for that entire duration with zero visibility, which looked
+            # exactly like a hung pipeline. 60s matches the fallback ceiling:
+            # we'd rather retry sooner and eat another 429 than block that long.
+            backoff = min(60.0, retry_after) if retry_after else min(45.0, 2.0 ** lim.consecutive_429s)
             lim.next_allowed = time.monotonic() + backoff
+        if backoff >= 5.0:
+            print(f"[ratelimit] {self.label}/{model} backing off {backoff:.1f}s "
+                  f"(consecutive 429s={lim.consecutive_429s}, new min_interval={lim.min_interval:.1f}s)")
 
     def mark_blocked(self, model: str) -> None:
         """Permanent per-key failure (401/403) - unlike rate-limiting, no
@@ -477,6 +492,16 @@ def stratified_sample(topics_per_subject: int) -> list[dict]:
 
 
 def main() -> None:
+    try:
+        # Default stdout buffering is fully block-buffered when redirected to a
+        # file/pipe (the normal case for a long background run), so prints sit
+        # unflushed for arbitrarily long - making a live-tailed log or a killed
+        # process's captured output useless for diagnosing a stall. Force line
+        # buffering so every print is visible immediately.
+        sys.stdout.reconfigure(encoding="utf-8", line_buffering=True)
+    except Exception:
+        pass
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=0, help="Only process the first N tuples (pilot mode).")
     parser.add_argument(
@@ -564,13 +589,21 @@ def main() -> None:
     # verified) tuples into pending_verify_q; separate verifier threads drain
     # it in batches so ONE verification call covers many tuples at once,
     # instead of one call per tuple. `in_flight` tracks every tuple that has
-    # left work_q but not yet reached a terminal state (finalized or
-    # permanently failed) - a verification failure requeues onto work_q
-    # WITHOUT decrementing it, since the tuple is still mid-pipeline, just
-    # cycling back for another generation attempt. All worker loops exit once
-    # in_flight reaches 0 and work_q is empty - that's the only true "done".
+    # not yet reached a terminal state (finalized success or permanent
+    # failure) - set ONCE to the total queued count, and ONLY ever
+    # decremented (in finalize_success/finalize_failure), never
+    # re-incremented. A verification failure requeues onto work_q for another
+    # generation attempt WITHOUT touching in_flight at all - it must not be
+    # bumped again on that re-pull, or a tuple that gets requeued even once
+    # inflates the counter permanently, in_flight never reaches 0, and every
+    # worker spins in `while not all_done()` forever (a real bug this was:
+    # the pull-from-work_q site used to increment on EVERY pull, requeues
+    # included, despite a comment claiming otherwise - confirmed by two
+    # separate hangs where ok+failed exactly matched the batch size, i.e.
+    # every tuple truly finished, yet the process never exited).
+    # All worker loops exit once in_flight reaches 0 and work_q is empty.
     pending_verify_q: "queue.Queue[tuple[int, dict, list, dict | None, str]]" = queue.Queue()
-    in_flight = {"n": 0}
+    in_flight = {"n": total_to_do}
     flight_lock = threading.Lock()
     verify_retry_count: dict[tuple, int] = {}
     MAX_VERIFY_RETRIES = 2
@@ -610,16 +643,18 @@ def main() -> None:
                 idx, tup = work_q.get(timeout=1.0)
             except queue.Empty:
                 continue
-            with flight_lock:
-                in_flight["n"] += 1  # only for tuples freshly pulled, not requeued ones (see below)
-            questions, hits, subject, err = generate_schema_valid_tuple(retriever, tup, key_state, GENERATION_MODEL)
+            try:
+                questions, hits, subject, err = generate_schema_valid_tuple(
+                    retriever, tup, key_state, GENERATION_MODEL
+                )
+            except Exception as exc:  # noqa: BLE001 - must never leave in_flight permanently stuck
+                finalize_failure(tup, f"unhandled exception: {exc!r}", "gen")
+                continue
             if questions:
                 pending_verify_q.put((idx, tup, questions, hits, subject))
             else:
                 if err == "key exhausted":
-                    work_q.put((idx, tup))
-                    with flight_lock:
-                        in_flight["n"] -= 1  # undo the increment above; this attempt never really started
+                    work_q.put((idx, tup))  # still in_flight - another gen thread/key will pick it up
                     return
                 finalize_failure(tup, err or "unknown generation error", "gen")
 
@@ -647,7 +682,19 @@ def main() -> None:
 
             key_state = next_verify_key()
             items = [(tup, questions) for (_idx, tup, questions, _hits, _subject) in batch]
-            results = verify_batch_combined(items, key_state)
+            try:
+                results = verify_batch_combined(items, key_state)
+            except Exception as exc:  # noqa: BLE001 - must never leave in_flight permanently stuck
+                for idx, tup, questions, hits, subject in batch:
+                    key = (tup["skillId"], tup["bloom"])
+                    verify_retry_count[key] = verify_retry_count.get(key, 0) + 1
+                    if verify_retry_count[key] <= MAX_VERIFY_RETRIES:
+                        work_q.put((idx, tup))  # still in_flight - cycling back, don't decrement
+                        print(f"[verify] RETRY {tup['skillId']}@{tup['bloom']} "
+                              f"after unhandled exception: {exc!r}")
+                    else:
+                        finalize_failure(tup, f"unhandled exception: {exc!r}", "verify")
+                continue
 
             for (idx, tup, questions, hits, subject), (verified_ok, checks) in zip(batch, results):
                 problems = []
