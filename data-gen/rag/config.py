@@ -4,8 +4,10 @@ from pathlib import Path
 
 # data-gen/
 DATA_GEN_DIR = Path(__file__).resolve().parent.parent
-# bktback/
+# repository root
 BKTBACK_DIR = DATA_GEN_DIR.parent
+# Canonical ontology lives with the Backend that serves it.
+ONTOLOGY_SOURCE_DIR = BKTBACK_DIR / "Backend" / "tree_data" / "ontology_source"
 
 DOCUMENTS_DIR = BKTBACK_DIR / "documents"
 KB_DIR = Path(__file__).resolve().parent / "kb"
@@ -44,18 +46,17 @@ SUBJECT_ALIASES = {
     "রসায়ন": "Chemistry",
 }
 
-# Local generator (Ollama)
-OLLAMA_BASE_URL = "http://localhost:11434"
-OLLAMA_MODEL = "qwen2.5:7b-instruct-q4_K_M"
-OLLAMA_FALLBACK_MODEL = "qwen2.5:3b-instruct"
-OLLAMA_TIMEOUT_SEC = 300
-OLLAMA_TEMPERATURE = 0.7
-
-# Generation loop defaults (mirrors generate_question.py)
+# Generation loop defaults
 N_QUESTIONS = 3
-OUTPUT_PATH = DATA_GEN_DIR / "output_questions.json"
-RAW_OUTPUT_DIR = DATA_GEN_DIR / "raw_responses_rag"
-TUPLES_PATH = DATA_GEN_DIR / "tuples.json"
-PREREQS_PATH = DATA_GEN_DIR / "prereqs.json"
-START_TUPLE_INDEX = 1  # 1-based; set higher to resume
+TUPLES_PATH = ONTOLOGY_SOURCE_DIR / "tuples.json"
+PREREQS_PATH = ONTOLOGY_SOURCE_DIR / "prereqs.json"
 MAX_JSON_RETRIES = 2
+
+# The ontology assigns ONE Bloom level per skill (mostly "Apply"). Both the
+# diagnostic and topic practice ask for a question one Bloom level ABOVE the
+# learner's current band, so a single-level bank forces the nearby-Bloom fallback
+# on nearly every request. With expansion on, each skill is generated at every
+# Bloom level, which is what the adaptive policy actually needs.
+# Cost: 6x the generation runs. Override with env RAG_EXPAND_BLOOMS=0.
+EXPAND_ALL_BLOOM_LEVELS = True
+BLOOM_LEVELS = ["Remember", "Understand", "Apply", "Analyze", "Evaluate", "Create"]

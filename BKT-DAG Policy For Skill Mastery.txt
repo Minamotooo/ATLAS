@@ -1,4 +1,4 @@
-﻿ATLAS BKT-DAG Policy (Current Implemented State)
+ATLAS BKT-DAG Policy (Current Implemented State)
 
 Version scope
 - This document reflects the current code behavior in Backend/server.py, Backend/diagnostic.py, and Backend/mastery_updater.py.
@@ -48,7 +48,9 @@ Transition gating policy
 
 Gate and objective
 - Section diagnostic must be completed before mastery views are unlocked.
-- Target length is fixed at 30 questions.
+- Target length is DIAGNOSTIC_QUESTION_COUNT (default 30, env-overridable), capped at
+  the section's skill count because DiagnosticSession tests each skill at most once.
+  Floor is DIAGNOSTIC_MIN_QUESTION_COUNT (5). See _diagnostic_length_for_section.
 
 Session initialization
 - DiagnosticSession is created with stop_threshold=0.0 (no early stop by untested-fraction rule).
@@ -70,6 +72,10 @@ Question row search policy (actual/default mode)
 
    Tier 1
    - Same skill + nearby Bloom labels + topic filter.
+   - The topic filter matches questions.topic, which is a FK to
+     ontology_topics(topic_code) and therefore holds a topic CODE. Filtering it by a
+     catalog display label matches nothing (this was a live bug; Tier 1 and Tier 2
+     never fired and every question came from the Tier 1 fallback).
 
    Tier 1 fallback
    - Same skill + nearby Bloom labels without topic filter.
@@ -178,7 +184,7 @@ Instrumentation coverage
 7) Canonical Constants (Current)
 ==================================================
 
-- Diagnostic question count: 30
+- Diagnostic question count: 30 (capped at section skill count, floor 5)
 - Mastery notify threshold: 95%
 - Topic practice mastery threshold: 95%
 - Spillover Rule A window/count: last 5, threshold 3
@@ -191,5 +197,26 @@ Instrumentation coverage
 ==================================================
 
 - Topic practice flow is backend-driven through /topic-practice/* endpoints.
-- Legacy frontend lesson practice page is separate and not the canonical policy engine.
 - If strict production behavior is required, keep DIAGNOSTIC_RANDOM_SELECTION=false.
+
+==================================================
+9) Content Scope
+==================================================
+
+- The platform targets engineering university admission tests (BUET/KUET/RUET/CUET
+  and similar), covering Mathematics, Physics and Chemistry.
+- Ontology: 430 skills across 66 canonical topics, 471 prerequisite edges, max depth 7.
+  Built from Backend/tree_data/ontology_source/ by build_from_ontology.py.
+- Catalog: one course per subject, 20 sections total.
+- The earlier BCS arithmetic ontology and its question bank have been removed.
+
+==================================================
+10) Known Content Gap
+==================================================
+
+- The source ontology assigns ONE Bloom level per skill (mostly Apply). Both the
+  diagnostic and topic practice request a question one Bloom level ABOVE the learner's
+  current band, so a single-level question bank leaves that ladder with nothing to
+  climb and the nearby-Bloom fallback becomes the normal path.
+- data-gen generates across all six Bloom levels (rag/config.EXPAND_ALL_BLOOM_LEVELS)
+  to close this. Until that bank is generated and loaded, Bloom conditioning is weak.

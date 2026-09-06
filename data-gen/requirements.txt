@@ -1,10 +1,11 @@
-# Naive RAG question generation (local)
+# RAG question generation (retrieval is local, generation calls the Gemini API
+# directly over HTTP via `requests` - no google-genai SDK needed)
 numpy>=1.26.0
 sentence-transformers>=3.0.0
 torch>=2.1.0
 requests>=2.31.0
 tqdm>=4.66.0
 
-# Optional: keep if you still run the old Gemini script
-# google-genai
-# google-auth
+# load_questions_to_supabase.py
+supabase>=2.4.0
+python-dotenv>=1.0.0

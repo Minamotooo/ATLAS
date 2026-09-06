@@ -1,0 +1,290 @@
+{
+  "_README": [
+    "Editorial layer over the raw ontology (ontology_source/). Everything here is a",
+    "human decision that cannot be derived from the source data. Edit freely and re-run:",
+    "    python Backend/tree_data/build_from_ontology.py --out-dir Backend/tree_data --force",
+    "",
+    "topic_aliases : raw topic_code -> canonical topic_code. The source ontology was",
+    "  assembled from three drafts, so the same topic appears under 2-3 codes",
+    "  (MAT_ vs MATH_, CHE_ vs CHEM_, PHY_GRAV vs PHY_GRAVITATION). Unmerged, the",
+    "  catalog lists a topic twice and topic practice only ever covers half of it.",
+    "topic_labels  : canonical topic_code -> display label (leading syllabus numbers stripped).",
+    "courses       : one course per subject; sections group canonical topics into",
+    "  syllabus areas. Section order is the intended study order.",
+    "",
+    "Any canonical topic not listed under a section is still ingested, but will not",
+    "appear in the catalog. The build reports those."
+  ],
+
+  "topic_aliases": {
+    "MATH_MAT": "MAT_MATRIX",
+    "MATH_ALG": "MAT_ALGEBRA",
+    "MATH_POLY": "MAT_EQTHEORY",
+    "MATH_COMPLEX": "MAT_COMPLEX",
+    "MATH_CX": "MAT_COMPLEX",
+    "MATH_TRIG": "MAT_TRIG",
+    "MATH_LINE": "MAT_COORD_LINE",
+    "MATH_COORD": "MAT_COORD_LINE",
+    "MATH_CONIC": "MAT_COORD_CONIC",
+    "MATH_LIMIT": "MAT_CALC_DIFF",
+    "MATH_INTEG": "MAT_CALC_INTEG",
+    "MATH_STATICS": "MAT_STATICS",
+    "MATH_DYNAMICS": "MAT_DYNAMICS",
+
+    "PHY_MEAS": "PHY_UNITS",
+    "PHY_NEWT": "PHY_NEWTON",
+    "PHY_DYNAMICS": "PHY_NEWTON",
+    "PHY_WORK": "PHY_WORK_ENERGY",
+    "PHY_ROT": "PHY_ROTATION",
+    "PHY_GRAV": "PHY_GRAVITATION",
+    "PHY_OSC": "PHY_SHM",
+    "PHY_OPT": "PHY_OPTICS",
+    "PHY_KTG": "PHY_KINETIC",
+    "PHY_ELEC": "PHY_ELECTROSTATICS",
+    "PHY_CAP": "PHY_ELECTROSTATICS",
+    "PHY_CUR": "PHY_CURRENT",
+    "PHY_CIRCUIT": "PHY_CURRENT",
+    "PHY_MAG": "PHY_MAGNETISM",
+    "PHY_NUC": "PHY_NUCLEAR",
+    "PHY_SEMI": "PHY_SEMICONDUCTOR",
+    "PHY_SEMICOND": "PHY_SEMICONDUCTOR",
+
+    "CHEM_ATOMIC": "CHE_ATOMIC",
+    "CHEM_AT": "CHE_ATOMIC",
+    "CHEM_PER": "CHEM_PERIODIC",
+    "CHEM_BONDING": "CHE_BONDING",
+    "CHEM_BOND": "CHE_BONDING",
+    "CHEM_COORD": "CHE_COORD",
+    "CHEM_STOICH": "CHE_STOICHIOMETRY",
+    "CHEM_MOLE": "CHE_STOICHIOMETRY",
+    "CHEM_GASLAW": "CHE_GASLAWS",
+    "CHEM_GAS": "CHE_GASLAWS",
+    "CHEM_EQUILIBRIUM": "CHE_EQUILIBRIUM",
+    "CHEM_EQ": "CHE_EQUILIBRIUM",
+    "CHEM_ACIDBASE": "CHE_ACIDBASE",
+    "CHEM_AB": "CHE_ACIDBASE",
+    "CHEM_KINETICS": "CHEM_KIN",
+    "CHEM_ELECTROCHEM": "CHE_ELECTROCHEM",
+    "CHEM_ORGANIC": "CHE_ORGANIC",
+    "CHEM_ORG": "CHE_ORGANIC",
+    "CHEM_QUALITATIVE": "CHE_QUAL"
+  },
+
+  "topic_labels": {
+    "MAT_MATRIX": "Matrices and Determinants",
+    "MAT_EQTHEORY": "Theory of Equations and Polynomials",
+    "MAT_ALGEBRA": "Algebraic and Exponential Equations",
+    "MAT_COMPLEX": "Complex Numbers",
+    "MAT_COORD_LINE": "Straight Line",
+    "MAT_COORD_CONIC": "Conic Sections",
+    "MATH_GEOM": "Geometry (Similar Triangles)",
+    "MAT_TRIG": "Trigonometric Functions and Identities",
+    "MAT_INVTRIG": "Inverse Trigonometric Functions",
+    "MAT_CALC_DIFF": "Differential Calculus",
+    "MAT_CALC_INTEG": "Integral Calculus",
+    "MATH_CALC": "Differential and Integral Calculus",
+    "MAT_STATICS": "Statics",
+    "MAT_DYNAMICS": "Dynamics",
+    "MATH_MECH": "Vector, Statics and Dynamics",
+
+    "PHY_UNITS": "Units, Dimensions and Measurement",
+    "PHY_VEC": "Vector Analysis",
+    "PHY_NEWTON": "Newtonian Mechanics",
+    "PHY_PROJ": "Projectile Motion",
+    "PHY_CIRC": "Circular Motion",
+    "PHY_WORK_ENERGY": "Work, Energy and Power",
+    "PHY_ROTATION": "Rotational Motion",
+    "PHY_GRAVITATION": "Gravitation",
+    "PHY_ELASTICITY": "Elasticity",
+    "PHY_FLUID": "Fluid Properties and Surface Tension",
+    "PHY_SOLID": "Properties of Matter and Bonding in Solids",
+    "PHY_THERMO": "Thermodynamics and Heat",
+    "PHY_KINETIC": "Kinetic Theory of Gases",
+    "PHY_SHM": "Simple Harmonic Motion",
+    "PHY_WAVE": "Waves",
+    "PHY_OPTICS": "Wave Optics",
+    "PHY_OPTICS_WAVE": "Waves and Optics",
+    "PHY_ELECTROSTATICS": "Electrostatics and Capacitance",
+    "PHY_CURRENT": "Current Electricity",
+    "PHY_MAGNETISM": "Magnetism and Electromagnetism",
+    "PHY_EM": "Electromagnetic Induction",
+    "PHY_MODERN": "Modern Physics",
+    "PHY_MOD": "Electromagnetic Spectrum",
+    "PHY_AT": "Atomic and Quantum Physics",
+    "PHY_XRAY": "X-rays",
+    "PHY_NUCLEAR": "Nuclear Physics",
+    "PHY_SEMICONDUCTOR": "Semiconductor Devices",
+
+    "CHE_ATOMIC": "Atomic Structure and Quantum Numbers",
+    "CHEM_PERIODIC": "Periodic Properties and Trends",
+    "CHEM_SPEC": "Electromagnetic Spectrum",
+    "CHE_BONDING": "Chemical Bonding",
+    "CHEM_SOLID": "Solid State and Ionic Compounds",
+    "CHE_COORD": "Coordination Compounds",
+    "CHEM_DBLOCK": "Transition Elements",
+    "CHE_STOICHIOMETRY": "Stoichiometry and Mole Concept",
+    "CHE_GASLAWS": "Gaseous State",
+    "CHEM_SOLUTION": "Solutions",
+    "CHE_THERMOCHEM": "Thermochemistry",
+    "CHEM_KIN": "Chemical Kinetics",
+    "CHEM_CAT": "Catalysis",
+    "CHE_EQUILIBRIUM": "Chemical Equilibrium",
+    "CHE_ACIDBASE": "Acids, Bases and pH",
+    "CHEM_REDOX": "Redox Reactions",
+    "CHE_ELECTROCHEM": "Electrochemistry",
+    "CHE_ORGANIC": "Organic Chemistry",
+    "CHEM_NOM": "Nomenclature",
+    "CHEM_STEREO": "Stereochemistry",
+    "CHE_BIOMOLECULE": "Biomolecules",
+    "CHE_QUAL": "Qualitative Analysis",
+    "CHEM_ANALYTICAL": "Quantitative (Titrimetric) Analysis",
+    "CHEM_ENV": "Environmental Chemistry"
+  },
+
+  "courses": [
+    {
+      "id": "admission_mathematics",
+      "title": "Mathematics",
+      "title_bn": "গণিত",
+      "subject": "Mathematics",
+      "sections": [
+        {
+          "id": "math_algebra",
+          "title": "Algebra and Equations",
+          "title_bn": "বীজগণিত ও সমীকরণ",
+          "topics": ["MAT_ALGEBRA", "MAT_EQTHEORY", "MAT_MATRIX", "MAT_COMPLEX"]
+        },
+        {
+          "id": "math_trigonometry",
+          "title": "Trigonometry",
+          "title_bn": "ত্রিকোণমিতি",
+          "topics": ["MAT_TRIG", "MAT_INVTRIG"]
+        },
+        {
+          "id": "math_coordinate_geometry",
+          "title": "Coordinate Geometry",
+          "title_bn": "স্থানাঙ্ক জ্যামিতি",
+          "topics": ["MAT_COORD_LINE", "MAT_COORD_CONIC", "MATH_GEOM"]
+        },
+        {
+          "id": "math_calculus",
+          "title": "Calculus",
+          "title_bn": "ক্যালকুলাস",
+          "topics": ["MAT_CALC_DIFF", "MAT_CALC_INTEG", "MATH_CALC"]
+        },
+        {
+          "id": "math_mechanics",
+          "title": "Statics and Dynamics",
+          "title_bn": "স্থিতিবিদ্যা ও গতিবিদ্যা",
+          "topics": ["MAT_STATICS", "MAT_DYNAMICS", "MATH_MECH"]
+        }
+      ]
+    },
+    {
+      "id": "admission_physics",
+      "title": "Physics",
+      "title_bn": "পদার্থবিজ্ঞান",
+      "subject": "Physics",
+      "sections": [
+        {
+          "id": "phy_measurement_vectors",
+          "title": "Measurement and Vectors",
+          "title_bn": "পরিমাপ ও ভেক্টর",
+          "topics": ["PHY_UNITS", "PHY_VEC"]
+        },
+        {
+          "id": "phy_mechanics",
+          "title": "Mechanics",
+          "title_bn": "বলবিদ্যা",
+          "topics": ["PHY_NEWTON", "PHY_PROJ", "PHY_CIRC", "PHY_WORK_ENERGY", "PHY_ROTATION", "PHY_GRAVITATION"]
+        },
+        {
+          "id": "phy_properties_of_matter",
+          "title": "Properties of Matter",
+          "title_bn": "পদার্থের ধর্ম",
+          "topics": ["PHY_ELASTICITY", "PHY_FLUID", "PHY_SOLID"]
+        },
+        {
+          "id": "phy_heat_thermodynamics",
+          "title": "Heat and Thermodynamics",
+          "title_bn": "তাপ ও তাপগতিবিদ্যা",
+          "topics": ["PHY_THERMO", "PHY_KINETIC"]
+        },
+        {
+          "id": "phy_waves_optics",
+          "title": "Waves and Optics",
+          "title_bn": "তরঙ্গ ও আলোকবিজ্ঞান",
+          "topics": ["PHY_SHM", "PHY_WAVE", "PHY_OPTICS", "PHY_OPTICS_WAVE"]
+        },
+        {
+          "id": "phy_electricity_magnetism",
+          "title": "Electricity and Magnetism",
+          "title_bn": "তড়িৎ ও চুম্বকত্ব",
+          "topics": ["PHY_ELECTROSTATICS", "PHY_CURRENT", "PHY_MAGNETISM", "PHY_EM"]
+        },
+        {
+          "id": "phy_modern_physics",
+          "title": "Modern Physics",
+          "title_bn": "আধুনিক পদার্থবিজ্ঞান",
+          "topics": ["PHY_MODERN", "PHY_MOD", "PHY_AT", "PHY_XRAY", "PHY_NUCLEAR", "PHY_SEMICONDUCTOR"]
+        }
+      ]
+    },
+    {
+      "id": "admission_chemistry",
+      "title": "Chemistry",
+      "title_bn": "রসায়ন",
+      "subject": "Chemistry",
+      "sections": [
+        {
+          "id": "chem_atomic_periodic",
+          "title": "Atomic Structure and Periodicity",
+          "title_bn": "পারমাণবিক গঠন ও পর্যায়বৃত্ততা",
+          "topics": ["CHE_ATOMIC", "CHEM_PERIODIC", "CHEM_SPEC"]
+        },
+        {
+          "id": "chem_bonding",
+          "title": "Chemical Bonding and Structure",
+          "title_bn": "রাসায়নিক বন্ধন ও গঠন",
+          "topics": ["CHE_BONDING", "CHEM_SOLID", "CHE_COORD", "CHEM_DBLOCK"]
+        },
+        {
+          "id": "chem_stoichiometry_states",
+          "title": "Stoichiometry and States of Matter",
+          "title_bn": "রাসায়নিক গণনা ও পদার্থের অবস্থা",
+          "topics": ["CHE_STOICHIOMETRY", "CHE_GASLAWS", "CHEM_SOLUTION"]
+        },
+        {
+          "id": "chem_energetics_kinetics",
+          "title": "Energetics and Kinetics",
+          "title_bn": "শক্তি ও বিক্রিয়ার হার",
+          "topics": ["CHE_THERMOCHEM", "CHEM_KIN", "CHEM_CAT"]
+        },
+        {
+          "id": "chem_equilibrium_acids",
+          "title": "Equilibrium, Acids and Bases",
+          "title_bn": "সাম্যাবস্থা, অ্যাসিড ও ক্ষার",
+          "topics": ["CHE_EQUILIBRIUM", "CHE_ACIDBASE"]
+        },
+        {
+          "id": "chem_redox_electrochemistry",
+          "title": "Redox and Electrochemistry",
+          "title_bn": "জারণ-বিজারণ ও তড়িৎরসায়ন",
+          "topics": ["CHEM_REDOX", "CHE_ELECTROCHEM"]
+        },
+        {
+          "id": "chem_organic",
+          "title": "Organic Chemistry",
+          "title_bn": "জৈব রসায়ন",
+          "topics": ["CHE_ORGANIC", "CHEM_NOM", "CHEM_STEREO", "CHE_BIOMOLECULE"]
+        },
+        {
+          "id": "chem_analytical_environmental",
+          "title": "Analytical and Environmental Chemistry",
+          "title_bn": "বিশ্লেষণী ও পরিবেশ রসায়ন",
+          "topics": ["CHE_QUAL", "CHEM_ANALYTICAL", "CHEM_ENV"]
+        }
+      ]
+    }
+  ]
+}

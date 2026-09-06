@@ -1,91 +1,519 @@
 {
   "courses": [
     {
-      "id": "mathematical_reasoning",
-      "title": "Mathematical Reasoning",
-      "title_bn": "গাণিতিক যুক্তি",
+      "id": "admission_mathematics",
+      "title": "Mathematics",
+      "title_bn": "গণিত",
+      "subject": "Mathematics",
       "enabled": true,
       "sections": [
         {
-          "id": "section_1_arithmetic_real_numbers",
-          "title": "Arithmetic & Real Numbers",
-          "title_bn": "বাস্তব সংখ্যা ও পাটিগণিত",
+          "id": "math_algebra",
+          "title": "Algebra and Equations",
+          "title_bn": "বীজগণিত ও সমীকরণ",
           "enabled": true,
           "topics": [
             {
-              "id": "real_numbers",
-              "title": "Real Numbers",
-              "title_bn": "বাস্তব সংখ্যা",
-              "skill_topic_code": "RNUM"
+              "id": "mat_algebra",
+              "title": "Algebraic and Exponential Equations",
+              "skill_topic_code": "MAT_ALGEBRA"
             },
             {
-              "id": "hcf",
-              "title": "HCF",
-              "title_bn": "গ.সা.গু",
-              "skill_topic_code": "HCF"
+              "id": "mat_eqtheory",
+              "title": "Theory of Equations and Polynomials",
+              "skill_topic_code": "MAT_EQTHEORY"
             },
             {
-              "id": "lcm",
-              "title": "LCM",
-              "title_bn": "ল.সা.গু",
-              "skill_topic_code": "LCM"
+              "id": "mat_matrix",
+              "title": "Matrices and Determinants",
+              "skill_topic_code": "MAT_MATRIX"
             },
             {
-              "id": "percentage",
-              "title": "Percentage",
-              "title_bn": "শতকরা",
-              "skill_topic_code": "PCT"
-            },
-            {
-              "id": "simple_compound_profit",
-              "title": "Simple and Compound Profit",
-              "title_bn": "সরল ও চক্রবৃদ্ধি মুনাফা",
-              "skill_topic_code": "SCP"
-            },
-            {
-              "id": "ratio_proportion",
-              "title": "Ratio and Proportions",
-              "title_bn": "অনুপাত ও সমানুপাত",
-              "skill_topic_code": "RAP"
-            },
-            {
-              "id": "profit_loss",
-              "title": "Profit and Loss",
-              "title_bn": "লাভ-ক্ষতি",
-              "skill_topic_code": "PAL"
+              "id": "mat_complex",
+              "title": "Complex Numbers",
+              "skill_topic_code": "MAT_COMPLEX"
             }
-          ],
-          "additional_skill_topic_codes": [
-            "EXT"
           ]
         },
         {
-          "id": "section_2_algebra",
-          "title": "Algebra",
-          "title_bn": "বীজগণিত",
-          "enabled": false,
-          "topics": []
+          "id": "math_trigonometry",
+          "title": "Trigonometry",
+          "title_bn": "ত্রিকোণমিতি",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "mat_trig",
+              "title": "Trigonometric Functions and Identities",
+              "skill_topic_code": "MAT_TRIG"
+            },
+            {
+              "id": "mat_invtrig",
+              "title": "Inverse Trigonometric Functions",
+              "skill_topic_code": "MAT_INVTRIG"
+            }
+          ]
         },
         {
-          "id": "section_3_indices_logs_sequences_series",
-          "title": "Indices & Logarithms / Sequences & Series",
-          "title_bn": "সূচক, লগারিদম এবং ধারা",
-          "enabled": false,
-          "topics": []
+          "id": "math_coordinate_geometry",
+          "title": "Coordinate Geometry",
+          "title_bn": "স্থানাঙ্ক জ্যামিতি",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "mat_coord_line",
+              "title": "Straight Line",
+              "skill_topic_code": "MAT_COORD_LINE"
+            },
+            {
+              "id": "mat_coord_conic",
+              "title": "Conic Sections",
+              "skill_topic_code": "MAT_COORD_CONIC"
+            },
+            {
+              "id": "math_geom",
+              "title": "Geometry (Similar Triangles)",
+              "skill_topic_code": "MATH_GEOM"
+            }
+          ]
         },
         {
-          "id": "section_4_geometry",
-          "title": "Geometry",
-          "title_bn": "জ্যামিতি",
-          "enabled": false,
-          "topics": []
+          "id": "math_calculus",
+          "title": "Calculus",
+          "title_bn": "ক্যালকুলাস",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "mat_calc_diff",
+              "title": "Differential Calculus",
+              "skill_topic_code": "MAT_CALC_DIFF"
+            },
+            {
+              "id": "mat_calc_integ",
+              "title": "Integral Calculus",
+              "skill_topic_code": "MAT_CALC_INTEG"
+            },
+            {
+              "id": "math_calc",
+              "title": "Differential and Integral Calculus",
+              "skill_topic_code": "MATH_CALC"
+            }
+          ]
         },
         {
-          "id": "section_5_set_permutation_combination_statistics_probability",
-          "title": "Set, Permutation & Combination, Statistics & Probability",
-          "title_bn": "সেট, বিন্যাস ও সমাবেশ, পরিসংখ্যান ও সম্ভাব্যতা",
-          "enabled": false,
-          "topics": []
+          "id": "math_mechanics",
+          "title": "Statics and Dynamics",
+          "title_bn": "স্থিতিবিদ্যা ও গতিবিদ্যা",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "mat_statics",
+              "title": "Statics",
+              "skill_topic_code": "MAT_STATICS"
+            },
+            {
+              "id": "mat_dynamics",
+              "title": "Dynamics",
+              "skill_topic_code": "MAT_DYNAMICS"
+            },
+            {
+              "id": "math_mech",
+              "title": "Vector, Statics and Dynamics",
+              "skill_topic_code": "MATH_MECH"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "admission_physics",
+      "title": "Physics",
+      "title_bn": "পদার্থবিজ্ঞান",
+      "subject": "Physics",
+      "enabled": true,
+      "sections": [
+        {
+          "id": "phy_measurement_vectors",
+          "title": "Measurement and Vectors",
+          "title_bn": "পরিমাপ ও ভেক্টর",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "phy_units",
+              "title": "Units, Dimensions and Measurement",
+              "skill_topic_code": "PHY_UNITS"
+            },
+            {
+              "id": "phy_vec",
+              "title": "Vector Analysis",
+              "skill_topic_code": "PHY_VEC"
+            }
+          ]
+        },
+        {
+          "id": "phy_mechanics",
+          "title": "Mechanics",
+          "title_bn": "বলবিদ্যা",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "phy_newton",
+              "title": "Newtonian Mechanics",
+              "skill_topic_code": "PHY_NEWTON"
+            },
+            {
+              "id": "phy_proj",
+              "title": "Projectile Motion",
+              "skill_topic_code": "PHY_PROJ"
+            },
+            {
+              "id": "phy_circ",
+              "title": "Circular Motion",
+              "skill_topic_code": "PHY_CIRC"
+            },
+            {
+              "id": "phy_work_energy",
+              "title": "Work, Energy and Power",
+              "skill_topic_code": "PHY_WORK_ENERGY"
+            },
+            {
+              "id": "phy_rotation",
+              "title": "Rotational Motion",
+              "skill_topic_code": "PHY_ROTATION"
+            },
+            {
+              "id": "phy_gravitation",
+              "title": "Gravitation",
+              "skill_topic_code": "PHY_GRAVITATION"
+            }
+          ]
+        },
+        {
+          "id": "phy_properties_of_matter",
+          "title": "Properties of Matter",
+          "title_bn": "পদার্থের ধর্ম",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "phy_elasticity",
+              "title": "Elasticity",
+              "skill_topic_code": "PHY_ELASTICITY"
+            },
+            {
+              "id": "phy_fluid",
+              "title": "Fluid Properties and Surface Tension",
+              "skill_topic_code": "PHY_FLUID"
+            },
+            {
+              "id": "phy_solid",
+              "title": "Properties of Matter and Bonding in Solids",
+              "skill_topic_code": "PHY_SOLID"
+            }
+          ]
+        },
+        {
+          "id": "phy_heat_thermodynamics",
+          "title": "Heat and Thermodynamics",
+          "title_bn": "তাপ ও তাপগতিবিদ্যা",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "phy_thermo",
+              "title": "Thermodynamics and Heat",
+              "skill_topic_code": "PHY_THERMO"
+            },
+            {
+              "id": "phy_kinetic",
+              "title": "Kinetic Theory of Gases",
+              "skill_topic_code": "PHY_KINETIC"
+            }
+          ]
+        },
+        {
+          "id": "phy_waves_optics",
+          "title": "Waves and Optics",
+          "title_bn": "তরঙ্গ ও আলোকবিজ্ঞান",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "phy_shm",
+              "title": "Simple Harmonic Motion",
+              "skill_topic_code": "PHY_SHM"
+            },
+            {
+              "id": "phy_wave",
+              "title": "Waves",
+              "skill_topic_code": "PHY_WAVE"
+            },
+            {
+              "id": "phy_optics",
+              "title": "Wave Optics",
+              "skill_topic_code": "PHY_OPTICS"
+            },
+            {
+              "id": "phy_optics_wave",
+              "title": "Waves and Optics",
+              "skill_topic_code": "PHY_OPTICS_WAVE"
+            }
+          ]
+        },
+        {
+          "id": "phy_electricity_magnetism",
+          "title": "Electricity and Magnetism",
+          "title_bn": "তড়িৎ ও চুম্বকত্ব",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "phy_electrostatics",
+              "title": "Electrostatics and Capacitance",
+              "skill_topic_code": "PHY_ELECTROSTATICS"
+            },
+            {
+              "id": "phy_current",
+              "title": "Current Electricity",
+              "skill_topic_code": "PHY_CURRENT"
+            },
+            {
+              "id": "phy_magnetism",
+              "title": "Magnetism and Electromagnetism",
+              "skill_topic_code": "PHY_MAGNETISM"
+            },
+            {
+              "id": "phy_em",
+              "title": "Electromagnetic Induction",
+              "skill_topic_code": "PHY_EM"
+            }
+          ]
+        },
+        {
+          "id": "phy_modern_physics",
+          "title": "Modern Physics",
+          "title_bn": "আধুনিক পদার্থবিজ্ঞান",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "phy_modern",
+              "title": "Modern Physics",
+              "skill_topic_code": "PHY_MODERN"
+            },
+            {
+              "id": "phy_mod",
+              "title": "Electromagnetic Spectrum",
+              "skill_topic_code": "PHY_MOD"
+            },
+            {
+              "id": "phy_at",
+              "title": "Atomic and Quantum Physics",
+              "skill_topic_code": "PHY_AT"
+            },
+            {
+              "id": "phy_xray",
+              "title": "X-rays",
+              "skill_topic_code": "PHY_XRAY"
+            },
+            {
+              "id": "phy_nuclear",
+              "title": "Nuclear Physics",
+              "skill_topic_code": "PHY_NUCLEAR"
+            },
+            {
+              "id": "phy_semiconductor",
+              "title": "Semiconductor Devices",
+              "skill_topic_code": "PHY_SEMICONDUCTOR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "admission_chemistry",
+      "title": "Chemistry",
+      "title_bn": "রসায়ন",
+      "subject": "Chemistry",
+      "enabled": true,
+      "sections": [
+        {
+          "id": "chem_atomic_periodic",
+          "title": "Atomic Structure and Periodicity",
+          "title_bn": "পারমাণবিক গঠন ও পর্যায়বৃত্ততা",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "che_atomic",
+              "title": "Atomic Structure and Quantum Numbers",
+              "skill_topic_code": "CHE_ATOMIC"
+            },
+            {
+              "id": "chem_periodic",
+              "title": "Periodic Properties and Trends",
+              "skill_topic_code": "CHEM_PERIODIC"
+            },
+            {
+              "id": "chem_spec",
+              "title": "Electromagnetic Spectrum",
+              "skill_topic_code": "CHEM_SPEC"
+            }
+          ]
+        },
+        {
+          "id": "chem_bonding",
+          "title": "Chemical Bonding and Structure",
+          "title_bn": "রাসায়নিক বন্ধন ও গঠন",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "che_bonding",
+              "title": "Chemical Bonding",
+              "skill_topic_code": "CHE_BONDING"
+            },
+            {
+              "id": "chem_solid",
+              "title": "Solid State and Ionic Compounds",
+              "skill_topic_code": "CHEM_SOLID"
+            },
+            {
+              "id": "che_coord",
+              "title": "Coordination Compounds",
+              "skill_topic_code": "CHE_COORD"
+            },
+            {
+              "id": "chem_dblock",
+              "title": "Transition Elements",
+              "skill_topic_code": "CHEM_DBLOCK"
+            }
+          ]
+        },
+        {
+          "id": "chem_stoichiometry_states",
+          "title": "Stoichiometry and States of Matter",
+          "title_bn": "রাসায়নিক গণনা ও পদার্থের অবস্থা",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "che_stoichiometry",
+              "title": "Stoichiometry and Mole Concept",
+              "skill_topic_code": "CHE_STOICHIOMETRY"
+            },
+            {
+              "id": "che_gaslaws",
+              "title": "Gaseous State",
+              "skill_topic_code": "CHE_GASLAWS"
+            },
+            {
+              "id": "chem_solution",
+              "title": "Solutions",
+              "skill_topic_code": "CHEM_SOLUTION"
+            }
+          ]
+        },
+        {
+          "id": "chem_energetics_kinetics",
+          "title": "Energetics and Kinetics",
+          "title_bn": "শক্তি ও বিক্রিয়ার হার",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "che_thermochem",
+              "title": "Thermochemistry",
+              "skill_topic_code": "CHE_THERMOCHEM"
+            },
+            {
+              "id": "chem_kin",
+              "title": "Chemical Kinetics",
+              "skill_topic_code": "CHEM_KIN"
+            },
+            {
+              "id": "chem_cat",
+              "title": "Catalysis",
+              "skill_topic_code": "CHEM_CAT"
+            }
+          ]
+        },
+        {
+          "id": "chem_equilibrium_acids",
+          "title": "Equilibrium, Acids and Bases",
+          "title_bn": "সাম্যাবস্থা, অ্যাসিড ও ক্ষার",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "che_equilibrium",
+              "title": "Chemical Equilibrium",
+              "skill_topic_code": "CHE_EQUILIBRIUM"
+            },
+            {
+              "id": "che_acidbase",
+              "title": "Acids, Bases and pH",
+              "skill_topic_code": "CHE_ACIDBASE"
+            }
+          ]
+        },
+        {
+          "id": "chem_redox_electrochemistry",
+          "title": "Redox and Electrochemistry",
+          "title_bn": "জারণ-বিজারণ ও তড়িৎরসায়ন",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "chem_redox",
+              "title": "Redox Reactions",
+              "skill_topic_code": "CHEM_REDOX"
+            },
+            {
+              "id": "che_electrochem",
+              "title": "Electrochemistry",
+              "skill_topic_code": "CHE_ELECTROCHEM"
+            }
+          ]
+        },
+        {
+          "id": "chem_organic",
+          "title": "Organic Chemistry",
+          "title_bn": "জৈব রসায়ন",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "che_organic",
+              "title": "Organic Chemistry",
+              "skill_topic_code": "CHE_ORGANIC"
+            },
+            {
+              "id": "chem_nom",
+              "title": "Nomenclature",
+              "skill_topic_code": "CHEM_NOM"
+            },
+            {
+              "id": "chem_stereo",
+              "title": "Stereochemistry",
+              "skill_topic_code": "CHEM_STEREO"
+            },
+            {
+              "id": "che_biomolecule",
+              "title": "Biomolecules",
+              "skill_topic_code": "CHE_BIOMOLECULE"
+            }
+          ]
+        },
+        {
+          "id": "chem_analytical_environmental",
+          "title": "Analytical and Environmental Chemistry",
+          "title_bn": "বিশ্লেষণী ও পরিবেশ রসায়ন",
+          "enabled": true,
+          "topics": [
+            {
+              "id": "che_qual",
+              "title": "Qualitative Analysis",
+              "skill_topic_code": "CHE_QUAL"
+            },
+            {
+              "id": "chem_analytical",
+              "title": "Quantitative (Titrimetric) Analysis",
+              "skill_topic_code": "CHEM_ANALYTICAL"
+            },
+            {
+              "id": "chem_env",
+              "title": "Environmental Chemistry",
+              "skill_topic_code": "CHEM_ENV"
+            }
+          ]
         }
       ]
     }

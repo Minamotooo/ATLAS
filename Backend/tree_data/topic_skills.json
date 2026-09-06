@@ -1,155 +1,564 @@
 {
-  "EXT": [
-    "PRE8",
-    "PRE9"
+  "CHEM_ANALYTICAL": [
+    "CHEM_ANALYTICAL1"
   ],
-  "RNUM": [
-    "PRE1",
-    "PRE2",
-    "PRE3",
-    "PRE4",
-    "PRE5",
-    "PRE6",
-    "LG2",
-    "LG4",
-    "LG5",
-    "LG9",
-    "LG1",
-    "LG3",
-    "LG8"
+  "CHEM_CAT": [
+    "CHEM_CAT1"
   ],
-  "HCF": [
-    "LG8",
-    "LG7",
-    "LG10",
-    "LG11",
-    "LG12",
-    "LG16",
-    "LG18",
-    "LG20",
-    "LG21"
+  "CHEM_DBLOCK": [
+    "CHEM_DBLOCK1"
   ],
-  "LCM": [
-    "LG8",
-    "LG12",
-    "LG16",
-    "LG6",
-    "LG13",
-    "LG14",
-    "LG15",
-    "LG17",
-    "LG19",
-    "LG20",
-    "LG22",
-    "LG21",
-    "LG23"
+  "CHEM_ENV": [
+    "CHEM_ENV1",
+    "CHEM_ENV2"
   ],
-  "PCT": [
-    "PC1",
-    "PC2",
-    "PC3",
-    "PC4",
-    "PC5",
-    "PC6",
-    "PCA1",
-    "PCA2",
-    "PCA3",
-    "PCA4",
-    "PCA5",
-    "PCA6",
-    "PL5",
-    "PL6",
-    "PL7"
+  "CHEM_KIN": [
+    "CHEM_KIN1",
+    "CHEM_KINETICS1"
   ],
-  "SCP": [
-    "PC1",
-    "PCA1",
-    "SI1",
-    "SI2",
-    "SI3",
-    "SI4",
-    "SI5",
-    "SI6",
-    "SI7",
-    "SI8",
-    "SI9",
-    "SI10",
-    "SI11",
-    "SI12",
-    "SI13",
-    "SI14",
-    "CI1",
-    "CI2",
-    "CI3",
-    "CI4",
-    "CI5",
-    "CI6",
-    "CI7",
-    "CI8",
-    "CI9",
-    "CI10",
-    "CI11",
-    "CI12",
-    "CI13",
-    "CI14",
-    "CI15",
-    "CI16",
-    "CI17"
+  "CHEM_NOM": [
+    "CHEM_NOM1",
+    "CHEM_NOM2"
   ],
-  "RAP": [
-    "LG11",
-    "RF1",
-    "RF2",
-    "RF3",
-    "RF4",
-    "RF5",
-    "RF6",
-    "RF7",
-    "RF8",
-    "RF9",
-    "RF10",
-    "RF11",
-    "PF1",
-    "PF2",
-    "PF3",
-    "PF4",
-    "PF5",
-    "PF6",
-    "PF7",
-    "TP1",
-    "TP2",
-    "TP3",
-    "TP4",
-    "TP5",
-    "TP6",
-    "AT1",
-    "AT2",
-    "AT3",
-    "AT4",
-    "AT5"
+  "CHEM_PERIODIC": [
+    "CHEM_PER1",
+    "CHEM_PER2",
+    "CHEM_PER3",
+    "CHEM_PER4",
+    "CHEM_PERIODIC1",
+    "CHEM_PERIODIC2"
   ],
-  "PAL": [
-    "PC6",
-    "PCA1",
-    "PCA2",
-    "PCA3",
-    "SI5",
-    "PL1",
-    "PL2",
-    "PL3",
-    "PL4",
-    "PL5",
-    "PL6",
-    "PL7",
-    "PL8",
-    "PL9",
-    "PL10",
-    "PL11",
-    "PL12",
-    "PL13",
-    "PL14",
-    "PL15",
-    "PL16",
-    "PL17"
+  "CHEM_REDOX": [
+    "CHEM_REDOX1",
+    "CHEM_REDOX1b",
+    "CHEM_REDOX2",
+    "CHEM_REDOX2b",
+    "CHEM_REDOX3",
+    "CHEM_REDOX4",
+    "CHEM_REDOX5",
+    "CHEM_REDOX6"
+  ],
+  "CHEM_SOLID": [
+    "CHEM_SOLID1"
+  ],
+  "CHEM_SOLUTION": [
+    "CHEM_SOLUTION1",
+    "CHEM_SOLUTION2"
+  ],
+  "CHEM_SPEC": [
+    "CHEM_SPEC1",
+    "CHEM_SPEC2"
+  ],
+  "CHEM_STEREO": [
+    "CHEM_STEREO1"
+  ],
+  "CHE_ACIDBASE": [
+    "CHEM_AB1",
+    "CHEM_AB2",
+    "CHEM_ACIDBASE1",
+    "CHEM_ACIDBASE2",
+    "CHE_ACIDBASE1",
+    "CHE_ACIDBASE2"
+  ],
+  "CHE_ATOMIC": [
+    "CHEM_AT1",
+    "CHEM_AT2",
+    "CHEM_AT3",
+    "CHEM_AT4",
+    "CHEM_AT5",
+    "CHEM_AT6",
+    "CHEM_ATOMIC1",
+    "CHEM_ATOMIC2",
+    "CHEM_ATOMIC3",
+    "CHEM_ATOMIC4",
+    "CHEM_ATOMIC5",
+    "CHE_ATOMIC1",
+    "CHE_ATOMIC2",
+    "CHE_ATOMIC3",
+    "CHE_ATOMIC4",
+    "CHE_ATOMIC5"
+  ],
+  "CHE_BIOMOLECULE": [
+    "CHE_BIOMOLECULE1",
+    "CHE_BIOMOLECULE2",
+    "CHE_BIOMOLECULE3",
+    "CHE_BIOMOLECULE4"
+  ],
+  "CHE_BONDING": [
+    "CHEM_BOND1",
+    "CHEM_BOND2",
+    "CHEM_BOND3",
+    "CHEM_BONDING1",
+    "CHE_BONDING1",
+    "CHE_BONDING2"
+  ],
+  "CHE_COORD": [
+    "CHEM_COORD1",
+    "CHE_COORD1",
+    "CHE_COORD2"
+  ],
+  "CHE_ELECTROCHEM": [
+    "CHEM_ELECTROCHEM1",
+    "CHEM_ELECTROCHEM2",
+    "CHE_ELECTROCHEM1",
+    "CHE_ELECTROCHEM2",
+    "CHE_ELECTROCHEM3"
+  ],
+  "CHE_EQUILIBRIUM": [
+    "CHEM_EQ1",
+    "CHEM_EQ2",
+    "CHEM_EQ3",
+    "CHEM_EQUILIBRIUM1",
+    "CHE_EQUILIBRIUM1",
+    "CHE_EQUILIBRIUM2",
+    "CHE_EQUILIBRIUM3"
+  ],
+  "CHE_GASLAWS": [
+    "CHEM_GAS1",
+    "CHEM_GAS2",
+    "CHEM_GAS3",
+    "CHEM_GAS4",
+    "CHEM_GASLAW1",
+    "CHEM_GASLAW2",
+    "CHEM_GASLAW3",
+    "CHEM_GASLAW4",
+    "CHEM_GASLAW5",
+    "CHE_GASLAWS1",
+    "CHE_GASLAWS2"
+  ],
+  "CHE_ORGANIC": [
+    "CHEM_ORG1",
+    "CHEM_ORG2",
+    "CHEM_ORG3",
+    "CHEM_ORG4",
+    "CHEM_ORGANIC1",
+    "CHEM_ORGANIC2",
+    "CHEM_ORGANIC3",
+    "CHEM_ORGANIC4",
+    "CHEM_ORGANIC5",
+    "CHEM_ORGANIC6",
+    "CHE_ORGANIC1",
+    "CHE_ORGANIC2",
+    "CHE_ORGANIC3"
+  ],
+  "CHE_QUAL": [
+    "CHEM_QUALITATIVE1",
+    "CHE_ANALYTICAL1",
+    "CHE_QUAL1"
+  ],
+  "CHE_STOICHIOMETRY": [
+    "CHEM_MOLE1",
+    "CHEM_MOLE2",
+    "CHEM_MOLE3",
+    "CHEM_MOLE4",
+    "CHEM_MOLE5",
+    "CHEM_MOLE6",
+    "CHEM_STOICH1",
+    "CHEM_STOICH2",
+    "CHEM_STOICH3",
+    "CHE_STOICH1",
+    "CHE_STOICH2",
+    "CHE_STOICH3",
+    "CHE_STOICH4"
+  ],
+  "CHE_THERMOCHEM": [
+    "CHE_THERMOCHEM1"
+  ],
+  "MATH_CALC": [
+    "MATH_CALC1",
+    "MATH_CALC10",
+    "MATH_CALC11",
+    "MATH_CALC12",
+    "MATH_CALC13",
+    "MATH_CALC14",
+    "MATH_CALC16",
+    "MATH_CALC17",
+    "MATH_CALC1b",
+    "MATH_CALC2",
+    "MATH_CALC2b",
+    "MATH_CALC3",
+    "MATH_CALC3b",
+    "MATH_CALC4",
+    "MATH_CALC5",
+    "MATH_CALC6",
+    "MATH_CALC7",
+    "MATH_CALC8",
+    "MATH_CALC9"
+  ],
+  "MATH_GEOM": [
+    "MATH_GEOM1",
+    "MATH_GEOM2"
+  ],
+  "MATH_MECH": [
+    "MATH_MECH1",
+    "MATH_MECH2",
+    "MATH_MECH3",
+    "MATH_MECH4",
+    "MATH_MECH5",
+    "MATH_MECH6",
+    "MATH_MECH7",
+    "MATH_MECH8",
+    "MATH_MECH9"
+  ],
+  "MAT_ALGEBRA": [
+    "MATH_ALG1",
+    "MATH_ALG2",
+    "MATH_ALG3",
+    "MATH_ALG4",
+    "MATH_ALG5",
+    "MAT_ALGEBRA1",
+    "MAT_ALGEBRA2"
+  ],
+  "MAT_CALC_DIFF": [
+    "MATH_LIMIT1",
+    "MAT_CALC_DIFF1",
+    "MAT_CALC_DIFF2"
+  ],
+  "MAT_CALC_INTEG": [
+    "MATH_INTEG1",
+    "MATH_INTEG10",
+    "MATH_INTEG11",
+    "MATH_INTEG12",
+    "MATH_INTEG2",
+    "MATH_INTEG3",
+    "MATH_INTEG4",
+    "MATH_INTEG5",
+    "MATH_INTEG6",
+    "MATH_INTEG7",
+    "MATH_INTEG8",
+    "MATH_INTEG9",
+    "MAT_CALC_INTEG1"
+  ],
+  "MAT_COMPLEX": [
+    "MATH_COMPLEX1",
+    "MATH_COMPLEX2",
+    "MATH_COMPLEX3",
+    "MATH_COMPLEX4",
+    "MATH_COMPLEX5",
+    "MATH_CX1",
+    "MATH_CX2",
+    "MATH_CX3",
+    "MATH_CX4",
+    "MATH_CX5",
+    "MAT_COMPLEX1",
+    "MAT_COMPLEX2",
+    "MAT_COMPLEX3",
+    "MAT_COMPLEX4",
+    "MAT_COMPLEX5",
+    "MAT_COMPLEX6"
+  ],
+  "MAT_COORD_CONIC": [
+    "MATH_CONIC1",
+    "MATH_CONIC1b",
+    "MATH_CONIC2",
+    "MATH_CONIC2b",
+    "MATH_CONIC3",
+    "MATH_CONIC3b",
+    "MATH_CONIC4",
+    "MATH_CONIC4b",
+    "MATH_CONIC5",
+    "MATH_CONIC5b",
+    "MATH_CONIC6",
+    "MATH_CONIC7",
+    "MATH_CONIC8",
+    "MAT_COORD_CONIC1",
+    "MAT_COORD_CONIC2",
+    "MAT_COORD_CONIC3",
+    "MAT_COORD_CONIC4",
+    "MAT_COORD_CONIC5"
+  ],
+  "MAT_COORD_LINE": [
+    "MATH_COORD1",
+    "MATH_COORD2",
+    "MATH_COORD3",
+    "MATH_COORD4",
+    "MATH_LINE1",
+    "MATH_LINE2",
+    "MATH_LINE3",
+    "MATH_LINE4",
+    "MATH_LINE5",
+    "MATH_LINE6",
+    "MAT_COORD_LINE1",
+    "MAT_COORD_LINE2",
+    "MAT_COORD_LINE3",
+    "MAT_COORD_LINE4",
+    "MAT_COORD_LINE5",
+    "MAT_COORD_LINE6",
+    "MAT_COORD_LINE7",
+    "MAT_COORD_LINE8"
+  ],
+  "MAT_DYNAMICS": [
+    "MATH_DYNAMICS1",
+    "MATH_DYNAMICS2",
+    "MAT_DYNAMICS1",
+    "MAT_DYNAMICS2",
+    "MAT_DYNAMICS3"
+  ],
+  "MAT_EQTHEORY": [
+    "MATH_POLY1",
+    "MATH_POLY2",
+    "MATH_POLY3",
+    "MATH_POLY4",
+    "MATH_POLY5",
+    "MATH_POLY6",
+    "MATH_POLY7",
+    "MAT_EQTHEORY1",
+    "MAT_EQTHEORY2",
+    "MAT_EQTHEORY3",
+    "MAT_EQTHEORY4",
+    "MAT_EQTHEORY5",
+    "MAT_EQTHEORY6"
+  ],
+  "MAT_INVTRIG": [
+    "MAT_INVTRIG1",
+    "MAT_INVTRIG2",
+    "MAT_INVTRIG3"
+  ],
+  "MAT_MATRIX": [
+    "MATH_MAT1",
+    "MATH_MAT1b",
+    "MATH_MAT2",
+    "MATH_MAT2b",
+    "MATH_MAT3",
+    "MATH_MAT3b",
+    "MATH_MAT4",
+    "MATH_MAT4b",
+    "MATH_MAT5",
+    "MATH_MAT6",
+    "MATH_MAT7",
+    "MATH_MAT8",
+    "MATH_MAT9",
+    "MAT_MATRIX1",
+    "MAT_MATRIX2",
+    "MAT_MATRIX3",
+    "MAT_MATRIX4"
+  ],
+  "MAT_STATICS": [
+    "MATH_STATICS1",
+    "MATH_STATICS2",
+    "MATH_STATICS3",
+    "MATH_STATICS4",
+    "MATH_STATICS5",
+    "MAT_STATICS1",
+    "MAT_STATICS2"
+  ],
+  "MAT_TRIG": [
+    "MATH_TRIG1",
+    "MATH_TRIG10",
+    "MATH_TRIG1b",
+    "MATH_TRIG2",
+    "MATH_TRIG2b",
+    "MATH_TRIG3",
+    "MATH_TRIG3b",
+    "MATH_TRIG4",
+    "MATH_TRIG4b",
+    "MATH_TRIG5",
+    "MATH_TRIG5b",
+    "MATH_TRIG6",
+    "MATH_TRIG6b",
+    "MATH_TRIG7",
+    "MATH_TRIG7b",
+    "MATH_TRIG8",
+    "MATH_TRIG9",
+    "MAT_TRIG1",
+    "MAT_TRIG2",
+    "MAT_TRIG3"
+  ],
+  "PHY_AT": [
+    "PHY_AT1",
+    "PHY_AT2",
+    "PHY_AT3",
+    "PHY_AT4"
+  ],
+  "PHY_CIRC": [
+    "PHY_CIRC1",
+    "PHY_CIRC2",
+    "PHY_CIRC3"
+  ],
+  "PHY_CURRENT": [
+    "PHY_CIRCUIT1",
+    "PHY_CUR1",
+    "PHY_CUR2",
+    "PHY_CURRENT1",
+    "PHY_CURRENT2"
+  ],
+  "PHY_ELASTICITY": [
+    "PHY_ELASTICITY1",
+    "PHY_ELASTICITY1b",
+    "PHY_ELASTICITY2"
+  ],
+  "PHY_ELECTROSTATICS": [
+    "PHY_CAP1",
+    "PHY_ELEC1",
+    "PHY_ELECTROSTATICS1",
+    "PHY_ELECTROSTATICS2",
+    "PHY_ELECTROSTATICS3",
+    "PHY_ELECTROSTATICS4"
+  ],
+  "PHY_EM": [
+    "PHY_EM1",
+    "PHY_EM1b",
+    "PHY_EM2",
+    "PHY_EM3",
+    "PHY_EM4",
+    "PHY_SEMICOND1"
+  ],
+  "PHY_FLUID": [
+    "PHY_FLUID1",
+    "PHY_FLUID2"
+  ],
+  "PHY_GRAVITATION": [
+    "PHY_GRAV1",
+    "PHY_GRAV1b",
+    "PHY_GRAV2",
+    "PHY_GRAV2b",
+    "PHY_GRAV3",
+    "PHY_GRAV3b",
+    "PHY_GRAV4",
+    "PHY_GRAV5",
+    "PHY_GRAVITATION1",
+    "PHY_GRAVITATION2",
+    "PHY_GRAVITATION3",
+    "PHY_GRAVITATION4"
+  ],
+  "PHY_KINETIC": [
+    "PHY_KINETIC1",
+    "PHY_KINETIC2",
+    "PHY_KTG1",
+    "PHY_KTG2",
+    "PHY_KTG3",
+    "PHY_KTG4"
+  ],
+  "PHY_MAGNETISM": [
+    "PHY_MAG1",
+    "PHY_MAG2",
+    "PHY_MAGNETISM1",
+    "PHY_MAGNETISM2"
+  ],
+  "PHY_MOD": [
+    "PHY_MOD1",
+    "PHY_MOD2",
+    "PHY_MOD3"
+  ],
+  "PHY_MODERN": [
+    "PHY_MODERN1",
+    "PHY_MODERN1b",
+    "PHY_MODERN2",
+    "PHY_MODERN2b",
+    "PHY_MODERN3"
+  ],
+  "PHY_NEWTON": [
+    "PHY_DYNAMICS1",
+    "PHY_NEWT1",
+    "PHY_NEWT2",
+    "PHY_NEWT3",
+    "PHY_NEWT4",
+    "PHY_NEWTON1",
+    "PHY_NEWTON2",
+    "PHY_NEWTON3",
+    "PHY_NEWTON4"
+  ],
+  "PHY_NUCLEAR": [
+    "PHY_NUC1",
+    "PHY_NUCLEAR1",
+    "PHY_NUCLEAR1b"
+  ],
+  "PHY_OPTICS": [
+    "PHY_OPT1",
+    "PHY_OPT2",
+    "PHY_OPTICS1b",
+    "PHY_OPTICS2b",
+    "PHY_OPTICS3"
+  ],
+  "PHY_OPTICS_WAVE": [
+    "PHY_OPTICS1",
+    "PHY_OPTICS2",
+    "PHY_WAVE1",
+    "PHY_WAVE2",
+    "PHY_WAVE3"
+  ],
+  "PHY_PROJ": [
+    "PHY_PROJ1",
+    "PHY_PROJ2"
+  ],
+  "PHY_ROTATION": [
+    "PHY_ROT1",
+    "PHY_ROT1b",
+    "PHY_ROT2",
+    "PHY_ROT2b",
+    "PHY_ROT3",
+    "PHY_ROT4",
+    "PHY_ROTATION1",
+    "PHY_ROTATION2",
+    "PHY_ROTATION3",
+    "PHY_ROTATION4"
+  ],
+  "PHY_SEMICONDUCTOR": [
+    "PHY_SEMI1",
+    "PHY_SEMICOND2",
+    "PHY_SEMICOND3",
+    "PHY_SEMICONDUCTOR1"
+  ],
+  "PHY_SHM": [
+    "PHY_OSC1",
+    "PHY_OSC2",
+    "PHY_OSC3",
+    "PHY_OSC4",
+    "PHY_SHM1",
+    "PHY_SHM1b",
+    "PHY_SHM2",
+    "PHY_SHM3",
+    "PHY_SHM4",
+    "PHY_SHM5",
+    "PHY_SHM6"
+  ],
+  "PHY_SOLID": [
+    "PHY_SOLID1",
+    "PHY_SOLID2",
+    "PHY_SOLID3",
+    "PHY_SOLID4"
+  ],
+  "PHY_THERMO": [
+    "PHY_THERMO1",
+    "PHY_THERMO1b",
+    "PHY_THERMO1c",
+    "PHY_THERMO2",
+    "PHY_THERMO2b",
+    "PHY_THERMO3",
+    "PHY_THERMO3b"
+  ],
+  "PHY_UNITS": [
+    "PHY_MEAS1",
+    "PHY_MEAS1b",
+    "PHY_MEAS2",
+    "PHY_MEAS3",
+    "PHY_UNITS1"
+  ],
+  "PHY_VEC": [
+    "PHY_VEC1",
+    "PHY_VEC1b",
+    "PHY_VEC1c",
+    "PHY_VEC1d",
+    "PHY_VEC2",
+    "PHY_VEC2b",
+    "PHY_VEC3",
+    "PHY_VEC3b",
+    "PHY_VEC4",
+    "PHY_VEC4b"
+  ],
+  "PHY_WAVE": [
+    "PHY_WAVE1b"
+  ],
+  "PHY_WORK_ENERGY": [
+    "PHY_WORK1",
+    "PHY_WORK2",
+    "PHY_WORK3",
+    "PHY_WORK_ENERGY1",
+    "PHY_WORK_ENERGY2",
+    "PHY_WORK_ENERGY3"
+  ],
+  "PHY_XRAY": [
+    "PHY_XRAY1",
+    "PHY_XRAY2"
   ]
 }

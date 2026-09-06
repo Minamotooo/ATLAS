@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import { useAuth, buildApiUrl } from "../context/AuthContext";
+import MathText from "../components/MathText";
 import {
   ArrowLeft,
   AlertCircle,
@@ -688,7 +689,7 @@ export default function SectionPage() {
                 </div>
 
                 <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-4">
-                  {question.question_stem}
+                  <MathText text={question.question_stem} />
                 </h4>
 
                 <div className="space-y-2">
@@ -709,7 +710,7 @@ export default function SectionPage() {
                         <span className="font-semibold mr-2">
                           {option.label}.
                         </span>
-                        <span>{option.text}</span>
+                        <MathText text={option.text} />
                       </button>
                     );
                   })}
@@ -746,7 +747,9 @@ export default function SectionPage() {
                         : "Incorrect answer"}
                     </p>
                     {answerFeedback.explanation && (
-                      <p className="mt-1">{answerFeedback.explanation}</p>
+                      <p className="mt-1">
+                        <MathText text={answerFeedback.explanation} />
+                      </p>
                     )}
                     {answerFeedback.masteryNotifications.length > 0 && (
                       <p className="mt-2 text-xs">

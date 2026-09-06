@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth, buildApiUrl } from '../context/AuthContext';
+import MathText from '../components/MathText';
 import {
   AlertCircle,
   ArrowLeft,
@@ -396,7 +397,7 @@ export default function TopicPracticePage() {
                   <span className="font-semibold text-gray-700">Mode:</span> {question.delivery_mode || 'topic'} | <span className="font-semibold text-gray-700">Skill:</span> {question.skill_id} | <span className="font-semibold text-gray-700">Bloom:</span> {question.bloom_level}
                 </div>
 
-                <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-4">{question.question_stem}</h4>
+                <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-4"><MathText text={question.question_stem} /></h4>
 
                 <div className="space-y-2">
                   {options.map((option) => {
@@ -414,7 +415,7 @@ export default function TopicPracticePage() {
                         } ${answerFeedback ? 'cursor-default' : ''}`}
                       >
                         <span className="font-semibold mr-2">{option.label}.</span>
-                        <span>{option.text}</span>
+                        <MathText text={option.text} />
                       </button>
                     );
                   })}
@@ -439,7 +440,7 @@ export default function TopicPracticePage() {
                 {answerFeedback && (
                   <div className={`mt-4 rounded-xl border px-4 py-3 text-sm ${answerFeedback.isCorrect ? 'border-emerald-200 bg-emerald-50 text-emerald-900' : 'border-red-200 bg-red-50 text-red-900'}`}>
                     <p className="font-semibold">{answerFeedback.isCorrect ? 'Correct answer' : 'Incorrect answer'}</p>
-                    {answerFeedback.explanation && <p className="mt-1">{answerFeedback.explanation}</p>}
+                    {answerFeedback.explanation && <p className="mt-1"><MathText text={answerFeedback.explanation} /></p>}
                     {answerFeedback.spilloverActivated && (
                       <p className="mt-2 text-xs">
                         Spillover activated for {answerFeedback.spilloverActivated.skill_id} ({answerFeedback.spilloverActivated.injected_question_count} questions).

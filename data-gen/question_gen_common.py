@@ -1,25 +1,11 @@
 """
-Generate BUET / university-admission MCQs with a local Naive RAG pipeline.
+Shared, backend-agnostic pieces for generating BUET / university-admission
+MCQs (Bangla stems + LaTeX math): prompt templates, ontology/Bloom-expansion
+loading, and schema/LaTeX/content validation.
 
-Covers Mathematics, Physics, and Chemistry (Bangla stems + LaTeX math).
-
-Flow:
-  tuples.json + prereqs.json
-    → retrieve top-k items from documents/*.txt (via rag/kb)
-    → prompt local Ollama model with reference material
-    → append to output_questions.json (same schema as Gemini pipeline)
-
-Prerequisites:
-  1. pip install -r requirements.txt
-  2. python -m rag.ingest
-  3. Install Ollama (https://ollama.com) and pull a model, e.g.:
-       ollama pull qwen2.5:7b-instruct-q4_K_M
-     Fallback if VRAM is tight:
-       ollama pull qwen2.5:3b-instruct
-       then set OLLAMA_MODEL in rag/config.py or via env OLLAMA_MODEL
-
-Run from data-gen/:
-    python generate_question_rag.py
+This module has no opinion about which model serves the actual generation
+call - that lives in generate_question_gemini.py. Nothing here talks to any
+model API directly.
 """
 
 from __future__ import annotations
@@ -30,28 +16,18 @@ import re
 import sys
 from pathlib import Path
 
-import requests
-
 _DATA_GEN = Path(__file__).resolve().parent
 if str(_DATA_GEN) not in sys.path:
     sys.path.insert(0, str(_DATA_GEN))
 
 from rag.config import (
-    MAX_JSON_RETRIES,
+    BLOOM_LEVELS,
+    EXPAND_ALL_BLOOM_LEVELS,
     N_QUESTIONS,
-    OLLAMA_BASE_URL,
-    OLLAMA_FALLBACK_MODEL,
-    OLLAMA_MODEL,
-    OLLAMA_TEMPERATURE,
-    OLLAMA_TIMEOUT_SEC,
-    OUTPUT_PATH,
     PREREQS_PATH,
-    RAW_OUTPUT_DIR,
-    START_TUPLE_INDEX,
     TOP_K,
     TUPLES_PATH,
 )
-from rag.retriever import Retriever
 
 # ── 1. Load ontology data ─────────────────────────────────────────────────────
 with TUPLES_PATH.open("r", encoding="utf-8") as f:
@@ -59,6 +35,28 @@ with TUPLES_PATH.open("r", encoding="utf-8") as f:
 
 with PREREQS_PATH.open("r", encoding="utf-8") as f:
     prereqs_raw = json.load(f)
+
+
+def expand_bloom_levels(tuple_list: list) -> list:
+    """
+    Emit one tuple per (skill x Bloom level) instead of the single level the
+    ontology assigns. The adaptive engine selects questions one Bloom level above
+    a learner's current band, so a bank covering one level per skill leaves the
+    ladder with nothing to climb. Disable with env RAG_EXPAND_BLOOMS=0.
+    """
+    expanded = []
+    for tup in tuple_list:
+        for bloom in BLOOM_LEVELS:
+            item = dict(tup)
+            item["bloom"] = bloom
+            expanded.append(item)
+    return expanded
+
+
+if EXPAND_ALL_BLOOM_LEVELS and os.environ.get("RAG_EXPAND_BLOOMS", "1") != "0":
+    _before = len(tuples)
+    tuples = expand_bloom_levels(tuples)
+    print(f"Bloom expansion: {_before} tuples -> {len(tuples)} (all {len(BLOOM_LEVELS)} levels)")
 
 
 def build_prereq_list(prereqs):
@@ -74,12 +72,26 @@ BLOOM_GUIDANCE = {
     "Remember": "কোনো সংজ্ঞা, সূত্র, বা তথ্য সরাসরি স্মরণ করতে বলো।",
     "Understand": "ধারণাটি ব্যাখ্যা করতে বলো।",
     "Apply": "সুনির্দিষ্ট মান/তথ্য দিয়ে সরাসরি সমস্যা সমাধান করতে বলো।",
-    "Analyze": "একটি সমাধান উপস্থাপন করো যেখানে ভুল আছে — শিক্ষার্থীকে ভুলটি চিহ্নিত করতে বলো।",
-    "Evaluate": "দুটি সমাধান বা পদ্ধতি তুলনা করতে বলো এবং কোনটি সঠিক বিচার করতে বলো।",
-    "Create": "একটি সমীকরণ স্থাপন করতে, শর্ত তৈরি করতে, বা পরিস্থিতি নির্মাণ করতে বলো।",
+    "Analyze": (
+        "স্টেমের মধ্যে অবশ্যই একটি সম্পূর্ণ, ধাপে-ধাপে সমাধান উপস্থাপন করতে হবে যেখানে "
+        "ঠিক একটি নির্দিষ্ট, নামযোগ্য ভুল ধাপ আছে (যেমন: ভুল সাইন, ভুল সূত্র প্রয়োগ, একটি ধাপ "
+        "বাদ পড়া)। প্রশ্ন হবে 'উপরের সমাধানে ভুলটি কোথায়?' বা 'কোন ধাপটি ভুল?' ধরনের — "
+        "নিছক আরেকটি হিসাব-নির্ভর প্রশ্ন নয়। প্রতিটি option একটি সম্ভাব্য ভুল-ধাপকে নির্দেশ করবে।"
+    ),
+    "Evaluate": (
+        "স্টেমে অবশ্যই দুটি ভিন্ন সমাধান-পদ্ধতি বা দুটি চূড়ান্ত উত্তর পাশাপাশি উপস্থাপন করতে হবে, "
+        "এবং শিক্ষার্থীকে বিচার করতে বলতে হবে কোনটি সঠিক/বৈধ এবং কেন। প্রশ্নটি অবশ্যই এই একই "
+        "স্কিলের মধ্যে থাকতে হবে — সম্পূর্ণ ভিন্ন বিষয়ের তুলনা নয়।"
+    ),
+    "Create": (
+        "শিক্ষার্থীকে একটি নতুন সমীকরণ/ম্যাট্রিক্স/পরিস্থিতি নিজে তৈরি বা নির্বাচন করতে বলো যা একটি "
+        "নির্দিষ্ট শর্ত পূরণ করে (যেমন: 'নিচের কোন ম্যাট্রিক্সটির নির্ণায়ক শূন্য হবে?')। এটি অবশ্যই "
+        "একই স্কিল পরীক্ষা করবে — সম্পূর্ণ ভিন্ন কোনো গণনা বা সূত্র (যেমন adjugate, inverse) "
+        "প্রবর্তন করা যাবে না যদি না তা স্পষ্টভাবে skill description-এর অংশ হয়।"
+    ),
 }
 
-SYSTEM_PROMPT = """You are an expert MCQ writer for Bangladesh university admission exams
+SYSTEM_PROMPT = r"""You are an expert MCQ writer for Bangladesh university admission exams
 (BUET, KUET, RUET, CUET, SUST, and similar engineering university admission tests).
 
 Subjects you write for: Mathematics (গণিত), Physics (পদার্থবিজ্ঞান), and Chemistry (রসায়ন).
@@ -157,6 +169,23 @@ LANGUAGE RULES
 - explanation: সকল ব্যাখ্যা বাংলায় লিখুন (all explanations in Bangla)
 - missing_prerequisites: English only (skill IDs and descriptions)
 - subject: one of "Mathematics", "Physics", "Chemistry"
+- Use ONLY standard, dictionary-correct Bangla technical vocabulary
+  (e.g. "নির্ণায়ক" for determinant). NEVER invent a phonetic transliteration
+  or a word that does not exist in standard Bangla mathematical/scientific usage.
+
+════════════════════════════════════════
+LATEX RULES (STRICT)
+════════════════════════════════════════
+- Every LaTeX control sequence MUST start with a backslash: \begin, \end,
+  \left, \right, \times, \frac — never "egin{...}" or a bare "end{...}".
+- Every \begin{X} MUST be closed by a matching \end{X} with the SAME X
+  (e.g. \begin{pmatrix} ... \end{pmatrix}, never \end{matrix} or a bare
+  closing parenthesis).
+- Do NOT repeat spacing commands like \\[1ex] more than once in a row, and
+  never pad an explanation with repeated LaTeX spacing tokens.
+- Before outputting, mentally check every $...$ segment: does it start
+  and end with matched delimiters? If unsure, prefer plain inline text
+  over malformed LaTeX.
 
 ════════════════════════════════════════
 OPTION RULES
@@ -223,53 +252,73 @@ DISTRACTOR HINT:
 একটি নির্দিষ্ট skill-এর অভাবকে কেন্দ্র করে distractor তৈরি করো।"""
 
 
-def resolve_ollama_model() -> str:
-    return os.environ.get("OLLAMA_MODEL", OLLAMA_MODEL)
+def repair_llm_json_escapes(text: str) -> str:
+    """
+    An LLM (local or hosted) writes correct LaTeX (\\begin, \\end, \\right,
+    \\times, \\tan, \\frac, \\therefore, ...) directly into a JSON string value
+    without doubling the backslash. json.loads() then SILENTLY consumes \\b,
+    \\f, \\n, \\r, \\t as JSON's own control-character escapes (\\tan -> a
+    literal TAB byte + "an", \\frac -> a FORMFEED byte + "rac") with no
+    exception raised - it "succeeds" while quietly corrupting the LaTeX.
 
+    This was first found and fixed for the local Ollama pipeline, on the
+    assumption that a hosted API's structured-output mode would be immune to
+    it (its own serialization layer, not free-text parsing). Confirmed false:
+    under long, LaTeX-dense responses (multi-step Analyze/Evaluate stems
+    packing many commands together), Gemini's underlying model still
+    sometimes emits a raw undoubled backslash - measured at 13.4% of an early
+    real-model batch. So this repair is needed for every backend, not just
+    local ones.
 
-def ollama_chat(messages: list[dict], model: str | None = None, temperature: float = OLLAMA_TEMPERATURE) -> str:
-    model = model or resolve_ollama_model()
-    url = f"{OLLAMA_BASE_URL.rstrip('/')}/api/chat"
-    payload = {
-        "model": model,
-        "messages": messages,
-        "stream": False,
-        "format": "json",
-        "options": {"temperature": temperature},
-    }
-    try:
-        resp = requests.post(url, json=payload, timeout=OLLAMA_TIMEOUT_SEC)
-    except requests.ConnectionError as exc:
-        raise RuntimeError(
-            "Cannot reach Ollama at "
-            f"{OLLAMA_BASE_URL}. Install from https://ollama.com then run:\n"
-            f"  ollama pull {model}\n"
-            f"Fallback smaller model: ollama pull {OLLAMA_FALLBACK_MODEL}\n"
-            f"Then optionally: set OLLAMA_MODEL={OLLAMA_FALLBACK_MODEL}"
-        ) from exc
-
-    if resp.status_code == 404:
-        raise RuntimeError(
-            f"Ollama model '{model}' not found. Pull it with:\n"
-            f"  ollama pull {model}\n"
-            f"Or use the smaller fallback:\n"
-            f"  ollama pull {OLLAMA_FALLBACK_MODEL}\n"
-            f"  set OLLAMA_MODEL={OLLAMA_FALLBACK_MODEL}"
-        )
-    resp.raise_for_status()
-    data = resp.json()
-    content = (data.get("message") or {}).get("content") or ""
-    return content.strip()
-
-
-def strip_markdown_fences(raw_text: str) -> str:
-    text = raw_text.strip()
-    if text.startswith("```"):
-        text = text.split("```", 2)[1]
-        if text.startswith("json"):
-            text = text[4:]
-        text = text.strip()
-    return text
+    A real backspace/formfeed/carriage-return is never intentional in exam
+    question text, so every backslash-letter pair except the genuinely safe
+    ones (\\", \\\\, \\/, \\uXXXX) is treated as an unescaped LaTeX command
+    and doubled. Applied unconditionally, before every parse attempt, because
+    the corruption never raises an exception to fall back on.
+    """
+    out: list[str] = []
+    i, n = 0, len(text)
+    in_string = False
+    while i < n:
+        ch = text[i]
+        if not in_string:
+            out.append(ch)
+            if ch == '"':
+                in_string = True
+            i += 1
+            continue
+        if ch == '"':
+            out.append(ch)
+            in_string = False
+            i += 1
+            continue
+        if ch == "\\":
+            if i + 1 >= n:
+                out.append("\\\\")
+                i += 1
+                continue
+            nxt = text[i + 1]
+            if nxt in ('"', "\\", "/"):
+                out.append(ch)
+                out.append(nxt)
+                i += 2
+                continue
+            if nxt == "u" and i + 5 < n and all(
+                c in "0123456789abcdefABCDEF" for c in text[i + 2 : i + 6]
+            ):
+                out.append(text[i : i + 6])
+                i += 6
+                continue
+            # Everything else (b, f, n, r, t, and genuinely illegal escapes
+            # like e/l/x/%) is treated as a literal backslash starting a
+            # LaTeX command, not an intentional JSON control escape.
+            out.append("\\\\")
+            out.append(nxt)
+            i += 2
+            continue
+        out.append(ch)
+        i += 1
+    return "".join(out)
 
 
 def extract_questions_payload(parsed):
@@ -326,7 +375,7 @@ def _normalize_option(raw, fallback_label: str) -> dict:
 
 
 def normalize_questions(questions: list) -> list:
-    """Repair common local-LLM schema drift before validation."""
+    """Repair common schema drift before validation."""
     if isinstance(questions, dict):
         questions = extract_questions_payload(questions)
     if not isinstance(questions, list):
@@ -434,8 +483,134 @@ def normalize_questions(questions: list) -> list:
         q["options"] = fixed[:4]
         if "question_stem" not in q and "question_text" in q:
             q["question_stem"] = q["question_text"]
+
+        if q.get("question_stem"):
+            q["question_stem"] = repair_latex(str(q["question_stem"]))
+        for o in q["options"]:
+            if o.get("text"):
+                o["text"] = repair_latex(str(o["text"]))
+            if o.get("explanation"):
+                o["explanation"] = repair_latex(str(o["explanation"]))
+
         normalized.append(q)
     return normalized
+
+
+# ── LaTeX repair + validation ─────────────────────────────────────────────────
+# Small/quantized local models were observed dropping the leading backslash on
+# LaTeX control sequences ("egin{pmatrix}" instead of "\begin{pmatrix}"), which
+# renders as broken math notation. Kept as a defensive safety net even though
+# the current Gemini backend's structured output hasn't shown this failure
+# mode. Scoped to math segments only, so plain Bangla/English prose containing
+# the words "left"/"right"/"end" is untouched.
+#
+# Segments are found by splitting on ANY run of 1-2 "$" characters, not by
+# matching "$...$" as one pattern - a model can mix inline ($...$) and display
+# ($$...$$) delimiters inconsistently (even opens with $$ and closes with a
+# single $), and a naive "\$[^$]*\$" match treats adjacent "$$" as one empty
+# pair, silently skipping the real content between them.
+_MATH_DELIM_RE = re.compile(r"\${1,2}")
+_LATEX_DROPPED_BACKSLASH_FIXES = [
+    (re.compile(r"(?<!\\)\bbegin\{"), r"\\begin{"),
+    (re.compile(r"(?<!\\)\bend\{"), r"\\end{"),
+    (re.compile(r"(?<!\\)\bright(?=[)\]}.,])"), r"\\right"),
+    (re.compile(r"(?<!\\)\bleft(?=[(\[{])"), r"\\left"),
+]
+_BEGIN_ENV_RE = re.compile(r"\\begin\{([a-zA-Z*]+)\}")
+_END_ENV_RE = re.compile(r"\\end\{([a-zA-Z*]+)\}")
+
+
+def _extract_math_segments(text: str) -> list[str]:
+    """Content between consecutive $/$$ delimiter runs, alternation-based so
+    mismatched single/double dollar usage doesn't hide the content between."""
+    parts = _MATH_DELIM_RE.split(text)
+    return [parts[i] for i in range(1, len(parts) - 1, 2)]
+
+
+def repair_latex(text: str) -> str:
+    """Fix the specific dropped-backslash corruption observed from local models."""
+    if not text or "$" not in text:
+        return text
+
+    parts = _MATH_DELIM_RE.split(text)
+    delims = _MATH_DELIM_RE.findall(text)
+    for i in range(1, len(parts) - 1, 2):
+        seg = parts[i].replace("\t", " ")
+        for pattern, repl in _LATEX_DROPPED_BACKSLASH_FIXES:
+            seg = pattern.sub(repl, seg)
+        parts[i] = seg
+
+    out = [parts[0]]
+    for i, d in enumerate(delims):
+        out.append(d)
+        out.append(parts[i + 1])
+    return "".join(out)
+
+
+_CONTROL_CHAR_RE = re.compile(r"[\x08\x09\x0a\x0c\x0d]")
+
+
+def find_escape_corruption(text: str) -> list[str]:
+    """
+    Safety net for the repair_llm_json_escapes failure mode: if a raw control
+    character (backspace/tab/formfeed/CR - a real newline \\n is allowed,
+    since genuine line breaks between multi-part sub-questions do occur)
+    survives into a field, something upstream failed to repair an undoubled
+    backslash before it got JSON-decoded into a control byte. This should
+    never fire now that gemini_generate() repairs before every parse, but
+    catching it here means a regression gets rejected and retried instead of
+    silently stored - exactly what let 13.4% of an early batch through
+    uncaught (find_latex_errors only checks brace/begin-end balance, which
+    this kind of word-level corruption never breaks).
+    """
+    if not text:
+        return []
+    hits = [c for c in text if c in "\x08\x09\x0c\x0d"]
+    if hits:
+        return [f"control character (JSON-escape corruption) found near: {text[:60]!r}"]
+    return []
+
+
+def find_latex_errors(text: str) -> list[str]:
+    """Detect LaTeX still broken after repair: unpaired $, unmatched braces,
+    mismatched \\begin/\\end environment names."""
+    if not text or "$" not in text:
+        return []
+    errors: list[str] = []
+    if text.count("$") % 2 != 0:
+        errors.append(f"unpaired $ delimiter near: {text[:60]!r}")
+    for seg in _extract_math_segments(text):
+        if seg.count("{") != seg.count("}"):
+            errors.append(f"unbalanced braces in LaTeX: {seg[:60]!r}")
+        begins = _BEGIN_ENV_RE.findall(seg)
+        ends = _END_ENV_RE.findall(seg)
+        if begins or ends:
+            if len(begins) != len(ends) or begins != ends[::-1]:
+                errors.append(f"mismatched \\begin/\\end in LaTeX: {seg[:60]!r}")
+    return errors
+
+
+# ── Skill-relevance judge prompt ────────────────────────────────────────────
+# Retrieved reference material can pull the model onto an unrelated skill
+# (e.g. a matrix-determinant tuple producing a straight-line-equation
+# question) while still tagging the output with the requested skill_id. The
+# schema validation below cannot catch this, so a second short judge call
+# checks the generated stems against the requested skill before acceptance.
+# The judge call itself is backend-specific (lives in generate_question_gemini.py) -
+# only the prompt text is shared here.
+RELEVANCE_JUDGE_PROMPT = """তুমি একজন বাংলাদেশ ভর্তি পরীক্ষার প্রশ্ন যাচাইকারী।
+নিচের প্রতিটি প্রশ্ন কেবলমাত্র এই একটি নির্দিষ্ট দক্ষতা পরীক্ষা করে কিনা যাচাই করো:
+
+দক্ষতা: {SKILL_FULL}
+
+প্রশ্নসমূহ:
+{NUMBERED_STEMS}
+
+প্রতিটি প্রশ্নের জন্য true দাও যদি সেটি সরাসরি উপরের দক্ষতাটি পরীক্ষা করে, নাহলে false দাও
+(এমনকি যদি প্রশ্নটি একই বিষয়ের/টপিকের হলেও ভিন্ন দক্ষতা পরীক্ষা করে, তাহলে false)।
+
+শুধুমাত্র একটি JSON boolean array output দাও, উদাহরণ: [true, false, true]
+অন্য কোনো লেখা, ব্যাখ্যা, বা markdown যোগ করবে না।"""
 
 
 # Written / open-ended stem markers (Bangla + English). Generated output must be MCQ only.
@@ -495,7 +670,15 @@ def validate_questions(questions: list, skill_id: str, bloom: str, prereq_ids: s
                 f"with A/B/C/D choices; avoid লিখুন/ব্যাখ্যা কর/উত্তর দাও"
             )
 
-        # Repair is_correct / missing_prereq drift from small local models
+        for latex_err in find_latex_errors(stem) + find_escape_corruption(stem):
+            errors.append(f"q[{i}] stem has broken LaTeX: {latex_err}")
+        for o in options:
+            for field in ("text", "explanation"):
+                field_text = str(o.get(field) or "")
+                for latex_err in find_latex_errors(field_text) + find_escape_corruption(field_text):
+                    errors.append(f"q[{i}] option {o.get('label')} {field} has broken LaTeX: {latex_err}")
+
+        # Repair is_correct / missing_prereq drift
         for o in options:
             o["is_correct"] = _coerce_bool(o.get("is_correct"))
         correct_idxs = [j for j, o in enumerate(options) if o["is_correct"]]
@@ -546,35 +729,6 @@ def attach_source_refs(questions: list, hits: list[dict]) -> None:
             q["source_refs"] = refs
 
 
-def parse_questions(raw_text: str, tuple_number: int, model: str) -> list:
-    text = strip_markdown_fences(raw_text)
-    try:
-        parsed = json.loads(text)
-        return extract_questions_payload(parsed)
-    except (json.JSONDecodeError, ValueError):
-        RAW_OUTPUT_DIR.mkdir(exist_ok=True)
-        raw_path = RAW_OUTPUT_DIR / f"tuple_{tuple_number}_raw.txt"
-        raw_path.write_text(raw_text, encoding="utf-8")
-
-        fix_prompt = (
-            "Fix the following into valid JSON. Output ONLY a JSON array of question objects. "
-            "Do not add or remove questions, only fix JSON formatting.\n\n"
-            f"RAW:\n{raw_text}"
-        )
-        fixed = ollama_chat(
-            messages=[{"role": "user", "content": fix_prompt}],
-            model=model,
-            temperature=0.0,
-        )
-        fixed = strip_markdown_fences(fixed)
-        return extract_questions_payload(json.loads(fixed))
-
-
-def save_questions(questions: list) -> None:
-    with OUTPUT_PATH.open("w", encoding="utf-8") as f:
-        json.dump(questions, f, ensure_ascii=False, indent=2)
-
-
 def format_reference_blocks(hits: list[dict]) -> str:
     if not hits:
         return "(no reference material retrieved)"
@@ -589,145 +743,8 @@ def tuple_subject(tup: dict) -> str:
     label = str(tup.get("topicLabel") or "").casefold()
     if any(k in label for k in ("physics", "পদার্থ")):
         return "Physics"
-    if any(k in label for k in ("chem", "রসায়ন", "রসায়ন")):
+    if any(k in label for k in ("chem", "রসায়ন", "রসায়ন")):
         return "Chemistry"
-    if any(k in label for k in ("math", "গণিত", "real numbers", "hcf", "lcm")):
+    if any(k in label for k in ("math", "গণিত", "algebra", "calculus", "trigonom", "matri", "geometry")):
         return "Mathematics"
     return "Mathematics"
-
-
-def generate_for_tuple(
-    retriever: Retriever,
-    tup: dict,
-    tuple_number: int,
-    model: str,
-) -> list:
-    subject = tuple_subject(tup)
-    hits = retriever.retrieve_for_tuple(
-        topic_label=tup["topicLabel"],
-        skill_full=tup["skillFull"],
-        bloom=tup["bloom"],
-        subject=subject,
-        top_k=TOP_K,
-    )
-    prereq_list = get_prereq_list_for_skill(tup["skillId"])
-    prereq_ids = {p["id"] for p in prereqs_raw.get(tup["skillId"], []) if isinstance(p, dict) and "id" in p}
-
-    user_prompt = USER_PROMPT_TEMPLATE.format(
-        N=N_QUESTIONS,
-        SUBJECT=subject,
-        BLOOM_LEVEL=tup["bloom"],
-        SKILL_ID=tup["skillId"],
-        SKILL_FULL=tup["skillFull"],
-        TOPIC_LABEL=tup["topicLabel"],
-        BLOOM_GUIDANCE=BLOOM_GUIDANCE.get(tup["bloom"], ""),
-        PREREQ_LIST=prereq_list or "(empty)",
-        REFERENCE_BLOCKS=format_reference_blocks(hits),
-    )
-
-    messages = [
-        {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user", "content": user_prompt},
-    ]
-
-    last_errors: list[str] = []
-    for attempt in range(MAX_JSON_RETRIES + 1):
-        raw_text = ollama_chat(messages, model=model, temperature=OLLAMA_TEMPERATURE)
-        try:
-            questions = parse_questions(raw_text, tuple_number, model=model)
-            questions = normalize_questions(questions)
-        except Exception as exc:
-            last_errors = [f"parse error: {exc}"]
-            messages.append({"role": "assistant", "content": raw_text})
-            messages.append(
-                {
-                    "role": "user",
-                    "content": (
-                        "Your previous output was invalid JSON. "
-                        "Output ONLY a valid JSON array of question objects matching the schema."
-                    ),
-                }
-            )
-            continue
-
-        errors = validate_questions(questions, tup["skillId"], tup["bloom"], prereq_ids)
-        if not errors:
-            attach_source_refs(questions, hits)
-            for q in questions:
-                if isinstance(q, dict):
-                    q.setdefault("skill_description", tup["skillFull"])
-                    q.setdefault("topic", tup["topicLabel"])
-                    q["subject"] = subject
-            return questions
-
-        last_errors = errors
-        messages.append({"role": "assistant", "content": raw_text})
-        messages.append(
-            {
-                "role": "user",
-                "content": (
-                    "Fix these schema errors and regenerate the FULL JSON array only.\n"
-                    "Every question MUST be a 4-option MCQ — "
-                    "never Written/open-ended stems (no লিখুন/ব্যাখ্যা কর/উত্তর দাও).\n- "
-                    + "\n- ".join(errors[:12])
-                ),
-            }
-        )
-
-    raise RuntimeError(
-        f"Failed validation after retries for tuple {tuple_number}: " + "; ".join(last_errors[:8])
-    )
-
-
-def main() -> None:
-    try:
-        sys.stdout.reconfigure(encoding="utf-8")
-    except Exception:
-        pass
-
-    model = resolve_ollama_model()
-    print(f"Ollama model: {model}")
-    print("Loading retriever from KB ...")
-    retriever = Retriever()
-    print(f"KB size: {len(retriever.items)} items")
-
-    if OUTPUT_PATH.exists():
-        try:
-            with OUTPUT_PATH.open("r", encoding="utf-8") as f:
-                existing = json.load(f)
-            all_questions = existing if isinstance(existing, list) else []
-        except json.JSONDecodeError:
-            all_questions = []
-    else:
-        all_questions = []
-
-    tuples_list = tuples if isinstance(tuples, list) else [tuples]
-    start_index = max(START_TUPLE_INDEX - 1, 0)
-
-    for i, tup in enumerate(tuples_list):
-        if i < start_index:
-            continue
-        subj = tuple_subject(tup)
-        print(
-            f"generating tuple {i + 1}/{len(tuples_list)}: "
-            f"{subj} / {tup['skillId']} @ {tup['bloom']}..."
-        )
-        try:
-            questions = generate_for_tuple(retriever, tup, i + 1, model=model)
-        except Exception as exc:
-            print(f"  ERROR: {exc}")
-            RAW_OUTPUT_DIR.mkdir(exist_ok=True)
-            err_path = RAW_OUTPUT_DIR / f"tuple_{i + 1}_error.txt"
-            err_path.write_text(str(exc), encoding="utf-8")
-            continue
-
-        all_questions.extend(questions)
-        save_questions(all_questions)
-        print(f"  OK: Got {len(questions)} questions (total {len(all_questions)})")
-
-    save_questions(all_questions)
-    print(f"\nDone! {len(all_questions)} total questions saved to {OUTPUT_PATH.name}")
-
-
-if __name__ == "__main__":
-    main()

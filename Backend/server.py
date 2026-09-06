@@ -52,9 +52,13 @@ TOPIC_SKILLS_PATH = TREE_DIR / "topic_skills.json"
 SKILL_EDGES_PATH = TREE_DIR / "skill_edges.json"
 SKILL_DESCRIPTIONS_PATH = TREE_DIR / "skill_descriptions.json"
 PLATFORM_CATALOG_PATH = TREE_DIR / "platform_catalog.json"
+TOPIC_LABELS_PATH = TREE_DIR / "topic_labels.json"
+SKILL_SUBJECTS_PATH = TREE_DIR / "skill_subjects.json"
 
-# DIAGNOSTIC_QUESTION_COUNT = 30
-DIAGNOSTIC_QUESTION_COUNT = 5  # Use smaller number for testing; set to 30 for real diagnostic flow.
+# Target diagnostic length. A run is capped at the section's skill count, since
+# DiagnosticSession tests each skill at most once (see _diagnostic_length_for_section).
+DIAGNOSTIC_QUESTION_COUNT = int(os.getenv("DIAGNOSTIC_QUESTION_COUNT", "30"))
+DIAGNOSTIC_MIN_QUESTION_COUNT = 5
 MASTERY_NOTIFY_THRESHOLD = 95.0
 TOPIC_PRACTICE_MASTERY_THRESHOLD = 95.0
 
@@ -81,9 +85,6 @@ NEXT_QUESTION_DEBUG_LOGS = os.getenv("NEXT_QUESTION_DEBUG_LOGS", "true").strip()
     "on",
 }
 
-SECTION_1_ID = "section_1_arithmetic_real_numbers"
-
-
 def _debug_search_log(message: str) -> None:
     if NEXT_QUESTION_DEBUG_LOGS:
         print(f"[nextq-debug] {message}", flush=True)
@@ -107,7 +108,7 @@ class UserCreate(BaseModel):
 
 class DiagnosticStartRequest(BaseModel):
     user_id: str
-    section_id: str = SECTION_1_ID
+    section_id: str = Field(..., min_length=1)
 
 
 class DiagnosticAnswerRequest(BaseModel):
@@ -116,7 +117,7 @@ class DiagnosticAnswerRequest(BaseModel):
 
 class TopicPracticeStartRequest(BaseModel):
     user_id: str
-    section_id: str = SECTION_1_ID
+    section_id: str = Field(..., min_length=1)
     topic_code: str = Field(..., min_length=1)
 
 
@@ -439,6 +440,12 @@ with open(SKILL_DESCRIPTIONS_PATH, "r", encoding="utf-8") as f:
 with open(PLATFORM_CATALOG_PATH, "r", encoding="utf-8") as f:
     PLATFORM_CATALOG: Dict[str, object] = json.load(f)
 
+with open(TOPIC_LABELS_PATH, "r", encoding="utf-8") as f:
+    TOPIC_LABELS: Dict[str, str] = json.load(f)
+
+with open(SKILL_SUBJECTS_PATH, "r", encoding="utf-8") as f:
+    SKILL_SUBJECTS: Dict[str, str] = json.load(f)
+
 SKILL_TREE = SkillTree()
 SKILL_TREE.build_tree_json(
     str(TOPIC_SKILLS_PATH),
@@ -480,6 +487,26 @@ def _load_existing_skill_ids() -> set[str]:
 EXISTING_SKILL_IDS = _load_existing_skill_ids()
 
 
+def _diagnostic_length_for_section(section_skill_ids: List[str]) -> int:
+    """
+    DiagnosticSession tests each skill at most once, so a section with fewer skills
+    than DIAGNOSTIC_QUESTION_COUNT can never reach the target length. Cap it so the
+    UI's "question X of Y" is truthful.
+    """
+    if not section_skill_ids:
+        return DIAGNOSTIC_MIN_QUESTION_COUNT
+    return max(
+        DIAGNOSTIC_MIN_QUESTION_COUNT,
+        min(DIAGNOSTIC_QUESTION_COUNT, len(section_skill_ids)),
+    )
+
+
+def _section_subject(section_id: str) -> Optional[str]:
+    """Subject of the course that owns this section."""
+    course = _get_course_for_section(section_id)
+    return course.get("subject") if course else None
+
+
 def _progress_key(user_id: str, section_id: str) -> str:
     return f"{user_id}:{section_id}"
 
@@ -518,14 +545,14 @@ def _section_skill_ids(section: dict) -> List[str]:
 
 
 def _topic_code_to_display_name(section: dict) -> Dict[str, str]:
-    mapping: Dict[str, str] = {}
+    """
+    Topic code -> display label. Starts from the ontology-wide labels so codes
+    outside this section (a skill can belong to several topics) still resolve,
+    then lets the section's own titles win.
+    """
+    mapping: Dict[str, str] = dict(TOPIC_LABELS)
     for topic in section.get("topics", []):
         mapping[topic["skill_topic_code"]] = topic["title"]
-
-    # Internal topic code used by ontology data; map to nearest user-facing topic.
-    if "EXT" not in mapping:
-        mapping["EXT"] = "Real Numbers"
-
     return mapping
 
 
@@ -884,8 +911,13 @@ def _select_random_question_row(
 
 
 def _question_payload(row: dict, topic_code_to_display: Dict[str, str]) -> dict:
-    topic_value = row.get("topic")
-    if not topic_value:
+    # questions.topic holds a topic_code (FK -> ontology_topics). Resolve it to the
+    # catalog display name so the UI shows "Matrices and Determinants", not "MAT_MATRIX".
+    topic_code = row.get("topic")
+    if topic_code:
+        topic_value = topic_code_to_display.get(topic_code, topic_code)
+    else:
+        topic_value = ""
         skill = SKILL_TREE.get_skill(row["skill_id"])
         if skill and skill.topics:
             topic_value = topic_code_to_display.get(skill.topics[0], skill.topics[0])
@@ -908,7 +940,9 @@ def _question_payload(row: dict, topic_code_to_display: Dict[str, str]) -> dict:
         "bloom_level": row.get("bloom_level"),
         "skill_id": row["skill_id"],
         "skill_description": SKILL_DESCRIPTIONS.get(row["skill_id"], ""),
+        "subject": SKILL_SUBJECTS.get(row["skill_id"], ""),
         "topic": topic_value,
+        "topic_code": topic_code or "",
         "question_stem": row.get("question_stem"),
         "options": normalized_options,
     }
@@ -1095,14 +1129,16 @@ def _select_question_row_for_spec(run: DiagnosticRun, spec: QuestionSpec) -> Opt
     )
 
     bloom_candidates = _nearby_bloom_labels(spec.bloom_level)
-    topic_display = run.topic_code_to_display.get(spec.topic, spec.topic)
+    # questions.topic is FK -> ontology_topics(topic_code), so it stores a topic CODE.
+    # Filtering by the catalog display name here could never match a row.
+    topic_filter = spec.topic
 
     # Tier 1: same skill + nearby bloom
     tier1_queries = 0
     tier1_started = time.perf_counter()
     for bloom_label in bloom_candidates:
         tier1_queries += 1
-        rows = _query_questions(skill_ids=[spec.skill_id], bloom_levels=[bloom_label], topic=topic_display)
+        rows = _query_questions(skill_ids=[spec.skill_id], bloom_levels=[bloom_label], topic=topic_filter)
         picked = _pick_unseen_question(rows, run.used_question_ids)
         if picked is not None:
             _debug_search_log(
@@ -1146,7 +1182,7 @@ def _select_question_row_for_spec(run: DiagnosticRun, spec: QuestionSpec) -> Opt
         nearby_skills = nearby_by_distance[distance]
         for bloom_label in bloom_candidates:
             tier2_queries += 1
-            rows = _query_questions(skill_ids=nearby_skills, bloom_levels=[bloom_label], topic=topic_display)
+            rows = _query_questions(skill_ids=nearby_skills, bloom_levels=[bloom_label], topic=topic_filter)
             picked = _pick_unseen_low_mastery_question(rows, run.used_question_ids, mastery_map)
             if picked is not None:
                 _debug_search_log(
@@ -1213,7 +1249,8 @@ def _next_question_for_run(run: DiagnosticRun) -> Optional[dict]:
         skill_id = row["skill_id"]
         bloom_level = _parse_bloom_level(row.get("bloom_level"))
         skill = SKILL_TREE.get_skill(skill_id)
-        topic_code = skill.topics[0] if skill and skill.topics else "RNUM"
+        # Fall back to the question's own topic code rather than a hardcoded one.
+        topic_code = skill.topics[0] if skill and skill.topics else row.get("topic")
 
         run.current_spec = QuestionSpec(
             topic=topic_code,
@@ -1278,11 +1315,12 @@ def _section_state(user_id: str, section_id: str) -> dict:
     return {
         "user_id": user_id,
         "section_id": section_id,
+        "subject": _section_subject(section_id),
         "diagnostic_required": diagnostic_required,
         "diagnostic_completed": diagnostic_completed,
         "mastery_locked": not diagnostic_completed,
         "diagnostic_answered_count": int(progress.get("answered_count", 0)),
-        "diagnostic_total_questions": DIAGNOSTIC_QUESTION_COUNT,
+        "diagnostic_total_questions": _diagnostic_length_for_section(skill_ids),
         "active_diagnostic_session_id": progress.get("active_session_id"),
     }
 
@@ -1464,6 +1502,7 @@ def get_section_mastery(user_id: str, section_id: str):
         row = {
             "skill_id": sid,
             "skill_description": SKILL_DESCRIPTIONS.get(sid, ""),
+            "subject": SKILL_SUBJECTS.get(sid, ""),
             "topics": display_topics,
             "mastery": round(mastery.get(sid, 0.0), 2),
         }
@@ -1728,6 +1767,7 @@ def start_diagnostic(request: DiagnosticStartRequest):
         diagnostic_session=None,
         section_skill_ids=section_skill_ids,
         topic_code_to_display=topic_code_to_display,
+        max_questions=_diagnostic_length_for_section(section_skill_ids),
     )
 
     run.diagnostic_session = DiagnosticSession(

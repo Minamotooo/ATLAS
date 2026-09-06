@@ -11,16 +11,8 @@ const topicSkills = JSON.parse(fs.readFileSync(topicSkillsPath, 'utf8'));
 const skillDescriptions = JSON.parse(fs.readFileSync(skillDescriptionsPath, 'utf8'));
 const skillEdges = JSON.parse(fs.readFileSync(skillEdgesPath, 'utf8'));
 
-const topicLabels = {
-  EXT: 'External Prerequisites',
-  RNUM: 'Real Numbers',
-  HCF: 'HCF',
-  LCM: 'LCM',
-  PCT: 'Percentage',
-  SCP: 'Simple and Compound Profit',
-  RAP: 'Ratio and Proportions',
-  PAL: 'Profit and Loss',
-};
+const topicLabelsPath = path.join(dir, 'topic_labels.json');
+const topicLabels = JSON.parse(fs.readFileSync(topicLabelsPath, 'utf8'));
 
 const skills = Object.keys(skillDescriptions).sort();
 

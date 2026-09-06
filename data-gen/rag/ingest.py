@@ -93,6 +93,20 @@ def repair_json_escapes(chunk: str) -> str:
     """
     OCR/LaTeX dumps often put single backslashes in JSON strings (\\%, \\text, …).
     Turn illegal escapes into literal backslashes so json.loads can succeed.
+
+    Only "n" is trusted as a real, intentional escape (genuine line breaks
+    between multi-part sub-questions do occur in this corpus). \\b, \\f, \\r
+    and \\t are NOT trusted here even though they are technically legal JSON:
+    this corpus is LaTeX-heavy exam content where those letters overwhelmingly
+    start a command instead - \\begin, \\beta, \\bar, \\binom, \\bmod,
+    \\frac, \\forall, \\rightarrow, \\right, \\rho, \\tan, \\theta, \\times,
+    \\text, \\to, \\tau. A real backspace/formfeed/carriage-return is never
+    intentional in exam question text, so treating them as legal silently
+    consumed the leading letter of exactly those commands with no error
+    raised - e.g. "\\frac{1}{x}" parsed clean into a literal FORMFEED
+    character followed by "rac{1}{x}". Confirmed present in ~6% of this
+    corpus before this fix (worst in Chemistry, where \\text/\\beta are
+    common - up to ~10%).
     """
     out: list[str] = []
     i = 0
@@ -119,7 +133,7 @@ def repair_json_escapes(chunk: str) -> str:
                 i += 1
                 continue
             nxt = chunk[i + 1]
-            if nxt in '"\\/bfnrt':
+            if nxt in '"\\/n':
                 out.append(ch)
                 out.append(nxt)
                 i += 2
@@ -141,18 +155,74 @@ def repair_json_escapes(chunk: str) -> str:
     return "".join(out)
 
 
+def salvage_objects(chunk: str, offset: int) -> list:
+    r"""
+    Rescue whatever parses when a whole array will not.
+
+    Source books are machine-extracted and occasionally contain a corrupt record -
+    e.g. an extraction loop that emits \quad 32k times and never closes its
+    string. A single such record desynchronises string/brace tracking for
+    everything after it, so a structural scan would discard the whole array; one
+    real incident cost 334 Chemistry items from one file.
+
+    So instead of tracking structure, resynchronise: walk to each '{' and let the
+    JSON decoder consume exactly one object from there. A record that will not
+    decode costs only itself - the scan picks up again at the next '{'.
+    """
+    decoder = json.JSONDecoder()
+    salvaged: list = []
+
+    # Escape repair first, so ordinary LaTeX backslashes are not counted as damage.
+    for payload in (repair_json_escapes(chunk), chunk):
+        salvaged = []
+        i = payload.find("{")
+        while i >= 0:
+            try:
+                obj, end = decoder.raw_decode(payload, i)
+            except ValueError:
+                # Not an object start (a LaTeX brace, or the damaged record itself).
+                i = payload.find("{", i + 1)
+                continue
+            if isinstance(obj, dict):
+                salvaged.append(obj)
+                i = payload.find("{", max(end, i + 1))
+            else:
+                i = payload.find("{", i + 1)
+        if salvaged:
+            break
+
+    if salvaged:
+        expected = chunk.count('"question_number"')
+        print(
+            f"  note: salvaged {len(salvaged)} of ~{expected} records from malformed "
+            f"array near offset {offset}"
+        )
+    return salvaged
+
+
 def parse_json_array_chunk(chunk: str, offset: int) -> list | None:
-    """Parse one array chunk; retry after repairing LaTeX-style escapes."""
-    for attempt, payload in enumerate((chunk, repair_json_escapes(chunk))):
+    """
+    Parse one array chunk. Escape repair runs FIRST, unconditionally - not just
+    as a fallback after a parse failure. \\b/\\f/\\r/\\t corruption is always
+    valid JSON syntax (it just silently produces a control character), so a
+    plain json.loads(chunk) never raises on it; parsing the untouched chunk
+    first would silently accept the corrupted result before repair ever runs.
+    """
+    repaired = repair_json_escapes(chunk)
+    for attempt, payload in enumerate((repaired, chunk)):
         try:
             parsed = json.loads(payload)
         except json.JSONDecodeError as exc:
             if attempt == 0:
                 continue
+            # Last resort: pull out the individual records that are still intact.
+            salvaged = salvage_objects(chunk, offset)
+            if salvaged:
+                return salvaged
             print(f"  warn: skipped invalid JSON array near offset {offset}: {exc}")
             return None
         if isinstance(parsed, list):
-            if attempt == 1:
+            if attempt == 0 and payload != chunk:
                 print(f"  note: repaired escapes in array near offset {offset}")
             return parsed
         print(f"  warn: skipped non-list JSON value near offset {offset}")
