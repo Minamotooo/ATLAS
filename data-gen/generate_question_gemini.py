@@ -63,7 +63,6 @@ API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 # that holds even if requests' own timeout silently fails to fire - the
 # request thread is orphaned (Python can't kill a blocked thread) but the
 # caller is guaranteed to get control back.
-_HTTP_EXECUTOR = concurrent.futures.ThreadPoolExecutor(max_workers=64, thread_name_prefix="gemini-http")
 _HTTP_HARD_TIMEOUT_SEC = 75.0  # a bit above requests' own 60s timeout
 # Every question that reaches the output file has already passed schema
 # validation AND the combined verification call (on-topic + independent
@@ -273,13 +272,26 @@ def gemini_generate(key_state: KeyState, model: str, system_prompt: str, user_pr
             return None, "key exhausted"
 
         key_state.wait_for_turn(model)
+        # A fresh single-use executor per call, not a shared pool: if requests'
+        # own timeout=60 fails to fire (observed platform issue) and the call
+        # blocks forever past _HTTP_HARD_TIMEOUT_SEC, .result(timeout=...) only
+        # abandons OUR wait - the underlying thread stays blocked forever. A
+        # shared fixed-size pool would permanently lose that worker slot, and
+        # after enough leaks (observed after ~40min/~650 calls under heavy
+        # rate-limit retry volume) every slot is gone and ALL future calls
+        # queue forever with zero free workers - a full stall. A disposable
+        # one-off executor lets the leaked thread die alone without shrinking
+        # capacity for calls that come after it.
+        one_shot = concurrent.futures.ThreadPoolExecutor(max_workers=1, thread_name_prefix="gemini-http")
         try:
-            resp = _HTTP_EXECUTOR.submit(requests.post, url, json=payload, timeout=60) \
+            resp = one_shot.submit(requests.post, url, json=payload, timeout=60) \
                 .result(timeout=_HTTP_HARD_TIMEOUT_SEC)
         except concurrent.futures.TimeoutError:
             return None, f"network error: hard timeout after {_HTTP_HARD_TIMEOUT_SEC}s (requests' own timeout did not fire)"
         except requests.RequestException as exc:
             return None, f"network error: {exc}"
+        finally:
+            one_shot.shutdown(wait=False)
 
         if resp.status_code == 429:
             retry_after = None
