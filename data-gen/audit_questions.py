@@ -61,6 +61,11 @@ REPORT_PATH = _DATA_GEN / "audit_report.json"
 STRICT_BATCH_SIZE = 6
 MAX_REGEN_ATTEMPTS = 3
 DEFAULT_CHUNK_SIZE = 100
+# A verify call that fails outright (rate-limit exhaustion, hard timeout,
+# malformed response) is retried this many times before giving up on
+# auditing that question at all - it is NEVER treated as a finding, since
+# under heavy rate-limiting most failures are just that, not a real defect.
+MAX_STRICT_CALL_RETRIES = 5
 
 STRICT_VERIFY_SYSTEM_PROMPT = (
     "You are a rigorous exam-setter double-checking already-written MCQs for "
@@ -106,11 +111,24 @@ def marked_correct_label(q: dict) -> str | None:
     return None
 
 
+class VerifyCallFailed(Exception):
+    """
+    The call itself didn't complete (rate-limit exhaustion, hard timeout,
+    malformed response) - NOT a judge verdict. Must never be treated the
+    same as a genuine "judge found no/ambiguous match" (which returns None
+    per-item below): under heavy rate-limiting, conflating the two would
+    mark perfectly good questions as defective just because their verify
+    call happened to fail, not because anything is wrong with them.
+    """
+
+
 def verify_batch_strict(questions: list[dict], key_state: gg.KeyState) -> list[str | None]:
     """
     Returns, per question in the same order: the single option label the
     judge verified as exactly correct, or None if it found zero or more than
     one (either is a red flag - a well-formed question has exactly one).
+    Raises VerifyCallFailed if the call itself didn't produce a usable
+    response at all - callers must retry, not treat that as a finding.
     """
     blocks = []
     for i, q in enumerate(questions):
@@ -132,7 +150,7 @@ def verify_batch_strict(questions: list[dict], key_state: gg.KeyState) -> list[s
     )
     if not isinstance(parsed, dict) or not isinstance(parsed.get("results"), list) \
             or len(parsed["results"]) != len(questions):
-        return [None] * len(questions)
+        raise VerifyCallFailed(err or "malformed response")
 
     out: list[str | None] = []
     for r in parsed["results"]:
@@ -309,6 +327,8 @@ def main() -> None:
     work = list(sample_idx)
     work_lock = threading.Lock()
 
+    call_retry_count: dict[int, int] = {}
+
     def worker(key_state: gg.KeyState) -> None:
         while True:
             with work_lock:
@@ -319,11 +339,20 @@ def main() -> None:
             batch_qs = [all_questions[i] for i in batch_idx]
             try:
                 labels = verify_batch_strict(batch_qs, key_state)
-            except Exception as exc:  # noqa: BLE001
+            except Exception as exc:  # noqa: BLE001 - call-level failure, not a verdict
                 with lock:
                     for idx in batch_idx:
-                        flagged.append((idx, f"strict-verify call failed: {exc!r}"))
-                        stats["call_failed"] += 1
+                        call_retry_count[idx] = call_retry_count.get(idx, 0) + 1
+                        if call_retry_count[idx] <= MAX_STRICT_CALL_RETRIES:
+                            with work_lock:
+                                work.append(idx)
+                        else:
+                            # Genuinely couldn't verify after retrying - leave
+                            # UNAUDITED rather than guessing. Not a finding:
+                            # never fed into flagged/regeneration.
+                            stats["call_failed"] += 1
+                            print(f"  [gave up verifying idx={idx} after "
+                                  f"{MAX_STRICT_CALL_RETRIES} call failures: {exc!r}]")
                 continue
             for idx, q, judged in zip(batch_idx, batch_qs, labels):
                 actual = marked_correct_label(q)
