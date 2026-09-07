@@ -38,6 +38,7 @@ Run from data-gen/:
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import json
 import random
 import sys
@@ -66,6 +67,15 @@ DEFAULT_CHUNK_SIZE = 100
 # auditing that question at all - it is NEVER treated as a finding, since
 # under heavy rate-limiting most failures are just that, not a real defect.
 MAX_STRICT_CALL_RETRIES = 5
+# Outer watchdog around a WHOLE verify_batch_strict() call, independent of
+# any timeout inside gemini_generate itself. Observed twice: the pipeline
+# froze solid for 20-40+ minutes with zero new output of ANY kind (not even
+# [ratelimit] lines, which print on virtually every retry) - i.e. something
+# genuinely blocked with no periodic signal, not merely slow under heavy
+# rate-limiting. The exact mechanism wasn't pinned down, so this bounds the
+# damage structurally instead: no single batch, for any reason, can stall
+# the whole run for more than this long before being abandoned and requeued.
+BATCH_HARD_TIMEOUT_SEC = 300.0
 
 STRICT_VERIFY_SYSTEM_PROMPT = (
     "You are a rigorous exam-setter double-checking already-written MCQs for "
@@ -337,9 +347,25 @@ def main() -> None:
                 batch_idx = work[:STRICT_BATCH_SIZE]
                 del work[:STRICT_BATCH_SIZE]
             batch_qs = [all_questions[i] for i in batch_idx]
+            # A fresh disposable executor per batch (not a shared pool): if
+            # verify_batch_strict never returns, .result(timeout=...) only
+            # abandons OUR wait, leaking that one thread - a shared pool would
+            # instead permanently lose the slot, eventually starving every
+            # future batch. See generate_question_gemini.py's gemini_generate
+            # for the same pattern and why it matters.
+            one_shot = concurrent.futures.ThreadPoolExecutor(max_workers=1)
             try:
-                labels = verify_batch_strict(batch_qs, key_state)
-            except Exception as exc:  # noqa: BLE001 - call-level failure, not a verdict
+                labels = one_shot.submit(verify_batch_strict, batch_qs, key_state) \
+                    .result(timeout=BATCH_HARD_TIMEOUT_SEC)
+            except concurrent.futures.TimeoutError:
+                exc: Exception = VerifyCallFailed(f"batch hard-timed out after {BATCH_HARD_TIMEOUT_SEC}s")
+            except Exception as caught:  # noqa: BLE001 - call-level failure, not a verdict
+                exc = caught
+            else:
+                exc = None
+            finally:
+                one_shot.shutdown(wait=False)
+            if exc is not None:
                 with lock:
                     for idx in batch_idx:
                         call_retry_count[idx] = call_retry_count.get(idx, 0) + 1
