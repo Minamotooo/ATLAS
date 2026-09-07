@@ -190,53 +190,56 @@ def stratified_sample(questions: list[dict], fraction: float, seed: int = 7) -> 
     return sorted(picked)
 
 
-def regenerate_one(
-    retriever: Retriever, skill_id: str, bloom: str, key_state: gg.KeyState,
-    max_attempts: int = MAX_REGEN_ATTEMPTS,
-) -> tuple[dict | None, str]:
+def combined_and_strict_valid(tup: dict, questions: list, key_state: gg.KeyState) -> list[bool]:
     """
-    Regenerate ONE fresh question for (skill_id, bloom), requiring it to pass
-    BOTH the original combined verifier AND this script's strict verifier
-    before accepting it. Returns (question_or_None, reason_if_failed).
+    Per-question boolean: True iff BOTH gg.combined_validity AND this
+    script's stricter derive-your-own-answer verifier agree the question is
+    good. Only calls verify_batch_strict on questions that already pass the
+    (cheaper) combined check, so a batch with zero combined-valid candidates
+    never triggers a strict-verify call at all.
+    """
+    combined_ok = gg.combined_validity(tup, questions, key_state)
+    if not any(combined_ok):
+        return [False] * len(questions)
+    try:
+        strict_labels = verify_batch_strict(questions, key_state)
+    except Exception:
+        return [False] * len(questions)
+    return [
+        c_ok and strict_label is not None and strict_label == marked_correct_label(q)
+        for q, c_ok, strict_label in zip(questions, combined_ok, strict_labels)
+    ]
+
+
+def regenerate_pool(
+    retriever: Retriever, skill_id: str, bloom: str, key_state: gg.KeyState,
+    target_count: int = gen.N_QUESTIONS,
+    max_attempts: int = MAX_REGEN_ATTEMPTS,
+) -> tuple[list[dict], str]:
+    """
+    Regenerate fresh questions for (skill_id, bloom), each required to pass
+    BOTH the original combined verifier AND this script's strict verifier.
+    Unlike discarding a whole 3-candidate batch for one bad sibling, every
+    individually-valid candidate is kept and accumulated across attempts
+    (see gg.generate_verified_pool) until target_count is reached or
+    max_attempts is exhausted. Returns (valid_questions, reason_if_empty) -
+    the list may contain MORE than one question (a caller needing only one
+    replacement can use the rest as bonus additions to the group; empty
+    means no reason to think a partial result is worse than none).
     """
     tup = next((t for t in gen.tuples if t["skillId"] == skill_id and t["bloom"] == bloom), None)
     if tup is None:
-        return None, f"tuple not found for {skill_id}@{bloom}"
+        return [], f"tuple not found for {skill_id}@{bloom}"
 
-    for _attempt in range(max_attempts):
-        try:
-            questions, hits, subject, err = gg.generate_schema_valid_tuple(
-                retriever, tup, key_state, gg.REAL_MODEL
-            )
-        except Exception as exc:  # noqa: BLE001
-            questions, err = [], f"unhandled exception: {exc!r}"
-
-        if not questions:
-            continue
-
-        try:
-            ok_call, checks = gg.verify_batch_combined([(tup, questions)], key_state)[0]
-        except Exception:
-            ok_call, checks = False, []
-        if not ok_call or any((not on_topic) or (answer_ok is False) for on_topic, answer_ok in checks):
-            continue
-
-        try:
-            strict_labels = verify_batch_strict(questions, key_state)
-        except Exception:
-            continue
-
-        for q, strict_label in zip(questions, strict_labels):
-            if strict_label is not None and strict_label == marked_correct_label(q):
-                q.setdefault("skill_description", tup["skillFull"])
-                q.setdefault("topic", tup["topicLabel"])
-                q["subject"] = subject
-                if hits is not None:
-                    gen.attach_source_refs([q], hits)
-                q["_verified"] = True
-                return q, ""
-
-    return None, f"exhausted {max_attempts} regen attempts"
+    pool, err = gg.generate_verified_pool(
+        retriever, tup, key_state, gg.REAL_MODEL, combined_and_strict_valid,
+        target_count=target_count, max_attempts=max_attempts,
+    )
+    for q in pool:
+        q["_verified"] = True
+    if not pool:
+        return [], err or f"exhausted {max_attempts} regen attempts with 0 valid candidates"
+    return pool, ""
 
 
 def reconcile_groups_to_db(
@@ -321,16 +324,26 @@ def fix_flagged_in_chunks(
                         return
                     idx, reason = chunk_work.pop()
                 old_q = all_questions[idx]
-                new_q, fail_reason = regenerate_one(
+                group = (old_q["skill_id"], old_q["bloom_level"])
+                pool, fail_reason = regenerate_pool(
                     retriever, old_q["skill_id"], old_q["bloom_level"], key_state,
                     max_attempts=max_regen_attempts,
                 )
                 with chunk_lock:
-                    if new_q is not None:
-                        all_questions[idx] = new_q
+                    if pool:
+                        all_questions[idx] = pool[0]
                         fixed += 1
-                        touched_groups.add((old_q["skill_id"], old_q["bloom_level"]))
-                        print(f"  FIXED {old_q['skill_id']}@{old_q['bloom_level']} ({reason})")
+                        touched_groups.add(group)
+                        bonus_note = f" [+{len(pool) - 1} bonus]" if len(pool) > 1 else ""
+                        print(f"  FIXED {old_q['skill_id']}@{old_q['bloom_level']} ({reason}){bonus_note}")
+                        # Surplus valid candidates beyond the one replacement
+                        # needed here aren't wasted - they're appended as new
+                        # entries for the same group, and reconcile_groups_to_db
+                        # (below) will insert them into Supabase like any other
+                        # corpus entry for a touched group.
+                        for bonus_q in pool[1:]:
+                            by_group.setdefault(group, []).append(len(all_questions))
+                            all_questions.append(bonus_q)
                     else:
                         unresolved.append({"index": idx, "skill_id": old_q["skill_id"],
                                             "bloom_level": old_q["bloom_level"], "reason": reason,
