@@ -67,6 +67,10 @@ DEFAULT_CHUNK_SIZE = 100
 # auditing that question at all - it is NEVER treated as a finding, since
 # under heavy rate-limiting most failures are just that, not a real defect.
 MAX_STRICT_CALL_RETRIES = 5
+# --retry-unresolved uses this much higher cap by default: at that point
+# we're deliberately trying to clear the last stubborn handful of
+# questions, not racing through a bulk chunk, so patience is worth it.
+RETRY_MAX_REGEN_ATTEMPTS = 15
 # Outer watchdog around a WHOLE verify_batch_strict() call, independent of
 # any timeout inside gemini_generate itself. Observed twice: the pipeline
 # froze solid for 20-40+ minutes with zero new output of ANY kind (not even
@@ -188,6 +192,7 @@ def stratified_sample(questions: list[dict], fraction: float, seed: int = 7) -> 
 
 def regenerate_one(
     retriever: Retriever, skill_id: str, bloom: str, key_state: gg.KeyState,
+    max_attempts: int = MAX_REGEN_ATTEMPTS,
 ) -> tuple[dict | None, str]:
     """
     Regenerate ONE fresh question for (skill_id, bloom), requiring it to pass
@@ -198,7 +203,7 @@ def regenerate_one(
     if tup is None:
         return None, f"tuple not found for {skill_id}@{bloom}"
 
-    for _attempt in range(MAX_REGEN_ATTEMPTS):
+    for _attempt in range(max_attempts):
         try:
             questions, hits, subject, err = gg.generate_schema_valid_tuple(
                 retriever, tup, key_state, gg.REAL_MODEL
@@ -231,7 +236,7 @@ def regenerate_one(
                 q["_verified"] = True
                 return q, ""
 
-    return None, f"exhausted {MAX_REGEN_ATTEMPTS} regen attempts"
+    return None, f"exhausted {max_attempts} regen attempts"
 
 
 def reconcile_groups_to_db(
@@ -283,6 +288,72 @@ def reconcile_groups_to_db(
         stats["db_inserted"] += len(to_insert)
 
 
+def fix_flagged_in_chunks(
+    flagged: list[tuple[int, str]], all_questions: list[dict], retriever: Retriever,
+    key_states: list["gg.KeyState"], chunk_size: int,
+    by_group: dict[tuple[str, str], list[int]], db, topic_resolver, known_skills: set[str],
+    db_stats: Counter, max_regen_attempts: int = MAX_REGEN_ATTEMPTS,
+) -> tuple[int, list[dict]]:
+    """
+    Regenerate + push each (idx, reason) in `flagged`, in chunks of
+    `chunk_size`, syncing affected skill/bloom groups to Supabase and
+    checkpointing the corpus file after every chunk. Returns
+    (total_fixed, unresolved_details).
+    """
+    fixed = 0
+    unresolved: list[dict] = []
+
+    for chunk_start in range(0, len(flagged), chunk_size):
+        chunk = flagged[chunk_start:chunk_start + chunk_size]
+        print(f"\n-- chunk {chunk_start // chunk_size + 1} "
+              f"({len(chunk)} items, {chunk_start}/{len(flagged)} so far) --")
+
+        chunk_lock = threading.Lock()
+        chunk_work = list(chunk)
+        chunk_work_lock = threading.Lock()
+        touched_groups: set[tuple[str, str]] = set()
+
+        def fix_worker(key_state: gg.KeyState) -> None:
+            nonlocal fixed
+            while True:
+                with chunk_work_lock:
+                    if not chunk_work:
+                        return
+                    idx, reason = chunk_work.pop()
+                old_q = all_questions[idx]
+                new_q, fail_reason = regenerate_one(
+                    retriever, old_q["skill_id"], old_q["bloom_level"], key_state,
+                    max_attempts=max_regen_attempts,
+                )
+                with chunk_lock:
+                    if new_q is not None:
+                        all_questions[idx] = new_q
+                        fixed += 1
+                        touched_groups.add((old_q["skill_id"], old_q["bloom_level"]))
+                        print(f"  FIXED {old_q['skill_id']}@{old_q['bloom_level']} ({reason})")
+                    else:
+                        unresolved.append({"index": idx, "skill_id": old_q["skill_id"],
+                                            "bloom_level": old_q["bloom_level"], "reason": reason,
+                                            "regen_failure": fail_reason})
+                        print(f"  UNRESOLVED {old_q['skill_id']}@{old_q['bloom_level']}: {fail_reason}")
+
+        threads = [threading.Thread(target=fix_worker, args=(ks,), daemon=True) for ks in key_states]
+        for t in threads:
+            t.start()
+        for t in threads:
+            t.join()
+
+        if touched_groups:
+            print(f"  Syncing {len(touched_groups)} affected skill/bloom group(s) to Supabase ...")
+            reconcile_groups_to_db(db, topic_resolver, known_skills, all_questions, touched_groups, by_group, db_stats)
+
+        OUTPUT_PATH.write_text(json.dumps(all_questions, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"  Chunk done. Total so far: fixed={fixed}, unresolved={len(unresolved)}, "
+              f"db_inserted={db_stats['db_inserted']}, db_deleted={db_stats['db_deleted']}")
+
+    return fixed, unresolved
+
+
 def main() -> None:
     try:
         sys.stdout.reconfigure(encoding="utf-8", line_buffering=True)
@@ -293,6 +364,14 @@ def main() -> None:
     parser.add_argument("--fraction", type=float, default=0.30)
     parser.add_argument("--chunk-size", type=int, default=DEFAULT_CHUNK_SIZE)
     parser.add_argument("--real", action="store_true")
+    parser.add_argument("--retry-unresolved", action="store_true",
+                         help="Skip phase 1 entirely; re-attempt only the "
+                              "'unresolved' questions from an existing "
+                              "audit_report.json, with a much higher "
+                              "regen-attempt cap per question.")
+    parser.add_argument("--max-regen-attempts", type=int, default=None,
+                         help="Override the regen-attempt cap per question "
+                              "(default: 3 normally, 15 with --retry-unresolved).")
     args = parser.parse_args()
 
     all_questions = json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
@@ -324,6 +403,37 @@ def main() -> None:
 
     print("Loading retriever + KB ...")
     retriever = Retriever()
+
+    if args.retry_unresolved:
+        max_attempts = args.max_regen_attempts or RETRY_MAX_REGEN_ATTEMPTS
+        if not REPORT_PATH.exists():
+            raise SystemExit(f"{REPORT_PATH} not found - run a normal audit first")
+        report = json.loads(REPORT_PATH.read_text(encoding="utf-8"))
+        prior_unresolved = report.get("unresolved", [])
+        flagged = [(u["index"], u["reason"]) for u in prior_unresolved]
+        print(f"Retrying {len(flagged)} previously-unresolved question(s), "
+              f"up to {max_attempts} regen attempts each ...")
+
+        fixed, unresolved = fix_flagged_in_chunks(
+            flagged, all_questions, retriever, key_states, args.chunk_size,
+            by_group, db, topic_resolver, known_skills, db_stats,
+            max_regen_attempts=max_attempts,
+        )
+
+        report["fixed"] = report.get("fixed", 0) + fixed
+        report["unresolved"] = unresolved
+        report["db_inserted"] = report.get("db_inserted", 0) + db_stats["db_inserted"]
+        report["db_deleted"] = report.get("db_deleted", 0) + db_stats["db_deleted"]
+        REPORT_PATH.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"\nWrote {REPORT_PATH.name}")
+
+        print("\n--- retry summary ---")
+        print(f"  retried          : {len(flagged)}")
+        print(f"  fixed this round : {fixed}")
+        print(f"  still unresolved : {len(unresolved)}")
+        print(f"  db rows inserted : {db_stats['db_inserted']}")
+        print(f"  db rows deleted  : {db_stats['db_deleted']}")
+        return
 
     sample_idx = stratified_sample(all_questions, args.fraction)
     print(f"Auditing {len(sample_idx)} questions ({100 * len(sample_idx) / len(all_questions):.1f}%), "
@@ -407,56 +517,11 @@ def main() -> None:
 
     # --- phase 2: regenerate + push flagged questions, in chunks -----------
     print(f"\nFixing {len(flagged)} flagged questions in chunks of {args.chunk_size} ...")
-    fixed = 0
-    unresolved = []
-    chunk_size = args.chunk_size
-
-    for chunk_start in range(0, len(flagged), chunk_size):
-        chunk = flagged[chunk_start:chunk_start + chunk_size]
-        print(f"\n-- chunk {chunk_start // chunk_size + 1} "
-              f"({len(chunk)} items, {chunk_start}/{len(flagged)} so far) --")
-
-        chunk_lock = threading.Lock()
-        chunk_work = list(chunk)
-        chunk_work_lock = threading.Lock()
-        touched_groups: set[tuple[str, str]] = set()
-
-        def fix_worker(key_state: gg.KeyState) -> None:
-            nonlocal fixed
-            while True:
-                with chunk_work_lock:
-                    if not chunk_work:
-                        return
-                    idx, reason = chunk_work.pop()
-                old_q = all_questions[idx]
-                new_q, fail_reason = regenerate_one(
-                    retriever, old_q["skill_id"], old_q["bloom_level"], key_state
-                )
-                with chunk_lock:
-                    if new_q is not None:
-                        all_questions[idx] = new_q
-                        fixed += 1
-                        touched_groups.add((old_q["skill_id"], old_q["bloom_level"]))
-                        print(f"  FIXED {old_q['skill_id']}@{old_q['bloom_level']} ({reason})")
-                    else:
-                        unresolved.append({"index": idx, "skill_id": old_q["skill_id"],
-                                            "bloom_level": old_q["bloom_level"], "reason": reason,
-                                            "regen_failure": fail_reason})
-                        print(f"  UNRESOLVED {old_q['skill_id']}@{old_q['bloom_level']}: {fail_reason}")
-
-        threads = [threading.Thread(target=fix_worker, args=(ks,), daemon=True) for ks in key_states]
-        for t in threads:
-            t.start()
-        for t in threads:
-            t.join()
-
-        if touched_groups:
-            print(f"  Syncing {len(touched_groups)} affected skill/bloom group(s) to Supabase ...")
-            reconcile_groups_to_db(db, topic_resolver, known_skills, all_questions, touched_groups, by_group, db_stats)
-
-        OUTPUT_PATH.write_text(json.dumps(all_questions, ensure_ascii=False, indent=2), encoding="utf-8")
-        print(f"  Chunk done. Total so far: fixed={fixed}, unresolved={len(unresolved)}, "
-              f"db_inserted={db_stats['db_inserted']}, db_deleted={db_stats['db_deleted']}")
+    fixed, unresolved = fix_flagged_in_chunks(
+        flagged, all_questions, retriever, key_states, args.chunk_size,
+        by_group, db, topic_resolver, known_skills, db_stats,
+        max_regen_attempts=args.max_regen_attempts or MAX_REGEN_ATTEMPTS,
+    )
 
     # --- final report ----------------------------------------------------
     report = {
