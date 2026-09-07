@@ -24,6 +24,7 @@ Run from data-gen/:
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import json
 import queue
 import sys
@@ -52,6 +53,18 @@ GENERATION_MODEL = TEST_MODEL
 # from a separate quota pool instead of competing with generation calls.
 ANSWER_VERIFICATION_MODEL = TEST_MODEL
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
+# requests' own `timeout=` is supposed to bound a call, but a real ~40-minute
+# hang was observed (audit_questions.py, 2026-09-07) with no progress from any
+# of 10 parallel keys - well past every theoretical retry/backoff ceiling in
+# this file, meaning some single HTTP call likely blocked past its stated
+# timeout (a known occasional platform/networking issue, not something this
+# code can prevent at the requests-call level). Running the call through a
+# thread pool and bounding it with .result(timeout=...) gives a hard ceiling
+# that holds even if requests' own timeout silently fails to fire - the
+# request thread is orphaned (Python can't kill a blocked thread) but the
+# caller is guaranteed to get control back.
+_HTTP_EXECUTOR = concurrent.futures.ThreadPoolExecutor(max_workers=64, thread_name_prefix="gemini-http")
+_HTTP_HARD_TIMEOUT_SEC = 75.0  # a bit above requests' own 60s timeout
 # Every question that reaches the output file has already passed schema
 # validation AND the combined verification call (on-topic + independent
 # answer check) - that's true regardless of which model generated it, so
@@ -261,7 +274,10 @@ def gemini_generate(key_state: KeyState, model: str, system_prompt: str, user_pr
 
         key_state.wait_for_turn(model)
         try:
-            resp = requests.post(url, json=payload, timeout=60)
+            resp = _HTTP_EXECUTOR.submit(requests.post, url, json=payload, timeout=60) \
+                .result(timeout=_HTTP_HARD_TIMEOUT_SEC)
+        except concurrent.futures.TimeoutError:
+            return None, f"network error: hard timeout after {_HTTP_HARD_TIMEOUT_SEC}s (requests' own timeout did not fire)"
         except requests.RequestException as exc:
             return None, f"network error: {exc}"
 
