@@ -1,208 +1,207 @@
-# ATLAS — Handoff 4: Full-Corpus Ontology Rebuild, `ChemBook1` complete
+# ATLAS — Handoff 4: Full-Corpus Ontology Rebuild, all Chemistry complete
 
 Continues `HANDOFF3.md`. **Read that first** — it holds the why, the project
 owner's standing instructions, the cost-blowout lesson, and the consolidation
-judgement rules, all of which are still in force and are not repeated here.
-This document records what the b05+b06 batch did, the decisions made in it, and
-where to pick up.
+judgement rules, all still in force and not repeated here. This document records
+what one working session did, the decisions made in it, and where to pick up.
 
-**One-line state:** `ChemBook1.txt` is now fully processed (731/731 records);
-the rebuild holds **514 skills / 199 prerequisite edges**, validated as a DAG.
-That is **16.3% of the 4,474-record corpus**. Everything else is unchanged.
+**One-line state:** **all 1,688 Chemistry records are processed** —
+`ChemBook1.txt` (731) and `ChemBook2.txt` (957). The rebuild holds **843 skills /
+348 prerequisite edges**, validated as a DAG. That is **37.7% of the 4,474-record
+corpus**. Mathematics and Physics remain untouched.
 
 ---
 
 ## 1. What was done
 
-Records 481–731 of `ChemBook1.txt` — the range `HANDOFF3.md` §7 named as step 1.
-Content is almost entirely chemical equilibrium, acid–base/buffers/pH, chemical
-kinetics, and thermochemistry, plus a short applied-chemistry tail (food
-preservatives, fertilizers, consumer products).
+Five chunks, in order, each extracted → near-duplicate-checked → consolidated →
+validated before the next was started:
+
+| Chunk | Source range | Records | Minted | Reused |
+|---|---|---|---|---|
+| b05, b06 | `ChemBook1` 481–731 | 251 | 123 | 75 |
+| b07 | `ChemBook2` 1–320 | 320 | 189 | 32 |
+| b08 | `ChemBook2` 321–640 | 320 | 99 | 60 |
+| b09 | `ChemBook2` 641–957 | 317 | 32 | 35 |
 
 | | before | after |
 |---|---|---|
-| Records processed | 480 | **731** (of `ChemBook1`'s 731) |
-| Skills | 388 | **514** |
-| Prereq edges | 109 | **199** (196 after transitive reduction) |
+| Records processed | 480 | **1,688** |
+| Skills | 388 | **843** |
+| Prereq edges | 109 | **348** (345 reduced) |
 | Unresolved prereq mentions | 50 | **46** |
-| Legacy ids reused | 4 | **10** |
-| Max DAG depth | 3 | **4** |
+| Legacy ids reused | 4 | **24** |
+| Topics (raw / canonical) | 25 / 25 | **30 / 27** |
 
-Full per-file detail is in `Ontology/full_corpus_rebuild/STATUS.md`.
+Per-file detail is in `Ontology/full_corpus_rebuild/STATUS.md`.
 
-## 2. How it was done — the method that worked, repeat it
+The mint rate falls sharply across b07 → b08 → b09 (189 → 99 → 32). That is the
+reuse rule working: b07 opened gas laws and organic chemistry from near zero,
+b08's organic MCQs mostly re-exercised b07's skills, and by b09 only
+electrochemistry was genuinely new. **A rising reuse ratio is the signal that the
+ontology is converging; a flat mint rate late in a subject means reuse checking
+has stopped working.**
 
-`HANDOFF3.md` §5 recommended: bigger chunks, ruleset inlined rather than
-"go read these files", no wide parallel bursts, and consolidation done directly
-rather than by an agent. **This batch went further and used no subagents at
-all** — extraction included — and it worked well. Concretely:
+## 2. The method — repeat this
 
-1. **Dump the records to read.** A small script pulled the target range out of
-   `parsed_items.jsonl` into two plain-text chunk files (question, options,
-   answer, solution; `embed_text` dropped as redundant). ~120K characters for
-   251 records. Do **not** re-parse the corpus — `parsed_items.jsonl` is correct
-   and complete.
-2. **Load the reuse references into context first, once.** A compact
-   `skillId [Bloom] description` listing of all existing rebuild skills grouped
-   by topic (~69K chars), plus the same for the 117 legacy Chemistry skills
-   (~14K chars). This is the mechanism that makes the reuse rule enforceable —
-   §3 of the system prompt is right that you cannot check reuse against a file
-   you have not read.
+`HANDOFF3.md` §5 recommended bigger chunks, an inlined ruleset, no wide parallel
+bursts, and consolidation done directly. **This session used no subagents at all,
+extraction included**, and it worked end to end. The loop, per chunk:
+
+1. **Dump the records.** Pull the target range out of `parsed_items.jsonl` into a
+   plain-text file (question, options, answer, solution; drop `embed_text`).
+   Never re-parse the corpus — `parsed_items.jsonl` is correct and complete.
+2. **Load the reuse references into context, once per session.** A compact
+   `skillId [Bloom] description` listing of every existing rebuild skill grouped
+   by topic, plus the same for the 117 legacy Chemistry skills. This is the
+   mechanism that makes the reuse rule enforceable; you cannot check reuse
+   against a file you have not read.
 3. **Read the records and extract**, writing a candidate JSON per chunk.
-4. **Run `_find_near_dupes_b05b06.py`**, then judge every flagged pair by hand
-   against `HANDOFF3.md` §6's rules.
+4. **Run the near-duplicate detector**, then judge every flagged pair by hand
+   against `HANDOFF3.md` §6.
 5. **Run `_consolidate_incremental.py`.**
-6. **Run `build_from_ontology.py --report-only`** and an integrity sweep.
+6. **Run `build_from_ontology.py --report-only`** plus an integrity sweep.
 
-Rough cost: reading 251 records plus the reference material dominates. This is
-far cheaper than the original ~45-subagent workflow and produced a validated
-result in one pass.
+### Practical notes that cost time to learn
 
-### Two tooling changes you should keep using
+- **Bengali source text is byte-dense.** Roughly 200 lines of the dumped record
+  files is all that fits in one tool call; slice accordingly.
+- **Write candidate files in parts and assemble them with a script.** A single
+  chunk can run to 190 skills, which is far too much for one file write. Write
+  `candidates/parts/*.json` fragments, then assemble with a script that
+  namespaces the tempIds and validates cross-references.
+- **Validate every `skillId` you reference before consolidating.** The assembler
+  checks reuse targets and prerequisite targets against the current ontology and
+  the legacy set, and refuses to build if any is unknown. This caught several
+  wrong ids. But note the limit: **an id existing does not mean it is the right
+  one.** Spot-check the descriptions of ids you guessed — doing so caught
+  `CHE_ATOMIC30` (isotopes/isobars) being wrongly used for a water-of-
+  crystallisation record.
 
-- **`_consolidate_incremental.py` replaces `_consolidate_chembook1.py` for all
-  future batches.** The old script rebuilds `tuples.json` from scratch from the
-  candidate files. Running it now would re-mint every skillId and silently
-  invalidate every id `prereqs.json` already references. The new script merges a
-  batch into the existing output, keeps existing ids stable, allocates new ids
-  that collide with neither the rebuild nor the legacy ontology, adopts legacy
-  ids, and re-checks `unresolved_prereqs.json` against the batch's new skills.
-  Keep `_consolidate_chembook1.py` only as the historical record of how b01–b04
-  were built.
-- **Pin prerequisite targets explicitly.** Candidate `prereqs` entries now
+## 3. Tooling changes made this session
+
+- **`_consolidate_incremental.py` replaces `_consolidate_chembook1.py`.** The old
+  script rebuilds `tuples.json` from scratch out of the candidate files; running
+  it today would re-mint every skillId and silently invalidate every id
+  `prereqs.json` references. Keep it only as the record of how b01–b04 were built.
+- **Prerequisite targets are pinned explicitly.** Candidate `prereqs` entries
   support `toSkillId` (an already-consolidated skill) and `toTempId` (a skill
-  minted anywhere in the same batch) alongside the old `toDescription`. Fuzzy
-  description matching at the 0.60 Jaccard threshold turned out to **miss real
-  edges** — genuine matches were scoring 0.50–0.58 (see §3). Pinning all 48 of
-  this batch's prerequisites raised the new-edge count from 70 to 86. Prefer
-  pinning; leave `toDescription` as the fallback for a dependency that genuinely
-  is not in the ontology yet.
+  minted anywhere in the same batch) alongside `toDescription`. Fuzzy matching at
+  the inherited 0.60 Jaccard threshold **misses real edges** — see §4.
+- **`reusedExistingSkills` / `reusedBatchSkills`.** When a record exercises a
+  skill that already exists, the correct output is neither a new skill nor
+  silence: it is a reuse entry, so the skill's `sourceItemIds` grow and the
+  provenance stays honest. 202 such references were recorded this session.
+- **Legacy-id adoption.** If a batch reuses an id that exists only in the legacy
+  ontology, the consolidator now copies that legacy entry (id, description,
+  topic) into the rebuild rather than letting a near-duplicate be minted.
+- **Fixed: `source_issues.json` was being overwritten** by each consolidation
+  run instead of accumulated, so only the last batch's entries survived. The
+  script now merges; the file was rebuilt from all nine candidate files and holds
+  all 16 entries.
 
-The candidate schema also gained `reusedExistingSkills` and `reusedBatchSkills`.
-These matter: when a record exercises a skill that already exists, the correct
-output is **not** a new skill and **not** silence — it is a reuse entry, so the
-skill's `sourceItemIds` grow and the provenance stays honest. 75 such references
-were recorded this batch.
+## 4. The fuzzy-match threshold is too strict — known, partially handled
 
-## 3. The fuzzy-matching threshold is too strict — known, partially handled
-
-The 0.60 Jaccard auto-accept threshold inherited from `_consolidate_chembook1.py`
-rejects true prerequisite matches whose wording differs in verbosity. Reviewing
-the 0.50–0.60 band by hand found **11 of 12 flagged pairs were genuine matches**,
-e.g.
-
-- *"Define the rate of a chemical reaction as the change in concentration per
-  unit time"* vs. *"…as the decrease in a reactant's concentration, or the
-  increase in a product's concentration, per unit time"* — scored 0.58.
-- *"Convert a given mass of a substance to moles using its molar mass"* vs.
-  *"Calculate the number of moles of a substance from a given mass and its molar
-  mass"* — scored 0.57.
+The inherited 0.60 Jaccard auto-accept threshold rejects true prerequisite
+matches whose wording differs only in verbosity. Reviewing the 0.50–0.60 band by
+hand found **11 of 12 flagged pairs were genuine**, e.g. *"Convert a given mass
+of a substance to moles using its molar mass"* vs. *"Calculate the number of
+moles of a substance from a given mass and its molar mass"* — scored 0.57.
 
 **Do not simply lower the threshold**: the one false positive in that band
-(*"periodic trend in ionic radius"* matching the *electronegativity* trend
-skill at 0.50) shows why. The band needs eyes, not a looser number.
+(*"periodic trend in ionic radius"* matching the *electronegativity* trend skill
+at 0.50) shows why. The band needs eyes, not a looser number. Four such pairs are
+resolved in `_consolidate_incremental.py`'s `MANUAL_RESOLUTIONS`. Re-run that
+review after each batch — it is cheap and recovers real edges. (Re-run at the end
+of b09: nothing in the remaining 46 unresolved mentions now scores even 0.50, so
+they are genuinely waiting on Math/Physics content.)
 
-Four of those were resolved into `_consolidate_incremental.py`'s
-`MANUAL_RESOLUTIONS` list, which is the right place for reviewed, pre-existing
-dangling prerequisites. One of them (`CHE_BONDING44`) is a deliberate override
-that points somewhere other than the top fuzzy hit. **When you process the next
-batch, re-run the 0.50–0.60 review** over whatever remains in
-`unresolved_prereqs.json` — this is cheap and recovers real edges.
+## 5. Judgement calls (extends `HANDOFF3.md` §6)
 
-## 4. Judgement calls made this batch (extends `HANDOFF3.md` §6)
-
-Decisions worth keeping consistent next time:
-
-- **Converse-direction pairs, kept separate** where the reverse direction needs a
-  different operation: Arrhenius solved for `Ea` (needs a logarithm) vs. solved
-  for the rate-constant ratio (needs an exponential); buffer pH from a known
-  composition vs. the salt:acid ratio needed for a *target* pH (needs an
-  antilogarithm). Consistent with §6's first-order-kinetics precedent.
-- **`[H+]` from pH vs. pH from `[H+]` — kept separate, but it is a borderline
-  call.** By §6's "trivial single-equation rearrangement" test these arguably
-  merge (log and antilog are symmetric inverses, unlike the extra-step cases
-  above). They were kept apart because the antilog direction is a genuine
-  prerequisite of three other skills in this batch, so it needs to exist as a
-  node. Flagging it explicitly so a later reviewer can overturn it deliberately
-  rather than by accident.
+- **Converse-direction pairs, kept separate** where the reverse needs a different
+  operation: Arrhenius solved for `Ea` (a logarithm) vs. for the rate-constant
+  ratio (an exponential); buffer pH from a known composition vs. the salt:acid
+  ratio for a *target* pH (an antilogarithm).
+- **Converse-direction pairs, merged** where it is one rearrangement with no
+  extra step: `PV = (m/M)RT` solved for mass vs. for molar mass; molarity from
+  mass vs. mass from molarity. Consistent with §6's `Z + N = A` precedent.
+- **`[H+]` from pH vs. pH from `[H+]` — kept separate, but it is borderline.** By
+  the "trivial rearrangement" test these arguably merge. They were kept apart
+  because the antilog direction is a genuine prerequisite of three other skills,
+  so it must exist as a node. Flagged so a later reviewer can overturn it
+  deliberately rather than by accident.
 - **Two different Hess's-law relations, kept separate**: `ΔH` from *formation*
-  enthalpies (products − reactants) and `ΔH` from *combustion* enthalpies
-  (reactants − products). Same shape, opposite sign convention, and confusing
-  them is a classic student error — they are genuinely different procedures.
-- **Same relation across topics → one skill, reused.** `k = 0.693/t½` is shared
-  by first-order kinetics and radioactive decay; it was minted once under
-  `CHEM_KIN` and reused from the `CHEM_NUCLEAR` dating skill. Cross-topic reuse
-  is exactly what the reuse rule wants; do not mint a second copy per topic.
-- **Merged**: a proposed "promoter used in the Haber process" skill was folded
-  into the existing `CHEM_CAT3` (the Haber catalyst). Minting a Haber-specific
-  promoter skill beside a Haber-specific catalyst skill is per-record minting,
-  and legacy `CHEM_CAT1` already covers the general role of a promoter.
-- **Widened two descriptions rather than minting near-duplicates** once later
-  records showed them too narrow: the strong-acid/strong-base ionization skill
-  now covers both acids and bases, and the Arrhenius-plot skill covers both the
-  `log k` (slope `= -Ea/2.303R`) and `ln k` (slope `= -Ea/R`) forms. Widening an
-  existing candidate is usually better than a second near-identical skill.
+  enthalpies (products − reactants) and from *combustion* enthalpies (reactants −
+  products). Same shape, opposite sign convention, classic student confusion.
+- **Named laws kept separate from the general law they specialise.** Boyle's and
+  Charles's laws were kept alongside the combined gas law, with prerequisite
+  edges, because the corpus examines each by name and the edges capture the real
+  teaching order.
+- **Same relation across topics → one skill, reused.** `k = 0.693/t½` is shared by
+  first-order kinetics and radioactive decay; minted once under `CHEM_KIN` and
+  reused from `CHEM_NUCLEAR`. Do not mint a copy per topic.
+- **A sub-route kept as its own skill.** "Limestone → ethyne" was kept separate
+  from the longer "limestone → PVC" route, with the longer route depending on it.
 
-### Source-data errors found (`source_issues.json`)
+### Source-data errors (`source_issues.json`, 16 entries)
 
-Three records where the book itself is wrong or self-contradictory. Per Global
-Constraint 5 (technical accuracy), the extracted skills state the correct
-chemistry, not the book's answer:
+Records where the book's own answer key or worked solution is wrong or
+self-contradictory. Per Global Constraint 5 the extracted skills state the
+correct chemistry, not the book's answer. Examples: a bomb calorimeter described
+as constant-*temperature* (it is constant-*volume*); the Friedel-Crafts acylation
+of benzene keyed as giving toluene (it gives acetophenone); burning more carbon
+fuel keyed as causing ozone-layer holes (it causes warming). **Expect more.
+Extract the skill, record the discrepancy, do not propagate the error.**
 
-- `ChemBook1__p86__q123__700` — the answer key says a bomb calorimeter holds
-  *temperature* constant. It is a constant-**volume** device. The skill states
-  the correct fact.
-- `ChemBook1__p81__q83__660` — the book itself notes no option matches a correct
-  reading of "the rate constant increases threefold", then back-solves to fit an
-  option.
-- `ChemBook1__p77__q43__620` — arithmetic typos in the worked solution
-  (`(0.05)²` for `(0.65)²`, `0.1829` for `1.829`); the intended skill is
-  unambiguous.
+## 6. A real cycle was caught — trust the validator
 
-Expect more of these. Extract the skill, record the discrepancy, do not
-propagate the error.
+While wiring the limestone→ethyne dependency, `build_from_ontology.py` failed
+with `FAILED: prerequisite graph contains a cycle` on a two-node loop, because
+the same dependency had been recorded in the opposite direction earlier in the
+batch. The reverse edge was removed and validation passed.
 
-## 5. Exact next steps
+This is the single cheapest correctness check available and it earns its keep.
+**Run it after every consolidation, and read its exit code** — it returns 1 on a
+cycle.
 
-Steps 1 of `HANDOFF3.md` §7 is now done. The rest carries over, renumbered:
+## 7. Exact next steps
 
-1. **`ChemBook2.txt` — 957 records, 0% done.** These are absolute lines
-   **732–1688** of `parsed_items.jsonl` (verified: line 732 is the first
-   `ChemBook2.txt` record, line 1688 the last, line 1689 begins `MathBook1.txt`).
-   Suggest 3 chunks of ~320. Finishing this completes Chemistry and is the
-   natural next unit of work.
-2. **Once all Chemistry is done**: re-run the legacy-id reuse check across *all*
-   Chemistry topics (not just the high-overlap ones), then re-run
-   `build_from_ontology.py --report-only`.
-3. **`MathBook1.txt` (802) and `MathBook2.txt` (605)** — Mathematics entirely
-   unprocessed. This unblocks the cross-subject prerequisites that several of
-   the 46 unresolved mentions are waiting on.
-4. **`PhyBook1.txt` (615) and `PhyBook2.txt` (764)** — Physics entirely
-   unprocessed. **Watch for LaTeX-backslash corruption here** — this batch has
-   none (formulas were written in plain text: `sqrt`, `delta`, `^`), but
-   Physics/Maths content is far more formula-dense. Keep writing descriptions in
-   plain text and the hazard stays avoided entirely.
-5. **Cross-subject prerequisite resolution** once all three subjects exist.
-6. **Quality audit** — an independent fresh-eyes pass. Still never reached; worth
-   doing once there is enough combined content to sample meaningfully.
-7. **Decide the 3 proposed new topics** (`new_topics_proposed.json`:
-   `CHEM_LAB`, `CHEM_NUCLEAR`, `CHEM_DESCRIPTIVE`) in
-   `Backend/tree_data/ontology_config.json`. Unchanged this batch — no new topics
-   were proposed. This is a human editorial call and it is now blocking 53
-   skills from ever appearing in the catalog (the build tool reports these three
-   as "ingested but invisible").
-8. **Decide how/whether this rebuild replaces the legacy ontology.** Still out of
-   scope; legacy files remain untouched.
+Steps 1–3 of `HANDOFF3.md` §7 are now done. The rest, renumbered:
 
-## 6. Ground rules that did not change
+1. **`MathBook1.txt` (802) and `MathBook2.txt` (605)** — Mathematics entirely
+   unprocessed, and the natural next unit. `MathBook1` begins at
+   `parsed_items.jsonl` line **1689** (verified: line 1688 is the last
+   `ChemBook2` record). Suggest chunks of ~300. Doing Mathematics first unblocks
+   the cross-subject prerequisites that Chemistry is already waiting on.
+2. **`PhyBook1.txt` (615) and `PhyBook2.txt` (764)** — Physics, entirely
+   unprocessed.
+   **Watch for LaTeX-backslash corruption in both subjects.** There is none in
+   the ontology today because every formula is written in plain text (`sqrt`,
+   `delta`, `^`). Maths and Physics are far more formula-dense; keep writing
+   descriptions in plain text and the hazard stays avoided entirely.
+3. **Cross-subject prerequisite resolution**, once all three subjects exist. The
+   46 unresolved Chemistry mentions are the first input to this.
+4. **Quality audit** — an independent fresh-eyes pass. Never reached, and now
+   overdue: Chemistry is complete enough to sample meaningfully. Worth checking
+   in particular whether `CHE_ORGANIC` (154 skills, by far the largest topic) has
+   drifted in granularity relative to the rest.
+5. **Decide the 3 proposed new topics** (`CHEM_LAB`, `CHEM_NUCLEAR`,
+   `CHEM_DESCRIPTIVE`) in `Backend/tree_data/ontology_config.json`. Unchanged
+   this session — no new topics were proposed in b07–b09 — but it now blocks
+   **58 skills** from ever appearing in the catalog, which the build tool reports
+   as "ingested but invisible". This is a human editorial call.
+6. **Decide how/whether this rebuild replaces the legacy ontology.** Still out of
+   scope; the legacy files remain untouched.
+
+## 8. Ground rules that did not change
 
 - The legacy ontology (`Ontology/{tuples.json,prereqs.json,skill_ontology_dag.html}`
   and everything under `Backend/tree_data/`) is **read-only reference**. Nothing
-  in it was modified this batch. Verify with `git status` before committing.
+  in it was modified. Verify with `git status` before committing.
 - Skills stay maximally granular, decomposed into atomic steps, with
-  reuse-before-minting checked against *everything accumulated so far*.
+  reuse-before-minting checked against everything accumulated so far.
 - One Bloom level per skill, chosen by the skill's own action verb.
-- Current Bloom spread across all 514: Remember 191, Apply 185, Understand 88,
-  Analyze 40, Evaluate 9, Create 1. The thin Evaluate/Create tail is a fair
-  reflection of an admission-exam corpus, not a defect to manufacture entries
-  for — but it is worth a look during the eventual quality audit.
+- Current spread across 843: Apply 352, Remember 290, Understand 137, Analyze 51,
+  Evaluate 11, Create 2. The thin Evaluate/Create tail reflects an
+  admission-exam corpus rather than a defect — but it is worth a look during the
+  quality audit rather than manufacturing entries to pad it.

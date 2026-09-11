@@ -1,14 +1,82 @@
 [
   {
     "itemId": "ChemBook1__p86__q123__700",
-    "note": "The source answer key marks 'temperature' as the constant property in a bomb calorimeter. That is chemically wrong - a bomb calorimeter is a constant-VOLUME device. Skill ChemBook1_b06_s17 states the correct chemistry, per system-prompt Global Constraint 5 (technical accuracy over source fidelity)."
+    "note": "The source answer key marks 'temperature' as the constant property in a bomb calorimeter. That is chemically wrong - a bomb calorimeter is a constant-VOLUME device. Skill ChemBook1_b06_s17 states the correct chemistry, per system-prompt Global Constraint 5 (technical accuracy over source fidelity).",
+    "chunk": "ChemBook1_b06"
   },
   {
     "itemId": "ChemBook1__p81__q83__660",
-    "note": "Source itself flags that no option matches a correct reading of 'rate constant increases threefold'; the book back-solves to fit option (b). Extraction takes the standard two-point Arrhenius skill from it and ignores the arithmetic dispute."
+    "note": "Source itself flags that no option matches a correct reading of 'rate constant increases threefold'; the book back-solves to fit option (b). Extraction takes the standard two-point Arrhenius skill from it and ignores the arithmetic dispute.",
+    "chunk": "ChemBook1_b06"
   },
   {
     "itemId": "ChemBook1__p77__q43__620",
-    "note": "Source solution contains a typo (writes (0.05)^2 for (0.65)^2, and 0.1829 for 1.829). The intended skill (Kp from degree of dissociation, then Kp to Kc) is unambiguous and was extracted normally."
+    "note": "Source solution contains a typo (writes (0.05)^2 for (0.65)^2, and 0.1829 for 1.829). The intended skill (Kp from degree of dissociation, then Kp to Kc) is unambiguous and was extracted normally.",
+    "chunk": "ChemBook1_b06"
+  },
+  {
+    "itemId": "ChemBook2__p16__q51__104",
+    "note": "The source prints no correct option and its own worked solution arrives at 2.689e19 molecules, which matches none of the choices. The underlying skill (ppb to ppm conversion plus molecule count) was extracted normally.",
+    "chunk": "ChemBook2_b07"
+  },
+  {
+    "itemId": "ChemBook2__p16__q49__102",
+    "note": "Source notes that no option matches; its computed molar mass (44.015 kg/mol) is out by a factor of 1000 from a correct working. Skill extracted from the intended method.",
+    "chunk": "ChemBook2_b07"
+  },
+  {
+    "itemId": "ChemBook2__p19__q72__125",
+    "note": "Source answer key marks option (e) None while its own solution computes 1.7845 g/L; the arithmetic in the printed solution is inconsistent with the options.",
+    "chunk": "ChemBook2_b07"
+  },
+  {
+    "itemId": "ChemBook2__p9__q45__44",
+    "note": "Fill-in-the-blank record whose five blanks span five unrelated topics (gas constant, de Broglie relation, Bronsted bases, enthalpy definition, electroplating). Extracted as five separate skills rather than one.",
+    "chunk": "ChemBook2_b07"
+  },
+  {
+    "itemId": "ChemBook2__p65__q23__363",
+    "note": "Answer key marks (c) toluene for the Friedel-Crafts acylation of benzene with acetyl chloride; the correct product is acetophenone, option (b). The skill states the correct chemistry.",
+    "chunk": "ChemBook2_b08"
+  },
+  {
+    "itemId": "ChemBook2__p86__q242__582",
+    "note": "Answer key marks (a) ozone-layer holes as the consequence of burning more carbon fuel; the chemically correct answer is (d), a rise in global temperature. Extraction follows the correct chemistry.",
+    "chunk": "ChemBook2_b08"
+  },
+  {
+    "itemId": "ChemBook2__p69__q64__404",
+    "note": "The source reasons that nitric acid is a base because it donates OH-; the correct Bronsted reasoning is that it accepts a proton from sulfuric acid. The conclusion (base) is right, the stated reason is not; the skill records the correct mechanism.",
+    "chunk": "ChemBook2_b08"
+  },
+  {
+    "itemId": "ChemBook2__p91__q21__610",
+    "note": "Worked solution subtracts 10 mg of impurity from 10 g but then writes 0.555 mol, which corresponds to the full 9.99 g; minor internal inconsistency, method unaffected.",
+    "chunk": "ChemBook2_b08"
+  },
+  {
+    "itemId": "ChemBook2__p94__q35__624",
+    "note": "Question asks about zinc powder but the worked solution uses ZnO and its molar mass. The stoichiometric method extracted is unaffected.",
+    "chunk": "ChemBook2_b08"
+  },
+  {
+    "itemId": "ChemBook2__p106__q04__706",
+    "note": "The worked solution computes 16 g of NaOH (matching option b) but the answer key marks option (c) 12 g. The stoichiometry in the solution is correct; the key is not.",
+    "chunk": "ChemBook2_b09"
+  },
+  {
+    "itemId": "ChemBook2__p134__q27__922",
+    "note": "Answer key marks (e) None while the worked solution gives 74.069e-6 kg/C; every printed option has a positive exponent, so the options themselves are mis-typed.",
+    "chunk": "ChemBook2_b09"
+  },
+  {
+    "itemId": "ChemBook2__p104__q102__691",
+    "note": "Worked solution reports the molar mass of cyclopropane as 48.936 kg, a unit error for g/mol, and the density is printed as 1.75e3 kg/m3. The method (PM = dRT then divide by the empirical formula mass) is correct.",
+    "chunk": "ChemBook2_b09"
+  },
+  {
+    "itemId": "ChemBook2__p133__q20__915",
+    "note": "Worked solution substitutes 0.12 where the stated hydrogen-ion concentration is 0.4 M; the Nernst method extracted is unaffected.",
+    "chunk": "ChemBook2_b09"
   }
 ]

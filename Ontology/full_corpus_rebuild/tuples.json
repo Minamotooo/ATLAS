@@ -1,6 +1,70 @@
 [
   {
     "bloom": "Apply",
+    "skillId": "CHEM_ANALYTICAL10",
+    "skillFull": "Determine the concentration of an unknown solution from a titration, by using the titre volume, the standard solution's concentration, and the mole ratio of the balanced neutralization equation.",
+    "topicKey": "CHEM_ANALYTICAL",
+    "topicLabel": "Quantitative (Titrimetric) Analysis",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_ANALYTICAL11",
+    "skillFull": "Distinguish iodometry from iodimetry, the former determining an oxidizing agent by titrating the iodine it liberates from iodide against thiosulfate, the latter titrating a reducing agent directly against standard iodine solution.",
+    "topicKey": "CHEM_ANALYTICAL",
+    "topicLabel": "Quantitative (Titrimetric) Analysis",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_ANALYTICAL12",
+    "skillFull": "Recall the effective pH range over which a given acid-base indicator changes colour at the end point (e.g., methyl red about 4.2-6.3, phenolphthalein about 8.3-10).",
+    "topicKey": "CHEM_ANALYTICAL",
+    "topicLabel": "Quantitative (Titrimetric) Analysis",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_ANALYTICAL13",
+    "skillFull": "Calculate the percentage of an element in an alloy or ore sample from a redox titration, using the electron-transfer ratio of the balanced half-reactions.",
+    "topicKey": "CHEM_ANALYTICAL",
+    "topicLabel": "Quantitative (Titrimetric) Analysis",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_ANALYTICAL14",
+    "skillFull": "Determine the molar mass and formula of an unknown metal salt from the amounts of acid consumed and of base needed to back-titrate the excess acid.",
+    "topicKey": "CHEM_ANALYTICAL",
+    "topicLabel": "Quantitative (Titrimetric) Analysis",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_ANALYTICAL15",
+    "skillFull": "Calculate the percentage of an element in a compound by gravimetric analysis, from the mass of an insoluble precipitate obtained and the stoichiometric mass ratio between the element and the precipitate.",
+    "topicKey": "CHEM_ANALYTICAL",
+    "topicLabel": "Quantitative (Titrimetric) Analysis",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_ANALYTICAL16",
+    "skillFull": "Perform a back titration, calculating the amount of a substance that reacted with an excess of standard reagent from the volume of a second standard solution needed to neutralize the unreacted excess.",
+    "topicKey": "CHEM_ANALYTICAL",
+    "topicLabel": "Quantitative (Titrimetric) Analysis",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_ANALYTICAL17",
+    "skillFull": "Define a primary standard substance by its required properties (high purity, stability in air, a known and unchanging composition, and a high equivalent mass) and distinguish it from a secondary standard such as sodium hydroxide or potassium permanganate.",
+    "topicKey": "CHEM_ANALYTICAL",
+    "topicLabel": "Quantitative (Titrimetric) Analysis",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
     "skillId": "CHEM_ANALYTICAL2",
     "skillFull": "Calculate the pH of a strong acid-strong base titration mixture just before the equivalence point from the concentration of excess unreacted acid.",
     "topicKey": "CHEM_ANALYTICAL",
@@ -40,6 +104,30 @@
     "subject": "Chemistry"
   },
   {
+    "bloom": "Apply",
+    "skillId": "CHEM_ANALYTICAL7",
+    "skillFull": "Write the sequence of chemical reactions involved in the Winkler iodometric determination of the dissolved oxygen content of a water sample.",
+    "topicKey": "CHEM_ANALYTICAL",
+    "topicLabel": "Quantitative (Titrimetric) Analysis",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_ANALYTICAL8",
+    "skillFull": "Calculate the chemical oxygen demand of a water sample in parts per million from the volumes and normality of the standard thiosulfate solution consumed before and after chemical oxidation of the sample.",
+    "topicKey": "CHEM_ANALYTICAL",
+    "topicLabel": "Quantitative (Titrimetric) Analysis",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_ANALYTICAL9",
+    "skillFull": "Calculate the hardness of a water sample in parts per million (expressed as calcium carbonate) from the moles of carbonate needed to precipitate its calcium ions completely and the volume of the sample.",
+    "topicKey": "CHEM_ANALYTICAL",
+    "topicLabel": "Quantitative (Titrimetric) Analysis",
+    "subject": "Chemistry"
+  },
+  {
     "bloom": "Remember",
     "skillId": "CHEM_CAT1",
     "skillFull": "Recall the role of a promoter substance in heterogeneous catalytic reactions.",
@@ -59,6 +147,22 @@
     "bloom": "Understand",
     "skillId": "CHEM_CAT11",
     "skillFull": "Classify a substance accompanying a catalysed reaction as a positive catalyst, a negative catalyst (inhibitor), a promoter, or a catalyst poison, from its effect on the reaction rate.",
+    "topicKey": "CHEM_CAT",
+    "topicLabel": "Catalysis",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_CAT12",
+    "skillFull": "Recall the name and biological source of a named digestive or industrial enzyme (e.g., amylase from saliva and pancreas, maltase from malt and yeast, sucrase, lactase, cellulase).",
+    "topicKey": "CHEM_CAT",
+    "topicLabel": "Catalysis",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_CAT13",
+    "skillFull": "Recall that finely divided nickel is the catalyst used for the industrial hydrogenation (hardening) of edible oils.",
     "topicKey": "CHEM_CAT",
     "topicLabel": "Catalysis",
     "subject": "Chemistry"
@@ -200,9 +304,25 @@
     "subject": "Chemistry"
   },
   {
+    "bloom": "Remember",
+    "skillId": "CHEM_DBLOCK19",
+    "skillFull": "Recall the composition, characteristic properties and uses of named alloy steels (chromium steel, cobalt steel and manganese steel).",
+    "topicKey": "CHEM_DBLOCK",
+    "topicLabel": "Transition Elements",
+    "subject": "Chemistry"
+  },
+  {
     "bloom": "Understand",
     "skillId": "CHEM_DBLOCK2",
     "skillFull": "Explain the distinction between diamagnetic, paramagnetic, and ferromagnetic materials based on their behavior in an external magnetic field.",
+    "topicKey": "CHEM_DBLOCK",
+    "topicLabel": "Transition Elements",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_DBLOCK20",
+    "skillFull": "Calculate the mass of ore that must be processed to obtain a required mass of metal, given the ore's percentage of the mineral and the percentage recovery of the extraction process.",
     "topicKey": "CHEM_DBLOCK",
     "topicLabel": "Transition Elements",
     "subject": "Chemistry"
@@ -353,8 +473,48 @@
   },
   {
     "bloom": "Remember",
+    "skillId": "CHEM_DESCRIPTIVE19",
+    "skillFull": "Recall that ammonia is used as the refrigerant in electrical refrigeration systems.",
+    "topicKey": "CHEM_DESCRIPTIVE",
+    "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
     "skillId": "CHEM_DESCRIPTIVE2",
     "skillFull": "Recall the metal composition of a given named alloy (e.g. stainless steel, brass, bronze, duralumin, German silver, gun metal, solder, nitinol).",
+    "topicKey": "CHEM_DESCRIPTIVE",
+    "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHEM_DESCRIPTIVE20",
+    "skillFull": "Classify a given change (e.g., ice melting, iron rusting, a candle burning, petrol burning) as a physical or a chemical change.",
+    "topicKey": "CHEM_DESCRIPTIVE",
+    "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_DESCRIPTIVE21",
+    "skillFull": "Recall that amphoteric metals such as lead, zinc and aluminium react with hot alkali to liberate hydrogen gas, and write the equation.",
+    "topicKey": "CHEM_DESCRIPTIVE",
+    "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_DESCRIPTIVE22",
+    "skillFull": "Recall that chlorine reacts with dry slaked lime at about 40 degrees C to give bleaching powder, Ca(OCl)Cl.",
+    "topicKey": "CHEM_DESCRIPTIVE",
+    "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_DESCRIPTIVE23",
+    "skillFull": "Recall that water gas is produced by passing steam over red-hot coke, and write the equation.",
     "topicKey": "CHEM_DESCRIPTIVE",
     "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
     "subject": "Chemistry"
@@ -440,6 +600,142 @@
     "subject": "Chemistry"
   },
   {
+    "bloom": "Apply",
+    "skillId": "CHEM_ENV13",
+    "skillFull": "Write the sequence of reactions by which atmospheric nitrogen is fixed during a lightning discharge (N2 to NO to NO2 to HNO3 to nitrate salts), and explain how the resulting nitrate is absorbed by plants to build plant and then animal protein.",
+    "topicKey": "CHEM_ENV",
+    "topicLabel": "Environmental Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_ENV14",
+    "skillFull": "Complete the stepwise biomethylation pathway by which inorganic arsenite is converted by soil bacteria into successively methylated arsenic species.",
+    "topicKey": "CHEM_ENV",
+    "topicLabel": "Environmental Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_ENV15",
+    "skillFull": "Recall the principal greenhouse gases (carbon dioxide, methane, CFCs, ozone, nitrous oxide), their approximate percentage contribution to the atmospheric greenhouse effect, and their relative global-warming potentials.",
+    "topicKey": "CHEM_ENV",
+    "topicLabel": "Environmental Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHEM_ENV16",
+    "skillFull": "Explain the greenhouse effect as the absorption and re-radiation of outgoing solar energy by atmospheric greenhouse gases, which raises the earth's average surface temperature.",
+    "topicKey": "CHEM_ENV",
+    "topicLabel": "Environmental Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_ENV17",
+    "skillFull": "Define the threshold limit value (TLV) as the maximum concentration of a contaminant at which water or air remains fit for use, and recall the TLV of a named contaminant such as arsenic.",
+    "topicKey": "CHEM_ENV",
+    "topicLabel": "Environmental Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHEM_ENV18",
+    "skillFull": "Explain why the chemical oxygen demand of a water sample exceeds its biochemical oxygen demand, since BOD measures only the oxygen needed to oxidize biodegradable organic matter whereas COD measures that needed to oxidize all oxidizable organic and inorganic matter.",
+    "topicKey": "CHEM_ENV",
+    "topicLabel": "Environmental Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_ENV19",
+    "skillFull": "Write the photochemical reaction sequence by which primary automobile pollutants (hydrocarbons, aldehydes, ketones) are converted into secondary pollutants such as peroxyacyl nitrate (PAN) that produce photochemical smog.",
+    "topicKey": "CHEM_ENV",
+    "topicLabel": "Environmental Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_ENV20",
+    "skillFull": "Identify which atmospheric gas (e.g., nitrogen dioxide or sulfur dioxide) is responsible for acid rain, and recall its principal natural and industrial sources.",
+    "topicKey": "CHEM_ENV",
+    "topicLabel": "Environmental Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHEM_ENV21",
+    "skillFull": "Describe the harmful environmental effects of acid rain (death of fish in water bodies, destruction of forests, and corrosion of buildings, bridges, ships and vehicles) and recall the pH range to which acid rain typically falls.",
+    "topicKey": "CHEM_ENV",
+    "topicLabel": "Environmental Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_ENV22",
+    "skillFull": "Define CFCs as the chloro-fluoro derivatives of methane and ethane, and write the structural formula of a named Freon (e.g., Freon-11, Freon-12, Freon-114) using the CFC numbering rule.",
+    "topicKey": "CHEM_ENV",
+    "topicLabel": "Environmental Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_ENV23",
+    "skillFull": "Write the preparation of a named Freon from carbon tetrachloride and hydrogen fluoride, giving the catalyst and temperature conditions.",
+    "topicKey": "CHEM_ENV",
+    "topicLabel": "Environmental Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_ENV24",
+    "skillFull": "Recall that a single chlorine free radical released from a CFC molecule destroys on the order of a hundred thousand ozone molecules in a chain process.",
+    "topicKey": "CHEM_ENV",
+    "topicLabel": "Environmental Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHEM_ENV25",
+    "skillFull": "Explain why detergents are environmentally preferable to soap, since detergents form soluble salts in water whereas soap forms an insoluble scum that damages soil fertility.",
+    "topicKey": "CHEM_ENV",
+    "topicLabel": "Environmental Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_ENV26",
+    "skillFull": "Recall the range of soil pH within which agricultural fertility is maintained.",
+    "topicKey": "CHEM_ENV",
+    "topicLabel": "Environmental Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHEM_ENV27",
+    "skillFull": "Explain why a soil pH below about 3 sharply reduces crop production, because the soil micro-organisms that sustain nutrient cycling are destroyed.",
+    "topicKey": "CHEM_ENV",
+    "topicLabel": "Environmental Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHEM_ENV28",
+    "skillFull": "Identify which measured parameters (dissolved oxygen, BOD, COD, total dissolved solids) indicate the pollution level of waste water, as distinct from parameters such as hardness that do not.",
+    "topicKey": "CHEM_ENV",
+    "topicLabel": "Environmental Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_ENV29",
+    "skillFull": "Convert a pollutant concentration between parts per billion, parts per million and mg per litre, and calculate the number of molecules present in a stated volume of the sample.",
+    "topicKey": "CHEM_ENV",
+    "topicLabel": "Environmental Chemistry",
+    "subject": "Chemistry"
+  },
+  {
     "bloom": "Remember",
     "skillId": "CHEM_ENV3",
     "skillFull": "Recall that smog forms from the combination of sulfur dioxide gas with fog/mist in polluted air.",
@@ -493,6 +789,54 @@
     "skillFull": "Calculate the environmental factor (E-factor) of a synthetic process as the total mass of waste produced divided by the mass of desired product.",
     "topicKey": "CHEM_ENV",
     "topicLabel": "Environmental Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_GAS1",
+    "skillFull": "Apply Gay-Lussac's law to relate pressure and absolute temperature at constant volume.",
+    "topicKey": "CHEM_GAS",
+    "topicLabel": "Gas Laws",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_GAS3",
+    "skillFull": "Apply Graham's law of effusion to compare effusion rates of different gases.",
+    "topicKey": "CHEM_GAS",
+    "topicLabel": "Gas Laws",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Analyze",
+    "skillId": "CHEM_GAS4",
+    "skillFull": "Rank gases by molar mass to determine their relative rates of effusion.",
+    "topicKey": "CHEM_GAS",
+    "topicLabel": "Gas Laws",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHEM_GASLAW1",
+    "skillFull": "Explain the pressure and temperature conditions under which real gases approximate ideal gas behavior.",
+    "topicKey": "CHEM_GASLAW",
+    "topicLabel": "11 · Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_GASLAW3",
+    "skillFull": "Identify the gas corresponding to the calculated molar mass.",
+    "topicKey": "CHEM_GASLAW",
+    "topicLabel": "11 · Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_GASLAW5",
+    "skillFull": "Solve for the temperature at which the RMS velocities are equal.",
+    "topicKey": "CHEM_GASLAW",
+    "topicLabel": "11 · Gaseous State",
     "subject": "Chemistry"
   },
   {
@@ -865,6 +1209,38 @@
   },
   {
     "bloom": "Remember",
+    "skillId": "CHEM_NOM10",
+    "skillFull": "Recall the structural formula of the characteristic functional group of a named homologous series or compound class (alkene, alkyne, alcohol, aldehyde, ketone, ester, ether, amide, anhydride, enamine, ketene, isothiocyanate, lactam, hemiacetal).",
+    "topicKey": "CHEM_NOM",
+    "topicLabel": "Nomenclature",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_NOM11",
+    "skillFull": "Recall the common and IUPAC names of the straight-chain dicarboxylic acids (oxalic, malonic, succinic, adipic, pimelic, suberic, azelaic and sebacic acids).",
+    "topicKey": "CHEM_NOM",
+    "topicLabel": "Nomenclature",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_NOM12",
+    "skillFull": "Recall the general molecular formula of each open-chain hydrocarbon series (alkane CnH2n+2, alkene CnH2n, alkyne CnH2n-2).",
+    "topicKey": "CHEM_NOM",
+    "topicLabel": "Nomenclature",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_NOM13",
+    "skillFull": "Define a functional group as the atom or group of atoms that identifies a homologous series and governs its chemical behaviour.",
+    "topicKey": "CHEM_NOM",
+    "topicLabel": "Nomenclature",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
     "skillId": "CHEM_NOM3",
     "skillFull": "Recall the chemical formula, including charge, of a common polyatomic anion given its name (e.g. acetate, iodate, perchlorate, oxalate, arsenate).",
     "topicKey": "CHEM_NOM",
@@ -899,6 +1275,22 @@
     "bloom": "Remember",
     "skillId": "CHEM_NOM7",
     "skillFull": "Recall the chemical formula of a given oxoanion of chlorine (hypochlorite ClO-, chlorite ClO2-, chlorate ClO3-, perchlorate ClO4-, chloride Cl-) from its name.",
+    "topicKey": "CHEM_NOM",
+    "topicLabel": "Nomenclature",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_NOM8",
+    "skillFull": "Write the full structural formula of an organic compound from its IUPAC or trivial name, and conversely give the IUPAC name of a compound from its structure, for compounds containing the common functional groups.",
+    "topicKey": "CHEM_NOM",
+    "topicLabel": "Nomenclature",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_NOM9",
+    "skillFull": "Recall the trivial or commercial name, the chemical name and the structural formula of a named organic compound (e.g., marsh gas as methane, wood alcohol as methanol, antifreeze as ethylene glycol, mothballs as naphthalene, gammexane, TNT, DDT, picric acid, aspirin, paracetamol).",
     "topicKey": "CHEM_NOM",
     "topicLabel": "Nomenclature",
     "subject": "Chemistry"
@@ -1545,6 +1937,118 @@
   },
   {
     "bloom": "Apply",
+    "skillId": "CHEM_REDOX32",
+    "skillFull": "Calculate the change in concentration of a metal-ion solution after a stated current is passed for a stated time, by combining Faraday's laws with the cathode half-reaction stoichiometry.",
+    "topicKey": "CHEM_REDOX",
+    "topicLabel": "Redox Reactions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_REDOX33",
+    "skillFull": "Recall that concentrated sulfuric acid oxidizes hydrogen bromide and hydrogen iodide to the free halogen, but does not oxidize hydrogen chloride.",
+    "topicKey": "CHEM_REDOX",
+    "topicLabel": "Redox Reactions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_REDOX34",
+    "skillFull": "Balance a redox equation by the ion-electron (half-reaction) method, writing separate oxidation and reduction half-equations, balancing charge with electrons and atoms with H+ and water, then combining them.",
+    "topicKey": "CHEM_REDOX",
+    "topicLabel": "Redox Reactions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Analyze",
+    "skillId": "CHEM_REDOX35",
+    "skillFull": "Separate a given redox reaction into its oxidation and reduction halves and justify them in terms of electron loss and gain, showing that the two occur simultaneously.",
+    "topicKey": "CHEM_REDOX",
+    "topicLabel": "Redox Reactions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHEM_REDOX36",
+    "skillFull": "Classify a given substance as an oxidizing agent, a reducing agent, or a dehydrating agent from its characteristic chemical behaviour, recognizing that an oxidizing agent accepts electrons and a reducing agent donates them.",
+    "topicKey": "CHEM_REDOX",
+    "topicLabel": "Redox Reactions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_REDOX37",
+    "skillFull": "Balance a redox half-reaction in alkaline medium, using hydroxide ions and water rather than hydrogen ions to balance oxygen and hydrogen.",
+    "topicKey": "CHEM_REDOX",
+    "topicLabel": "Redox Reactions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_REDOX38",
+    "skillFull": "Determine the number of electrons transferred in a given half-reaction by balancing the total charge on the two sides.",
+    "topicKey": "CHEM_REDOX",
+    "topicLabel": "Redox Reactions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Analyze",
+    "skillId": "CHEM_REDOX39",
+    "skillFull": "Examine a set of proposed redox equations and identify which are correctly balanced, by checking both the conservation of atoms and the balance of charge and electrons transferred.",
+    "topicKey": "CHEM_REDOX",
+    "topicLabel": "Redox Reactions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_REDOX40",
+    "skillFull": "Apply Faraday's first law of electrolysis, w = Zit, to calculate the mass of substance liberated at an electrode from the current and the time, or to solve for either of those.",
+    "topicKey": "CHEM_REDOX",
+    "topicLabel": "Redox Reactions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_REDOX41",
+    "skillFull": "Define the electrochemical equivalent of an element as the mass liberated by one coulomb of charge, and calculate it from the element's molar mass, its ionic charge and the Faraday constant.",
+    "topicKey": "CHEM_REDOX",
+    "topicLabel": "Redox Reactions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_REDOX42",
+    "skillFull": "Recall that one faraday is the charge carried by one mole of electrons (about 96500 coulombs), and determine how many faradays are needed to deposit one mole of a metal of a given ionic charge.",
+    "topicKey": "CHEM_REDOX",
+    "topicLabel": "Redox Reactions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_REDOX43",
+    "skillFull": "Determine the charge (valency) of a metal ion from electrolysis data, by comparing the mass deposited with the charge passed.",
+    "topicKey": "CHEM_REDOX",
+    "topicLabel": "Redox Reactions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_REDOX44",
+    "skillFull": "Calculate the number of electrons that flow through a conductor from the current and the time, using Q = It and the elementary charge.",
+    "topicKey": "CHEM_REDOX",
+    "topicLabel": "Redox Reactions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_REDOX45",
+    "skillFull": "Recall the chemical formula and the conditions required for the formation of rust (hydrated iron(III) oxide), and the electrochemical basis of rusting.",
+    "topicKey": "CHEM_REDOX",
+    "topicLabel": "Redox Reactions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
     "skillId": "CHEM_REDOX7",
     "skillFull": "Determine the resulting ion/charge produced when a given ion gains or loses a specified number of electrons, using conservation of charge.",
     "topicKey": "CHEM_REDOX",
@@ -1565,6 +2069,22 @@
     "skillFull": "Recall the products of the standard redox reaction between an acidified strong oxidising agent (e.g., KMnO4) and a reducing agent (e.g., HCl added dropwise), and write the balanced equation.",
     "topicKey": "CHEM_REDOX",
     "topicLabel": "Redox Reactions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_SOLID10",
+    "skillFull": "Recognize the structural features that make a compound a liquid crystal, namely a rigid elongated aromatic core carrying a flexible alkyl chain and a polar terminal group.",
+    "topicKey": "CHEM_SOLID",
+    "topicLabel": "Solid State and Ionic Compounds",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_SOLID11",
+    "skillFull": "Recall that a substance such as naphthalene sublimes directly to vapour rather than melting when heated at standard atmospheric pressure.",
+    "topicKey": "CHEM_SOLID",
+    "topicLabel": "Solid State and Ionic Compounds",
     "subject": "Chemistry"
   },
   {
@@ -1643,6 +2163,78 @@
     "bloom": "Understand",
     "skillId": "CHEM_SOLUTION11",
     "skillFull": "Explain the conditions that cause colloidal particles to coagulate (addition of sufficient electrolyte, neutralization of the particles' surface charge by oppositely charged ions, and the particles consequently approaching one another).",
+    "topicKey": "CHEM_SOLUTION",
+    "topicLabel": "Solutions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_SOLUTION12",
+    "skillFull": "Calculate the total vapour pressure of an ideal binary liquid mixture from the mole fractions and the pure-component vapour pressures, using Raoult's law.",
+    "topicKey": "CHEM_SOLUTION",
+    "topicLabel": "Solutions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_SOLUTION13",
+    "skillFull": "Define an azeotropic (constant-boiling) mixture as a mixture of two liquids that boils at a fixed temperature without a change in composition.",
+    "topicKey": "CHEM_SOLUTION",
+    "topicLabel": "Solutions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_SOLUTION14",
+    "skillFull": "Calculate the volume of water that must be added to a solution to bring it to a required specific gravity, using the inverse proportionality of density and volume.",
+    "topicKey": "CHEM_SOLUTION",
+    "topicLabel": "Solutions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_SOLUTION15",
+    "skillFull": "Calculate the molarity and the molality of a solution from its percentage composition by mass and its specific gravity.",
+    "topicKey": "CHEM_SOLUTION",
+    "topicLabel": "Solutions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHEM_SOLUTION16",
+    "skillFull": "Define molality as the number of moles of solute dissolved per kilogram of solvent, and distinguish it from molarity.",
+    "topicKey": "CHEM_SOLUTION",
+    "topicLabel": "Solutions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_SOLUTION17",
+    "skillFull": "Calculate the molarity of a solution and the volume of water that must be added to dilute it to a required concentration, using S1V1 = S2V2.",
+    "topicKey": "CHEM_SOLUTION",
+    "topicLabel": "Solutions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_SOLUTION18",
+    "skillFull": "Calculate the mass of a concentrated reagent of stated percentage purity that is needed to prepare a required volume of solution of a given molarity.",
+    "topicKey": "CHEM_SOLUTION",
+    "topicLabel": "Solutions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_SOLUTION19",
+    "skillFull": "Calculate the molarity of a solution prepared by dissolving a measured volume of a pure liquid reagent of known density in water.",
+    "topicKey": "CHEM_SOLUTION",
+    "topicLabel": "Solutions",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_SOLUTION20",
+    "skillFull": "Calculate the resulting molarity when two solutions of the same solute but different concentrations are mixed, using the moles-weighted average.",
     "topicKey": "CHEM_SOLUTION",
     "topicLabel": "Solutions",
     "subject": "Chemistry"
@@ -1741,6 +2333,62 @@
     "skillFull": "Determine the color of visible light that corresponds to a given wavelength value.",
     "topicKey": "CHEM_SPEC",
     "topicLabel": "Electromagnetic Spectrum",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_SPEC8",
+    "skillFull": "Apply the Beer-Lambert law, that log(I0/I) is proportional to the path length and concentration, to calculate the fraction of incident light absorbed when the path length is changed.",
+    "topicKey": "CHEM_SPEC",
+    "topicLabel": "Electromagnetic Spectrum",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_SPEC9",
+    "skillFull": "Calculate the molar absorption (extinction) coefficient of a solution from its measured absorbance, path length and molar concentration using A = (epsilon) C l.",
+    "topicKey": "CHEM_SPEC",
+    "topicLabel": "Electromagnetic Spectrum",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHEM_STEREO2",
+    "skillFull": "Explain the structural condition required for geometric (cis-trans) isomerism, namely restricted rotation about a double bond or ring together with two different groups on each of the two carbon atoms, and draw the cis and trans forms.",
+    "topicKey": "CHEM_STEREO",
+    "topicLabel": "Stereochemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHEM_STEREO3",
+    "skillFull": "Explain that optical isomerism requires a chiral carbon atom, and determine whether a given compound is optically active (for example glycine is not, whereas lactic acid is).",
+    "topicKey": "CHEM_STEREO",
+    "topicLabel": "Stereochemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHEM_STEREO4",
+    "skillFull": "Classify stereoisomerism into its geometric (cis-trans) and optical forms, and explain why a given compound exhibits one form rather than the other.",
+    "topicKey": "CHEM_STEREO",
+    "topicLabel": "Stereochemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHEM_STEREO5",
+    "skillFull": "Recognize when the product of an addition to a symmetrical alkene is a meso compound, optically inactive despite containing chiral centres.",
+    "topicKey": "CHEM_STEREO",
+    "topicLabel": "Stereochemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHEM_STEREO6",
+    "skillFull": "Explain tautomerism as the dynamic equilibrium between keto and enol forms of a carbonyl compound, and identify which compounds can show it.",
+    "topicKey": "CHEM_STEREO",
+    "topicLabel": "Stereochemistry",
     "subject": "Chemistry"
   },
   {
@@ -2152,9 +2800,65 @@
     "subject": "Chemistry"
   },
   {
+    "bloom": "Understand",
+    "skillId": "CHE_ACIDBASE58",
+    "skillFull": "Identify the conjugate base of a given Bronsted acid, or the conjugate acid of a given base, by removing or adding a single proton.",
+    "topicKey": "CHE_ACIDBASE",
+    "topicLabel": "Acids, Bases and pH",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Analyze",
+    "skillId": "CHE_ACIDBASE59",
+    "skillFull": "Rank substituted carboxylic acids by acid strength, using the electron-withdrawing inductive effect of halogen substituents and the electron-releasing effect of alkyl groups on the stability of the carboxylate anion.",
+    "topicKey": "CHE_ACIDBASE",
+    "topicLabel": "Acids, Bases and pH",
+    "subject": "Chemistry"
+  },
+  {
     "bloom": "Remember",
     "skillId": "CHE_ACIDBASE6",
     "skillFull": "Define 'liquor ammonia' as a saturated aqueous solution of ammonia gas, and recall its typical density and ammonia percentage by mass.",
+    "topicKey": "CHE_ACIDBASE",
+    "topicLabel": "Acids, Bases and pH",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ACIDBASE60",
+    "skillFull": "Identify which of several neutralization reactions conforms to the Arrhenius definition, recognizing that it requires free H+ and OH- ions in aqueous solution.",
+    "topicKey": "CHE_ACIDBASE",
+    "topicLabel": "Acids, Bases and pH",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ACIDBASE61",
+    "skillFull": "Identify which hydrated metal-aqua complex ion is the most acidic, recognizing that a cation of higher charge polarizes its coordinated water molecules more strongly and releases a proton more readily.",
+    "topicKey": "CHE_ACIDBASE",
+    "topicLabel": "Acids, Bases and pH",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ACIDBASE62",
+    "skillFull": "Explain why species such as ammonia and water count as bases under the Bronsted-Lowry proton-transfer definition but not under the Arrhenius definition, which requires the release of hydroxide ions in water.",
+    "topicKey": "CHE_ACIDBASE",
+    "topicLabel": "Acids, Bases and pH",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ACIDBASE63",
+    "skillFull": "Calculate the resulting pH of a mixture of several acid and base solutions by summing their signed equivalents (normality times volume) and dividing by the total volume.",
+    "topicKey": "CHE_ACIDBASE",
+    "topicLabel": "Acids, Bases and pH",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Analyze",
+    "skillId": "CHE_ACIDBASE64",
+    "skillFull": "Rank aromatic carboxylic acids by strength from the electron-donating or electron-withdrawing character of the ring substituent, recognizing that an activating group such as methoxy weakens the acid.",
     "topicKey": "CHE_ACIDBASE",
     "topicLabel": "Acids, Bases and pH",
     "subject": "Chemistry"
@@ -2649,6 +3353,14 @@
   },
   {
     "bloom": "Remember",
+    "skillId": "CHE_ATOMIC64",
+    "skillFull": "Recall the de Broglie relation, lambda = h/mv, which relates the wavelength associated with a particle to its momentum.",
+    "topicKey": "CHE_ATOMIC",
+    "topicLabel": "Atomic Structure and Quantum Numbers",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
     "skillId": "CHE_ATOMIC7",
     "skillFull": "Recall the relationship between the azimuthal quantum number (l) and the number of allowed magnetic quantum number (m) values for a subshell: total m values = 2l + 1.",
     "topicKey": "CHE_ATOMIC",
@@ -2675,6 +3387,142 @@
     "bloom": "Remember",
     "skillId": "CHE_BIOMOLECULE10",
     "skillFull": "Recall that protein (casein) acts as the natural emulsifying agent in milk.",
+    "topicKey": "CHE_BIOMOLECULE",
+    "topicLabel": "Biomolecules",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_BIOMOLECULE11",
+    "skillFull": "Define a biopolymer and classify the three types (polysaccharides, proteins and nucleic acids), giving an example of each.",
+    "topicKey": "CHE_BIOMOLECULE",
+    "topicLabel": "Biomolecules",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_BIOMOLECULE12",
+    "skillFull": "Recall the sugar, the characteristic nitrogenous bases, the relative alkaline stability and the biological function of DNA as against RNA.",
+    "topicKey": "CHE_BIOMOLECULE",
+    "topicLabel": "Biomolecules",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_BIOMOLECULE13",
+    "skillFull": "Recall the general properties of amino acids (zwitterion formation, linkage into proteins by peptide bonds, a characteristic isoelectric pH, and amphoteric behaviour in acid and alkali), and identify glycine as the simplest member.",
+    "topicKey": "CHE_BIOMOLECULE",
+    "topicLabel": "Biomolecules",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_BIOMOLECULE14",
+    "skillFull": "Write the ninhydrin test used to identify proteins and amino acids, which produces a deep blue-violet colour on heating.",
+    "topicKey": "CHE_BIOMOLECULE",
+    "topicLabel": "Biomolecules",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_BIOMOLECULE15",
+    "skillFull": "Show that glucose is a reducing sugar by writing its reaction with Tollens' reagent, which deposits a metallic silver mirror.",
+    "topicKey": "CHE_BIOMOLECULE",
+    "topicLabel": "Biomolecules",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_BIOMOLECULE16",
+    "skillFull": "Recall that starch is a polymer of alpha-D-glucose whereas cellulose is a polymer of beta-D-glucose, and that cellulose is the principal constituent of cotton.",
+    "topicKey": "CHE_BIOMOLECULE",
+    "topicLabel": "Biomolecules",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_BIOMOLECULE17",
+    "skillFull": "Classify a named carbohydrate as a monosaccharide, a disaccharide or a polysaccharide (e.g., glucose, fructose and ribose as monosaccharides, lactose as the disaccharide of milk, starch and cellulose as polysaccharides), and identify the monomer of a given polysaccharide.",
+    "topicKey": "CHE_BIOMOLECULE",
+    "topicLabel": "Biomolecules",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_BIOMOLECULE18",
+    "skillFull": "Recall where haemoglobin and myoglobin occur in the body and the biological function each performs.",
+    "topicKey": "CHE_BIOMOLECULE",
+    "topicLabel": "Biomolecules",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_BIOMOLECULE19",
+    "skillFull": "Recall that the peptide bond joining amino acids in a protein is an amide (-CO-NH-) linkage, and that hydrolysis of a protein returns its amino acids.",
+    "topicKey": "CHE_BIOMOLECULE",
+    "topicLabel": "Biomolecules",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_BIOMOLECULE20",
+    "skillFull": "Recall that nucleotides are the monomers of DNA, and classify the heterocyclic bases obtained by hydrolysing them into purines (adenine, guanine) and pyrimidines (cytosine, thymine, uracil).",
+    "topicKey": "CHE_BIOMOLECULE",
+    "topicLabel": "Biomolecules",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_BIOMOLECULE21",
+    "skillFull": "Recall the five principal elements of protein and their approximate percentages (carbon, hydrogen, oxygen, nitrogen and sulfur), and that enzymes and insulin are proteins.",
+    "topicKey": "CHE_BIOMOLECULE",
+    "topicLabel": "Biomolecules",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_BIOMOLECULE22",
+    "skillFull": "Recall that starch gives a deep blue colour with iodine solution, and that this is used as a test for starch and as the indicator in iodometric titration.",
+    "topicKey": "CHE_BIOMOLECULE",
+    "topicLabel": "Biomolecules",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_BIOMOLECULE23",
+    "skillFull": "Recall that cellulose is held together by beta-glycosidic linkages while starch uses alpha-glycosidic linkages, and recall the number of chiral centres in open-chain glucose.",
+    "topicKey": "CHE_BIOMOLECULE",
+    "topicLabel": "Biomolecules",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_BIOMOLECULE24",
+    "skillFull": "Recall the Haworth (cyclic) projection formulas of alpha-D-glucose and beta-D-glucose and the difference between them, and recall the convention distinguishing D- from L-sugars.",
+    "topicKey": "CHE_BIOMOLECULE",
+    "topicLabel": "Biomolecules",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_BIOMOLECULE25",
+    "skillFull": "Write the chain-lengthening of a sugar by addition of hydrogen cyanide to its aldehyde group, followed by hydrolysis and reduction.",
+    "topicKey": "CHE_BIOMOLECULE",
+    "topicLabel": "Biomolecules",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_BIOMOLECULE26",
+    "skillFull": "Recall that a fat yields about 9 kcal per gram on metabolism, more than a carbohydrate or a protein, and that glucose releases energy by reacting with oxygen.",
+    "topicKey": "CHE_BIOMOLECULE",
+    "topicLabel": "Biomolecules",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_BIOMOLECULE27",
+    "skillFull": "Recall that a reducing sugar gives a red precipitate of copper(I) oxide with Fehling's or Benedict's solution, which is the basis of the classic urine test for diabetic sugar.",
     "topicKey": "CHE_BIOMOLECULE",
     "topicLabel": "Biomolecules",
     "subject": "Chemistry"
@@ -3088,6 +3936,38 @@
     "subject": "Chemistry"
   },
   {
+    "bloom": "Understand",
+    "skillId": "CHE_BONDING53",
+    "skillFull": "Explain that an isolated atom possesses higher energy than the same atom in a chemically combined state, which is why bond formation releases energy.",
+    "topicKey": "CHE_BONDING",
+    "topicLabel": "Chemical Bonding",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_BONDING54",
+    "skillFull": "Determine the hybridization of each carbon at the ends of a specified bond in a given molecule, and use hybridization to rank carbon-carbon bond lengths.",
+    "topicKey": "CHE_BONDING",
+    "topicLabel": "Chemical Bonding",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_BONDING55",
+    "skillFull": "Count the sigma and pi bonds present in a given molecule from its structural formula.",
+    "topicKey": "CHE_BONDING",
+    "topicLabel": "Chemical Bonding",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_BONDING56",
+    "skillFull": "Determine whether a given molecule has a net dipole moment by combining its bond polarities with its molecular symmetry, including for cis and trans isomers.",
+    "topicKey": "CHE_BONDING",
+    "topicLabel": "Chemical Bonding",
+    "subject": "Chemistry"
+  },
+  {
     "bloom": "Analyze",
     "skillId": "CHE_BONDING6",
     "skillFull": "Examine a set of statements about ionic proton/electron counts, molecular covalent bonding, and elemental valency to identify which statement among them is false.",
@@ -3197,6 +4077,94 @@
     "skillFull": "Analyze the plausibility of a given complex-ion formula by applying the typical coordination number of the central transition-metal ion (e.g., Cr3+, Co3+, Fe3+, Pt4+ are usually 6-coordinate).",
     "topicKey": "CHE_COORD",
     "topicLabel": "Coordination Compounds",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_ELECTROCHEM1",
+    "skillFull": "Apply the Nernst equation to calculate the EMF of an electrochemical cell at a stated temperature from the standard cell potential and the ion concentrations, including for a concentration cell.",
+    "topicKey": "CHE_ELECTROCHEM",
+    "topicLabel": "Electrochemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ELECTROCHEM1",
+    "skillFull": "Rank reducing agent strength using standard electrode potentials.",
+    "topicKey": "CHE_ELECTROCHEM",
+    "topicLabel": "Electrochemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ELECTROCHEM10",
+    "skillFull": "Explain lithium intercalation in a lithium-ion battery as the movement of lithium ions into and out of the layered electrode host during charge and discharge.",
+    "topicKey": "CHE_ELECTROCHEM",
+    "topicLabel": "Electrochemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ELECTROCHEM2",
+    "skillFull": "Apply Faraday's laws of electrolysis to calculate mass deposited at an electrode.",
+    "topicKey": "CHE_ELECTROCHEM",
+    "topicLabel": "Electrochemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ELECTROCHEM3",
+    "skillFull": "Calculate cell EMF from standard electrode potentials.",
+    "topicKey": "CHE_ELECTROCHEM",
+    "topicLabel": "Electrochemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ELECTROCHEM4",
+    "skillFull": "Calculate the potential of a single half-cell at a non-standard ion concentration by applying the Nernst equation to its half-reaction.",
+    "topicKey": "CHE_ELECTROCHEM",
+    "topicLabel": "Electrochemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Evaluate",
+    "skillId": "CHE_ELECTROCHEM5",
+    "skillFull": "Evaluate whether a proposed metal container can safely hold a given metal-salt solution, by comparing the standard electrode potentials to decide whether a spontaneous displacement reaction would occur.",
+    "topicKey": "CHE_ELECTROCHEM",
+    "topicLabel": "Electrochemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ELECTROCHEM6",
+    "skillFull": "Predict the products formed at the anode and the cathode when an aqueous salt solution is electrolysed, by comparing the discharge tendencies of the competing ions with those of water.",
+    "topicKey": "CHE_ELECTROCHEM",
+    "topicLabel": "Electrochemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ELECTROCHEM7",
+    "skillFull": "Distinguish an electrolytic cell, which converts electrical energy into chemical energy, from a galvanic (voltaic) cell, which does the reverse.",
+    "topicKey": "CHE_ELECTROCHEM",
+    "topicLabel": "Electrochemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ELECTROCHEM8",
+    "skillFull": "Recall the function and typical composition of the salt bridge in an electrochemical cell (a salt such as potassium nitrate whose ions maintain electrical neutrality without reacting).",
+    "topicKey": "CHE_ELECTROCHEM",
+    "topicLabel": "Electrochemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ELECTROCHEM9",
+    "skillFull": "Recall the components of a dry (Leclanche) cell, including the zinc anode, the carbon cathode and the manganese dioxide depolarizer in an ammonium chloride paste.",
+    "topicKey": "CHE_ELECTROCHEM",
+    "topicLabel": "Electrochemistry",
     "subject": "Chemistry"
   },
   {
@@ -3504,9 +4472,265 @@
     "subject": "Chemistry"
   },
   {
+    "bloom": "Apply",
+    "skillId": "CHEM_GASLAW2",
+    "skillFull": "Apply PV = (m/M)RT to a gas sample to calculate any one of its mass, molar mass, pressure, volume or temperature from the others.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHEM_GASLAW4",
+    "skillFull": "Calculate the temperature at which the root-mean-square velocity of one gas equals that of a different gas at a stated temperature, using the relation T1/M1 = T2/M2.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS10",
+    "skillFull": "Determine the molar mass, and hence the identity, of a gas from its measured root-mean-square velocity at a known temperature.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS11",
+    "skillFull": "Determine the molecular formula of a gaseous hydrocarbon from the volumes of oxygen consumed and carbon dioxide produced on combustion, using the principle that gas volumes combine in the ratio of their stoichiometric coefficients.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS12",
+    "skillFull": "Calculate the volume of air required to burn a given mass of fuel completely, from the combustion stoichiometry, the molar gas volume at STP, and the percentage of oxygen in air.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_GASLAWS13",
+    "skillFull": "State Dalton's law of partial pressures: the total pressure of a mixture of non-reacting gases at constant temperature equals the sum of the partial pressures its components would each exert alone.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS14",
+    "skillFull": "Calculate the total pressure of a gas mixture formed by combining separate gas samples of known pressures and volumes into a common vessel, using P(total) = (sum of PiVi) divided by the total volume.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS15",
+    "skillFull": "Apply the combined gas law, P1V1/T1 = P2V2/T2, to calculate an unknown pressure, volume or temperature of a fixed mass of gas.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS16",
+    "skillFull": "Determine the volume of a solid impurity (e.g., dust or glass fragments) mixed with a gas, by applying the combined gas law to the gas alone and subtracting the unknown solid volume from the measured total volume in both states.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS17",
+    "skillFull": "Apply Boyle's law (P1V1 = P2V2, or V proportional to 1/P) at constant temperature to calculate an unknown pressure or volume of a gas.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS18",
+    "skillFull": "Apply Charles's law (V1/T1 = V2/T2) at constant pressure to calculate an unknown volume or temperature of a gas.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_GASLAWS19",
+    "skillFull": "State Graham's law of diffusion: at constant temperature and pressure the rate of diffusion or effusion of a gas is inversely proportional to the square root of its density.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS20",
+    "skillFull": "Calculate the density or molar mass of an unknown gas from its rate or time of effusion relative to a gas of known density, using Graham's law.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS21",
+    "skillFull": "Calculate the mean molar mass of a gas mixture as the mole-fraction-weighted sum of the molar masses of its components.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_GASLAWS22",
+    "skillFull": "Recall the van der Waals equation for n moles of a real gas, (P + n^2a/V^2)(V - nb) = nRT, and state that the constant a corrects for intermolecular attraction while b corrects for the finite volume of the molecules.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS23",
+    "skillFull": "Write the van der Waals equation for a specified mass of a named gas by first converting that mass to a number of moles and substituting it into the general form.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS24",
+    "skillFull": "Calculate the pressure of a real gas from the van der Waals equation, given its volume, temperature, and the constants a and b.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS25",
+    "skillFull": "Calculate the compressibility factor Z = PV/(nRT) of a gas, or solve for an unknown variable given a stated value of Z.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_GASLAWS26",
+    "skillFull": "Define an ideal gas as one that obeys the gas laws at all temperatures and pressures, and a real gas as one that deviates from them.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS27",
+    "skillFull": "Calculate the value of the molar gas constant R in a specified unit system (SI, litre-atmosphere, or CGS) from PV = nRT using the molar volume of a gas at STP.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_GASLAWS28",
+    "skillFull": "Recall the correct units of the molar gas constant R in the common unit systems (L atm mol-1 K-1, J mol-1 K-1, erg mol-1 K-1).",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS29",
+    "skillFull": "Calculate the number of molecules in a gas sample from its pressure, volume and temperature using PV = nRT together with Avogadro's number.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
     "bloom": "Remember",
     "skillId": "CHE_GASLAWS3",
     "skillFull": "Recall that gases are generally less soluble in warm water than in cold water.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS30",
+    "skillFull": "Calculate the density of a gas from its molar mass, pressure and temperature using d = PM/(RT), or solve the same relation for an unknown temperature or molar mass.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS31",
+    "skillFull": "Calculate the total kinetic energy of the molecules in a gas sample using E = (f/2)nRT, selecting the number of degrees of freedom f appropriate to the molecule's atomicity and shape.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_GASLAWS32",
+    "skillFull": "Recall the number of degrees of freedom possessed by a monatomic, diatomic, linear polyatomic and non-linear polyatomic gas molecule.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS33",
+    "skillFull": "Determine the atomicity of a gas from the ratio R/Cv, or from the heat-capacity ratio gamma = Cp/Cv.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_GASLAWS34",
+    "skillFull": "Recall the fundamental equation of the kinetic theory of gases, PV = (1/3)mnc^2, and recognize which relations are derived from it.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_GASLAWS35",
+    "skillFull": "Recall that at absolute zero the volume of an ideal gas extrapolates to zero.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_GASLAWS36",
+    "skillFull": "Distinguish a gas from a vapour using the critical temperature, recognizing that a substance below its critical temperature exists as a vapour and above it as a gas.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_GASLAWS37",
+    "skillFull": "Explain the Joule-Thomson effect, in which a real gas expanding through a throttle cools because its molecules draw on their own internal energy to overcome intermolecular attraction.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_GASLAWS38",
+    "skillFull": "Recall Avogadro's law, that equal volumes of all gases at the same temperature and pressure contain equal numbers of molecules, so that all gases share the same molar volume at STP.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS39",
+    "skillFull": "Calculate the average volume occupied by a single gas molecule at NTP by dividing the molar gas volume by Avogadro's number.",
     "topicKey": "CHE_GASLAWS",
     "topicLabel": "Gaseous State",
     "subject": "Chemistry"
@@ -3520,9 +4744,81 @@
     "subject": "Chemistry"
   },
   {
+    "bloom": "Remember",
+    "skillId": "CHE_GASLAWS40",
+    "skillFull": "Recognize the common units of pressure (N m-2 or pascal, atmosphere, torr, mm Hg) and distinguish them from units of other quantities such as the litre-atmosphere, which is a unit of energy.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS41",
+    "skillFull": "Compare the volumes or temperatures of two gas samples of equal mass held at the same pressure, by using the inverse ratio of their molar masses.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS42",
+    "skillFull": "Calculate the molar mass of a volatile liquid from the mass of its vapour filling a flask of known volume at a known temperature and pressure, after correcting the weighed flask for the mass of air it originally held.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS43",
+    "skillFull": "Calculate the molar mass of a gas at NTP from its density measured at a different temperature, by first correcting the density with d1T1 = d2T2 and then scaling to the molar volume.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS44",
+    "skillFull": "Determine the molar mass of a gas or volatile compound from its vapour density, using molar mass equals twice the vapour density.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
     "bloom": "Apply",
     "skillId": "CHE_GASLAWS5",
     "skillFull": "Apply the ideal gas law (PV = nRT) to calculate an unknown quantity (pressure, volume, moles, or temperature), given the other variables.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Evaluate",
+    "skillId": "CHE_GASLAWS6",
+    "skillFull": "Evaluate whether a sealed gas cylinder will burst or melt first, by comparing the pressure the enclosed gas would reach at the cylinder's melting temperature with the cylinder's rated maximum pressure.",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS7",
+    "skillFull": "Calculate the root-mean-square velocity of gas molecules from the gas's pressure and density using C = square root of (3P/d).",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_GASLAWS8",
+    "skillFull": "Calculate the root-mean-square velocity of gas molecules from the absolute temperature and molar mass using C = square root of (3RT/M).",
+    "topicKey": "CHE_GASLAWS",
+    "topicLabel": "Gaseous State",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Create",
+    "skillId": "CHE_GASLAWS9",
+    "skillFull": "Derive from the kinetic-theory relation PV = (1/3)mnc^2 that the root-mean-square velocity of a gas is proportional to the square root of the absolute temperature and inversely proportional to the square root of its molar mass.",
     "topicKey": "CHE_GASLAWS",
     "topicLabel": "Gaseous State",
     "subject": "Chemistry"
@@ -3536,6 +4832,86 @@
     "subject": "Chemistry"
   },
   {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC100",
+    "skillFull": "Identify the classes of organic compound for which structural isomerism is not possible, such as compounds containing only one carbon atom and mono-substituted aromatic compounds.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC101",
+    "skillFull": "Define a homologous series, noting that successive members differ by a CH2 unit and share the same functional group and general formula, and give an example.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC102",
+    "skillFull": "Write the acid-catalysed hydrolysis of a nitrile to the corresponding carboxylic acid.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC103",
+    "skillFull": "Write the catalytic air oxidation of p-xylene over vanadium pentoxide to give terephthalic acid.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC104",
+    "skillFull": "Explain why only aromatic primary amines form stable diazonium salts at low temperature, since resonance with the ring stabilizes the diazonium ion whereas aliphatic diazonium ions decompose at once.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Analyze",
+    "skillId": "CHE_ORGANIC105",
+    "skillFull": "Rank aromatic amines by base strength, recognizing that aromatic amines are weaker bases than aliphatic ones because the lone pair is delocalized into the ring, and that electron-withdrawing ring substituents weaken the base further.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC106",
+    "skillFull": "Classify a substituent on a benzene ring as activating and ortho/para-directing or deactivating and meta-directing, and explain the effect in terms of the ring electron density it produces.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Analyze",
+    "skillId": "CHE_ORGANIC107",
+    "skillFull": "Rank carbocations (or free radicals) by stability, using the electron-releasing inductive effect of alkyl groups and resonance delocalization, and use the order to predict which substitution or addition pathway dominates.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC108",
+    "skillFull": "Distinguish the SN1 and SN2 substitution mechanisms and recall that the order of SN1 reactivity of alkyl halides is tertiary greater than secondary greater than primary.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC109",
+    "skillFull": "Predict the anti-Markovnikov product formed when a hydrogen halide adds to an alkene in the presence of a peroxide, and explain it by the free-radical mechanism that operates.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
     "bloom": "Apply",
     "skillId": "CHE_ORGANIC11",
     "skillFull": "Complete the sequence of reactions for the industrial preparation of malt vinegar, naming the biological catalyst and conditions at each stage (hydrolysis of sucrose by invertase, fermentation of glucose to ethanol by zymase, then oxidation of ethanol to ethanoic acid by Mycoderma aceti).",
@@ -3544,9 +4920,697 @@
     "subject": "Chemistry"
   },
   {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC110",
+    "skillFull": "Deduce the structure of an alkene from the carbonyl compounds produced by its ozonolysis, by rejoining the two carbonyl carbons with a double bond.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC111",
+    "skillFull": "Recognize which compounds possess delocalized (mobile) pi electrons, such as benzene and conjugated dienes, as distinct from those with isolated double bonds.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC112",
+    "skillFull": "Recall the characteristic carbon-carbon bond length in benzene (about 1.39 angstrom), intermediate between a single and a double bond because of resonance.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC113",
+    "skillFull": "Explain the iodoform test, in which a compound containing a methyl ketone or a CH3CH(OH) group gives a yellow precipitate of iodoform with iodine and alkali, and use it to distinguish such compounds.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Analyze",
+    "skillId": "CHE_ORGANIC114",
+    "skillFull": "Compare the boiling points of organic compounds of similar molar mass across classes (alcohol greater than aldehyde greater than ether greater than alkane) using hydrogen bonding and dipole strength, and compare branched with straight-chain isomers.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC115",
+    "skillFull": "Explain why a carboxylic acid dissolved in a non-polar solvent such as benzene exists as a hydrogen-bonded dimer.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC116",
+    "skillFull": "Deduce the identity of an unknown organic compound from a set of test results (litmus, precipitate with silver nitrate, Lucas reagent, ester odour with ethanol, vapour density) taken together.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC117",
+    "skillFull": "Write the reaction of an acyl chloride or an acid anhydride with a primary amine to give a substituted (secondary) amide, as in the acetylation of aniline to acetanilide.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC118",
+    "skillFull": "Write the formation of an acid anhydride by dehydrating a carboxylic acid with phosphorus pentoxide.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC119",
+    "skillFull": "Write the formation of an amide by heating the ammonium salt of a carboxylic acid, and the reduction of an amide or a nitrile with lithium aluminium hydride to the corresponding amine.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC12",
+    "skillFull": "Predict the major product of an electrophilic aromatic substitution (nitration, halogenation, sulfonation, Friedel-Crafts alkylation or acylation) on benzene or a substituted benzene, including the ortho/para or meta orientation directed by the substituent already present.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC120",
+    "skillFull": "Write the formation of a Schiff base (imine) by condensing an aldehyde with a primary amine, eliminating water.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC121",
+    "skillFull": "Write the catalytic reforming sequence by which a straight-chain alkane is converted to an aromatic hydrocarbon (cracking, cyclization, then dehydrogenation).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC122",
+    "skillFull": "Write the dehydration of an alcohol to an alkene over heated alumina, and recall that phosphoric acid gives a purer alkene than concentrated sulfuric acid because it does not char the substrate.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC123",
+    "skillFull": "Write the Kolbe electrolysis of an aqueous carboxylate salt, which gives the symmetrical alkane of doubled carbon number at the anode together with carbon dioxide.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC124",
+    "skillFull": "Write the polymerisation (cyclic trimerization) of ethyne to benzene over a heated iron tube.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC125",
+    "skillFull": "Write the reduction of a benzenediazonium salt with tin(II) chloride and hydrochloric acid to give phenylhydrazine, and its hydrolysis in warm water to give phenol.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC126",
+    "skillFull": "Write the high-pressure amination of phenol with ammonia over zinc chloride to give aniline.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC127",
+    "skillFull": "Write the oxidation of toluene to benzaldehyde with a mild oxidant such as manganese dioxide, and to benzoic acid with a strong oxidant such as acidified permanganate.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC128",
+    "skillFull": "Write the bromination of aniline with bromine water at room temperature, which substitutes all three activated positions to give 2,4,6-tribromoaniline.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC129",
+    "skillFull": "Recall the Dow process for the industrial manufacture of phenol from chlorobenzene.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC13",
+    "skillFull": "Recall the Friedel-Crafts alkylation and acylation reactions, their reagents (an alkyl or acyl halide with anhydrous aluminium chloride) and the products each gives with benzene.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC130",
+    "skillFull": "Recall the Liebermann nitroso test used to identify phenol.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC131",
+    "skillFull": "Recall that natural rubber is a polymer of isoprene, that it contains carbon-carbon double bonds which ozone attacks, and recall the monomers of other named polymers (bakelite from phenol and formaldehyde, terylene from ethylene glycol and terephthalic acid, melamine as the trimer of urea).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC132",
+    "skillFull": "Recall the carbon-chain length range and the fractional-distillation cut that defines a given petroleum fraction (e.g., gasoline about C5 to C12), and that crude petroleum is separated by fractional distillation.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC133",
+    "skillFull": "Recall that tetraethyl lead is added to petrol as an anti-knocking agent.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC134",
+    "skillFull": "Recall that chloropicrin (trichloronitromethane) is the principal constituent of tear gas.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC135",
+    "skillFull": "Recall the characteristic reactions of chloroform, including its slow air oxidation to the poisonous phosgene, its reduction to methane, its nitration to chloropicrin, and its hydrolysis by alkali to formate.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC136",
+    "skillFull": "Identify which given compound is a heterocyclic aromatic compound (e.g., pyrrole, furan, thiophene, pyridine) as distinct from a carbocyclic or non-aromatic one.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC137",
+    "skillFull": "Test for unsaturation in a hydrocarbon by adding bromine in carbon tetrachloride and observing the red colour discharge, and recognize that a saturated or aromatic compound does not decolourize it.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC138",
+    "skillFull": "Recall that glycerol is obtained as the by-product of the soap industry.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC139",
+    "skillFull": "Recall that soap is the sodium or potassium salt of a long-chain fatty acid, and that its calcium and magnesium salts are the insoluble scum formed in hard water.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Analyze",
+    "skillId": "CHE_ORGANIC14",
+    "skillFull": "Select which of several given organic compounds is most susceptible to a specified reaction type (nucleophilic or electrophilic substitution, nucleophilic or electrophilic addition, or photochemical substitution), from its functional group and bond polarity.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC140",
+    "skillFull": "Recall the industrial preparation of a named simple compound directly from natural gas (e.g., methanol and methanal by the controlled catalytic oxidation of methane).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC141",
+    "skillFull": "Recall that calcium carbide reacts with atmospheric moisture to release ethyne, which is used to ripen fruit artificially.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC142",
+    "skillFull": "Write the industrial route from calcium carbonate to ethyne, through calcination to quicklime, reduction with carbon to calcium carbide, and hydrolysis.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC143",
+    "skillFull": "Recall which solvent is used to extract a named substance industrially (e.g., dichloromethane for decaffeinating coffee, light naphtha for dry cleaning).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC144",
+    "skillFull": "Identify which hydrogen atoms in a given molecule are the most acidic, recognizing that a hydrogen on a carbon flanked by two carbonyl groups is the most readily removed.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC145",
+    "skillFull": "Determine the number of distinct positional isomers of a disubstituted benzene (ortho, meta and para) for a given pair of substituents.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC146",
+    "skillFull": "Identify which of a set of given organic compounds can act as a monomer in a polymerisation, by checking for a carbon-carbon double bond or for two reactive functional groups per molecule.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC147",
+    "skillFull": "Explain why a compound such as toluene exhibits both aromatic and aliphatic character, the ring undergoing substitution while the side chain behaves as an alkane.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC148",
+    "skillFull": "Identify the role played by each reagent in a nitration mixture, recognizing that nitric acid acts as a base towards concentrated sulfuric acid so that the nitronium ion is generated.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC149",
+    "skillFull": "Predict which alkene is formed, and whether more than one is possible, when an alkyl halide undergoes elimination with alcoholic potassium hydroxide.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC15",
+    "skillFull": "Devise a scheme of chemical tests (for example 2,4-dinitrophenylhydrazine followed by Tollens' reagent) to distinguish an alcohol, an aldehyde and a ketone from one another, and write the reactions involved.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC150",
+    "skillFull": "Recognize which carbonyl compounds can take part in an aldol condensation, namely those possessing an alpha-hydrogen, and count the number of distinct aldol products from a mixed pair.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC151",
+    "skillFull": "Identify which type of alcohol a Grignard reagent gives on reaction with a given carbonyl compound (methanal giving a primary alcohol, another aldehyde a secondary, and a ketone a tertiary alcohol).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Analyze",
+    "skillId": "CHE_ORGANIC152",
+    "skillFull": "Rank alcohols by their rate of esterification or of substitution with a given reagent, using the steric and electronic differences between primary, secondary and tertiary alcohols.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC153",
+    "skillFull": "Recall the composition of Lucas reagent as concentrated hydrochloric acid with anhydrous zinc chloride.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC154",
+    "skillFull": "Identify which reagent distinguishes an alcohol from a phenol, and which distinguishes an aldehyde from a ketone, from the characteristic result each gives.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC155",
+    "skillFull": "Recall which class of organic compound predominates in a named everyday material (e.g., hydrocarbons in kerosene, carbohydrate in flour and cotton, and the absence of carbohydrate in wax).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC156",
+    "skillFull": "Recall the number of valence electron pairs and the charge carried by each reactive intermediate (carbocation, carbanion, free radical) and by an electrophile.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC157",
+    "skillFull": "Deduce the intermediate and final products of a multi-step reaction scheme given only the reagents at each arrow, and name each product.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC16",
+    "skillFull": "Recall the composition and preparation of Tollens' reagent (ammoniacal silver nitrate containing the diamminesilver(I) ion) and its use as a test for aldehydes, which deposits a silver mirror.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC17",
+    "skillFull": "Recall the composition of Fehling's solution (an alkaline mixture of copper sulfate with sodium potassium tartrate, Rochelle salt) and its use in testing for aldehydes and reducing sugars.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC18",
+    "skillFull": "Recall the composition of Benedict's solution (an aqueous mixture of sodium carbonate, copper sulfate and sodium citrate).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC19",
+    "skillFull": "Recall the Rosenmund reduction, in which an acyl chloride is reduced by hydrogen over palladium supported on barium sulfate to give an aldehyde.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC20",
+    "skillFull": "Draw all the structural isomers consistent with a given molecular formula, and classify each one (for example as a primary, secondary or tertiary alcohol, or as an alicyclic ring isomer).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC21",
+    "skillFull": "Identify a named organic reaction from its equation or reaction conditions (e.g., Clemmensen reduction, Friedel-Crafts acylation, Reimer-Tiemann, diazo coupling, Hofmann degradation, Wurtz, Fries rearrangement, aminolysis, Kolbe, Sandmeyer, Cannizzaro, Williamson).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC22",
+    "skillFull": "Recall the Clemmensen reduction, in which a carbonyl group is reduced to a methylene group by zinc amalgam with concentrated hydrochloric acid.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC23",
+    "skillFull": "Write the Reimer-Tiemann reaction, in which phenol reacts with chloroform and alkali to give salicylaldehyde (2-hydroxybenzaldehyde).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC24",
+    "skillFull": "Write the Kolbe reaction, in which sodium phenoxide reacts with carbon dioxide under pressure and is then acidified to give salicylic acid.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC25",
+    "skillFull": "Write the synthesis of aspirin by acetylation of salicylic acid with acetic anhydride.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC26",
+    "skillFull": "Write the synthesis of paracetamol by acetylation of 4-aminophenol with acetic anhydride.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC27",
+    "skillFull": "Write the balanced equation for the Hofmann degradation of an amide with bromine and alkali, which gives a primary amine containing one fewer carbon atom.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC28",
+    "skillFull": "Write the diazotization of a primary aromatic amine with nitrous acid generated from sodium nitrite and hydrochloric acid at 0-5 degrees C, to form a benzenediazonium salt.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC29",
+    "skillFull": "Write the Sandmeyer and related reactions in which the diazonium group of an arenediazonium salt is replaced by a halogen or a cyano group using a copper(I) salt, or by iodine using potassium iodide.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC30",
+    "skillFull": "Write the diazo-coupling reaction of a benzenediazonium salt with phenol or an aromatic amine to form an azo dye, and name the dye produced (e.g., aniline yellow, methyl orange, chrysoidine).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC31",
+    "skillFull": "Distinguish primary, secondary and tertiary amines by their differing reactions with nitrous acid, which give respectively nitrogen evolution with an alcohol, an N-nitrosamine, and a soluble salt.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC32",
+    "skillFull": "Write the carbylamine (isocyanide) test, in which a primary amine heated with chloroform and alcoholic potassium hydroxide gives a foul-smelling isocyanide, and use it to identify a primary amine or to detect chloroform.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC33",
+    "skillFull": "Apply the Lucas test to distinguish primary, secondary and tertiary monohydric alcohols from the rate at which a white turbidity appears with Lucas reagent (concentrated HCl with zinc chloride).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC34",
+    "skillFull": "Classify a given alcohol as primary, secondary or tertiary from the number of carbon atoms attached to the carbon that carries the hydroxyl group.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC35",
+    "skillFull": "Predict the oxidation product of a primary, secondary or tertiary alcohol with an oxidizing agent such as acidified potassium dichromate or potassium permanganate.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC36",
+    "skillFull": "Predict whether ethanol with concentrated sulfuric acid yields diethyl ether at about 140 degrees C or ethene at about 170 degrees C, and write both reactions including the ethyl hydrogen sulfate intermediate.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC37",
+    "skillFull": "Write the acid-catalysed dehydration of an alcohol to an alkene, name the reaction, and give the intermediate carbocation including any rearrangement it undergoes.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC38",
+    "skillFull": "Predict the major and minor products of adding a hydrogen halide to an unsymmetrical alkene by applying Markovnikov's rule.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC39",
+    "skillFull": "Predict the carbonyl products formed by ozonolysis of an alkene or alkyne followed by reductive work-up with zinc and water.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
     "bloom": "Remember",
     "skillId": "CHE_ORGANIC4",
     "skillFull": "Recall the main product formed in a Hofmann degradation reaction (an amide converted to a primary amine with loss of one carbon).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC40",
+    "skillFull": "Write the stepwise free-radical chlorination of methane through chloromethane and dichloromethane to chloroform, giving the conditions required.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC41",
+    "skillFull": "Write the stepwise photochemical side-chain chlorination of toluene to benzyl chloride, benzal chloride and benzotrichloride.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC42",
+    "skillFull": "Write the aldol condensation of two aldehyde molecules in dilute alkali to give a beta-hydroxy aldehyde, and its dehydration on heating to an alpha,beta-unsaturated aldehyde.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC43",
+    "skillFull": "Write the Cannizzaro reaction, in which an aldehyde having no alpha-hydrogen disproportionates with concentrated alkali into an alcohol and a carboxylate salt.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC44",
+    "skillFull": "Write the preparation of a Grignard reagent from an alkyl halide and magnesium in dry ether, and its reaction with an aldehyde or ketone followed by hydrolysis to give an alcohol.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC45",
+    "skillFull": "Write the addition of hydrogen cyanide to an aldehyde to give a cyanohydrin, and its hydrolysis to a 2-hydroxy carboxylic acid.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC46",
+    "skillFull": "Write the chain-lengthening sequence in which an alkyl halide is converted to a nitrile with potassium cyanide, reduced to a primary amine, and then converted to an alcohol with nitrous acid.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC47",
+    "skillFull": "Write the acid-catalysed esterification of a carboxylic acid with an alcohol, and the reverse hydrolysis of the ester.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC48",
+    "skillFull": "Predict the products of a transesterification reaction between an ester and an alcohol.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC49",
+    "skillFull": "Write the conversion of a carboxylic acid to an acyl chloride using PCl5, PCl3 or thionyl chloride, and the further conversion of that acyl chloride to an amide with ammonia or an amine.",
     "topicKey": "CHE_ORGANIC",
     "topicLabel": "Organic Chemistry",
     "subject": "Chemistry"
@@ -3561,8 +5625,168 @@
   },
   {
     "bloom": "Understand",
+    "skillId": "CHE_ORGANIC50",
+    "skillFull": "Define saponification as the alkaline hydrolysis of a fat or oil (a glyceride) with sodium or potassium hydroxide to give soap and glycerol, and write the reaction.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC51",
+    "skillFull": "Define a detergent chemically as the sodium salt of a long-chain alkyl hydrogen sulfate or of a long-chain alkylbenzene sulfonic acid, and write its general formula.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC52",
+    "skillFull": "Define the octane number of a motor fuel as the percentage of iso-octane in an iso-octane and n-heptane mixture of equivalent knocking behaviour, and interpret a stated octane number.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC53",
+    "skillFull": "Write the polymerisation reaction by which a named addition polymer is formed from its monomer (polythene, PVC, polystyrene, Teflon), giving the temperature, pressure and catalyst conditions.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC54",
+    "skillFull": "Recall the monomers or raw materials needed to synthesize a named condensation polymer (nylon-6,6 from adipic acid and hexamethylenediamine, polyester from a diol and a dioic acid, urea-formaldehyde resin from methanal and carbamide).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC55",
+    "skillFull": "Define a polymer and a monomer and distinguish between them, recognizing that a polymer's molar mass is an integral multiple of its monomer's.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC56",
+    "skillFull": "Write the complete industrial route from limestone to PVC: calcination to quicklime, reduction with carbon to calcium carbide, hydrolysis to ethyne, addition of HCl to vinyl chloride, then polymerisation.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC57",
+    "skillFull": "Distinguish thermoplastic from thermosetting plastics by whether the material can be repeatedly softened and reshaped by heating.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC58",
+    "skillFull": "Write the industrial fermentation route from starch to pure ethanol, naming the enzyme and conditions at each stage (diastase, maltase, then zymase) and the distillation steps that follow.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC59",
+    "skillFull": "Define rectified spirit, power alcohol and methylated spirit, giving the composition of each.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
     "skillId": "CHE_ORGANIC6",
     "skillFull": "Compare the carbon-carbon bonding in ethylene (a C=C double bond) and acetylene (a C≡C triple bond) to explain the key structural difference between the two hydrocarbons.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC60",
+    "skillFull": "Write the industrial synthesis of methanol from water gas (carbon monoxide and hydrogen), giving the catalyst, temperature and pressure.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC61",
+    "skillFull": "Define formalin as a 30-40% aqueous solution of methanal, recall its use in preserving biological tissue, and explain why alcohol is added to it to prevent polymerisation.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC62",
+    "skillFull": "Define an ether as two alkyl or aryl groups bonded to a divalent oxygen atom, and give the general form of its functional group.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC63",
+    "skillFull": "Write the Williamson ether synthesis, in which a sodium alkoxide reacts with an alkyl halide to give an ether.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC64",
+    "skillFull": "Recall the practical uses of ethers, as solvents for resins, fats and cellulose esters, as the reaction medium for the Wurtz and Grignard reactions, and as a refrigerant.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC65",
+    "skillFull": "Define urea as the diamide of carbonic acid (carbamide) and write its structural formula.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC66",
+    "skillFull": "Write the conversion of ammonium cyanate to urea on heating, and identify it as a rearrangement reaction (the Wohler synthesis).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC67",
+    "skillFull": "Recall which ester gives the characteristic aroma of a named fruit (e.g., pentyl ethanoate in ripe banana, ethyl butanoate in pineapple, octyl ethanoate in orange).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC68",
+    "skillFull": "Recall the practical use of a named organic compound (e.g., tetrachloromethane as a dry-cleaning solvent and fire extinguisher, DDT as an insecticide, chloroform as an anaesthetic, esters as artificial flavours, polyamides as synthetic fibre).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC69",
+    "skillFull": "Recall that jaundice and liver cirrhosis are associated with exposure to halogenated hydrocarbon derivatives.",
     "topicKey": "CHE_ORGANIC",
     "topicLabel": "Organic Chemistry",
     "subject": "Chemistry"
@@ -3576,6 +5800,86 @@
     "subject": "Chemistry"
   },
   {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC70",
+    "skillFull": "Write the test in which phenol gives a violet-coloured complex with neutral ferric chloride, and use it to identify phenol among several liquids.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC71",
+    "skillFull": "Write the multi-step reaction sequence required to interconvert two named aromatic compounds (e.g., toluene to benzene, phenol to benzene, phenol to anisole, phenol to picric acid, chlorobenzene to aniline).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC72",
+    "skillFull": "Write the multi-step reaction sequence required to interconvert two named aliphatic compounds (e.g., methanol to ethanol, a primary alcohol to a secondary alcohol, ethylene to acetylene, ethene to methanol).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC73",
+    "skillFull": "Write the decarboxylation of a sodium carboxylate with soda lime (sodium hydroxide and calcium oxide) to give an alkane containing one fewer carbon atom.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC74",
+    "skillFull": "Classify a given reagent as an electrophile or a nucleophile according to whether it accepts or donates an electron pair.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC75",
+    "skillFull": "Explain why terminal alkynes show acidic character, in terms of the high s-character and small size of the sp-hybridized carbon orbital, which increases its attraction for the bonding electron pair and allows a proton to be released.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC76",
+    "skillFull": "Define nitration and acylation of an aromatic ring as the replacement of a ring hydrogen by a nitro or an acyl group respectively, and illustrate each with an equation.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC77",
+    "skillFull": "Recall the Birch reduction, in which benzene or a substituted benzene is reduced by sodium in liquid ammonia with an alcohol to give a 1,4-cyclohexadiene.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC78",
+    "skillFull": "Write the Wurtz reaction, in which an alkyl halide treated with sodium in dry ether gives a symmetrical alkane of doubled carbon number.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC79",
+    "skillFull": "Recall the Fries rearrangement, in which an aryl ester heated with aluminium chloride gives ortho- and para-hydroxy aryl ketones.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
     "bloom": "Analyze",
     "skillId": "CHE_ORGANIC8",
     "skillFull": "Analyze a given molecular formula to deduce a structural arrangement consistent with it, identifying the presence of a specific bond type such as a carbon-carbon triple bond.",
@@ -3584,9 +5888,169 @@
     "subject": "Chemistry"
   },
   {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC80",
+    "skillFull": "Write the preparation of chloroform from propanone or ethanol with bleaching powder, via the trichloro intermediate.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC81",
+    "skillFull": "Write the chlorination of acetaldehyde in the presence of calcium carbonate to give chloral (trichloroacetaldehyde).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC82",
+    "skillFull": "Write the base-catalysed addition of chloroform to acetone that gives chloretone (1,1,1-trichloro-2-methylpropan-2-ol).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC83",
+    "skillFull": "Write the dehydration of glycerol with potassium hydrogen sulfate or phosphorus pentoxide to give acrolein (prop-2-enal).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC84",
+    "skillFull": "Explain how the oxy-acetylene flame is produced by burning ethyne in excess oxygen, write the combustion equation, and recall the approximate temperature it reaches.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC85",
+    "skillFull": "Write the catalytic hydrogenation of an alkene over heated nickel to give the corresponding alkane.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC86",
+    "skillFull": "Predict the product of the partial hydrogenation of an alkyne over a poisoned palladium (Lindlar) catalyst, which stops at the alkene stage.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC87",
+    "skillFull": "Write the addition of bromine to an alkene to give a vicinal dibromide, and its double dehydrohalogenation with alcoholic potassium hydroxide to give an alkyne.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC88",
+    "skillFull": "Write the multi-step synthesis of sulfanilamide from aniline, via acetylation, chlorosulfonation, amidation with ammonia and final hydrolysis.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC89",
+    "skillFull": "Explain and write the use of acetylation to protect the amino group of aniline before nitration, and the subsequent hydrolysis that gives ortho- and para-nitroaniline.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
     "bloom": "Analyze",
     "skillId": "CHE_ORGANIC9",
     "skillFull": "Differentiate the type of addition reaction (electrophilic for C=C, nucleophilic for C=O) undergone by a given double bond, based on its bond polarity.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC90",
+    "skillFull": "Write the high-temperature, high-pressure amination of chlorobenzene with ammonia over a copper(I) oxide catalyst to give aniline.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC91",
+    "skillFull": "Write the reduction of nitrobenzene to aniline, using tin with hydrochloric acid or zinc with ammonium chloride.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC92",
+    "skillFull": "Write the preparation of benzaldehyde from benzyl chloride by hydrolysis followed by oxidation in aqueous cupric nitrate.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC93",
+    "skillFull": "Recall the cage structure of hexamine (hexamethylenetetramine), in which four nitrogen atoms are linked by six methylene bridges.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC94",
+    "skillFull": "Write the photochemical addition of chlorine to benzene that gives gammexane (benzene hexachloride).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC95",
+    "skillFull": "Write the stepwise nitration of toluene with fuming nitric acid and concentrated sulfuric acid to give 2,4,6-trinitrotoluene (TNT).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_ORGANIC96",
+    "skillFull": "Write the acid-catalysed condensation of chlorobenzene with chloral that gives DDT.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC97",
+    "skillFull": "Define tincture of iodine as an alcoholic solution of iodine with potassium iodide, used as an antiseptic.",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Understand",
+    "skillId": "CHE_ORGANIC98",
+    "skillFull": "Explain the essential structural difference between two similarly-named organic compounds (e.g., benzamide and acetanilide, carbolic acid and picric acid, n-propanol and isopropanol).",
+    "topicKey": "CHE_ORGANIC",
+    "topicLabel": "Organic Chemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_ORGANIC99",
+    "skillFull": "Recall the molar mass, melting point and boiling point of the lower straight-chain alkanes, and the trend of these properties with increasing chain length.",
     "topicKey": "CHE_ORGANIC",
     "topicLabel": "Organic Chemistry",
     "subject": "Chemistry"
@@ -3769,6 +6233,22 @@
   },
   {
     "bloom": "Apply",
+    "skillId": "CHE_STOICH2",
+    "skillFull": "Calculate the volume of gas produced at STP by a reaction, from the mass of reactant consumed, the reaction stoichiometry and the molar gas volume.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_STOICH3",
+    "skillFull": "Convert a concentration expressed in parts per million into molarity, and the reverse, using the solute's molar mass.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
     "skillId": "CHE_STOICHIOMETRY0",
     "skillFull": "Calculate the volume of a liquid from its measured mass and known density, using density = mass / volume.",
     "topicKey": "CHE_STOICHIOMETRY",
@@ -3849,6 +6329,22 @@
   },
   {
     "bloom": "Apply",
+    "skillId": "CHE_STOICHIOMETRY18",
+    "skillFull": "Calculate the number of molecules contained in a given mass or STP volume of a substance, using its molar mass or molar volume together with Avogadro's number.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_STOICHIOMETRY19",
+    "skillFull": "Calculate the mass of a single molecule of a substance by dividing its molar mass by Avogadro's number.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
     "skillId": "CHE_STOICHIOMETRY2",
     "skillFull": "Calculate the number of electrons contained in a given mass of a substance, using its molar mass, Avogadro's number, and the number of electrons per formula unit.",
     "topicKey": "CHE_STOICHIOMETRY",
@@ -3857,8 +6353,136 @@
   },
   {
     "bloom": "Apply",
+    "skillId": "CHE_STOICHIOMETRY20",
+    "skillFull": "Calculate the number of atoms or molecules in a stated mass of a substance using n = w/M together with Avogadro's number, and scale the result to a fraction of that mass.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_STOICHIOMETRY21",
+    "skillFull": "Calculate the volume of an acid or base solution of known concentration that a given mass of neutralizing agent will consume, using the balanced neutralization equation and n = C x V.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_STOICHIOMETRY22",
+    "skillFull": "Define parts per million (ppm) as the mass of solute dissolved in one million parts of solution, and express a given concentration in ppm.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_STOICHIOMETRY23",
+    "skillFull": "Calculate the percentage of impurity in an impure sample from the amount of gas evolved or residue left when it reacts or is heated, using the reaction stoichiometry.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_STOICHIOMETRY24",
+    "skillFull": "Calculate the composition of a two-component mixture from the mass of residue remaining after both components decompose on heating, by solving the resulting simultaneous equation.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_STOICHIOMETRY25",
+    "skillFull": "Determine the formula of a second oxide of a metal from the percentage of oxygen it contains, after first calculating the metal's atomic mass from the known formula and composition of a first oxide.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_STOICHIOMETRY26",
+    "skillFull": "Determine the empirical formula of an organic compound from combustion analysis, by converting the masses of carbon dioxide and water produced into percentages of carbon and hydrogen and obtaining oxygen by difference.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_STOICHIOMETRY27",
+    "skillFull": "Determine the molecular formula of a compound from its empirical formula and its known molar mass, by finding the integer multiple relating the two.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_STOICHIOMETRY28",
+    "skillFull": "Determine the empirical formula of a compound from the percentage composition of its elements, by dividing each percentage by the atomic mass and reducing to the simplest whole-number ratio.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_STOICHIOMETRY29",
+    "skillFull": "Calculate the mass of product and the number of solvent molecules evaporated when two solutions are mixed and evaporated to dryness, from the neutralization stoichiometry and the total water present.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
     "skillId": "CHE_STOICHIOMETRY3",
     "skillFull": "Predict the products of a described chemical reaction (e.g., a precipitation reaction, or the fusion of an oxide with a carbonate in the presence of an oxidant) and complete its balanced chemical equation.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_STOICHIOMETRY30",
+    "skillFull": "Recall that the Carius method is used for the quantitative estimation of sulfur, phosphorus and the halogens in an organic compound, as distinct from the Dumas, Kjeldahl and combustion methods used for other elements.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_STOICHIOMETRY31",
+    "skillFull": "Define normality as the number of gram-equivalents of solute per litre of solution, and convert between normality and molarity using the equivalence factor of the solute.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_STOICHIOMETRY32",
+    "skillFull": "Calculate the resulting normality of a mixture of several acid solutions of different normalities and volumes, diluted to a stated final volume.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_STOICHIOMETRY33",
+    "skillFull": "Determine the formula of an unknown compound from the measured amounts of each of its constituent elements expressed in different units (mass, number of atoms, moles), by converting all of them to moles and reducing to the simplest ratio.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Analyze",
+    "skillId": "CHE_STOICHIOMETRY34",
+    "skillFull": "Identify the limiting reactant in a reaction from the amounts of the reactants supplied, and calculate the amount of product from the limiting reactant alone.",
+    "topicKey": "CHE_STOICHIOMETRY",
+    "topicLabel": "Stoichiometry and Mole Concept",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Apply",
+    "skillId": "CHE_STOICHIOMETRY35",
+    "skillFull": "Calculate the number of atoms of a specified element in a given amount of a compound, allowing for the number of those atoms in each formula unit and for any water of crystallisation.",
     "topicKey": "CHE_STOICHIOMETRY",
     "topicLabel": "Stoichiometry and Mole Concept",
     "subject": "Chemistry"
@@ -4051,6 +6675,14 @@
     "bloom": "Apply",
     "skillId": "CHE_THERMOCHEM25",
     "skillFull": "Calculate a reaction's enthalpy change from the standard enthalpies of combustion of its reactants and products, using delta-H = sum of reactants' combustion enthalpies minus sum of products' combustion enthalpies.",
+    "topicKey": "CHE_THERMOCHEM",
+    "topicLabel": "Thermochemistry",
+    "subject": "Chemistry"
+  },
+  {
+    "bloom": "Remember",
+    "skillId": "CHE_THERMOCHEM26",
+    "skillFull": "Recall the definition of enthalpy, H = U + PV, which relates a system's enthalpy to its internal energy, pressure and volume.",
     "topicKey": "CHE_THERMOCHEM",
     "topicLabel": "Thermochemistry",
     "subject": "Chemistry"

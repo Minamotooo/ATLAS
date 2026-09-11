@@ -1,0 +1,11 @@
+2 candidate near-duplicate pairs (jaccard >= 0.45)
+new candidates: 33  rebuild: 809  legacy chem: 117
+
+[0.53] NEW-vs-REBUILD / CHEM_ANALYTICAL
+  ChemBook2_b09_s1: Calculate the percentage of a metal (or its oxide) in an ore or limestone sample from a permanganate or dichromate titration, using the electron-transfer ratio of the half-reactions.
+  CHEM_ANALYTICAL13: Calculate the percentage of an element in an alloy or ore sample from a redox titration, using the electron-transfer ratio of the balanced half-reactions.
+
+[0.46] NEW-vs-LEGACY / CHE_STOICHIOMETRY
+  ChemBook2_b09_s15: Convert a concentration expressed in parts per million into molarity, and the reverse, using the solute's molar mass.
+  CHE_STOICH3: Convert molar concentration to parts-per-million (ppm) units.
+

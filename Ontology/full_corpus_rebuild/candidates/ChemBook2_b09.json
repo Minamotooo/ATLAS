@@ -1,0 +1,845 @@
+{
+  "chunkLabel": "ChemBook2_b09",
+  "subject": "Chemistry",
+  "recordRange": "parsed_items.jsonl lines 1372-1688 (ChemBook2.txt indices 640-956)",
+  "skills": [
+    {
+      "tempId": "ChemBook2_b09_s2",
+      "bloom": "Apply",
+      "skillFull": "Calculate the percentage of an element in a compound by gravimetric analysis, from the mass of an insoluble precipitate obtained and the stoichiometric mass ratio between the element and the precipitate.",
+      "topicKey": "CHEM_ANALYTICAL",
+      "topicLabel": "Quantitative (Titrimetric) Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p98__q60__649",
+        "ChemBook2__p100__q72__661",
+        "ChemBook2__p102__q84__673"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s3",
+      "bloom": "Remember",
+      "skillFull": "Define normality as the number of gram-equivalents of solute per litre of solution, and convert between normality and molarity using the equivalence factor of the solute.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p105__q105__694",
+        "ChemBook2__p103__q91__680"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s4",
+      "bloom": "Apply",
+      "skillFull": "Calculate the resulting normality of a mixture of several acid solutions of different normalities and volumes, diluted to a stated final volume.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p103__q91__680",
+        "ChemBook2__p108__q17__719"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s5",
+      "bloom": "Apply",
+      "skillFull": "Perform a back titration, calculating the amount of a substance that reacted with an excess of standard reagent from the volume of a second standard solution needed to neutralize the unreacted excess.",
+      "topicKey": "CHEM_ANALYTICAL",
+      "topicLabel": "Quantitative (Titrimetric) Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p98__q61__650",
+        "ChemBook2__p98__q62__651",
+        "ChemBook2__p100__q77__666"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s6",
+      "bloom": "Apply",
+      "skillFull": "Determine the molar mass of a gas or volatile compound from its vapour density, using molar mass equals twice the vapour density.",
+      "topicKey": "CHE_GASLAWS",
+      "topicLabel": "Gaseous State",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p97__q56__645",
+        "ChemBook2__p105__q104__693"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s7",
+      "bloom": "Understand",
+      "skillFull": "Classify a given substance as an oxidizing agent, a reducing agent, or a dehydrating agent from its characteristic chemical behaviour, recognizing that an oxidizing agent accepts electrons and a reducing agent donates them.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p99__q66__655",
+        "ChemBook2__p99__q67__656",
+        "ChemBook2__p100__q74__663",
+        "ChemBook2__p104__q99__688"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s8",
+      "bloom": "Apply",
+      "skillFull": "Balance a redox half-reaction in alkaline medium, using hydroxide ions and water rather than hydrogen ions to balance oxygen and hydrogen.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p99__q69__658"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s9",
+      "bloom": "Apply",
+      "skillFull": "Determine the number of electrons transferred in a given half-reaction by balancing the total charge on the two sides.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p107__q11__713",
+        "ChemBook2__p108__q19__721"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s10",
+      "bloom": "Analyze",
+      "skillFull": "Examine a set of proposed redox equations and identify which are correctly balanced, by checking both the conservation of atoms and the balance of charge and electrons transferred.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p107__q07__709"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s11",
+      "bloom": "Apply",
+      "skillFull": "Calculate the mass of ore that must be processed to obtain a required mass of metal, given the ore's percentage of the mineral and the percentage recovery of the extraction process.",
+      "topicKey": "CHEM_DBLOCK",
+      "topicLabel": "Transition Elements",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p102__q87__676"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s12",
+      "bloom": "Apply",
+      "skillFull": "Determine the formula of an unknown compound from the measured amounts of each of its constituent elements expressed in different units (mass, number of atoms, moles), by converting all of them to moles and reducing to the simplest ratio.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p107__q08__710",
+        "ChemBook2__p106__q03__705"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s13",
+      "bloom": "Analyze",
+      "skillFull": "Identify the limiting reactant in a reaction from the amounts of the reactants supplied, and calculate the amount of product from the limiting reactant alone.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p107__q14__716"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s14",
+      "bloom": "Apply",
+      "skillFull": "Calculate the number of atoms of a specified element in a given amount of a compound, allowing for the number of those atoms in each formula unit and for any water of crystallisation.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p107__q09__711",
+        "ChemBook2__p108__q18__720"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s15",
+      "bloom": "Apply",
+      "skillFull": "Convert a concentration expressed in parts per million into molarity, and the reverse, using the solute's molar mass.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p107__q10__712",
+        "ChemBook2__p108__q23__725"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s16",
+      "bloom": "Apply",
+      "skillFull": "Calculate the mass of a concentrated reagent of stated percentage purity that is needed to prepare a required volume of solution of a given molarity.",
+      "topicKey": "CHEM_SOLUTION",
+      "topicLabel": "Solutions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p106__q02__704",
+        "ChemBook2__p103__q93__682"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s17",
+      "bloom": "Apply",
+      "skillFull": "Calculate the molarity of a solution prepared by dissolving a measured volume of a pure liquid reagent of known density in water.",
+      "topicKey": "CHEM_SOLUTION",
+      "topicLabel": "Solutions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p107__q12__714",
+        "ChemBook2__p104__q103__692"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s18",
+      "bloom": "Apply",
+      "skillFull": "Calculate the resulting molarity when two solutions of the same solute but different concentrations are mixed, using the moles-weighted average.",
+      "topicKey": "CHEM_SOLUTION",
+      "topicLabel": "Solutions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p103__q94__683"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s19",
+      "bloom": "Remember",
+      "skillFull": "Define a primary standard substance by its required properties (high purity, stability in air, a known and unchanging composition, and a high equivalent mass) and distinguish it from a secondary standard such as sodium hydroxide or potassium permanganate.",
+      "topicKey": "CHEM_ANALYTICAL",
+      "topicLabel": "Quantitative (Titrimetric) Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p108__q24__726"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s20",
+      "bloom": "Apply",
+      "skillFull": "Apply Faraday's first law of electrolysis, w = Zit, to calculate the mass of substance liberated at an electrode from the current and the time, or to solve for either of those.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p133__q21__916",
+        "ChemBook2__p134__q26__921",
+        "ChemBook2__p135__q34__929",
+        "ChemBook2__p134__q32__927"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s21",
+      "bloom": "Remember",
+      "skillFull": "Define the electrochemical equivalent of an element as the mass liberated by one coulomb of charge, and calculate it from the element's molar mass, its ionic charge and the Faraday constant.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p133__q22__917",
+        "ChemBook2__p134__q27__922"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s22",
+      "bloom": "Remember",
+      "skillFull": "Recall that one faraday is the charge carried by one mole of electrons (about 96500 coulombs), and determine how many faradays are needed to deposit one mole of a metal of a given ionic charge.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p133__q23__918",
+        "ChemBook2__p134__q24__919",
+        "ChemBook2__p134__q30__925",
+        "ChemBook2__p108__q20__722"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s23",
+      "bloom": "Apply",
+      "skillFull": "Determine the charge (valency) of a metal ion from electrolysis data, by comparing the mass deposited with the charge passed.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p134__q31__926"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s24",
+      "bloom": "Apply",
+      "skillFull": "Calculate the number of electrons that flow through a conductor from the current and the time, using Q = It and the elementary charge.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p133__q18__913"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s25",
+      "bloom": "Apply",
+      "skillFull": "Apply the Nernst equation to calculate the EMF of an electrochemical cell at a stated temperature from the standard cell potential and the ion concentrations, including for a concentration cell.",
+      "topicKey": "CHE_ELECTROCHEM",
+      "topicLabel": "Electrochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p133__q16__911",
+        "ChemBook2__p133__q17__912",
+        "ChemBook2__p133__q20__915",
+        "ChemBook2__p134__q25__920",
+        "ChemBook2__p135__q39__934"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s26",
+      "bloom": "Apply",
+      "skillFull": "Calculate the potential of a single half-cell at a non-standard ion concentration by applying the Nernst equation to its half-reaction.",
+      "topicKey": "CHE_ELECTROCHEM",
+      "topicLabel": "Electrochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p135__q35__930"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s27",
+      "bloom": "Evaluate",
+      "skillFull": "Evaluate whether a proposed metal container can safely hold a given metal-salt solution, by comparing the standard electrode potentials to decide whether a spontaneous displacement reaction would occur.",
+      "topicKey": "CHE_ELECTROCHEM",
+      "topicLabel": "Electrochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p134__q33__928"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s28",
+      "bloom": "Apply",
+      "skillFull": "Predict the products formed at the anode and the cathode when an aqueous salt solution is electrolysed, by comparing the discharge tendencies of the competing ions with those of water.",
+      "topicKey": "CHE_ELECTROCHEM",
+      "topicLabel": "Electrochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p133__q14__909",
+        "ChemBook2__p134__q29__924"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s29",
+      "bloom": "Understand",
+      "skillFull": "Distinguish an electrolytic cell, which converts electrical energy into chemical energy, from a galvanic (voltaic) cell, which does the reverse.",
+      "topicKey": "CHE_ELECTROCHEM",
+      "topicLabel": "Electrochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p134__q28__923"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s30",
+      "bloom": "Remember",
+      "skillFull": "Recall the function and typical composition of the salt bridge in an electrochemical cell (a salt such as potassium nitrate whose ions maintain electrical neutrality without reacting).",
+      "topicKey": "CHE_ELECTROCHEM",
+      "topicLabel": "Electrochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p135__q37__932"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s31",
+      "bloom": "Remember",
+      "skillFull": "Recall the components of a dry (Leclanche) cell, including the zinc anode, the carbon cathode and the manganese dioxide depolarizer in an ammonium chloride paste.",
+      "topicKey": "CHE_ELECTROCHEM",
+      "topicLabel": "Electrochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p135__q38__933"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s32",
+      "bloom": "Understand",
+      "skillFull": "Explain lithium intercalation in a lithium-ion battery as the movement of lithium ions into and out of the layered electrode host during charge and discharge.",
+      "topicKey": "CHE_ELECTROCHEM",
+      "topicLabel": "Electrochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p133__q15__910"
+      ]
+    },
+    {
+      "tempId": "ChemBook2_b09_s33",
+      "bloom": "Remember",
+      "skillFull": "Recall the chemical formula and the conditions required for the formation of rust (hydrated iron(III) oxide), and the electrochemical basis of rusting.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook2__p135__q36__931"
+      ]
+    }
+  ],
+  "reusedExistingSkills": [
+    {
+      "existingSkillId": "CHE_STOICHIOMETRY26",
+      "sourceItemIds": [
+        "ChemBook2__p99__q68__657",
+        "ChemBook2__p100__q78__667",
+        "ChemBook2__p104__q101__690",
+        "ChemBook2__p107__q15__717"
+      ],
+      "note": "empirical formula from combustion analysis"
+    },
+    {
+      "existingSkillId": "CHE_STOICHIOMETRY27",
+      "sourceItemIds": [
+        "ChemBook2__p97__q56__645",
+        "ChemBook2__p101__q80__669",
+        "ChemBook2__p104__q102__691",
+        "ChemBook2__p105__q104__693"
+      ],
+      "note": "molecular formula from empirical formula and molar mass"
+    },
+    {
+      "existingSkillId": "CHE_STOICHIOMETRY28",
+      "sourceItemIds": [
+        "ChemBook2__p97__q54__643",
+        "ChemBook2__p101__q80__669",
+        "ChemBook2__p102__q88__677"
+      ],
+      "note": "empirical formula from percentage composition"
+    },
+    {
+      "existingSkillId": "CHEM_REDOX34",
+      "sourceItemIds": [
+        "ChemBook2__p103__q97__686",
+        "ChemBook2__p99__q69__658"
+      ],
+      "note": "balance a redox equation by the ion-electron method"
+    },
+    {
+      "existingSkillId": "CHEM_REDOX35",
+      "sourceItemIds": [
+        "ChemBook2__p105__q109__698"
+      ],
+      "note": "separate a redox reaction into its two halves"
+    },
+    {
+      "existingSkillId": "CHE_STOICHIOMETRY23",
+      "sourceItemIds": [
+        "ChemBook2__p97__q53__642",
+        "ChemBook2__p100__q76__665",
+        "ChemBook2__p106__q111__700",
+        "ChemBook2__p108__q25__727"
+      ],
+      "note": "percentage of impurity or purity in a sample"
+    },
+    {
+      "existingSkillId": "CHEM_ANALYTICAL13",
+      "sourceItemIds": [
+        "ChemBook2__p100__q73__662",
+        "ChemBook2__p102__q86__675",
+        "ChemBook2__p103__q96__685",
+        "ChemBook2__p106__q113__702",
+        "ChemBook2__p96__q51__640",
+        "ChemBook2__p96__q52__641"
+      ],
+      "note": "percentage of an element by redox titration"
+    },
+    {
+      "existingSkillId": "CHEM_ANALYTICAL14",
+      "sourceItemIds": [
+        "ChemBook2__p106__q03__705"
+      ],
+      "note": "identify an unknown salt from titration data"
+    },
+    {
+      "existingSkillId": "CHEM_SOLUTION17",
+      "sourceItemIds": [
+        "ChemBook2__p108__q22__724",
+        "ChemBook2__p106__q02__704"
+      ],
+      "note": "dilution calculations with S1V1 = S2V2"
+    },
+    {
+      "existingSkillId": "CHEM_SOLUTION16",
+      "sourceItemIds": [
+        "ChemBook2__p105__q105__694"
+      ],
+      "note": "molality definition"
+    },
+    {
+      "existingSkillId": "CHEM_SOLUTION15",
+      "sourceItemIds": [
+        "ChemBook2__p104__q103__692",
+        "ChemBook2__p105__q105__694"
+      ],
+      "note": "molarity and molality from composition and density"
+    },
+    {
+      "existingSkillId": "CHE_STOICHIOMETRY22",
+      "sourceItemIds": [
+        "ChemBook2__p107__q10__712",
+        "ChemBook2__p108__q23__725"
+      ],
+      "note": "parts per million definition"
+    },
+    {
+      "existingSkillId": "CHE_STOICHIOMETRY20",
+      "sourceItemIds": [
+        "ChemBook2__p103__q90__679",
+        "ChemBook2__p106__q01__703",
+        "ChemBook2__p102__q88__677"
+      ],
+      "note": "number of atoms or molecules in a stated mass"
+    },
+    {
+      "existingSkillId": "CHE_STOICH2",
+      "sourceItemIds": [
+        "ChemBook2__p98__q64__653",
+        "ChemBook2__p106__q06__708",
+        "ChemBook2__p105__q106__695"
+      ],
+      "note": "volume of gas produced at STP from mass"
+    },
+    {
+      "existingSkillId": "CHE_STOICHIOMETRY21",
+      "sourceItemIds": [
+        "ChemBook2__p97__q57__646",
+        "ChemBook2__p97__q58__647",
+        "ChemBook2__p101__q79__668",
+        "ChemBook2__p103__q92__681",
+        "ChemBook2__p105__q108__697",
+        "ChemBook2__p105__q110__699"
+      ],
+      "note": "acid-base neutralization volume and mass calculations"
+    },
+    {
+      "existingSkillId": "CHE_STOICHIOMETRY7",
+      "sourceItemIds": [
+        "ChemBook2__p100__q72__661",
+        "ChemBook2__p102__q84__673"
+      ],
+      "note": "percentage composition from a Carius-method precipitate"
+    },
+    {
+      "existingSkillId": "CHE_STOICHIOMETRY6",
+      "sourceItemIds": [
+        "ChemBook2__p102__q84__673"
+      ],
+      "note": "principle of the Carius method"
+    },
+    {
+      "existingSkillId": "CHE_STOICHIOMETRY5",
+      "sourceItemIds": [
+        "ChemBook2__p102__q88__677"
+      ],
+      "note": "mass percentage of an element in a compound"
+    },
+    {
+      "existingSkillId": "CHEM_REDOX2",
+      "sourceItemIds": [
+        "ChemBook2__p98__q65__654",
+        "ChemBook2__p103__q95__684",
+        "ChemBook2__p106__q05__707"
+      ],
+      "note": "oxidation number of an element in a compound or ion"
+    },
+    {
+      "existingSkillId": "CHE_STOICHIOMETRY14",
+      "sourceItemIds": [
+        "ChemBook2__p100__q75__664",
+        "ChemBook2__p104__q100__689",
+        "ChemBook2__p106__q04__706",
+        "ChemBook2__p101__q83__672"
+      ],
+      "note": "mole ratio from a balanced equation"
+    },
+    {
+      "existingSkillId": "CHE_STOICHIOMETRY17",
+      "sourceItemIds": [
+        "ChemBook2__p97__q55__644",
+        "ChemBook2__p103__q89__678",
+        "ChemBook2__p108__q21__723"
+      ],
+      "note": "molarity from mass of solute, molar mass and volume"
+    },
+    {
+      "existingSkillId": "CHE_ACIDBASE19",
+      "sourceItemIds": [
+        "ChemBook2__p103__q91__680",
+        "ChemBook2__p106__q112__701",
+        "ChemBook2__p108__q17__719"
+      ],
+      "note": "net normality of a mixture of acids and bases"
+    },
+    {
+      "existingSkillId": "CHE_ACIDBASE16",
+      "sourceItemIds": [
+        "ChemBook2__p99__q70__659",
+        "ChemBook2__p107__q13__715"
+      ],
+      "note": "net acidic or basic character after mixing acid and base"
+    },
+    {
+      "existingSkillId": "CHE_GASLAWS5",
+      "sourceItemIds": [
+        "ChemBook2__p98__q63__652",
+        "ChemBook2__p99__q71__660",
+        "ChemBook2__p105__q106__695"
+      ],
+      "note": "ideal gas law"
+    },
+    {
+      "existingSkillId": "CHE_GASLAWS39",
+      "sourceItemIds": [
+        "ChemBook2__p98__q63__652"
+      ],
+      "note": "number of molecules from PV = nRT and Avogadro number"
+    },
+    {
+      "existingSkillId": "CHE_GASLAWS30",
+      "sourceItemIds": [
+        "ChemBook2__p104__q102__691"
+      ],
+      "note": "molar mass of a gas from its density"
+    },
+    {
+      "existingSkillId": "CHEM_DESCRIPTIVE0",
+      "sourceItemIds": [
+        "ChemBook2__p101__q83__672",
+        "ChemBook2__p104__q98__687"
+      ],
+      "note": "predict and balance inorganic reaction products"
+    },
+    {
+      "existingSkillId": "CHEM_DESCRIPTIVE2",
+      "sourceItemIds": [
+        "ChemBook2__p102__q85__674"
+      ],
+      "note": "composition of a named alloy"
+    },
+    {
+      "existingSkillId": "CHE_STOICHIOMETRY24",
+      "sourceItemIds": [
+        "ChemBook2__p102__q87__676"
+      ],
+      "note": "composition of a mixture from residue after reaction"
+    },
+    {
+      "existingSkillId": "CHE_GASLAWS27",
+      "sourceItemIds": [
+        "ChemBook2__p101__q82__671"
+      ],
+      "note": "volume of air required for complete combustion"
+    },
+    {
+      "existingSkillId": "CHEM_REDOX31",
+      "sourceItemIds": [
+        "ChemBook2__p105__q109__698"
+      ],
+      "note": "displacement of a less reactive metal by a more reactive one"
+    },
+    {
+      "existingSkillId": "CHE_ELECTROCHEM2",
+      "sourceItemIds": [
+        "ChemBook2__p133__q19__914",
+        "ChemBook2__p134__q24__919"
+      ],
+      "note": "LEGACY id reused - Faraday laws to calculate mass deposited"
+    },
+    {
+      "existingSkillId": "CHE_ELECTROCHEM1",
+      "sourceItemIds": [
+        "ChemBook2__p134__q33__928"
+      ],
+      "note": "LEGACY id reused - rank reducing agents by standard electrode potential"
+    },
+    {
+      "existingSkillId": "CHE_ELECTROCHEM3",
+      "sourceItemIds": [
+        "ChemBook2__p133__q16__911",
+        "ChemBook2__p135__q39__934"
+      ],
+      "note": "LEGACY id reused - cell EMF from standard electrode potentials"
+    },
+    {
+      "existingSkillId": "CHEM_REDOX21",
+      "sourceItemIds": [
+        "ChemBook2__p135__q36__931"
+      ],
+      "note": "galvanizing protects iron from rusting"
+    }
+  ],
+  "prereqs": [
+    {
+      "fromTempId": "ChemBook2_b09_s2",
+      "toSkillId": "CHE_STOICHIOMETRY14",
+      "toDescription": "Use mole ratios from a balanced equation."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s4",
+      "toTempId": "ChemBook2_b09_s3",
+      "toDescription": "Define normality and convert it to molarity."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s5",
+      "toSkillId": "CHE_STOICHIOMETRY21",
+      "toDescription": "Calculate neutralization volumes and masses."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s6",
+      "toSkillId": "CHE_GASLAWS30",
+      "toDescription": "Determine the molar mass of a gas."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s8",
+      "toSkillId": "CHEM_REDOX34",
+      "toDescription": "Balance a redox equation by the ion-electron method."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s9",
+      "toSkillId": "CHEM_REDOX2",
+      "toDescription": "Determine oxidation numbers."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s10",
+      "toSkillId": "CHEM_REDOX34",
+      "toDescription": "Balance a redox equation by the ion-electron method."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s11",
+      "toSkillId": "CHE_STOICHIOMETRY14",
+      "toDescription": "Use mole ratios from a balanced equation."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s12",
+      "toSkillId": "CHE_STOICHIOMETRY28",
+      "toDescription": "Determine an empirical formula from composition."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s13",
+      "toSkillId": "CHE_STOICHIOMETRY14",
+      "toDescription": "Use mole ratios from a balanced equation."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s14",
+      "toSkillId": "CHE_STOICHIOMETRY20",
+      "toDescription": "Calculate the number of atoms or molecules in a stated mass."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s15",
+      "toSkillId": "CHE_STOICHIOMETRY22",
+      "toDescription": "Define parts per million."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s16",
+      "toSkillId": "CHE_STOICHIOMETRY17",
+      "toDescription": "Calculate molarity from mass, molar mass and volume."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s17",
+      "toSkillId": "CHE_STOICHIOMETRY0",
+      "toDescription": "Calculate mass from density and volume."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s18",
+      "toSkillId": "CHEM_SOLUTION17",
+      "toDescription": "Apply the dilution relation S1V1 = S2V2."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s20",
+      "toSkillId": "CHE_ELECTROCHEM2",
+      "toDescription": "Apply Faraday's laws of electrolysis."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s21",
+      "toTempId": "ChemBook2_b09_s22",
+      "toDescription": "Recall the faraday as the charge on one mole of electrons."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s20",
+      "toTempId": "ChemBook2_b09_s21",
+      "toDescription": "Define the electrochemical equivalent."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s23",
+      "toTempId": "ChemBook2_b09_s20",
+      "toDescription": "Apply Faraday's first law of electrolysis."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s24",
+      "toTempId": "ChemBook2_b09_s22",
+      "toDescription": "Recall the faraday as the charge on one mole of electrons."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s25",
+      "toSkillId": "CHE_ELECTROCHEM3",
+      "toDescription": "Calculate cell EMF from standard electrode potentials."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s26",
+      "toTempId": "ChemBook2_b09_s25",
+      "toDescription": "Apply the Nernst equation to a whole cell."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s27",
+      "toSkillId": "CHE_ELECTROCHEM1",
+      "toDescription": "Rank reducing agents using standard electrode potentials."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s27",
+      "toSkillId": "CHEM_REDOX31",
+      "toDescription": "Apply the reactivity series to a displacement reaction."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s28",
+      "toTempId": "ChemBook2_b09_s29",
+      "toDescription": "Distinguish an electrolytic from a galvanic cell."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s30",
+      "toTempId": "ChemBook2_b09_s29",
+      "toDescription": "Distinguish an electrolytic from a galvanic cell."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s31",
+      "toTempId": "ChemBook2_b09_s29",
+      "toDescription": "Distinguish an electrolytic from a galvanic cell."
+    },
+    {
+      "fromTempId": "ChemBook2_b09_s33",
+      "toSkillId": "CHEM_REDOX21",
+      "toDescription": "Recall that galvanizing protects iron from rusting."
+    }
+  ],
+  "legacyIdReuse": {
+    "ChemBook2_b09_s25": "CHEM_ELECTROCHEM1",
+    "ChemBook2_b09_s15": "CHE_STOICH3"
+  },
+  "newTopicsProposed": [],
+  "skippedItems": [],
+  "sourceIssues": [
+    {
+      "itemId": "ChemBook2__p106__q04__706",
+      "note": "The worked solution computes 16 g of NaOH (matching option b) but the answer key marks option (c) 12 g. The stoichiometry in the solution is correct; the key is not."
+    },
+    {
+      "itemId": "ChemBook2__p134__q27__922",
+      "note": "Answer key marks (e) None while the worked solution gives 74.069e-6 kg/C; every printed option has a positive exponent, so the options themselves are mis-typed."
+    },
+    {
+      "itemId": "ChemBook2__p104__q102__691",
+      "note": "Worked solution reports the molar mass of cyclopropane as 48.936 kg, a unit error for g/mol, and the density is printed as 1.75e3 kg/m3. The method (PM = dRT then divide by the empirical formula mass) is correct."
+    },
+    {
+      "itemId": "ChemBook2__p133__q20__915",
+      "note": "Worked solution substitutes 0.12 where the stated hydrogen-ion concentration is 0.4 M; the Nernst method extracted is unaffected."
+    }
+  ]
+}

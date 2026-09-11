@@ -28,7 +28,7 @@ Run from Ontology/full_corpus_rebuild/.
 """
 import json, re, collections, datetime
 
-CAND_FILES = ['ChemBook1_b05.json', 'ChemBook1_b06.json']
+CAND_FILES = ['ChemBook2_b09.json']
 
 # Previously-unresolved prereq mentions (from the b01-b04 batch) that this
 # batch's review resolved by hand. The fuzzy matcher scored these at 0.50-0.58,
@@ -228,7 +228,16 @@ json.dump({k: v for k, v in still_unresolved.items() if v},
           open('unresolved_prereqs.json', 'w', encoding='utf-8'),
           ensure_ascii=False, indent=2)
 if source_issues:
-    json.dump(source_issues, open('source_issues.json', 'w', encoding='utf-8'),
+    # accumulate across batches rather than overwriting the previous batch's list
+    try:
+        prior = json.load(open('source_issues.json', encoding='utf-8'))
+    except FileNotFoundError:
+        prior = []
+    seen_issues = {(i['itemId'], i['note'][:60]) for i in prior}
+    for it in source_issues:
+        if (it['itemId'], it['note'][:60]) not in seen_issues:
+            prior.append(it)
+    json.dump(prior, open('source_issues.json', 'w', encoding='utf-8'),
               ensure_ascii=False, indent=2)
 
 print(f'batch                     : {", ".join(CAND_FILES)}')

@@ -1,24 +1,24 @@
 source: tuples.json + prereqs.json
 config: ontology_config.json
-loaded 514 nodes, 199 edges, 26 topics
+loaded 843 nodes, 348 edges, 30 topics
 
 --- ontology report ---
-  skills                : 514
-  topics  raw           : 26
-          canonical     : 25  (1 codes merged by ontology_config.json)
+  skills                : 843
+  topics  raw           : 30
+          canonical     : 27  (3 codes merged by ontology_config.json)
   subjects              : Chemistry
-  edges   raw           : 199
-          reduced       : 196 (3 redundant dropped)
-  root skills           : 333
+  edges   raw           : 348
+          reduced       : 345 (3 redundant dropped)
+  root skills           : 519
   max DAG depth         : 4
-  components            : 319 (largest 18)
+  components            : 499 (largest 44)
 
-  catalog topics placed : 22
+  catalog topics placed : 24
   WARN 3 topics are not in any section (ingested but invisible):
     - CHEM_DESCRIPTIVE
     - CHEM_LAB
     - CHEM_NUCLEAR
-  WARN sections reference 44 unknown topics:
+  WARN sections reference 42 unknown topics:
     - math_algebra:MAT_ALGEBRA
     - math_algebra:MAT_EQTHEORY
     - math_algebra:MAT_MATRIX
@@ -31,7 +31,7 @@ loaded 514 nodes, 199 edges, 26 topics
     - math_calculus:MAT_CALC_DIFF
   WARN empty sections (disabled): math_algebra, math_trigonometry, math_coordinate_geometry, math_calculus, math_mechanics, phy_measurement_vectors, phy_mechanics, phy_properties_of_matter, phy_heat_thermodynamics, phy_waves_optics, phy_electricity_magnetism, phy_modern_physics
 
-  NOTE 514 skills carry fewer than 6 Bloom levels.
+  NOTE 843 skills carry fewer than 6 Bloom levels.
     The diagnostic tests one Bloom level ABOVE current mastery, so sparse
     Bloom coverage makes the nearby-Bloom fallback the normal path.
 

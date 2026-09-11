@@ -1,0 +1,27 @@
+6 candidate near-duplicate pairs (jaccard >= 0.45)
+new candidates: 101  rebuild: 710  legacy chem: 117
+
+[0.69] NEW-vs-REBUILD / CHE_STOICHIOMETRY
+  ChemBook2_b08_s79: Calculate the percentage by mass of a named element in a compound from its molecular formula and the relevant atomic masses.
+  CHE_STOICHIOMETRY5: Calculate the mass percentage of a given element (e.g. nitrogen in urea) in a compound from its molecular formula and the atomic masses involved.
+
+[0.55] NEW-vs-LEGACY / CHE_STOICHIOMETRY
+  ChemBook2_b08_s2: Calculate the volume of gas produced at STP by a reaction, from the mass of reactant consumed, the reaction stoichiometry and the molar gas volume.
+  CHE_STOICH2: Calculate gas volume at STP from mass using molar volume.
+
+[0.50] NEW-vs-REBUILD / CHE_STOICHIOMETRY
+  ChemBook2_b08_s25: Calculate the mass of solute present in a stated volume of a solution of known molarity, using w = S x M x V.
+  CHE_STOICHIOMETRY17: Calculate the molarity of a solution from the mass of solute dissolved, the solute's molar mass, and the volume of the resulting solution.
+
+[0.50] NEW-vs-REBUILD / CHE_ORGANIC
+  ChemBook2_b08_s78: Write the industrial route from calcium carbonate to ethyne, through calcination to quicklime, reduction with carbon to calcium carbide, and hydrolysis.
+  CHE_ORGANIC56: Write the complete industrial route from limestone to PVC: calcination to quicklime, reduction with carbon to calcium carbide, hydrolysis to ethyne, addition of HCl to vinyl chloride, then polymerisation.
+
+[0.50] NEW-vs-REBUILD / CHE_ORGANIC
+  ChemBook2_b08_s53: Write the high-pressure amination of phenol with ammonia over zinc chloride to give aniline.
+  CHE_ORGANIC90: Write the high-temperature, high-pressure amination of chlorobenzene with ammonia over a copper(I) oxide catalyst to give aniline.
+
+[0.50] NEW-vs-REBUILD / CHE_ACIDBASE
+  ChemBook2_b08_s4: Calculate the resulting pH of a mixture of several acid and base solutions by summing their signed equivalents (normality times volume) and dividing by the total volume.
+  CHE_ACIDBASE19: Calculate the net normality of a mixture of several acid and base solutions by summing signed normality-volume products, to determine whether the resulting mixture is acidic or basic.
+

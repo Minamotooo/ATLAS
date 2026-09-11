@@ -1,0 +1,846 @@
+{
+  "reusedExistingSkills": [
+    {
+      "existingSkillId": "CHE_ORGANIC12",
+      "sourceItemIds": [
+        "ChemBook2__p62__q215__337",
+        "ChemBook2__p69__q65__405",
+        "ChemBook2__p72__q100__440",
+        "ChemBook2__p83__q206__546",
+        "ChemBook2__p76__q146__486"
+      ],
+      "note": "electrophilic aromatic substitution products"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC13",
+      "sourceItemIds": [
+        "ChemBook2__p65__q23__363",
+        "ChemBook2__p73__q103__443",
+        "ChemBook2__p74__q124__464",
+        "ChemBook2__p81__q182__522",
+        "ChemBook2__p62__q215__337"
+      ],
+      "note": "Friedel-Crafts alkylation and acylation"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC33",
+      "sourceItemIds": [
+        "ChemBook2__p64__q17__357",
+        "ChemBook2__p73__q104__444",
+        "ChemBook2__p85__q233__573",
+        "ChemBook2__p79__q162__502"
+      ],
+      "note": "Lucas test for alcohol classes"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC22",
+      "sourceItemIds": [
+        "ChemBook2__p67__q53__393",
+        "ChemBook2__p82__q195__535"
+      ],
+      "note": "Clemmensen reduction"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC27",
+      "sourceItemIds": [
+        "ChemBook2__p64__q19__359",
+        "ChemBook2__p67__q52__392",
+        "ChemBook2__p69__q67__407",
+        "ChemBook2__p71__q88__428",
+        "ChemBook2__p60__q204__324"
+      ],
+      "note": "Hofmann degradation of an amide"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC29",
+      "sourceItemIds": [
+        "ChemBook2__p62__q216__338",
+        "ChemBook2__p73__q109__449"
+      ],
+      "note": "Sandmeyer replacement of a diazonium group"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC28",
+      "sourceItemIds": [
+        "ChemBook2__p62__q216__338",
+        "ChemBook2__p65__q25__365",
+        "ChemBook2__p68__q54__394",
+        "ChemBook2__p85__q226__566"
+      ],
+      "note": "diazotization of a primary aromatic amine"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC43",
+      "sourceItemIds": [
+        "ChemBook2__p85__q229__569"
+      ],
+      "note": "Cannizzaro reaction"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC42",
+      "sourceItemIds": [
+        "ChemBook2__p63__q10__350",
+        "ChemBook2__p64__q15__355",
+        "ChemBook2__p84__q217__557"
+      ],
+      "note": "aldol condensation"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC44",
+      "sourceItemIds": [
+        "ChemBook2__p59__q200__320",
+        "ChemBook2__p66__q33__373",
+        "ChemBook2__p68__q56__396",
+        "ChemBook2__p76__q145__485",
+        "ChemBook2__p86__q237__577"
+      ],
+      "note": "Grignard reagent preparation and reaction"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC23",
+      "sourceItemIds": [
+        "ChemBook2__p83__q203__543",
+        "ChemBook2__p85__q232__572"
+      ],
+      "note": "Reimer-Tiemann reaction"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC24",
+      "sourceItemIds": [
+        "ChemBook2__p62__q217__339",
+        "ChemBook2__p70__q78__418"
+      ],
+      "note": "Kolbe reaction giving salicylic acid"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC38",
+      "sourceItemIds": [
+        "ChemBook2__p65__q28__368",
+        "ChemBook2__p66__q39__379"
+      ],
+      "note": "Markovnikov addition to an unsymmetrical alkene"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC39",
+      "sourceItemIds": [
+        "ChemBook2__p63__q07__347",
+        "ChemBook2__p67__q50__390",
+        "ChemBook2__p66__q32__372",
+        "ChemBook2__p86__q243__583"
+      ],
+      "note": "ozonolysis products"
+    },
+    {
+      "existingSkillId": "CHEM_STEREO2",
+      "sourceItemIds": [
+        "ChemBook2__p74__q120__460",
+        "ChemBook2__p81__q183__523",
+        "ChemBook2__p83__q210__550"
+      ],
+      "note": "geometric cis-trans isomerism conditions"
+    },
+    {
+      "existingSkillId": "CHEM_STEREO3",
+      "sourceItemIds": [
+        "ChemBook2__p61__q208__328",
+        "ChemBook2__p65__q22__362",
+        "ChemBook2__p82__q192__532",
+        "ChemBook2__p73__q106__446"
+      ],
+      "note": "optical isomerism and chiral carbon"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC20",
+      "sourceItemIds": [
+        "ChemBook2__p63__q05__345",
+        "ChemBook2__p66__q38__378",
+        "ChemBook2__p70__q75__415",
+        "ChemBook2__p68__q58__398",
+        "ChemBook2__p78__q157__497",
+        "ChemBook2__p86__q246__586",
+        "ChemBook2__p61__q207__327"
+      ],
+      "note": "structural isomers of a given molecular formula"
+    },
+    {
+      "existingSkillId": "CHEM_NOM8",
+      "sourceItemIds": [
+        "ChemBook2__p60__q202__322",
+        "ChemBook2__p62__q218__340",
+        "ChemBook2__p64__q18__358",
+        "ChemBook2__p67__q44__384",
+        "ChemBook2__p68__q63__403",
+        "ChemBook2__p72__q101__441",
+        "ChemBook2__p72__q96__436"
+      ],
+      "note": "IUPAC naming and structure writing"
+    },
+    {
+      "existingSkillId": "CHEM_NOM9",
+      "sourceItemIds": [
+        "ChemBook2__p72__q95__435",
+        "ChemBook2__p78__q160__500",
+        "ChemBook2__p81__q181__521",
+        "ChemBook2__p82__q198__538",
+        "ChemBook2__p78__q156__496",
+        "ChemBook2__p82__q201__541",
+        "ChemBook2__p86__q245__585",
+        "ChemBook2__p70__q74__414"
+      ],
+      "note": "trivial or commercial name to structure"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC53",
+      "sourceItemIds": [
+        "ChemBook2__p65__q24__364",
+        "ChemBook2__p84__q219__559",
+        "ChemBook2__p73__q107__447"
+      ],
+      "note": "addition polymerisation of a named polymer"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC54",
+      "sourceItemIds": [
+        "ChemBook2__p69__q66__406",
+        "ChemBook2__p76__q138__478",
+        "ChemBook2__p79__q170__510",
+        "ChemBook2__p70__q79__419"
+      ],
+      "note": "monomers of a named condensation polymer"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC55",
+      "sourceItemIds": [
+        "ChemBook2__p70__q82__422",
+        "ChemBook2__p66__q35__375"
+      ],
+      "note": "polymer and monomer definitions"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC102",
+      "sourceItemIds": [
+        "ChemBook2__p70__q80__420",
+        "ChemBook2__p80__q178__518",
+        "ChemBook2__p64__q13__353",
+        "ChemBook2__p63__q02__342"
+      ],
+      "note": "hydrolysis of a nitrile to a carboxylic acid"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC74",
+      "sourceItemIds": [
+        "ChemBook2__p63__q12__352",
+        "ChemBook2__p70__q83__423",
+        "ChemBook2__p65__q21__361"
+      ],
+      "note": "classify a reagent as electrophile or nucleophile"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC16",
+      "sourceItemIds": [
+        "ChemBook2__p71__q87__427",
+        "ChemBook2__p73__q110__450",
+        "ChemBook2__p85__q231__571",
+        "ChemBook2__p67__q45__385"
+      ],
+      "note": "Tollens reagent composition and aldehyde test"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC17",
+      "sourceItemIds": [
+        "ChemBook2__p78__q158__498",
+        "ChemBook2__p72__q99__439"
+      ],
+      "note": "Fehling solution composition and use"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC35",
+      "sourceItemIds": [
+        "ChemBook2__p80__q179__519",
+        "ChemBook2__p89__q13__599",
+        "ChemBook2__p74__q119__459"
+      ],
+      "note": "oxidation products of alcohol classes"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC78",
+      "sourceItemIds": [
+        "ChemBook2__p68__q60__400"
+      ],
+      "note": "Wurtz reaction"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC73",
+      "sourceItemIds": [
+        "ChemBook2__p74__q126__466",
+        "ChemBook2__p80__q172__512",
+        "ChemBook2__p80__q176__516",
+        "ChemBook2__p64__q14__354"
+      ],
+      "note": "decarboxylation with soda lime"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC37",
+      "sourceItemIds": [
+        "ChemBook2__p64__q14__354",
+        "ChemBook2__p70__q71__411",
+        "ChemBook2__p86__q234__574"
+      ],
+      "note": "acid-catalysed dehydration of an alcohol"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC50",
+      "sourceItemIds": [
+        "ChemBook2__p71__q85__425",
+        "ChemBook2__p81__q188__528"
+      ],
+      "note": "saponification"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC52",
+      "sourceItemIds": [
+        "ChemBook2__p86__q240__580",
+        "ChemBook2__p71__q89__429"
+      ],
+      "note": "octane number interpretation"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC61",
+      "sourceItemIds": [
+        "ChemBook2__p66__q37__377",
+        "ChemBook2__p78__q159__499",
+        "ChemBook2__p82__q199__539",
+        "ChemBook2__p71__q87__427"
+      ],
+      "note": "formalin definition and stabilization with alcohol"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC63",
+      "sourceItemIds": [
+        "ChemBook2__p64__q14__354"
+      ],
+      "note": "Williamson ether synthesis"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC71",
+      "sourceItemIds": [
+        "ChemBook2__p74__q125__465",
+        "ChemBook2__p80__q172__512",
+        "ChemBook2__p65__q25__365",
+        "ChemBook2__p24__q17__147"
+      ],
+      "note": "multi-step aromatic interconversions"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC72",
+      "sourceItemIds": [
+        "ChemBook2__p59__q200__320",
+        "ChemBook2__p63__q02__342",
+        "ChemBook2__p60__q204__324"
+      ],
+      "note": "multi-step aliphatic interconversions"
+    },
+    {
+      "existingSkillId": "CHEM_NOM10",
+      "sourceItemIds": [
+        "ChemBook2__p60__q201__321",
+        "ChemBook2__p73__q113__453",
+        "ChemBook2__p81__q190__530",
+        "ChemBook2__p82__q193__533",
+        "ChemBook2__p85__q225__565"
+      ],
+      "note": "functional group formulas of homologous series"
+    },
+    {
+      "existingSkillId": "CHE_BIOMOLECULE13",
+      "sourceItemIds": [
+        "ChemBook2__p61__q210__332",
+        "ChemBook2__p76__q141__481"
+      ],
+      "note": "general properties of amino acids"
+    },
+    {
+      "existingSkillId": "CHE_BIOMOLECULE14",
+      "sourceItemIds": [
+        "ChemBook2__p62__q214__336",
+        "ChemBook2__p77__q153__493"
+      ],
+      "note": "ninhydrin test for amino acids and proteins"
+    },
+    {
+      "existingSkillId": "CHE_BIOMOLECULE12",
+      "sourceItemIds": [
+        "ChemBook2__p61__q210__332",
+        "ChemBook2__p76__q140__480",
+        "ChemBook2__p76__q142__482",
+        "ChemBook2__p83__q212__552"
+      ],
+      "note": "DNA versus RNA composition and function"
+    },
+    {
+      "existingSkillId": "CHE_BIOMOLECULE11",
+      "sourceItemIds": [
+        "ChemBook2__p70__q82__422"
+      ],
+      "note": "biopolymer classification"
+    },
+    {
+      "existingSkillId": "CHE_BIOMOLECULE16",
+      "sourceItemIds": [
+        "ChemBook2__p70__q84__424",
+        "ChemBook2__p73__q114__454"
+      ],
+      "note": "starch and cellulose as glucose polymers"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC47",
+      "sourceItemIds": [
+        "ChemBook2__p66__q40__380",
+        "ChemBook2__p74__q119__459",
+        "ChemBook2__p82__q191__531"
+      ],
+      "note": "esterification of a carboxylic acid with an alcohol"
+    },
+    {
+      "existingSkillId": "CHEM_STEREO5",
+      "sourceItemIds": [
+        "ChemBook2__p71__q92__432"
+      ],
+      "note": "meso compounds and cis-trans examples"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC91",
+      "sourceItemIds": [
+        "ChemBook2__p65__q25__365",
+        "ChemBook2__p70__q72__412"
+      ],
+      "note": "reduction of a nitro compound to an amine"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC86",
+      "sourceItemIds": [
+        "ChemBook2__p71__q91__431"
+      ],
+      "note": "partial hydrogenation of an alkyne to an alkene"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC67",
+      "sourceItemIds": [
+        "ChemBook2__p85__q224__564"
+      ],
+      "note": "ester responsible for a fruit aroma"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC51",
+      "sourceItemIds": [
+        "ChemBook2__p60__q203__323"
+      ],
+      "note": "detergent chemical identity"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC60",
+      "sourceItemIds": [
+        "ChemBook2__p81__q180__520",
+        "ChemBook2__p75__q134__474"
+      ],
+      "note": "industrial synthesis of methanol and its catalyst"
+    },
+    {
+      "existingSkillId": "CHE_ORGANIC58",
+      "sourceItemIds": [
+        "ChemBook2__p73__q112__452"
+      ],
+      "note": "fermentation enzymes converting glucose to ethanol"
+    },
+    {
+      "existingSkillId": "CHE_STOICHIOMETRY12",
+      "sourceItemIds": [
+        "ChemBook2__p93__q29__618",
+        "ChemBook2__p90__q19__608"
+      ],
+      "note": "moles from mass and molar mass"
+    },
+    {
+      "existingSkillId": "CHE_STOICHIOMETRY11",
+      "sourceItemIds": [
+        "ChemBook2__p89__q11__597",
+        "ChemBook2__p95__q44__633"
+      ],
+      "note": "moles of acid and base from concentration and volume"
+    },
+    {
+      "existingSkillId": "CHE_STOICHIOMETRY14",
+      "sourceItemIds": [
+        "ChemBook2__p87__q03__589",
+        "ChemBook2__p94__q36__625",
+        "ChemBook2__p90__q16__605"
+      ],
+      "note": "mole ratio from a balanced equation"
+    },
+    {
+      "existingSkillId": "CHE_ACIDBASE19",
+      "sourceItemIds": [
+        "ChemBook2__p88__q05__591",
+        "ChemBook2__p95__q44__633"
+      ],
+      "note": "net normality of a mixture of acids and bases"
+    },
+    {
+      "existingSkillId": "CHEM_REDOX2",
+      "sourceItemIds": [
+        "ChemBook2__p90__q15__602",
+        "ChemBook2__p95__q42__631"
+      ],
+      "note": "oxidation number of an element in a compound or ion"
+    },
+    {
+      "existingSkillId": "CHEM_DESCRIPTIVE0",
+      "sourceItemIds": [
+        "ChemBook2__p87__q04__590",
+        "ChemBook2__p89__q13__599",
+        "ChemBook2__p90__q17__606",
+        "ChemBook2__p92__q26__615",
+        "ChemBook2__p94__q34__623",
+        "ChemBook2__p91__q25__614"
+      ],
+      "note": "predict and balance inorganic reaction products"
+    },
+    {
+      "existingSkillId": "CHE_GASLAWS5",
+      "sourceItemIds": [
+        "ChemBook2__p90__q18__607",
+        "ChemBook2__p95__q45__634"
+      ],
+      "note": "ideal gas law"
+    },
+    {
+      "existingSkillId": "CHEM_DESCRIPTIVE1",
+      "sourceItemIds": [
+        "ChemBook2__p96__q49__638"
+      ],
+      "note": "blue vitriol water of crystallisation - trivial name to formula recall"
+    },
+    {
+      "existingSkillId": "CHEM_ENV",
+      "sourceItemIds": [],
+      "note": "PLACEHOLDER-REMOVE"
+    }
+  ],
+  "prereqs": [
+    {
+      "fromTempId": "b08_s1",
+      "toSkillId": "CHE_STOICHIOMETRY12",
+      "toDescription": "Calculate moles from mass and molar mass."
+    },
+    {
+      "fromTempId": "b08_s2",
+      "toSkillId": "CHE_STOICHIOMETRY14",
+      "toDescription": "Use mole ratios from a balanced equation."
+    },
+    {
+      "fromTempId": "b08_s3",
+      "toSkillId": "CHE_STOICHIOMETRY11",
+      "toDescription": "Calculate moles of acid and base from concentration and volume."
+    },
+    {
+      "fromTempId": "b08_s4",
+      "toSkillId": "CHE_ACIDBASE19",
+      "toDescription": "Calculate the net normality of a mixture of acids and bases."
+    },
+    {
+      "fromTempId": "b08_s4",
+      "toSkillId": "CHE_ACIDBASE23",
+      "toDescription": "Calculate pH from hydrogen-ion concentration."
+    },
+    {
+      "fromTempId": "b08_s7",
+      "toTempId": "b08_s6",
+      "toDescription": "Apply the Beer-Lambert law."
+    },
+    {
+      "fromTempId": "b08_s9",
+      "toSkillId": "CHE_STOICHIOMETRY11",
+      "toDescription": "Calculate moles of acid and base from concentration and volume."
+    },
+    {
+      "fromTempId": "b08_s11",
+      "toTempId": "b08_s12",
+      "toDescription": "Define molality."
+    },
+    {
+      "fromTempId": "b08_s13",
+      "toSkillId": "CHEM_REDOX2",
+      "toDescription": "Determine oxidation numbers."
+    },
+    {
+      "fromTempId": "b08_s14",
+      "toTempId": "b08_s13",
+      "toDescription": "Balance a redox equation by the ion-electron method."
+    },
+    {
+      "fromTempId": "b08_s16",
+      "toSkillId": "CHE_STOICHIOMETRY14",
+      "toDescription": "Use mole ratios from a balanced equation."
+    },
+    {
+      "fromTempId": "b08_s17",
+      "toSkillId": "CHE_STOICHIOMETRY14",
+      "toDescription": "Use mole ratios from a balanced equation."
+    },
+    {
+      "fromTempId": "b08_s19",
+      "toTempId": "b08_s13",
+      "toDescription": "Balance a redox equation by the ion-electron method."
+    },
+    {
+      "fromTempId": "b08_s20",
+      "toTempId": "b08_s9",
+      "toDescription": "Determine an unknown concentration from a titration."
+    },
+    {
+      "fromTempId": "b08_s23",
+      "toTempId": "b08_s22",
+      "toDescription": "Determine an empirical formula from combustion analysis."
+    },
+    {
+      "fromTempId": "b08_s22",
+      "toTempId": "b08_s24",
+      "toDescription": "Determine an empirical formula from percentage composition."
+    },
+    {
+      "fromTempId": "b08_s24",
+      "toSkillId": "CHE_STOICHIOMETRY12",
+      "toDescription": "Calculate moles from mass and molar mass."
+    },
+    {
+      "fromTempId": "b08_s25",
+      "toSkillId": "CHE_STOICHIOMETRY12",
+      "toDescription": "Calculate moles from mass and molar mass."
+    },
+    {
+      "fromTempId": "b08_s26",
+      "toSkillId": "CHE_GASLAWS5",
+      "toDescription": "Apply the ideal gas law."
+    },
+    {
+      "fromTempId": "b08_s28",
+      "toSkillId": "CHE_ORGANIC28",
+      "toDescription": "Write the diazotization of a primary aromatic amine."
+    },
+    {
+      "fromTempId": "b08_s29",
+      "toTempId": "b08_s30",
+      "toDescription": "Classify a ring substituent as activating or deactivating."
+    },
+    {
+      "fromTempId": "b08_s31",
+      "toSkillId": "CHE_ORGANIC74",
+      "toDescription": "Classify a reagent as an electrophile or a nucleophile."
+    },
+    {
+      "fromTempId": "b08_s32",
+      "toTempId": "b08_s31",
+      "toDescription": "Rank carbocations by stability."
+    },
+    {
+      "fromTempId": "b08_s33",
+      "toSkillId": "CHE_ORGANIC38",
+      "toDescription": "Apply Markovnikov's rule."
+    },
+    {
+      "fromTempId": "b08_s34",
+      "toSkillId": "CHE_ORGANIC39",
+      "toDescription": "Predict the products of ozonolysis."
+    },
+    {
+      "fromTempId": "b08_s35",
+      "toSkillId": "CHE_BONDING39",
+      "toDescription": "Determine the hybridization of a carbon atom."
+    },
+    {
+      "fromTempId": "b08_s36",
+      "toSkillId": "CHE_BONDING36",
+      "toDescription": "Count sigma and pi bonds formed by a hybridized carbon."
+    },
+    {
+      "fromTempId": "b08_s41",
+      "toSkillId": "CHE_BONDING43",
+      "toDescription": "Compare intermolecular forces by strength."
+    },
+    {
+      "fromTempId": "b08_s42",
+      "toSkillId": "CHE_BONDING30",
+      "toDescription": "Determine whether a compound can hydrogen bond."
+    },
+    {
+      "fromTempId": "b08_s43",
+      "toSkillId": "CHE_ORGANIC33",
+      "toDescription": "Apply the Lucas test."
+    },
+    {
+      "fromTempId": "b08_s44",
+      "toSkillId": "CHE_ORGANIC47",
+      "toDescription": "Write an esterification or acyl substitution."
+    },
+    {
+      "fromTempId": "b08_s47",
+      "toSkillId": "CHE_ORGANIC42",
+      "toDescription": "Write a carbonyl condensation reaction."
+    },
+    {
+      "fromTempId": "b08_s49",
+      "toSkillId": "CHE_ORGANIC37",
+      "toDescription": "Write the acid-catalysed dehydration of an alcohol."
+    },
+    {
+      "fromTempId": "b08_s52",
+      "toSkillId": "CHE_ORGANIC28",
+      "toDescription": "Write the diazotization of a primary aromatic amine."
+    },
+    {
+      "fromTempId": "b08_s54",
+      "toSkillId": "CHE_ORGANIC35",
+      "toDescription": "Predict the oxidation product of an alcohol or side chain."
+    },
+    {
+      "fromTempId": "b08_s55",
+      "toTempId": "b08_s30",
+      "toDescription": "Classify a ring substituent as activating or deactivating."
+    },
+    {
+      "fromTempId": "b08_s64",
+      "toSkillId": "CHE_ORGANIC87",
+      "toDescription": "Write the addition of bromine to an alkene."
+    },
+    {
+      "fromTempId": "b08_s65",
+      "toSkillId": "CHE_BIOMOLECULE13",
+      "toDescription": "Recall the general properties of amino acids."
+    },
+    {
+      "fromTempId": "b08_s66",
+      "toSkillId": "CHE_BIOMOLECULE12",
+      "toDescription": "Recall the composition of DNA and RNA."
+    },
+    {
+      "fromTempId": "b08_s69",
+      "toSkillId": "CHE_BIOMOLECULE16",
+      "toDescription": "Recall starch and cellulose as glucose polymers."
+    },
+    {
+      "fromTempId": "b08_s70",
+      "toSkillId": "CHE_BIOMOLECULE7",
+      "toDescription": "Recall the open-chain structure of glucose."
+    },
+    {
+      "fromTempId": "b08_s71",
+      "toSkillId": "CHE_ORGANIC45",
+      "toDescription": "Write the addition of hydrogen cyanide to an aldehyde."
+    },
+    {
+      "fromTempId": "b08_s78",
+      "toSkillId": "CHE_ORGANIC56",
+      "toDescription": "Write the industrial route from limestone through calcium carbide."
+    },
+    {
+      "fromTempId": "b08_s79",
+      "toSkillId": "CHE_STOICHIOMETRY5",
+      "toDescription": "Calculate the mass percentage of an element in a compound."
+    },
+    {
+      "fromTempId": "b08_s81",
+      "toTempId": "b08_s91",
+      "toDescription": "Recognize compounds possessing an alpha-hydrogen."
+    },
+    {
+      "fromTempId": "b08_s82",
+      "toTempId": "b08_s30",
+      "toDescription": "Classify a ring substituent as activating or deactivating."
+    },
+    {
+      "fromTempId": "b08_s84",
+      "toSkillId": "CHE_BONDING45",
+      "toDescription": "Classify a bond by electronegativity difference."
+    },
+    {
+      "fromTempId": "b08_s86",
+      "toSkillId": "CHE_ORGANIC55",
+      "toDescription": "Define a polymer and a monomer."
+    },
+    {
+      "fromTempId": "b08_s90",
+      "toSkillId": "CHE_ORGANIC37",
+      "toDescription": "Write an elimination giving an alkene."
+    },
+    {
+      "fromTempId": "b08_s91",
+      "toSkillId": "CHE_ORGANIC42",
+      "toDescription": "Write the aldol condensation."
+    },
+    {
+      "fromTempId": "b08_s92",
+      "toSkillId": "CHE_ORGANIC44",
+      "toDescription": "Write the Grignard reaction with a carbonyl compound."
+    },
+    {
+      "fromTempId": "b08_s93",
+      "toSkillId": "CHE_ORGANIC34",
+      "toDescription": "Classify an alcohol as primary, secondary or tertiary."
+    },
+    {
+      "fromTempId": "b08_s94",
+      "toSkillId": "CHE_ORGANIC33",
+      "toDescription": "Apply the Lucas test."
+    },
+    {
+      "fromTempId": "b08_s95",
+      "toSkillId": "CHE_ORGANIC16",
+      "toDescription": "Recall the Tollens reagent test for aldehydes."
+    },
+    {
+      "fromTempId": "b08_s96",
+      "toSkillId": "CHE_ORGANIC17",
+      "toDescription": "Recall the Fehling solution test."
+    },
+    {
+      "fromTempId": "b08_s99",
+      "toSkillId": "CHEM_NOM10",
+      "toDescription": "Recall the functional group of a homologous series."
+    },
+    {
+      "fromTempId": "b08_s100",
+      "toSkillId": "CHEM_NOM10",
+      "toDescription": "Recall the functional group of a homologous series."
+    },
+    {
+      "fromTempId": "b08_s101",
+      "toSkillId": "CHE_ORGANIC72",
+      "toDescription": "Write multi-step aliphatic interconversions."
+    }
+  ],
+  "legacyIdReuse": {},
+  "newTopicsProposed": [],
+  "skippedItems": [],
+  "sourceIssues": [
+    {
+      "itemId": "ChemBook2__p65__q23__363",
+      "note": "Answer key marks (c) toluene for the Friedel-Crafts acylation of benzene with acetyl chloride; the correct product is acetophenone, option (b). The skill states the correct chemistry."
+    },
+    {
+      "itemId": "ChemBook2__p86__q242__582",
+      "note": "Answer key marks (a) ozone-layer holes as the consequence of burning more carbon fuel; the chemically correct answer is (d), a rise in global temperature. Extraction follows the correct chemistry."
+    },
+    {
+      "itemId": "ChemBook2__p69__q64__404",
+      "note": "The source reasons that nitric acid is a base because it donates OH-; the correct Bronsted reasoning is that it accepts a proton from sulfuric acid. The conclusion (base) is right, the stated reason is not; the skill records the correct mechanism."
+    },
+    {
+      "itemId": "ChemBook2__p91__q21__610",
+      "note": "Worked solution subtracts 10 mg of impurity from 10 g but then writes 0.555 mol, which corresponds to the full 9.99 g; minor internal inconsistency, method unaffected."
+    },
+    {
+      "itemId": "ChemBook2__p94__q35__624",
+      "note": "Question asks about zinc powder but the worked solution uses ZnO and its molar mass. The stoichiometric method extracted is unaffected."
+    }
+  ]
+}

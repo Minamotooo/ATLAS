@@ -1355,5 +1355,1036 @@
       "full": "Draw the Lewis (electron-dot) structure of a given simple covalent molecule (e.g., carbonyl chloride, COCl2), showing bonding pairs and lone pairs consistent with the octet rule.",
       "depth": 0
     }
+  ],
+  "CHEM_ANALYTICAL8": [
+    {
+      "id": "CHEM_ENV18",
+      "full": "Explain why the chemical oxygen demand of a water sample exceeds its biochemical oxygen demand, since BOD measures only the oxygen needed to oxidize biodegradable organic matter whereas COD measures that needed to oxidize all oxidizable organic and inorganic matter.",
+      "depth": 0
+    },
+    {
+      "id": "CHE_STOICHIOMETRY11",
+      "full": "Calculate the moles of acid and base present in a neutralization reaction from concentration and volume (n = C x V).",
+      "depth": 0
+    }
+  ],
+  "CHEM_ANALYTICAL7": [
+    {
+      "id": "CHEM_REDOX2",
+      "full": "Determine the oxidation number of an element in a compound or polyatomic ion by solving for the unknown so that the algebraic sum of oxidation numbers equals the species' overall charge.",
+      "depth": 0
+    }
+  ],
+  "CHEM_ENV23": [
+    {
+      "id": "CHEM_ENV22",
+      "full": "Define CFCs as the chloro-fluoro derivatives of methane and ethane, and write the structural formula of a named Freon (e.g., Freon-11, Freon-12, Freon-114) using the CFC numbering rule.",
+      "depth": 0
+    }
+  ],
+  "CHEM_ENV24": [
+    {
+      "id": "CHEM_ENV22",
+      "full": "Define CFCs as the chloro-fluoro derivatives of methane and ethane, and write the structural formula of a named Freon (e.g., Freon-11, Freon-12, Freon-114) using the CFC numbering rule.",
+      "depth": 0
+    }
+  ],
+  "CHEM_ENV16": [
+    {
+      "id": "CHEM_ENV15",
+      "full": "Recall the principal greenhouse gases (carbon dioxide, methane, CFCs, ozone, nitrous oxide), their approximate percentage contribution to the atmospheric greenhouse effect, and their relative global-warming potentials.",
+      "depth": 0
+    }
+  ],
+  "CHEM_ANALYTICAL9": [
+    {
+      "id": "CHE_STOICHIOMETRY11",
+      "full": "Calculate the moles of acid and base present in a neutralization reaction from concentration and volume (n = C x V).",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS6": [
+    {
+      "id": "CHEM_GAS1",
+      "full": "Apply Gay-Lussac's law to relate pressure and absolute temperature at constant volume.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS9": [
+    {
+      "id": "CHE_GASLAWS34",
+      "full": "Recall the fundamental equation of the kinetic theory of gases, PV = (1/3)mnc^2, and recognize which relations are derived from it.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS8": [
+    {
+      "id": "CHE_GASLAWS9",
+      "full": "Derive from the kinetic-theory relation PV = (1/3)mnc^2 that the root-mean-square velocity of a gas is proportional to the square root of the absolute temperature and inversely proportional to the square root of its molar mass.",
+      "depth": 0
+    }
+  ],
+  "CHEM_GASLAW4": [
+    {
+      "id": "CHE_GASLAWS8",
+      "full": "Calculate the root-mean-square velocity of gas molecules from the absolute temperature and molar mass using C = square root of (3RT/M).",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS10": [
+    {
+      "id": "CHE_GASLAWS8",
+      "full": "Calculate the root-mean-square velocity of gas molecules from the absolute temperature and molar mass using C = square root of (3RT/M).",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS14": [
+    {
+      "id": "CHE_GASLAWS13",
+      "full": "State Dalton's law of partial pressures: the total pressure of a mixture of non-reacting gases at constant temperature equals the sum of the partial pressures its components would each exert alone.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS16": [
+    {
+      "id": "CHE_GASLAWS15",
+      "full": "Apply the combined gas law, P1V1/T1 = P2V2/T2, to calculate an unknown pressure, volume or temperature of a fixed mass of gas.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS15": [
+    {
+      "id": "CHE_GASLAWS17",
+      "full": "Apply Boyle's law (P1V1 = P2V2, or V proportional to 1/P) at constant temperature to calculate an unknown pressure or volume of a gas.",
+      "depth": 0
+    },
+    {
+      "id": "CHE_GASLAWS18",
+      "full": "Apply Charles's law (V1/T1 = V2/T2) at constant pressure to calculate an unknown volume or temperature of a gas.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS20": [
+    {
+      "id": "CHE_GASLAWS19",
+      "full": "State Graham's law of diffusion: at constant temperature and pressure the rate of diffusion or effusion of a gas is inversely proportional to the square root of its density.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS21": [
+    {
+      "id": "CHEM_SOLUTION8",
+      "full": "Calculate the mole fractions of the solute and the solvent in a solution from its percentage composition by mass and the molar masses of the two components.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS23": [
+    {
+      "id": "CHE_GASLAWS22",
+      "full": "Recall the van der Waals equation for n moles of a real gas, (P + n^2a/V^2)(V - nb) = nRT, and state that the constant a corrects for intermolecular attraction while b corrects for the finite volume of the molecules.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS24": [
+    {
+      "id": "CHE_GASLAWS22",
+      "full": "Recall the van der Waals equation for n moles of a real gas, (P + n^2a/V^2)(V - nb) = nRT, and state that the constant a corrects for intermolecular attraction while b corrects for the finite volume of the molecules.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS25": [
+    {
+      "id": "CHE_GASLAWS5",
+      "full": "Apply the ideal gas law (PV = nRT) to calculate an unknown quantity (pressure, volume, moles, or temperature), given the other variables.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS27": [
+    {
+      "id": "CHE_GASLAWS5",
+      "full": "Apply the ideal gas law (PV = nRT) to calculate an unknown quantity (pressure, volume, moles, or temperature), given the other variables.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS29": [
+    {
+      "id": "CHE_GASLAWS5",
+      "full": "Apply the ideal gas law (PV = nRT) to calculate an unknown quantity (pressure, volume, moles, or temperature), given the other variables.",
+      "depth": 0
+    }
+  ],
+  "CHEM_GASLAW2": [
+    {
+      "id": "CHE_GASLAWS5",
+      "full": "Apply the ideal gas law (PV = nRT) to calculate an unknown quantity (pressure, volume, moles, or temperature), given the other variables.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS30": [
+    {
+      "id": "CHE_GASLAWS5",
+      "full": "Apply the ideal gas law (PV = nRT) to calculate an unknown quantity (pressure, volume, moles, or temperature), given the other variables.",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY18": [
+    {
+      "id": "CHE_STOICHIOMETRY12",
+      "full": "Calculate the number of moles of a substance from a given mass and its molar mass.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS31": [
+    {
+      "id": "CHE_GASLAWS32",
+      "full": "Recall the number of degrees of freedom possessed by a monatomic, diatomic, linear polyatomic and non-linear polyatomic gas molecule.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS39": [
+    {
+      "id": "CHE_GASLAWS38",
+      "full": "Recall Avogadro's law, that equal volumes of all gases at the same temperature and pressure contain equal numbers of molecules, so that all gases share the same molar volume at STP.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS11": [
+    {
+      "id": "CHE_STOICHIOMETRY14",
+      "full": "Use the mole ratio from a balanced chemical equation to calculate the amount of one reactant required to completely react with a given amount of another reactant.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS12": [
+    {
+      "id": "CHE_STOICHIOMETRY14",
+      "full": "Use the mole ratio from a balanced chemical equation to calculate the amount of one reactant required to completely react with a given amount of another reactant.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS41": [
+    {
+      "id": "CHE_GASLAWS5",
+      "full": "Apply the ideal gas law (PV = nRT) to calculate an unknown quantity (pressure, volume, moles, or temperature), given the other variables.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS42": [
+    {
+      "id": "CHEM_GASLAW2",
+      "full": "Apply PV = (m/M)RT to a gas sample to calculate any one of its mass, molar mass, pressure, volume or temperature from the others.",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE59": [
+    {
+      "id": "CHE_ACIDBASE7",
+      "full": "Arrange a series of oxoacids of elements from the same periodic group (e.g., H2SO4, H2SeO4, H2TeO4) in order of acid strength, using the trend that acid strength decreases as the central atom's size increases down the group.",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE61": [
+    {
+      "id": "CHE_BONDING44",
+      "full": "Analyze the relative polarizing power of a set of cations by applying Fajans' rules based on charge density (smaller ionic radius and higher charge give greater polarizing power).",
+      "depth": 0
+    }
+  ],
+  "CHEM_REDOX32": [
+    {
+      "id": "CHE_ELECTROCHEM2",
+      "full": "Apply Faraday's laws of electrolysis to calculate mass deposited at an electrode.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC13": [
+    {
+      "id": "CHE_ORGANIC12",
+      "full": "Predict the major product of an electrophilic aromatic substitution (nitration, halogenation, sulfonation, Friedel-Crafts alkylation or acylation) on benzene or a substituted benzene, including the ortho/para or meta orientation directed by the substituent already present.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC15": [
+    {
+      "id": "CHE_ORGANIC16",
+      "full": "Recall the composition and preparation of Tollens' reagent (ammoniacal silver nitrate containing the diamminesilver(I) ion) and its use as a test for aldehydes, which deposits a silver mirror.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC20": [
+    {
+      "id": "CHEM_NOM8",
+      "full": "Write the full structural formula of an organic compound from its IUPAC or trivial name, and conversely give the IUPAC name of a compound from its structure, for compounds containing the common functional groups.",
+      "depth": 0
+    }
+  ],
+  "CHEM_STEREO2": [
+    {
+      "id": "CHEM_STEREO4",
+      "full": "Classify stereoisomerism into its geometric (cis-trans) and optical forms, and explain why a given compound exhibits one form rather than the other.",
+      "depth": 0
+    }
+  ],
+  "CHEM_STEREO3": [
+    {
+      "id": "CHEM_STEREO4",
+      "full": "Classify stereoisomerism into its geometric (cis-trans) and optical forms, and explain why a given compound exhibits one form rather than the other.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC22": [
+    {
+      "id": "CHE_ORGANIC21",
+      "full": "Identify a named organic reaction from its equation or reaction conditions (e.g., Clemmensen reduction, Friedel-Crafts acylation, Reimer-Tiemann, diazo coupling, Hofmann degradation, Wurtz, Fries rearrangement, aminolysis, Kolbe, Sandmeyer, Cannizzaro, Williamson).",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC25": [
+    {
+      "id": "CHE_ORGANIC24",
+      "full": "Write the Kolbe reaction, in which sodium phenoxide reacts with carbon dioxide under pressure and is then acidified to give salicylic acid.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC29": [
+    {
+      "id": "CHE_ORGANIC28",
+      "full": "Write the diazotization of a primary aromatic amine with nitrous acid generated from sodium nitrite and hydrochloric acid at 0-5 degrees C, to form a benzenediazonium salt.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC30": [
+    {
+      "id": "CHE_ORGANIC28",
+      "full": "Write the diazotization of a primary aromatic amine with nitrous acid generated from sodium nitrite and hydrochloric acid at 0-5 degrees C, to form a benzenediazonium salt.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC33": [
+    {
+      "id": "CHE_ORGANIC34",
+      "full": "Classify a given alcohol as primary, secondary or tertiary from the number of carbon atoms attached to the carbon that carries the hydroxyl group.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC35": [
+    {
+      "id": "CHE_ORGANIC34",
+      "full": "Classify a given alcohol as primary, secondary or tertiary from the number of carbon atoms attached to the carbon that carries the hydroxyl group.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC38": [
+    {
+      "id": "CHE_ORGANIC9",
+      "full": "Differentiate the type of addition reaction (electrophilic for C=C, nucleophilic for C=O) undergone by a given double bond, based on its bond polarity.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC44": [
+    {
+      "id": "CHE_ORGANIC5",
+      "full": "Explain why a strongly reactive reducing agent such as lithium aluminium hydride must be used under anhydrous conditions, since it reacts vigorously with water.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC50": [
+    {
+      "id": "CHE_ORGANIC47",
+      "full": "Write the acid-catalysed esterification of a carboxylic acid with an alcohol, and the reverse hydrolysis of the ester.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC51": [
+    {
+      "id": "CHE_ORGANIC50",
+      "full": "Define saponification as the alkaline hydrolysis of a fat or oil (a glyceride) with sodium or potassium hydroxide to give soap and glycerol, and write the reaction.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC53": [
+    {
+      "id": "CHE_ORGANIC55",
+      "full": "Define a polymer and a monomer and distinguish between them, recognizing that a polymer's molar mass is an integral multiple of its monomer's.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC54": [
+    {
+      "id": "CHE_ORGANIC55",
+      "full": "Define a polymer and a monomer and distinguish between them, recognizing that a polymer's molar mass is an integral multiple of its monomer's.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC56": [
+    {
+      "id": "CHE_ORGANIC53",
+      "full": "Write the polymerisation reaction by which a named addition polymer is formed from its monomer (polythene, PVC, polystyrene, Teflon), giving the temperature, pressure and catalyst conditions.",
+      "depth": 0
+    },
+    {
+      "id": "CHE_ORGANIC142",
+      "full": "Write the industrial route from calcium carbonate to ethyne, through calcination to quicklime, reduction with carbon to calcium carbide, and hydrolysis.",
+      "depth": 0
+    }
+  ],
+  "CHE_BIOMOLECULE15": [
+    {
+      "id": "CHE_ORGANIC16",
+      "full": "Recall the composition and preparation of Tollens' reagent (ammoniacal silver nitrate containing the diamminesilver(I) ion) and its use as a test for aldehydes, which deposits a silver mirror.",
+      "depth": 0
+    }
+  ],
+  "CHE_BIOMOLECULE17": [
+    {
+      "id": "CHE_BIOMOLECULE11",
+      "full": "Define a biopolymer and classify the three types (polysaccharides, proteins and nucleic acids), giving an example of each.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC58": [
+    {
+      "id": "CHEM_CAT7",
+      "full": "Recall the biological catalyst (enzyme or microorganism) used in a named fermentation-based industrial process (e.g., zymase for ethanol production, Mycoderma aceti for vinegar production).",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC63": [
+    {
+      "id": "CHE_ORGANIC62",
+      "full": "Define an ether as two alkyl or aryl groups bonded to a divalent oxygen atom, and give the general form of its functional group.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC66": [
+    {
+      "id": "CHE_ORGANIC65",
+      "full": "Define urea as the diamide of carbonic acid (carbamide) and write its structural formula.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC71": [
+    {
+      "id": "CHE_ORGANIC12",
+      "full": "Predict the major product of an electrophilic aromatic substitution (nitration, halogenation, sulfonation, Friedel-Crafts alkylation or acylation) on benzene or a substituted benzene, including the ortho/para or meta orientation directed by the substituent already present.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC72": [
+    {
+      "id": "CHE_ORGANIC46",
+      "full": "Write the chain-lengthening sequence in which an alkyl halide is converted to a nitrile with potassium cyanide, reduced to a primary amine, and then converted to an alcohol with nitrous acid.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC75": [
+    {
+      "id": "CHE_BONDING39",
+      "full": "Determine the hybridization state of a carbon atom from its bonding pattern (sp3 for four single bonds, sp2 for one double bond, sp for a triple bond).",
+      "depth": 0
+    }
+  ],
+  "CHEM_STEREO5": [
+    {
+      "id": "CHEM_STEREO3",
+      "full": "Explain that optical isomerism requires a chiral carbon atom, and determine whether a given compound is optically active (for example glycine is not, whereas lactic acid is).",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC89": [
+    {
+      "id": "CHE_ORGANIC12",
+      "full": "Predict the major product of an electrophilic aromatic substitution (nitration, halogenation, sulfonation, Friedel-Crafts alkylation or acylation) on benzene or a substituted benzene, including the ortho/para or meta orientation directed by the substituent already present.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC95": [
+    {
+      "id": "CHE_ORGANIC12",
+      "full": "Predict the major product of an electrophilic aromatic substitution (nitration, halogenation, sulfonation, Friedel-Crafts alkylation or acylation) on benzene or a substituted benzene, including the ortho/para or meta orientation directed by the substituent already present.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC96": [
+    {
+      "id": "CHE_ORGANIC81",
+      "full": "Write the chlorination of acetaldehyde in the presence of calcium carbonate to give chloral (trichloroacetaldehyde).",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY20": [
+    {
+      "id": "CHE_STOICHIOMETRY12",
+      "full": "Calculate the number of moles of a substance from a given mass and its molar mass.",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICH2": [
+    {
+      "id": "CHE_STOICHIOMETRY14",
+      "full": "Use the mole ratio from a balanced chemical equation to calculate the amount of one reactant required to completely react with a given amount of another reactant.",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY21": [
+    {
+      "id": "CHE_STOICHIOMETRY11",
+      "full": "Calculate the moles of acid and base present in a neutralization reaction from concentration and volume (n = C x V).",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE63": [
+    {
+      "id": "CHE_ACIDBASE19",
+      "full": "Calculate the net normality of a mixture of several acid and base solutions by summing signed normality-volume products, to determine whether the resulting mixture is acidic or basic.",
+      "depth": 0
+    },
+    {
+      "id": "CHE_ACIDBASE23",
+      "full": "Calculate the pH of a solution from its hydrogen-ion concentration using pH = -log[H+].",
+      "depth": 0
+    }
+  ],
+  "CHEM_SPEC9": [
+    {
+      "id": "CHEM_SPEC8",
+      "full": "Apply the Beer-Lambert law, that log(I0/I) is proportional to the path length and concentration, to calculate the fraction of incident light absorbed when the path length is changed.",
+      "depth": 0
+    }
+  ],
+  "CHEM_ANALYTICAL10": [
+    {
+      "id": "CHE_STOICHIOMETRY11",
+      "full": "Calculate the moles of acid and base present in a neutralization reaction from concentration and volume (n = C x V).",
+      "depth": 0
+    }
+  ],
+  "CHEM_SOLUTION15": [
+    {
+      "id": "CHEM_SOLUTION16",
+      "full": "Define molality as the number of moles of solute dissolved per kilogram of solvent, and distinguish it from molarity.",
+      "depth": 0
+    }
+  ],
+  "CHEM_REDOX34": [
+    {
+      "id": "CHEM_REDOX2",
+      "full": "Determine the oxidation number of an element in a compound or polyatomic ion by solving for the unknown so that the algebraic sum of oxidation numbers equals the species' overall charge.",
+      "depth": 0
+    }
+  ],
+  "CHEM_REDOX35": [
+    {
+      "id": "CHEM_REDOX34",
+      "full": "Balance a redox equation by the ion-electron (half-reaction) method, writing separate oxidation and reduction half-equations, balancing charge with electrons and atoms with H+ and water, then combining them.",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY23": [
+    {
+      "id": "CHE_STOICHIOMETRY14",
+      "full": "Use the mole ratio from a balanced chemical equation to calculate the amount of one reactant required to completely react with a given amount of another reactant.",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY24": [
+    {
+      "id": "CHE_STOICHIOMETRY14",
+      "full": "Use the mole ratio from a balanced chemical equation to calculate the amount of one reactant required to completely react with a given amount of another reactant.",
+      "depth": 0
+    }
+  ],
+  "CHEM_ANALYTICAL13": [
+    {
+      "id": "CHEM_REDOX34",
+      "full": "Balance a redox equation by the ion-electron (half-reaction) method, writing separate oxidation and reduction half-equations, balancing charge with electrons and atoms with H+ and water, then combining them.",
+      "depth": 0
+    }
+  ],
+  "CHEM_ANALYTICAL14": [
+    {
+      "id": "CHEM_ANALYTICAL10",
+      "full": "Determine the concentration of an unknown solution from a titration, by using the titre volume, the standard solution's concentration, and the mole ratio of the balanced neutralization equation.",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY27": [
+    {
+      "id": "CHE_STOICHIOMETRY26",
+      "full": "Determine the empirical formula of an organic compound from combustion analysis, by converting the masses of carbon dioxide and water produced into percentages of carbon and hydrogen and obtaining oxygen by difference.",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY26": [
+    {
+      "id": "CHE_STOICHIOMETRY28",
+      "full": "Determine the empirical formula of a compound from the percentage composition of its elements, by dividing each percentage by the atomic mass and reducing to the simplest whole-number ratio.",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY28": [
+    {
+      "id": "CHE_STOICHIOMETRY12",
+      "full": "Calculate the number of moles of a substance from a given mass and its molar mass.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS43": [
+    {
+      "id": "CHE_GASLAWS5",
+      "full": "Apply the ideal gas law (PV = nRT) to calculate an unknown quantity (pressure, volume, moles, or temperature), given the other variables.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC104": [
+    {
+      "id": "CHE_ORGANIC28",
+      "full": "Write the diazotization of a primary aromatic amine with nitrous acid generated from sodium nitrite and hydrochloric acid at 0-5 degrees C, to form a benzenediazonium salt.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC105": [
+    {
+      "id": "CHE_ORGANIC106",
+      "full": "Classify a substituent on a benzene ring as activating and ortho/para-directing or deactivating and meta-directing, and explain the effect in terms of the ring electron density it produces.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC107": [
+    {
+      "id": "CHE_ORGANIC74",
+      "full": "Classify a given reagent as an electrophile or a nucleophile according to whether it accepts or donates an electron pair.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC108": [
+    {
+      "id": "CHE_ORGANIC107",
+      "full": "Rank carbocations (or free radicals) by stability, using the electron-releasing inductive effect of alkyl groups and resonance delocalization, and use the order to predict which substitution or addition pathway dominates.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC109": [
+    {
+      "id": "CHE_ORGANIC38",
+      "full": "Predict the major and minor products of adding a hydrogen halide to an unsymmetrical alkene by applying Markovnikov's rule.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC110": [
+    {
+      "id": "CHE_ORGANIC39",
+      "full": "Predict the carbonyl products formed by ozonolysis of an alkene or alkyne followed by reductive work-up with zinc and water.",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING54": [
+    {
+      "id": "CHE_BONDING39",
+      "full": "Determine the hybridization state of a carbon atom from its bonding pattern (sp3 for four single bonds, sp2 for one double bond, sp for a triple bond).",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING55": [
+    {
+      "id": "CHE_BONDING36",
+      "full": "Determine how many sigma and pi bonds a carbon atom with a given hybridization (sp, sp2, sp3) forms, given that each hybrid orbital forms one sigma bond and each remaining unhybridized p orbital can form one pi bond.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC114": [
+    {
+      "id": "CHE_BONDING43",
+      "full": "Compare common intermolecular and intramolecular forces of attraction by relative strength (van der Waals forces < dipole-dipole interaction < hydrogen bonding < covalent bonding).",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC115": [
+    {
+      "id": "CHE_BONDING30",
+      "full": "Determine whether a given compound is capable of hydrogen bonding by checking whether it contains a hydrogen atom bonded directly to nitrogen, oxygen, or fluorine.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC116": [
+    {
+      "id": "CHE_ORGANIC33",
+      "full": "Apply the Lucas test to distinguish primary, secondary and tertiary monohydric alcohols from the rate at which a white turbidity appears with Lucas reagent (concentrated HCl with zinc chloride).",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC117": [
+    {
+      "id": "CHE_ORGANIC47",
+      "full": "Write the acid-catalysed esterification of a carboxylic acid with an alcohol, and the reverse hydrolysis of the ester.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC120": [
+    {
+      "id": "CHE_ORGANIC42",
+      "full": "Write the aldol condensation of two aldehyde molecules in dilute alkali to give a beta-hydroxy aldehyde, and its dehydration on heating to an alpha,beta-unsaturated aldehyde.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC122": [
+    {
+      "id": "CHE_ORGANIC37",
+      "full": "Write the acid-catalysed dehydration of an alcohol to an alkene, name the reaction, and give the intermediate carbocation including any rearrangement it undergoes.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC125": [
+    {
+      "id": "CHE_ORGANIC28",
+      "full": "Write the diazotization of a primary aromatic amine with nitrous acid generated from sodium nitrite and hydrochloric acid at 0-5 degrees C, to form a benzenediazonium salt.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC127": [
+    {
+      "id": "CHE_ORGANIC35",
+      "full": "Predict the oxidation product of a primary, secondary or tertiary alcohol with an oxidizing agent such as acidified potassium dichromate or potassium permanganate.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC128": [
+    {
+      "id": "CHE_ORGANIC106",
+      "full": "Classify a substituent on a benzene ring as activating and ortho/para-directing or deactivating and meta-directing, and explain the effect in terms of the ring electron density it produces.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC137": [
+    {
+      "id": "CHE_ORGANIC87",
+      "full": "Write the addition of bromine to an alkene to give a vicinal dibromide, and its double dehydrohalogenation with alcoholic potassium hydroxide to give an alkyne.",
+      "depth": 0
+    }
+  ],
+  "CHE_BIOMOLECULE19": [
+    {
+      "id": "CHE_BIOMOLECULE13",
+      "full": "Recall the general properties of amino acids (zwitterion formation, linkage into proteins by peptide bonds, a characteristic isoelectric pH, and amphoteric behaviour in acid and alkali), and identify glycine as the simplest member.",
+      "depth": 0
+    }
+  ],
+  "CHE_BIOMOLECULE20": [
+    {
+      "id": "CHE_BIOMOLECULE12",
+      "full": "Recall the sugar, the characteristic nitrogenous bases, the relative alkaline stability and the biological function of DNA as against RNA.",
+      "depth": 0
+    }
+  ],
+  "CHE_BIOMOLECULE23": [
+    {
+      "id": "CHE_BIOMOLECULE16",
+      "full": "Recall that starch is a polymer of alpha-D-glucose whereas cellulose is a polymer of beta-D-glucose, and that cellulose is the principal constituent of cotton.",
+      "depth": 0
+    }
+  ],
+  "CHE_BIOMOLECULE24": [
+    {
+      "id": "CHE_BIOMOLECULE7",
+      "full": "Recall the open-chain structural formulas of glucose (an aldehyde) and fructose (a ketone), identifying their functional-group difference.",
+      "depth": 0
+    }
+  ],
+  "CHE_BIOMOLECULE25": [
+    {
+      "id": "CHE_ORGANIC45",
+      "full": "Write the addition of hydrogen cyanide to an aldehyde to give a cyanohydrin, and its hydrolysis to a 2-hydroxy carboxylic acid.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC144": [
+    {
+      "id": "CHE_ORGANIC150",
+      "full": "Recognize which carbonyl compounds can take part in an aldol condensation, namely those possessing an alpha-hydrogen, and count the number of distinct aldol products from a mixed pair.",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE64": [
+    {
+      "id": "CHE_ORGANIC106",
+      "full": "Classify a substituent on a benzene ring as activating and ortho/para-directing or deactivating and meta-directing, and explain the effect in terms of the ring electron density it produces.",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING56": [
+    {
+      "id": "CHE_BONDING45",
+      "full": "Classify a bond between two atoms as nonpolar covalent, polar covalent, or ionic based on their electronegativity difference (thresholds of about 0.5 and 1.7).",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC146": [
+    {
+      "id": "CHE_ORGANIC55",
+      "full": "Define a polymer and a monomer and distinguish between them, recognizing that a polymer's molar mass is an integral multiple of its monomer's.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC149": [
+    {
+      "id": "CHE_ORGANIC37",
+      "full": "Write the acid-catalysed dehydration of an alcohol to an alkene, name the reaction, and give the intermediate carbocation including any rearrangement it undergoes.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC150": [
+    {
+      "id": "CHE_ORGANIC42",
+      "full": "Write the aldol condensation of two aldehyde molecules in dilute alkali to give a beta-hydroxy aldehyde, and its dehydration on heating to an alpha,beta-unsaturated aldehyde.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC151": [
+    {
+      "id": "CHE_ORGANIC44",
+      "full": "Write the preparation of a Grignard reagent from an alkyl halide and magnesium in dry ether, and its reaction with an aldehyde or ketone followed by hydrolysis to give an alcohol.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC152": [
+    {
+      "id": "CHE_ORGANIC34",
+      "full": "Classify a given alcohol as primary, secondary or tertiary from the number of carbon atoms attached to the carbon that carries the hydroxyl group.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC153": [
+    {
+      "id": "CHE_ORGANIC33",
+      "full": "Apply the Lucas test to distinguish primary, secondary and tertiary monohydric alcohols from the rate at which a white turbidity appears with Lucas reagent (concentrated HCl with zinc chloride).",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC154": [
+    {
+      "id": "CHE_ORGANIC16",
+      "full": "Recall the composition and preparation of Tollens' reagent (ammoniacal silver nitrate containing the diamminesilver(I) ion) and its use as a test for aldehydes, which deposits a silver mirror.",
+      "depth": 0
+    }
+  ],
+  "CHE_BIOMOLECULE27": [
+    {
+      "id": "CHE_ORGANIC17",
+      "full": "Recall the composition of Fehling's solution (an alkaline mixture of copper sulfate with sodium potassium tartrate, Rochelle salt) and its use in testing for aldehydes and reducing sugars.",
+      "depth": 0
+    }
+  ],
+  "CHEM_NOM12": [
+    {
+      "id": "CHEM_NOM10",
+      "full": "Recall the structural formula of the characteristic functional group of a named homologous series or compound class (alkene, alkyne, alcohol, aldehyde, ketone, ester, ether, amide, anhydride, enamine, ketene, isothiocyanate, lactam, hemiacetal).",
+      "depth": 0
+    }
+  ],
+  "CHEM_NOM13": [
+    {
+      "id": "CHEM_NOM10",
+      "full": "Recall the structural formula of the characteristic functional group of a named homologous series or compound class (alkene, alkyne, alcohol, aldehyde, ketone, ester, ether, amide, anhydride, enamine, ketene, isothiocyanate, lactam, hemiacetal).",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC157": [
+    {
+      "id": "CHE_ORGANIC72",
+      "full": "Write the multi-step reaction sequence required to interconvert two named aliphatic compounds (e.g., methanol to ethanol, a primary alcohol to a secondary alcohol, ethylene to acetylene, ethene to methanol).",
+      "depth": 0
+    }
+  ],
+  "CHEM_ANALYTICAL15": [
+    {
+      "id": "CHE_STOICHIOMETRY14",
+      "full": "Use the mole ratio from a balanced chemical equation to calculate the amount of one reactant required to completely react with a given amount of another reactant.",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY32": [
+    {
+      "id": "CHE_STOICHIOMETRY31",
+      "full": "Define normality as the number of gram-equivalents of solute per litre of solution, and convert between normality and molarity using the equivalence factor of the solute.",
+      "depth": 0
+    }
+  ],
+  "CHEM_ANALYTICAL16": [
+    {
+      "id": "CHE_STOICHIOMETRY21",
+      "full": "Calculate the volume of an acid or base solution of known concentration that a given mass of neutralizing agent will consume, using the balanced neutralization equation and n = C x V.",
+      "depth": 0
+    }
+  ],
+  "CHE_GASLAWS44": [
+    {
+      "id": "CHE_GASLAWS30",
+      "full": "Calculate the density of a gas from its molar mass, pressure and temperature using d = PM/(RT), or solve the same relation for an unknown temperature or molar mass.",
+      "depth": 0
+    }
+  ],
+  "CHEM_REDOX37": [
+    {
+      "id": "CHEM_REDOX34",
+      "full": "Balance a redox equation by the ion-electron (half-reaction) method, writing separate oxidation and reduction half-equations, balancing charge with electrons and atoms with H+ and water, then combining them.",
+      "depth": 0
+    }
+  ],
+  "CHEM_REDOX38": [
+    {
+      "id": "CHEM_REDOX2",
+      "full": "Determine the oxidation number of an element in a compound or polyatomic ion by solving for the unknown so that the algebraic sum of oxidation numbers equals the species' overall charge.",
+      "depth": 0
+    }
+  ],
+  "CHEM_REDOX39": [
+    {
+      "id": "CHEM_REDOX34",
+      "full": "Balance a redox equation by the ion-electron (half-reaction) method, writing separate oxidation and reduction half-equations, balancing charge with electrons and atoms with H+ and water, then combining them.",
+      "depth": 0
+    }
+  ],
+  "CHEM_DBLOCK20": [
+    {
+      "id": "CHE_STOICHIOMETRY14",
+      "full": "Use the mole ratio from a balanced chemical equation to calculate the amount of one reactant required to completely react with a given amount of another reactant.",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY33": [
+    {
+      "id": "CHE_STOICHIOMETRY28",
+      "full": "Determine the empirical formula of a compound from the percentage composition of its elements, by dividing each percentage by the atomic mass and reducing to the simplest whole-number ratio.",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY34": [
+    {
+      "id": "CHE_STOICHIOMETRY14",
+      "full": "Use the mole ratio from a balanced chemical equation to calculate the amount of one reactant required to completely react with a given amount of another reactant.",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY35": [
+    {
+      "id": "CHE_STOICHIOMETRY20",
+      "full": "Calculate the number of atoms or molecules in a stated mass of a substance using n = w/M together with Avogadro's number, and scale the result to a fraction of that mass.",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICH3": [
+    {
+      "id": "CHE_STOICHIOMETRY22",
+      "full": "Define parts per million (ppm) as the mass of solute dissolved in one million parts of solution, and express a given concentration in ppm.",
+      "depth": 0
+    }
+  ],
+  "CHEM_SOLUTION18": [
+    {
+      "id": "CHE_STOICHIOMETRY17",
+      "full": "Calculate the molarity of a solution from the mass of solute dissolved, the solute's molar mass, and the volume of the resulting solution.",
+      "depth": 0
+    }
+  ],
+  "CHEM_SOLUTION19": [
+    {
+      "id": "CHE_STOICHIOMETRY0",
+      "full": "Calculate the volume of a liquid from its measured mass and known density, using density = mass / volume.",
+      "depth": 0
+    }
+  ],
+  "CHEM_SOLUTION20": [
+    {
+      "id": "CHEM_SOLUTION17",
+      "full": "Calculate the molarity of a solution and the volume of water that must be added to dilute it to a required concentration, using S1V1 = S2V2.",
+      "depth": 0
+    }
+  ],
+  "CHEM_REDOX40": [
+    {
+      "id": "CHE_ELECTROCHEM2",
+      "full": "Apply Faraday's laws of electrolysis to calculate mass deposited at an electrode.",
+      "depth": 0
+    },
+    {
+      "id": "CHEM_REDOX41",
+      "full": "Define the electrochemical equivalent of an element as the mass liberated by one coulomb of charge, and calculate it from the element's molar mass, its ionic charge and the Faraday constant.",
+      "depth": 0
+    }
+  ],
+  "CHEM_REDOX41": [
+    {
+      "id": "CHEM_REDOX42",
+      "full": "Recall that one faraday is the charge carried by one mole of electrons (about 96500 coulombs), and determine how many faradays are needed to deposit one mole of a metal of a given ionic charge.",
+      "depth": 0
+    }
+  ],
+  "CHEM_REDOX43": [
+    {
+      "id": "CHEM_REDOX40",
+      "full": "Apply Faraday's first law of electrolysis, w = Zit, to calculate the mass of substance liberated at an electrode from the current and the time, or to solve for either of those.",
+      "depth": 0
+    }
+  ],
+  "CHEM_REDOX44": [
+    {
+      "id": "CHEM_REDOX42",
+      "full": "Recall that one faraday is the charge carried by one mole of electrons (about 96500 coulombs), and determine how many faradays are needed to deposit one mole of a metal of a given ionic charge.",
+      "depth": 0
+    }
+  ],
+  "CHEM_ELECTROCHEM1": [
+    {
+      "id": "CHE_ELECTROCHEM3",
+      "full": "Calculate cell EMF from standard electrode potentials.",
+      "depth": 0
+    }
+  ],
+  "CHE_ELECTROCHEM4": [
+    {
+      "id": "CHEM_ELECTROCHEM1",
+      "full": "Apply the Nernst equation to calculate the EMF of an electrochemical cell at a stated temperature from the standard cell potential and the ion concentrations, including for a concentration cell.",
+      "depth": 0
+    }
+  ],
+  "CHE_ELECTROCHEM5": [
+    {
+      "id": "CHE_ELECTROCHEM1",
+      "full": "Rank reducing agent strength using standard electrode potentials.",
+      "depth": 0
+    },
+    {
+      "id": "CHEM_REDOX31",
+      "full": "Apply the reactivity series of metals to predict the outcome of a single-displacement reaction between a more reactive metal and a salt solution of a less reactive metal (e.g., Fe displaces Cu from CuSO4 solution).",
+      "depth": 0
+    }
+  ],
+  "CHE_ELECTROCHEM6": [
+    {
+      "id": "CHE_ELECTROCHEM7",
+      "full": "Distinguish an electrolytic cell, which converts electrical energy into chemical energy, from a galvanic (voltaic) cell, which does the reverse.",
+      "depth": 0
+    }
+  ],
+  "CHE_ELECTROCHEM8": [
+    {
+      "id": "CHE_ELECTROCHEM7",
+      "full": "Distinguish an electrolytic cell, which converts electrical energy into chemical energy, from a galvanic (voltaic) cell, which does the reverse.",
+      "depth": 0
+    }
+  ],
+  "CHE_ELECTROCHEM9": [
+    {
+      "id": "CHE_ELECTROCHEM7",
+      "full": "Distinguish an electrolytic cell, which converts electrical energy into chemical energy, from a galvanic (voltaic) cell, which does the reverse.",
+      "depth": 0
+    }
+  ],
+  "CHEM_REDOX45": [
+    {
+      "id": "CHEM_REDOX21",
+      "full": "Recall that a zinc coating (galvanizing) is used to protect iron from rusting.",
+      "depth": 0
+    }
   ]
 }
