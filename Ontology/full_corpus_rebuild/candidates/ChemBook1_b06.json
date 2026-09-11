@@ -1,0 +1,1121 @@
+{
+  "chunkLabel": "ChemBook1_b06",
+  "subject": "Chemistry",
+  "recordRange": "parsed_items.jsonl lines 607-731 (indices 606-730), ChemBook1.txt",
+  "skills": [
+    {
+      "tempId": "ChemBook1_b06_s1",
+      "bloom": "Apply",
+      "skillFull": "Apply the zero-order integrated rate law (x = k t) to calculate the rate constant of a zero-order reaction, or the time required for a specified concentration change.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p77__q46__623"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s2",
+      "bloom": "Remember",
+      "skillFull": "Recall the characteristic properties of a zero-order reaction: its rate is independent of the reactant concentration and stays constant with time, its rate constant has units of concentration per unit time, and photochemical reactions are a common example.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p76__q36__613",
+        "ChemBook1__p83__q99__676",
+        "ChemBook1__p84__q110__687"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s3",
+      "bloom": "Understand",
+      "skillFull": "Explain that the half-life of a second-order reaction is inversely proportional to the initial concentration of the reactant, in contrast to a first-order reaction whose half-life is independent of it.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p83__q98__675",
+        "ChemBook1__p84__q107__684"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s4",
+      "bloom": "Apply",
+      "skillFull": "Apply the second-order integrated rate law for equal initial concentrations, k t = x / (a(a - x)), to calculate the time required to reach a specified extent of reaction.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p78__q58__635"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s5",
+      "bloom": "Apply",
+      "skillFull": "Calculate the rate constant of a second-order reaction from its initial rate and the initial concentrations of its two reactants, using rate = k[A][B].",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p76__q40__617"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s6",
+      "bloom": "Understand",
+      "skillFull": "Interpret a given experimental rate equation to identify which reactants' concentrations the reaction rate actually depends on, recognizing that a species absent from the rate law does not influence the rate.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p86__q129__706"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s7",
+      "bloom": "Analyze",
+      "skillFull": "Determine the fraction or percentage of reactant consumed at a given moment from the ratio of the instantaneous rate to the initial rate, using the reaction's order to relate rate ratio to concentration ratio.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p76__q34__611"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s8",
+      "bloom": "Apply",
+      "skillFull": "Calculate the activation energy of one reaction from that of another, given that both undergo the same temperature change and their rate-increase factors are known, by taking the ratio of the logarithms of their rate ratios.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p75__q33__610"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s9",
+      "bloom": "Remember",
+      "skillFull": "Define a catalyst poison as a substance (e.g., arsenic trioxide) that reduces or destroys the catalytic activity of a catalyst.",
+      "topicKey": "CHEM_CAT",
+      "topicLabel": "Catalysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p79__q72__649",
+        "ChemBook1__p84__q109__686"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s10",
+      "bloom": "Understand",
+      "skillFull": "Classify a substance accompanying a catalysed reaction as a positive catalyst, a negative catalyst (inhibitor), a promoter, or a catalyst poison, from its effect on the reaction rate.",
+      "topicKey": "CHEM_CAT",
+      "topicLabel": "Catalysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p80__q76__653",
+        "ChemBook1__p79__q72__649"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s11",
+      "bloom": "Remember",
+      "skillFull": "Recall that the ionic product of water, Kw, equals 1.0 x 10^-14 mol^2 L^-2 at 298 K, and that pure water therefore has [H+] = [OH-] = 1.0 x 10^-7 M.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p76__q35__612",
+        "ChemBook1__p86__q124__701"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s12",
+      "bloom": "Understand",
+      "skillFull": "Explain why the enthalpy of neutralization of a weak acid or a weak base is numerically smaller than the strong-acid/strong-base value of about 57.3 kJ per mole, because part of the energy released is consumed in ionizing the weak electrolyte.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p78__q53__630",
+        "ChemBook1__p79__q68__645",
+        "ChemBook1__p80__q79__656"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s13",
+      "bloom": "Apply",
+      "skillFull": "Calculate the ionization (dissociation) enthalpy of a weak acid or weak base from its measured enthalpy of neutralization and the standard strong-acid/strong-base neutralization value of about -57.3 kJ per mole.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p77__q48__625",
+        "ChemBook1__p80__q79__656"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s14",
+      "bloom": "Apply",
+      "skillFull": "Apply the first law of thermodynamics, delta-U = q - w, to calculate the change in a system's internal energy from the heat it absorbs and the work it performs.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p79__q69__646"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s15",
+      "bloom": "Remember",
+      "skillFull": "Recall that the heat energy exchanged in a chemical reaction originates from the change in the internal energy of the reacting substances.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p81__q82__659"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s16",
+      "bloom": "Apply",
+      "skillFull": "Convert between a reaction's heat change measured at constant pressure (delta H) and at constant volume (delta U) using delta H = delta U + (delta n)RT.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p82__q93__670",
+        "ChemBook1__p87__q141__718"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s17",
+      "bloom": "Remember",
+      "skillFull": "Recall that a bomb calorimeter measures a reaction's heat change at constant volume, giving delta U rather than delta H.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p86__q123__700"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s18",
+      "bloom": "Remember",
+      "skillFull": "Recall that the enthalpy of atomization is defined for the formation of one mole of gaseous atoms from the element in its gaseous state (e.g., 1/2 Br2(g) -> Br(g)).",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p79__q65__642"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s19",
+      "bloom": "Evaluate",
+      "skillFull": "Evaluate which of several given reactions has an enthalpy change that can be measured directly by experiment (typically a complete combustion), as opposed to one that can only be obtained indirectly through Hess's law.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p86__q127__704"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s20",
+      "bloom": "Apply",
+      "skillFull": "Calculate a reaction's enthalpy change from the standard enthalpies of combustion of its reactants and products, using delta-H = sum of reactants' combustion enthalpies minus sum of products' combustion enthalpies.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p85__q121__698"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s21",
+      "bloom": "Apply",
+      "skillFull": "Calculate the alkalinity (or hardness) of a water sample in parts per million from the volume and normality of the standard acid required to neutralize a measured volume of the sample.",
+      "topicKey": "CHEM_ANALYTICAL",
+      "topicLabel": "Quantitative (Titrimetric) Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p76__q38__615"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s22",
+      "bloom": "Remember",
+      "skillFull": "Recall that calcium- and magnesium-bearing amendments (e.g., lime) are applied to raise the pH of soil that has become too acidic.",
+      "topicKey": "CHEM_ENV",
+      "topicLabel": "Environmental Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p78__q60__637"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s23",
+      "bloom": "Understand",
+      "skillFull": "Identify whether a given mixture constitutes a buffer solution, by checking that it contains a weak acid together with its conjugate base (or a weak base with its conjugate acid) in comparable amounts, and recognize that two weak acids together, or a weak acid exactly neutralized by an equimolar strong base, do not form a buffer.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p79__q63__640",
+        "ChemBook1__p83__q103__680"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s24",
+      "bloom": "Remember",
+      "skillFull": "Recall the carbonic acid / hydrogencarbonate equilibrium (H2CO3 + H2O <=> H3O+ + HCO3-) that constitutes the principal buffer system regulating the pH of blood.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p81__q85__662"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s25",
+      "bloom": "Remember",
+      "skillFull": "Recall the colour a given acid-base indicator shows in acidic and in alkaline media (e.g., methyl orange red in acid and yellow in alkali; phenolphthalein colourless in acid and pink in alkali).",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p81__q87__664",
+        "ChemBook1__p81__q88__665"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s26",
+      "bloom": "Analyze",
+      "skillFull": "Analyze the properties of the aqueous neutralization reaction H+ + OH- -> H2O (that it is ionic and exothermic, that the solution's electrical conductivity falls, and that the resulting solution is neutral) to identify a false statement about it.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p81__q88__665"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s27",
+      "bloom": "Analyze",
+      "skillFull": "Examine several algebraic rearrangements of the Henderson-Hasselbalch equation and identify which of them is not a valid form of it.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p85__q119__696"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s28",
+      "bloom": "Understand",
+      "skillFull": "Identify the Bronsted-Lowry acid and the Bronsted-Lowry base in a given proton-transfer reaction, recognizing that water is amphiprotic and can act as either depending on its reaction partner.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p86__q132__709"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s29",
+      "bloom": "Understand",
+      "skillFull": "Predict the effect on the pH of pure water of dissolving a weakly acidic or weakly basic organic substance in it (e.g., ethanol lowering the pH slightly below 7).",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p86__q125__702"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s30",
+      "bloom": "Remember",
+      "skillFull": "Recall the approximate pH below which rainwater is classified as acid rain (about 5.6, with heavily polluted samples reaching about 4).",
+      "topicKey": "CHEM_ENV",
+      "topicLabel": "Environmental Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p87__q136__713"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s31",
+      "bloom": "Apply",
+      "skillFull": "Calculate the molarity of a solution from the mass of solute dissolved, the solute's molar mass, and the volume of the resulting solution.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p87__q135__712"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s32",
+      "bloom": "Apply",
+      "skillFull": "Calculate an unknown equilibrium concentration by rearranging the equilibrium-constant (Kc) expression, given the value of Kc and the remaining equilibrium concentrations.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p82__q91__668"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s33",
+      "bloom": "Apply",
+      "skillFull": "Apply Le Chatelier's principle to predict how increasing the pressure (or decreasing the volume) shifts a gaseous equilibrium towards the side having the smaller number of moles of gas.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p82__q92__669"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s34",
+      "bloom": "Apply",
+      "skillFull": "Apply Le Chatelier's principle to predict how adding or removing a reactant or a product shifts the position of an equilibrium.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p82__q92__669"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s35",
+      "bloom": "Understand",
+      "skillFull": "Explain that a catalyst changes only the rate at which equilibrium is attained, and affects neither the position of the equilibrium nor the value of the equilibrium constant.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p80__q81__658",
+        "ChemBook1__p83__q97__674"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s36",
+      "bloom": "Remember",
+      "skillFull": "Recall that the values of Kp and Kc for a given reaction depend only on the temperature, and are unaffected by changes in pressure, concentration, or the presence of a catalyst.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p83__q104__681",
+        "ChemBook1__p83__q105__682"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s37",
+      "bloom": "Understand",
+      "skillFull": "Classify a given chemical equilibrium as homogeneous or heterogeneous, and as ionic or molecular, from the physical states and the nature of the species taking part in it.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p83__q101__678"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s38",
+      "bloom": "Understand",
+      "skillFull": "Explain that pure solids and pure liquids are omitted from an equilibrium-constant expression and from the count of delta-n, because their concentrations remain constant.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p87__q139__716"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s39",
+      "bloom": "Understand",
+      "skillFull": "Explain that a volatile liquid sealed in a closed container establishes a dynamic liquid-vapour equilibrium at any temperature, not only at its boiling point.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p83__q96__673"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s40",
+      "bloom": "Analyze",
+      "skillFull": "Compare the boiling points of pure water, an aqueous solution, and common organic liquids such as ethanol and benzene, using the relative strength of their intermolecular forces and the elevation of boiling point caused by a dissolved solute.",
+      "topicKey": "CHEM_SOLUTION",
+      "topicLabel": "Solutions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p82__q95__672"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s41",
+      "bloom": "Understand",
+      "skillFull": "Explain the conditions that cause colloidal particles to coagulate (addition of sufficient electrolyte, neutralization of the particles' surface charge by oppositely charged ions, and the particles consequently approaching one another).",
+      "topicKey": "CHEM_SOLUTION",
+      "topicLabel": "Solutions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p89__q02__728"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s42",
+      "bloom": "Remember",
+      "skillFull": "Recall that vinegar is a 6-10% aqueous solution of ethanoic (acetic) acid.",
+      "topicKey": "CHE_ORGANIC",
+      "topicLabel": "Organic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p89__q05__726"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s43",
+      "bloom": "Apply",
+      "skillFull": "Complete the sequence of reactions for the industrial preparation of malt vinegar, naming the biological catalyst and conditions at each stage (hydrolysis of sucrose by invertase, fermentation of glucose to ethanol by zymase, then oxidation of ethanol to ethanoic acid by Mycoderma aceti).",
+      "topicKey": "CHE_ORGANIC",
+      "topicLabel": "Organic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p88__q01__719"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s44",
+      "bloom": "Remember",
+      "skillFull": "Define food preservation, and recall the role of an antioxidant as a preservative that prevents the oxidative spoilage of stored food.",
+      "topicKey": "CHE_BIOMOLECULE",
+      "topicLabel": "Biomolecules",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p88__q02__720",
+        "ChemBook1__p88__q03__721"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s45",
+      "bloom": "Remember",
+      "skillFull": "Recall the structural formula of a named synthetic food antioxidant or preservative (e.g., butylated hydroxytoluene (BHT), propyl gallate, tertiary butyl hydroquinone (TBHQ), sodium benzoate).",
+      "topicKey": "CHE_BIOMOLECULE",
+      "topicLabel": "Biomolecules",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p88__q02__720",
+        "ChemBook1__p88__q03__721",
+        "ChemBook1__p89__q04__724"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s46",
+      "bloom": "Remember",
+      "skillFull": "Recall the name and structural formula of a common nitrogenous fertilizer (urea) and of a phosphatic fertilizer (triple superphosphate, calcium dihydrogen phosphate).",
+      "topicKey": "CHEM_ENV",
+      "topicLabel": "Environmental Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p89__q04__722"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s47",
+      "bloom": "Remember",
+      "skillFull": "Recall the chemical identity and structural formula of a named ingredient of a common consumer product (e.g., glycerol as the moisturizer in lipstick, sodium fluoride in toothpaste, ammonium hydroxide in glass cleaner).",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p89__q04__723",
+        "ChemBook1__p89__q04__725",
+        "ChemBook1__p89__q04__730"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b06_s48",
+      "bloom": "Remember",
+      "skillFull": "Recall that protein (casein) acts as the natural emulsifying agent in milk.",
+      "topicKey": "CHE_BIOMOLECULE",
+      "topicLabel": "Biomolecules",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p89__q01__727"
+      ]
+    }
+  ],
+  "reusedBatchSkills": [
+    {
+      "batchTempId": "ChemBook1_b05_s5",
+      "sourceItemIds": [
+        "ChemBook1__p75__q31__608",
+        "ChemBook1__p76__q39__616",
+        "ChemBook1__p77__q43__620",
+        "ChemBook1__p77__q45__622",
+        "ChemBook1__p79__q71__648",
+        "ChemBook1__p80__q73__650",
+        "ChemBook1__p80__q75__652",
+        "ChemBook1__p85__q117__694",
+        "ChemBook1__p85__q120__697",
+        "ChemBook1__p87__q138__715",
+        "ChemBook1__p87__q139__716"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s4",
+      "sourceItemIds": [
+        "ChemBook1__p75__q31__608",
+        "ChemBook1__p80__q75__652",
+        "ChemBook1__p85__q120__697",
+        "ChemBook1__p87__q138__715",
+        "ChemBook1__p87__q139__716",
+        "ChemBook1__p82__q93__670",
+        "ChemBook1__p87__q141__718"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s15",
+      "sourceItemIds": [
+        "ChemBook1__p76__q39__616",
+        "ChemBook1__p77__q43__620",
+        "ChemBook1__p78__q52__629",
+        "ChemBook1__p78__q59__636",
+        "ChemBook1__p79__q67__644",
+        "ChemBook1__p81__q90__667"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s3",
+      "sourceItemIds": [
+        "ChemBook1__p76__q39__616",
+        "ChemBook1__p85__q116__693"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s17",
+      "sourceItemIds": [
+        "ChemBook1__p76__q39__616",
+        "ChemBook1__p85__q116__693"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s18",
+      "sourceItemIds": [
+        "ChemBook1__p85__q118__695"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s13",
+      "sourceItemIds": [
+        "ChemBook1__p75__q32__609"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s1",
+      "sourceItemIds": [
+        "ChemBook1__p77__q42__619",
+        "ChemBook1__p77__q50__627"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s21",
+      "sourceItemIds": [
+        "ChemBook1__p77__q44__621",
+        "ChemBook1__p80__q80__657",
+        "ChemBook1__p84__q111__688"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s22",
+      "sourceItemIds": [
+        "ChemBook1__p77__q49__626",
+        "ChemBook1__p79__q70__647",
+        "ChemBook1__p80__q74__651",
+        "ChemBook1__p85__q115__692",
+        "ChemBook1__p87__q135__712"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s50",
+      "sourceItemIds": [
+        "ChemBook1__p80__q80__657",
+        "ChemBook1__p84__q111__688",
+        "ChemBook1__p84__q113__690",
+        "ChemBook1__p86__q131__708"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s52",
+      "sourceItemIds": [
+        "ChemBook1__p84__q113__690"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s20",
+      "sourceItemIds": [
+        "ChemBook1__p81__q84__661",
+        "ChemBook1__p87__q137__714"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s49",
+      "sourceItemIds": [
+        "ChemBook1__p81__q84__661",
+        "ChemBook1__p84__q112__689",
+        "ChemBook1__p87__q137__714"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s6",
+      "sourceItemIds": [
+        "ChemBook1__p78__q57__634",
+        "ChemBook1__p81__q83__660"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s7",
+      "sourceItemIds": [
+        "ChemBook1__p86__q128__705"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s36",
+      "sourceItemIds": [
+        "ChemBook1__p80__q78__655"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s37",
+      "sourceItemIds": [
+        "ChemBook1__p86__q130__707"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s10",
+      "sourceItemIds": [
+        "ChemBook1__p77__q51__628",
+        "ChemBook1__p79__q66__643"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s30",
+      "sourceItemIds": [
+        "ChemBook1__p77__q51__628",
+        "ChemBook1__p84__q107__684"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s39",
+      "sourceItemIds": [
+        "ChemBook1__p75__q29__606",
+        "ChemBook1__p82__q94__671"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s46",
+      "sourceItemIds": [
+        "ChemBook1__p78__q61__638"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s47",
+      "sourceItemIds": [
+        "ChemBook1__p78__q61__638"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s45",
+      "sourceItemIds": [
+        "ChemBook1__p78__q53__630",
+        "ChemBook1__p79__q68__645",
+        "ChemBook1__p86__q122__699"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s59",
+      "sourceItemIds": [
+        "ChemBook1__p76__q37__614",
+        "ChemBook1__p83__q102__679"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s57",
+      "sourceItemIds": [
+        "ChemBook1__p86__q126__703"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s76",
+      "sourceItemIds": [
+        "ChemBook1__p84__q108__685"
+      ]
+    },
+    {
+      "batchTempId": "ChemBook1_b05_s28",
+      "sourceItemIds": [
+        "ChemBook1__p88__q01__719"
+      ]
+    }
+  ],
+  "reusedExistingSkills": [
+    {
+      "existingSkillId": "CHE_ACIDBASE20",
+      "sourceItemIds": [
+        "ChemBook1__p75__q30__607",
+        "ChemBook1__p77__q47__624",
+        "ChemBook1__p80__q80__657",
+        "ChemBook1__p84__q111__688"
+      ],
+      "note": "buffer pH via Henderson-Hasselbalch"
+    },
+    {
+      "existingSkillId": "CHE_ACIDBASE14",
+      "sourceItemIds": [
+        "ChemBook1__p76__q41__618"
+      ],
+      "note": "pOH of a basic buffer from pKb"
+    },
+    {
+      "existingSkillId": "CHE_ACIDBASE15",
+      "sourceItemIds": [
+        "ChemBook1__p76__q41__618",
+        "ChemBook1__p77__q44__621",
+        "ChemBook1__p77__q49__626",
+        "ChemBook1__p79__q70__647",
+        "ChemBook1__p80__q74__651",
+        "ChemBook1__p87__q135__712"
+      ],
+      "note": "pH from pOH and vice versa"
+    },
+    {
+      "existingSkillId": "CHE_ACIDBASE23",
+      "sourceItemIds": [
+        "ChemBook1__p84__q112__689",
+        "ChemBook1__p87__q133__710",
+        "ChemBook1__p87__q134__711"
+      ],
+      "note": "pH from [H+]"
+    },
+    {
+      "existingSkillId": "CHE_ACIDBASE18",
+      "sourceItemIds": [
+        "ChemBook1__p78__q56__633"
+      ],
+      "note": "Ka x Kb = Kw"
+    },
+    {
+      "existingSkillId": "CHE_ACIDBASE21",
+      "sourceItemIds": [
+        "ChemBook1__p81__q86__663",
+        "ChemBook1__p84__q114__691"
+      ],
+      "note": "typical pH of blood and other biological fluids"
+    },
+    {
+      "existingSkillId": "CHEM_KIN1",
+      "sourceItemIds": [
+        "ChemBook1__p76__q36__613",
+        "ChemBook1__p78__q54__631",
+        "ChemBook1__p83__q99__676"
+      ],
+      "note": "LEGACY id reused - derive the unit of a rate constant from the reaction order"
+    },
+    {
+      "existingSkillId": "CHEM_KINETICS1",
+      "sourceItemIds": [
+        "ChemBook1__p79__q64__641",
+        "ChemBook1__p83__q100__677"
+      ],
+      "note": "LEGACY id reused - which plotted quantity is linear for a first-order reaction"
+    },
+    {
+      "existingSkillId": "CHEM_KIN5",
+      "sourceItemIds": [
+        "ChemBook1__p78__q55__632",
+        "ChemBook1__p79__q62__639",
+        "ChemBook1__p79__q66__643",
+        "ChemBook1__p80__q77__654",
+        "ChemBook1__p81__q89__666",
+        "ChemBook1__p83__q106__683"
+      ],
+      "note": "first-order time to reach a specified extent of reaction"
+    },
+    {
+      "existingSkillId": "CHEM_KIN2",
+      "sourceItemIds": [
+        "ChemBook1__p84__q108__685"
+      ],
+      "note": "rate expression and stoichiometric coefficients"
+    },
+    {
+      "existingSkillId": "CHEM_CAT6",
+      "sourceItemIds": [
+        "ChemBook1__p83__q97__674"
+      ],
+      "note": "catalyst lowers activation energy by providing an alternative path"
+    },
+    {
+      "existingSkillId": "CHEM_CAT1",
+      "sourceItemIds": [
+        "ChemBook1__p80__q76__653"
+      ],
+      "note": "LEGACY id reused - the role of a promoter in heterogeneous catalysis"
+    },
+    {
+      "existingSkillId": "CHE_EQUILIBRIUM17",
+      "sourceItemIds": [
+        "ChemBook1__p82__q92__669",
+        "ChemBook1__p83__q105__682",
+        "ChemBook1__p87__q140__717"
+      ],
+      "note": "Le Chatelier temperature shift for exo/endothermic reactions"
+    },
+    {
+      "existingSkillId": "CHE_THERMOCHEM6",
+      "sourceItemIds": [
+        "ChemBook1__p87__q140__717"
+      ],
+      "note": "exothermic vs endothermic from the sign of delta H"
+    },
+    {
+      "existingSkillId": "CHEM_LAB11",
+      "sourceItemIds": [
+        "ChemBook1__p89__q03__729",
+        "ChemBook1__p89__q04__725"
+      ],
+      "note": "liquor ammonia as a glass-cleaning reagent"
+    },
+    {
+      "existingSkillId": "CHEM_DESCRIPTIVE16",
+      "sourceItemIds": [
+        "ChemBook1__p89__q03__729"
+      ],
+      "note": "strong alkali attacks the silica in glass"
+    },
+    {
+      "existingSkillId": "CHEM_CAT2",
+      "sourceItemIds": [
+        "ChemBook1__p80__q76__653"
+      ],
+      "note": "MnO2 as the catalyst for KClO3 decomposition"
+    }
+  ],
+  "prereqs": [
+    {
+      "fromTempId": "ChemBook1_b06_s1",
+      "toTempId": "ChemBook1_b06_s2",
+      "toDescription": "Recall the characteristic properties of a zero-order reaction."
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s4",
+      "toDescription": "Apply the second-order half-life relation t(1/2) = 1/(k x a).",
+      "toTopicKeyGuess": "CHEM_KIN",
+      "toTempId": "ChemBook1_b05_s30"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s3",
+      "toDescription": "Apply the second-order half-life relation t(1/2) = 1/(k x a).",
+      "toTopicKeyGuess": "CHEM_KIN",
+      "toTempId": "ChemBook1_b05_s30"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s5",
+      "toDescription": "Define the rate of a chemical reaction as the change in concentration per unit time.",
+      "toTopicKeyGuess": "CHEM_KIN",
+      "toTempId": "ChemBook1_b05_s76"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s6",
+      "toDescription": "Explain the rate expression of a chemical reaction, relating the rate to the concentrations of the species involved.",
+      "toTopicKeyGuess": "CHEM_KIN",
+      "toSkillId": "CHEM_KIN2"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s7",
+      "toDescription": "Apply the first-order differential rate law (rate = k x C) to relate a reaction's rate to its reactant concentration.",
+      "toTopicKeyGuess": "CHEM_KIN",
+      "toTempId": "ChemBook1_b05_s34"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s8",
+      "toDescription": "Apply the two-point Arrhenius equation to calculate a reaction's activation energy from its rate constants at two temperatures.",
+      "toTopicKeyGuess": "CHEM_KIN",
+      "toTempId": "ChemBook1_b05_s6"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s10",
+      "toTempId": "ChemBook1_b06_s9",
+      "toDescription": "Define a catalyst poison."
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s10",
+      "toDescription": "Explain how a catalyst affects a reaction's activation energy and consequently its rate.",
+      "toTopicKeyGuess": "CHEM_CAT",
+      "toSkillId": "CHEM_CAT6"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s13",
+      "toTempId": "ChemBook1_b06_s12",
+      "toDescription": "Explain why a weak acid's neutralization enthalpy is numerically smaller than 57.3 kJ/mol."
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s12",
+      "toDescription": "Recall that the enthalpy of neutralization of any strong acid by any strong base is about -57.3 kJ per mole of water formed.",
+      "toTopicKeyGuess": "CHE_THERMOCHEM",
+      "toTempId": "ChemBook1_b05_s45"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s16",
+      "toTempId": "ChemBook1_b06_s14",
+      "toDescription": "Apply the first law of thermodynamics."
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s16",
+      "toDescription": "Determine delta-n, the change in the number of moles of gas, from a balanced gas-phase equation.",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM",
+      "toTempId": "ChemBook1_b05_s4"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s17",
+      "toTempId": "ChemBook1_b06_s16",
+      "toDescription": "Convert between delta H and delta U using delta H = delta U + (delta n)RT."
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s19",
+      "toDescription": "Apply Hess's law by algebraically combining given thermochemical equations.",
+      "toTopicKeyGuess": "CHE_THERMOCHEM",
+      "toTempId": "ChemBook1_b05_s40"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s20",
+      "toDescription": "Define the heat (enthalpy) of combustion.",
+      "toTopicKeyGuess": "CHE_THERMOCHEM",
+      "toTempId": "ChemBook1_b05_s43"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s21",
+      "toDescription": "Calculate the moles of acid and base present in a neutralization reaction from concentration and volume.",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY",
+      "toSkillId": "CHE_STOICHIOMETRY11"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s23",
+      "toDescription": "Define a buffer solution as one that resists a change in pH when small amounts of acid or base are added to it.",
+      "toTopicKeyGuess": "CHE_ACIDBASE",
+      "toSkillId": "CHE_ACIDBASE26"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s24",
+      "toDescription": "Define a buffer solution as one that resists a change in pH when small amounts of acid or base are added to it.",
+      "toTopicKeyGuess": "CHE_ACIDBASE",
+      "toSkillId": "CHE_ACIDBASE26"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s26",
+      "toTempId": "ChemBook1_b06_s25",
+      "toDescription": "Recall the colour of an acid-base indicator in acidic and alkaline media."
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s27",
+      "toDescription": "Recall the Henderson-Hasselbalch equation for an acidic buffer and for a basic buffer.",
+      "toTopicKeyGuess": "CHE_ACIDBASE",
+      "toSkillId": "CHE_ACIDBASE27"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s29",
+      "toTempId": "ChemBook1_b06_s11",
+      "toDescription": "Recall the ionic product of water at 298 K."
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s31",
+      "toDescription": "Calculate the number of moles of a substance from a given mass and its molar mass.",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY",
+      "toSkillId": "CHE_STOICHIOMETRY12"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s32",
+      "toDescription": "Calculate the equilibrium constant Kc for a simple equilibrium from the equilibrium concentrations of reactant and product.",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM",
+      "toSkillId": "CHE_EQUILIBRIUM12"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s33",
+      "toDescription": "Recall Le Chatelier's principle by name as the principle predicting how a system at equilibrium responds to a disturbance.",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM",
+      "toTempId": "ChemBook1_b05_s69"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s34",
+      "toDescription": "Recall Le Chatelier's principle by name as the principle predicting how a system at equilibrium responds to a disturbance.",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM",
+      "toTempId": "ChemBook1_b05_s69"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s35",
+      "toDescription": "Explain how a catalyst affects a reaction's activation energy and consequently its rate.",
+      "toTopicKeyGuess": "CHEM_CAT",
+      "toSkillId": "CHEM_CAT6"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s38",
+      "toDescription": "Determine delta-n, the change in the number of moles of gas, from a balanced gas-phase equation.",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM",
+      "toTempId": "ChemBook1_b05_s4"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s37",
+      "toDescription": "Recall the defining characteristics of the chemical equilibrium state.",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM",
+      "toTempId": "ChemBook1_b05_s71"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s40",
+      "toDescription": "Compare common intermolecular and intramolecular forces of attraction by relative strength.",
+      "toTopicKeyGuess": "CHE_BONDING",
+      "toSkillId": "CHE_BONDING43"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s43",
+      "toDescription": "Recall the biological catalyst used in a named fermentation-based industrial process.",
+      "toTopicKeyGuess": "CHEM_CAT",
+      "toTempId": "ChemBook1_b05_s28"
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s45",
+      "toTempId": "ChemBook1_b06_s44",
+      "toDescription": "Define food preservation and the role of an antioxidant."
+    },
+    {
+      "fromTempId": "ChemBook1_b06_s28",
+      "toDescription": "Classify a species as an acid or a base under the Bronsted-Lowry proton-transfer definition.",
+      "toTopicKeyGuess": "CHE_ACIDBASE",
+      "toSkillId": "CHE_ACIDBASE3"
+    }
+  ],
+  "legacyIdReuse": {
+    "ChemBook1_b06_s33": "CHEM_EQ1"
+  },
+  "newTopicsProposed": [],
+  "skippedItems": [],
+  "sourceIssues": [
+    {
+      "itemId": "ChemBook1__p86__q123__700",
+      "note": "The source answer key marks 'temperature' as the constant property in a bomb calorimeter. That is chemically wrong - a bomb calorimeter is a constant-VOLUME device. Skill ChemBook1_b06_s17 states the correct chemistry, per system-prompt Global Constraint 5 (technical accuracy over source fidelity)."
+    },
+    {
+      "itemId": "ChemBook1__p81__q83__660",
+      "note": "Source itself flags that no option matches a correct reading of 'rate constant increases threefold'; the book back-solves to fit option (b). Extraction takes the standard two-point Arrhenius skill from it and ignores the arithmetic dispute."
+    },
+    {
+      "itemId": "ChemBook1__p77__q43__620",
+      "note": "Source solution contains a typo (writes (0.05)^2 for (0.65)^2, and 0.1829 for 1.829). The intended skill (Kp from degree of dissociation, then Kp to Kc) is unambiguous and was extracted normally."
+    }
+  ]
+}

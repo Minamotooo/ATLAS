@@ -29,12 +29,6 @@
       "topicKeyGuess": "CHE_BONDING"
     }
   ],
-  "CHE_STOICHIOMETRY2": [
-    {
-      "description": "Convert a given mass of a substance to moles using its molar mass.",
-      "topicKeyGuess": "CHE_STOICHIOMETRY"
-    }
-  ],
   "CHEM_DESCRIPTIVE0": [
     {
       "description": "Balance a chemical equation by ensuring the number of atoms of each element is equal on both sides of the equation.",
@@ -255,12 +249,6 @@
       "topicKeyGuess": "MAT_ALGEBRA"
     }
   ],
-  "CHE_BONDING46": [
-    {
-      "description": "Draw a Lewis (electron-dot) structure for a simple molecule showing bonding pairs and lone pairs of electrons.",
-      "topicKeyGuess": "CHE_BONDING"
-    }
-  ],
   "CHEM_REDOX23": [
     {
       "description": "Recall the definition of oxidation and reduction in terms of electron loss and electron gain.",
@@ -271,18 +259,6 @@
     {
       "description": "Recall the common/typical oxidation states exhibited by a given transition metal.",
       "topicKeyGuess": "CHEM_DBLOCK"
-    }
-  ],
-  "CHE_BONDING44": [
-    {
-      "description": "Recall the periodic trend in ionic radius (radius decreases across a period and increases down a group).",
-      "topicKeyGuess": "CHEM_PERIODIC"
-    }
-  ],
-  "CHE_BONDING47": [
-    {
-      "description": "Draw a Lewis (electron-dot) structure for a simple molecule showing bonding pairs and lone pairs of electrons.",
-      "topicKeyGuess": "CHE_BONDING"
     }
   ],
   "CHE_BONDING51": [

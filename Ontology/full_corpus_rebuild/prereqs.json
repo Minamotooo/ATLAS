@@ -743,5 +743,617 @@
       "full": "Calculate the pH of a solution from its pOH, or vice versa, using pH + pOH = 14 (at 25 degrees C).",
       "depth": 0
     }
+  ],
+  "CHE_ACIDBASE28": [
+    {
+      "id": "CHE_ACIDBASE27",
+      "full": "Recall the Henderson-Hasselbalch equation for an acidic buffer (pH = pKa + log([salt]/[acid])) and for a basic buffer (pH = 14 - pKb - log([salt]/[base])).",
+      "depth": 0
+    },
+    {
+      "id": "CHE_ACIDBASE29",
+      "full": "Explain how a buffer solution is prepared, either from a weak acid together with its salt of a strong base, or from a weak base together with its salt of a strong acid.",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE30": [
+    {
+      "id": "CHE_ACIDBASE28",
+      "full": "Calculate the salt-to-acid (or salt-to-base) mole ratio required to prepare a buffer solution of a specified pH, by rearranging the Henderson-Hasselbalch equation.",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE31": [
+    {
+      "id": "CHE_ACIDBASE20",
+      "full": "Calculate the pH of a buffer solution formed from a weak acid and its conjugate-base salt using the Henderson-Hasselbalch equation, pH = pKa + log([salt]/[acid]).",
+      "depth": 0
+    },
+    {
+      "id": "CHE_STOICHIOMETRY11",
+      "full": "Calculate the moles of acid and base present in a neutralization reaction from concentration and volume (n = C x V).",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM3": [
+    {
+      "id": "CHE_EQUILIBRIUM20",
+      "full": "Determine delta-n, the change in the number of moles of gas, from a balanced gas-phase chemical equation.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM19": [
+    {
+      "id": "CHE_EQUILIBRIUM26",
+      "full": "Calculate the partial pressure of a component of a gas mixture from its mole fraction (or percentage composition) and the mixture's total pressure.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM27": [
+    {
+      "id": "CHE_EQUILIBRIUM19",
+      "full": "Calculate the equilibrium constant Kp of a gas-phase reaction from the equilibrium partial pressures of its reactants and products.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM24": [
+    {
+      "id": "CHE_EQUILIBRIUM26",
+      "full": "Calculate the partial pressure of a component of a gas mixture from its mole fraction (or percentage composition) and the mixture's total pressure.",
+      "depth": 0
+    },
+    {
+      "id": "CHE_EQUILIBRIUM15",
+      "full": "Calculate the degree of dissociation (alpha) of a substance as the fraction of its initial moles that have dissociated at equilibrium.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM25": [
+    {
+      "id": "CHE_EQUILIBRIUM24",
+      "full": "Derive the expression for Kp in terms of the degree of dissociation (alpha) and the total pressure for a gas-phase dissociation equilibrium, by expressing each species' equilibrium mole fraction in terms of alpha.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM22": [
+    {
+      "id": "CHE_EQUILIBRIUM14",
+      "full": "Apply an initial-change-equilibrium (ICE) mole-table method to a gas-phase dissociation equilibrium (e.g., N2O4 <=> 2NO2) to solve for the extent of reaction.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM23": [
+    {
+      "id": "CHE_EQUILIBRIUM22",
+      "full": "Solve for the equilibrium concentrations of all species in a gas-phase or solution equilibrium from the equilibrium constant and the initial concentrations, by setting up an ICE table and solving the resulting quadratic equation.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM21": [
+    {
+      "id": "CHE_EQUILIBRIUM14",
+      "full": "Apply an initial-change-equilibrium (ICE) mole-table method to a gas-phase dissociation equilibrium (e.g., N2O4 <=> 2NO2) to solve for the extent of reaction.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM28": [
+    {
+      "id": "CHE_EQUILIBRIUM12",
+      "full": "Calculate the equilibrium constant Kc for a simple isomerization equilibrium from the equilibrium concentrations of reactant and product.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM32": [
+    {
+      "id": "CHE_EQUILIBRIUM12",
+      "full": "Calculate the equilibrium constant Kc for a simple isomerization equilibrium from the equilibrium concentrations of reactant and product.",
+      "depth": 0
+    }
+  ],
+  "CHEM_KIN7": [
+    {
+      "id": "CHEM_KIN18",
+      "full": "Recall the Arrhenius equation, k = A e^(-Ea/RT), and identify what each of its symbols represents (the Arrhenius/frequency factor A, the activation energy Ea, the gas constant R, and the absolute temperature T).",
+      "depth": 0
+    }
+  ],
+  "CHEM_KIN8": [
+    {
+      "id": "CHEM_KIN18",
+      "full": "Recall the Arrhenius equation, k = A e^(-Ea/RT), and identify what each of its symbols represents (the Arrhenius/frequency factor A, the activation energy Ea, the gas constant R, and the absolute temperature T).",
+      "depth": 0
+    }
+  ],
+  "CHEM_KIN17": [
+    {
+      "id": "CHEM_KIN18",
+      "full": "Recall the Arrhenius equation, k = A e^(-Ea/RT), and identify what each of its symbols represents (the Arrhenius/frequency factor A, the activation energy Ea, the gas constant R, and the absolute temperature T).",
+      "depth": 0
+    }
+  ],
+  "CHEM_KIN19": [
+    {
+      "id": "CHEM_KIN18",
+      "full": "Recall the Arrhenius equation, k = A e^(-Ea/RT), and identify what each of its symbols represents (the Arrhenius/frequency factor A, the activation energy Ea, the gas constant R, and the absolute temperature T).",
+      "depth": 0
+    },
+    {
+      "id": "CHEM_CAT6",
+      "full": "Explain how a catalyst affects a reaction's activation energy and consequently its rate.",
+      "depth": 0
+    }
+  ],
+  "CHEM_KIN9": [
+    {
+      "id": "CHEM_KIN10",
+      "full": "Define the half-life of a reaction as the time required for half of the reactant present to be converted into product.",
+      "depth": 0
+    }
+  ],
+  "CHEM_NUCLEAR17": [
+    {
+      "id": "CHEM_KIN9",
+      "full": "Calculate the first-order rate constant of a reaction from its half-life using k = 0.693/t(1/2), or the half-life from the rate constant.",
+      "depth": 0
+    }
+  ],
+  "CHEM_KIN11": [
+    {
+      "id": "CHEM_KIN5",
+      "full": "Apply the first-order integrated rate law to calculate the time required for a reactant's concentration to fall to a specified value, given its rate constant.",
+      "depth": 0
+    }
+  ],
+  "CHEM_KIN12": [
+    {
+      "id": "CHEM_KIN10",
+      "full": "Define the half-life of a reaction as the time required for half of the reactant present to be converted into product.",
+      "depth": 0
+    }
+  ],
+  "CHEM_KIN14": [
+    {
+      "id": "CHEM_KIN4",
+      "full": "Apply the first-order integrated rate law (C = C0 e^(-kt)) to calculate the concentration of a reactant remaining after a given elapsed time.",
+      "depth": 0
+    }
+  ],
+  "CHEM_KIN16": [
+    {
+      "id": "CHEM_KIN15",
+      "full": "Apply the first-order differential rate law (rate = k x C) to calculate a reaction's instantaneous rate from its rate constant and reactant concentration, or the concentration from the rate.",
+      "depth": 0
+    }
+  ],
+  "CHEM_KIN15": [
+    {
+      "id": "CHEM_KIN21",
+      "full": "Define the rate of a chemical reaction as the decrease in a reactant's concentration, or the increase in a product's concentration, per unit time.",
+      "depth": 0
+    }
+  ],
+  "CHE_THERMOCHEM7": [
+    {
+      "id": "CHE_THERMOCHEM8",
+      "full": "Explain the sign convention used in bond-energy calculations, that breaking a bond absorbs energy (counted positive) while forming a bond releases energy (counted negative).",
+      "depth": 0
+    }
+  ],
+  "CHE_THERMOCHEM9": [
+    {
+      "id": "CHE_THERMOCHEM12",
+      "full": "Define the standard enthalpy of formation of a compound as the enthalpy change when one mole of it is formed from its constituent elements in their standard states.",
+      "depth": 0
+    },
+    {
+      "id": "CHE_THERMOCHEM14",
+      "full": "Recall that the standard enthalpy of formation of any element in its standard reference state is zero.",
+      "depth": 0
+    }
+  ],
+  "CHE_THERMOCHEM10": [
+    {
+      "id": "CHE_THERMOCHEM12",
+      "full": "Define the standard enthalpy of formation of a compound as the enthalpy change when one mole of it is formed from its constituent elements in their standard states.",
+      "depth": 0
+    }
+  ],
+  "CHE_THERMOCHEM16": [
+    {
+      "id": "CHE_THERMOCHEM1",
+      "full": "Calculate the heat absorbed or released by a body of water in a calorimeter using Q = m x s x delta-T, given its mass, specific heat capacity, and temperature change.",
+      "depth": 0
+    },
+    {
+      "id": "CHE_THERMOCHEM13",
+      "full": "Define the heat (enthalpy) of combustion as the heat released when one mole of a substance is completely burned in an adequate supply of oxygen.",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE36": [
+    {
+      "id": "CHE_ACIDBASE32",
+      "full": "Calculate the degree of ionization (alpha) of a weak electrolyte from its dissociation constant and its concentration using alpha = square root of (K/C).",
+      "depth": 0
+    },
+    {
+      "id": "CHE_ACIDBASE23",
+      "full": "Calculate the pH of a solution from its hydrogen-ion concentration using pH = -log[H+].",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE37": [
+    {
+      "id": "CHE_ACIDBASE32",
+      "full": "Calculate the degree of ionization (alpha) of a weak electrolyte from its dissociation constant and its concentration using alpha = square root of (K/C).",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE38": [
+    {
+      "id": "CHE_ACIDBASE43",
+      "full": "Define pH as the negative base-10 logarithm of the molar hydrogen-ion concentration of a solution.",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE39": [
+    {
+      "id": "CHE_ACIDBASE38",
+      "full": "Calculate the hydrogen-ion concentration of a solution from its pH by taking the antilogarithm, [H+] = 10^(-pH).",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY16": [
+    {
+      "id": "CHE_ACIDBASE38",
+      "full": "Calculate the hydrogen-ion concentration of a solution from its pH by taking the antilogarithm, [H+] = 10^(-pH).",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE34": [
+    {
+      "id": "CHE_ACIDBASE15",
+      "full": "Calculate the pH of a solution from its pOH, or vice versa, using pH + pOH = 14 (at 25 degrees C).",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE33": [
+    {
+      "id": "CHE_ACIDBASE15",
+      "full": "Calculate the pH of a solution from its pOH, or vice versa, using pH + pOH = 14 (at 25 degrees C).",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE35": [
+    {
+      "id": "CHE_ACIDBASE23",
+      "full": "Calculate the pH of a solution from its hydrogen-ion concentration using pH = -log[H+].",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE48": [
+    {
+      "id": "CHE_ACIDBASE43",
+      "full": "Define pH as the negative base-10 logarithm of the molar hydrogen-ion concentration of a solution.",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE49": [
+    {
+      "id": "CHE_ACIDBASE38",
+      "full": "Calculate the hydrogen-ion concentration of a solution from its pH by taking the antilogarithm, [H+] = 10^(-pH).",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE41": [
+    {
+      "id": "CHE_ACIDBASE27",
+      "full": "Recall the Henderson-Hasselbalch equation for an acidic buffer (pH = pKa + log([salt]/[acid])) and for a basic buffer (pH = 14 - pKb - log([salt]/[base])).",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE44": [
+    {
+      "id": "CHE_ACIDBASE7",
+      "full": "Arrange a series of oxoacids of elements from the same periodic group (e.g., H2SO4, H2SeO4, H2TeO4) in order of acid strength, using the trend that acid strength decreases as the central atom's size increases down the group.",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE45": [
+    {
+      "id": "CHE_ACIDBASE18",
+      "full": "Apply the relation Ka x Kb = Kw to calculate the base dissociation constant (Kb) of a conjugate base given the acid dissociation constant (Ka) of its conjugate acid, or vice versa.",
+      "depth": 0
+    }
+  ],
+  "CHEM_SOLUTION8": [
+    {
+      "id": "CHE_STOICHIOMETRY12",
+      "full": "Calculate the number of moles of a substance from a given mass and its molar mass.",
+      "depth": 0
+    }
+  ],
+  "CHEM_SOLUTION9": [
+    {
+      "id": "CHE_STOICHIOMETRY12",
+      "full": "Calculate the number of moles of a substance from a given mass and its molar mass.",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY15": [
+    {
+      "id": "CHE_STOICHIOMETRY11",
+      "full": "Calculate the moles of acid and base present in a neutralization reaction from concentration and volume (n = C x V).",
+      "depth": 0
+    }
+  ],
+  "CHEM_ENV9": [
+    {
+      "id": "CHE_STOICHIOMETRY12",
+      "full": "Calculate the number of moles of a substance from a given mass and its molar mass.",
+      "depth": 0
+    }
+  ],
+  "CHEM_CAT8": [
+    {
+      "id": "CHEM_CAT6",
+      "full": "Explain how a catalyst affects a reaction's activation energy and consequently its rate.",
+      "depth": 0
+    }
+  ],
+  "CHEM_KIN22": [
+    {
+      "id": "CHEM_KIN23",
+      "full": "Recall the characteristic properties of a zero-order reaction: its rate is independent of the reactant concentration and stays constant with time, its rate constant has units of concentration per unit time, and photochemical reactions are a common example.",
+      "depth": 0
+    }
+  ],
+  "CHEM_KIN25": [
+    {
+      "id": "CHEM_KIN12",
+      "full": "Apply the second-order half-life relation t(1/2) = 1/(k x a) to calculate the initial concentration, the half-life, or the rate constant of a second-order reaction.",
+      "depth": 0
+    }
+  ],
+  "CHEM_KIN24": [
+    {
+      "id": "CHEM_KIN12",
+      "full": "Apply the second-order half-life relation t(1/2) = 1/(k x a) to calculate the initial concentration, the half-life, or the rate constant of a second-order reaction.",
+      "depth": 0
+    }
+  ],
+  "CHEM_KIN26": [
+    {
+      "id": "CHEM_KIN21",
+      "full": "Define the rate of a chemical reaction as the decrease in a reactant's concentration, or the increase in a product's concentration, per unit time.",
+      "depth": 0
+    }
+  ],
+  "CHEM_KIN27": [
+    {
+      "id": "CHEM_KIN2",
+      "full": "Explain the rate expression of a chemical reaction, relating the rate of consumption or formation of each species to its stoichiometric coefficient.",
+      "depth": 0
+    }
+  ],
+  "CHEM_KIN28": [
+    {
+      "id": "CHEM_KIN15",
+      "full": "Apply the first-order differential rate law (rate = k x C) to calculate a reaction's instantaneous rate from its rate constant and reactant concentration, or the concentration from the rate.",
+      "depth": 0
+    }
+  ],
+  "CHEM_KIN29": [
+    {
+      "id": "CHEM_KIN7",
+      "full": "Apply the two-point Arrhenius equation, ln(k2/k1) = (Ea/R)(1/T1 - 1/T2), to calculate a reaction's activation energy from its rate constants (or rates) measured at two temperatures.",
+      "depth": 0
+    }
+  ],
+  "CHEM_CAT11": [
+    {
+      "id": "CHEM_CAT10",
+      "full": "Define a catalyst poison as a substance (e.g., arsenic trioxide) that reduces or destroys the catalytic activity of a catalyst.",
+      "depth": 0
+    },
+    {
+      "id": "CHEM_CAT6",
+      "full": "Explain how a catalyst affects a reaction's activation energy and consequently its rate.",
+      "depth": 0
+    }
+  ],
+  "CHE_THERMOCHEM18": [
+    {
+      "id": "CHE_THERMOCHEM17",
+      "full": "Explain why the enthalpy of neutralization of a weak acid or a weak base is numerically smaller than the strong-acid/strong-base value of about 57.3 kJ per mole, because part of the energy released is consumed in ionizing the weak electrolyte.",
+      "depth": 0
+    }
+  ],
+  "CHE_THERMOCHEM17": [
+    {
+      "id": "CHE_THERMOCHEM15",
+      "full": "Recall that the enthalpy of neutralization of any strong acid by any strong base has the same value, about -57.3 kJ per mole of water formed.",
+      "depth": 0
+    }
+  ],
+  "CHE_THERMOCHEM21": [
+    {
+      "id": "CHE_THERMOCHEM19",
+      "full": "Apply the first law of thermodynamics, delta-U = q - w, to calculate the change in a system's internal energy from the heat it absorbs and the work it performs.",
+      "depth": 0
+    },
+    {
+      "id": "CHE_EQUILIBRIUM20",
+      "full": "Determine delta-n, the change in the number of moles of gas, from a balanced gas-phase chemical equation.",
+      "depth": 0
+    }
+  ],
+  "CHE_THERMOCHEM22": [
+    {
+      "id": "CHE_THERMOCHEM21",
+      "full": "Convert between a reaction's heat change measured at constant pressure (delta H) and at constant volume (delta U) using delta H = delta U + (delta n)RT.",
+      "depth": 0
+    }
+  ],
+  "CHE_THERMOCHEM24": [
+    {
+      "id": "CHE_THERMOCHEM10",
+      "full": "Apply Hess's law by algebraically adding, reversing, and scaling given thermochemical equations so that they sum to a target reaction, and combine their enthalpy changes accordingly.",
+      "depth": 0
+    }
+  ],
+  "CHE_THERMOCHEM25": [
+    {
+      "id": "CHE_THERMOCHEM13",
+      "full": "Define the heat (enthalpy) of combustion as the heat released when one mole of a substance is completely burned in an adequate supply of oxygen.",
+      "depth": 0
+    }
+  ],
+  "CHEM_ANALYTICAL6": [
+    {
+      "id": "CHE_STOICHIOMETRY11",
+      "full": "Calculate the moles of acid and base present in a neutralization reaction from concentration and volume (n = C x V).",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE51": [
+    {
+      "id": "CHE_ACIDBASE26",
+      "full": "Define a buffer solution as one that resists a change in pH when small amounts of acid or base are added to it.",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE52": [
+    {
+      "id": "CHE_ACIDBASE26",
+      "full": "Define a buffer solution as one that resists a change in pH when small amounts of acid or base are added to it.",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE54": [
+    {
+      "id": "CHE_ACIDBASE53",
+      "full": "Recall the colour a given acid-base indicator shows in acidic and in alkaline media (e.g., methyl orange red in acid and yellow in alkali; phenolphthalein colourless in acid and pink in alkali).",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE55": [
+    {
+      "id": "CHE_ACIDBASE27",
+      "full": "Recall the Henderson-Hasselbalch equation for an acidic buffer (pH = pKa + log([salt]/[acid])) and for a basic buffer (pH = 14 - pKb - log([salt]/[base])).",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE57": [
+    {
+      "id": "CHE_ACIDBASE50",
+      "full": "Recall that the ionic product of water, Kw, equals 1.0 x 10^-14 mol^2 L^-2 at 298 K, and that pure water therefore has [H+] = [OH-] = 1.0 x 10^-7 M.",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY17": [
+    {
+      "id": "CHE_STOICHIOMETRY12",
+      "full": "Calculate the number of moles of a substance from a given mass and its molar mass.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM33": [
+    {
+      "id": "CHE_EQUILIBRIUM12",
+      "full": "Calculate the equilibrium constant Kc for a simple isomerization equilibrium from the equilibrium concentrations of reactant and product.",
+      "depth": 0
+    }
+  ],
+  "CHEM_EQ1": [
+    {
+      "id": "CHE_EQUILIBRIUM29",
+      "full": "Recall Le Chatelier's principle by name as the principle that predicts how a system at equilibrium responds to a disturbance in order to re-establish equilibrium.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM34": [
+    {
+      "id": "CHE_EQUILIBRIUM29",
+      "full": "Recall Le Chatelier's principle by name as the principle that predicts how a system at equilibrium responds to a disturbance in order to re-establish equilibrium.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM35": [
+    {
+      "id": "CHEM_CAT6",
+      "full": "Explain how a catalyst affects a reaction's activation energy and consequently its rate.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM38": [
+    {
+      "id": "CHE_EQUILIBRIUM20",
+      "full": "Determine delta-n, the change in the number of moles of gas, from a balanced gas-phase chemical equation.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM37": [
+    {
+      "id": "CHE_EQUILIBRIUM31",
+      "full": "Recall the defining characteristics of the chemical equilibrium state (the reaction remains incomplete, the same equilibrium is reachable from either direction, the state is dynamic and permanent under fixed conditions, and a catalyst cannot shift its position).",
+      "depth": 0
+    }
+  ],
+  "CHEM_SOLUTION10": [
+    {
+      "id": "CHE_BONDING43",
+      "full": "Compare common intermolecular and intramolecular forces of attraction by relative strength (van der Waals forces < dipole-dipole interaction < hydrogen bonding < covalent bonding).",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC11": [
+    {
+      "id": "CHEM_CAT7",
+      "full": "Recall the biological catalyst (enzyme or microorganism) used in a named fermentation-based industrial process (e.g., zymase for ethanol production, Mycoderma aceti for vinegar production).",
+      "depth": 0
+    }
+  ],
+  "CHE_BIOMOLECULE9": [
+    {
+      "id": "CHE_BIOMOLECULE8",
+      "full": "Define food preservation, and recall the role of an antioxidant as a preservative that prevents the oxidative spoilage of stored food.",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE56": [
+    {
+      "id": "CHE_ACIDBASE3",
+      "full": "Classify a given metal or non-metal oxide as acidic, basic, amphoteric, a peroxide, or a superoxide, based on its composition and bonding character.",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY2": [
+    {
+      "id": "CHE_STOICHIOMETRY12",
+      "full": "Calculate the number of moles of a substance from a given mass and its molar mass.",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING46": [
+    {
+      "id": "CHE_BONDING24",
+      "full": "Draw the Lewis (electron-dot) structure of a given simple covalent molecule (e.g., carbonyl chloride, COCl2), showing bonding pairs and lone pairs consistent with the octet rule.",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING44": [
+    {
+      "id": "CHEM_PERIODIC6",
+      "full": "Recall the periodic trend (increase or decrease) of a given atomic or ionic property, such as electronegativity, ionization energy, atomic/ionic radius, melting point, or metallic character, across a period or down a group.",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING47": [
+    {
+      "id": "CHE_BONDING24",
+      "full": "Draw the Lewis (electron-dot) structure of a given simple covalent molecule (e.g., carbonyl chloride, COCl2), showing bonding pairs and lone pairs consistent with the octet rule.",
+      "depth": 0
+    }
   ]
 }

@@ -114,11 +114,14 @@ the user explicitly asks in that specific message. Read-only exploration
   routes, the `data-gen` question-generation pipeline, known limitations.
 - [HANDOFF.md](HANDOFF.md), [HANDOFF2.md](HANDOFF2.md) — chronological dev history
   and rationale for major decisions.
-- [HANDOFF3.md](HANDOFF3.md) — **read this if you're touching anything under
-  `Ontology/`.** An in-progress, separate initiative to rebuild the skill ontology
-  from the full `documents/` corpus (the live 430-skill ontology only used a small
-  sample). Not finished — has an exact resume point, real lessons learned about a
-  cost-blowout to not repeat, and specific next steps. Check it before assuming
+- [HANDOFF3.md](HANDOFF3.md) then [HANDOFF4.md](HANDOFF4.md) — **read both if
+  you're touching anything under `Ontology/`.** An in-progress, separate
+  initiative to rebuild the skill ontology from the full `documents/` corpus (the
+  live 430-skill ontology only used a small sample). Not finished. HANDOFF3 has
+  the rationale, the standing instructions, a cost-blowout to not repeat, and the
+  consolidation judgement rules; HANDOFF4 has the current state (`ChemBook1`
+  complete, 514 skills, 16.3% of the corpus), the cheaper no-subagent method that
+  now works end to end, and the exact resume point. Check them before assuming
   `Ontology/tuples.json` is the only or the current ontology work.
 - [BKT-DAG Policy For Skill Mastery.txt](BKT-DAG%20Policy%20For%20Skill%20Mastery.txt)
   — exact current mastery/gating policy constants and trigger rules.

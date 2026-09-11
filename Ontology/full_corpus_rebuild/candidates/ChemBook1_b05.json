@@ -1,0 +1,1454 @@
+{
+  "chunkLabel": "ChemBook1_b05",
+  "subject": "Chemistry",
+  "recordRange": "parsed_items.jsonl lines 481-606 (indices 480-605), ChemBook1.txt",
+  "skills": [
+    {
+      "tempId": "ChemBook1_b05_s1",
+      "bloom": "Apply",
+      "skillFull": "Calculate the salt-to-acid (or salt-to-base) mole ratio required to prepare a buffer solution of a specified pH, by rearranging the Henderson-Hasselbalch equation.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p54__q24__480",
+        "ChemBook1__p71__q117__573"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s2",
+      "bloom": "Understand",
+      "skillFull": "Explain how a buffer solution is prepared, either from a weak acid together with its salt of a strong base, or from a weak base together with its salt of a strong acid.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p54__q24__480",
+        "ChemBook1__p60__q56__512",
+        "ChemBook1__p66__q81__537",
+        "ChemBook1__p70__q111__567"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s3",
+      "bloom": "Apply",
+      "skillFull": "Calculate the equilibrium constant Kp of a gas-phase reaction from the equilibrium partial pressures of its reactants and products.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p54__q25__481",
+        "ChemBook1__p57__q37__493",
+        "ChemBook1__p59__q51__507",
+        "ChemBook1__p66__q82__538"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s4",
+      "bloom": "Apply",
+      "skillFull": "Determine delta-n, the change in the number of moles of gas, from a balanced gas-phase chemical equation.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p57__q38__494",
+        "ChemBook1__p64__q75__531",
+        "ChemBook1__p73__q08__585"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s5",
+      "bloom": "Apply",
+      "skillFull": "Convert between the equilibrium constants Kp and Kc of a gas-phase reaction using Kp = Kc(RT)^(delta n), given the temperature and the change in moles of gas.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p54__q25__481",
+        "ChemBook1__p55__q28__484",
+        "ChemBook1__p57__q37__493",
+        "ChemBook1__p57__q38__494",
+        "ChemBook1__p59__q51__507",
+        "ChemBook1__p61__q59__515",
+        "ChemBook1__p61__q60__516",
+        "ChemBook1__p64__q75__531",
+        "ChemBook1__p73__q08__585"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s6",
+      "bloom": "Apply",
+      "skillFull": "Apply the two-point Arrhenius equation, ln(k2/k1) = (Ea/R)(1/T1 - 1/T2), to calculate a reaction's activation energy from its rate constants (or rates) measured at two temperatures.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p58__q45__501",
+        "ChemBook1__p62__q63__519",
+        "ChemBook1__p62__q66__522",
+        "ChemBook1__p65__q79__535",
+        "ChemBook1__p74__q16__593",
+        "ChemBook1__p74__q18__595"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s7",
+      "bloom": "Apply",
+      "skillFull": "Apply the two-point Arrhenius equation to calculate the ratio of a reaction's rate constants at two temperatures from its known activation energy.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p54__q26__482"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s8",
+      "bloom": "Apply",
+      "skillFull": "Calculate the volume of a salt (conjugate base) solution of known molarity that must be added to a given volume of weak acid solution to produce a buffer of a specified pH.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p55__q27__483",
+        "ChemBook1__p63__q70__526"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s9",
+      "bloom": "Apply",
+      "skillFull": "Calculate the equilibrium constant Kc from the initial amounts of reactants and the measured amount of product formed, by constructing an initial-change-equilibrium (ICE) mole table for the balanced equation.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p55__q28__484",
+        "ChemBook1__p59__q47__503",
+        "ChemBook1__p64__q75__531",
+        "ChemBook1__p64__q76__532"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s10",
+      "bloom": "Apply",
+      "skillFull": "Calculate the first-order rate constant of a reaction from its half-life using k = 0.693/t(1/2), or the half-life from the rate constant.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p55__q29__485",
+        "ChemBook1__p56__q34__490",
+        "ChemBook1__p58__q43__499",
+        "ChemBook1__p58__q44__500",
+        "ChemBook1__p62__q67__523",
+        "ChemBook1__p63__q69__525",
+        "ChemBook1__p66__q85__541",
+        "ChemBook1__p70__q107__563",
+        "ChemBook1__p71__q115__571"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s11",
+      "bloom": "Remember",
+      "skillFull": "Define the half-life of a reaction as the time required for half of the reactant present to be converted into product.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p62__q67__523"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s12",
+      "bloom": "Apply",
+      "skillFull": "Determine the moles of conjugate-base salt formed and of weak acid remaining when a limited amount of strong base is added to an excess of weak acid, and use them in the Henderson-Hasselbalch equation to find the resulting buffer's pH.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p56__q30__486",
+        "ChemBook1__p70__q110__566"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s13",
+      "bloom": "Apply",
+      "skillFull": "Solve for the equilibrium concentrations of all species in a gas-phase or solution equilibrium from the equilibrium constant and the initial concentrations, by setting up an ICE table and solving the resulting quadratic equation.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p56__q31__487"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s14",
+      "bloom": "Evaluate",
+      "skillFull": "Evaluate which root of a quadratic solution to an equilibrium problem is physically valid, rejecting any root that would make an equilibrium amount negative or exceed the initial amount.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p56__q31__487"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s15",
+      "bloom": "Apply",
+      "skillFull": "Derive the expression for Kp in terms of the degree of dissociation (alpha) and the total pressure for a gas-phase dissociation equilibrium, by expressing each species' equilibrium mole fraction in terms of alpha.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p56__q32__488",
+        "ChemBook1__p59__q51__507",
+        "ChemBook1__p62__q65__521",
+        "ChemBook1__p68__q99__555"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s16",
+      "bloom": "Apply",
+      "skillFull": "Calculate the degree of dissociation of a gas at a new total pressure from the equilibrium constant Kp determined at a different pressure.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p62__q65__521",
+        "ChemBook1__p68__q99__555"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s17",
+      "bloom": "Apply",
+      "skillFull": "Calculate the partial pressure of a component of a gas mixture from its mole fraction (or percentage composition) and the mixture's total pressure.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p56__q32__488",
+        "ChemBook1__p57__q37__493",
+        "ChemBook1__p66__q82__538"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s18",
+      "bloom": "Apply",
+      "skillFull": "Calculate an unknown equilibrium partial pressure by rearranging the Kp expression, given the value of Kp and the remaining partial pressures.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p61__q60__516"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s19",
+      "bloom": "Apply",
+      "skillFull": "Calculate the age of a sample by radioisotope dating from its present and original activities and the isotope's half-life, using t = (1/k) ln(A0/A).",
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry and Radioactivity",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p56__q34__490",
+        "ChemBook1__p58__q43__499",
+        "ChemBook1__p71__q115__571"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s20",
+      "bloom": "Apply",
+      "skillFull": "Calculate the degree of ionization (alpha) of a weak electrolyte from its dissociation constant and its concentration using alpha = square root of (K/C).",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p57__q35__491"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s21",
+      "bloom": "Apply",
+      "skillFull": "Calculate the hydrogen-ion concentration from the hydroxide-ion concentration (or the reverse) using the ion product of water, [H+][OH-] = Kw = 1.0 x 10^-14 at 25 degrees C.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p57__q35__491",
+        "ChemBook1__p59__q46__502",
+        "ChemBook1__p73__q12__589",
+        "ChemBook1__p73__q13__590"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s22",
+      "bloom": "Apply",
+      "skillFull": "Determine the hydrogen-ion or hydroxide-ion concentration of a fully dissociated strong acid or base from its molarity and the number of ionizable hydrogens or hydroxides per formula unit (e.g., Sr(OH)2 gives [OH-] = 2 x c; 1.0 M H2SO4 gives [H+] = 2.0 M).",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p57__q36__492",
+        "ChemBook1__p62__q64__520",
+        "ChemBook1__p70__q111__567",
+        "ChemBook1__p74__q15__592",
+        "ChemBook1__p75__q26__603"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s23",
+      "bloom": "Apply",
+      "skillFull": "Calculate the enthalpy change of a reaction from bond energies, as the sum of the energies of the bonds broken minus the sum of the energies of the bonds formed.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p57__q39__495",
+        "ChemBook1__p64__q77__533",
+        "ChemBook1__p74__q19__596"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s24",
+      "bloom": "Understand",
+      "skillFull": "Explain the sign convention used in bond-energy calculations, that breaking a bond absorbs energy (counted positive) while forming a bond releases energy (counted negative).",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p57__q39__495",
+        "ChemBook1__p74__q19__596"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s25",
+      "bloom": "Evaluate",
+      "skillFull": "Evaluate the claim that a first-order reaction can reach 100% completion, and justify that it cannot, because its integrated rate law requires infinite time for the reactant concentration to reach zero.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p58__q40__496",
+        "ChemBook1__p65__q80__536"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s26",
+      "bloom": "Apply",
+      "skillFull": "Calculate the concentration of each ion remaining after two solutions are mixed, by scaling each original concentration by the ratio of its own volume to the total combined volume.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p58__q41__497"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s28",
+      "bloom": "Remember",
+      "skillFull": "Recall the biological catalyst (enzyme or microorganism) used in a named fermentation-based industrial process (e.g., zymase for ethanol production, Mycoderma aceti for vinegar production).",
+      "topicKey": "CHEM_CAT",
+      "topicLabel": "Catalysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p63__q68__524"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s29",
+      "bloom": "Remember",
+      "skillFull": "Define an enzyme as a complex nitrogenous organic substance produced by living cells that acts as a biological catalyst.",
+      "topicKey": "CHEM_CAT",
+      "topicLabel": "Catalysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p63__q68__524"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s30",
+      "bloom": "Apply",
+      "skillFull": "Apply the second-order half-life relation t(1/2) = 1/(k x a) to calculate the initial concentration, the half-life, or the rate constant of a second-order reaction.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p59__q49__505"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s31",
+      "bloom": "Understand",
+      "skillFull": "Classify an aqueous solution as acidic, basic, or neutral by comparing its pH with 7 at 25 degrees C.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p59__q50__506",
+        "ChemBook1__p63__q71__527",
+        "ChemBook1__p67__q90__546",
+        "ChemBook1__p71__q114__570"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s32",
+      "bloom": "Remember",
+      "skillFull": "List the factors that influence the rate of a chemical reaction (temperature, concentration, pressure, catalyst, reactant surface area, and light).",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p60__q52__508",
+        "ChemBook1__p65__q78__534"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s33",
+      "bloom": "Analyze",
+      "skillFull": "Determine the order of a reaction from experimental concentration-time, pressure-time, or titre-time data, by computing the rate constant at several times using a candidate integrated rate law and checking whether the resulting values are constant.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p60__q52__508",
+        "ChemBook1__p65__q78__534",
+        "ChemBook1__p69__q105__561"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s34",
+      "bloom": "Apply",
+      "skillFull": "Apply the first-order differential rate law (rate = k x C) to calculate a reaction's instantaneous rate from its rate constant and reactant concentration, or the concentration from the rate.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p60__q53__509",
+        "ChemBook1__p69__q101__557"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s35",
+      "bloom": "Apply",
+      "skillFull": "Calculate the rate of a first-order reaction at a specified later time as the initial rate multiplied by e^(-kt), using the ratio of concentrations.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p60__q53__509"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s36",
+      "bloom": "Apply",
+      "skillFull": "Calculate the activation energy of a reaction from the slope of an Arrhenius plot of the rate constant against 1/T, using slope = -Ea/(2.303 R) for a log k plot or slope = -Ea/R for an ln k plot.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p60__q54__510"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s37",
+      "bloom": "Remember",
+      "skillFull": "Recall the Arrhenius equation, k = A e^(-Ea/RT), and identify what each of its symbols represents (the Arrhenius/frequency factor A, the activation energy Ea, the gas constant R, and the absolute temperature T).",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p66__q84__540"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s38",
+      "bloom": "Apply",
+      "skillFull": "Calculate a reaction's original activation energy from the temperature at which it proceeds uncatalysed and the lower temperature at which the catalysed reaction proceeds at the same rate, by equating the two Arrhenius exponents.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p73__q10__587"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s39",
+      "bloom": "Apply",
+      "skillFull": "Calculate the standard enthalpy of formation of a compound from the standard enthalpies of formation or combustion of the other species in a thermochemical equation, using delta-H(reaction) = sum of products' formation enthalpies minus sum of reactants' formation enthalpies.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p61__q62__518",
+        "ChemBook1__p66__q83__539",
+        "ChemBook1__p67__q92__548",
+        "ChemBook1__p73__q09__586"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s40",
+      "bloom": "Apply",
+      "skillFull": "Apply Hess's law by algebraically adding, reversing, and scaling given thermochemical equations so that they sum to a target reaction, and combine their enthalpy changes accordingly.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p67__q91__547"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s41",
+      "bloom": "Remember",
+      "skillFull": "List the named types of enthalpy change studied in thermochemistry (e.g., enthalpy of formation, combustion, neutralization, vaporization, ionization, and atomization).",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p61__q62__518",
+        "ChemBook1__p64__q77__533"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s42",
+      "bloom": "Remember",
+      "skillFull": "Define the standard enthalpy of formation of a compound as the enthalpy change when one mole of it is formed from its constituent elements in their standard states.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p64__q77__533"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s43",
+      "bloom": "Remember",
+      "skillFull": "Define the heat (enthalpy) of combustion as the heat released when one mole of a substance is completely burned in an adequate supply of oxygen.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p69__q100__556",
+        "ChemBook1__p64__q77__533"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s44",
+      "bloom": "Remember",
+      "skillFull": "Recall that the standard enthalpy of formation of any element in its standard reference state is zero.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p59__q48__504"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s45",
+      "bloom": "Remember",
+      "skillFull": "Recall that the enthalpy of neutralization of any strong acid by any strong base has the same value, about -57.3 kJ per mole of water formed.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p67__q93__549"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s46",
+      "bloom": "Apply",
+      "skillFull": "Calculate the heat absorbed or released by a body of water in a calorimeter using Q = m x s x delta-T, given its mass, specific heat capacity, and temperature change.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p72__q121__577"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s47",
+      "bloom": "Apply",
+      "skillFull": "Calculate the molar enthalpy of combustion of a substance from the heat measured in a calorimeter and the mass of substance burned, by scaling the measured heat to one mole.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p72__q121__577"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s48",
+      "bloom": "Apply",
+      "skillFull": "Calculate the pH of a weak monoprotic acid solution from its acid dissociation constant and concentration using pH = -log(square root of (Ka x C)).",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p63__q74__530"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s49",
+      "bloom": "Apply",
+      "skillFull": "Calculate the hydrogen-ion concentration of a weak acid solution from its molar concentration and its percentage ionization, using [H+] = C x alpha.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p73__q13__590"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s50",
+      "bloom": "Apply",
+      "skillFull": "Calculate the hydrogen-ion concentration of a solution from its pH by taking the antilogarithm, [H+] = 10^(-pH).",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p59__q46__502",
+        "ChemBook1__p63__q73__529",
+        "ChemBook1__p66__q81__537",
+        "ChemBook1__p66__q87__543",
+        "ChemBook1__p69__q103__559"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s51",
+      "bloom": "Apply",
+      "skillFull": "Determine the molar concentration of a fully dissociated strong monoprotic acid from its hydrogen-ion concentration, recognizing that the acid dissociates in a 1:1 ratio.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p69__q103__559"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s52",
+      "bloom": "Apply",
+      "skillFull": "Calculate the number of ions present in a stated volume of a solution from the ion's molar concentration, the volume, and Avogadro's number.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p63__q73__529"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s53",
+      "bloom": "Remember",
+      "skillFull": "Recall that a species which accepts an electron pair, such as AlCl3, is classified as a Lewis acid.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p63__q72__528"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s54",
+      "bloom": "Create",
+      "skillFull": "Derive the Henderson-Hasselbalch equation from the acid dissociation equilibrium expression of a weak acid and its salt.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p70__q109__565"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s55",
+      "bloom": "Remember",
+      "skillFull": "Recall the practical applications of the Henderson-Hasselbalch equation (calculating the pH of a buffer, and determining the mole ratio of acid to salt needed to prepare a buffer of a desired pH).",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p63__q71__527"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s56",
+      "bloom": "Remember",
+      "skillFull": "Define pH as the negative base-10 logarithm of the molar hydrogen-ion concentration of a solution.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p66__q81__537",
+        "ChemBook1__p67__q89__545",
+        "ChemBook1__p71__q118__574"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s57",
+      "bloom": "Understand",
+      "skillFull": "Predict whether the aqueous solution of a given salt is acidic, basic, or neutral by identifying the relative strengths of the parent acid and base from which it is formed, and write the ionic hydrolysis equations that justify the prediction.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p68__q97__553",
+        "ChemBook1__p72__q03__580"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s58",
+      "bloom": "Analyze",
+      "skillFull": "Rank a set of molecules or ions in order of base strength by comparing the acid dissociation constants of their conjugate acids, recognizing that a weaker conjugate acid corresponds to a stronger base.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p71__q116__572"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s59",
+      "bloom": "Analyze",
+      "skillFull": "Compare the strengths of two oxoacids of the same central element (e.g., HClO versus HClO4) using the rule that acid strength increases with the central atom's oxidation state and its number of terminal oxygen atoms.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p69__q102__558",
+        "ChemBook1__p74__q21__598"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s60",
+      "bloom": "Analyze",
+      "skillFull": "Compare the strengths of two hydrohalic acids (HF < HCl < HBr < HI) using the trend that the H-X bond becomes weaker and more easily ionized down the halogen group.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p69__q102__558"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s61",
+      "bloom": "Understand",
+      "skillFull": "Compare the hydrogen-ion concentrations of two or more solutions from their pH (or pOH) values, recognizing that a higher pH corresponds to a lower hydrogen-ion concentration.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p74__q22__599"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s62",
+      "bloom": "Apply",
+      "skillFull": "Calculate the ratio of the hydrogen-ion concentrations of two solutions from their given pH or pOH values.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p72__q05__582"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s63",
+      "bloom": "Remember",
+      "skillFull": "Recall that anhydrous calcium chloride cannot be used to dry ammonia gas, because the two form an addition compound rather than the gas simply losing water.",
+      "topicKey": "CHEM_LAB",
+      "topicLabel": "Laboratory Techniques and Safety",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p68__q98__554"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s64",
+      "bloom": "Remember",
+      "skillFull": "Define a standard solution as a solution whose concentration is accurately known.",
+      "topicKey": "CHEM_ANALYTICAL",
+      "topicLabel": "Quantitative (Titrimetric) Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p70__q111__567"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s65",
+      "bloom": "Remember",
+      "skillFull": "Recall which dissolved species (chiefly calcium and magnesium salts) are responsible for the alkalinity/hardness of water, and that their amount is determined by titration against EDTA with a suitable indicator.",
+      "topicKey": "CHEM_ANALYTICAL",
+      "topicLabel": "Quantitative (Titrimetric) Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p66__q86__542"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s66",
+      "bloom": "Apply",
+      "skillFull": "Calculate the mole fractions of the solute and the solvent in a solution from its percentage composition by mass and the molar masses of the two components.",
+      "topicKey": "CHEM_SOLUTION",
+      "topicLabel": "Solutions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p72__q01__578"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s67",
+      "bloom": "Apply",
+      "skillFull": "Convert a solution's percentage concentration by mass into molarity using the solute's molar mass and the solution's assumed density.",
+      "topicKey": "CHEM_SOLUTION",
+      "topicLabel": "Solutions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p70__q111__567",
+        "ChemBook1__p74__q15__592"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s68",
+      "bloom": "Apply",
+      "skillFull": "Determine the equilibrium constant of a reaction that has been reversed, halved, doubled, or otherwise scaled, from the equilibrium constant of the original balanced equation.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p72__q04__581",
+        "ChemBook1__p74__q14__591",
+        "ChemBook1__p75__q27__604"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s69",
+      "bloom": "Remember",
+      "skillFull": "Recall Le Chatelier's principle by name as the principle that predicts how a system at equilibrium responds to a disturbance in order to re-establish equilibrium.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p74__q17__594"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s70",
+      "bloom": "Remember",
+      "skillFull": "State the law of mass action: at a given temperature the rate of a chemical reaction is proportional to the product of the active masses (molar concentrations) of the reactants.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p70__q112__568"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s71",
+      "bloom": "Remember",
+      "skillFull": "Recall the defining characteristics of the chemical equilibrium state (the reaction remains incomplete, the same equilibrium is reachable from either direction, the state is dynamic and permanent under fixed conditions, and a catalyst cannot shift its position).",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p61__q60__516"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s72",
+      "bloom": "Analyze",
+      "skillFull": "Analyze two coupled equilibria that share a common species to derive how the concentration ratio of two of the species depends on the concentration of that common species and on the two equilibrium constants.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p74__q20__597"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s73",
+      "bloom": "Apply",
+      "skillFull": "Calculate the environmental factor (E-factor) of a synthetic process as the total mass of waste produced divided by the mass of desired product.",
+      "topicKey": "CHEM_ENV",
+      "topicLabel": "Environmental Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p74__q24__601"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s74",
+      "bloom": "Remember",
+      "skillFull": "Recall that the enzyme urease catalyses the breakdown of urea fertilizer once it is applied to soil.",
+      "topicKey": "CHEM_CAT",
+      "topicLabel": "Catalysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p75__q28__605"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s75",
+      "bloom": "Remember",
+      "skillFull": "Recall the characteristic properties of a first-order reaction: its rate constant has units of reciprocal time, its half-life is independent of the initial concentration, and it never reaches completion.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p65__q78__534"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b05_s76",
+      "bloom": "Remember",
+      "skillFull": "Define the rate of a chemical reaction as the decrease in a reactant's concentration, or the increase in a product's concentration, per unit time.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p65__q78__534"
+      ]
+    }
+  ],
+  "reusedExistingSkills": [
+    {
+      "existingSkillId": "CHE_EQUILIBRIUM17",
+      "sourceItemIds": [
+        "ChemBook1__p74__q23__600"
+      ],
+      "note": "Le Chatelier temperature shift for an endothermic reaction"
+    },
+    {
+      "existingSkillId": "CHE_EQUILIBRIUM15",
+      "sourceItemIds": [
+        "ChemBook1__p56__q32__488",
+        "ChemBook1__p66__q82__538"
+      ],
+      "note": "degree of dissociation as fraction of initial moles"
+    },
+    {
+      "existingSkillId": "CHE_EQUILIBRIUM5",
+      "sourceItemIds": [
+        "ChemBook1__p58__q41__497"
+      ],
+      "note": "ionic product vs Ksp to predict precipitation"
+    },
+    {
+      "existingSkillId": "CHE_EQUILIBRIUM7",
+      "sourceItemIds": [
+        "ChemBook1__p58__q41__497",
+        "ChemBook1__p72__q120__576"
+      ],
+      "note": "molar solubility from Ksp"
+    },
+    {
+      "existingSkillId": "CHE_ACIDBASE20",
+      "sourceItemIds": [
+        "ChemBook1__p60__q55__511",
+        "ChemBook1__p61__q57__513",
+        "ChemBook1__p66__q81__537",
+        "ChemBook1__p66__q87__543"
+      ],
+      "note": "buffer pH via Henderson-Hasselbalch"
+    },
+    {
+      "existingSkillId": "CHE_ACIDBASE14",
+      "sourceItemIds": [
+        "ChemBook1__p67__q88__544",
+        "ChemBook1__p72__q06__583"
+      ],
+      "note": "pOH of a basic buffer from pKb"
+    },
+    {
+      "existingSkillId": "CHE_ACIDBASE27",
+      "sourceItemIds": [
+        "ChemBook1__p70__q109__565",
+        "ChemBook1__p72__q06__583"
+      ],
+      "note": "recall the Henderson-Hasselbalch forms"
+    },
+    {
+      "existingSkillId": "CHE_ACIDBASE26",
+      "sourceItemIds": [
+        "ChemBook1__p54__q24__480",
+        "ChemBook1__p60__q56__512",
+        "ChemBook1__p66__q81__537",
+        "ChemBook1__p70__q111__567"
+      ],
+      "note": "define a buffer solution"
+    },
+    {
+      "existingSkillId": "CHE_ACIDBASE23",
+      "sourceItemIds": [
+        "ChemBook1__p59__q50__506",
+        "ChemBook1__p61__q58__514",
+        "ChemBook1__p63__q71__527",
+        "ChemBook1__p71__q114__570"
+      ],
+      "note": "pH from [H+]"
+    },
+    {
+      "existingSkillId": "CHE_ACIDBASE15",
+      "sourceItemIds": [
+        "ChemBook1__p57__q35__491",
+        "ChemBook1__p57__q36__492",
+        "ChemBook1__p59__q50__506",
+        "ChemBook1__p62__q64__520",
+        "ChemBook1__p67__q89__545",
+        "ChemBook1__p70__q111__567",
+        "ChemBook1__p71__q118__574",
+        "ChemBook1__p74__q15__592",
+        "ChemBook1__p75__q26__603"
+      ],
+      "note": "pH from pOH and vice versa"
+    },
+    {
+      "existingSkillId": "CHE_ACIDBASE25",
+      "sourceItemIds": [
+        "ChemBook1__p57__q35__491"
+      ],
+      "note": "pOH of a weak base from Kb and C"
+    },
+    {
+      "existingSkillId": "CHE_ACIDBASE5",
+      "sourceItemIds": [
+        "ChemBook1__p68__q98__554"
+      ],
+      "note": "drying-agent compatibility with a gas"
+    },
+    {
+      "existingSkillId": "CHEM_KIN4",
+      "sourceItemIds": [
+        "ChemBook1__p66__q85__541",
+        "ChemBook1__p72__q119__575"
+      ],
+      "note": "first-order concentration after elapsed time"
+    },
+    {
+      "existingSkillId": "CHEM_KIN5",
+      "sourceItemIds": [
+        "ChemBook1__p55__q29__485",
+        "ChemBook1__p62__q67__523",
+        "ChemBook1__p63__q69__525",
+        "ChemBook1__p68__q96__552",
+        "ChemBook1__p70__q107__563",
+        "ChemBook1__p71__q115__571",
+        "ChemBook1__p72__q119__575"
+      ],
+      "note": "first-order time to reach a specified extent of reaction"
+    },
+    {
+      "existingSkillId": "CHEM_KIN6",
+      "sourceItemIds": [
+        "ChemBook1__p70__q106__562",
+        "ChemBook1__p73__q07__584"
+      ],
+      "note": "average rate from a concentration change over time"
+    },
+    {
+      "existingSkillId": "CHEM_KIN3",
+      "sourceItemIds": [
+        "ChemBook1__p72__q02__579"
+      ],
+      "note": "rate of one species from another via coefficients"
+    },
+    {
+      "existingSkillId": "CHEM_KIN2",
+      "sourceItemIds": [
+        "ChemBook1__p73__q11__588"
+      ],
+      "note": "rate expression related to stoichiometric coefficients"
+    },
+    {
+      "existingSkillId": "CHEM_CAT6",
+      "sourceItemIds": [
+        "ChemBook1__p68__q95__551",
+        "ChemBook1__p73__q10__587"
+      ],
+      "note": "catalyst lowers activation energy and raises rate"
+    },
+    {
+      "existingSkillId": "CHEM_CAT3",
+      "sourceItemIds": [
+        "ChemBook1__p58__q42__498",
+        "ChemBook1__p63__q68__524"
+      ],
+      "note": "iron catalyst in the Haber process"
+    },
+    {
+      "existingSkillId": "CHEM_CAT2",
+      "sourceItemIds": [
+        "ChemBook1__p63__q68__524"
+      ],
+      "note": "Pt / V2O5 in the Contact process"
+    },
+    {
+      "existingSkillId": "CHEM_CAT5",
+      "sourceItemIds": [
+        "ChemBook1__p63__q68__524"
+      ],
+      "note": "Ostwald process catalyst for nitric acid"
+    },
+    {
+      "existingSkillId": "CHE_THERMOCHEM5",
+      "sourceItemIds": [
+        "ChemBook1__p56__q33__489",
+        "ChemBook1__p61__q61__517",
+        "ChemBook1__p67__q94__550",
+        "ChemBook1__p69__q100__556",
+        "ChemBook1__p69__q104__560",
+        "ChemBook1__p71__q113__569"
+      ],
+      "note": "amount of reactant/product for a specified quantity of heat, and the converse"
+    },
+    {
+      "existingSkillId": "CHE_THERMOCHEM6",
+      "sourceItemIds": [
+        "ChemBook1__p69__q104__560"
+      ],
+      "note": "exothermic vs endothermic from the sign of delta H"
+    },
+    {
+      "existingSkillId": "CHE_GASLAWS3",
+      "sourceItemIds": [
+        "ChemBook1__p68__q98__554"
+      ],
+      "note": "gases less soluble in warm water"
+    },
+    {
+      "existingSkillId": "CHE_QUAL12",
+      "sourceItemIds": [
+        "ChemBook1__p68__q98__554"
+      ],
+      "note": "silver chloride as an insoluble chloride"
+    },
+    {
+      "existingSkillId": "CHEM_DESCRIPTIVE9",
+      "sourceItemIds": [
+        "ChemBook1__p68__q98__554"
+      ],
+      "note": "water gas is CO + H2"
+    },
+    {
+      "existingSkillId": "CHEM_DESCRIPTIVE1",
+      "sourceItemIds": [
+        "ChemBook1__p75__q25__602"
+      ],
+      "note": "trivial name to formula (oil of vitriol = H2SO4)"
+    },
+    {
+      "existingSkillId": "CHEM_DESCRIPTIVE0",
+      "sourceItemIds": [
+        "ChemBook1__p70__q108__564"
+      ],
+      "note": "predict and balance inorganic reaction products"
+    },
+    {
+      "existingSkillId": "CHEM_REDOX14",
+      "sourceItemIds": [
+        "ChemBook1__p70__q108__564"
+      ],
+      "note": "Cl2 with cold dilute alkali gives chloride + hypochlorite"
+    },
+    {
+      "existingSkillId": "CHE_ACIDBASE7",
+      "sourceItemIds": [
+        "ChemBook1__p69__q102__558",
+        "ChemBook1__p74__q21__598"
+      ],
+      "note": "oxoacid strength trend down a group"
+    }
+  ],
+  "prereqs": [
+    {
+      "fromTempId": "ChemBook1_b05_s1",
+      "toDescription": "Recall the Henderson-Hasselbalch equation for an acidic buffer and for a basic buffer.",
+      "toTopicKeyGuess": "CHE_ACIDBASE",
+      "toSkillId": "CHE_ACIDBASE27"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s1",
+      "toTempId": "ChemBook1_b05_s2",
+      "toDescription": "Explain how a buffer solution is prepared from a weak acid and its salt."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s8",
+      "toTempId": "ChemBook1_b05_s1",
+      "toDescription": "Calculate the salt-to-acid mole ratio required for a target buffer pH."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s12",
+      "toDescription": "Calculate the pH of a buffer solution formed from a weak acid and its conjugate-base salt using the Henderson-Hasselbalch equation.",
+      "toTopicKeyGuess": "CHE_ACIDBASE",
+      "toSkillId": "CHE_ACIDBASE20"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s12",
+      "toDescription": "Calculate the moles of acid and base present in a neutralization reaction from concentration and volume (n = C x V).",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY",
+      "toSkillId": "CHE_STOICHIOMETRY11"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s5",
+      "toTempId": "ChemBook1_b05_s4",
+      "toDescription": "Determine delta-n from a balanced gas-phase equation."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s3",
+      "toTempId": "ChemBook1_b05_s17",
+      "toDescription": "Calculate a partial pressure from mole fraction and total pressure."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s18",
+      "toTempId": "ChemBook1_b05_s3",
+      "toDescription": "Calculate Kp from equilibrium partial pressures."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s15",
+      "toTempId": "ChemBook1_b05_s17",
+      "toDescription": "Calculate a partial pressure from mole fraction and total pressure."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s15",
+      "toDescription": "Calculate the degree of dissociation (alpha) of a substance as the fraction of its initial moles that have dissociated at equilibrium.",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM",
+      "toSkillId": "CHE_EQUILIBRIUM15"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s16",
+      "toTempId": "ChemBook1_b05_s15",
+      "toDescription": "Derive Kp in terms of the degree of dissociation and total pressure."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s13",
+      "toDescription": "Apply an initial-change-equilibrium (ICE) mole-table method to a gas-phase equilibrium to solve for the extent of reaction.",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM",
+      "toSkillId": "CHE_EQUILIBRIUM14"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s14",
+      "toTempId": "ChemBook1_b05_s13",
+      "toDescription": "Solve an equilibrium problem for equilibrium concentrations using a quadratic equation."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s9",
+      "toDescription": "Apply an initial-change-equilibrium (ICE) mole-table method to a gas-phase equilibrium to solve for the extent of reaction.",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM",
+      "toSkillId": "CHE_EQUILIBRIUM14"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s68",
+      "toDescription": "Calculate the equilibrium constant Kc for a simple equilibrium from the equilibrium concentrations of reactant and product.",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM",
+      "toSkillId": "CHE_EQUILIBRIUM12"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s72",
+      "toDescription": "Calculate the equilibrium constant Kc for a simple equilibrium from the equilibrium concentrations of reactant and product.",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM",
+      "toSkillId": "CHE_EQUILIBRIUM12"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s6",
+      "toTempId": "ChemBook1_b05_s37",
+      "toDescription": "Recall the Arrhenius equation and the meaning of its symbols."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s7",
+      "toTempId": "ChemBook1_b05_s37",
+      "toDescription": "Recall the Arrhenius equation and the meaning of its symbols."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s36",
+      "toTempId": "ChemBook1_b05_s37",
+      "toDescription": "Recall the Arrhenius equation and the meaning of its symbols."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s38",
+      "toTempId": "ChemBook1_b05_s37",
+      "toDescription": "Recall the Arrhenius equation and the meaning of its symbols."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s38",
+      "toDescription": "Explain how a catalyst affects a reaction's activation energy and consequently its rate.",
+      "toTopicKeyGuess": "CHEM_CAT",
+      "toSkillId": "CHEM_CAT6"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s10",
+      "toTempId": "ChemBook1_b05_s11",
+      "toDescription": "Define the half-life of a reaction."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s19",
+      "toTempId": "ChemBook1_b05_s10",
+      "toDescription": "Calculate the first-order rate constant from the half-life."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s25",
+      "toDescription": "Apply the first-order integrated rate law to calculate the time required for a reactant's concentration to fall to a specified value.",
+      "toTopicKeyGuess": "CHEM_KIN",
+      "toSkillId": "CHEM_KIN5"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s30",
+      "toTempId": "ChemBook1_b05_s11",
+      "toDescription": "Define the half-life of a reaction."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s33",
+      "toDescription": "Apply the first-order integrated rate law (C = C0 e^(-kt)) to calculate the concentration of a reactant remaining after a given elapsed time.",
+      "toTopicKeyGuess": "CHEM_KIN",
+      "toSkillId": "CHEM_KIN4"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s35",
+      "toTempId": "ChemBook1_b05_s34",
+      "toDescription": "Apply the first-order differential rate law rate = k x C."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s34",
+      "toTempId": "ChemBook1_b05_s76",
+      "toDescription": "Define the rate of a chemical reaction."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s23",
+      "toTempId": "ChemBook1_b05_s24",
+      "toDescription": "Explain the sign convention for bonds broken and bonds formed."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s39",
+      "toTempId": "ChemBook1_b05_s42",
+      "toDescription": "Define the standard enthalpy of formation."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s39",
+      "toTempId": "ChemBook1_b05_s44",
+      "toDescription": "Recall that the standard enthalpy of formation of an element in its standard state is zero."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s40",
+      "toTempId": "ChemBook1_b05_s42",
+      "toDescription": "Define the standard enthalpy of formation."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s47",
+      "toTempId": "ChemBook1_b05_s46",
+      "toDescription": "Calculate the heat absorbed by water using Q = m s delta-T."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s47",
+      "toTempId": "ChemBook1_b05_s43",
+      "toDescription": "Define the heat of combustion."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s48",
+      "toTempId": "ChemBook1_b05_s20",
+      "toDescription": "Calculate the degree of ionization of a weak electrolyte from K and C."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s48",
+      "toDescription": "Calculate the pH of a solution from its hydrogen-ion concentration using pH = -log[H+].",
+      "toTopicKeyGuess": "CHE_ACIDBASE",
+      "toSkillId": "CHE_ACIDBASE23"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s49",
+      "toTempId": "ChemBook1_b05_s20",
+      "toDescription": "Calculate the degree of ionization of a weak electrolyte from K and C."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s50",
+      "toTempId": "ChemBook1_b05_s56",
+      "toDescription": "Define pH as the negative logarithm of the hydrogen-ion concentration."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s51",
+      "toTempId": "ChemBook1_b05_s50",
+      "toDescription": "Calculate [H+] from pH by antilogarithm."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s52",
+      "toTempId": "ChemBook1_b05_s50",
+      "toDescription": "Calculate [H+] from pH by antilogarithm."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s22",
+      "toDescription": "Calculate the pH of a solution from its pOH, or vice versa, using pH + pOH = 14.",
+      "toTopicKeyGuess": "CHE_ACIDBASE",
+      "toSkillId": "CHE_ACIDBASE15"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s21",
+      "toDescription": "Calculate the pH of a solution from its pOH, or vice versa, using pH + pOH = 14.",
+      "toTopicKeyGuess": "CHE_ACIDBASE",
+      "toSkillId": "CHE_ACIDBASE15"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s31",
+      "toDescription": "Calculate the pH of a solution from its hydrogen-ion concentration using pH = -log[H+].",
+      "toTopicKeyGuess": "CHE_ACIDBASE",
+      "toSkillId": "CHE_ACIDBASE23"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s61",
+      "toTempId": "ChemBook1_b05_s56",
+      "toDescription": "Define pH as the negative logarithm of the hydrogen-ion concentration."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s62",
+      "toTempId": "ChemBook1_b05_s50",
+      "toDescription": "Calculate [H+] from pH by antilogarithm."
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s54",
+      "toDescription": "Recall the Henderson-Hasselbalch equation for an acidic buffer and for a basic buffer.",
+      "toTopicKeyGuess": "CHE_ACIDBASE",
+      "toSkillId": "CHE_ACIDBASE27"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s57",
+      "toDescription": "Compare the relative strengths of common acids and bases.",
+      "toTopicKeyGuess": "CHE_ACIDBASE",
+      "toSkillId": "CHE_ACIDBASE7"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s58",
+      "toDescription": "Recall the relationship between an acid's dissociation constant and the strength of its conjugate base (Ka x Kb = Kw).",
+      "toTopicKeyGuess": "CHE_ACIDBASE",
+      "toSkillId": "CHE_ACIDBASE18"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s66",
+      "toDescription": "Calculate the number of moles of a substance from a given mass and its molar mass.",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY",
+      "toSkillId": "CHE_STOICHIOMETRY12"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s67",
+      "toDescription": "Calculate the number of moles of a substance from a given mass and its molar mass.",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY",
+      "toSkillId": "CHE_STOICHIOMETRY12"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s26",
+      "toDescription": "Calculate the number of moles of solute from concentration and volume (n = C x V).",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY",
+      "toSkillId": "CHE_STOICHIOMETRY11"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s73",
+      "toDescription": "Calculate the number of moles of a substance from a given mass and its molar mass.",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY",
+      "toSkillId": "CHE_STOICHIOMETRY12"
+    },
+    {
+      "fromTempId": "ChemBook1_b05_s29",
+      "toDescription": "Explain how a catalyst affects a reaction's activation energy and consequently its rate.",
+      "toTopicKeyGuess": "CHEM_CAT",
+      "toSkillId": "CHEM_CAT6"
+    }
+  ],
+  "legacyIdReuse": {
+    "ChemBook1_b05_s5": "CHE_EQUILIBRIUM3",
+    "ChemBook1_b05_s46": "CHE_THERMOCHEM1"
+  },
+  "newTopicsProposed": [],
+  "skippedItems": []
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "itemId": "ChemBook1__p86__q123__700",
+    "note": "The source answer key marks 'temperature' as the constant property in a bomb calorimeter. That is chemically wrong - a bomb calorimeter is a constant-VOLUME device. Skill ChemBook1_b06_s17 states the correct chemistry, per system-prompt Global Constraint 5 (technical accuracy over source fidelity)."
+  },
+  {
+    "itemId": "ChemBook1__p81__q83__660",
+    "note": "Source itself flags that no option matches a correct reading of 'rate constant increases threefold'; the book back-solves to fit option (b). Extraction takes the standard two-point Arrhenius skill from it and ignores the arithmetic dispute."
+  },
+  {
+    "itemId": "ChemBook1__p77__q43__620",
+    "note": "Source solution contains a typo (writes (0.05)^2 for (0.65)^2, and 0.1829 for 1.829). The intended skill (Kp from degree of dissociation, then Kp to Kc) is unambiguous and was extracted normally."
+  }
+]

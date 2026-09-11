@@ -1,0 +1,63 @@
+15 candidate near-duplicate pairs (jaccard >= 0.45)
+new candidates: 124  rebuild: 388  legacy chem: 117
+
+[0.75] NEW-vs-NEW / CHEM_KIN
+  ChemBook1_b05_s6: Apply the two-point Arrhenius equation, ln(k2/k1) = (Ea/R)(1/T1 - 1/T2), to calculate a reaction's activation energy from its rate constants (or rates) measured at two temperatures.
+  ChemBook1_b05_s7: Apply the two-point Arrhenius equation to calculate the ratio of a reaction's rate constants at two temperatures from its known activation energy.
+
+[0.62] NEW-vs-REBUILD / CHE_ACIDBASE
+  ChemBook1_b05_s50: Calculate the hydrogen-ion concentration of a solution from its pH by taking the antilogarithm, [H+] = 10^(-pH).
+  CHE_ACIDBASE23: Calculate the pH of a solution from its hydrogen-ion concentration using pH = -log[H+].
+
+[0.61] NEW-vs-REBUILD / CHEM_KIN
+  ChemBook1_b06_s1: Apply the zero-order integrated rate law (x = k t) to calculate the rate constant of a zero-order reaction, or the time required for a specified concentration change.
+  CHEM_KIN5: Apply the first-order integrated rate law to calculate the time required for a reactant's concentration to fall to a specified value, given its rate constant.
+
+[0.61] NEW-vs-NEW / CHE_THERMOCHEM
+  ChemBook1_b05_s39: Calculate the standard enthalpy of formation of a compound from the standard enthalpies of formation or combustion of the other species in a thermochemical equation, using delta-H(reaction) = sum of products' formation enthalpies minus sum of reactants' formation enthalpies.
+  ChemBook1_b06_s20: Calculate a reaction's enthalpy change from the standard enthalpies of combustion of its reactants and products, using delta-H = sum of reactants' combustion enthalpies minus sum of products' combustion enthalpies.
+
+[0.56] NEW-vs-REBUILD / CHEM_CAT
+  ChemBook1_b05_s27: Recall the promoter substance used alongside the finely divided iron catalyst in the Haber process for ammonia synthesis (molybdenum, or aluminium oxide).
+  CHEM_CAT3: Recall the catalyst used in the industrial (Haber process) synthesis of ammonia (finely divided iron).
+
+[0.54] NEW-vs-NEW / CHE_EQUILIBRIUM
+  ChemBook1_b05_s18: Calculate an unknown equilibrium partial pressure by rearranging the Kp expression, given the value of Kp and the remaining partial pressures.
+  ChemBook1_b06_s32: Calculate an unknown equilibrium concentration by rearranging the equilibrium-constant (Kc) expression, given the value of Kc and the remaining equilibrium concentrations.
+
+[0.50] NEW-vs-REBUILD / CHEM_KIN
+  ChemBook1_b05_s34: Apply the first-order differential rate law (rate = k x C) to calculate a reaction's instantaneous rate from its rate constant and reactant concentration, or the concentration from the rate.
+  CHEM_KIN5: Apply the first-order integrated rate law to calculate the time required for a reactant's concentration to fall to a specified value, given its rate constant.
+
+[0.50] NEW-vs-NEW / CHEM_KIN
+  ChemBook1_b06_s1: Apply the zero-order integrated rate law (x = k t) to calculate the rate constant of a zero-order reaction, or the time required for a specified concentration change.
+  ChemBook1_b06_s4: Apply the second-order integrated rate law for equal initial concentrations, k t = x / (a(a - x)), to calculate the time required to reach a specified extent of reaction.
+
+[0.50] NEW-vs-NEW / CHEM_KIN
+  ChemBook1_b05_s10: Calculate the first-order rate constant of a reaction from its half-life using k = 0.693/t(1/2), or the half-life from the rate constant.
+  ChemBook1_b05_s30: Apply the second-order half-life relation t(1/2) = 1/(k x a) to calculate the initial concentration, the half-life, or the rate constant of a second-order reaction.
+
+[0.47] NEW-vs-REBUILD / CHEM_KIN
+  ChemBook1_b05_s34: Apply the first-order differential rate law (rate = k x C) to calculate a reaction's instantaneous rate from its rate constant and reactant concentration, or the concentration from the rate.
+  CHEM_KIN4: Apply the first-order integrated rate law (C = C0 e^(-kt)) to calculate the concentration of a reactant remaining after a given elapsed time.
+
+[0.47] NEW-vs-NEW / CHE_ACIDBASE
+  ChemBook1_b05_s61: Compare the hydrogen-ion concentrations of two or more solutions from their pH (or pOH) values, recognizing that a higher pH corresponds to a lower hydrogen-ion concentration.
+  ChemBook1_b05_s62: Calculate the ratio of the hydrogen-ion concentrations of two solutions from their given pH or pOH values.
+
+[0.47] NEW-vs-NEW / CHE_ACIDBASE
+  ChemBook1_b05_s20: Calculate the degree of ionization (alpha) of a weak electrolyte from its dissociation constant and its concentration using alpha = square root of (K/C).
+  ChemBook1_b05_s48: Calculate the pH of a weak monoprotic acid solution from its acid dissociation constant and concentration using pH = -log(square root of (Ka x C)).
+
+[0.47] NEW-vs-NEW / CHEM_KIN
+  ChemBook1_b05_s30: Apply the second-order half-life relation t(1/2) = 1/(k x a) to calculate the initial concentration, the half-life, or the rate constant of a second-order reaction.
+  ChemBook1_b06_s5: Calculate the rate constant of a second-order reaction from its initial rate and the initial concentrations of its two reactants, using rate = k[A][B].
+
+[0.45] NEW-vs-REBUILD / CHE_ACIDBASE
+  ChemBook1_b05_s1: Calculate the salt-to-acid (or salt-to-base) mole ratio required to prepare a buffer solution of a specified pH, by rearranging the Henderson-Hasselbalch equation.
+  CHE_ACIDBASE20: Calculate the pH of a buffer solution formed from a weak acid and its conjugate-base salt using the Henderson-Hasselbalch equation, pH = pKa + log([salt]/[acid]).
+
+[0.45] NEW-vs-NEW / CHE_THERMOCHEM
+  ChemBook1_b05_s45: Recall that the enthalpy of neutralization of any strong acid by any strong base has the same value, about -57.3 kJ per mole of water formed.
+  ChemBook1_b06_s13: Calculate the ionization (dissociation) enthalpy of a weak acid or weak base from its measured enthalpy of neutralization and the standard strong-acid/strong-base neutralization value of about -57.3 kJ per mole.
+
