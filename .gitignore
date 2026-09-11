@@ -15,7 +15,6 @@ prompt.md
 server-ref.py
 
 # Local agent/working notes (not shared)
-CLAUDE.md
 .claude/
 
 # Ontology build scratch output (the real artifacts live in Backend/tree_data/)
