@@ -24,12 +24,14 @@ Run from data-gen/:
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import json
 import queue
 import sys
 import threading
 import time
 from pathlib import Path
+from typing import Callable
 
 import requests
 
@@ -52,6 +54,17 @@ GENERATION_MODEL = TEST_MODEL
 # from a separate quota pool instead of competing with generation calls.
 ANSWER_VERIFICATION_MODEL = TEST_MODEL
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
+# requests' own `timeout=` is supposed to bound a call, but a real ~40-minute
+# hang was observed (audit_questions.py, 2026-09-07) with no progress from any
+# of 10 parallel keys - well past every theoretical retry/backoff ceiling in
+# this file, meaning some single HTTP call likely blocked past its stated
+# timeout (a known occasional platform/networking issue, not something this
+# code can prevent at the requests-call level). Running the call through a
+# thread pool and bounding it with .result(timeout=...) gives a hard ceiling
+# that holds even if requests' own timeout silently fails to fire - the
+# request thread is orphaned (Python can't kill a blocked thread) but the
+# caller is guaranteed to get control back.
+_HTTP_HARD_TIMEOUT_SEC = 75.0  # a bit above requests' own 60s timeout
 # Every question that reaches the output file has already passed schema
 # validation AND the combined verification call (on-topic + independent
 # answer check) - that's true regardless of which model generated it, so
@@ -260,10 +273,26 @@ def gemini_generate(key_state: KeyState, model: str, system_prompt: str, user_pr
             return None, "key exhausted"
 
         key_state.wait_for_turn(model)
+        # A fresh single-use executor per call, not a shared pool: if requests'
+        # own timeout=60 fails to fire (observed platform issue) and the call
+        # blocks forever past _HTTP_HARD_TIMEOUT_SEC, .result(timeout=...) only
+        # abandons OUR wait - the underlying thread stays blocked forever. A
+        # shared fixed-size pool would permanently lose that worker slot, and
+        # after enough leaks (observed after ~40min/~650 calls under heavy
+        # rate-limit retry volume) every slot is gone and ALL future calls
+        # queue forever with zero free workers - a full stall. A disposable
+        # one-off executor lets the leaked thread die alone without shrinking
+        # capacity for calls that come after it.
+        one_shot = concurrent.futures.ThreadPoolExecutor(max_workers=1, thread_name_prefix="gemini-http")
         try:
-            resp = requests.post(url, json=payload, timeout=60)
+            resp = one_shot.submit(requests.post, url, json=payload, timeout=60) \
+                .result(timeout=_HTTP_HARD_TIMEOUT_SEC)
+        except concurrent.futures.TimeoutError:
+            return None, f"network error: hard timeout after {_HTTP_HARD_TIMEOUT_SEC}s (requests' own timeout did not fire)"
         except requests.RequestException as exc:
             return None, f"network error: {exc}"
+        finally:
+            one_shot.shutdown(wait=False)
 
         if resp.status_code == 429:
             retry_after = None
@@ -465,6 +494,83 @@ def generate_schema_valid_tuple(
     return [], None, subject, last_err
 
 
+def combined_validity(tup: dict, questions: list, key_state: KeyState) -> list[bool]:
+    """
+    Per-question boolean from ONE verify_batch_combined call: True iff the
+    question is on-topic AND the verifier's independent re-solve doesn't
+    disagree with the marked answer (answer_ok is True or None - None means
+    "couldn't determine", which was never treated as a failure here). False
+    for every question if the call itself failed outright, since there's no
+    per-question signal to fall back on.
+    """
+    try:
+        ok_call, checks = verify_batch_combined([(tup, questions)], key_state)[0]
+    except Exception:
+        ok_call, checks = False, []
+    if not ok_call:
+        return [False] * len(questions)
+    return [on_topic and (answer_ok is not False) for on_topic, answer_ok in checks]
+
+
+def generate_verified_pool(
+    retriever: Retriever, tup: dict, key_state: KeyState, generation_model: str,
+    is_valid: Callable[[dict, list, KeyState], list[bool]],
+    target_count: int = gen.N_QUESTIONS,
+    max_attempts: int = MAX_RETRIES_PER_TUPLE,
+) -> tuple[list[dict], str | None]:
+    """
+    Generates schema-valid candidates for `tup` in batches (each
+    generate_schema_valid_tuple call naturally returns up to N_QUESTIONS
+    candidates), verifies each batch via `is_valid(tup, questions, key_state)
+    -> list[bool]`, and ACCUMULATES every individually-valid candidate across
+    attempts - a batch that yields only 1 or 2 valid candidates out of 3
+    still contributes those, rather than the whole batch being discarded for
+    one bad sibling (the old behavior: any single failure meant a full fresh
+    regeneration, throwing away candidates that were actually fine).
+
+    Keeps generating fresh batches until the accumulated valid pool reaches
+    at least target_count, or max_attempts is exhausted. May return MORE
+    than target_count - a batch can push the pool past the line in one
+    step - callers that only strictly need target_count treat the rest as
+    a bonus surplus, not something to truncate.
+
+    Returns (accumulated_valid_questions, last_error_or_None). The error is
+    None whenever accumulated is non-empty (partial progress isn't a
+    failure), even if target_count was never fully reached.
+    """
+    accumulated: list[dict] = []
+    last_err: str | None = None
+    for _attempt in range(max_attempts):
+        if len(accumulated) >= target_count:
+            break
+        try:
+            questions, hits, subject, err = generate_schema_valid_tuple(
+                retriever, tup, key_state, generation_model
+            )
+        except Exception as exc:  # noqa: BLE001
+            last_err = f"unhandled exception: {exc!r}"
+            continue
+        if not questions:
+            last_err = err
+            continue
+        try:
+            valid = is_valid(tup, questions, key_state)
+        except Exception as exc:  # noqa: BLE001
+            last_err = f"verify exception: {exc!r}"
+            continue
+        if hits is not None:
+            valid_questions = [q for q, ok in zip(questions, valid) if ok]
+            if valid_questions:
+                gen.attach_source_refs(valid_questions, hits)
+        for q, ok in zip(questions, valid):
+            if ok:
+                q.setdefault("skill_description", tup["skillFull"])
+                q.setdefault("topic", tup["topicLabel"])
+                q["subject"] = subject
+                accumulated.append(q)
+    return accumulated, (None if accumulated else last_err)
+
+
 def stratified_sample(topics_per_subject: int) -> list[dict]:
     """
     Pick up to N distinct topics per subject (one skill per topic), then
@@ -606,6 +712,13 @@ def main() -> None:
     in_flight = {"n": total_to_do}
     flight_lock = threading.Lock()
     verify_retry_count: dict[tuple, int] = {}
+    # A batch that yields only 1 or 2 valid questions out of gen.N_QUESTIONS
+    # is no longer discarded wholesale for one bad sibling - the valid ones
+    # accumulate here across verify rounds for the same tuple, and the tuple
+    # only finalizes once its pool reaches gen.N_QUESTIONS (or retries run
+    # out, in which case whatever accumulated is used rather than nothing).
+    accumulated_per_tuple: dict[tuple, list] = {}
+    accum_lock = threading.Lock()
     MAX_VERIFY_RETRIES = 2
 
     def all_done() -> bool:
@@ -697,26 +810,48 @@ def main() -> None:
                 continue
 
             for (idx, tup, questions, hits, subject), (verified_ok, checks) in zip(batch, results):
+                key = (tup["skillId"], tup["bloom"])
                 problems = []
-                for i, (on_topic, answer_ok) in enumerate(checks):
+                valid_questions = []
+                for i, (q, (on_topic, answer_ok)) in enumerate(zip(questions, checks)):
                     if not on_topic:
                         problems.append(f"q[{i}] off-topic for {tup['skillFull']!r}")
                     elif answer_ok is False:
                         problems.append(f"q[{i}] independent re-solve disagrees with marked answer")
+                    else:
+                        valid_questions.append(q)
 
-                if not problems:
-                    if hits is not None:
-                        gen.attach_source_refs(questions, hits)
-                    for q in questions:
-                        q["_verified"] = verified_ok
-                    finalize_success(tup, questions, verified_ok)
+                if hits is not None and valid_questions:
+                    gen.attach_source_refs(valid_questions, hits)
+                for q in valid_questions:
+                    q["_verified"] = verified_ok
+
+                with accum_lock:
+                    pool = accumulated_per_tuple.setdefault(key, [])
+                    pool.extend(valid_questions)
+                    pool_len = len(pool)
+                    final_pool = accumulated_per_tuple.pop(key) if pool_len >= gen.N_QUESTIONS else None
+
+                if final_pool is not None:
+                    finalize_success(tup, final_pool, verified_ok)
+                    continue
+
+                # Not enough valid questions yet for this tuple - top up with
+                # another generation round instead of discarding what's
+                # already accumulated.
+                verify_retry_count[key] = verify_retry_count.get(key, 0) + 1
+                if verify_retry_count[key] <= MAX_VERIFY_RETRIES:
+                    work_q.put((idx, tup))  # still in_flight - cycling back, don't decrement
+                    print(f"[verify] RETRY {tup['skillId']}@{tup['bloom']} "
+                          f"(attempt {verify_retry_count[key]}, have {pool_len}/{gen.N_QUESTIONS} valid so far): "
+                          f"{'; '.join(problems[:3])}")
                 else:
-                    key = (tup["skillId"], tup["bloom"])
-                    verify_retry_count[key] = verify_retry_count.get(key, 0) + 1
-                    if verify_retry_count[key] <= MAX_VERIFY_RETRIES:
-                        work_q.put((idx, tup))  # still in_flight - cycling back, don't decrement
-                        print(f"[verify] RETRY {tup['skillId']}@{tup['bloom']} "
-                              f"(attempt {verify_retry_count[key]}): {'; '.join(problems[:3])}")
+                    with accum_lock:
+                        leftover = accumulated_per_tuple.pop(key, [])
+                    if leftover:
+                        print(f"[verify] PARTIAL {tup['skillId']}@{tup['bloom']}: accepting "
+                              f"{len(leftover)}/{gen.N_QUESTIONS} valid after exhausting retries")
+                        finalize_success(tup, leftover, verified_ok=False)
                     else:
                         finalize_failure(tup, "; ".join(problems[:6]), "verify")
 

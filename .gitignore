@@ -32,6 +32,7 @@ data-gen/output_questions_gemini_test.json
 data-gen/gemini_progress.json
 data-gen/gemini_progress_test.json
 data-gen/gemini_run_started_at.json
+data-gen/audit_report.json
 
 # Corpus repair backups
 *.orig
