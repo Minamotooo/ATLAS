@@ -1,0 +1,1238 @@
+{
+  "chunkLabel": "ChemBook1_b03",
+  "subject": "Chemistry",
+  "skills": [
+    {
+      "tempId": "ChemBook1_b03_s1",
+      "bloom": "Remember",
+      "skillFull": "Recall the chemical formula corresponding to the trivial, mineral, or commercial name of a common inorganic or organic compound (or vice versa).",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p31__q104__240",
+        "ChemBook1__p31__q107__243",
+        "ChemBook1__p31__q113__249",
+        "ChemBook1__p34__q131__268",
+        "ChemBook1__p34__q134__271",
+        "ChemBook1__p36__q152(iii)__294",
+        "ChemBook1__p38__q167__315",
+        "ChemBook1__p38__q168__316"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s2",
+      "bloom": "Understand",
+      "skillFull": "Explain the principle of the Carius method for quantitatively estimating an element (e.g., sulfur or a halogen) in an organic compound, in which the element is converted to an insoluble precipitate (e.g., barium sulfate) whose mass is used to back-calculate the element's percentage in the original sample.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p31__q105__241"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s3",
+      "bloom": "Apply",
+      "skillFull": "Calculate the percentage composition of an element in an organic compound from the mass of a precipitate obtained via the Carius method, using the stoichiometric mass ratio between the element and the precipitate's molar mass.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p31__q105__241"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s4",
+      "bloom": "Remember",
+      "skillFull": "Recall that chlorine gas undergoes disproportionation when passed into cold, dilute alkali (e.g., KOH or NaOH), forming a chloride salt and a hypochlorite salt.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p31__q106__242"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s5",
+      "bloom": "Apply",
+      "skillFull": "Predict the product(s) of a given inorganic chemical reaction (e.g. precipitation, complex-ion formation, acid-base, redox, or thermal decomposition) from the reactants and conditions given, and write a balanced equation for it.",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p31__q106__242",
+        "ChemBook1__p31__q109__245",
+        "ChemBook1__p31__q110__246",
+        "ChemBook1__p31__q111__247",
+        "ChemBook1__p31__q114__250",
+        "ChemBook1__p32__q115__251",
+        "ChemBook1__p33__q127__264",
+        "ChemBook1__p34__q130__267",
+        "ChemBook1__p34__q133__270",
+        "ChemBook1__p34__q135__272",
+        "ChemBook1__p36__q147__284",
+        "ChemBook1__p36__q152(ii)__293",
+        "ChemBook1__p38__q160__303",
+        "ChemBook1__p38__q162__307"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s6",
+      "bloom": "Understand",
+      "skillFull": "Explain why carbon monoxide is toxic while carbon dioxide is not, in terms of CO forming a stable coordinate (dative) covalent bond with the iron of hemoglobin that blocks oxygen transport in blood.",
+      "topicKey": "CHE_COORD",
+      "topicLabel": "Coordination Compounds",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p31__q108__244"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s7",
+      "bloom": "Remember",
+      "skillFull": "Recall that hot concentrated nitric acid oxidizes nonmetal elements such as sulfur and phosphorus to their corresponding oxoacids, releasing water and nitrogen dioxide gas.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p31__q109__245",
+        "ChemBook1__p31__q111__247"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s8",
+      "bloom": "Remember",
+      "skillFull": "Recall that ammonia gas reduces heated copper(II) oxide to metallic copper, itself being oxidized to nitrogen gas, with water as a by-product.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p31__q110__246"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s9",
+      "bloom": "Remember",
+      "skillFull": "Recall the catalyst used in the industrial (Haber process) synthesis of ammonia (finely divided iron).",
+      "topicKey": "CHEM_CAT",
+      "topicLabel": "Catalysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p31__q112__248"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s10",
+      "bloom": "Remember",
+      "skillFull": "Recall that passing carbon dioxide gas into limewater first produces a milky/turbid appearance from insoluble calcium carbonate, and that continued passage of excess CO2 dissolves this precipitate by converting it to soluble calcium bicarbonate.",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p31__q114__250",
+        "ChemBook1__p32__q115__251"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s11",
+      "bloom": "Remember",
+      "skillFull": "Recall the names, symbols, and total count of the noble gases (helium, neon, argon, krypton, xenon, radon).",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p32__q116__252"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s12",
+      "bloom": "Apply",
+      "skillFull": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p32__q116__252",
+        "ChemBook1__p37__q153__296",
+        "ChemBook1__p37__q155__298",
+        "ChemBook1__p41__q37__353"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s13",
+      "bloom": "Understand",
+      "skillFull": "Explain why deep-sea divers breathe a helium-oxygen mixture instead of air: pure oxygen speeds biological oxidation dangerously, and breathing compressed air lets dissolved nitrogen re-form bubbles in the blood (the bends) as pressure drops on ascent.",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p32__q117__253",
+        "ChemBook1__p33__q128__265"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s14",
+      "bloom": "Understand",
+      "skillFull": "Compare the carbon-carbon bonding in ethylene (a C=C double bond) and acetylene (a C≡C triple bond) to explain the key structural difference between the two hydrocarbons.",
+      "topicKey": "CHE_ORGANIC",
+      "topicLabel": "Organic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p32__q118__254"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s15",
+      "bloom": "Remember",
+      "skillFull": "Recall that carbon monoxide (CO) is referred to as the 'silent killer' because it is a colourless, odourless, highly toxic gas.",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p32__q119__255"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s16",
+      "bloom": "Apply",
+      "skillFull": "Determine an element's period and group in the periodic table from its symbol/atomic number (via its electron configuration).",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p32__q120(a)__256",
+        "ChemBook1__p37__q156__299"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s17",
+      "bloom": "Apply",
+      "skillFull": "Identify the element corresponding to a given full ground-state electron configuration by counting its total number of electrons.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p32__q120(b)__257",
+        "ChemBook1__p35__q145__282",
+        "ChemBook1__p37__q153__296",
+        "ChemBook1__p40__q21__337"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s18",
+      "bloom": "Apply",
+      "skillFull": "Predict whether a species is paramagnetic or diamagnetic by determining whether unpaired electrons remain in its (atomic, ionic, or bonded) electron configuration.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p32__q121__258",
+        "ChemBook1__p42__q41__357"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s19",
+      "bloom": "Apply",
+      "skillFull": "Determine the type of hybridization (e.g., sp, sp2, sp3, sp3d, sp3d2, d2sp3) of the central atom in a given molecule, ion, or coordination complex, based on its number of bonding and lone electron pairs.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p32__q122__259",
+        "ChemBook1__p35__q141__278",
+        "ChemBook1__p35__q144__281",
+        "ChemBook1__p36__q149(c)__288",
+        "ChemBook1__p38__q165(a)__311",
+        "ChemBook1__p40__q26__342"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s20",
+      "bloom": "Apply",
+      "skillFull": "Write the balanced confirmatory-test reaction(s) used to identify a given metal cation (e.g., Cu2+, Zn2+) in qualitative analysis, given the reagent used and the resulting precipitate's appearance.",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p33__q123__260",
+        "ChemBook1__p37__q159__302"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s21",
+      "bloom": "Remember",
+      "skillFull": "Define 'liquor ammonia' as a saturated aqueous solution of ammonia gas, and recall its typical density and ammonia percentage by mass.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p33__q124__261"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s22",
+      "bloom": "Apply",
+      "skillFull": "Determine and name the molecular or ionic geometric shape (e.g., linear, trigonal planar, tetrahedral, trigonal pyramidal, bent/V-shaped, octahedral) predicted by VSEPR theory for a given molecule or ion.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p33__q125__262",
+        "ChemBook1__p35__q142__279",
+        "ChemBook1__p36__q151__291",
+        "ChemBook1__p39__q03__319",
+        "ChemBook1__p40__q20__336",
+        "ChemBook1__p41__q32__348"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s23",
+      "bloom": "Understand",
+      "skillFull": "Compare the covalent character of a metal in two different oxidation states (e.g., Sn(II) vs Sn(IV) chlorides) using the principle that a smaller, more highly charged cation polarizes an anion more strongly (Fajans' rules), and relate this to the compounds' physical states.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p33__q126__263"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s24",
+      "bloom": "Remember",
+      "skillFull": "Recall the general valence-electron configuration patterns that characterize representative (s/p-block: ns^1-2 np^1-6), transition (d-block: (n-1)d^1-10 ns^1-2), and noble-gas (ns^2 np^6) elements.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p33__q128__265",
+        "ChemBook1__p38__q166(a)__313"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s25",
+      "bloom": "Apply",
+      "skillFull": "Arrange a series of oxoacids of elements from the same periodic group (e.g., H2SO4, H2SeO4, H2TeO4) in order of acid strength, using the trend that acid strength decreases as the central atom's size increases down the group.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p33__q128__265"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s26",
+      "bloom": "Understand",
+      "skillFull": "Explain why fluorine, chlorine, bromine, and iodine are grouped together as 'halogens' ('salt-formers'), based on their natural occurrence as sodium (and other) salts, e.g. in seawater.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p33__q129__266"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s27",
+      "bloom": "Apply",
+      "skillFull": "Determine the valence-shell (outermost-shell) electron configuration of a given element from its atomic number or symbol.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p33__q129__266",
+        "ChemBook1__p37__q157__300"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s28",
+      "bloom": "Apply",
+      "skillFull": "Identify a common metal alloy by name from its approximate elemental composition (percentages) (e.g., duralumin, brass, bronze).",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p34__q132__269"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s29",
+      "bloom": "Remember",
+      "skillFull": "Recall the catalyst, optimum temperature range, and pressure conditions used in the Contact process for industrial sulfuric acid production.",
+      "topicKey": "CHEM_CAT",
+      "topicLabel": "Catalysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p34__q136__273"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s30",
+      "bloom": "Apply",
+      "skillFull": "Write the sequence of reactions in the brown-ring test used to confirm the presence of the nitrate (NO3-) ion in a sample.",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p34__q136__273"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s31",
+      "bloom": "Remember",
+      "skillFull": "Recall that the nitrate (NO3-) ion is the species identified by the brown-ring test.",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p35__q137__274"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s32",
+      "bloom": "Remember",
+      "skillFull": "Recall the principal natural mineral source(s) of a given metallic element (e.g., sodium from rock salt, potassium from saltpetre/sylvite, magnesium from dolomite/carnallite, calcium from fluorspar/phosphorite), including the mineral's chemical formula.",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p35__q138__275"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s33",
+      "bloom": "Remember",
+      "skillFull": "Recall the characteristic flame-test colour produced by a given metal ion (e.g., sodium - golden yellow, calcium - brick red, potassium - lilac/violet, copper - bluish green), and that some metals (e.g., magnesium) show no characteristic flame colour.",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p35__q139__276"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s34",
+      "bloom": "Understand",
+      "skillFull": "Explain why a heavier noble gas (e.g., xenon) forms compounds more readily than lighter ones, because its valence electrons can be excited into unpaired states more easily due to weaker nuclear attraction at larger atomic radius.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p35__q140__277"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s35",
+      "bloom": "Remember",
+      "skillFull": "Recall that a pi (π) bond is formed by the sidewise (lateral, parallel) overlap of unhybridized p orbitals, as distinct from the end-to-end overlap that forms a sigma (σ) bond.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p35__q143__280"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s36",
+      "bloom": "Understand",
+      "skillFull": "Explain that the first ionization energy of an element is the energy required to remove one electron from each atom of one mole of its gaseous atoms to form gaseous +1 ions.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p35__q146__283"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s37",
+      "bloom": "Apply",
+      "skillFull": "Determine the number of electron shells, subshells, and orbitals occupied by the electrons of a given atom from its atomic number.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p35__q146__283"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s38",
+      "bloom": "Understand",
+      "skillFull": "Explain the stepwise mechanism by which aqua regia (a 3:1 mixture of concentrated HCl and HNO3) dissolves gold, via oxidation of HCl by HNO3 to generate nascent chlorine that oxidizes gold, followed by complexation of the resulting gold(III) chloride with excess chloride to form chloroauric acid.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p36__q147__284"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s39",
+      "bloom": "Apply",
+      "skillFull": "Classify a given oxide as acidic, basic, or amphoteric by testing/recalling its reaction(s) with both an acid and a base.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p36__q148__285",
+        "ChemBook1__p39__q07__323"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s40",
+      "bloom": "Apply",
+      "skillFull": "Identify which type of orbital overlap (e.g., s-s, s-p, head-on p-p, sidewise p-p) among several given options does or does not form a sigma or a pi bond.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p36__q149(a)__286",
+        "ChemBook1__p38__q164__310",
+        "ChemBook1__p41__q31__347"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s41",
+      "bloom": "Remember",
+      "skillFull": "Recall the characteristic dumbbell (figure-eight) shape of a p atomic orbital.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p36__q149(b)__287"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s42",
+      "bloom": "Remember",
+      "skillFull": "Recall the total number of d-block elements in the periodic table, and identify the first and last d-block elements by name, symbol, and atomic number.",
+      "topicKey": "CHEM_DBLOCK",
+      "topicLabel": "Transition Elements",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p36__q150(a)__289"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s43",
+      "bloom": "Understand",
+      "skillFull": "Explain why a given d-block element (e.g., zinc) is not classified as a transition element, because its d-subshell is completely filled (d^10) in both the neutral atom and its common ion.",
+      "topicKey": "CHEM_DBLOCK",
+      "topicLabel": "Transition Elements",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p36__q150(b)__290"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s44",
+      "bloom": "Remember",
+      "skillFull": "Recall that hydrofluoric acid (HF) is used to etch glass because it chemically attacks the silica (SiO2) in glass.",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p36__q152(i)__292"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s45",
+      "bloom": "Understand",
+      "skillFull": "Explain why a highly water-soluble gas (e.g., HCl) cannot be collected by downward displacement of water, since it would dissolve in the water rather than accumulate as gas.",
+      "topicKey": "CHE_GASLAWS",
+      "topicLabel": "Gaseous State",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p36__q152(iv)__295"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s46",
+      "bloom": "Apply",
+      "skillFull": "Draw the Lewis (electron-dot) structure of a given simple covalent molecule (e.g., carbonyl chloride, COCl2), showing bonding pairs and lone pairs consistent with the octet rule.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p37__q153__296"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s47",
+      "bloom": "Remember",
+      "skillFull": "Recall the maximum number of orbitals contained in a given subshell type (1 for s, 3 for p, 5 for d, 7 for f).",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p37__q154__297"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s48",
+      "bloom": "Apply",
+      "skillFull": "Draw the orbital (box-and-arrow) electron diagram of an atom's valence subshell(s), applying Hund's rule to show unpaired electrons, including for a specified excited state.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p37__q154__297"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s49",
+      "bloom": "Apply",
+      "skillFull": "Calculate an atom's atomic number (proton count) from its mass number and a given number of neutrons, using Z = A − N.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p37__q155__298"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s50",
+      "bloom": "Apply",
+      "skillFull": "Determine the number of ionic, covalent, and coordinate (dative) bonds present in a given ionic or coordination compound (e.g., NH4Cl, K3[Fe(CN)6]).",
+      "topicKey": "CHE_COORD",
+      "topicLabel": "Coordination Compounds",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p37__q158__301"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s51",
+      "bloom": "Remember",
+      "skillFull": "Recall that fluorine reacts with water to liberate oxygen (or ozone), whereas chlorine and iodine react with water via disproportionation to form a hydrohalic acid and the corresponding hypohalous acid.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p38__q160__303"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s52",
+      "bloom": "Understand",
+      "skillFull": "Distinguish among the sulfur-oxoacid/oleum species formed when excess SO3 is dissolved in 100% sulfuric acid (fuming sulfuric acid/oleum, pyrosulfuric acid, H2S2O7), and recognize a non-existent/incorrect distractor name among them.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p38__q161(a)__304"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s53",
+      "bloom": "Apply",
+      "skillFull": "Determine the oxidation number of an element in a compound or polyatomic ion by solving for the unknown so that the algebraic sum of oxidation numbers equals the species' overall charge.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p38__q161(b)__305",
+        "ChemBook1__p40__q24__340"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s54",
+      "bloom": "Understand",
+      "skillFull": "Identify which element among a set of options bonds using its 1s orbital, based on having only a single (K) electron shell (e.g., hydrogen).",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p38__q161(c)__306"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s55",
+      "bloom": "Apply",
+      "skillFull": "Interpret the observed result of a qualitative-analysis test (e.g., a white precipitate forming after adding bromine water and barium chloride to a sample and warming it) to identify which ion was present in the original solution.",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p38__q162__307"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s56",
+      "bloom": "Remember",
+      "skillFull": "Recall a practical application of a specific noble gas (e.g., helium or another inert gas used to stimulate plant growth in greenhouses, argon in welding, neon in signage).",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p38__q163(a)__308"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s57",
+      "bloom": "Understand",
+      "skillFull": "Explain why strongly alkaline solutions are not stored in glass containers, because the hydroxide reacts with the silica in glass to form a soluble silicate.",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p38__q163(b)__309"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s58",
+      "bloom": "Understand",
+      "skillFull": "Explain why molecules capable of hydrogen bonding (e.g., water) have significantly higher boiling points than similar-mass molecules that cannot form hydrogen bonds (e.g., hydrogen sulfide).",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p38__q165(b)__312"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s59",
+      "bloom": "Remember",
+      "skillFull": "Recall that the maximum number of monodentate ligands (e.g., NH3) a metal ion can coordinate is commonly twice its oxidation number (the ion's typical coordination number).",
+      "topicKey": "CHE_COORD",
+      "topicLabel": "Coordination Compounds",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p38__q166(b)__314"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s60",
+      "bloom": "Apply",
+      "skillFull": "Compare the lengths of different covalent bonds (e.g., a series of X-H bonds) based on the atomic radii of the bonded atoms, to identify the shortest or longest bond.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p39__q01__317"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s61",
+      "bloom": "Apply",
+      "skillFull": "Compare the atomic radii of elements identified by their electron configurations, using the trends that atomic radius decreases across a period (left to right) and increases down a group.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p39__q02__318"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s62",
+      "bloom": "Remember",
+      "skillFull": "Recall the characteristic bond angle associated with a given hybridization or VSEPR molecular geometry (e.g., 180° for sp/linear, 120° for sp2/trigonal planar, 109.5° for sp3/tetrahedral, 90° for sp3d2/octahedral, 104.5° for a bent AX2E2 molecule like water).",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p35__q141__278",
+        "ChemBook1__p35__q144__281",
+        "ChemBook1__p39__q03__319",
+        "ChemBook1__p39__q04__320",
+        "ChemBook1__p40__q18__334"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s63",
+      "bloom": "Remember",
+      "skillFull": "Recall which pairs of periodic-table elements exhibit a diagonal relationship (e.g., Li-Mg, Be-Al, B-Si) due to similar charge-to-size ratios.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p39__q05__321"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s64",
+      "bloom": "Apply",
+      "skillFull": "Determine the electron configuration of a transition-metal cation (or successive cations formed by ionization) by removing electrons from the outermost ns subshell before the (n-1)d subshell, or in order of decreasing energy for a main-group atom.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p39__q06__322",
+        "ChemBook1__p40__q19__335"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s65",
+      "bloom": "Remember",
+      "skillFull": "Recall that in an sp-hybridized carbon, the two unhybridized p orbitals are oriented perpendicular (90°) both to each other and to the sp hybrid axis; the same perpendicularity holds between an unhybridized p orbital and the plane of sp2 hybrid orbitals.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p39__q08__324",
+        "ChemBook1__p41__q38__354"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s66",
+      "bloom": "Understand",
+      "skillFull": "Apply the octet rule to identify which of several given molecules has an incomplete (electron-deficient) octet around its central atom (e.g., BF3).",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p39__q09__325"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s67",
+      "bloom": "Apply",
+      "skillFull": "Determine whether a given compound is capable of hydrogen bonding by checking whether it contains a hydrogen atom bonded directly to nitrogen, oxygen, or fluorine.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p39__q10__326",
+        "ChemBook1__p40__q22__338"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s68",
+      "bloom": "Remember",
+      "skillFull": "Recall the chemical formula of a given oxoanion of chlorine (hypochlorite ClO-, chlorite ClO2-, chlorate ClO3-, perchlorate ClO4-, chloride Cl-) from its name.",
+      "topicKey": "CHEM_NOM",
+      "topicLabel": "Nomenclature",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p39__q11__327"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s69",
+      "bloom": "Understand",
+      "skillFull": "Describe the bonding structure of a polyatomic oxoanion (e.g., dichromate, Cr2O7^2-) as two equivalent tetrahedral subunits linked by a bridging oxygen atom, with all terminal Cr-O bonds equivalent.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p39__q12__328"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s70",
+      "bloom": "Analyze",
+      "skillFull": "Compare the reaction behaviour of a hydrogen atom to that of a halogen atom (e.g., combining to form a diatomic molecule, ionizing to a monatomic cation, or gaining an electron to form a negative ion) to determine which of hydrogen's reactions are analogous to halogen chemistry.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p40__q13__329"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s71",
+      "bloom": "Apply",
+      "skillFull": "Compare the melting points of a series of period-3 chlorides based on the trend from ionic to covalent bonding character (e.g., NaCl/MgCl2 ionic, AlCl3 intermediate, SiCl4 covalent molecular).",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p40__q14__330"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s72",
+      "bloom": "Remember",
+      "skillFull": "Recall the solubility behaviour of a qualitative-analysis precipitate (e.g., lead sulfate) in dilute versus concentrated mineral acids (e.g., nitric acid, sulfuric acid).",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p40__q15__331"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s73",
+      "bloom": "Remember",
+      "skillFull": "Recall which elements are classified as lanthanides/actinides (rare-earth elements with partially filled 4f or 5f subshells), as distinct from d-block transition metals that lack partially filled f subshells.",
+      "topicKey": "CHEM_DBLOCK",
+      "topicLabel": "Transition Elements",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p40__q16__332",
+        "ChemBook1__p41__q33__349"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s74",
+      "bloom": "Apply",
+      "skillFull": "Identify an element from its period number and the number of valence (outer-shell) electrons it has.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p40__q17__333"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s75",
+      "bloom": "Apply",
+      "skillFull": "Compare bond angles across a series of related molecules (e.g., BF3, CF4, NF3, OF2 for a fixed second-period central atom X) by determining each molecule's VSEPR geometry and lone-pair count on the central atom.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p40__q18__334"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s76",
+      "bloom": "Understand",
+      "skillFull": "Explain why an ion or atom with a half-filled (or fully-filled) p or d subshell has extra stability, and use this to compare relative (e.g., second) ionization energies among neighbouring elements.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p40__q19__335"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s77",
+      "bloom": "Remember",
+      "skillFull": "Recall that the delocalized (mobile) pi electrons of benzene's aromatic ring originate from the unhybridized 2p orbitals of its sp2-hybridized ring carbons.",
+      "topicKey": "CHE_ORGANIC",
+      "topicLabel": "Organic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p40__q23__339"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s78",
+      "bloom": "Remember",
+      "skillFull": "Recall that most nonmetal elements are located in the p-block of the periodic table.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p40__q25__341"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s79",
+      "bloom": "Apply",
+      "skillFull": "Classify the bonding type (ionic versus covalent) of a metal/metalloid oxide based on the trend of decreasing metallic character (and increasing electronegativity difference) across a period.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p40__q27__343"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s80",
+      "bloom": "Apply",
+      "skillFull": "Determine the bond order of a diatomic species from its molecular-orbital electron configuration (bond order = (bonding electrons − antibonding electrons)/2), and recognize that a bond order of zero (e.g., for He2) means no stable bond forms.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p40__q28__344"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s81",
+      "bloom": "Apply",
+      "skillFull": "Determine how many sigma and pi bonds a carbon atom with a given hybridization (sp, sp2, sp3) forms, given that each hybrid orbital forms one sigma bond and each remaining unhybridized p orbital can form one pi bond.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p41__q29__345",
+        "ChemBook1__p42__q43__359"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s82",
+      "bloom": "Apply",
+      "skillFull": "Identify which of several given compounds or ions does not contain a coordinate (dative) covalent bond, by analyzing the bonding of each species.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p41__q30__346"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s83",
+      "bloom": "Apply",
+      "skillFull": "Determine the coordination number(s) of the ions in an ionic crystal by calculating the cation/anion radius ratio and comparing it against the radius-ratio-rule ranges.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p41__q34__350",
+        "ChemBook1__p41__q40__356"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s84",
+      "bloom": "Apply",
+      "skillFull": "Apply the characteristic valence-electron configuration pattern of a specified periodic block or group (s-, p-, d-block/transition series, f-block, or a specific group such as IIIB) to identify which given electron configuration matches it, or which element/series belongs to it.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p41__q35__351",
+        "ChemBook1__p41__q36__352"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s85",
+      "bloom": "Remember",
+      "skillFull": "Recall that highly reactive alkali metals (e.g., sodium) react vigorously with water and can ignite, unlike less reactive metals.",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p41__q39__355"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b03_s86",
+      "bloom": "Remember",
+      "skillFull": "Recall the crystal structure/geometric shape of ordinary ice (hexagonal).",
+      "topicKey": "CHEM_SOLID",
+      "topicLabel": "Solid State and Ionic Compounds",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p42__q42__358"
+      ]
+    }
+  ],
+  "prereqs": [
+    {
+      "fromTempId": "ChemBook1_b03_s3",
+      "toTempId": "ChemBook1_b03_s2",
+      "toDescription": "Explain the principle of the Carius method for quantitatively estimating an element (e.g., sulfur or a halogen) in an organic compound, in which the element is converted to an insoluble precipitate (e.g., barium sulfate) whose mass is used to back-calculate the element's percentage in the original sample.",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s3",
+      "toTempId": null,
+      "toDescription": "Calculate a percentage composition from a mass ratio using basic proportion/percentage arithmetic.",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s5",
+      "toTempId": null,
+      "toDescription": "Balance a chemical equation by adjusting stoichiometric coefficients so that the number of atoms of each element is equal on both sides (conservation of mass).",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s4",
+      "toTempId": null,
+      "toDescription": "Recall the definition of a disproportionation reaction, in which the same element is simultaneously oxidized and reduced.",
+      "toTopicKeyGuess": "CHEM_REDOX"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s51",
+      "toTempId": "ChemBook1_b03_s4",
+      "toDescription": "Recall that chlorine gas undergoes disproportionation when passed into cold, dilute alkali (e.g., KOH or NaOH), forming a chloride salt and a hypochlorite salt.",
+      "toTopicKeyGuess": "CHEM_REDOX"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s6",
+      "toTempId": null,
+      "toDescription": "Recall that carbon monoxide can form a coordinate covalent bond to a transition-metal ion using a lone pair on its carbon atom.",
+      "toTopicKeyGuess": "CHE_COORD"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s22",
+      "toTempId": null,
+      "toDescription": "Recall the basic postulate of VSEPR theory: that electron pairs (bonding and lone) around a central atom arrange themselves to minimize mutual repulsion.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s19",
+      "toTempId": null,
+      "toDescription": "Recall the basic postulate of VSEPR theory: that electron pairs (bonding and lone) around a central atom arrange themselves to minimize mutual repulsion.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s62",
+      "toTempId": "ChemBook1_b03_s22",
+      "toDescription": "Determine and name the molecular or ionic geometric shape (e.g., linear, trigonal planar, tetrahedral, trigonal pyramidal, bent/V-shaped, octahedral) predicted by VSEPR theory for a given molecule or ion.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s81",
+      "toTempId": "ChemBook1_b03_s19",
+      "toDescription": "Determine the type of hybridization (e.g., sp, sp2, sp3, sp3d, sp3d2, d2sp3) of the central atom in a given molecule, ion, or coordination complex, based on its number of bonding and lone electron pairs.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s65",
+      "toTempId": "ChemBook1_b03_s19",
+      "toDescription": "Determine the type of hybridization (e.g., sp, sp2, sp3, sp3d, sp3d2, d2sp3) of the central atom in a given molecule, ion, or coordination complex, based on its number of bonding and lone electron pairs.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s40",
+      "toTempId": "ChemBook1_b03_s35",
+      "toDescription": "Recall that a pi (π) bond is formed by the sidewise (lateral, parallel) overlap of unhybridized p orbitals, as distinct from the end-to-end overlap that forms a sigma (σ) bond.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s18",
+      "toTempId": "ChemBook1_b03_s12",
+      "toDescription": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s16",
+      "toTempId": "ChemBook1_b03_s27",
+      "toDescription": "Determine the valence-shell (outermost-shell) electron configuration of a given element from its atomic number or symbol.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s17",
+      "toTempId": "ChemBook1_b03_s12",
+      "toDescription": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s27",
+      "toTempId": "ChemBook1_b03_s12",
+      "toDescription": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s64",
+      "toTempId": "ChemBook1_b03_s12",
+      "toDescription": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s76",
+      "toTempId": "ChemBook1_b03_s64",
+      "toDescription": "Determine the electron configuration of a transition-metal cation (or successive cations formed by ionization) by removing electrons from the outermost ns subshell before the (n-1)d subshell, or in order of decreasing energy for a main-group atom.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s84",
+      "toTempId": "ChemBook1_b03_s24",
+      "toDescription": "Recall the general valence-electron configuration patterns that characterize representative (s/p-block: ns^1-2 np^1-6), transition (d-block: (n-1)d^1-10 ns^1-2), and noble-gas (ns^2 np^6) elements.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s39",
+      "toTempId": null,
+      "toDescription": "Recall that metal oxides are generally basic and nonmetal oxides are generally acidic.",
+      "toTopicKeyGuess": "CHE_ACIDBASE"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s25",
+      "toTempId": null,
+      "toDescription": "Recall the general periodic trend that atomic/ionic size increases going down a group.",
+      "toTopicKeyGuess": "CHEM_PERIODIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s61",
+      "toTempId": null,
+      "toDescription": "Recall the general periodic trend that atomic/ionic size increases going down a group and decreases across a period.",
+      "toTopicKeyGuess": "CHEM_PERIODIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s71",
+      "toTempId": null,
+      "toDescription": "Recall the trend that metallic/ionic bonding character decreases and covalent bonding character increases across a period from left to right.",
+      "toTopicKeyGuess": "CHEM_PERIODIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s79",
+      "toTempId": null,
+      "toDescription": "Recall the trend that metallic/ionic bonding character decreases and covalent bonding character increases across a period from left to right.",
+      "toTopicKeyGuess": "CHEM_PERIODIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s83",
+      "toTempId": null,
+      "toDescription": "Recall the radius-ratio rule ranges that predict ionic coordination number (e.g., 0.225-0.414 -> 4, 0.414-0.732 -> 6, 0.732-1.0 -> 8).",
+      "toTopicKeyGuess": "CHEM_SOLID"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s58",
+      "toTempId": "ChemBook1_b03_s67",
+      "toDescription": "Determine whether a given compound is capable of hydrogen bonding by checking whether it contains a hydrogen atom bonded directly to nitrogen, oxygen, or fluorine.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s20",
+      "toTempId": null,
+      "toDescription": "Recall the standard qualitative-analysis group reagents used to detect common metal cations.",
+      "toTopicKeyGuess": "CHE_QUAL"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s55",
+      "toTempId": null,
+      "toDescription": "Recall standard qualitative-analysis confirmatory tests and their characteristic precipitate colours for common anions (e.g., sulfite, sulfate).",
+      "toTopicKeyGuess": "CHE_QUAL"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s30",
+      "toTempId": "ChemBook1_b03_s31",
+      "toDescription": "Recall that the nitrate (NO3-) ion is the species identified by the brown-ring test.",
+      "toTopicKeyGuess": "CHE_QUAL"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s38",
+      "toTempId": null,
+      "toDescription": "Recall that concentrated nitric acid is a strong oxidizing acid capable of oxidizing chloride ion to chlorine.",
+      "toTopicKeyGuess": "CHEM_REDOX"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s53",
+      "toTempId": null,
+      "toDescription": "Recall that oxygen is usually assigned an oxidation number of -2 and hydrogen +1 in most compounds.",
+      "toTopicKeyGuess": "CHEM_REDOX"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s80",
+      "toTempId": null,
+      "toDescription": "Recall the molecular-orbital energy-level filling order (sigma and pi bonding/antibonding orbitals) for simple homonuclear diatomic molecules.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s69",
+      "toTempId": null,
+      "toDescription": "Recall the tetrahedral geometry of the chromate (CrO4^2-) ion.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s37",
+      "toTempId": "ChemBook1_b03_s12",
+      "toDescription": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s48",
+      "toTempId": "ChemBook1_b03_s12",
+      "toDescription": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b03_s50",
+      "toTempId": null,
+      "toDescription": "Recall the definitions of ionic, covalent, and coordinate (dative) bonds.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    }
+  ],
+  "newTopicsProposed": [
+    {
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "reason": "As in the ChemBook1_b01/b02 slices, a large share of this slice consists of descriptive-inorganic-chemistry recall/application items: writing or predicting balanced equations for reactions of named inorganic compounds, recalling formulas of minerals/industrial salts from trivial names, identifying alloys from composition, recalling mineral sources and flame-test colours of elements, and recalling noble-gas applications. None of the 24 canonical Chemistry topics (CHE_QUAL, CHEM_REDOX, CHE_BONDING, CHEM_NOM, etc.) cleanly covers this large, recurring 's/p/d-block descriptive and industrial chemistry' content block, which is a standard HSC Chemistry unit in this corpus."
+    }
+  ],
+  "skippedItems": []
+}

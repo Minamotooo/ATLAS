@@ -1,0 +1,42 @@
+source: tuples.json + prereqs.json
+config: ontology_config.json
+loaded 388 nodes, 109 edges, 25 topics
+
+--- ontology report ---
+  skills                : 388
+  topics  raw           : 25
+          canonical     : 25  (0 codes merged by ontology_config.json)
+  subjects              : Chemistry
+  edges   raw           : 109
+          reduced       : 107 (2 redundant dropped)
+  root skills           : 288
+  max DAG depth         : 3
+  components            : 282 (largest 16)
+
+  catalog topics placed : 22
+  WARN 3 topics are not in any section (ingested but invisible):
+    - CHEM_DESCRIPTIVE
+    - CHEM_LAB
+    - CHEM_NUCLEAR
+  WARN sections reference 44 unknown topics:
+    - math_algebra:MAT_ALGEBRA
+    - math_algebra:MAT_EQTHEORY
+    - math_algebra:MAT_MATRIX
+    - math_algebra:MAT_COMPLEX
+    - math_trigonometry:MAT_TRIG
+    - math_trigonometry:MAT_INVTRIG
+    - math_coordinate_geometry:MAT_COORD_LINE
+    - math_coordinate_geometry:MAT_COORD_CONIC
+    - math_coordinate_geometry:MATH_GEOM
+    - math_calculus:MAT_CALC_DIFF
+  WARN empty sections (disabled): math_algebra, math_trigonometry, math_coordinate_geometry, math_calculus, math_mechanics, phy_measurement_vectors, phy_mechanics, phy_properties_of_matter, phy_heat_thermodynamics, phy_waves_optics, phy_electricity_magnetism, phy_modern_physics
+
+  NOTE 388 skills carry fewer than 6 Bloom levels.
+    The diagnostic tests one Bloom level ABOVE current mastery, so sparse
+    Bloom coverage makes the nearby-Bloom fallback the normal path.
+
+  redundant edges removed:
+    CHE_ATOMIC6 -> CHE_ATOMIC17
+    CHE_ATOMIC6 -> CHE_ATOMIC8
+
+(report-only; nothing written)

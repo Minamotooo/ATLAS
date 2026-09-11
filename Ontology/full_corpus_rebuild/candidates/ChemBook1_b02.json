@@ -1,0 +1,1212 @@
+{
+  "chunkLabel": "ChemBook1_b02",
+  "subject": "Chemistry",
+  "skills": [
+    {
+      "tempId": "ChemBook1_b02_s1",
+      "bloom": "Remember",
+      "skillFull": "Recall the approximate wavelength range of visible light associated with each spectral color, from violet through red.",
+      "topicKey": "CHEM_SPEC",
+      "topicLabel": "Electromagnetic Spectrum",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p15__q68__120"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s2",
+      "bloom": "Apply",
+      "skillFull": "Determine the color of visible light that corresponds to a given wavelength value.",
+      "topicKey": "CHEM_SPEC",
+      "topicLabel": "Electromagnetic Spectrum",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p15__q68__120"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s3",
+      "bloom": "Remember",
+      "skillFull": "Recall that the number of neutrons in a nuclide equals its mass number minus its atomic number (N = A - Z).",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p15__q69__121"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s4",
+      "bloom": "Apply",
+      "skillFull": "Calculate the number of neutrons in an atom's nucleus given its mass number and atomic number.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p15__q69__121"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s5",
+      "bloom": "Remember",
+      "skillFull": "Recall that the azimuthal (angular momentum) quantum number l may take integer values from 0 to (n-1) for a given principal quantum number n.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p16__q73__125"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s6",
+      "bloom": "Apply",
+      "skillFull": "Determine the complete set of allowed azimuthal quantum number (l) values for a given principal quantum number n.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p16__q73__125"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s7",
+      "bloom": "Understand",
+      "skillFull": "Explain why an electron in the 1s orbital of a hydrogen atom can absorb a photon to move to a higher energy level but cannot emit a photon to fall to a lower level, since no lower-energy orbital exists.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p16__q75__127"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s8",
+      "bloom": "Remember",
+      "skillFull": "Recall the quantum-mechanical rules restricting valid combinations of quantum numbers (n, l, m, s), including that l must be less than n and |m| must not exceed l.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p16__q83__135"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s9",
+      "bloom": "Analyze",
+      "skillFull": "Examine several given sets of quantum numbers (n, l, m, s) and identify which set violates the quantum number rules.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p16__q83__135"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s10",
+      "bloom": "Apply",
+      "skillFull": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p22__q41__177",
+        "ChemBook1__p27__q78__214",
+        "ChemBook1__p29__q92__228"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s11",
+      "bloom": "Apply",
+      "skillFull": "Identify the element corresponding to a given full electron configuration by counting its total number of electrons.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p25__q61__197",
+        "ChemBook1__p26__q71__207"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s12",
+      "bloom": "Apply",
+      "skillFull": "Determine the electron configuration of the outermost (valence) shell of a given element.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p16__q84__136"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s13",
+      "bloom": "Apply",
+      "skillFull": "Apply Hund's rule of maximum multiplicity to an atom's electron configuration to determine its number of unpaired electrons.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p16__q82__134"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s14",
+      "bloom": "Remember",
+      "skillFull": "Recall that the maximum number of electrons a principal energy level (shell) can hold is given by 2n-squared.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p16__q78__130"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s15",
+      "bloom": "Apply",
+      "skillFull": "Calculate the maximum number of electrons that a given principal shell (n) can hold using the formula 2n-squared.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p16__q78__130"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s16",
+      "bloom": "Remember",
+      "skillFull": "Recall the Rydberg formula, 1/lambda = R_H(1/n1-squared - 1/n2-squared), for lines of the hydrogen atomic spectrum.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p16__q80__132"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s17",
+      "bloom": "Apply",
+      "skillFull": "Identify the initial and final principal quantum numbers (n1 and n2) corresponding to a specified line (e.g. the third line) of a named hydrogen spectral series such as the Brackett series.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p16__q80__132"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s18",
+      "bloom": "Apply",
+      "skillFull": "Calculate the wavelength of a hydrogen spectral line using the Rydberg formula given the initial and final principal quantum numbers.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p16__q80__132"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s19",
+      "bloom": "Remember",
+      "skillFull": "Recall that nuclear fission reactions occur inside a nuclear reactor (atomic pile).",
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p15__q70__122"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s20",
+      "bloom": "Remember",
+      "skillFull": "Recall the definition of isotones as nuclides that have the same number of neutrons but different atomic numbers and mass numbers.",
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p15__q71__123"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s21",
+      "bloom": "Apply",
+      "skillFull": "Determine the neutron number of each nuclide in a given set and identify which nuclides are isotones (share the same neutron number).",
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p15__q71__123"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s22",
+      "bloom": "Apply",
+      "skillFull": "Complete and balance a nuclear reaction equation, conserving total mass number and total atomic number across reactants and products.",
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p15__q72__124"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s23",
+      "bloom": "Evaluate",
+      "skillFull": "Examine a set of given nuclear reaction equations and identify which one fails to conserve mass number and/or atomic number.",
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p16__q79__131"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s24",
+      "bloom": "Apply",
+      "skillFull": "Calculate the binding energy of a nucleus from its mass defect using the mass-energy equivalence relation E = (delta m)c-squared.",
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p16__q74__126"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s25",
+      "bloom": "Remember",
+      "skillFull": "Recall that radon is used in radiotherapy for cancer treatment.",
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p16__q76__128"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s26",
+      "bloom": "Remember",
+      "skillFull": "Recall which nuclear/subatomic particles (e.g. the alpha particle, the deuteron) are composite particles made of more than one fundamental particle, as opposed to elementary particles (e.g. the photon, the positron).",
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p16__q77__129"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s27",
+      "bloom": "Apply",
+      "skillFull": "Track the changes in atomic number and mass number of a nuclide through a specified sequence of alpha- and beta-decay steps to determine the resulting nuclide.",
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p16__q81__133"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s28",
+      "bloom": "Remember",
+      "skillFull": "Recall that alpha decay decreases a nuclide's atomic number by 2 and mass number by 4, while beta decay increases the atomic number by 1 with no change in mass number.",
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p16__q81__133"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s29",
+      "bloom": "Understand",
+      "skillFull": "Explain how sigma bonds can form from s-s, s-p, or p-p atomic orbital overlap, whereas pi bonds form only from the sideways (parallel) overlap of p-p orbitals.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p17__q02__138"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s30",
+      "bloom": "Apply",
+      "skillFull": "Determine the hybridization state of a molecule's or complex ion's central atom from its number of sigma-bonding and lone-pair electron domains.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p18__q08__144",
+        "ChemBook1__p19__q13__149"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s31",
+      "bloom": "Apply",
+      "skillFull": "Predict the molecular or complex-ion shape (geometry) that corresponds to a given hybridization state (e.g. sp3 to tetrahedral, sp3d to trigonal bipyramidal).",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p18__q08__144",
+        "ChemBook1__p19__q13__149",
+        "ChemBook1__p26__q69__205"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s32",
+      "bloom": "Understand",
+      "skillFull": "Describe the geometric arrangement of a set of hybrid orbitals (e.g. sp, sp2, sp3) around a central atom.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p27__q77__213",
+        "ChemBook1__p29__q94__230"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s33",
+      "bloom": "Analyze",
+      "skillFull": "Rank a series of molecules by decreasing bond angle, using their differing numbers of lone pairs and the relative strength of electron-domain repulsions.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p17__q01__137"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s34",
+      "bloom": "Remember",
+      "skillFull": "Recall the relative strength order of electron-domain repulsions about a central atom: lone pair-lone pair greater than lone pair-bond pair greater than bond pair-bond pair.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p17__q01__137",
+        "ChemBook1__p25__q64__200"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s35",
+      "bloom": "Understand",
+      "skillFull": "Explain why the bond angle in a molecule whose central atom carries lone pairs (e.g. water) is smaller than the ideal geometric angle, due to greater lone pair-bond pair repulsion than bond pair-bond pair repulsion.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p25__q64__200"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s36",
+      "bloom": "Remember",
+      "skillFull": "Recall the periodic trend (increase or decrease) of a given atomic or ionic property, such as electronegativity, ionization energy, atomic/ionic radius, melting point, or metallic character, across a period or down a group.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p17__q01__137",
+        "ChemBook1__p21__q27__163",
+        "ChemBook1__p21__q33__169",
+        "ChemBook1__p27__q76__212"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s37",
+      "bloom": "Analyze",
+      "skillFull": "Rank a series of elements or their compounds by a specified periodic trend (e.g. ionic character, reactivity, ionization potential, solubility, melting point) based on their relative positions in the periodic table.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p17__q01__137",
+        "ChemBook1__p21__q27__163",
+        "ChemBook1__p21__q33__169",
+        "ChemBook1__p27__q76__212"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s38",
+      "bloom": "Understand",
+      "skillFull": "Explain why chlorine's electron affinity exceeds fluorine's, in terms of the greater electron-electron repulsion experienced when adding an electron to fluorine's small, compact 2p subshell.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p18__q07__143"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s39",
+      "bloom": "Understand",
+      "skillFull": "Explain a physical-state difference between two analogous hydrides (e.g. why water is liquid while hydrogen sulfide is gaseous at room temperature) in terms of electronegativity difference and hydrogen bonding.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p18__q07__143"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s40",
+      "bloom": "Apply",
+      "skillFull": "Determine the period and group position of a given element in the periodic table from its atomic number.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p22__q40__176",
+        "ChemBook1__p26__q70__206",
+        "ChemBook1__p31__q103__239"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s41",
+      "bloom": "Understand",
+      "skillFull": "Classify a set of given elements into categories such as alkali metal, alkaline-earth metal, and transition metal based on their periodic table group.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p27__q79__215"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s42",
+      "bloom": "Understand",
+      "skillFull": "Classify a set of elements from a given period by chemical behavior criteria, such as which form ionic versus molecular compounds, which occur as diatomic molecules, and which show both metallic and non-metallic character.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p19__q09__145"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s43",
+      "bloom": "Apply",
+      "skillFull": "Identify the specific atomic orbitals (e.g. unhybridized p orbitals) on the bonded atoms that overlap to form the pi bond in a given molecule containing a double bond.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p18__q06__142"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s44",
+      "bloom": "Understand",
+      "skillFull": "Explain why silicon tetrachloride hydrolyzes readily in water while carbon tetrachloride does not, based on the availability of vacant d-orbitals on silicon for nucleophilic attack by water.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p18__q05__141"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s45",
+      "bloom": "Understand",
+      "skillFull": "Explain why a strongly reactive reducing agent such as lithium aluminium hydride must be used under anhydrous conditions, since it reacts vigorously with water.",
+      "topicKey": "CHE_ORGANIC",
+      "topicLabel": "Organic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p23__q43__179"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s46",
+      "bloom": "Evaluate",
+      "skillFull": "Judge the feasibility of forming a hypothetical multiply-charged ion (e.g. H4O(2+)) by weighing the strong electrostatic repulsion that would result from adding a further coordinate bond to an already positively charged species.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p24__q54__190"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s47",
+      "bloom": "Understand",
+      "skillFull": "Classify a given metal or non-metal oxide as acidic, basic, amphoteric, a peroxide, or a superoxide, based on its composition and bonding character.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p22__q39__175"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s48",
+      "bloom": "Remember",
+      "skillFull": "Recall an example of an amphoteric metal oxide (e.g. zinc oxide).",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p23__q48__184"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s49",
+      "bloom": "Understand",
+      "skillFull": "Explain why a weak acid (e.g. acetic acid) rather than a strong acid (e.g. hydrochloric acid) is used to acidify a solution before a qualitative precipitation test, to avoid decomposing or prematurely releasing the analyte.",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p20__q19__155"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s50",
+      "bloom": "Remember",
+      "skillFull": "Recall that a deep blue compound (Prussian blue / ferric ferrocyanide) forms as confirmatory evidence of nitrogen in a qualitative organic detection test.",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p23__q45__181"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s51",
+      "bloom": "Analyze",
+      "skillFull": "Devise a chemical test to distinguish between two similar salts (e.g. potassium chloride and potassium iodide) based on the differing solubility of their silver-halide precipitates in ammonia solution.",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p28__q80__216"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s52",
+      "bloom": "Understand",
+      "skillFull": "Explain a color change observed when a reagent (e.g. hydrochloric acid) is added to a metal-ammine complex solution, in terms of the complex breaking down and a new species precipitating.",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p30__q99__235"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s53",
+      "bloom": "Remember",
+      "skillFull": "Recall the composition and identifying use of a named qualitative-analysis reagent (e.g. Nessler's reagent, Lucas reagent).",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p22__q36__172"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s54",
+      "bloom": "Apply",
+      "skillFull": "Determine the coordination number of the central metal ion in a given coordination complex from its formula.",
+      "topicKey": "CHE_COORD",
+      "topicLabel": "Coordination Compounds",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p30__q100__236"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s55",
+      "bloom": "Remember",
+      "skillFull": "Recall the chemical formula, including charge, of a common polyatomic anion given its name (e.g. acetate, iodate, perchlorate, oxalate, arsenate).",
+      "topicKey": "CHEM_NOM",
+      "topicLabel": "Nomenclature",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p19__q12__148"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s56",
+      "bloom": "Remember",
+      "skillFull": "Recall the full form of a common chemistry-related abbreviation (e.g. FTIR, AAS, MRI, BTU, DPF).",
+      "topicKey": "CHEM_NOM",
+      "topicLabel": "Nomenclature",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p17__q03__139"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s57",
+      "bloom": "Remember",
+      "skillFull": "Recall that aromatic ketones are named using the suffix '-phenone' in IUPAC-style nomenclature.",
+      "topicKey": "CHEM_NOM",
+      "topicLabel": "Nomenclature",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p30__q97__233"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s58",
+      "bloom": "Remember",
+      "skillFull": "Recall the definition of an ore as a naturally occurring mineral deposit from which a metal can be extracted economically.",
+      "topicKey": "CHEM_NOM",
+      "topicLabel": "Nomenclature",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p30__q95__231"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s59",
+      "bloom": "Understand",
+      "skillFull": "Explain the distinction between diamagnetic, paramagnetic, and ferromagnetic materials based on their behavior in an external magnetic field.",
+      "topicKey": "CHEM_DBLOCK",
+      "topicLabel": "Transition Elements",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p20__q20__156"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s60",
+      "bloom": "Remember",
+      "skillFull": "Recall that d-block elements are typically paramagnetic or ferromagnetic due to the presence of unpaired d-electrons.",
+      "topicKey": "CHEM_DBLOCK",
+      "topicLabel": "Transition Elements",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p20__q20__156"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s61",
+      "bloom": "Understand",
+      "skillFull": "Explain why a more reactive (stronger oxidizing) halogen can displace a less reactive halide ion from solution, based on their relative oxidizing strength.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p20__q14__150",
+        "ChemBook1__p25__q63__199"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s62",
+      "bloom": "Understand",
+      "skillFull": "Identify which reagent functions as the oxidizing agent and which as the reducing agent in a given interconversion between two oxidation states of the same element.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p28__q81__217"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s63",
+      "bloom": "Understand",
+      "skillFull": "Classify a given chemical reaction as a specific reaction type (e.g. oxidation, combination/addition) based on the changes in oxidation state and composition of the species involved.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p23__q53__189"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s64",
+      "bloom": "Analyze",
+      "skillFull": "Determine which metal oxide, among several given, cannot be reduced to the free metal by carbon reduction, based on the metal's position in the reactivity series relative to carbon.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p30__q95__231"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s65",
+      "bloom": "Remember",
+      "skillFull": "Recall the catalyst used in a specific named industrial chemical process (e.g. vanadium pentoxide or platinum in the Contact Process for sulfuric acid manufacture).",
+      "topicKey": "CHEM_CAT",
+      "topicLabel": "Catalysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p23__q53__189"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s66",
+      "bloom": "Analyze",
+      "skillFull": "Determine which of several given full structural formulas for named compounds is chemically valid, by checking the bonding and valence of each.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p25__q65__201"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s67",
+      "bloom": "Apply",
+      "skillFull": "Calculate the mass percentage of a given element (e.g. nitrogen in urea) in a compound from its molecular formula and the atomic masses involved.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p30__q97__233"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s68",
+      "bloom": "Remember",
+      "skillFull": "Recall that smog forms from the combination of sulfur dioxide gas with fog/mist in polluted air.",
+      "topicKey": "CHEM_ENV",
+      "topicLabel": "Environmental Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p30__q97__233"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s69",
+      "bloom": "Apply",
+      "skillFull": "Predict the product(s) of a given inorganic chemical reaction (e.g. precipitation, complex-ion formation, acid-base, redox, or thermal decomposition) from the reactants and conditions given, and write a balanced equation for it.",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p17__q04__140",
+        "ChemBook1__p18__q05__141",
+        "ChemBook1__p19__q10__146",
+        "ChemBook1__p20__q14__150",
+        "ChemBook1__p20__q15__151",
+        "ChemBook1__p20__q16__152",
+        "ChemBook1__p20__q17__153",
+        "ChemBook1__p20__q18__154",
+        "ChemBook1__p20__q22__158",
+        "ChemBook1__p21__q28__164",
+        "ChemBook1__p21__q31__167",
+        "ChemBook1__p21__q32__168",
+        "ChemBook1__p21__q34__170",
+        "ChemBook1__p22__q35__171",
+        "ChemBook1__p23__q42__178",
+        "ChemBook1__p23__q44__180",
+        "ChemBook1__p23__q47__183",
+        "ChemBook1__p23__q49__185",
+        "ChemBook1__p24__q56__192",
+        "ChemBook1__p24__q57__193",
+        "ChemBook1__p24__q58__194",
+        "ChemBook1__p24__q59__195",
+        "ChemBook1__p25__q63__199",
+        "ChemBook1__p26__q66__202",
+        "ChemBook1__p27__q74__210",
+        "ChemBook1__p27__q75__211",
+        "ChemBook1__p27__q76__212",
+        "ChemBook1__p28__q80__216",
+        "ChemBook1__p28__q81__217",
+        "ChemBook1__p28__q82__218",
+        "ChemBook1__p29__q86__222",
+        "ChemBook1__p30__q98__234",
+        "ChemBook1__p30__q99__235"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s70",
+      "bloom": "Remember",
+      "skillFull": "Recall the chemical formula corresponding to the trivial, mineral, or commercial name of a common inorganic compound (or vice versa).",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p17__q03__139",
+        "ChemBook1__p20__q21__157",
+        "ChemBook1__p20__q23__159",
+        "ChemBook1__p21__q24__160",
+        "ChemBook1__p21__q25__161",
+        "ChemBook1__p21__q26__162",
+        "ChemBook1__p21__q29__165",
+        "ChemBook1__p21__q30__166",
+        "ChemBook1__p22__q37__173",
+        "ChemBook1__p22__q39__175",
+        "ChemBook1__p23__q46__182",
+        "ChemBook1__p23__q50__186",
+        "ChemBook1__p23__q51__187",
+        "ChemBook1__p24__q55__191",
+        "ChemBook1__p24__q60__196",
+        "ChemBook1__p25__q62__198",
+        "ChemBook1__p26__q67__203",
+        "ChemBook1__p27__q72__208",
+        "ChemBook1__p27__q73__209",
+        "ChemBook1__p28__q83__219",
+        "ChemBook1__p29__q87__223",
+        "ChemBook1__p29__q88__224",
+        "ChemBook1__p29__q89__225",
+        "ChemBook1__p29__q91__227",
+        "ChemBook1__p30__q97__233"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s71",
+      "bloom": "Remember",
+      "skillFull": "Recall the metal composition of a given named alloy (e.g. stainless steel, brass, bronze, duralumin, German silver, gun metal, solder, nitinol).",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p19__q11__147",
+        "ChemBook1__p28__q84__220",
+        "ChemBook1__p29__q87__223",
+        "ChemBook1__p30__q95__231",
+        "ChemBook1__p30__q96__232"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s72",
+      "bloom": "Remember",
+      "skillFull": "Recall the principal natural mineral source of a given metallic element (e.g. sodium from rock salt, calcium from limestone).",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p26__q68__204"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s73",
+      "bloom": "Remember",
+      "skillFull": "Recall the characteristic flame-test color produced by a given metal ion (e.g. sodium - yellow, calcium - brick red, strontium - crimson, barium - green, potassium - violet).",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p26__q68__204",
+        "ChemBook1__p29__q90__226"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s74",
+      "bloom": "Remember",
+      "skillFull": "Recall that concentrated hydrochloric acid is used to moisten a metal salt sample before performing a flame test.",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p22__q38__174"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s75",
+      "bloom": "Remember",
+      "skillFull": "Recall the practical or industrial uses of a given common inorganic compound (e.g. quicklime, a named metal oxide, water glass).",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p21__q24__160",
+        "ChemBook1__p28__q85__221",
+        "ChemBook1__p29__q86__222",
+        "ChemBook1__p30__q101__237"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s76",
+      "bloom": "Remember",
+      "skillFull": "Recall that muriate of potash (a potassium chloride fertilizer) supplies potassium and chlorine to plants.",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p30__q97__233"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s77",
+      "bloom": "Understand",
+      "skillFull": "Describe the identity and practical applications of the noble gases (e.g. maintaining an inert atmosphere, use in Geiger-Muller counters, use in cancer therapy, use in welding).",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p23__q52__188",
+        "ChemBook1__p29__q93__229"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s78",
+      "bloom": "Remember",
+      "skillFull": "Recall that water gas is a mixture of carbon monoxide and hydrogen gas, not carbon dioxide and hydrogen.",
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p30__q102__238"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s79",
+      "bloom": "Remember",
+      "skillFull": "Recall that silver chloride is an example of an insoluble chloride salt.",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p30__q102__238"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s80",
+      "bloom": "Apply",
+      "skillFull": "Determine whether a given drying agent (e.g. concentrated sulfuric acid) is chemically compatible with a given gas (e.g. ammonia) being dried, based on whether an acid-base reaction would occur between them.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p30__q102__238"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b02_s81",
+      "bloom": "Remember",
+      "skillFull": "Recall that gases are generally less soluble in warm water than in cold water.",
+      "topicKey": "CHE_GASLAWS",
+      "topicLabel": "Gaseous State",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p30__q102__238"
+      ]
+    }
+  ],
+  "prereqs": [
+    {
+      "fromTempId": "ChemBook1_b02_s2",
+      "toTempId": "ChemBook1_b02_s1",
+      "toDescription": "Recall the approximate wavelength range of visible light associated with each spectral color, from violet through red.",
+      "toTopicKeyGuess": "CHEM_SPEC"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s4",
+      "toTempId": "ChemBook1_b02_s3",
+      "toDescription": "Recall that the number of neutrons in a nuclide equals its mass number minus its atomic number (N = A - Z).",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s6",
+      "toTempId": "ChemBook1_b02_s5",
+      "toDescription": "Recall that the azimuthal (angular momentum) quantum number l may take integer values from 0 to (n-1) for a given principal quantum number n.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s9",
+      "toTempId": "ChemBook1_b02_s8",
+      "toDescription": "Recall the quantum-mechanical rules restricting valid combinations of quantum numbers (n, l, m, s), including that l must be less than n and |m| must not exceed l.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s11",
+      "toTempId": "ChemBook1_b02_s10",
+      "toDescription": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s12",
+      "toTempId": "ChemBook1_b02_s10",
+      "toDescription": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s13",
+      "toTempId": "ChemBook1_b02_s10",
+      "toDescription": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s15",
+      "toTempId": "ChemBook1_b02_s14",
+      "toDescription": "Recall that the maximum number of electrons a principal energy level (shell) can hold is given by 2n-squared.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s18",
+      "toTempId": "ChemBook1_b02_s16",
+      "toDescription": "Recall the Rydberg formula, 1/lambda = R_H(1/n1-squared - 1/n2-squared), for lines of the hydrogen atomic spectrum.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s18",
+      "toTempId": "ChemBook1_b02_s17",
+      "toDescription": "Identify the initial and final principal quantum numbers (n1 and n2) corresponding to a specified line (e.g. the third line) of a named hydrogen spectral series such as the Brackett series.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s21",
+      "toTempId": "ChemBook1_b02_s3",
+      "toDescription": "Recall that the number of neutrons in a nuclide equals its mass number minus its atomic number (N = A - Z).",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s21",
+      "toTempId": "ChemBook1_b02_s20",
+      "toDescription": "Recall the definition of isotones as nuclides that have the same number of neutrons but different atomic numbers and mass numbers.",
+      "toTopicKeyGuess": "CHEM_NUCLEAR"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s23",
+      "toTempId": "ChemBook1_b02_s22",
+      "toDescription": "Complete and balance a nuclear reaction equation, conserving total mass number and total atomic number across reactants and products.",
+      "toTopicKeyGuess": "CHEM_NUCLEAR"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s27",
+      "toTempId": "ChemBook1_b02_s28",
+      "toDescription": "Recall that alpha decay decreases a nuclide's atomic number by 2 and mass number by 4, while beta decay increases the atomic number by 1 with no change in mass number.",
+      "toTopicKeyGuess": "CHEM_NUCLEAR"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s31",
+      "toTempId": "ChemBook1_b02_s30",
+      "toDescription": "Determine the hybridization state of a molecule's or complex ion's central atom from its number of sigma-bonding and lone-pair electron domains.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s33",
+      "toTempId": "ChemBook1_b02_s34",
+      "toDescription": "Recall the relative strength order of electron-domain repulsions about a central atom: lone pair-lone pair greater than lone pair-bond pair greater than bond pair-bond pair.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s35",
+      "toTempId": "ChemBook1_b02_s34",
+      "toDescription": "Recall the relative strength order of electron-domain repulsions about a central atom: lone pair-lone pair greater than lone pair-bond pair greater than bond pair-bond pair.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s43",
+      "toTempId": "ChemBook1_b02_s29",
+      "toDescription": "Explain how sigma bonds can form from s-s, s-p, or p-p atomic orbital overlap, whereas pi bonds form only from the sideways (parallel) overlap of p-p orbitals.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s37",
+      "toTempId": "ChemBook1_b02_s36",
+      "toDescription": "Recall the periodic trend (increase or decrease) of a given atomic or ionic property, such as electronegativity, ionization energy, atomic/ionic radius, melting point, or metallic character, across a period or down a group.",
+      "toTopicKeyGuess": "CHEM_PERIODIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s38",
+      "toTempId": "ChemBook1_b02_s36",
+      "toDescription": "Recall the periodic trend (increase or decrease) of a given atomic or ionic property, such as electronegativity, ionization energy, atomic/ionic radius, melting point, or metallic character, across a period or down a group.",
+      "toTopicKeyGuess": "CHEM_PERIODIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s39",
+      "toTempId": "ChemBook1_b02_s36",
+      "toDescription": "Recall the periodic trend (increase or decrease) of a given atomic or ionic property, such as electronegativity, ionization energy, atomic/ionic radius, melting point, or metallic character, across a period or down a group.",
+      "toTopicKeyGuess": "CHEM_PERIODIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s42",
+      "toTempId": "ChemBook1_b02_s36",
+      "toDescription": "Recall the periodic trend (increase or decrease) of a given atomic or ionic property, such as electronegativity, ionization energy, atomic/ionic radius, melting point, or metallic character, across a period or down a group.",
+      "toTopicKeyGuess": "CHEM_PERIODIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s48",
+      "toTempId": "ChemBook1_b02_s47",
+      "toDescription": "Classify a given metal or non-metal oxide as acidic, basic, amphoteric, a peroxide, or a superoxide, based on its composition and bonding character.",
+      "toTopicKeyGuess": "CHE_ACIDBASE"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s60",
+      "toTempId": "ChemBook1_b02_s59",
+      "toDescription": "Explain the distinction between diamagnetic, paramagnetic, and ferromagnetic materials based on their behavior in an external magnetic field.",
+      "toTopicKeyGuess": "CHEM_DBLOCK"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s69",
+      "toTempId": null,
+      "toDescription": "Balance a chemical equation by ensuring the number of atoms of each element is equal on both sides of the equation.",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s17",
+      "toTempId": null,
+      "toDescription": "Recall the names and lower-limit principal quantum numbers of the hydrogen atomic spectral series (Lyman n1=1, Balmer n1=2, Paschen n1=3, Brackett n1=4, Pfund n1=5).",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s51",
+      "toTempId": null,
+      "toDescription": "Recall that among silver halide precipitates, silver chloride is soluble in dilute aqueous ammonia while silver iodide is not, reflecting decreasing solubility down the halogen group.",
+      "toTopicKeyGuess": "CHE_QUAL"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s64",
+      "toTempId": null,
+      "toDescription": "Recall the reactivity series of metals, including that metals more reactive than carbon (e.g. aluminium) cannot have their oxides reduced to the metal by carbon.",
+      "toTopicKeyGuess": "CHEM_REDOX"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s62",
+      "toTempId": null,
+      "toDescription": "Recall the definitions of oxidizing agent (a species that gains electrons / is itself reduced) and reducing agent (a species that loses electrons / is itself oxidized) in a redox reaction.",
+      "toTopicKeyGuess": "CHEM_REDOX"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s63",
+      "toTempId": null,
+      "toDescription": "Recall the definitions of common reaction types, such as a combination/addition reaction and an oxidation reaction.",
+      "toTopicKeyGuess": "CHEM_REDOX"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s44",
+      "toTempId": null,
+      "toDescription": "Recall that period-3 and lower elements (e.g. silicon) have energetically accessible vacant d-orbitals, while period-2 elements (e.g. carbon) do not.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s46",
+      "toTempId": null,
+      "toDescription": "Recall that a coordinate (dative) covalent bond forms when a lone pair of electrons from one atom is donated into an empty orbital of another atom or ion (e.g. water donating a lone pair to a proton to form hydronium).",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s10",
+      "toTempId": null,
+      "toDescription": "Recall the Aufbau principle, the Pauli exclusion principle, and Hund's rule as the rules governing how electrons fill atomic orbitals.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s67",
+      "toTempId": null,
+      "toDescription": "Calculate the molar mass of a compound from its chemical formula using the atomic masses of its constituent elements.",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s49",
+      "toTempId": null,
+      "toDescription": "Recall that adding a strong acid such as HCl to a sulfide-containing solution risks releasing toxic/foul-smelling H2S gas and disturbing the intended precipitation.",
+      "toTopicKeyGuess": "CHE_QUAL"
+    },
+    {
+      "fromTempId": "ChemBook1_b02_s47",
+      "toTempId": null,
+      "toDescription": "Recall the distinction between ionic and covalent bonding character and how it relates to whether an oxide behaves as acidic or basic.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    }
+  ],
+  "newTopicsProposed": [
+    {
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry",
+      "subject": "Chemistry",
+      "reason": "This slice contains a dense cluster of nuclear-chemistry questions (isotopes/isotones, nuclear reaction equations, mass defect and binding energy, radioactive decay chains, fission vs fusion, composite vs elementary particles) that do not fit any of the 24 canonical Chemistry topics — CHE_ATOMIC covers electron/quantum structure, not nuclear structure/reactions. This is a distinct, recurring HSC Chemistry unit (Nuclear Chemistry) that needs its own topic."
+    },
+    {
+      "topicKey": "CHEM_DESCRIPTIVE",
+      "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+      "subject": "Chemistry",
+      "reason": "A very large share of this slice consists of 'descriptive inorganic chemistry' recall/application items — writing/predicting balanced equations for reactions of common inorganic compounds, recalling formulas of minerals/ores/industrial salts from their trivial/commercial names, recalling metal compositions of named alloys, flame-test colors, and mineral sources of elements. None of the canonical topics (CHE_QUAL, CHEM_REDOX, CHE_BONDING, CHEM_NOM, etc.) cleanly covers this large, recurring block of 's-block/p-block/d-block descriptive and industrial chemistry' content that is a standard HSC Chemistry unit in this corpus."
+    }
+  ],
+  "skippedItems": []
+}

@@ -1,0 +1,1864 @@
+{
+  "chunkLabel": "ChemBook1_b04",
+  "subject": "Chemistry",
+  "skills": [
+    {
+      "tempId": "ChemBook1_b04_s1",
+      "bloom": "Remember",
+      "skillFull": "Recall that the lanthanide and actinide series each contain 15 elements, 30 f-block elements in total.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p42__q44__360"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s2",
+      "bloom": "Apply",
+      "skillFull": "Determine the hybridization state of a carbon atom from its bonding pattern (sp3 for four single bonds, sp2 for one double bond, sp for a triple bond).",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p42__q45__361",
+        "ChemBook1__p42__q47__363",
+        "ChemBook1__p49__q138__454"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s3",
+      "bloom": "Understand",
+      "skillFull": "Explain that a sigma bond between a hybridized carbon atom and a hydrogen atom forms through overlap of the carbon's hybrid orbital and hydrogen's 1s orbital.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p42__q45__361"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s4",
+      "bloom": "Understand",
+      "skillFull": "Explain the anomaly in first ionization energy where boron has a lower ionization energy than beryllium because boron's outermost electron occupies a higher-energy 2p subshell while beryllium has a stable filled 2s subshell.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p42__q46__362"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s5",
+      "bloom": "Understand",
+      "skillFull": "Explain the anomaly in first ionization energy where oxygen has a lower first ionization energy than nitrogen because nitrogen gains extra stability from a half-filled 2p3 configuration.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p42__q46__362"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s6",
+      "bloom": "Understand",
+      "skillFull": "Explain why fluorine has a lower electron affinity than chlorine despite being more electronegative, due to strong electron-electron repulsion within fluorine's compact 2p subshell.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p42__q46__362"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s7",
+      "bloom": "Remember",
+      "skillFull": "Recall that electron affinity is a periodic property that varies systematically across periods and groups of the periodic table.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p42__q46__362"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s8",
+      "bloom": "Remember",
+      "skillFull": "Recall that an aqueous solution of AlCl3 is acidic due to hydrolysis of the Al3+ ion.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p42__q46__362"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s9",
+      "bloom": "Analyze",
+      "skillFull": "Analyze a given molecular structure to identify the hybridization of each distinct carbon atom present (e.g., recognizing both sp3 and sp2 carbons in acetic acid).",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p42__q47__363"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s10",
+      "bloom": "Remember",
+      "skillFull": "Recall the chemical formula of pyrosulfuric acid, H2S2O7.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p42__q48__364"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s11",
+      "bloom": "Remember",
+      "skillFull": "Recall the half-reaction for reduction of the permanganate ion (MnO4-) to Mn2+ in acidic medium, identifying that 5 electrons are gained per ion.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p42__q49__365"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s12",
+      "bloom": "Apply",
+      "skillFull": "Calculate the number of electrons transferred using Avogadro's number, given the number of moles of electrons involved in a balanced half-reaction.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p42__q49__365"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s13",
+      "bloom": "Apply",
+      "skillFull": "Calculate the oxidation state of a metal atom in a coordination or organometallic compound from the known charges/nature of its ligands (e.g., Fe in Fe(CO)5 = 0).",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p42__q50__366"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s14",
+      "bloom": "Remember",
+      "skillFull": "Recall that carbonyl (CO) acts as a neutral ligand in coordination and organometallic compounds.",
+      "topicKey": "CHE_COORD",
+      "topicLabel": "Coordination Compounds",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p42__q50__366"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s15",
+      "bloom": "Apply",
+      "skillFull": "Calculate the molarity of a pure liquid (e.g., water) from its density and molar mass.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p42__q51__367"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s16",
+      "bloom": "Analyze",
+      "skillFull": "Analyze a given molecular formula to deduce a structural arrangement consistent with it, identifying the presence of a specific bond type such as a carbon-carbon triple bond.",
+      "topicKey": "CHE_ORGANIC",
+      "topicLabel": "Organic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p42__q52__368"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s17",
+      "bloom": "Remember",
+      "skillFull": "Recall the chemical formula of the iron ore limonite (2Fe2O3.3H2O).",
+      "topicKey": "CHEM_DBLOCK",
+      "topicLabel": "Transition Elements",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p42__q53__369"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s18",
+      "bloom": "Remember",
+      "skillFull": "Recall that a zinc coating (galvanizing) is used to protect iron from rusting.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p43__q54__370"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s19",
+      "bloom": "Remember",
+      "skillFull": "Recall which elements exhibit ferromagnetism (e.g., Fe, Co, Ni).",
+      "topicKey": "CHEM_DBLOCK",
+      "topicLabel": "Transition Elements",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p43__q55__371"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s20",
+      "bloom": "Remember",
+      "skillFull": "Recall the boiling point of a specific noble gas (e.g., xenon, about 165 K).",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p43__q56__372"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s21",
+      "bloom": "Remember",
+      "skillFull": "Recall the chemical formula of the mineral carnallite (KCl.MgCl2.6H2O).",
+      "topicKey": "CHEM_DBLOCK",
+      "topicLabel": "Transition Elements",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p43__q57__373"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s22",
+      "bloom": "Remember",
+      "skillFull": "Recall the differential solubility behavior of a metal compound (e.g., lead(II) oxide) in different acids, based on which resulting salt is soluble.",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p43__q58__374"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s23",
+      "bloom": "Remember",
+      "skillFull": "Recall that Pyrex glass contains boron trioxide (B2O3) in addition to silica (SiO2), giving it low thermal expansion.",
+      "topicKey": "CHEM_SOLID",
+      "topicLabel": "Solid State and Ionic Compounds",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p43__q59__375"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s24",
+      "bloom": "Analyze",
+      "skillFull": "Analyze a series of related species that differ in lone-pair count or charge (e.g., NO2-, NO2, NO2+) to predict their relative order of bond angles using VSEPR theory.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p43__q60__376"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s25",
+      "bloom": "Understand",
+      "skillFull": "Compare common intermolecular and intramolecular forces of attraction by relative strength (van der Waals forces < dipole-dipole interaction < hydrogen bonding < covalent bonding).",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p43__q61__377"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s26",
+      "bloom": "Apply",
+      "skillFull": "Determine the ground-state electron configuration of a given element (or ion) using the Aufbau principle, Pauli exclusion principle, and Hund's rule.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p43__q62__378",
+        "ChemBook1__p43__q66__382",
+        "ChemBook1__p44__q69__385",
+        "ChemBook1__p47__q105__421",
+        "ChemBook1__p48__q115__431",
+        "ChemBook1__p48__q123__439",
+        "ChemBook1__p49__q132__448",
+        "ChemBook1__p49__q137__453"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s27",
+      "bloom": "Apply",
+      "skillFull": "Determine the element located at a specified group-and-period intersection of the periodic table (e.g., Group IIA, Period 4).",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p43__q62__378"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s28",
+      "bloom": "Remember",
+      "skillFull": "Recognize which periodic table groups contain both metallic and non-metallic elements (e.g., groups IIIA-VIA, the metalloid staircase region).",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p43__q63__379"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s29",
+      "bloom": "Remember",
+      "skillFull": "Recall the definition of electron affinity as the energy change when an electron is added to a neutral gaseous atom.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p43__q64__380"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s30",
+      "bloom": "Remember",
+      "skillFull": "Recall the qualitative-analysis group classification and group reagent used to detect a given metal ion (e.g., Ni2+ detected in Group IIIB).",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p43__q65__381"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s31",
+      "bloom": "Apply",
+      "skillFull": "Determine an element's periodic-table group number from its total valence electron count, including exceptions such as Group VIII for late 3d transition metals (e.g., Co with 4s2 3d7).",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p43__q66__382"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s32",
+      "bloom": "Understand",
+      "skillFull": "Explain descriptive chemical properties of a transition metal identified from its electron configuration, such as forming colored compounds and multiple stable oxide oxidation states.",
+      "topicKey": "CHEM_DBLOCK",
+      "topicLabel": "Transition Elements",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p43__q66__382"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s33",
+      "bloom": "Analyze",
+      "skillFull": "Analyze the plausibility of a given complex-ion formula by applying the typical coordination number of the central transition-metal ion (e.g., Cr3+, Co3+, Fe3+, Pt4+ are usually 6-coordinate).",
+      "topicKey": "CHE_COORD",
+      "topicLabel": "Coordination Compounds",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p44__q67__383"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s34",
+      "bloom": "Apply",
+      "skillFull": "Calculate the overall charge of a coordination complex ion by summing the charge of the central metal ion and the charges of its ligands.",
+      "topicKey": "CHE_COORD",
+      "topicLabel": "Coordination Compounds",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p44__q67__383"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s35",
+      "bloom": "Remember",
+      "skillFull": "Recall the name of the Ostwald process, the catalytic industrial method for converting ammonia to nitric acid.",
+      "topicKey": "CHEM_CAT",
+      "topicLabel": "Catalysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p44__q68__384"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s36",
+      "bloom": "Apply",
+      "skillFull": "Determine whether a given element belongs to the d-block of the periodic table based on its electron configuration having a partially or fully filled (n-1)d subshell as the last-filled subshell.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p44__q69__385",
+        "ChemBook1__p46__q101__417"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s37",
+      "bloom": "Remember",
+      "skillFull": "Recall the chemical formula of the mineral sphalerite (\"black jack\"), ZnS.",
+      "topicKey": "CHEM_DBLOCK",
+      "topicLabel": "Transition Elements",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p44__q70__386"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s38",
+      "bloom": "Remember",
+      "skillFull": "Recall the approximate carbon content range in cast iron (about 2-4.5%).",
+      "topicKey": "CHEM_DBLOCK",
+      "topicLabel": "Transition Elements",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p44__q71__387",
+        "ChemBook1__p48__q125__441"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s39",
+      "bloom": "Apply",
+      "skillFull": "Determine whether an atom or ion is diamagnetic or paramagnetic by checking whether all electrons in its configuration are paired.",
+      "topicKey": "CHEM_DBLOCK",
+      "topicLabel": "Transition Elements",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p44__q72__388",
+        "ChemBook1__p44__q74__390"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s40",
+      "bloom": "Understand",
+      "skillFull": "Classify which elements in a given list qualify as transition metals based on having a partially filled d subshell in the atom or a common ion.",
+      "topicKey": "CHEM_DBLOCK",
+      "topicLabel": "Transition Elements",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p44__q73__389"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s41",
+      "bloom": "Remember",
+      "skillFull": "Recall the formation of the deep-blue tetraamminecopper(II) complex ion, [Cu(NH3)4]2+, when excess aqueous ammonia is added to a copper(II) salt solution.",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p44__q75__391"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s42",
+      "bloom": "Remember",
+      "skillFull": "Recall the chemical composition of Nessler's reagent, an alkaline solution of potassium tetraiodomercurate(II), used to test for ammonium ions.",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p44__q76__392"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s43",
+      "bloom": "Remember",
+      "skillFull": "Recall the different nitrogen-containing reduction products (NO2, NO, N2O, NH4NO3) formed when metals react with nitric acid of varying concentration.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p44__q77__393"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s44",
+      "bloom": "Apply",
+      "skillFull": "Determine the reduction product of an oxidizing species in a given redox reaction from the known oxidation product of the reducing species.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p44__q78__394"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s45",
+      "bloom": "Remember",
+      "skillFull": "Recall which common elements exhibit allotropy (e.g., carbon, phosphorus, oxygen, sulfur).",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p45__q79__395"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s46",
+      "bloom": "Remember",
+      "skillFull": "Recall that sulfur dioxide bleaches colored substances through a reduction mechanism involving nascent hydrogen.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p45__q80__396"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s47",
+      "bloom": "Remember",
+      "skillFull": "Recall practical/industrial uses of specific metals based on their physical properties (e.g., aluminium for picture frames and telescope mirrors due to its light weight and reflectivity).",
+      "topicKey": "CHEM_DBLOCK",
+      "topicLabel": "Transition Elements",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p45__q81__397"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s48",
+      "bloom": "Remember",
+      "skillFull": "Recall the disproportionation products formed when chlorine gas is passed into hot concentrated sodium hydroxide solution (yielding NaClO3, NaCl and water).",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p45__q82__398"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s49",
+      "bloom": "Analyze",
+      "skillFull": "Analyze the relative polarizing power of a set of cations by applying Fajans' rules based on charge density (smaller ionic radius and higher charge give greater polarizing power).",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p45__q83__399"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s50",
+      "bloom": "Analyze",
+      "skillFull": "Differentiate between intramolecular covalent bonding and intermolecular forces of attraction when explaining a physical property (e.g., high melting point) of a covalent network solid such as diamond.",
+      "topicKey": "CHEM_SOLID",
+      "topicLabel": "Solid State and Ionic Compounds",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p45__q84__400"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s51",
+      "bloom": "Understand",
+      "skillFull": "Explain the dissolution of a polar covalent solute (e.g., sugar) in water in terms of hydrogen bonds forming between solute and solvent molecules.",
+      "topicKey": "CHEM_SOLUTION",
+      "topicLabel": "Solutions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p45__q85__401"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s52",
+      "bloom": "Understand",
+      "skillFull": "Classify a bond between two atoms as nonpolar covalent, polar covalent, or ionic based on their electronegativity difference (thresholds of about 0.5 and 1.7).",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p45__q86__402",
+        "ChemBook1__p45__q87__403",
+        "ChemBook1__p49__q133__449"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s53",
+      "bloom": "Remember",
+      "skillFull": "Recall the periodic trend that electronegativity increases across a period and decreases down a group, and use it to identify the most/least electronegative element in a set.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p45__q88__404",
+        "ChemBook1__p48__q122__438"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s54",
+      "bloom": "Remember",
+      "skillFull": "Recall that Group VIIA (halogen) elements are strong oxidizing agents due to their high electronegativity and electron affinity.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p45__q89__405"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s55",
+      "bloom": "Remember",
+      "skillFull": "Recall that Group IIA (alkaline earth metal) elements form basic oxides.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p45__q90__406"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s56",
+      "bloom": "Apply",
+      "skillFull": "Apply Lewis structure rules to determine the number of lone electron pairs on the atoms of a simple diatomic molecule (e.g., N2, O2, F2).",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p46__q91__407"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s57",
+      "bloom": "Remember",
+      "skillFull": "Recall that iodine is commercially extracted from seaweed (sea kelp).",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p46__q92__408"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s58",
+      "bloom": "Remember",
+      "skillFull": "Recall that concentrated sulfuric acid acts as a dehydrating agent, e.g., converting sucrose to carbon by removing water.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p46__q93__409"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s59",
+      "bloom": "Analyze",
+      "skillFull": "Compare the acidity of aqueous solutions formed from different non-metal oxides, recognizing that oxides of elements with a higher oxidation state or electronegativity (e.g., P2O5) form more strongly acidic solutions.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p46__q94__410"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s60",
+      "bloom": "Remember",
+      "skillFull": "Recognize which common gases support combustion versus which are themselves combustible (e.g., oxygen supports combustion but does not itself burn).",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p46__q95__411"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s61",
+      "bloom": "Remember",
+      "skillFull": "Recall that graphite is used as a solid lubricant because of its layered crystal structure.",
+      "topicKey": "CHEM_SOLID",
+      "topicLabel": "Solid State and Ionic Compounds",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p46__q96__412"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s62",
+      "bloom": "Remember",
+      "skillFull": "Recall that colored glass is produced by adding transition-metal oxides (e.g., CoO) to a base glass composition of Na2O, K2O, and SiO2.",
+      "topicKey": "CHEM_SOLID",
+      "topicLabel": "Solid State and Ionic Compounds",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p46__q97__413"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s63",
+      "bloom": "Apply",
+      "skillFull": "Determine the thermal decomposition products of a Group II metal nitrate salt (e.g., Mg(NO3)2 decomposing to MgO, NO2, and O2).",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p46__q98__414"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s64",
+      "bloom": "Remember",
+      "skillFull": "Recall the chemical formula of Prussian blue, Fe4[Fe(CN)6]3.",
+      "topicKey": "CHE_COORD",
+      "topicLabel": "Coordination Compounds",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p46__q99__415"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s65",
+      "bloom": "Analyze",
+      "skillFull": "Differentiate the type of addition reaction (electrophilic for C=C, nucleophilic for C=O) undergone by a given double bond, based on its bond polarity.",
+      "topicKey": "CHE_ORGANIC",
+      "topicLabel": "Organic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p46__q100__416"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s66",
+      "bloom": "Remember",
+      "skillFull": "Recall the approximate composition of Dutch metal alloy (about 20% Zn, 80% Cu).",
+      "topicKey": "CHEM_DBLOCK",
+      "topicLabel": "Transition Elements",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p46__q102__418"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s67",
+      "bloom": "Understand",
+      "skillFull": "Classify a given oxide as acidic, basic, amphoteric, or neutral based on the parent element's position in the periodic table and oxidation state.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p46__q103__419",
+        "ChemBook1__p49__q128__444"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s68",
+      "bloom": "Analyze",
+      "skillFull": "Analyze a proposed redox equation between a reducing agent (e.g., NH3) and a metal oxide to verify whether its products and coefficients are correctly balanced.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p47__q104__420"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s69",
+      "bloom": "Remember",
+      "skillFull": "Recall the chemical formula/composition of bauxite, the principal ore from which aluminium is extracted.",
+      "topicKey": "CHEM_DBLOCK",
+      "topicLabel": "Transition Elements",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p47__q106__422"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s70",
+      "bloom": "Remember",
+      "skillFull": "Recall the characteristic flame-test color produced by a specific metal ion (e.g., calcium gives a brick-red flame).",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p47__q107__423"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s71",
+      "bloom": "Remember",
+      "skillFull": "Recall that noble gases can form clathrate (cage/inclusion) compounds despite their general chemical inertness.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p47__q108__424"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s72",
+      "bloom": "Analyze",
+      "skillFull": "Analyze a molecule's Lewis structure to determine the number and type of bonds present, distinguishing ordinary covalent bonds from a coordinate (dative covalent) bond (e.g., POCl3 has one P-to-O coordinate bond and three P-Cl covalent bonds).",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p47__q109__425"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s73",
+      "bloom": "Understand",
+      "skillFull": "Explain that stronger attraction between delocalized \"free\" electrons and metal cations increases the strength of metallic bonding.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p47__q110__426"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s74",
+      "bloom": "Remember",
+      "skillFull": "Recall that hydrogen bonding between complementary base pairs holds together the two strands of the DNA double helix.",
+      "topicKey": "CHE_BIOMOLECULE",
+      "topicLabel": "Biomolecules",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p47__q111__427"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s75",
+      "bloom": "Analyze",
+      "skillFull": "Analyze the boiling points of small hydride molecules (HF, H2O, NH3, CH4) by comparing the extent and strength of hydrogen bonding each can form.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p47__q112__428"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s76",
+      "bloom": "Analyze",
+      "skillFull": "Analyze the electron configurations of a set of elements to compare their ionization energies, recognizing that a complete or near-complete outer subshell raises ionization energy.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p47__q113__429"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s77",
+      "bloom": "Remember",
+      "skillFull": "Recall that elements in the modern periodic table are arranged in order of increasing atomic number (proton number).",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p48__q114__430"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s78",
+      "bloom": "Remember",
+      "skillFull": "Recall that acid rain causes chemical weathering and dissolution of limestone (calcium carbonate) structures.",
+      "topicKey": "CHEM_ENV",
+      "topicLabel": "Environmental Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p48__q116__432"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s79",
+      "bloom": "Apply",
+      "skillFull": "Apply VSEPR theory to determine the molecular or ionic geometry of a species from the number of bonding and lone electron pairs around its central atom (e.g., linear, trigonal planar, tetrahedral, seesaw, bent, trigonal bipyramidal, octahedral).",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p48__q117__433",
+        "ChemBook1__p49__q134__450"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s80",
+      "bloom": "Remember",
+      "skillFull": "Recall that common nitrate salts (e.g., KNO3, NH4NO3, NaNO3) are used as fertilizers because they supply nitrogen.",
+      "topicKey": "CHEM_ENV",
+      "topicLabel": "Environmental Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p48__q118__434"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s81",
+      "bloom": "Remember",
+      "skillFull": "Recall that noble metals such as platinum and gold dissolve in aqua regia, a 3:1 mixture of concentrated HCl and HNO3.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p48__q119__435"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s82",
+      "bloom": "Remember",
+      "skillFull": "Recall the chemical formula of Plaster of Paris, CaSO4.1/2H2O.",
+      "topicKey": "CHEM_SOLID",
+      "topicLabel": "Solid State and Ionic Compounds",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p48__q120__436"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s83",
+      "bloom": "Remember",
+      "skillFull": "Recall general solubility rules for common ionic compounds in water (e.g., Group IIA carbonates such as CaCO3 are insoluble, while most chlorides, nitrates, and sulfates are soluble).",
+      "topicKey": "CHEM_SOLUTION",
+      "topicLabel": "Solutions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p48__q121__437"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s84",
+      "bloom": "Analyze",
+      "skillFull": "Analyze an element's electron configuration to determine whether its last-filled subshell is an f subshell (f-block) rather than a d subshell (e.g., Th is not an f-block element).",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p48__q123__439"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s85",
+      "bloom": "Understand",
+      "skillFull": "Interpret a set of chemical formulas to recognize which one represents a coordination (complex) compound, i.e., a central metal ion surrounded by ligands.",
+      "topicKey": "CHE_COORD",
+      "topicLabel": "Coordination Compounds",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p48__q124__440"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s86",
+      "bloom": "Remember",
+      "skillFull": "Recall the chemical formula of the mineral nickeline (niccolite), NiAs.",
+      "topicKey": "CHEM_DBLOCK",
+      "topicLabel": "Transition Elements",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p48__q126__442"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s87",
+      "bloom": "Apply",
+      "skillFull": "Apply the reactivity series of metals to predict the outcome of a single-displacement reaction between a more reactive metal and a salt solution of a less reactive metal (e.g., Fe displaces Cu from CuSO4 solution).",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p48__q127__443"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s88",
+      "bloom": "Remember",
+      "skillFull": "Recall the characteristic precipitate colors of Group IIB/IVA metal sulfides formed in qualitative analysis (e.g., CuS, PbS, HgS black; CdS yellow; Sb2S3 orange).",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p49__q129__445"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s89",
+      "bloom": "Understand",
+      "skillFull": "Explain why phosphorus exists as the tetratomic molecule P4 rather than a diatomic molecule like nitrogen (N2), due to phosphorus's weak p(pi)-p(pi) bonding compared to nitrogen's strong triple bond.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p49__q130__446"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s90",
+      "bloom": "Remember",
+      "skillFull": "Recall the general valence-shell electron configuration pattern for elements of a given periodic-table group (e.g., Group IIIA: ns2np1).",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p49__q131__447"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s91",
+      "bloom": "Understand",
+      "skillFull": "Explain that first ionization energy increases across a period due to increasing effective nuclear charge acting on electrons in the same shell.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p49__q136__452"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s92",
+      "bloom": "Remember",
+      "skillFull": "Recall that the carbon atoms in both graphite and diamond are bonded to each other by covalent bonds.",
+      "topicKey": "CHEM_SOLID",
+      "topicLabel": "Solid State and Ionic Compounds",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p49__q139__455"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s93",
+      "bloom": "Understand",
+      "skillFull": "Explain that a central atom bearing more lone pairs experiences greater lone-pair/bond-pair repulsion, producing a smaller bond angle than a similar molecule with fewer lone pairs (e.g., H2O's 104.4 degrees vs NH3's 107.8 degrees).",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p49__q140__456"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s94",
+      "bloom": "Remember",
+      "skillFull": "Recall the open-chain structural formulas of glucose (an aldehyde) and fructose (a ketone), identifying their functional-group difference.",
+      "topicKey": "CHE_BIOMOLECULE",
+      "topicLabel": "Biomolecules",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p50__q01__457"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s95",
+      "bloom": "Apply",
+      "skillFull": "Calculate an equilibrium concentration of a product from the initial concentration of a reactant and the measured change in reactant concentration (mass balance).",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p50__q01__457"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s96",
+      "bloom": "Apply",
+      "skillFull": "Calculate the equilibrium constant Kc for a simple isomerization equilibrium from the equilibrium concentrations of reactant and product.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p50__q01__457"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s97",
+      "bloom": "Apply",
+      "skillFull": "Calculate the percentage conversion of a reactant at equilibrium from its initial and equilibrium concentrations.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p50__q01__457"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s98",
+      "bloom": "Apply",
+      "skillFull": "Calculate the atom economy of a reaction as (molar mass of desired product / total molar mass of all reactants) x 100%.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p50__q02__458"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s99",
+      "bloom": "Evaluate",
+      "skillFull": "Evaluate which of two competing synthetic routes to a desired product is more atom-economical (environmentally efficient) by comparing their calculated atom economies.",
+      "topicKey": "CHEM_ENV",
+      "topicLabel": "Environmental Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p50__q02__458"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s100",
+      "bloom": "Apply",
+      "skillFull": "Calculate the pOH of a basic buffer solution using pOH = pKb + log([salt]/[base]).",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p50__q03__459",
+        "ChemBook1__p53__q19__475"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s101",
+      "bloom": "Apply",
+      "skillFull": "Calculate the pH of a solution from its pOH, or vice versa, using pH + pOH = 14 (at 25 degrees C).",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p50__q03__459",
+        "ChemBook1__p51__q07__463",
+        "ChemBook1__p53__q19__475",
+        "ChemBook1__p54__q23__479"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s102",
+      "bloom": "Apply",
+      "skillFull": "Calculate the moles of acid and base present in a neutralization reaction from concentration and volume (n = C x V).",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p51__q04__460",
+        "ChemBook1__p51__q09__465"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s103",
+      "bloom": "Analyze",
+      "skillFull": "Analyze the mole quantities of H+ and OH- available in a mixture of a strong acid and a strong base, accounting for reaction stoichiometry, to determine whether the resulting mixture is net acidic or net basic.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p51__q04__460"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s104",
+      "bloom": "Apply",
+      "skillFull": "Calculate the resulting molar concentration of excess H+ or OH- ions after mixing acid and base solutions of different volumes.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p51__q04__460"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s105",
+      "bloom": "Apply",
+      "skillFull": "Calculate the number of moles of a substance from a given mass and its molar mass.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p51__q05__461",
+        "ChemBook1__p52__q11__467"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s106",
+      "bloom": "Apply",
+      "skillFull": "Apply the ideal gas law (PV = nRT) to calculate an unknown quantity (pressure, volume, moles, or temperature), given the other variables.",
+      "topicKey": "CHE_GASLAWS",
+      "topicLabel": "Gaseous State",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p51__q05__461",
+        "ChemBook1__p52__q11__467"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s107",
+      "bloom": "Apply",
+      "skillFull": "Apply an initial-change-equilibrium (ICE) mole-table method to a gas-phase dissociation equilibrium (e.g., N2O4 <=> 2NO2) to solve for the extent of reaction.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p51__q05__461"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s108",
+      "bloom": "Apply",
+      "skillFull": "Calculate the degree of dissociation (alpha) of a substance as the fraction of its initial moles that have dissociated at equilibrium.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p51__q05__461"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s109",
+      "bloom": "Apply",
+      "skillFull": "Apply the relation Ka x Kb = Kw to calculate the base dissociation constant (Kb) of a conjugate base given the acid dissociation constant (Ka) of its conjugate acid, or vice versa.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p51__q06__462"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s110",
+      "bloom": "Apply",
+      "skillFull": "Calculate the net normality of a mixture of several acid and base solutions by summing signed normality-volume products, to determine whether the resulting mixture is acidic or basic.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p51__q07__463"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s111",
+      "bloom": "Apply",
+      "skillFull": "Apply Kirchhoff's law (enthalpy at a new temperature equals enthalpy at a reference temperature plus delta-Cp times delta-T) to calculate a reaction's enthalpy change at a different temperature.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p51__q08__464"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s112",
+      "bloom": "Apply",
+      "skillFull": "Calculate delta-Cp for a reaction as the stoichiometrically weighted difference between the sum of heat capacities of products and reactants.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p51__q08__464"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s113",
+      "bloom": "Analyze",
+      "skillFull": "Analyze the mole quantities of reactants present in a neutralization reaction to identify the limiting reactant.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p51__q09__465"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s114",
+      "bloom": "Apply",
+      "skillFull": "Calculate the pH of a buffer solution formed from a weak acid and its conjugate-base salt using the Henderson-Hasselbalch equation, pH = pKa + log([salt]/[acid]).",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p51__q09__465"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s115",
+      "bloom": "Understand",
+      "skillFull": "Explain the rate expression of a chemical reaction, relating the rate of consumption or formation of each species to its stoichiometric coefficient.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p52__q10__466"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s116",
+      "bloom": "Apply",
+      "skillFull": "Calculate the rate of formation of one species in a reaction from the known rate of consumption of another species, using their stoichiometric coefficient ratio.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p52__q10__466"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s117",
+      "bloom": "Apply",
+      "skillFull": "Use the mole ratio from a balanced chemical equation to calculate the amount of one reactant required to completely react with a given amount of another reactant.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p52__q11__467"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s118",
+      "bloom": "Understand",
+      "skillFull": "Explain the primary goal of green chemistry as minimizing the generation of hazardous waste through environmentally benign chemical processes.",
+      "topicKey": "CHEM_ENV",
+      "topicLabel": "Environmental Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p52__q12__468"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s119",
+      "bloom": "Remember",
+      "skillFull": "List the guiding principles of green chemistry (e.g., waste prevention, atom economy, safer solvents and auxiliaries, catalysis, minimizing synthetic steps).",
+      "topicKey": "CHEM_ENV",
+      "topicLabel": "Environmental Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p52__q12__468"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s120",
+      "bloom": "Understand",
+      "skillFull": "Interpret the dissociation stoichiometry of a sparingly soluble ionic compound to write its solubility-product (Ksp) expression in terms of molar solubility (S) (e.g., A2B <=> 2A+ + B2- gives Ksp = 4S^3).",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p52__q13__469"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s121",
+      "bloom": "Apply",
+      "skillFull": "Calculate the molar solubility (S) of a sparingly soluble salt from its given Ksp value by solving the solubility-product expression.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p52__q13__469"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s122",
+      "bloom": "Analyze",
+      "skillFull": "Compare the molar solubilities of two different sparingly soluble salts, calculated from their Ksp values, to determine which is less soluble.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p52__q13__469"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s123",
+      "bloom": "Apply",
+      "skillFull": "Apply the first-order integrated rate law (C = C0 e^(-kt)) to calculate the concentration of a reactant remaining after a given elapsed time.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p52__q14__470"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s124",
+      "bloom": "Apply",
+      "skillFull": "Apply the first-order integrated rate law to calculate the time required for a reactant's concentration to fall to a specified value, given its rate constant.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p52__q14__470"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s125",
+      "bloom": "Remember",
+      "skillFull": "Recall the typical pH values of common substances or biological fluids (e.g., human blood about 7.35-7.45, bathing soap about 8.5-9.5).",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p53__q15__471"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s126",
+      "bloom": "Apply",
+      "skillFull": "Calculate the resultant hydrogen-ion concentration when mixing two solutions of different [H+] and volumes, by taking the moles-weighted average.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p53__q16__472"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s127",
+      "bloom": "Apply",
+      "skillFull": "Calculate the pH of a solution from its hydrogen-ion concentration using pH = -log[H+].",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p53__q16__472",
+        "ChemBook1__p54__q23__479"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s128",
+      "bloom": "Evaluate",
+      "skillFull": "Evaluate whether a solution's pH makes it suitable for a stated practical purpose (e.g., drinking, fish farming) by comparing it to an acceptable pH range.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p53__q16__472",
+        "ChemBook1__p53__q17__473"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s129",
+      "bloom": "Apply",
+      "skillFull": "Calculate the pOH of a weak-base solution using the approximation pOH = -log(square root of (Kb x C)).",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p53__q17__473"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s130",
+      "bloom": "Apply",
+      "skillFull": "Calculate the amount of reactant or product (in moles or volume at STP) required to release or absorb a specified quantity of heat, using a reaction's molar enthalpy change and stoichiometry.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p53__q18__474"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s131",
+      "bloom": "Remember",
+      "skillFull": "Define a buffer solution as one that resists a change in pH when small amounts of acid or base are added to it.",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p53__q19__475"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s132",
+      "bloom": "Remember",
+      "skillFull": "Recall the Henderson-Hasselbalch equation for an acidic buffer (pH = pKa + log([salt]/[acid])) and for a basic buffer (pH = 14 - pKb - log([salt]/[base])).",
+      "topicKey": "CHE_ACIDBASE",
+      "topicLabel": "Acids, Bases and pH",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p53__q19__475"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s133",
+      "bloom": "Apply",
+      "skillFull": "Calculate the rate of a reaction as the negative rate of change of a reactant's concentration with time (r = -delta[C]/delta t), where the concentration change is derived from moles reacted and vessel volume.",
+      "topicKey": "CHEM_KIN",
+      "topicLabel": "Chemical Kinetics",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p53__q20__476"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s134",
+      "bloom": "Understand",
+      "skillFull": "Explain how a catalyst affects a reaction's activation energy and consequently its rate.",
+      "topicKey": "CHEM_CAT",
+      "topicLabel": "Catalysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p53__q21__477"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s135",
+      "bloom": "Understand",
+      "skillFull": "Classify a chemical reaction as exothermic or endothermic based on the sign of its enthalpy change (delta H).",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p53__q21__477"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s136",
+      "bloom": "Apply",
+      "skillFull": "Apply Le Chatelier's principle to predict how a reaction or equilibrium shifts in response to a change in temperature, given whether the reaction is exothermic or endothermic.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p53__q21__477"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s137",
+      "bloom": "Apply",
+      "skillFull": "Apply the relation Kp = Kc(RT)^(delta n) to solve for an unknown quantity (e.g., temperature), given the ratio Kp/Kc and delta n (the change in moles of gas).",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p54__q22__478"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s138",
+      "bloom": "Apply",
+      "skillFull": "Calculate the pH of a strong acid-strong base titration mixture just before the equivalence point from the concentration of excess unreacted acid.",
+      "topicKey": "CHEM_ANALYTICAL",
+      "topicLabel": "Quantitative (Titrimetric) Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p54__q23__479"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s139",
+      "bloom": "Apply",
+      "skillFull": "Calculate the pH of a strong acid-strong base titration mixture just after the equivalence point from the concentration of excess unreacted base.",
+      "topicKey": "CHEM_ANALYTICAL",
+      "topicLabel": "Quantitative (Titrimetric) Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p54__q23__479"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b04_s140",
+      "bloom": "Remember",
+      "skillFull": "Recall the diagonal relationship between boron and silicon in the periodic table, whereby the two elements show similar chemical properties due to comparable charge-to-radius ratios.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p49__q135__451"
+      ]
+    }
+  ],
+  "prereqs": [
+    {
+      "fromTempId": "ChemBook1_b04_s3",
+      "toTempId": "ChemBook1_b04_s2",
+      "toDescription": "Determine the hybridization state of a carbon atom from its bonding pattern (sp3 for four single bonds, sp2 for one double bond, sp for a triple bond).",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s9",
+      "toTempId": "ChemBook1_b04_s2",
+      "toDescription": "Determine the hybridization state of a carbon atom from its bonding pattern (sp3 for four single bonds, sp2 for one double bond, sp for a triple bond).",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s12",
+      "toTempId": "ChemBook1_b04_s11",
+      "toDescription": "Recall the half-reaction for reduction of the permanganate ion (MnO4-) to Mn2+ in acidic medium, identifying that 5 electrons are gained per ion.",
+      "toTopicKeyGuess": "CHEM_REDOX"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s13",
+      "toTempId": "ChemBook1_b04_s14",
+      "toDescription": "Recall that carbonyl (CO) acts as a neutral ligand in coordination and organometallic compounds.",
+      "toTopicKeyGuess": "CHE_COORD"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s16",
+      "toTempId": "ChemBook1_b04_s2",
+      "toDescription": "Determine the hybridization state of a carbon atom from its bonding pattern (sp3 for four single bonds, sp2 for one double bond, sp for a triple bond).",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s24",
+      "toTempId": "ChemBook1_b04_s79",
+      "toDescription": "Apply VSEPR theory to determine the molecular or ionic geometry of a species from the number of bonding and lone electron pairs around its central atom (e.g., linear, trigonal planar, tetrahedral, seesaw, bent, trigonal bipyramidal, octahedral).",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s31",
+      "toTempId": "ChemBook1_b04_s26",
+      "toDescription": "Determine the ground-state electron configuration of a given element (or ion) using the Aufbau principle, Pauli exclusion principle, and Hund's rule.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s32",
+      "toTempId": "ChemBook1_b04_s26",
+      "toDescription": "Determine the ground-state electron configuration of a given element (or ion) using the Aufbau principle, Pauli exclusion principle, and Hund's rule.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s36",
+      "toTempId": "ChemBook1_b04_s26",
+      "toDescription": "Determine the ground-state electron configuration of a given element (or ion) using the Aufbau principle, Pauli exclusion principle, and Hund's rule.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s39",
+      "toTempId": "ChemBook1_b04_s26",
+      "toDescription": "Determine the ground-state electron configuration of a given element (or ion) using the Aufbau principle, Pauli exclusion principle, and Hund's rule.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s59",
+      "toTempId": "ChemBook1_b04_s67",
+      "toDescription": "Classify a given oxide as acidic, basic, amphoteric, or neutral based on the parent element's position in the periodic table and oxidation state.",
+      "toTopicKeyGuess": "CHEM_PERIODIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s65",
+      "toTempId": "ChemBook1_b04_s2",
+      "toDescription": "Determine the hybridization state of a carbon atom from its bonding pattern (sp3 for four single bonds, sp2 for one double bond, sp for a triple bond).",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s75",
+      "toTempId": "ChemBook1_b04_s25",
+      "toDescription": "Compare common intermolecular and intramolecular forces of attraction by relative strength (van der Waals forces < dipole-dipole interaction < hydrogen bonding < covalent bonding).",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s76",
+      "toTempId": "ChemBook1_b04_s26",
+      "toDescription": "Determine the ground-state electron configuration of a given element (or ion) using the Aufbau principle, Pauli exclusion principle, and Hund's rule.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s84",
+      "toTempId": "ChemBook1_b04_s26",
+      "toDescription": "Determine the ground-state electron configuration of a given element (or ion) using the Aufbau principle, Pauli exclusion principle, and Hund's rule.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s93",
+      "toTempId": "ChemBook1_b04_s79",
+      "toDescription": "Apply VSEPR theory to determine the molecular or ionic geometry of a species from the number of bonding and lone electron pairs around its central atom (e.g., linear, trigonal planar, tetrahedral, seesaw, bent, trigonal bipyramidal, octahedral).",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s96",
+      "toTempId": "ChemBook1_b04_s95",
+      "toDescription": "Calculate an equilibrium concentration of a product from the initial concentration of a reactant and the measured change in reactant concentration (mass balance).",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s97",
+      "toTempId": "ChemBook1_b04_s95",
+      "toDescription": "Calculate an equilibrium concentration of a product from the initial concentration of a reactant and the measured change in reactant concentration (mass balance).",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s99",
+      "toTempId": "ChemBook1_b04_s98",
+      "toDescription": "Calculate the atom economy of a reaction as (molar mass of desired product / total molar mass of all reactants) x 100%.",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s103",
+      "toTempId": "ChemBook1_b04_s102",
+      "toDescription": "Calculate the moles of acid and base present in a neutralization reaction from concentration and volume (n = C x V).",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s104",
+      "toTempId": "ChemBook1_b04_s103",
+      "toDescription": "Analyze the mole quantities of H+ and OH- available in a mixture of a strong acid and a strong base, accounting for reaction stoichiometry, to determine whether the resulting mixture is net acidic or net basic.",
+      "toTopicKeyGuess": "CHE_ACIDBASE"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s107",
+      "toTempId": "ChemBook1_b04_s105",
+      "toDescription": "Calculate the number of moles of a substance from a given mass and its molar mass.",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s107",
+      "toTempId": "ChemBook1_b04_s106",
+      "toDescription": "Apply the ideal gas law (PV = nRT) to calculate an unknown quantity (pressure, volume, moles, or temperature), given the other variables.",
+      "toTopicKeyGuess": "CHE_GASLAWS"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s108",
+      "toTempId": "ChemBook1_b04_s107",
+      "toDescription": "Apply an initial-change-equilibrium (ICE) mole-table method to a gas-phase dissociation equilibrium (e.g., N2O4 <=> 2NO2) to solve for the extent of reaction.",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s111",
+      "toTempId": "ChemBook1_b04_s112",
+      "toDescription": "Calculate delta-Cp for a reaction as the stoichiometrically weighted difference between the sum of heat capacities of products and reactants.",
+      "toTopicKeyGuess": "CHE_THERMOCHEM"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s113",
+      "toTempId": "ChemBook1_b04_s102",
+      "toDescription": "Calculate the moles of acid and base present in a neutralization reaction from concentration and volume (n = C x V).",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s114",
+      "toTempId": "ChemBook1_b04_s113",
+      "toDescription": "Analyze the mole quantities of reactants present in a neutralization reaction to identify the limiting reactant.",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s116",
+      "toTempId": "ChemBook1_b04_s115",
+      "toDescription": "Explain the rate expression of a chemical reaction, relating the rate of consumption or formation of each species to its stoichiometric coefficient.",
+      "toTopicKeyGuess": "CHEM_KIN"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s117",
+      "toTempId": "ChemBook1_b04_s105",
+      "toDescription": "Calculate the number of moles of a substance from a given mass and its molar mass.",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s117",
+      "toTempId": "ChemBook1_b04_s106",
+      "toDescription": "Apply the ideal gas law (PV = nRT) to calculate an unknown quantity (pressure, volume, moles, or temperature), given the other variables.",
+      "toTopicKeyGuess": "CHE_GASLAWS"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s121",
+      "toTempId": "ChemBook1_b04_s120",
+      "toDescription": "Interpret the dissociation stoichiometry of a sparingly soluble ionic compound to write its solubility-product (Ksp) expression in terms of molar solubility (S) (e.g., A2B <=> 2A+ + B2- gives Ksp = 4S^3).",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s122",
+      "toTempId": "ChemBook1_b04_s121",
+      "toDescription": "Calculate the molar solubility (S) of a sparingly soluble salt from its given Ksp value by solving the solubility-product expression.",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s136",
+      "toTempId": "ChemBook1_b04_s135",
+      "toDescription": "Classify a chemical reaction as exothermic or endothermic based on the sign of its enthalpy change (delta H).",
+      "toTopicKeyGuess": "CHE_THERMOCHEM"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s138",
+      "toTempId": "ChemBook1_b04_s127",
+      "toDescription": "Calculate the pH of a solution from its hydrogen-ion concentration using pH = -log[H+].",
+      "toTopicKeyGuess": "CHE_ACIDBASE"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s139",
+      "toTempId": "ChemBook1_b04_s101",
+      "toDescription": "Calculate the pH of a solution from its pOH, or vice versa, using pH + pOH = 14 (at 25 degrees C).",
+      "toTopicKeyGuess": "CHE_ACIDBASE"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s98",
+      "toTempId": null,
+      "toDescription": "Calculate the molar mass of a compound by summing the atomic masses of its constituent elements according to its chemical formula.",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s105",
+      "toTempId": null,
+      "toDescription": "Calculate the molar mass of a compound by summing the atomic masses of its constituent elements according to its chemical formula.",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s127",
+      "toTempId": null,
+      "toDescription": "Evaluate a base-10 (common) logarithm of a given positive number.",
+      "toTopicKeyGuess": "MAT_ALGEBRA"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s123",
+      "toTempId": null,
+      "toDescription": "Evaluate a natural logarithm (ln) or an exponential (e^x) expression when solving an equation.",
+      "toTopicKeyGuess": "MAT_ALGEBRA"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s124",
+      "toTempId": null,
+      "toDescription": "Evaluate a natural logarithm (ln) or an exponential (e^x) expression when solving an equation.",
+      "toTopicKeyGuess": "MAT_ALGEBRA"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s106",
+      "toTempId": null,
+      "toDescription": "Rearrange a multi-variable algebraic equation to isolate and solve for a specified unknown variable.",
+      "toTopicKeyGuess": "MAT_ALGEBRA"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s56",
+      "toTempId": null,
+      "toDescription": "Draw a Lewis (electron-dot) structure for a simple molecule showing bonding pairs and lone pairs of electrons.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s44",
+      "toTempId": null,
+      "toDescription": "Recall the definition of oxidation and reduction in terms of electron loss and electron gain.",
+      "toTopicKeyGuess": "CHEM_REDOX"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s33",
+      "toTempId": null,
+      "toDescription": "Recall the common/typical oxidation states exhibited by a given transition metal.",
+      "toTopicKeyGuess": "CHEM_DBLOCK"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s49",
+      "toTempId": null,
+      "toDescription": "Recall the periodic trend in ionic radius (radius decreases across a period and increases down a group).",
+      "toTopicKeyGuess": "CHEM_PERIODIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s72",
+      "toTempId": null,
+      "toDescription": "Draw a Lewis (electron-dot) structure for a simple molecule showing bonding pairs and lone pairs of electrons.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s89",
+      "toTempId": null,
+      "toDescription": "Recall the periodic trend of decreasing pi-bond (multiple-bond) strength down a group due to increasing atomic/orbital size.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b04_s137",
+      "toTempId": null,
+      "toDescription": "Solve an algebraic equation in which the unknown appears as an exponent (e.g., isolate and evaluate T in an expression of the form (R.T)^n = k).",
+      "toTopicKeyGuess": "MAT_ALGEBRA"
+    }
+  ],
+  "newTopicsProposed": [],
+  "skippedItems": []
+}

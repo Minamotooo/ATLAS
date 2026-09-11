@@ -1,0 +1,747 @@
+{
+  "CHE_ATOMIC8": [
+    {
+      "id": "CHE_ATOMIC7",
+      "full": "Recall the relationship between the azimuthal quantum number (l) and the number of allowed magnetic quantum number (m) values for a subshell: total m values = 2l + 1.",
+      "depth": 0
+    },
+    {
+      "id": "CHE_ATOMIC6",
+      "full": "Explain what physical property of an atomic orbital each quantum number represents: the principal quantum number (n) the size/energy, the azimuthal quantum number (l) the shape, and the magnetic quantum number (m) the orientation.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC7": [
+    {
+      "id": "CHE_ATOMIC6",
+      "full": "Explain what physical property of an atomic orbital each quantum number represents: the principal quantum number (n) the size/energy, the azimuthal quantum number (l) the shape, and the magnetic quantum number (m) the orientation.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC11": [
+    {
+      "id": "CHE_ATOMIC10",
+      "full": "Recall the maximum number of electrons that each type of subshell (s, p, d, f) can hold (2, 6, 10, 14 respectively).",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC15": [
+    {
+      "id": "CHE_ATOMIC14",
+      "full": "Recall/state Hund's rule of maximum multiplicity for the filling of degenerate (same-energy) orbitals with electrons.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC17": [
+    {
+      "id": "CHE_ATOMIC11",
+      "full": "Write the ground-state (or a specified excited-state) electron configuration of a given atom or ion using the Aufbau principle, including recognising stability-driven exceptions (e.g., Cr, Cu with a half-filled or fully filled d-subshell).",
+      "depth": 0
+    },
+    {
+      "id": "CHE_ATOMIC6",
+      "full": "Explain what physical property of an atomic orbital each quantum number represents: the principal quantum number (n) the size/energy, the azimuthal quantum number (l) the shape, and the magnetic quantum number (m) the orientation.",
+      "depth": 0
+    },
+    {
+      "id": "CHE_ATOMIC8",
+      "full": "Given a subshell's principal and azimuthal quantum numbers, enumerate the complete set of valid magnetic (m) and spin (s) quantum-number combinations for every orbital/electron in that subshell.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC20": [
+    {
+      "id": "CHE_ATOMIC11",
+      "full": "Write the ground-state (or a specified excited-state) electron configuration of a given atom or ion using the Aufbau principle, including recognising stability-driven exceptions (e.g., Cr, Cu with a half-filled or fully filled d-subshell).",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC13": [
+    {
+      "id": "CHE_ATOMIC11",
+      "full": "Write the ground-state (or a specified excited-state) electron configuration of a given atom or ion using the Aufbau principle, including recognising stability-driven exceptions (e.g., Cr, Cu with a half-filled or fully filled d-subshell).",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC12": [
+    {
+      "id": "CHE_ATOMIC11",
+      "full": "Write the ground-state (or a specified excited-state) electron configuration of a given atom or ion using the Aufbau principle, including recognising stability-driven exceptions (e.g., Cr, Cu with a half-filled or fully filled d-subshell).",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC19": [
+    {
+      "id": "CHE_ATOMIC7",
+      "full": "Recall the relationship between the azimuthal quantum number (l) and the number of allowed magnetic quantum number (m) values for a subshell: total m values = 2l + 1.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC18": [
+    {
+      "id": "CHE_ATOMIC6",
+      "full": "Explain what physical property of an atomic orbital each quantum number represents: the principal quantum number (n) the size/energy, the azimuthal quantum number (l) the shape, and the magnetic quantum number (m) the orientation.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC24": [
+    {
+      "id": "CHE_ATOMIC22",
+      "full": "Apply the Rydberg formula 1/lambda = R_H(1/n1^2 - 1/n2^2) (scaled by Z^2 for a hydrogen-like ion) to calculate the wavelength of radiation emitted or absorbed during an electron transition between two energy levels.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC28": [
+    {
+      "id": "CHE_ATOMIC22",
+      "full": "Apply the Rydberg formula 1/lambda = R_H(1/n1^2 - 1/n2^2) (scaled by Z^2 for a hydrogen-like ion) to calculate the wavelength of radiation emitted or absorbed during an electron transition between two energy levels.",
+      "depth": 0
+    }
+  ],
+  "CHEM_ATOMIC5": [
+    {
+      "id": "CHE_ATOMIC35",
+      "full": "Recall that an element's atomic (proton) number is fixed, while the number of neutrons in its nucleus can vary, giving rise to isotopes.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC29": [
+    {
+      "id": "CHEM_ATOMIC5",
+      "full": "Calculate the average (weighted) atomic mass of an element from the masses of its isotopes and their percentage natural abundances.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM5": [
+    {
+      "id": "CHE_EQUILIBRIUM4",
+      "full": "Interpret the dissociation stoichiometry of a sparingly soluble ionic compound to write its solubility-product (Ksp) expression in terms of molar solubility (S) (e.g., A2B <=> 2A+ + B2- gives Ksp = 4S^3).",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM6": [
+    {
+      "id": "CHE_EQUILIBRIUM4",
+      "full": "Interpret the dissociation stoichiometry of a sparingly soluble ionic compound to write its solubility-product (Ksp) expression in terms of molar solubility (S) (e.g., A2B <=> 2A+ + B2- gives Ksp = 4S^3).",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM7": [
+    {
+      "id": "CHE_EQUILIBRIUM4",
+      "full": "Interpret the dissociation stoichiometry of a sparingly soluble ionic compound to write its solubility-product (Ksp) expression in terms of molar solubility (S) (e.g., A2B <=> 2A+ + B2- gives Ksp = 4S^3).",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM8": [
+    {
+      "id": "CHE_EQUILIBRIUM7",
+      "full": "Calculate the molar solubility (S) of a sparingly soluble salt from its given Ksp value by solving the solubility-product expression.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM9": [
+    {
+      "id": "CHE_EQUILIBRIUM4",
+      "full": "Interpret the dissociation stoichiometry of a sparingly soluble ionic compound to write its solubility-product (Ksp) expression in terms of molar solubility (S) (e.g., A2B <=> 2A+ + B2- gives Ksp = 4S^3).",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM10": [
+    {
+      "id": "CHE_EQUILIBRIUM4",
+      "full": "Interpret the dissociation stoichiometry of a sparingly soluble ionic compound to write its solubility-product (Ksp) expression in terms of molar solubility (S) (e.g., A2B <=> 2A+ + B2- gives Ksp = 4S^3).",
+      "depth": 0
+    }
+  ],
+  "CHEM_SOLUTION4": [
+    {
+      "id": "CHEM_SOLUTION3",
+      "full": "Calculate the mass of solute and of solvent required to prepare a specified total mass of saturated solution, given the solute's solubility (grams per 100 g of solvent) at that temperature.",
+      "depth": 0
+    }
+  ],
+  "CHE_QUAL3": [
+    {
+      "id": "CHE_QUAL2",
+      "full": "Recall the qualitative-analysis group reagent used to detect the presence of a specific metal cation (e.g., the reagent group used to identify Cr, or NH4SCN used to identify Fe(III)).",
+      "depth": 0
+    }
+  ],
+  "CHEM_NUCLEAR0": [
+    {
+      "id": "CHEM_NUCLEAR1",
+      "full": "Recall the charge and identity of the common radioactive emissions: an alpha particle (a He2+ nucleus, charge +2), a beta particle (an electron), and a gamma ray (a high-energy photon).",
+      "depth": 0
+    }
+  ],
+  "CHEM_NUCLEAR4": [
+    {
+      "id": "CHEM_NUCLEAR3",
+      "full": "Calculate the energy released when a given mass (e.g., 1 amu) is completely converted to energy, using Einstein's relation E = mc^2, with appropriate unit conversion.",
+      "depth": 0
+    }
+  ],
+  "CHEM_REDOX8": [
+    {
+      "id": "CHEM_REDOX7",
+      "full": "Determine the resulting ion/charge produced when a given ion gains or loses a specified number of electrons, using conservation of charge.",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING6": [
+    {
+      "id": "CHE_BONDING4",
+      "full": "Recall that the oxygen molecule (O2) contains a double covalent bond between its two oxygen atoms.",
+      "depth": 0
+    },
+    {
+      "id": "CHE_BONDING5",
+      "full": "Recall that hydrogen can exhibit both a positive (+1) and a negative (-1) oxidation state/valency depending on the compound it forms.",
+      "depth": 0
+    },
+    {
+      "id": "CHE_ATOMIC38",
+      "full": "Compare the electron counts of different oxidation-state ions of the same element (e.g., Fe2+ versus Fe3+) to determine whether they are equal.",
+      "depth": 0
+    }
+  ],
+  "CHEM_PERIODIC4": [
+    {
+      "id": "CHE_ATOMIC11",
+      "full": "Write the ground-state (or a specified excited-state) electron configuration of a given atom or ion using the Aufbau principle, including recognising stability-driven exceptions (e.g., Cr, Cu with a half-filled or fully filled d-subshell).",
+      "depth": 0
+    }
+  ],
+  "CHEM_PERIODIC5": [
+    {
+      "id": "CHE_ATOMIC11",
+      "full": "Write the ground-state (or a specified excited-state) electron configuration of a given atom or ion using the Aufbau principle, including recognising stability-driven exceptions (e.g., Cr, Cu with a half-filled or fully filled d-subshell).",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY4": [
+    {
+      "id": "CHE_STOICHIOMETRY3",
+      "full": "Predict the products of a described chemical reaction (e.g., a precipitation reaction, or the fusion of an oxide with a carbonate in the presence of an oxidant) and complete its balanced chemical equation.",
+      "depth": 0
+    }
+  ],
+  "CHEM_LAB5": [
+    {
+      "id": "CHEM_LAB3",
+      "full": "Recall the hazard classification (e.g., irritant, corrosive, toxic, flammable) and the associated physiological risks and safety precautions for a named common laboratory chemical (e.g., NaOH, acetone).",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY1": [
+    {
+      "id": "CHE_STOICHIOMETRY0",
+      "full": "Calculate the volume of a liquid from its measured mass and known density, using density = mass / volume.",
+      "depth": 0
+    }
+  ],
+  "CHEM_SPEC7": [
+    {
+      "id": "CHEM_SPEC6",
+      "full": "Recall the approximate wavelength range of visible light associated with each spectral color, from violet through red.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC40": [
+    {
+      "id": "CHE_ATOMIC39",
+      "full": "Recall that the number of neutrons in a nuclide equals its mass number minus its atomic number (N = A - Z).",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC42": [
+    {
+      "id": "CHE_ATOMIC41",
+      "full": "Recall that the azimuthal (angular momentum) quantum number l may take integer values from 0 to (n-1) for a given principal quantum number n.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC45": [
+    {
+      "id": "CHE_ATOMIC44",
+      "full": "Recall the quantum-mechanical rules restricting valid combinations of quantum numbers (n, l, m, s), including that l must be less than n and |m| must not exceed l.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC2": [
+    {
+      "id": "CHEM_AT1",
+      "full": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC46": [
+    {
+      "id": "CHEM_AT1",
+      "full": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC47": [
+    {
+      "id": "CHEM_AT1",
+      "full": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC9": [
+    {
+      "id": "CHE_ATOMIC48",
+      "full": "Recall that the maximum number of electrons a principal energy level (shell) can hold is given by 2n-squared.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC51": [
+    {
+      "id": "CHE_ATOMIC49",
+      "full": "Recall the Rydberg formula, 1/lambda = R_H(1/n1-squared - 1/n2-squared), for lines of the hydrogen atomic spectrum.",
+      "depth": 0
+    },
+    {
+      "id": "CHE_ATOMIC50",
+      "full": "Identify the initial and final principal quantum numbers (n1 and n2) corresponding to a specified line (e.g. the third line) of a named hydrogen spectral series such as the Brackett series.",
+      "depth": 0
+    }
+  ],
+  "CHEM_NUCLEAR9": [
+    {
+      "id": "CHE_ATOMIC39",
+      "full": "Recall that the number of neutrons in a nuclide equals its mass number minus its atomic number (N = A - Z).",
+      "depth": 0
+    },
+    {
+      "id": "CHEM_NUCLEAR8",
+      "full": "Recall the definition of isotones as nuclides that have the same number of neutrons but different atomic numbers and mass numbers.",
+      "depth": 0
+    }
+  ],
+  "CHEM_NUCLEAR11": [
+    {
+      "id": "CHEM_NUCLEAR10",
+      "full": "Complete and balance a nuclear reaction equation, conserving total mass number and total atomic number across reactants and products.",
+      "depth": 0
+    }
+  ],
+  "CHEM_NUCLEAR15": [
+    {
+      "id": "CHEM_NUCLEAR16",
+      "full": "Recall that alpha decay decreases a nuclide's atomic number by 2 and mass number by 4, while beta decay increases the atomic number by 1 with no change in mass number.",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING9": [
+    {
+      "id": "CHE_BONDING8",
+      "full": "Determine the hybridization state of a molecule's or complex ion's central atom from its number of sigma-bonding and lone-pair electron domains.",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING11": [
+    {
+      "id": "CHE_BONDING12",
+      "full": "Recall the relative strength order of electron-domain repulsions about a central atom: lone pair-lone pair greater than lone pair-bond pair greater than bond pair-bond pair.",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING13": [
+    {
+      "id": "CHE_BONDING12",
+      "full": "Recall the relative strength order of electron-domain repulsions about a central atom: lone pair-lone pair greater than lone pair-bond pair greater than bond pair-bond pair.",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING14": [
+    {
+      "id": "CHE_BONDING7",
+      "full": "Explain how sigma bonds can form from s-s, s-p, or p-p atomic orbital overlap, whereas pi bonds form only from the sideways (parallel) overlap of p-p orbitals.",
+      "depth": 0
+    }
+  ],
+  "CHEM_PERIODIC7": [
+    {
+      "id": "CHEM_PERIODIC6",
+      "full": "Recall the periodic trend (increase or decrease) of a given atomic or ionic property, such as electronegativity, ionization energy, atomic/ionic radius, melting point, or metallic character, across a period or down a group.",
+      "depth": 0
+    }
+  ],
+  "CHEM_PERIODIC8": [
+    {
+      "id": "CHEM_PERIODIC6",
+      "full": "Recall the periodic trend (increase or decrease) of a given atomic or ionic property, such as electronegativity, ionization energy, atomic/ionic radius, melting point, or metallic character, across a period or down a group.",
+      "depth": 0
+    }
+  ],
+  "CHEM_PERIODIC9": [
+    {
+      "id": "CHEM_PERIODIC6",
+      "full": "Recall the periodic trend (increase or decrease) of a given atomic or ionic property, such as electronegativity, ionization energy, atomic/ionic radius, melting point, or metallic character, across a period or down a group.",
+      "depth": 0
+    }
+  ],
+  "CHEM_PERIODIC12": [
+    {
+      "id": "CHEM_PERIODIC6",
+      "full": "Recall the periodic trend (increase or decrease) of a given atomic or ionic property, such as electronegativity, ionization energy, atomic/ionic radius, melting point, or metallic character, across a period or down a group.",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE4": [
+    {
+      "id": "CHE_ACIDBASE3",
+      "full": "Classify a given metal or non-metal oxide as acidic, basic, amphoteric, a peroxide, or a superoxide, based on its composition and bonding character.",
+      "depth": 0
+    }
+  ],
+  "CHEM_DBLOCK3": [
+    {
+      "id": "CHEM_DBLOCK2",
+      "full": "Explain the distinction between diamagnetic, paramagnetic, and ferromagnetic materials based on their behavior in an external magnetic field.",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY7": [
+    {
+      "id": "CHE_STOICHIOMETRY6",
+      "full": "Explain the principle of the Carius method for quantitatively estimating an element (e.g., sulfur or a halogen) in an organic compound, in which the element is converted to an insoluble precipitate (e.g., barium sulfate) whose mass is used to back-calculate the element's percentage in the original sample.",
+      "depth": 0
+    }
+  ],
+  "CHEM_REDOX18": [
+    {
+      "id": "CHEM_REDOX14",
+      "full": "Recall that chlorine gas undergoes disproportionation when passed into cold, dilute alkali (e.g., KOH or NaOH), forming a chloride salt and a hypochlorite salt.",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING27": [
+    {
+      "id": "CHE_BONDING20",
+      "full": "Determine and name the molecular or ionic geometric shape (e.g., linear, trigonal planar, tetrahedral, trigonal pyramidal, bent/V-shaped, octahedral) predicted by VSEPR theory for a given molecule or ion.",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING36": [
+    {
+      "id": "CHE_BONDING19",
+      "full": "Determine the type of hybridization (e.g., sp, sp2, sp3, sp3d, sp3d2, d2sp3) of the central atom in a given molecule, ion, or coordination complex, based on its number of bonding and lone electron pairs.",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING28": [
+    {
+      "id": "CHE_BONDING19",
+      "full": "Determine the type of hybridization (e.g., sp, sp2, sp3, sp3d, sp3d2, d2sp3) of the central atom in a given molecule, ion, or coordination complex, based on its number of bonding and lone electron pairs.",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING23": [
+    {
+      "id": "CHE_BONDING22",
+      "full": "Recall that a pi (π) bond is formed by the sidewise (lateral, parallel) overlap of unhybridized p orbitals, as distinct from the end-to-end overlap that forms a sigma (σ) bond.",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING18": [
+    {
+      "id": "CHEM_AT1",
+      "full": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "depth": 0
+    }
+  ],
+  "CHEM_PERIODIC10": [
+    {
+      "id": "CHE_ATOMIC46",
+      "full": "Determine the valence-shell (outermost-shell) electron configuration of a given element from its atomic number or symbol.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC60": [
+    {
+      "id": "CHEM_AT1",
+      "full": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC62": [
+    {
+      "id": "CHE_ATOMIC60",
+      "full": "Determine the electron configuration of a transition-metal cation (or successive cations formed by ionization) by removing electrons from the outermost ns subshell before the (n-1)d subshell, or in order of decreasing energy for a main-group atom.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC63": [
+    {
+      "id": "CHE_ATOMIC52",
+      "full": "Recall the general valence-electron configuration patterns that characterize representative (s/p-block: ns^1-2 np^1-6), transition (d-block: (n-1)d^1-10 ns^1-2), and noble-gas (ns^2 np^6) elements.",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING25": [
+    {
+      "id": "CHE_BONDING30",
+      "full": "Determine whether a given compound is capable of hydrogen bonding by checking whether it contains a hydrogen atom bonded directly to nitrogen, oxygen, or fluorine.",
+      "depth": 0
+    }
+  ],
+  "CHE_QUAL14": [
+    {
+      "id": "CHE_QUAL15",
+      "full": "Recall that the nitrate (NO3-) ion is the species identified by the brown-ring test.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC55": [
+    {
+      "id": "CHEM_AT1",
+      "full": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "depth": 0
+    }
+  ],
+  "CHE_ATOMIC58": [
+    {
+      "id": "CHEM_AT1",
+      "full": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING40": [
+    {
+      "id": "CHE_BONDING39",
+      "full": "Determine the hybridization state of a carbon atom from its bonding pattern (sp3 for four single bonds, sp2 for one double bond, sp for a triple bond).",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING41": [
+    {
+      "id": "CHE_BONDING39",
+      "full": "Determine the hybridization state of a carbon atom from its bonding pattern (sp3 for four single bonds, sp2 for one double bond, sp for a triple bond).",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY8": [
+    {
+      "id": "CHEM_REDOX19",
+      "full": "Recall the half-reaction for reduction of the permanganate ion (MnO4-) to Mn2+ in acidic medium, identifying that 5 electrons are gained per ion.",
+      "depth": 0
+    }
+  ],
+  "CHEM_REDOX20": [
+    {
+      "id": "CHE_COORD8",
+      "full": "Recall that carbonyl (CO) acts as a neutral ligand in coordination and organometallic compounds.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC8": [
+    {
+      "id": "CHE_BONDING39",
+      "full": "Determine the hybridization state of a carbon atom from its bonding pattern (sp3 for four single bonds, sp2 for one double bond, sp for a triple bond).",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING42": [
+    {
+      "id": "CHE_BONDING50",
+      "full": "Apply VSEPR theory to determine the molecular or ionic geometry of a species from the number of bonding and lone electron pairs around its central atom (e.g., linear, trigonal planar, tetrahedral, seesaw, bent, trigonal bipyramidal, octahedral).",
+      "depth": 0
+    }
+  ],
+  "CHEM_PERIODIC28": [
+    {
+      "id": "CHEM_AT1",
+      "full": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "depth": 0
+    }
+  ],
+  "CHEM_DBLOCK10": [
+    {
+      "id": "CHEM_AT1",
+      "full": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "depth": 0
+    }
+  ],
+  "CHEM_PERIODIC29": [
+    {
+      "id": "CHEM_AT1",
+      "full": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "depth": 0
+    }
+  ],
+  "CHEM_DBLOCK13": [
+    {
+      "id": "CHEM_AT1",
+      "full": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE13": [
+    {
+      "id": "CHEM_PERIODIC34",
+      "full": "Classify a given oxide as acidic, basic, amphoteric, or neutral based on the parent element's position in the periodic table and oxidation state.",
+      "depth": 0
+    }
+  ],
+  "CHE_ORGANIC9": [
+    {
+      "id": "CHE_BONDING39",
+      "full": "Determine the hybridization state of a carbon atom from its bonding pattern (sp3 for four single bonds, sp2 for one double bond, sp for a triple bond).",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING49": [
+    {
+      "id": "CHE_BONDING43",
+      "full": "Compare common intermolecular and intramolecular forces of attraction by relative strength (van der Waals forces < dipole-dipole interaction < hydrogen bonding < covalent bonding).",
+      "depth": 0
+    }
+  ],
+  "CHEM_PERIODIC36": [
+    {
+      "id": "CHEM_AT1",
+      "full": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "depth": 0
+    }
+  ],
+  "CHEM_PERIODIC38": [
+    {
+      "id": "CHEM_AT1",
+      "full": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
+      "depth": 0
+    }
+  ],
+  "CHE_BONDING52": [
+    {
+      "id": "CHE_BONDING50",
+      "full": "Apply VSEPR theory to determine the molecular or ionic geometry of a species from the number of bonding and lone electron pairs around its central atom (e.g., linear, trigonal planar, tetrahedral, seesaw, bent, trigonal bipyramidal, octahedral).",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM12": [
+    {
+      "id": "CHE_EQUILIBRIUM11",
+      "full": "Calculate an equilibrium concentration of a product from the initial concentration of a reactant and the measured change in reactant concentration (mass balance).",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM13": [
+    {
+      "id": "CHE_EQUILIBRIUM11",
+      "full": "Calculate an equilibrium concentration of a product from the initial concentration of a reactant and the measured change in reactant concentration (mass balance).",
+      "depth": 0
+    }
+  ],
+  "CHEM_ENV6": [
+    {
+      "id": "CHE_STOICHIOMETRY10",
+      "full": "Calculate the atom economy of a reaction as (molar mass of desired product / total molar mass of all reactants) x 100%.",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE16": [
+    {
+      "id": "CHE_STOICHIOMETRY11",
+      "full": "Calculate the moles of acid and base present in a neutralization reaction from concentration and volume (n = C x V).",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE17": [
+    {
+      "id": "CHE_ACIDBASE16",
+      "full": "Analyze the mole quantities of H+ and OH- available in a mixture of a strong acid and a strong base, accounting for reaction stoichiometry, to determine whether the resulting mixture is net acidic or net basic.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM14": [
+    {
+      "id": "CHE_STOICHIOMETRY12",
+      "full": "Calculate the number of moles of a substance from a given mass and its molar mass.",
+      "depth": 0
+    },
+    {
+      "id": "CHE_GASLAWS5",
+      "full": "Apply the ideal gas law (PV = nRT) to calculate an unknown quantity (pressure, volume, moles, or temperature), given the other variables.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM15": [
+    {
+      "id": "CHE_EQUILIBRIUM14",
+      "full": "Apply an initial-change-equilibrium (ICE) mole-table method to a gas-phase dissociation equilibrium (e.g., N2O4 <=> 2NO2) to solve for the extent of reaction.",
+      "depth": 0
+    }
+  ],
+  "CHE_THERMOCHEM3": [
+    {
+      "id": "CHE_THERMOCHEM4",
+      "full": "Calculate delta-Cp for a reaction as the stoichiometrically weighted difference between the sum of heat capacities of products and reactants.",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY13": [
+    {
+      "id": "CHE_STOICHIOMETRY11",
+      "full": "Calculate the moles of acid and base present in a neutralization reaction from concentration and volume (n = C x V).",
+      "depth": 0
+    }
+  ],
+  "CHE_ACIDBASE20": [
+    {
+      "id": "CHE_STOICHIOMETRY13",
+      "full": "Analyze the mole quantities of reactants present in a neutralization reaction to identify the limiting reactant.",
+      "depth": 0
+    }
+  ],
+  "CHEM_KIN3": [
+    {
+      "id": "CHEM_KIN2",
+      "full": "Explain the rate expression of a chemical reaction, relating the rate of consumption or formation of each species to its stoichiometric coefficient.",
+      "depth": 0
+    }
+  ],
+  "CHE_STOICHIOMETRY14": [
+    {
+      "id": "CHE_STOICHIOMETRY12",
+      "full": "Calculate the number of moles of a substance from a given mass and its molar mass.",
+      "depth": 0
+    },
+    {
+      "id": "CHE_GASLAWS5",
+      "full": "Apply the ideal gas law (PV = nRT) to calculate an unknown quantity (pressure, volume, moles, or temperature), given the other variables.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM16": [
+    {
+      "id": "CHE_EQUILIBRIUM7",
+      "full": "Calculate the molar solubility (S) of a sparingly soluble salt from its given Ksp value by solving the solubility-product expression.",
+      "depth": 0
+    }
+  ],
+  "CHE_EQUILIBRIUM17": [
+    {
+      "id": "CHE_THERMOCHEM6",
+      "full": "Classify a chemical reaction as exothermic or endothermic based on the sign of its enthalpy change (delta H).",
+      "depth": 0
+    }
+  ],
+  "CHEM_ANALYTICAL2": [
+    {
+      "id": "CHE_ACIDBASE23",
+      "full": "Calculate the pH of a solution from its hydrogen-ion concentration using pH = -log[H+].",
+      "depth": 0
+    }
+  ],
+  "CHEM_ANALYTICAL3": [
+    {
+      "id": "CHE_ACIDBASE15",
+      "full": "Calculate the pH of a solution from its pOH, or vice versa, using pH + pOH = 14 (at 25 degrees C).",
+      "depth": 0
+    }
+  ]
+}

@@ -1,0 +1,1369 @@
+{
+  "chunkLabel": "ChemBook1_b01",
+  "subject": "Chemistry",
+  "skills": [
+    {
+      "tempId": "ChemBook1_b01_s1",
+      "bloom": "Remember",
+      "skillFull": "Recall which special type of glass (e.g., borosilicate/Pyrex) is used for laboratory apparatus such as distillation flasks because of its heat and chemical resistance.",
+      "topicKey": "CHEM_LAB",
+      "topicLabel": "Laboratory Techniques and Safety",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p2__q01__0"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s2",
+      "bloom": "Remember",
+      "skillFull": "Recall the composition and cleaning function of a named biodegradable laboratory detergent (e.g., Decon-90) used to remove grease, tar, silicone oil and polymeric residue from glassware.",
+      "topicKey": "CHEM_LAB",
+      "topicLabel": "Laboratory Techniques and Safety",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p2__q01__0"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s3",
+      "bloom": "Remember",
+      "skillFull": "Recall which of two given organic liquids (e.g., ethanol vs. kerosene) burns with a brighter, more luminous (sootier) flame.",
+      "topicKey": "CHEM_LAB",
+      "topicLabel": "Laboratory Techniques and Safety",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p2__q01__0"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s4",
+      "bloom": "Remember",
+      "skillFull": "Recall the hazard classification (e.g., irritant, corrosive, toxic, flammable) and the associated physiological risks and safety precautions for a named common laboratory chemical (e.g., NaOH, acetone).",
+      "topicKey": "CHEM_LAB",
+      "topicLabel": "Laboratory Techniques and Safety",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p2__q01__0",
+        "ChemBook1__p2__q03__2"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s5",
+      "bloom": "Remember",
+      "skillFull": "Define what a hazard (pictogram) symbol is and its general purpose in labelling and storing dangerous chemicals.",
+      "topicKey": "CHEM_LAB",
+      "topicLabel": "Laboratory Techniques and Safety",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p2__q02__1"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s6",
+      "bloom": "Apply",
+      "skillFull": "Select the correct first-aid action (e.g., washing with plenty of water, or applying a specific neutralising substance) for a chemical spill or burn on the skin, given the identity of the chemical involved.",
+      "topicKey": "CHEM_LAB",
+      "topicLabel": "Laboratory Techniques and Safety",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p3__q02__7",
+        "ChemBook1__p3__q06__11"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s7",
+      "bloom": "Remember",
+      "skillFull": "Recall the specific protective use of a named type of laboratory glove (e.g., heat-resistant Gitex gloves vs. latex gloves) for a particular laboratory task.",
+      "topicKey": "CHEM_LAB",
+      "topicLabel": "Laboratory Techniques and Safety",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p2__q02__1"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s8",
+      "bloom": "Remember",
+      "skillFull": "Recall the composition of chromic acid cleaning mixture (K2Cr2O7 with H2SO4) and the reaction by which it removes oily residue from glassware.",
+      "topicKey": "CHEM_LAB",
+      "topicLabel": "Laboratory Techniques and Safety",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p2__q02__1",
+        "ChemBook1__p3__q07__12"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s9",
+      "bloom": "Remember",
+      "skillFull": "Identify a standard piece of laboratory glassware (e.g., burette, beaker, conical flask, pipette, round-bottom flask, measuring cylinder) by name or image, and recall the specific purpose each is designed for.",
+      "topicKey": "CHEM_LAB",
+      "topicLabel": "Laboratory Techniques and Safety",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p3__q05__4",
+        "ChemBook1__p3__q06__5",
+        "ChemBook1__p3__q01__6",
+        "ChemBook1__p3__q03__8"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s10",
+      "bloom": "Remember",
+      "skillFull": "Recall the minimum volume that can be read/measured on a laboratory burette of the type commonly used in a chemistry laboratory.",
+      "topicKey": "CHEM_LAB",
+      "topicLabel": "Laboratory Techniques and Safety",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p3__q05__10"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s11",
+      "bloom": "Understand",
+      "skillFull": "Determine whether a given solvent is suitable for removing a specific type of residue (e.g., oil or grease) from a surface, based on the solvent's chemical nature.",
+      "topicKey": "CHEM_LAB",
+      "topicLabel": "Laboratory Techniques and Safety",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p3__q04__9"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s12",
+      "bloom": "Remember",
+      "skillFull": "Recall which reagent (e.g., liquor ammonia) is used specifically as a glass-cleaning agent in the laboratory.",
+      "topicKey": "CHEM_LAB",
+      "topicLabel": "Laboratory Techniques and Safety",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p3__q08__13"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s13",
+      "bloom": "Remember",
+      "skillFull": "Recall the definition and basic working principle of a named physical separation technique (e.g., chromatography as a separation method, distillation as a heat-vaporise-condense separation).",
+      "topicKey": "CHEM_LAB",
+      "topicLabel": "Laboratory Techniques and Safety",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p10__q18__70",
+        "ChemBook1__p10__q19__71"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s14",
+      "bloom": "Apply",
+      "skillFull": "Identify the specific type of chromatography (e.g., TLC, HPLC, GC) being used, given the composition of its mobile phase.",
+      "topicKey": "CHEM_LAB",
+      "topicLabel": "Laboratory Techniques and Safety",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p11__q28__80"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s15",
+      "bloom": "Apply",
+      "skillFull": "Calculate an unknown mass or rider position on a physical (pan/beam) balance from the known weights placed on it, the rider constant, and the measured total mass.",
+      "topicKey": "CHEM_LAB",
+      "topicLabel": "Laboratory Techniques and Safety",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p4__q10__15"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s16",
+      "bloom": "Apply",
+      "skillFull": "Calculate the volume of a liquid from its measured mass and known density, using density = mass / volume.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p3__q09__14"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s17",
+      "bloom": "Apply",
+      "skillFull": "Calculate the percentage error of a measured quantity relative to its true/expected value, using percentage error = |(measured value − true value) / true value| x 100.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p3__q09__14"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s18",
+      "bloom": "Apply",
+      "skillFull": "Calculate the number of electrons contained in a given mass of a substance, using its molar mass, Avogadro's number, and the number of electrons per formula unit.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p8__q01__53"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s19",
+      "bloom": "Apply",
+      "skillFull": "Predict the products of a described chemical reaction (e.g., a precipitation reaction, or the fusion of an oxide with a carbonate in the presence of an oxidant) and complete its balanced chemical equation.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p5__q12__27"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s20",
+      "bloom": "Evaluate",
+      "skillFull": "Evaluate a set of proposed chemical equations for a described reaction and judge which one is correctly balanced and consistent with the known reactivity of the species involved.",
+      "topicKey": "CHE_STOICHIOMETRY",
+      "topicLabel": "Stoichiometry and Mole Concept",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p5__q13__28"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s21",
+      "bloom": "Remember",
+      "skillFull": "Recall the qualitative-analysis group reagent used to detect the presence of a specific metal cation (e.g., the reagent group used to identify Cr, or NH4SCN used to identify Fe(III)).",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p14__q55__107",
+        "ChemBook1__p13__q51__103"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s22",
+      "bloom": "Apply",
+      "skillFull": "Identify an unknown ion present in a solution from the observed behaviour of a precipitate (e.g., its colour, and its solubility or insolubility in dilute acid or in ammonia) formed with a specific test reagent.",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p9__q08__60",
+        "ChemBook1__p12__q32__84",
+        "ChemBook1__p12__q33__85",
+        "ChemBook1__p13__q45__97"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s23",
+      "bloom": "Understand",
+      "skillFull": "Explain why a weak acid (e.g., acetic acid) rather than a strong acid (e.g., HCl) is used to control sulfide-ion concentration during qualitative group precipitation, to avoid suppressing or redissolving the precipitate.",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p5__q11__26"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s24",
+      "bloom": "Remember",
+      "skillFull": "Recall that Nessler's reagent is used to detect the presence of ammonia/ammonium ions in qualitative analysis.",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p8__q34__49"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s25",
+      "bloom": "Remember",
+      "skillFull": "Recall the characteristic flame-test colour produced by a given metal cation (e.g., brick-red for calcium), including how the colour appears differently when viewed through a blue/cobalt glass.",
+      "topicKey": "CHE_QUAL",
+      "topicLabel": "Qualitative Analysis",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p10__q20__72"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s26",
+      "bloom": "Apply",
+      "skillFull": "Write the solubility-product (Ksp) expression for a sparingly soluble salt in terms of its molar solubility (s), based on the stoichiometry of its dissociation.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p12__q30__82"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s27",
+      "bloom": "Apply",
+      "skillFull": "Calculate the ionic product of a sparingly soluble salt from given ion concentrations and compare it with the known Ksp value to predict whether a precipitate will form.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p4__q01__16"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s28",
+      "bloom": "Apply",
+      "skillFull": "Calculate the molar solubility of a sparingly soluble salt from its Ksp value in the presence of a common ion already in solution, by solving the resulting algebraic equation.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p4__q03__18"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s29",
+      "bloom": "Apply",
+      "skillFull": "Calculate the molar solubility of a sparingly soluble salt directly from its Ksp value (e.g., s = sqrt(Ksp) for a 1:1 salt).",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p10__q16__68"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s30",
+      "bloom": "Apply",
+      "skillFull": "Convert a calculated molar solubility (mol/L) of a compound into a mass-based solubility (g/L) using the compound's molar mass.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p10__q21__73"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s31",
+      "bloom": "Apply",
+      "skillFull": "Calculate the concentration of a metal cation in a saturated solution of its hydroxide from the compound's Ksp and the solution's pH.",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p11__q25__77"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s32",
+      "bloom": "Understand",
+      "skillFull": "Classify a solution as unsaturated, saturated, or precipitating (supersaturated) by comparing its ion-concentration product with the solubility product (Ksp).",
+      "topicKey": "CHE_EQUILIBRIUM",
+      "topicLabel": "Chemical Equilibrium",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p8__q02__54"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s33",
+      "bloom": "Apply",
+      "skillFull": "Calculate the mass of solute and of solvent required to prepare a specified total mass of saturated solution, given the solute's solubility (grams per 100 g of solvent) at that temperature.",
+      "topicKey": "CHEM_SOLUTION",
+      "topicLabel": "Solutions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p5__q05__20"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s34",
+      "bloom": "Apply",
+      "skillFull": "Calculate the additional mass of solute required to bring an unsaturated solution to saturation, given the solubility value(s) at the relevant temperature(s).",
+      "topicKey": "CHEM_SOLUTION",
+      "topicLabel": "Solutions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p9__q04__56",
+        "ChemBook1__p10__q17__69"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s35",
+      "bloom": "Apply",
+      "skillFull": "Apply the Nernst distribution (partition) law relating a solute's distribution between two immiscible solvents to calculate either the amount of solute remaining after solvent extraction or the distribution coefficient.",
+      "topicKey": "CHEM_SOLUTION",
+      "topicLabel": "Solutions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p9__q06__58",
+        "ChemBook1__p11__q24__76"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s36",
+      "bloom": "Understand",
+      "skillFull": "Identify which formula among given options represents a coordination (complex) compound, based on the presence of a central metal ion surrounded by ligands shown in square-bracket notation.",
+      "topicKey": "CHE_COORD",
+      "topicLabel": "Coordination Compounds",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p12__q39__91"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s37",
+      "bloom": "Remember",
+      "skillFull": "Recall the main product formed in a Hofmann degradation reaction (an amide converted to a primary amine with loss of one carbon).",
+      "topicKey": "CHE_ORGANIC",
+      "topicLabel": "Organic Chemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p12__q39__91"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s38",
+      "bloom": "Understand",
+      "skillFull": "Classify a given organic compound (e.g., glucose, C6H12O6) into its correct biomolecule category (e.g., carbohydrate) based on its molecular formula.",
+      "topicKey": "CHE_BIOMOLECULE",
+      "topicLabel": "Biomolecules",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p11__q27__79"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s39",
+      "bloom": "Apply",
+      "skillFull": "Determine the oxidation number of an element in a compound or ion from the known oxidation numbers of the other constituent atoms and the overall charge, using the charge-balance method.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p13__q42__94"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s40",
+      "bloom": "Apply",
+      "skillFull": "Determine the resulting ion/charge produced when a given ion gains or loses a specified number of electrons, using conservation of charge.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p7__q31__46",
+        "ChemBook1__p12__q31__83"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s41",
+      "bloom": "Evaluate",
+      "skillFull": "Evaluate whether a given ionic electron-transfer equation is correctly balanced by checking that the change in electron count matches the change in ionic charge shown.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p12__q31__83"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s42",
+      "bloom": "Remember",
+      "skillFull": "Recall the products of the standard redox reaction between an acidified strong oxidising agent (e.g., KMnO4) and a reducing agent (e.g., HCl added dropwise), and write the balanced equation.",
+      "topicKey": "CHEM_REDOX",
+      "topicLabel": "Redox Reactions",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p3__q04__3"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s43",
+      "bloom": "Understand",
+      "skillFull": "Explain what physical property of an atomic orbital each quantum number represents: the principal quantum number (n) the size/energy, the azimuthal quantum number (l) the shape, and the magnetic quantum number (m) the orientation.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p6__q14__29",
+        "ChemBook1__p15__q65__117",
+        "ChemBook1__p15__q66__118"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s44",
+      "bloom": "Remember",
+      "skillFull": "Recall the relationship between the azimuthal quantum number (l) and the number of allowed magnetic quantum number (m) values for a subshell: total m values = 2l + 1.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p11__q29__81",
+        "ChemBook1__p12__q36__88"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s45",
+      "bloom": "Apply",
+      "skillFull": "Given a subshell's principal and azimuthal quantum numbers, enumerate the complete set of valid magnetic (m) and spin (s) quantum-number combinations for every orbital/electron in that subshell.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p5__q06__21",
+        "ChemBook1__p5__q08__23",
+        "ChemBook1__p6__q21__36"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s46",
+      "bloom": "Apply",
+      "skillFull": "Calculate the maximum number of electrons a given principal energy level (shell) n can hold, using the formula 2n^2.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p5__q06__21",
+        "ChemBook1__p6__q15__30"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s47",
+      "bloom": "Remember",
+      "skillFull": "Recall the maximum number of electrons that each type of subshell (s, p, d, f) can hold (2, 6, 10, 14 respectively).",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p7__q32__47",
+        "ChemBook1__p15__q63__115"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s48",
+      "bloom": "Apply",
+      "skillFull": "Write the ground-state (or a specified excited-state) electron configuration of a given atom or ion using the Aufbau principle, including recognising stability-driven exceptions (e.g., Cr, Cu with a half-filled or fully filled d-subshell).",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p5__q07__22",
+        "ChemBook1__p8__q33__48",
+        "ChemBook1__p8__q37__52",
+        "ChemBook1__p13__q47__99",
+        "ChemBook1__p14__q52__104",
+        "ChemBook1__p13__q42__94"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s49",
+      "bloom": "Analyze",
+      "skillFull": "Examine a set of given electron configurations and identify which one(s) are incorrect by checking them against the Aufbau principle and known exceptions.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p13__q47__99"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s50",
+      "bloom": "Analyze",
+      "skillFull": "Determine an element's atomic number/identity from a given (possibly partial or trailing) electron configuration by working out the total electron count implied by the Aufbau filling order.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p10__q10__62"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s51",
+      "bloom": "Remember",
+      "skillFull": "Recall/state Hund's rule of maximum multiplicity for the filling of degenerate (same-energy) orbitals with electrons.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p7__q28__43"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s52",
+      "bloom": "Apply",
+      "skillFull": "Apply Hund's rule to identify the correct, most stable orbital electron arrangement (orbital diagram) for a given subshell, among a set of candidate arrangements.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p7__q29__44",
+        "ChemBook1__p8__q34__49"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s53",
+      "bloom": "Remember",
+      "skillFull": "Recall which metals have an anomalous single ns valence electron (e.g., a 4s1 configuration, as in potassium) that they use in compound formation.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p8__q34__49"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s54",
+      "bloom": "Apply",
+      "skillFull": "Assign the correct set of four quantum numbers (n, l, m, s) to a specified electron in an atom's electron configuration (e.g., the first electron of a subshell, or the nth electron overall).",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p10__q15__67",
+        "ChemBook1__p12__q34__86"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s55",
+      "bloom": "Apply",
+      "skillFull": "Apply the (n + l) rule to compare the relative energies of orbitals described by different quantum-number sets and identify the highest- (or lowest-) energy one.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p9__q05__57"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s56",
+      "bloom": "Analyze",
+      "skillFull": "Examine a given set of four quantum numbers (n, l, m, s) and determine whether it is physically valid, applying the rules that l ranges from 0 to (n-1) and m ranges from -l to +l.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p10__q09__61",
+        "ChemBook1__p10__q14__66"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s57",
+      "bloom": "Apply",
+      "skillFull": "Determine which orbital/subshell a specified ordinal electron (e.g., the 14th electron of an atom) occupies, by following the Aufbau filling order.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p10__q15__67"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s58",
+      "bloom": "Understand",
+      "skillFull": "Explain what the spin quantum number (s) physically represents (the direction of an electron's spin), as distinct from what the other quantum numbers represent.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p12__q34__86"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s59",
+      "bloom": "Apply",
+      "skillFull": "Apply the Rydberg formula 1/lambda = R_H(1/n1^2 - 1/n2^2) (scaled by Z^2 for a hydrogen-like ion) to calculate the wavelength of radiation emitted or absorbed during an electron transition between two energy levels.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p5__q09__24",
+        "ChemBook1__p6__q20__35",
+        "ChemBook1__p9__q03__55",
+        "ChemBook1__p10__q11__63",
+        "ChemBook1__p11__q22__74"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s60",
+      "bloom": "Remember",
+      "skillFull": "Recall the names of the series of lines in the hydrogen emission spectrum (Lyman, Balmer, Paschen, Brackett, Pfund, Humphreys) in order of the final energy level involved.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p7__q24__39"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s61",
+      "bloom": "Understand",
+      "skillFull": "Interpret a calculated wavelength value to identify the corresponding region/colour of the electromagnetic (visible) spectrum.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p6__q20__35"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s62",
+      "bloom": "Apply",
+      "skillFull": "Calculate the energy of a photon from its wavelength using the Planck relation E = hc/lambda.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p7__q25__40"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s63",
+      "bloom": "Apply",
+      "skillFull": "Calculate the frequency of emitted radiation from a given energy difference between two atomic energy levels, using E = h(nu).",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p10__q13__65"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s64",
+      "bloom": "Apply",
+      "skillFull": "Calculate the wavenumber of radiation from its wavelength (wavenumber = 1/lambda), including any necessary unit conversion.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p14__q53__105"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s65",
+      "bloom": "Apply",
+      "skillFull": "Calculate the energy of a photon for one electron transition within a given spectral series from the known photon energy of another transition in the same series, using the Rydberg-based energy expression.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p11__q26__78"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s66",
+      "bloom": "Apply",
+      "skillFull": "Calculate the average (weighted) atomic mass of an element from the masses of its isotopes and their percentage natural abundances.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p4__q04__19",
+        "ChemBook1__p8__q35__50"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s67",
+      "bloom": "Apply",
+      "skillFull": "Determine the unknown percentage natural abundances of two isotopes of an element, given their isotopic masses and the element's known average atomic mass, by solving a linear equation.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p7__q22__37"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s68",
+      "bloom": "Understand",
+      "skillFull": "Classify a set of nuclides/ions as isotopes (same atomic number, different mass number), isobars (same mass number, different atomic number), isotones (same neutron number), or isoelectronic species (same electron count), by comparing their proton, neutron, and electron counts.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p6__q16__31",
+        "ChemBook1__p13__q40__92",
+        "ChemBook1__p13__q41__93",
+        "ChemBook1__p13__q43__95"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s69",
+      "bloom": "Understand",
+      "skillFull": "Explain the physical significance of the square of the wavefunction (psi^2) as representing electron probability density, including its normalisation over all space.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p6__q19__34"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s70",
+      "bloom": "Understand",
+      "skillFull": "Explain the nuclear mechanism of beta decay (a neutron converting into a proton, an electron, and an antineutrino) and why it increases the atomic number by one while leaving the mass number unchanged.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p5__q10__25"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s71",
+      "bloom": "Remember",
+      "skillFull": "Recall that protons and neutrons are located in the atomic nucleus.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p13__q48__100"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s72",
+      "bloom": "Remember",
+      "skillFull": "Recall that every neutral atom of a given element has an equal number of protons and electrons.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p14__q59__111"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s73",
+      "bloom": "Remember",
+      "skillFull": "Recall that an element's atomic (proton) number is fixed, while the number of neutrons in its nucleus can vary, giving rise to isotopes.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p12__q34__86"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s74",
+      "bloom": "Apply",
+      "skillFull": "Calculate the total number of electrons that a given type of subshell (e.g., the f-subshell) can hold, from the number of orbitals it contains (2l+1) and two electrons per orbital.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p15__q63__115"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s75",
+      "bloom": "Remember",
+      "skillFull": "Recall the outer-shell electron configuration pattern (s^2 p^6) characteristic of noble gases, and identify the element matching a given such configuration.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p12__q37__89"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s76",
+      "bloom": "Understand",
+      "skillFull": "Compare the electron counts of different oxidation-state ions of the same element (e.g., Fe2+ versus Fe3+) to determine whether they are equal.",
+      "topicKey": "CHE_ATOMIC",
+      "topicLabel": "Atomic Structure and Quantum Numbers",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p15__q67__119"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s77",
+      "bloom": "Apply",
+      "skillFull": "Balance a nuclear reaction or radioactive-decay equation by applying conservation of mass number and atomic/proton number, to solve for an unknown product nuclide or emitted particle.",
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry and Radioactivity",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p6__q17__32",
+        "ChemBook1__p6__q18__33",
+        "ChemBook1__p7__q31__46",
+        "ChemBook1__p8__q36__51",
+        "ChemBook1__p9__q07__59",
+        "ChemBook1__p13__q44__96",
+        "ChemBook1__p13__q49__101",
+        "ChemBook1__p13__q50__102",
+        "ChemBook1__p12__q38__90",
+        "ChemBook1__p14__q57__109",
+        "ChemBook1__p14__q60__112",
+        "ChemBook1__p15__q62__114"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s78",
+      "bloom": "Remember",
+      "skillFull": "Recall the charge and identity of the common radioactive emissions: an alpha particle (a He2+ nucleus, charge +2), a beta particle (an electron), and a gamma ray (a high-energy photon).",
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry and Radioactivity",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p12__q35__87"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s79",
+      "bloom": "Analyze",
+      "skillFull": "Differentiate ordinary chemical reactions from nuclear reactions (e.g., in terms of which particles rearrange, whether new elements are created, and the relative magnitude of energy change).",
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry and Radioactivity",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p7__q23__38"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s80",
+      "bloom": "Apply",
+      "skillFull": "Calculate the energy released when a given mass (e.g., 1 amu) is completely converted to energy, using Einstein's relation E = mc^2, with appropriate unit conversion.",
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry and Radioactivity",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p7__q26__41"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s81",
+      "bloom": "Apply",
+      "skillFull": "Calculate the mass defect of a nucleus (from the summed masses of its constituent protons, neutrons and electrons versus its actual measured mass) and use E = mc^2 to find the total and per-nucleon binding energy.",
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry and Radioactivity",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p7__q30__45"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s82",
+      "bloom": "Analyze",
+      "skillFull": "Examine statements about the mechanisms and products of nuclear fission versus nuclear fusion reactions (e.g., chain-reaction character, radioactive waste production) to identify which statement is false.",
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry and Radioactivity",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p14__q61__113"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s83",
+      "bloom": "Remember",
+      "skillFull": "Recognise which type of nuclear reaction (fission or fusion) is occurring in a described process (e.g., in a hydrogen bomb).",
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry and Radioactivity",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p15__q64__116"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s84",
+      "bloom": "Understand",
+      "skillFull": "Explain whether a given atomic process (e.g., a second electron affinity) is exothermic or endothermic, based on the electrostatic work required (e.g., overcoming repulsion between an anion and an incoming electron).",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p7__q27__42"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s85",
+      "bloom": "Analyze",
+      "skillFull": "Identify the element matching a given periodic-property superlative (e.g., the densest/heaviest known metal) and derive its outer electron configuration pattern.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p11__q23__75"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s86",
+      "bloom": "Apply",
+      "skillFull": "Determine an element's group and period in the periodic table from its outer-shell (valence) electron configuration, including correctly assigning the A/B sub-group designation for transition (d-block) elements.",
+      "topicKey": "CHEM_PERIODIC",
+      "topicLabel": "Periodic Properties and Trends",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p13__q46__98",
+        "ChemBook1__p14__q54__106"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s87",
+      "bloom": "Remember",
+      "skillFull": "Recall the approximate size range (diameter, ~1-100 nm) of nanoparticles studied in nanochemistry.",
+      "topicKey": "CHEM_SOLID",
+      "topicLabel": "Solid State and Ionic Compounds",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p14__q58__110"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s88",
+      "bloom": "Remember",
+      "skillFull": "Recall that a molecule must possess a net (changing) dipole moment to be infrared (IR) active.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p10__q12__64"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s89",
+      "bloom": "Remember",
+      "skillFull": "Recall that the oxygen molecule (O2) contains a double covalent bond between its two oxygen atoms.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p15__q67__119"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s90",
+      "bloom": "Remember",
+      "skillFull": "Recall that hydrogen can exhibit both a positive (+1) and a negative (-1) oxidation state/valency depending on the compound it forms.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p15__q67__119"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s91",
+      "bloom": "Analyze",
+      "skillFull": "Examine a set of statements about ionic proton/electron counts, molecular covalent bonding, and elemental valency to identify which statement among them is false.",
+      "topicKey": "CHE_BONDING",
+      "topicLabel": "Chemical Bonding",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p15__q67__119"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s92",
+      "bloom": "Remember",
+      "skillFull": "Recall which region of the electromagnetic spectrum (e.g., microwave, UV, visible, radio) is used for a specific named application (e.g., WiFi, counterfeit-currency detection, optical-fibre communication, MRI).",
+      "topicKey": "CHEM_SPEC",
+      "topicLabel": "Electromagnetic Spectrum",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p4__q02__17"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s93",
+      "bloom": "Understand",
+      "skillFull": "Order regions of the electromagnetic spectrum by increasing or decreasing wavelength.",
+      "topicKey": "CHEM_SPEC",
+      "topicLabel": "Electromagnetic Spectrum",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p4__q02__17"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s94",
+      "bloom": "Understand",
+      "skillFull": "Explain the physical principle (fluorescence: a phosphor compound absorbing UV light and emitting visible light) by which UV light is used to detect counterfeit currency.",
+      "topicKey": "CHEM_SPEC",
+      "topicLabel": "Electromagnetic Spectrum",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p4__q04__19"
+      ]
+    },
+    {
+      "tempId": "ChemBook1_b01_s95",
+      "bloom": "Remember",
+      "skillFull": "Recall which physical state-change process (e.g., condensation, evaporation, sublimation, melting) is exothermic and which is endothermic.",
+      "topicKey": "CHE_THERMOCHEM",
+      "topicLabel": "Thermochemistry",
+      "subject": "Chemistry",
+      "sourceItemIds": [
+        "ChemBook1__p14__q56__108"
+      ]
+    }
+  ],
+  "prereqs": [
+    {
+      "fromTempId": "ChemBook1_b01_s45",
+      "toTempId": "ChemBook1_b01_s44",
+      "toDescription": "Recall the relationship between the azimuthal quantum number (l) and the number of allowed magnetic quantum number (m) values for a subshell: total m values = 2l + 1.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s45",
+      "toTempId": "ChemBook1_b01_s43",
+      "toDescription": "Explain what physical property of an atomic orbital each quantum number represents: the principal quantum number (n) the size/energy, the azimuthal quantum number (l) the shape, and the magnetic quantum number (m) the orientation.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s44",
+      "toTempId": "ChemBook1_b01_s43",
+      "toDescription": "Explain what physical property of an atomic orbital each quantum number represents: the principal quantum number (n) the size/energy, the azimuthal quantum number (l) the shape, and the magnetic quantum number (m) the orientation.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s48",
+      "toTempId": "ChemBook1_b01_s47",
+      "toDescription": "Recall the maximum number of electrons that each type of subshell (s, p, d, f) can hold (2, 6, 10, 14 respectively).",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s52",
+      "toTempId": "ChemBook1_b01_s51",
+      "toDescription": "Recall/state Hund's rule of maximum multiplicity for the filling of degenerate (same-energy) orbitals with electrons.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s54",
+      "toTempId": "ChemBook1_b01_s48",
+      "toDescription": "Write the ground-state (or a specified excited-state) electron configuration of a given atom or ion using the Aufbau principle, including recognising stability-driven exceptions (e.g., Cr, Cu with a half-filled or fully filled d-subshell).",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s54",
+      "toTempId": "ChemBook1_b01_s43",
+      "toDescription": "Explain what physical property of an atomic orbital each quantum number represents: the principal quantum number (n) the size/energy, the azimuthal quantum number (l) the shape, and the magnetic quantum number (m) the orientation.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s54",
+      "toTempId": "ChemBook1_b01_s45",
+      "toDescription": "Given a subshell's principal and azimuthal quantum numbers, enumerate the complete set of valid magnetic (m) and spin (s) quantum-number combinations for every orbital/electron in that subshell.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s57",
+      "toTempId": "ChemBook1_b01_s48",
+      "toDescription": "Write the ground-state (or a specified excited-state) electron configuration of a given atom or ion using the Aufbau principle, including recognising stability-driven exceptions (e.g., Cr, Cu with a half-filled or fully filled d-subshell).",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s50",
+      "toTempId": "ChemBook1_b01_s48",
+      "toDescription": "Write the ground-state (or a specified excited-state) electron configuration of a given atom or ion using the Aufbau principle, including recognising stability-driven exceptions (e.g., Cr, Cu with a half-filled or fully filled d-subshell).",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s49",
+      "toTempId": "ChemBook1_b01_s48",
+      "toDescription": "Write the ground-state (or a specified excited-state) electron configuration of a given atom or ion using the Aufbau principle, including recognising stability-driven exceptions (e.g., Cr, Cu with a half-filled or fully filled d-subshell).",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s56",
+      "toTempId": "ChemBook1_b01_s44",
+      "toDescription": "Recall the relationship between the azimuthal quantum number (l) and the number of allowed magnetic quantum number (m) values for a subshell: total m values = 2l + 1.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s55",
+      "toTempId": "ChemBook1_b01_s43",
+      "toDescription": "Explain what physical property of an atomic orbital each quantum number represents: the principal quantum number (n) the size/energy, the azimuthal quantum number (l) the shape, and the magnetic quantum number (m) the orientation.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s61",
+      "toTempId": "ChemBook1_b01_s59",
+      "toDescription": "Apply the Rydberg formula 1/lambda = R_H(1/n1^2 - 1/n2^2) (scaled by Z^2 for a hydrogen-like ion) to calculate the wavelength of radiation emitted or absorbed during an electron transition between two energy levels.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s65",
+      "toTempId": "ChemBook1_b01_s59",
+      "toDescription": "Apply the Rydberg formula 1/lambda = R_H(1/n1^2 - 1/n2^2) (scaled by Z^2 for a hydrogen-like ion) to calculate the wavelength of radiation emitted or absorbed during an electron transition between two energy levels.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s66",
+      "toTempId": "ChemBook1_b01_s73",
+      "toDescription": "Recall that an element's atomic (proton) number is fixed, while the number of neutrons in its nucleus can vary, giving rise to isotopes.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s67",
+      "toTempId": "ChemBook1_b01_s66",
+      "toDescription": "Calculate the average (weighted) atomic mass of an element from the masses of its isotopes and their percentage natural abundances.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s67",
+      "toTempId": null,
+      "toDescription": "Solve a linear equation in one unknown for that unknown by rearranging and simplifying terms.",
+      "toTopicKeyGuess": "MAT_ALGEBRA"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s27",
+      "toTempId": "ChemBook1_b01_s26",
+      "toDescription": "Write the solubility-product (Ksp) expression for a sparingly soluble salt in terms of its molar solubility (s), based on the stoichiometry of its dissociation.",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s28",
+      "toTempId": "ChemBook1_b01_s26",
+      "toDescription": "Write the solubility-product (Ksp) expression for a sparingly soluble salt in terms of its molar solubility (s), based on the stoichiometry of its dissociation.",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s28",
+      "toTempId": null,
+      "toDescription": "Solve a quadratic equation in one unknown for its physically valid root.",
+      "toTopicKeyGuess": "MAT_ALGEBRA"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s29",
+      "toTempId": "ChemBook1_b01_s26",
+      "toDescription": "Write the solubility-product (Ksp) expression for a sparingly soluble salt in terms of its molar solubility (s), based on the stoichiometry of its dissociation.",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s30",
+      "toTempId": "ChemBook1_b01_s29",
+      "toDescription": "Calculate the molar solubility of a sparingly soluble salt directly from its Ksp value (e.g., s = sqrt(Ksp) for a 1:1 salt).",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s31",
+      "toTempId": "ChemBook1_b01_s26",
+      "toDescription": "Write the solubility-product (Ksp) expression for a sparingly soluble salt in terms of its molar solubility (s), based on the stoichiometry of its dissociation.",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s31",
+      "toTempId": null,
+      "toDescription": "Convert between pH and pOH and hydrogen/hydroxide ion concentration using pH + pOH = 14 and pOH = -log[OH-].",
+      "toTopicKeyGuess": "CHE_ACIDBASE"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s32",
+      "toTempId": "ChemBook1_b01_s26",
+      "toDescription": "Write the solubility-product (Ksp) expression for a sparingly soluble salt in terms of its molar solubility (s), based on the stoichiometry of its dissociation.",
+      "toTopicKeyGuess": "CHE_EQUILIBRIUM"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s34",
+      "toTempId": "ChemBook1_b01_s33",
+      "toDescription": "Calculate the mass of solute and of solvent required to prepare a specified total mass of saturated solution, given the solute's solubility (grams per 100 g of solvent) at that temperature.",
+      "toTopicKeyGuess": "CHEM_SOLUTION"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s22",
+      "toTempId": "ChemBook1_b01_s21",
+      "toDescription": "Recall the qualitative-analysis group reagent used to detect the presence of a specific metal cation (e.g., the reagent group used to identify Cr, or NH4SCN used to identify Fe(III)).",
+      "toTopicKeyGuess": "CHE_QUAL"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s77",
+      "toTempId": "ChemBook1_b01_s78",
+      "toDescription": "Recall the charge and identity of the common radioactive emissions: an alpha particle (a He2+ nucleus, charge +2), a beta particle (an electron), and a gamma ray (a high-energy photon).",
+      "toTopicKeyGuess": "CHEM_NUCLEAR"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s81",
+      "toTempId": "ChemBook1_b01_s80",
+      "toDescription": "Calculate the energy released when a given mass (e.g., 1 amu) is completely converted to energy, using Einstein's relation E = mc^2, with appropriate unit conversion.",
+      "toTopicKeyGuess": "CHEM_NUCLEAR"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s80",
+      "toTempId": null,
+      "toDescription": "Convert a physical quantity between different units (e.g., atomic mass units to kilograms, joules to calories) using known conversion factors.",
+      "toTopicKeyGuess": "PHY_UNITS"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s41",
+      "toTempId": "ChemBook1_b01_s40",
+      "toDescription": "Determine the resulting ion/charge produced when a given ion gains or loses a specified number of electrons, using conservation of charge.",
+      "toTopicKeyGuess": "CHEM_REDOX"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s91",
+      "toTempId": "ChemBook1_b01_s89",
+      "toDescription": "Recall that the oxygen molecule (O2) contains a double covalent bond between its two oxygen atoms.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s91",
+      "toTempId": "ChemBook1_b01_s90",
+      "toDescription": "Recall that hydrogen can exhibit both a positive (+1) and a negative (-1) oxidation state/valency depending on the compound it forms.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s91",
+      "toTempId": "ChemBook1_b01_s76",
+      "toDescription": "Compare the electron counts of different oxidation-state ions of the same element (e.g., Fe2+ versus Fe3+) to determine whether they are equal.",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s85",
+      "toTempId": "ChemBook1_b01_s48",
+      "toDescription": "Write the ground-state (or a specified excited-state) electron configuration of a given atom or ion using the Aufbau principle, including recognising stability-driven exceptions (e.g., Cr, Cu with a half-filled or fully filled d-subshell).",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s86",
+      "toTempId": "ChemBook1_b01_s48",
+      "toDescription": "Write the ground-state (or a specified excited-state) electron configuration of a given atom or ion using the Aufbau principle, including recognising stability-driven exceptions (e.g., Cr, Cu with a half-filled or fully filled d-subshell).",
+      "toTopicKeyGuess": "CHE_ATOMIC"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s20",
+      "toTempId": "ChemBook1_b01_s19",
+      "toDescription": "Predict the products of a described chemical reaction (e.g., a precipitation reaction, or the fusion of an oxide with a carbonate in the presence of an oxidant) and complete its balanced chemical equation.",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s6",
+      "toTempId": "ChemBook1_b01_s4",
+      "toDescription": "Recall the hazard classification (e.g., irritant, corrosive, toxic, flammable) and the associated physiological risks and safety precautions for a named common laboratory chemical (e.g., NaOH, acetone).",
+      "toTopicKeyGuess": "CHEM_LAB"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s17",
+      "toTempId": "ChemBook1_b01_s16",
+      "toDescription": "Calculate the volume of a liquid from its measured mass and known density, using density = mass / volume.",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s11",
+      "toTempId": null,
+      "toDescription": "Understand the 'like dissolves like' principle relating solvent polarity to solute solubility.",
+      "toTopicKeyGuess": "CHE_BONDING"
+    },
+    {
+      "fromTempId": "ChemBook1_b01_s18",
+      "toTempId": null,
+      "toDescription": "Convert a given mass of a substance to moles using its molar mass.",
+      "toTopicKeyGuess": "CHE_STOICHIOMETRY"
+    }
+  ],
+  "newTopicsProposed": [
+    {
+      "topicKey": "CHEM_LAB",
+      "topicLabel": "Laboratory Techniques and Safety",
+      "subject": "Chemistry",
+      "reason": "A substantial cluster of records in ChemBook1 (roughly the first 14 records of this slice) test recall of glassware names/uses, hazard symbols, first-aid procedures, cleaning-mixture composition, and separation techniques (chromatography, distillation). None of the 24 canonical Chemistry topics (titrimetric analysis, qualitative analysis, etc.) cover general lab safety/technique/apparatus knowledge, so these skills have no good home in the existing list."
+    },
+    {
+      "topicKey": "CHEM_NUCLEAR",
+      "topicLabel": "Nuclear Chemistry and Radioactivity",
+      "subject": "Chemistry",
+      "reason": "A large number of records test balancing nuclear/decay equations, identifying isotopes/isobars/isotones, mass defect and binding-energy calculations, and fission vs. fusion concepts. CHE_ATOMIC ('Atomic Structure and Quantum Numbers') covers electronic structure, not nuclear transformations, and Physics' PHY_NUCLEAR is a different subject; this Chemistry-subject nuclear-chemistry content needs its own topic."
+    }
+  ],
+  "skippedItems": []
+}

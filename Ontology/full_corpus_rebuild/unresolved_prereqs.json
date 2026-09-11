@@ -1,0 +1,300 @@
+{
+  "CHE_ATOMIC29": [
+    {
+      "description": "Solve a linear equation in one unknown for that unknown by rearranging and simplifying terms.",
+      "topicKeyGuess": "MAT_ALGEBRA"
+    }
+  ],
+  "CHE_EQUILIBRIUM6": [
+    {
+      "description": "Solve a quadratic equation in one unknown for its physically valid root.",
+      "topicKeyGuess": "MAT_ALGEBRA"
+    }
+  ],
+  "CHE_EQUILIBRIUM9": [
+    {
+      "description": "Convert between pH and pOH and hydrogen/hydroxide ion concentration using pH + pOH = 14 and pOH = -log[OH-].",
+      "topicKeyGuess": "CHE_ACIDBASE"
+    }
+  ],
+  "CHEM_NUCLEAR3": [
+    {
+      "description": "Convert a physical quantity between different units (e.g., atomic mass units to kilograms, joules to calories) using known conversion factors.",
+      "topicKeyGuess": "PHY_UNITS"
+    }
+  ],
+  "CHEM_LAB10": [
+    {
+      "description": "Understand the 'like dissolves like' principle relating solvent polarity to solute solubility.",
+      "topicKeyGuess": "CHE_BONDING"
+    }
+  ],
+  "CHE_STOICHIOMETRY2": [
+    {
+      "description": "Convert a given mass of a substance to moles using its molar mass.",
+      "topicKeyGuess": "CHE_STOICHIOMETRY"
+    }
+  ],
+  "CHEM_DESCRIPTIVE0": [
+    {
+      "description": "Balance a chemical equation by ensuring the number of atoms of each element is equal on both sides of the equation.",
+      "topicKeyGuess": "CHE_STOICHIOMETRY"
+    },
+    {
+      "description": "Balance a chemical equation by adjusting stoichiometric coefficients so that the number of atoms of each element is equal on both sides (conservation of mass).",
+      "topicKeyGuess": "CHE_STOICHIOMETRY"
+    }
+  ],
+  "CHE_ATOMIC50": [
+    {
+      "description": "Recall the names and lower-limit principal quantum numbers of the hydrogen atomic spectral series (Lyman n1=1, Balmer n1=2, Paschen n1=3, Brackett n1=4, Pfund n1=5).",
+      "topicKeyGuess": "CHE_ATOMIC"
+    }
+  ],
+  "CHE_QUAL9": [
+    {
+      "description": "Recall that among silver halide precipitates, silver chloride is soluble in dilute aqueous ammonia while silver iodide is not, reflecting decreasing solubility down the halogen group.",
+      "topicKeyGuess": "CHE_QUAL"
+    }
+  ],
+  "CHEM_REDOX13": [
+    {
+      "description": "Recall the reactivity series of metals, including that metals more reactive than carbon (e.g. aluminium) cannot have their oxides reduced to the metal by carbon.",
+      "topicKeyGuess": "CHEM_REDOX"
+    }
+  ],
+  "CHEM_REDOX11": [
+    {
+      "description": "Recall the definitions of oxidizing agent (a species that gains electrons / is itself reduced) and reducing agent (a species that loses electrons / is itself oxidized) in a redox reaction.",
+      "topicKeyGuess": "CHEM_REDOX"
+    }
+  ],
+  "CHEM_REDOX12": [
+    {
+      "description": "Recall the definitions of common reaction types, such as a combination/addition reaction and an oxidation reaction.",
+      "topicKeyGuess": "CHEM_REDOX"
+    }
+  ],
+  "CHE_BONDING15": [
+    {
+      "description": "Recall that period-3 and lower elements (e.g. silicon) have energetically accessible vacant d-orbitals, while period-2 elements (e.g. carbon) do not.",
+      "topicKeyGuess": "CHE_BONDING"
+    }
+  ],
+  "CHE_BONDING16": [
+    {
+      "description": "Recall that a coordinate (dative) covalent bond forms when a lone pair of electrons from one atom is donated into an empty orbital of another atom or ion (e.g. water donating a lone pair to a proton to form hydronium).",
+      "topicKeyGuess": "CHE_BONDING"
+    }
+  ],
+  "CHEM_AT1": [
+    {
+      "description": "Recall the Aufbau principle, the Pauli exclusion principle, and Hund's rule as the rules governing how electrons fill atomic orbitals.",
+      "topicKeyGuess": "CHE_ATOMIC"
+    }
+  ],
+  "CHE_STOICHIOMETRY5": [
+    {
+      "description": "Calculate the molar mass of a compound from its chemical formula using the atomic masses of its constituent elements.",
+      "topicKeyGuess": "CHE_STOICHIOMETRY"
+    }
+  ],
+  "CHE_QUAL7": [
+    {
+      "description": "Recall that adding a strong acid such as HCl to a sulfide-containing solution risks releasing toxic/foul-smelling H2S gas and disturbing the intended precipitation.",
+      "topicKeyGuess": "CHE_QUAL"
+    }
+  ],
+  "CHE_ACIDBASE3": [
+    {
+      "description": "Recall the distinction between ionic and covalent bonding character and how it relates to whether an oxide behaves as acidic or basic.",
+      "topicKeyGuess": "CHE_BONDING"
+    }
+  ],
+  "CHE_STOICHIOMETRY7": [
+    {
+      "description": "Calculate a percentage composition from a mass ratio using basic proportion/percentage arithmetic.",
+      "topicKeyGuess": "CHE_STOICHIOMETRY"
+    }
+  ],
+  "CHEM_REDOX14": [
+    {
+      "description": "Recall the definition of a disproportionation reaction, in which the same element is simultaneously oxidized and reduced.",
+      "topicKeyGuess": "CHEM_REDOX"
+    }
+  ],
+  "CHE_COORD5": [
+    {
+      "description": "Recall that carbon monoxide can form a coordinate covalent bond to a transition-metal ion using a lone pair on its carbon atom.",
+      "topicKeyGuess": "CHE_COORD"
+    }
+  ],
+  "CHE_BONDING20": [
+    {
+      "description": "Recall the basic postulate of VSEPR theory: that electron pairs (bonding and lone) around a central atom arrange themselves to minimize mutual repulsion.",
+      "topicKeyGuess": "CHE_BONDING"
+    }
+  ],
+  "CHE_BONDING19": [
+    {
+      "description": "Recall the basic postulate of VSEPR theory: that electron pairs (bonding and lone) around a central atom arrange themselves to minimize mutual repulsion.",
+      "topicKeyGuess": "CHE_BONDING"
+    }
+  ],
+  "CHE_ACIDBASE8": [
+    {
+      "description": "Recall that metal oxides are generally basic and nonmetal oxides are generally acidic.",
+      "topicKeyGuess": "CHE_ACIDBASE"
+    }
+  ],
+  "CHE_ACIDBASE7": [
+    {
+      "description": "Recall the general periodic trend that atomic/ionic size increases going down a group.",
+      "topicKeyGuess": "CHEM_PERIODIC"
+    }
+  ],
+  "CHEM_PERIODIC15": [
+    {
+      "description": "Recall the general periodic trend that atomic/ionic size increases going down a group and decreases across a period.",
+      "topicKeyGuess": "CHEM_PERIODIC"
+    }
+  ],
+  "CHE_BONDING32": [
+    {
+      "description": "Recall the trend that metallic/ionic bonding character decreases and covalent bonding character increases across a period from left to right.",
+      "topicKeyGuess": "CHEM_PERIODIC"
+    }
+  ],
+  "CHE_BONDING34": [
+    {
+      "description": "Recall the trend that metallic/ionic bonding character decreases and covalent bonding character increases across a period from left to right.",
+      "topicKeyGuess": "CHEM_PERIODIC"
+    }
+  ],
+  "CHE_BONDING38": [
+    {
+      "description": "Recall the radius-ratio rule ranges that predict ionic coordination number (e.g., 0.225-0.414 -> 4, 0.414-0.732 -> 6, 0.732-1.0 -> 8).",
+      "topicKeyGuess": "CHEM_SOLID"
+    }
+  ],
+  "CHE_QUAL13": [
+    {
+      "description": "Recall the standard qualitative-analysis group reagents used to detect common metal cations.",
+      "topicKeyGuess": "CHE_QUAL"
+    }
+  ],
+  "CHE_QUAL16": [
+    {
+      "description": "Recall standard qualitative-analysis confirmatory tests and their characteristic precipitate colours for common anions (e.g., sulfite, sulfate).",
+      "topicKeyGuess": "CHE_QUAL"
+    }
+  ],
+  "CHEM_REDOX17": [
+    {
+      "description": "Recall that concentrated nitric acid is a strong oxidizing acid capable of oxidizing chloride ion to chlorine.",
+      "topicKeyGuess": "CHEM_REDOX"
+    }
+  ],
+  "CHEM_REDOX2": [
+    {
+      "description": "Recall that oxygen is usually assigned an oxidation number of -2 and hydrogen +1 in most compounds.",
+      "topicKeyGuess": "CHEM_REDOX"
+    }
+  ],
+  "CHE_BONDING35": [
+    {
+      "description": "Recall the molecular-orbital energy-level filling order (sigma and pi bonding/antibonding orbitals) for simple homonuclear diatomic molecules.",
+      "topicKeyGuess": "CHE_BONDING"
+    }
+  ],
+  "CHE_BONDING31": [
+    {
+      "description": "Recall the tetrahedral geometry of the chromate (CrO4^2-) ion.",
+      "topicKeyGuess": "CHE_BONDING"
+    }
+  ],
+  "CHE_COORD6": [
+    {
+      "description": "Recall the definitions of ionic, covalent, and coordinate (dative) bonds.",
+      "topicKeyGuess": "CHE_BONDING"
+    }
+  ],
+  "CHE_STOICHIOMETRY10": [
+    {
+      "description": "Calculate the molar mass of a compound by summing the atomic masses of its constituent elements according to its chemical formula.",
+      "topicKeyGuess": "CHE_STOICHIOMETRY"
+    }
+  ],
+  "CHE_STOICHIOMETRY12": [
+    {
+      "description": "Calculate the molar mass of a compound by summing the atomic masses of its constituent elements according to its chemical formula.",
+      "topicKeyGuess": "CHE_STOICHIOMETRY"
+    }
+  ],
+  "CHE_ACIDBASE23": [
+    {
+      "description": "Evaluate a base-10 (common) logarithm of a given positive number.",
+      "topicKeyGuess": "MAT_ALGEBRA"
+    }
+  ],
+  "CHEM_KIN4": [
+    {
+      "description": "Evaluate a natural logarithm (ln) or an exponential (e^x) expression when solving an equation.",
+      "topicKeyGuess": "MAT_ALGEBRA"
+    }
+  ],
+  "CHEM_KIN5": [
+    {
+      "description": "Evaluate a natural logarithm (ln) or an exponential (e^x) expression when solving an equation.",
+      "topicKeyGuess": "MAT_ALGEBRA"
+    }
+  ],
+  "CHE_GASLAWS5": [
+    {
+      "description": "Rearrange a multi-variable algebraic equation to isolate and solve for a specified unknown variable.",
+      "topicKeyGuess": "MAT_ALGEBRA"
+    }
+  ],
+  "CHE_BONDING46": [
+    {
+      "description": "Draw a Lewis (electron-dot) structure for a simple molecule showing bonding pairs and lone pairs of electrons.",
+      "topicKeyGuess": "CHE_BONDING"
+    }
+  ],
+  "CHEM_REDOX23": [
+    {
+      "description": "Recall the definition of oxidation and reduction in terms of electron loss and electron gain.",
+      "topicKeyGuess": "CHEM_REDOX"
+    }
+  ],
+  "CHE_COORD9": [
+    {
+      "description": "Recall the common/typical oxidation states exhibited by a given transition metal.",
+      "topicKeyGuess": "CHEM_DBLOCK"
+    }
+  ],
+  "CHE_BONDING44": [
+    {
+      "description": "Recall the periodic trend in ionic radius (radius decreases across a period and increases down a group).",
+      "topicKeyGuess": "CHEM_PERIODIC"
+    }
+  ],
+  "CHE_BONDING47": [
+    {
+      "description": "Draw a Lewis (electron-dot) structure for a simple molecule showing bonding pairs and lone pairs of electrons.",
+      "topicKeyGuess": "CHE_BONDING"
+    }
+  ],
+  "CHE_BONDING51": [
+    {
+      "description": "Recall the periodic trend of decreasing pi-bond (multiple-bond) strength down a group due to increasing atomic/orbital size.",
+      "topicKeyGuess": "CHE_BONDING"
+    }
+  ],
+  "CHE_EQUILIBRIUM18": [
+    {
+      "description": "Solve an algebraic equation in which the unknown appears as an exponent (e.g., isolate and evaluate T in an expression of the form (R.T)^n = k).",
+      "topicKeyGuess": "MAT_ALGEBRA"
+    }
+  ]
+}

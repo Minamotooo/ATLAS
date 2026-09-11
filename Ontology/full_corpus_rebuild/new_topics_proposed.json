@@ -1,0 +1,20 @@
+[
+  {
+    "topicKey": "CHEM_LAB",
+    "topicLabel": "Laboratory Techniques and Safety",
+    "subject": "Chemistry",
+    "reason": "A substantial cluster of records in ChemBook1 (roughly the first 14 records of this slice) test recall of glassware names/uses, hazard symbols, first-aid procedures, cleaning-mixture composition, and separation techniques (chromatography, distillation). None of the 24 canonical Chemistry topics (titrimetric analysis, qualitative analysis, etc.) cover general lab safety/technique/apparatus knowledge, so these skills have no good home in the existing list."
+  },
+  {
+    "topicKey": "CHEM_NUCLEAR",
+    "topicLabel": "Nuclear Chemistry and Radioactivity",
+    "subject": "Chemistry",
+    "reason": "A large number of records test balancing nuclear/decay equations, identifying isotopes/isobars/isotones, mass defect and binding-energy calculations, and fission vs. fusion concepts. CHE_ATOMIC ('Atomic Structure and Quantum Numbers') covers electronic structure, not nuclear transformations, and Physics' PHY_NUCLEAR is a different subject; this Chemistry-subject nuclear-chemistry content needs its own topic."
+  },
+  {
+    "topicKey": "CHEM_DESCRIPTIVE",
+    "topicLabel": "Descriptive and Industrial Inorganic Chemistry",
+    "subject": "Chemistry",
+    "reason": "A very large share of this slice consists of 'descriptive inorganic chemistry' recall/application items — writing/predicting balanced equations for reactions of common inorganic compounds, recalling formulas of minerals/ores/industrial salts from their trivial/commercial names, recalling metal compositions of named alloys, flame-test colors, and mineral sources of elements. None of the canonical topics (CHE_QUAL, CHEM_REDOX, CHE_BONDING, CHEM_NOM, etc.) cleanly covers this large, recurring block of 's-block/p-block/d-block descriptive and industrial chemistry' content that is a standard HSC Chemistry unit in this corpus."
+  }
+]
