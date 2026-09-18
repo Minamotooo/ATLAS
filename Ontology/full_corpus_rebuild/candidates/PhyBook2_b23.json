@@ -1,0 +1,764 @@
+{
+ "chunkLabel": "PhyBook2_b23",
+ "subject": "Physics",
+ "skills": [
+  {
+   "tempId": "PhyBook2_b23_s1",
+   "bloom": "Apply",
+   "skillFull": "Convert a temperature between the Celsius, Fahrenheit and Kelvin scales.",
+   "topicKey": "PHY2_HEAT_TEMPERATURE",
+   "topicLabel": "Heat, Temperature and Calorimetry",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p14__q57__99",
+    "PhyBook2__p15__q71__113",
+    "PhyBook2__p14__q55__97"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s2",
+   "bloom": "Apply",
+   "skillFull": "Determine the temperature at which two temperature scales give the same numerical reading.",
+   "topicKey": "PHY2_HEAT_TEMPERATURE",
+   "topicLabel": "Heat, Temperature and Calorimetry",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p4__q22__21",
+    "PhyBook2__p12__q41__83",
+    "PhyBook2__p15__q68__110"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s3",
+   "bloom": "Apply",
+   "skillFull": "Determine the true temperature from the readings of a faulty thermometer.",
+   "topicKey": "PHY2_HEAT_TEMPERATURE",
+   "topicLabel": "Heat, Temperature and Calorimetry",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p4__q17__17",
+    "PhyBook2__p11__q33__75"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s4",
+   "bloom": "Remember",
+   "skillFull": "Recall the dimensions of heat capacity and of specific heat capacity.",
+   "topicKey": "PHY2_HEAT_TEMPERATURE",
+   "topicLabel": "Heat, Temperature and Calorimetry",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p12__q39__81"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s5",
+   "bloom": "Apply",
+   "skillFull": "Calculate the heat required to change the temperature of a body from its specific heat capacity.",
+   "topicKey": "PHY2_HEAT_TEMPERATURE",
+   "topicLabel": "Heat, Temperature and Calorimetry",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p9__q05__47",
+    "PhyBook2__p10__q16__58",
+    "PhyBook2__p15__q65__107"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s6",
+   "bloom": "Apply",
+   "skillFull": "Calculate the heat required to melt or to vaporise a substance from its latent heat.",
+   "topicKey": "PHY2_HEAT_TEMPERATURE",
+   "topicLabel": "Heat, Temperature and Calorimetry",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p3__q11__10",
+    "PhyBook2__p9__q08__50",
+    "PhyBook2__p11__q26__68"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s7",
+   "bloom": "Apply",
+   "skillFull": "Determine the final temperature of a mixture using the principle of calorimetry.",
+   "topicKey": "PHY2_HEAT_TEMPERATURE",
+   "topicLabel": "Heat, Temperature and Calorimetry",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p4__q16__16",
+    "PhyBook2__p13__q54__96",
+    "PhyBook2__p14__q59__101"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s8",
+   "bloom": "Apply",
+   "skillFull": "Calculate the rise in temperature produced when mechanical energy is converted into heat.",
+   "topicKey": "PHY2_HEAT_TEMPERATURE",
+   "topicLabel": "Heat, Temperature and Calorimetry",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p3__q08__7",
+    "PhyBook2__p9__q06__48",
+    "PhyBook2__p13__q53__95",
+    "PhyBook2__p15__q70__112"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s9",
+   "bloom": "Apply",
+   "skillFull": "Calculate the change in length, area or volume of a body on heating, using its coefficient of expansion.",
+   "topicKey": "PHY2_HEAT_TEMPERATURE",
+   "topicLabel": "Heat, Temperature and Calorimetry",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p3__q07__6"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s10",
+   "bloom": "Remember",
+   "skillFull": "Recall the first law of thermodynamics and the sign convention for heat supplied and work done.",
+   "topicKey": "PHY2_THERMO_LAWS",
+   "topicLabel": "Laws of Thermodynamics",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p13__q52__92"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s11",
+   "bloom": "Apply",
+   "skillFull": "Calculate the change in internal energy of a system from the heat supplied and the work done.",
+   "topicKey": "PHY2_THERMO_LAWS",
+   "topicLabel": "Laws of Thermodynamics",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p13__q52__92",
+    "PhyBook2__p12__q38__80"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s12",
+   "bloom": "Apply",
+   "skillFull": "Calculate the work done by a gas in an isothermal expansion or compression.",
+   "topicKey": "PHY2_THERMO_LAWS",
+   "topicLabel": "Laws of Thermodynamics",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p8__q03__45",
+    "PhyBook2__p6__q34__33"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s13",
+   "bloom": "Apply",
+   "skillFull": "Calculate the relation between pressure, volume and temperature of a gas in an adiabatic change.",
+   "topicKey": "PHY2_THERMO_LAWS",
+   "topicLabel": "Laws of Thermodynamics",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p9__q11__53",
+    "PhyBook2__p10__q18__60",
+    "PhyBook2__p15__q67__109"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s14",
+   "bloom": "Apply",
+   "skillFull": "Calculate the work done by a gas in an adiabatic change.",
+   "topicKey": "PHY2_THERMO_LAWS",
+   "topicLabel": "Laws of Thermodynamics",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p11__q30__72",
+    "PhyBook2__p13__q49__91"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s15",
+   "bloom": "Understand",
+   "skillFull": "Distinguish isothermal, adiabatic, isobaric and isochoric processes.",
+   "topicKey": "PHY2_THERMO_LAWS",
+   "topicLabel": "Laws of Thermodynamics",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p9__q09__51",
+    "PhyBook2__p11__q27__69"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s16",
+   "bloom": "Apply",
+   "skillFull": "Calculate the molar specific heats of a gas and the ratio between them.",
+   "topicKey": "PHY2_THERMO_LAWS",
+   "topicLabel": "Laws of Thermodynamics",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p3__q09__8",
+    "PhyBook2__p11__q36__78",
+    "PhyBook2__p12__q44__86",
+    "PhyBook2__p13__q48__90"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s17",
+   "bloom": "Remember",
+   "skillFull": "Recall the second law of thermodynamics and the meaning of a reversible process.",
+   "topicKey": "PHY2_HEAT_ENGINE",
+   "topicLabel": "Heat Engines and Entropy",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p12__q37__79",
+    "PhyBook2__p12__q38__80"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s18",
+   "bloom": "Apply",
+   "skillFull": "Calculate the efficiency of a Carnot engine from its source and sink temperatures.",
+   "topicKey": "PHY2_HEAT_ENGINE",
+   "topicLabel": "Heat Engines and Entropy",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p2__q03__2",
+    "PhyBook2__p8__q02__44",
+    "PhyBook2__p12__q42__84"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s19",
+   "bloom": "Apply",
+   "skillFull": "Determine the sink or the source temperature required to achieve a stated efficiency.",
+   "topicKey": "PHY2_HEAT_ENGINE",
+   "topicLabel": "Heat Engines and Entropy",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p4__q19__19",
+    "PhyBook2__p6__q31__31",
+    "PhyBook2__p14__q61__102"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s20",
+   "bloom": "Apply",
+   "skillFull": "Calculate the work done and the heat rejected by a heat engine operating in a cycle.",
+   "topicKey": "PHY2_HEAT_ENGINE",
+   "topicLabel": "Heat Engines and Entropy",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p9__q13__55",
+    "PhyBook2__p10__q23__65",
+    "PhyBook2__p15__q73__115"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s21",
+   "bloom": "Apply",
+   "skillFull": "Calculate the coefficient of performance of a refrigerator or of a heat pump.",
+   "topicKey": "PHY2_HEAT_ENGINE",
+   "topicLabel": "Heat Engines and Entropy",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p8__q43__42",
+    "PhyBook2__p9__q12__54"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s22",
+   "bloom": "Remember",
+   "skillFull": "Recall the meaning of entropy and calculate the change of entropy in a stated process.",
+   "topicKey": "PHY2_HEAT_ENGINE",
+   "topicLabel": "Heat Engines and Entropy",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p2__q05__4",
+    "PhyBook2__p14__q56__98"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s23",
+   "bloom": "Understand",
+   "skillFull": "Evaluate whether a claimed engine efficiency is consistent with the second law.",
+   "topicKey": "PHY2_HEAT_ENGINE",
+   "topicLabel": "Heat Engines and Entropy",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p4__q15__14",
+    "PhyBook2__p13__q47__89",
+    "PhyBook2__p12__q46__88"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s24",
+   "bloom": "Remember",
+   "skillFull": "Recall Coulomb's law and the value of the permittivity of free space.",
+   "topicKey": "PHY2_COULOMB",
+   "topicLabel": "Coulomb's Law and Electric Field",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p20__q03__138"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s25",
+   "bloom": "Apply",
+   "skillFull": "Calculate the electrostatic force between two point charges.",
+   "topicKey": "PHY2_COULOMB",
+   "topicLabel": "Coulomb's Law and Electric Field",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p20__q01__136",
+    "PhyBook2__p20__q04__139"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s26",
+   "bloom": "Apply",
+   "skillFull": "Calculate the resultant force on a charge due to several other charges.",
+   "topicKey": "PHY2_COULOMB",
+   "topicLabel": "Coulomb's Law and Electric Field",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p18__q12__127",
+    "PhyBook2__p21__q10__145"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s27",
+   "bloom": "Apply",
+   "skillFull": "Calculate the electric field intensity due to a point charge or to a group of charges.",
+   "topicKey": "PHY2_COULOMB",
+   "topicLabel": "Coulomb's Law and Electric Field",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p18__q14__129",
+    "PhyBook2__p20__q09__144"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s28",
+   "bloom": "Apply",
+   "skillFull": "Determine the number of electrons corresponding to a stated quantity of charge.",
+   "topicKey": "PHY2_COULOMB",
+   "topicLabel": "Coulomb's Law and Electric Field",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p20__q08__143"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s29",
+   "bloom": "Apply",
+   "skillFull": "Calculate the force on a charged particle in a uniform electric field and the motion it produces.",
+   "topicKey": "PHY2_COULOMB",
+   "topicLabel": "Coulomb's Law and Electric Field",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p17__q10__125",
+    "PhyBook2__p20__q06__141",
+    "PhyBook2__p21__q13__148"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s30",
+   "bloom": "Apply",
+   "skillFull": "Determine the equilibrium of a charged pith ball suspended in an electric field.",
+   "topicKey": "PHY2_COULOMB",
+   "topicLabel": "Coulomb's Law and Electric Field",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p20__q05__140",
+    "PhyBook2__p20__q07__142"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s31",
+   "bloom": "Remember",
+   "skillFull": "Recall Gauss's law relating the electric flux through a closed surface to the charge it encloses.",
+   "topicKey": "PHY2_GAUSS",
+   "topicLabel": "Gauss's Law and Electric Potential",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p20__q02__137"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s32",
+   "bloom": "Apply",
+   "skillFull": "Calculate the electric flux passing through a closed surface.",
+   "topicKey": "PHY2_GAUSS",
+   "topicLabel": "Gauss's Law and Electric Potential",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p20__q02__137"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s33",
+   "bloom": "Apply",
+   "skillFull": "Calculate the electric potential due to a point charge or to a group of charges.",
+   "topicKey": "PHY2_GAUSS",
+   "topicLabel": "Gauss's Law and Electric Potential",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p18__q13__128",
+    "PhyBook2__p21__q10__145"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s34",
+   "bloom": "Apply",
+   "skillFull": "Calculate the work done in moving a charge between two points in an electric field.",
+   "topicKey": "PHY2_GAUSS",
+   "topicLabel": "Gauss's Law and Electric Potential",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p17__q07__122",
+    "PhyBook2__p18__q13__128"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s35",
+   "bloom": "Apply",
+   "skillFull": "Calculate the field of an electric dipole or the torque acting on a dipole.",
+   "topicKey": "PHY2_GAUSS",
+   "topicLabel": "Gauss's Law and Electric Potential",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p20__q03__138"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s36",
+   "bloom": "Remember",
+   "skillFull": "Recall the definition of capacitance and its unit.",
+   "topicKey": "PHY2_CAPACITOR",
+   "topicLabel": "Capacitance and Dielectrics",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p17__q08__123"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s37",
+   "bloom": "Apply",
+   "skillFull": "Calculate the capacitance of a parallel-plate capacitor from its dimensions and its dielectric.",
+   "topicKey": "PHY2_CAPACITOR",
+   "topicLabel": "Capacitance and Dielectrics",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p16__q02__117",
+    "PhyBook2__p19__q19__134",
+    "PhyBook2__p21__q12__147"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s38",
+   "bloom": "Apply",
+   "skillFull": "Calculate the equivalent capacitance of capacitors joined in series or in parallel.",
+   "topicKey": "PHY2_CAPACITOR",
+   "topicLabel": "Capacitance and Dielectrics",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p18__q15__130",
+    "PhyBook2__p19__q17__132",
+    "PhyBook2__p19__q18__133"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s39",
+   "bloom": "Apply",
+   "skillFull": "Calculate the charge, the potential difference or the energy stored in a capacitor.",
+   "topicKey": "PHY2_CAPACITOR",
+   "topicLabel": "Capacitance and Dielectrics",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p17__q08__123",
+    "PhyBook2__p18__q16__131",
+    "PhyBook2__p19__q20__135"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s40",
+   "bloom": "Apply",
+   "skillFull": "Determine the effect of inserting a dielectric on the capacitance, charge or potential of a capacitor.",
+   "topicKey": "PHY2_CAPACITOR",
+   "topicLabel": "Capacitance and Dielectrics",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p16__q04__119",
+    "PhyBook2__p17__q05__120"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b23_s41",
+   "bloom": "Apply",
+   "skillFull": "Determine the common potential and the energy lost when two charged capacitors are connected together.",
+   "topicKey": "PHY2_CAPACITOR",
+   "topicLabel": "Capacitance and Dielectrics",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p17__q06__121"
+   ]
+  }
+ ],
+ "prereqs": [
+  {
+   "fromTempId": "PhyBook2_b23_s2",
+   "toTempId": "PhyBook2_b23_s1",
+   "toDescription": "Convert a temperature between the Celsius, Fahrenheit and Kelvin scales.",
+   "toTopicKeyGuess": "PHY2_HEAT_TEMPERATURE"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s3",
+   "toTempId": "PhyBook2_b23_s1",
+   "toDescription": "Convert a temperature between the Celsius, Fahrenheit and Kelvin scales.",
+   "toTopicKeyGuess": "PHY2_HEAT_TEMPERATURE"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s5",
+   "toTempId": "PhyBook2_b23_s4",
+   "toDescription": "Recall the dimensions of heat capacity and of specific heat capacity.",
+   "toTopicKeyGuess": "PHY2_HEAT_TEMPERATURE"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s6",
+   "toTempId": "PhyBook2_b23_s5",
+   "toDescription": "Calculate the heat required to change the temperature of a body from its specific heat capacity.",
+   "toTopicKeyGuess": "PHY2_HEAT_TEMPERATURE"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s7",
+   "toTempId": "PhyBook2_b23_s5",
+   "toDescription": "Calculate the heat required to change the temperature of a body from its specific heat capacity.",
+   "toTopicKeyGuess": "PHY2_HEAT_TEMPERATURE"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s8",
+   "toTempId": "PhyBook2_b23_s5",
+   "toDescription": "Calculate the heat required to change the temperature of a body from its specific heat capacity.",
+   "toTopicKeyGuess": "PHY2_HEAT_TEMPERATURE"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s9",
+   "toTempId": "PhyBook2_b23_s1",
+   "toDescription": "Convert a temperature between the Celsius, Fahrenheit and Kelvin scales.",
+   "toTopicKeyGuess": "PHY2_HEAT_TEMPERATURE"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s11",
+   "toTempId": "PhyBook2_b23_s10",
+   "toDescription": "Recall the first law of thermodynamics and the sign convention for heat supplied and work done.",
+   "toTopicKeyGuess": "PHY2_THERMO_LAWS"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s12",
+   "toTempId": "PhyBook2_b23_s11",
+   "toDescription": "Calculate the change in internal energy of a system from the heat supplied and the work done.",
+   "toTopicKeyGuess": "PHY2_THERMO_LAWS"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s13",
+   "toTempId": "PhyBook2_b23_s10",
+   "toDescription": "Recall the first law of thermodynamics and the sign convention for heat supplied and work done.",
+   "toTopicKeyGuess": "PHY2_THERMO_LAWS"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s14",
+   "toTempId": "PhyBook2_b23_s13",
+   "toDescription": "Calculate the relation between pressure, volume and temperature of a gas in an adiabatic change.",
+   "toTopicKeyGuess": "PHY2_THERMO_LAWS"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s15",
+   "toTempId": "PhyBook2_b23_s10",
+   "toDescription": "Recall the first law of thermodynamics and the sign convention for heat supplied and work done.",
+   "toTopicKeyGuess": "PHY2_THERMO_LAWS"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s16",
+   "toTempId": "PhyBook2_b23_s11",
+   "toDescription": "Calculate the change in internal energy of a system from the heat supplied and the work done.",
+   "toTopicKeyGuess": "PHY2_THERMO_LAWS"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s12",
+   "toTempId": "PhyBook2_b23_s5",
+   "toDescription": "Calculate the heat required to change the temperature of a body from its specific heat capacity.",
+   "toTopicKeyGuess": "PHY2_HEAT_TEMPERATURE"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s8",
+   "toTempId": "PhyBook2_b23_s11",
+   "toDescription": "Calculate the change in internal energy of a system from the heat supplied and the work done.",
+   "toTopicKeyGuess": "PHY2_THERMO_LAWS"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s18",
+   "toTempId": "PhyBook2_b23_s17",
+   "toDescription": "Recall the second law of thermodynamics and the meaning of a reversible process.",
+   "toTopicKeyGuess": "PHY2_HEAT_ENGINE"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s19",
+   "toTempId": "PhyBook2_b23_s18",
+   "toDescription": "Calculate the efficiency of a Carnot engine from its source and sink temperatures.",
+   "toTopicKeyGuess": "PHY2_HEAT_ENGINE"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s20",
+   "toTempId": "PhyBook2_b23_s18",
+   "toDescription": "Calculate the efficiency of a Carnot engine from its source and sink temperatures.",
+   "toTopicKeyGuess": "PHY2_HEAT_ENGINE"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s21",
+   "toTempId": "PhyBook2_b23_s20",
+   "toDescription": "Calculate the work done and the heat rejected by a heat engine operating in a cycle.",
+   "toTopicKeyGuess": "PHY2_HEAT_ENGINE"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s22",
+   "toTempId": "PhyBook2_b23_s17",
+   "toDescription": "Recall the second law of thermodynamics and the meaning of a reversible process.",
+   "toTopicKeyGuess": "PHY2_HEAT_ENGINE"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s23",
+   "toTempId": "PhyBook2_b23_s18",
+   "toDescription": "Calculate the efficiency of a Carnot engine from its source and sink temperatures.",
+   "toTopicKeyGuess": "PHY2_HEAT_ENGINE"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s20",
+   "toTempId": "PhyBook2_b23_s11",
+   "toDescription": "Calculate the change in internal energy of a system from the heat supplied and the work done.",
+   "toTopicKeyGuess": "PHY2_THERMO_LAWS"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s25",
+   "toTempId": "PhyBook2_b23_s24",
+   "toDescription": "Recall Coulomb's law and the value of the permittivity of free space.",
+   "toTopicKeyGuess": "PHY2_COULOMB"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s26",
+   "toTempId": "PhyBook2_b23_s25",
+   "toDescription": "Calculate the electrostatic force between two point charges.",
+   "toTopicKeyGuess": "PHY2_COULOMB"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s27",
+   "toTempId": "PhyBook2_b23_s25",
+   "toDescription": "Calculate the electrostatic force between two point charges.",
+   "toTopicKeyGuess": "PHY2_COULOMB"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s28",
+   "toTempId": "PhyBook2_b23_s24",
+   "toDescription": "Recall Coulomb's law and the value of the permittivity of free space.",
+   "toTopicKeyGuess": "PHY2_COULOMB"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s29",
+   "toTempId": "PhyBook2_b23_s27",
+   "toDescription": "Calculate the electric field intensity due to a point charge or to a group of charges.",
+   "toTopicKeyGuess": "PHY2_COULOMB"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s30",
+   "toTempId": "PhyBook2_b23_s29",
+   "toDescription": "Calculate the force on a charged particle in a uniform electric field and the motion it produces.",
+   "toTopicKeyGuess": "PHY2_COULOMB"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s29",
+   "toTempId": "PhyBook2_b23_s25",
+   "toDescription": "Calculate the electrostatic force between two point charges.",
+   "toTopicKeyGuess": "PHY2_COULOMB"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s31",
+   "toTempId": "PhyBook2_b23_s27",
+   "toDescription": "Calculate the electric field intensity due to a point charge or to a group of charges.",
+   "toTopicKeyGuess": "PHY2_COULOMB"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s32",
+   "toTempId": "PhyBook2_b23_s31",
+   "toDescription": "Recall Gauss's law relating the electric flux through a closed surface to the charge it encloses.",
+   "toTopicKeyGuess": "PHY2_GAUSS"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s33",
+   "toTempId": "PhyBook2_b23_s27",
+   "toDescription": "Calculate the electric field intensity due to a point charge or to a group of charges.",
+   "toTopicKeyGuess": "PHY2_COULOMB"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s34",
+   "toTempId": "PhyBook2_b23_s33",
+   "toDescription": "Calculate the electric potential due to a point charge or to a group of charges.",
+   "toTopicKeyGuess": "PHY2_GAUSS"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s35",
+   "toTempId": "PhyBook2_b23_s33",
+   "toDescription": "Calculate the electric potential due to a point charge or to a group of charges.",
+   "toTopicKeyGuess": "PHY2_GAUSS"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s33",
+   "toTempId": "PhyBook2_b23_s31",
+   "toDescription": "Recall Gauss's law relating the electric flux through a closed surface to the charge it encloses.",
+   "toTopicKeyGuess": "PHY2_GAUSS"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s37",
+   "toTempId": "PhyBook2_b23_s36",
+   "toDescription": "Recall the definition of capacitance and its unit.",
+   "toTopicKeyGuess": "PHY2_CAPACITOR"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s38",
+   "toTempId": "PhyBook2_b23_s36",
+   "toDescription": "Recall the definition of capacitance and its unit.",
+   "toTopicKeyGuess": "PHY2_CAPACITOR"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s39",
+   "toTempId": "PhyBook2_b23_s36",
+   "toDescription": "Recall the definition of capacitance and its unit.",
+   "toTopicKeyGuess": "PHY2_CAPACITOR"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s40",
+   "toTempId": "PhyBook2_b23_s37",
+   "toDescription": "Calculate the capacitance of a parallel-plate capacitor from its dimensions and its dielectric.",
+   "toTopicKeyGuess": "PHY2_CAPACITOR"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s41",
+   "toTempId": "PhyBook2_b23_s39",
+   "toDescription": "Calculate the charge, the potential difference or the energy stored in a capacitor.",
+   "toTopicKeyGuess": "PHY2_CAPACITOR"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s39",
+   "toTempId": "PhyBook2_b23_s33",
+   "toDescription": "Calculate the electric potential due to a point charge or to a group of charges.",
+   "toTopicKeyGuess": "PHY2_GAUSS"
+  },
+  {
+   "fromTempId": "PhyBook2_b23_s37",
+   "toTempId": "PhyBook2_b23_s31",
+   "toDescription": "Recall Gauss's law relating the electric flux through a closed surface to the charge it encloses.",
+   "toTopicKeyGuess": "PHY2_GAUSS"
+  }
+ ],
+ "reusedExistingSkills": [],
+ "newTopicsProposed": [],
+ "skippedItems": [],
+ "notes": "Records 1-150 of PhyBook2 (parsed_items.jsonl lines 3711-3860). FIRST PhyBook2 BATCH. Coverage: thermodynamics (Physics 2nd Paper Ch1, records 1-115) split across calorimetry, the laws of thermodynamics and heat engines; then static electricity (Ch2, records 116-150) split across Coulomb's law, Gauss's law and potential, and capacitance. All six topics touched here were previously empty - this is the first content for Physics 2nd Paper. No new topics needed. All descriptions are plain text with no backslashes."
+}

@@ -1,0 +1,653 @@
+{
+ "chunkLabel": "MathBook2_b17",
+ "subject": "Mathematics",
+ "skills": [
+  {
+   "tempId": "MathBook2_b17_s1",
+   "bloom": "Remember",
+   "skillFull": "Recall the principal-value range of each inverse trigonometric function and the relations between complementary pairs.",
+   "topicKey": "MAT2_INVERSE_TRIG",
+   "topicLabel": "Inverse Trigonometric Functions",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p59__q20__328",
+    "MathBook2__p59__q21__329",
+    "MathBook2__p60__q27__335"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s2",
+   "bloom": "Apply",
+   "skillFull": "Simplify a nested composition of several inverse trigonometric and trigonometric functions.",
+   "topicKey": "MAT2_INVERSE_TRIG",
+   "topicLabel": "Inverse Trigonometric Functions",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p55__q25__302",
+    "MathBook2__p60__q25__333",
+    "MathBook2__p62__q42__350",
+    "MathBook2__p58__q13__321"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s3",
+   "bloom": "Apply",
+   "skillFull": "Demonstrate an identity expressing one inverse trigonometric function in terms of another.",
+   "topicKey": "MAT2_INVERSE_TRIG",
+   "topicLabel": "Inverse Trigonometric Functions",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p55__q26__303",
+    "MathBook2__p57__q31__308",
+    "MathBook2__p58__q06__314"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s4",
+   "bloom": "Apply",
+   "skillFull": "Calculate the value of an expression combining an inverse cotangent with an inverse cosecant or an inverse secant.",
+   "topicKey": "MAT2_INVERSE_TRIG",
+   "topicLabel": "Inverse Trigonometric Functions",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p61__q37__345",
+    "MathBook2__p60__q29__337",
+    "MathBook2__p58__q12__320"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s5",
+   "bloom": "Apply",
+   "skillFull": "Determine a variable from an equation in the sum of two inverse trigonometric functions.",
+   "topicKey": "MAT2_INVERSE_TRIG",
+   "topicLabel": "Inverse Trigonometric Functions",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p61__q31__339",
+    "MathBook2__p62__q40__348",
+    "MathBook2__p61__q38__346"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s6",
+   "bloom": "Apply",
+   "skillFull": "Calculate the value of a squared trigonometric function applied to an inverse trigonometric expression.",
+   "topicKey": "MAT2_INVERSE_TRIG",
+   "topicLabel": "Inverse Trigonometric Functions",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p59__q19__327",
+    "MathBook2__p62__q41__349"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s7",
+   "bloom": "Apply",
+   "skillFull": "Solve a trigonometric equation by reducing it to a quadratic in a single trigonometric ratio.",
+   "topicKey": "MAT2_TRIG_EQUATION",
+   "topicLabel": "Trigonometric Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p56__q29__306",
+    "MathBook2__p61__q34__342",
+    "MathBook2__p55__q24__301"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s8",
+   "bloom": "Apply",
+   "skillFull": "Solve a trigonometric equation involving the secant or cosecant of multiple angles.",
+   "topicKey": "MAT2_TRIG_EQUATION",
+   "topicLabel": "Trigonometric Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p56__q28__305",
+    "MathBook2__p61__q36__344"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s9",
+   "bloom": "Apply",
+   "skillFull": "Determine the general solution of an equation relating the tangents of an angle and its double.",
+   "topicKey": "MAT2_TRIG_EQUATION",
+   "topicLabel": "Trigonometric Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p58__q05__313",
+    "MathBook2__p59__q23__331",
+    "MathBook2__p59__q24__332"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s10",
+   "bloom": "Apply",
+   "skillFull": "Determine the number of solutions a trigonometric equation has within a stated interval.",
+   "topicKey": "MAT2_TRIG_EQUATION",
+   "topicLabel": "Trigonometric Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p59__q16__324",
+    "MathBook2__p58__q09__317"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s11",
+   "bloom": "Apply",
+   "skillFull": "Determine an angle from the simultaneous values of two of its trigonometric ratios.",
+   "topicKey": "MAT2_TRIG_EQUATION",
+   "topicLabel": "Trigonometric Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p58__q14__322",
+    "MathBook2__p60__q28__336"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s12",
+   "bloom": "Apply",
+   "skillFull": "Solve a trigonometric equation by grouping and factorising a mixed product-and-sum expression.",
+   "topicKey": "MAT2_TRIG_EQUATION",
+   "topicLabel": "Trigonometric Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p55__q23__300",
+    "MathBook2__p58__q08__316",
+    "MathBook2__p61__q35__343"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s13",
+   "bloom": "Remember",
+   "skillFull": "Recall the parallelogram law for the resultant of two forces acting at a point.",
+   "topicKey": "MAT2_STATICS_FORCE",
+   "topicLabel": "Forces and Equilibrium",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p77__q06__413"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s14",
+   "bloom": "Apply",
+   "skillFull": "Calculate the magnitude and the direction of the resultant of two forces acting at a given angle.",
+   "topicKey": "MAT2_STATICS_FORCE",
+   "topicLabel": "Forces and Equilibrium",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p66__q17__367",
+    "MathBook2__p79__q22__428",
+    "MathBook2__p80__q27__433"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s15",
+   "bloom": "Apply",
+   "skillFull": "Determine the angle between two forces from the magnitude of their resultant.",
+   "topicKey": "MAT2_STATICS_FORCE",
+   "topicLabel": "Forces and Equilibrium",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p63__q02__353",
+    "MathBook2__p80__q28__434",
+    "MathBook2__p82__q36__442"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s16",
+   "bloom": "Apply",
+   "skillFull": "Determine an unknown force from the magnitude and the direction of the resultant.",
+   "topicKey": "MAT2_STATICS_FORCE",
+   "topicLabel": "Forces and Equilibrium",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p77__q07__414",
+    "MathBook2__p79__q21__427",
+    "MathBook2__p80__q29__435",
+    "MathBook2__p81__q34__440"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s17",
+   "bloom": "Apply",
+   "skillFull": "Determine the resultant of several concurrent forces by resolving them into rectangular components.",
+   "topicKey": "MAT2_STATICS_FORCE",
+   "topicLabel": "Forces and Equilibrium",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p64__q08__359",
+    "MathBook2__p78__q15__422",
+    "MathBook2__p81__q33__439"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s18",
+   "bloom": "Remember",
+   "skillFull": "Recall the triangle law of forces and Lami's theorem for three concurrent forces in equilibrium.",
+   "topicKey": "MAT2_STATICS_FORCE",
+   "topicLabel": "Forces and Equilibrium",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p78__q12__419",
+    "MathBook2__p79__q24__430"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s19",
+   "bloom": "Apply",
+   "skillFull": "Determine unknown forces in a system of three concurrent forces in equilibrium, using Lami's theorem.",
+   "topicKey": "MAT2_STATICS_FORCE",
+   "topicLabel": "Forces and Equilibrium",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p64__q09__360",
+    "MathBook2__p72__q43__393",
+    "MathBook2__p82__q35__441"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s20",
+   "bloom": "Apply",
+   "skillFull": "Determine the resultant of forces acting along the sides of a triangle or a polygon.",
+   "topicKey": "MAT2_STATICS_FORCE",
+   "topicLabel": "Forces and Equilibrium",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p63__q04__355",
+    "MathBook2__p70__q33__383",
+    "MathBook2__p76__q01__408",
+    "MathBook2__p83__q43__449"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s21",
+   "bloom": "Apply",
+   "skillFull": "Determine the tensions in strings or ropes supporting a suspended weight.",
+   "topicKey": "MAT2_STATICS_FORCE",
+   "topicLabel": "Forces and Equilibrium",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p66__q15__366",
+    "MathBook2__p74__q50__401",
+    "MathBook2__p80__q26__432"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s22",
+   "bloom": "Apply",
+   "skillFull": "Determine the forces acting on a body resting on a smooth or rough inclined plane.",
+   "topicKey": "MAT2_STATICS_FORCE",
+   "topicLabel": "Forces and Equilibrium",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p64__q07__358",
+    "MathBook2__p72__q44__394",
+    "MathBook2__p83__q42__448"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s23",
+   "bloom": "Understand",
+   "skillFull": "Determine the condition under which the resultant of two forces is perpendicular to one of them, or has a stated relation to them.",
+   "topicKey": "MAT2_STATICS_FORCE",
+   "topicLabel": "Forces and Equilibrium",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p66__q18__368",
+    "MathBook2__p68__q24__375",
+    "MathBook2__p81__q31__437"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s24",
+   "bloom": "Remember",
+   "skillFull": "Recall the definition of the moment of a force about a point.",
+   "topicKey": "MAT2_STATICS_FRICTION",
+   "topicLabel": "Friction and Moments",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p67__q23__374"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s25",
+   "bloom": "Apply",
+   "skillFull": "Calculate the resultant of two parallel forces, like or unlike, and locate its line of action.",
+   "topicKey": "MAT2_STATICS_FRICTION",
+   "topicLabel": "Friction and Moments",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p64__q06__357",
+    "MathBook2__p71__q38__388",
+    "MathBook2__p77__q08__415",
+    "MathBook2__p80__q25__431"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s26",
+   "bloom": "Apply",
+   "skillFull": "Determine the point of application of the resultant of a system of parallel forces.",
+   "topicKey": "MAT2_STATICS_FRICTION",
+   "topicLabel": "Friction and Moments",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p73__q47__398",
+    "MathBook2__p77__q09__416"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s27",
+   "bloom": "Apply",
+   "skillFull": "Determine the reactions at the supports of a horizontal beam carrying given loads.",
+   "topicKey": "MAT2_STATICS_FRICTION",
+   "topicLabel": "Friction and Moments",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p68__q26__377",
+    "MathBook2__p73__q46__397",
+    "MathBook2__p76__q04__411",
+    "MathBook2__p79__q23__429"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s28",
+   "bloom": "Apply",
+   "skillFull": "Determine the position of the centre of gravity of a uniform rod, beam or lamina.",
+   "topicKey": "MAT2_STATICS_FRICTION",
+   "topicLabel": "Friction and Moments",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p65__q13__363",
+    "MathBook2__p70__q34__384",
+    "MathBook2__p82__q39__445"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s29",
+   "bloom": "Apply",
+   "skillFull": "Determine the conditions of equilibrium of a rod resting against a wall or on two supports.",
+   "topicKey": "MAT2_STATICS_FRICTION",
+   "topicLabel": "Friction and Moments",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p65__q11__362",
+    "MathBook2__p69__q31__381",
+    "MathBook2__p78__q14__421",
+    "MathBook2__p82__q40__446"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s30",
+   "bloom": "Remember",
+   "skillFull": "Recall the laws of friction and the definition of the coefficient of friction.",
+   "topicKey": "MAT2_STATICS_FRICTION",
+   "topicLabel": "Friction and Moments",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p69__q30__380"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s31",
+   "bloom": "Apply",
+   "skillFull": "Determine the least force required to move a body on a rough horizontal or inclined plane.",
+   "topicKey": "MAT2_STATICS_FRICTION",
+   "topicLabel": "Friction and Moments",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p74__q49__400",
+    "MathBook2__p78__q16__423"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s32",
+   "bloom": "Apply",
+   "skillFull": "Determine the angle of friction or the angle of repose for a body on a rough plane.",
+   "topicKey": "MAT2_STATICS_FRICTION",
+   "topicLabel": "Friction and Moments",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p69__q30__380",
+    "MathBook2__p83__q42__448"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b17_s33",
+   "bloom": "Apply",
+   "skillFull": "Calculate the moment of a couple and determine the equilibrium of coplanar couples.",
+   "topicKey": "MAT2_STATICS_FRICTION",
+   "topicLabel": "Friction and Moments",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p82__q38__444",
+    "MathBook2__p78__q17__424"
+   ]
+  }
+ ],
+ "prereqs": [
+  {
+   "fromTempId": "MathBook2_b17_s2",
+   "toTempId": "MathBook2_b17_s1",
+   "toDescription": "Recall the principal-value range of each inverse trigonometric function and the relations between complementary pairs.",
+   "toTopicKeyGuess": "MAT2_INVERSE_TRIG"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s3",
+   "toTempId": "MathBook2_b17_s1",
+   "toDescription": "Recall the principal-value range of each inverse trigonometric function and the relations between complementary pairs.",
+   "toTopicKeyGuess": "MAT2_INVERSE_TRIG"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s4",
+   "toTempId": "MathBook2_b17_s1",
+   "toDescription": "Recall the principal-value range of each inverse trigonometric function and the relations between complementary pairs.",
+   "toTopicKeyGuess": "MAT2_INVERSE_TRIG"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s5",
+   "toTempId": "MathBook2_b17_s3",
+   "toDescription": "Demonstrate an identity expressing one inverse trigonometric function in terms of another.",
+   "toTopicKeyGuess": "MAT2_INVERSE_TRIG"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s6",
+   "toTempId": "MathBook2_b17_s2",
+   "toDescription": "Simplify a nested composition of several inverse trigonometric and trigonometric functions.",
+   "toTopicKeyGuess": "MAT2_INVERSE_TRIG"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s8",
+   "toTempId": "MathBook2_b17_s7",
+   "toDescription": "Solve a trigonometric equation by reducing it to a quadratic in a single trigonometric ratio.",
+   "toTopicKeyGuess": "MAT2_TRIG_EQUATION"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s9",
+   "toTempId": "MathBook2_b17_s7",
+   "toDescription": "Solve a trigonometric equation by reducing it to a quadratic in a single trigonometric ratio.",
+   "toTopicKeyGuess": "MAT2_TRIG_EQUATION"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s10",
+   "toTempId": "MathBook2_b17_s7",
+   "toDescription": "Solve a trigonometric equation by reducing it to a quadratic in a single trigonometric ratio.",
+   "toTopicKeyGuess": "MAT2_TRIG_EQUATION"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s11",
+   "toTempId": "MathBook2_b17_s7",
+   "toDescription": "Solve a trigonometric equation by reducing it to a quadratic in a single trigonometric ratio.",
+   "toTopicKeyGuess": "MAT2_TRIG_EQUATION"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s12",
+   "toTempId": "MathBook2_b17_s7",
+   "toDescription": "Solve a trigonometric equation by reducing it to a quadratic in a single trigonometric ratio.",
+   "toTopicKeyGuess": "MAT2_TRIG_EQUATION"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s14",
+   "toTempId": "MathBook2_b17_s13",
+   "toDescription": "Recall the parallelogram law for the resultant of two forces acting at a point.",
+   "toTopicKeyGuess": "MAT2_STATICS_FORCE"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s15",
+   "toTempId": "MathBook2_b17_s14",
+   "toDescription": "Calculate the magnitude and the direction of the resultant of two forces acting at a given angle.",
+   "toTopicKeyGuess": "MAT2_STATICS_FORCE"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s16",
+   "toTempId": "MathBook2_b17_s14",
+   "toDescription": "Calculate the magnitude and the direction of the resultant of two forces acting at a given angle.",
+   "toTopicKeyGuess": "MAT2_STATICS_FORCE"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s17",
+   "toTempId": "MathBook2_b17_s13",
+   "toDescription": "Recall the parallelogram law for the resultant of two forces acting at a point.",
+   "toTopicKeyGuess": "MAT2_STATICS_FORCE"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s18",
+   "toTempId": "MathBook2_b17_s13",
+   "toDescription": "Recall the parallelogram law for the resultant of two forces acting at a point.",
+   "toTopicKeyGuess": "MAT2_STATICS_FORCE"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s19",
+   "toTempId": "MathBook2_b17_s18",
+   "toDescription": "Recall the triangle law of forces and Lami's theorem for three concurrent forces in equilibrium.",
+   "toTopicKeyGuess": "MAT2_STATICS_FORCE"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s20",
+   "toTempId": "MathBook2_b17_s17",
+   "toDescription": "Determine the resultant of several concurrent forces by resolving them into rectangular components.",
+   "toTopicKeyGuess": "MAT2_STATICS_FORCE"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s21",
+   "toTempId": "MathBook2_b17_s19",
+   "toDescription": "Determine unknown forces in a system of three concurrent forces in equilibrium, using Lami's theorem.",
+   "toTopicKeyGuess": "MAT2_STATICS_FORCE"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s22",
+   "toTempId": "MathBook2_b17_s17",
+   "toDescription": "Determine the resultant of several concurrent forces by resolving them into rectangular components.",
+   "toTopicKeyGuess": "MAT2_STATICS_FORCE"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s23",
+   "toTempId": "MathBook2_b17_s15",
+   "toDescription": "Determine the angle between two forces from the magnitude of their resultant.",
+   "toTopicKeyGuess": "MAT2_STATICS_FORCE"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s23",
+   "toTempId": "MathBook2_b17_s13",
+   "toDescription": "Recall the parallelogram law for the resultant of two forces acting at a point.",
+   "toTopicKeyGuess": "MAT2_STATICS_FORCE"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s25",
+   "toTempId": "MathBook2_b17_s24",
+   "toDescription": "Recall the definition of the moment of a force about a point.",
+   "toTopicKeyGuess": "MAT2_STATICS_FRICTION"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s26",
+   "toTempId": "MathBook2_b17_s25",
+   "toDescription": "Calculate the resultant of two parallel forces, like or unlike, and locate its line of action.",
+   "toTopicKeyGuess": "MAT2_STATICS_FRICTION"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s27",
+   "toTempId": "MathBook2_b17_s25",
+   "toDescription": "Calculate the resultant of two parallel forces, like or unlike, and locate its line of action.",
+   "toTopicKeyGuess": "MAT2_STATICS_FRICTION"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s28",
+   "toTempId": "MathBook2_b17_s24",
+   "toDescription": "Recall the definition of the moment of a force about a point.",
+   "toTopicKeyGuess": "MAT2_STATICS_FRICTION"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s29",
+   "toTempId": "MathBook2_b17_s27",
+   "toDescription": "Determine the reactions at the supports of a horizontal beam carrying given loads.",
+   "toTopicKeyGuess": "MAT2_STATICS_FRICTION"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s29",
+   "toTempId": "MathBook2_b17_s28",
+   "toDescription": "Determine the position of the centre of gravity of a uniform rod, beam or lamina.",
+   "toTopicKeyGuess": "MAT2_STATICS_FRICTION"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s31",
+   "toTempId": "MathBook2_b17_s30",
+   "toDescription": "Recall the laws of friction and the definition of the coefficient of friction.",
+   "toTopicKeyGuess": "MAT2_STATICS_FRICTION"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s32",
+   "toTempId": "MathBook2_b17_s30",
+   "toDescription": "Recall the laws of friction and the definition of the coefficient of friction.",
+   "toTopicKeyGuess": "MAT2_STATICS_FRICTION"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s33",
+   "toTempId": "MathBook2_b17_s24",
+   "toDescription": "Recall the definition of the moment of a force about a point.",
+   "toTopicKeyGuess": "MAT2_STATICS_FRICTION"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s22",
+   "toTempId": "MathBook2_b17_s30",
+   "toDescription": "Recall the laws of friction and the definition of the coefficient of friction.",
+   "toTopicKeyGuess": "MAT2_STATICS_FRICTION"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s31",
+   "toTempId": "MathBook2_b17_s22",
+   "toDescription": "Determine the forces acting on a body resting on a smooth or rough inclined plane.",
+   "toTopicKeyGuess": "MAT2_STATICS_FORCE"
+  },
+  {
+   "fromTempId": "MathBook2_b17_s32",
+   "toTempId": "MathBook2_b17_s31",
+   "toDescription": "Determine the least force required to move a body on a rough horizontal or inclined plane.",
+   "toTopicKeyGuess": "MAT2_STATICS_FRICTION"
+  }
+ ],
+ "reusedExistingSkills": [
+  {
+   "existingSkillId": "MAT2_TRIG_EQUATION1",
+   "sourceItemIds": [
+    "MathBook2__p56__q30__307",
+    "MathBook2__p61__q39__347",
+    "MathBook2__p62__q43__351"
+   ]
+  },
+  {
+   "existingSkillId": "MAT2_INVERSE_TRIG0",
+   "sourceItemIds": [
+    "MathBook2__p61__q33__341",
+    "MathBook2__p60__q26__334"
+   ]
+  },
+  {
+   "existingSkillId": "MAT2_INVERSE_TRIG3",
+   "sourceItemIds": [
+    "MathBook2__p58__q07__315",
+    "MathBook2__p61__q32__340"
+   ]
+  }
+ ],
+ "newTopicsProposed": [],
+ "skippedItems": [],
+ "notes": "Records 301-450 of MathBook2 (parsed_items.jsonl lines 2791-2940). Coverage: the tail of inverse trigonometric functions and trigonometric equations (HM2 Ch7, records 301-352), then statics (HM2 Ch8, records 353-450) split across the two syllabus sub-topics MAT2_STATICS_FORCE (concurrent forces, resultants, equilibrium, Lami's theorem) and MAT2_STATICS_FRICTION (moments, parallel forces, beams, centre of gravity, friction and couples). Third consecutive batch needing no new topics. All descriptions are plain text with no backslashes."
+}

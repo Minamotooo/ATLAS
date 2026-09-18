@@ -1,0 +1,900 @@
+{
+ "chunkLabel": "PhyBook1_b19",
+ "subject": "Physics",
+ "skills": [
+  {
+   "tempId": "PhyBook1_b19_s1",
+   "bloom": "Remember",
+   "skillFull": "Recall the dimensional formula of a given physical quantity.",
+   "topicKey": "PHY1_DIMENSIONS",
+   "topicLabel": "Dimensional Analysis",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p2__q01__0",
+    "PhyBook1__p2__q02__1"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s2",
+   "bloom": "Apply",
+   "skillFull": "Determine the dimensions of a derived physical quantity from its defining equation.",
+   "topicKey": "PHY1_DIMENSIONS",
+   "topicLabel": "Dimensional Analysis",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p2__q02__1"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s3",
+   "bloom": "Understand",
+   "skillFull": "Classify a set of physical quantities as scalar or as vector quantities.",
+   "topicKey": "PHY1_MEASUREMENT_UNITS",
+   "topicLabel": "Units and Measurement",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p25__q49__134"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s4",
+   "bloom": "Apply",
+   "skillFull": "Calculate a length reading from the main-scale and vernier-scale divisions of a slide calliper or screw gauge.",
+   "topicKey": "PHY1_MEASUREMENT_UNITS",
+   "topicLabel": "Units and Measurement",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p2__q03__2"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s5",
+   "bloom": "Apply",
+   "skillFull": "Calculate the resultant of two vectors from their magnitudes and the angle between them.",
+   "topicKey": "PHY1_VECTOR_ALGEBRA",
+   "topicLabel": "Vector Addition and Resolution",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p2__q02__4",
+    "PhyBook1__p5__q09__25",
+    "PhyBook1__p6__q15__31"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s6",
+   "bloom": "Apply",
+   "skillFull": "Determine the angle between two vectors from a stated relation between the magnitudes of their sum and their difference.",
+   "topicKey": "PHY1_VECTOR_ALGEBRA",
+   "topicLabel": "Vector Addition and Resolution",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p4__q12__14",
+    "PhyBook1__p4__q15__15",
+    "PhyBook1__p5__q05__21"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s7",
+   "bloom": "Apply",
+   "skillFull": "Resolve a vector into its rectangular components.",
+   "topicKey": "PHY1_VECTOR_ALGEBRA",
+   "topicLabel": "Vector Addition and Resolution",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p3__q06__8",
+    "PhyBook1__p6__q19__35"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s8",
+   "bloom": "Apply",
+   "skillFull": "Determine the greatest and the least possible magnitudes of the resultant of two vectors.",
+   "topicKey": "PHY1_VECTOR_ALGEBRA",
+   "topicLabel": "Vector Addition and Resolution",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p5__q08__24"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s9",
+   "bloom": "Apply",
+   "skillFull": "Determine the resultant velocity of a boat or swimmer crossing a stream, and the direction in which to steer.",
+   "topicKey": "PHY1_VECTOR_ALGEBRA",
+   "topicLabel": "Vector Addition and Resolution",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p2__q04__6",
+    "PhyBook1__p3__q09__9",
+    "PhyBook1__p4__q14__14"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s10",
+   "bloom": "Apply",
+   "skillFull": "Determine the apparent direction of rain or wind as seen by a moving observer.",
+   "topicKey": "PHY1_VECTOR_ALGEBRA",
+   "topicLabel": "Vector Addition and Resolution",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p3__q08__10",
+    "PhyBook1__p3__q07__7"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s11",
+   "bloom": "Apply",
+   "skillFull": "Calculate the scalar product of two vectors from their rectangular components.",
+   "topicKey": "PHY1_VECTOR_PRODUCTS",
+   "topicLabel": "Scalar and Vector Products",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p5__q02__18",
+    "PhyBook1__p2__q01__3"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s12",
+   "bloom": "Apply",
+   "skillFull": "Calculate the vector product of two vectors from their rectangular components.",
+   "topicKey": "PHY1_VECTOR_PRODUCTS",
+   "topicLabel": "Scalar and Vector Products",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p6__q17__33",
+    "PhyBook1__p2__q01__3"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s13",
+   "bloom": "Apply",
+   "skillFull": "Calculate the angle between two vectors using their scalar or their vector product.",
+   "topicKey": "PHY1_VECTOR_PRODUCTS",
+   "topicLabel": "Scalar and Vector Products",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p6__q13__29",
+    "PhyBook1__p6__q18__34"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s14",
+   "bloom": "Apply",
+   "skillFull": "Determine the value of a parameter for which two given vectors are perpendicular or parallel.",
+   "topicKey": "PHY1_VECTOR_PRODUCTS",
+   "topicLabel": "Scalar and Vector Products",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p5__q06__22",
+    "PhyBook1__p5__q10__26"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s15",
+   "bloom": "Apply",
+   "skillFull": "Calculate the area of a parallelogram or a triangle using the vector product of two vectors.",
+   "topicKey": "PHY1_VECTOR_PRODUCTS",
+   "topicLabel": "Scalar and Vector Products",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p5__q01__17",
+    "PhyBook1__p5__q11__27",
+    "PhyBook1__p6__q16__32",
+    "PhyBook1__p20__q13__98"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s16",
+   "bloom": "Apply",
+   "skillFull": "Calculate the work done by a force using the scalar product of the force and the displacement.",
+   "topicKey": "PHY1_VECTOR_PRODUCTS",
+   "topicLabel": "Scalar and Vector Products",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p6__q14__30"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s17",
+   "bloom": "Apply",
+   "skillFull": "Calculate the moment of a force about a point using the vector product of position and force.",
+   "topicKey": "PHY1_VECTOR_PRODUCTS",
+   "topicLabel": "Scalar and Vector Products",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p6__q12__28"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s18",
+   "bloom": "Apply",
+   "skillFull": "Calculate the divergence or the curl of a given vector field.",
+   "topicKey": "PHY1_VECTOR_CALCULUS",
+   "topicLabel": "Vector Differentiation and Gradient",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p5__q03__19",
+    "PhyBook1__p4__q11__11"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s19",
+   "bloom": "Apply",
+   "skillFull": "Determine the value of a constant that makes a vector field solenoidal or irrotational.",
+   "topicKey": "PHY1_VECTOR_CALCULUS",
+   "topicLabel": "Vector Differentiation and Gradient",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p2__q03__5",
+    "PhyBook1__p5__q07__23"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s20",
+   "bloom": "Apply",
+   "skillFull": "Calculate the velocity and the acceleration of a particle from its position vector given as a function of time.",
+   "topicKey": "PHY1_VECTOR_CALCULUS",
+   "topicLabel": "Vector Differentiation and Gradient",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p19__q06__91"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s21",
+   "bloom": "Remember",
+   "skillFull": "Recall the equations of motion of a body moving with uniform acceleration.",
+   "topicKey": "PHY1_KINEMATICS",
+   "topicLabel": "Motion in a Straight Line",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p21__q19__104"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s22",
+   "bloom": "Apply",
+   "skillFull": "Calculate the displacement, velocity or acceleration of a body moving with uniform acceleration.",
+   "topicKey": "PHY1_KINEMATICS",
+   "topicLabel": "Motion in a Straight Line",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p10__q14__49",
+    "PhyBook1__p15__q34__69",
+    "PhyBook1__p23__q38__123"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s23",
+   "bloom": "Apply",
+   "skillFull": "Calculate the distance a body travels during a stated second of its motion.",
+   "topicKey": "PHY1_KINEMATICS",
+   "topicLabel": "Motion in a Straight Line",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p25__q51__136",
+    "PhyBook1__p20__q16__101"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s24",
+   "bloom": "Apply",
+   "skillFull": "Determine the motion of a body falling freely under gravity from a stated height.",
+   "topicKey": "PHY1_KINEMATICS",
+   "topicLabel": "Motion in a Straight Line",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p9__q10__45",
+    "PhyBook1__p13__q23__58",
+    "PhyBook1__p23__q36__121"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s25",
+   "bloom": "Apply",
+   "skillFull": "Determine the motion of a body projected vertically upward under gravity.",
+   "topicKey": "PHY1_KINEMATICS",
+   "topicLabel": "Motion in a Straight Line",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p9__q09__44",
+    "PhyBook1__p11__q19__54",
+    "PhyBook1__p23__q39__124"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s26",
+   "bloom": "Apply",
+   "skillFull": "Calculate the retardation and the stopping distance of a decelerating vehicle.",
+   "topicKey": "PHY1_KINEMATICS",
+   "topicLabel": "Motion in a Straight Line",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p7__q02__37",
+    "PhyBook1__p17__q41__76",
+    "PhyBook1__p24__q47__132"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s27",
+   "bloom": "Apply",
+   "skillFull": "Calculate the average velocity or the average speed of a journey completed in stages.",
+   "topicKey": "PHY1_KINEMATICS",
+   "topicLabel": "Motion in a Straight Line",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p20__q11__96",
+    "PhyBook1__p24__q43__128"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s28",
+   "bloom": "Apply",
+   "skillFull": "Determine the motion of a body from a velocity-time or a displacement-time graph.",
+   "topicKey": "PHY1_KINEMATICS",
+   "topicLabel": "Motion in a Straight Line",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p24__q42__127",
+    "PhyBook1__p25__q50__135"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s29",
+   "bloom": "Apply",
+   "skillFull": "Calculate the velocity and the acceleration by differentiating a displacement given as a function of time.",
+   "topicKey": "PHY1_KINEMATICS",
+   "topicLabel": "Motion in a Straight Line",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p20__q09__94",
+    "PhyBook1__p21__q23__108",
+    "PhyBook1__p24__q48__133"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s30",
+   "bloom": "Apply",
+   "skillFull": "Calculate the retarding force acting when a bullet penetrates a fixed thickness of a medium.",
+   "topicKey": "PHY1_KINEMATICS",
+   "topicLabel": "Motion in a Straight Line",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p11__q20__55",
+    "PhyBook1__p15__q32__67",
+    "PhyBook1__p24__q45__130"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s31",
+   "bloom": "Apply",
+   "skillFull": "Determine how many planks, or what thickness, a bullet can penetrate before coming to rest.",
+   "topicKey": "PHY1_KINEMATICS",
+   "topicLabel": "Motion in a Straight Line",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p9__q11__46",
+    "PhyBook1__p16__q39__74"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s32",
+   "bloom": "Remember",
+   "skillFull": "Recall the expressions for the time of flight, the maximum height and the horizontal range of a projectile.",
+   "topicKey": "PHY1_PROJECTILE",
+   "topicLabel": "Projectile Motion",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p21__q28__113"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s33",
+   "bloom": "Apply",
+   "skillFull": "Calculate the range, the maximum height or the time of flight of a projectile from its initial velocity and angle of projection.",
+   "topicKey": "PHY1_PROJECTILE",
+   "topicLabel": "Projectile Motion",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p7__q01__36",
+    "PhyBook1__p17__q42__77",
+    "PhyBook1__p19__q01__86"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s34",
+   "bloom": "Apply",
+   "skillFull": "Determine the angle of projection required for a stated range, or for the maximum range.",
+   "topicKey": "PHY1_PROJECTILE",
+   "topicLabel": "Projectile Motion",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p19__q05__90",
+    "PhyBook1__p21__q24__109"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s35",
+   "bloom": "Apply",
+   "skillFull": "Calculate the motion of a body projected horizontally from a stated height.",
+   "topicKey": "PHY1_PROJECTILE",
+   "topicLabel": "Projectile Motion",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p19__q08__93",
+    "PhyBook1__p20__q15__100",
+    "PhyBook1__p20__q17__102"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s36",
+   "bloom": "Apply",
+   "skillFull": "Determine the velocity of a projectile at a stated point of its path.",
+   "topicKey": "PHY1_PROJECTILE",
+   "topicLabel": "Projectile Motion",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p19__q03__88",
+    "PhyBook1__p21__q20__105"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s37",
+   "bloom": "Apply",
+   "skillFull": "Calculate the relative velocity of one body with respect to another moving in the same or in the opposite direction.",
+   "topicKey": "PHY1_RELATIVE_MOTION",
+   "topicLabel": "Relative Velocity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p14__q28__63",
+    "PhyBook1__p18__q48__83",
+    "PhyBook1__p20__q14__99"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s38",
+   "bloom": "Apply",
+   "skillFull": "Determine the time one vehicle takes to overtake or to meet another.",
+   "topicKey": "PHY1_RELATIVE_MOTION",
+   "topicLabel": "Relative Velocity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p13__q24__59",
+    "PhyBook1__p20__q12__97"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s39",
+   "bloom": "Apply",
+   "skillFull": "Calculate the time a train takes to pass a stationary object or another train.",
+   "topicKey": "PHY1_RELATIVE_MOTION",
+   "topicLabel": "Relative Velocity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p20__q18__103",
+    "PhyBook1__p24__q46__131"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s40",
+   "bloom": "Remember",
+   "skillFull": "Recall Newton's three laws of motion.",
+   "topicKey": "PHY1_NEWTON_LAWS",
+   "topicLabel": "Newton's Laws of Motion",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p25__q01__137"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s41",
+   "bloom": "Apply",
+   "skillFull": "Calculate the force required to produce a stated acceleration in a body of given mass.",
+   "topicKey": "PHY1_NEWTON_LAWS",
+   "topicLabel": "Newton's Laws of Motion",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p21__q26__111",
+    "PhyBook1__p23__q33__118",
+    "PhyBook1__p27__q10__146"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s42",
+   "bloom": "Apply",
+   "skillFull": "Calculate the impulse or the change of momentum produced by a force acting for a stated time.",
+   "topicKey": "PHY1_MOMENTUM",
+   "topicLabel": "Momentum, Impulse and Collisions",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p7__q03__38",
+    "PhyBook1__p26__q05__141",
+    "PhyBook1__p27__q11__147"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s43",
+   "bloom": "Apply",
+   "skillFull": "Determine the recoil velocity of a gun, or the velocities after an explosion, using conservation of momentum.",
+   "topicKey": "PHY1_MOMENTUM",
+   "topicLabel": "Momentum, Impulse and Collisions",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p12__q21__56",
+    "PhyBook1__p22__q29__114",
+    "PhyBook1__p26__q03__139"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s44",
+   "bloom": "Apply",
+   "skillFull": "Calculate the thrust or the acceleration of a rocket from its rate of fuel ejection.",
+   "topicKey": "PHY1_MOMENTUM",
+   "topicLabel": "Momentum, Impulse and Collisions",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p26__q04__140"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s45",
+   "bloom": "Apply",
+   "skillFull": "Determine the position of the centre of mass of a system of particles.",
+   "topicKey": "PHY1_MOMENTUM",
+   "topicLabel": "Momentum, Impulse and Collisions",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p26__q08__144"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s46",
+   "bloom": "Apply",
+   "skillFull": "Calculate the centripetal force or the centripetal acceleration of a body moving in a circle.",
+   "topicKey": "PHY1_CIRCULAR_MOTION",
+   "topicLabel": "Circular Motion",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p27__q12__148",
+    "PhyBook1__p27__q13__149"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s47",
+   "bloom": "Apply",
+   "skillFull": "Calculate the angular velocity of a rotating body or of the hands of a clock.",
+   "topicKey": "PHY1_CIRCULAR_MOTION",
+   "topicLabel": "Circular Motion",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p16__q36__71",
+    "PhyBook1__p20__q10__95",
+    "PhyBook1__p21__q27__112"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s48",
+   "bloom": "Apply",
+   "skillFull": "Determine the angle of banking of a road or a railway track for a stated speed.",
+   "topicKey": "PHY1_CIRCULAR_MOTION",
+   "topicLabel": "Circular Motion",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p26__q07__143",
+    "PhyBook1__p26__q09__145"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b19_s49",
+   "bloom": "Apply",
+   "skillFull": "Calculate the moment of inertia or the radius of gyration of a rotating body.",
+   "topicKey": "PHY1_ROTATIONAL",
+   "topicLabel": "Rotational Motion and Angular Momentum",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p25__q02__138",
+    "PhyBook1__p26__q06__142"
+   ]
+  }
+ ],
+ "prereqs": [
+  {
+   "fromTempId": "PhyBook1_b19_s2",
+   "toTempId": "PhyBook1_b19_s1",
+   "toDescription": "Recall the dimensional formula of a given physical quantity.",
+   "toTopicKeyGuess": "PHY1_DIMENSIONS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s3",
+   "toTempId": "PhyBook1_b19_s1",
+   "toDescription": "Recall the dimensional formula of a given physical quantity.",
+   "toTopicKeyGuess": "PHY1_DIMENSIONS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s4",
+   "toTempId": "PhyBook1_b19_s1",
+   "toDescription": "Recall the dimensional formula of a given physical quantity.",
+   "toTopicKeyGuess": "PHY1_DIMENSIONS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s5",
+   "toTempId": "PhyBook1_b19_s3",
+   "toDescription": "Classify a set of physical quantities as scalar or as vector quantities.",
+   "toTopicKeyGuess": "PHY1_MEASUREMENT_UNITS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s6",
+   "toTempId": "PhyBook1_b19_s5",
+   "toDescription": "Calculate the resultant of two vectors from their magnitudes and the angle between them.",
+   "toTopicKeyGuess": "PHY1_VECTOR_ALGEBRA"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s7",
+   "toTempId": "PhyBook1_b19_s5",
+   "toDescription": "Calculate the resultant of two vectors from their magnitudes and the angle between them.",
+   "toTopicKeyGuess": "PHY1_VECTOR_ALGEBRA"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s8",
+   "toTempId": "PhyBook1_b19_s5",
+   "toDescription": "Calculate the resultant of two vectors from their magnitudes and the angle between them.",
+   "toTopicKeyGuess": "PHY1_VECTOR_ALGEBRA"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s9",
+   "toTempId": "PhyBook1_b19_s7",
+   "toDescription": "Resolve a vector into its rectangular components.",
+   "toTopicKeyGuess": "PHY1_VECTOR_ALGEBRA"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s10",
+   "toTempId": "PhyBook1_b19_s9",
+   "toDescription": "Determine the resultant velocity of a boat or swimmer crossing a stream, and the direction in which to steer.",
+   "toTopicKeyGuess": "PHY1_VECTOR_ALGEBRA"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s11",
+   "toTempId": "PhyBook1_b19_s7",
+   "toDescription": "Resolve a vector into its rectangular components.",
+   "toTopicKeyGuess": "PHY1_VECTOR_ALGEBRA"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s12",
+   "toTempId": "PhyBook1_b19_s7",
+   "toDescription": "Resolve a vector into its rectangular components.",
+   "toTopicKeyGuess": "PHY1_VECTOR_ALGEBRA"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s13",
+   "toTempId": "PhyBook1_b19_s11",
+   "toDescription": "Calculate the scalar product of two vectors from their rectangular components.",
+   "toTopicKeyGuess": "PHY1_VECTOR_PRODUCTS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s13",
+   "toTempId": "PhyBook1_b19_s12",
+   "toDescription": "Calculate the vector product of two vectors from their rectangular components.",
+   "toTopicKeyGuess": "PHY1_VECTOR_PRODUCTS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s14",
+   "toTempId": "PhyBook1_b19_s11",
+   "toDescription": "Calculate the scalar product of two vectors from their rectangular components.",
+   "toTopicKeyGuess": "PHY1_VECTOR_PRODUCTS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s15",
+   "toTempId": "PhyBook1_b19_s12",
+   "toDescription": "Calculate the vector product of two vectors from their rectangular components.",
+   "toTopicKeyGuess": "PHY1_VECTOR_PRODUCTS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s16",
+   "toTempId": "PhyBook1_b19_s11",
+   "toDescription": "Calculate the scalar product of two vectors from their rectangular components.",
+   "toTopicKeyGuess": "PHY1_VECTOR_PRODUCTS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s17",
+   "toTempId": "PhyBook1_b19_s12",
+   "toDescription": "Calculate the vector product of two vectors from their rectangular components.",
+   "toTopicKeyGuess": "PHY1_VECTOR_PRODUCTS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s18",
+   "toTempId": "PhyBook1_b19_s12",
+   "toDescription": "Calculate the vector product of two vectors from their rectangular components.",
+   "toTopicKeyGuess": "PHY1_VECTOR_PRODUCTS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s19",
+   "toTempId": "PhyBook1_b19_s18",
+   "toDescription": "Calculate the divergence or the curl of a given vector field.",
+   "toTopicKeyGuess": "PHY1_VECTOR_CALCULUS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s20",
+   "toTempId": "PhyBook1_b19_s7",
+   "toDescription": "Resolve a vector into its rectangular components.",
+   "toTopicKeyGuess": "PHY1_VECTOR_ALGEBRA"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s22",
+   "toTempId": "PhyBook1_b19_s21",
+   "toDescription": "Recall the equations of motion of a body moving with uniform acceleration.",
+   "toTopicKeyGuess": "PHY1_KINEMATICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s23",
+   "toTempId": "PhyBook1_b19_s22",
+   "toDescription": "Calculate the displacement, velocity or acceleration of a body moving with uniform acceleration.",
+   "toTopicKeyGuess": "PHY1_KINEMATICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s24",
+   "toTempId": "PhyBook1_b19_s22",
+   "toDescription": "Calculate the displacement, velocity or acceleration of a body moving with uniform acceleration.",
+   "toTopicKeyGuess": "PHY1_KINEMATICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s25",
+   "toTempId": "PhyBook1_b19_s24",
+   "toDescription": "Determine the motion of a body falling freely under gravity from a stated height.",
+   "toTopicKeyGuess": "PHY1_KINEMATICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s26",
+   "toTempId": "PhyBook1_b19_s22",
+   "toDescription": "Calculate the displacement, velocity or acceleration of a body moving with uniform acceleration.",
+   "toTopicKeyGuess": "PHY1_KINEMATICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s27",
+   "toTempId": "PhyBook1_b19_s22",
+   "toDescription": "Calculate the displacement, velocity or acceleration of a body moving with uniform acceleration.",
+   "toTopicKeyGuess": "PHY1_KINEMATICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s28",
+   "toTempId": "PhyBook1_b19_s22",
+   "toDescription": "Calculate the displacement, velocity or acceleration of a body moving with uniform acceleration.",
+   "toTopicKeyGuess": "PHY1_KINEMATICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s29",
+   "toTempId": "PhyBook1_b19_s22",
+   "toDescription": "Calculate the displacement, velocity or acceleration of a body moving with uniform acceleration.",
+   "toTopicKeyGuess": "PHY1_KINEMATICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s30",
+   "toTempId": "PhyBook1_b19_s26",
+   "toDescription": "Calculate the retardation and the stopping distance of a decelerating vehicle.",
+   "toTopicKeyGuess": "PHY1_KINEMATICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s31",
+   "toTempId": "PhyBook1_b19_s30",
+   "toDescription": "Calculate the retarding force acting when a bullet penetrates a fixed thickness of a medium.",
+   "toTopicKeyGuess": "PHY1_KINEMATICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s32",
+   "toTempId": "PhyBook1_b19_s21",
+   "toDescription": "Recall the equations of motion of a body moving with uniform acceleration.",
+   "toTopicKeyGuess": "PHY1_KINEMATICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s33",
+   "toTempId": "PhyBook1_b19_s32",
+   "toDescription": "Recall the expressions for the time of flight, the maximum height and the horizontal range of a projectile.",
+   "toTopicKeyGuess": "PHY1_PROJECTILE"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s33",
+   "toTempId": "PhyBook1_b19_s7",
+   "toDescription": "Resolve a vector into its rectangular components.",
+   "toTopicKeyGuess": "PHY1_VECTOR_ALGEBRA"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s34",
+   "toTempId": "PhyBook1_b19_s33",
+   "toDescription": "Calculate the range, the maximum height or the time of flight of a projectile from its initial velocity and angle of projection.",
+   "toTopicKeyGuess": "PHY1_PROJECTILE"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s35",
+   "toTempId": "PhyBook1_b19_s32",
+   "toDescription": "Recall the expressions for the time of flight, the maximum height and the horizontal range of a projectile.",
+   "toTopicKeyGuess": "PHY1_PROJECTILE"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s36",
+   "toTempId": "PhyBook1_b19_s33",
+   "toDescription": "Calculate the range, the maximum height or the time of flight of a projectile from its initial velocity and angle of projection.",
+   "toTopicKeyGuess": "PHY1_PROJECTILE"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s37",
+   "toTempId": "PhyBook1_b19_s22",
+   "toDescription": "Calculate the displacement, velocity or acceleration of a body moving with uniform acceleration.",
+   "toTopicKeyGuess": "PHY1_KINEMATICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s38",
+   "toTempId": "PhyBook1_b19_s37",
+   "toDescription": "Calculate the relative velocity of one body with respect to another moving in the same or in the opposite direction.",
+   "toTopicKeyGuess": "PHY1_RELATIVE_MOTION"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s39",
+   "toTempId": "PhyBook1_b19_s37",
+   "toDescription": "Calculate the relative velocity of one body with respect to another moving in the same or in the opposite direction.",
+   "toTopicKeyGuess": "PHY1_RELATIVE_MOTION"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s41",
+   "toTempId": "PhyBook1_b19_s40",
+   "toDescription": "Recall Newton's three laws of motion.",
+   "toTopicKeyGuess": "PHY1_NEWTON_LAWS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s42",
+   "toTempId": "PhyBook1_b19_s41",
+   "toDescription": "Calculate the force required to produce a stated acceleration in a body of given mass.",
+   "toTopicKeyGuess": "PHY1_NEWTON_LAWS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s43",
+   "toTempId": "PhyBook1_b19_s42",
+   "toDescription": "Calculate the impulse or the change of momentum produced by a force acting for a stated time.",
+   "toTopicKeyGuess": "PHY1_MOMENTUM"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s44",
+   "toTempId": "PhyBook1_b19_s43",
+   "toDescription": "Determine the recoil velocity of a gun, or the velocities after an explosion, using conservation of momentum.",
+   "toTopicKeyGuess": "PHY1_MOMENTUM"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s45",
+   "toTempId": "PhyBook1_b19_s40",
+   "toDescription": "Recall Newton's three laws of motion.",
+   "toTopicKeyGuess": "PHY1_NEWTON_LAWS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s46",
+   "toTempId": "PhyBook1_b19_s41",
+   "toDescription": "Calculate the force required to produce a stated acceleration in a body of given mass.",
+   "toTopicKeyGuess": "PHY1_NEWTON_LAWS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s47",
+   "toTempId": "PhyBook1_b19_s21",
+   "toDescription": "Recall the equations of motion of a body moving with uniform acceleration.",
+   "toTopicKeyGuess": "PHY1_KINEMATICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s48",
+   "toTempId": "PhyBook1_b19_s46",
+   "toDescription": "Calculate the centripetal force or the centripetal acceleration of a body moving in a circle.",
+   "toTopicKeyGuess": "PHY1_CIRCULAR_MOTION"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s49",
+   "toTempId": "PhyBook1_b19_s47",
+   "toDescription": "Calculate the angular velocity of a rotating body or of the hands of a clock.",
+   "toTopicKeyGuess": "PHY1_CIRCULAR_MOTION"
+  },
+  {
+   "fromTempId": "PhyBook1_b19_s46",
+   "toTempId": "PhyBook1_b19_s47",
+   "toDescription": "Calculate the angular velocity of a rotating body or of the hands of a clock.",
+   "toTopicKeyGuess": "PHY1_CIRCULAR_MOTION"
+  }
+ ],
+ "reusedExistingSkills": [],
+ "newTopicsProposed": [],
+ "skippedItems": [],
+ "notes": "Records 1-150 of PhyBook1 (parsed_items.jsonl lines 3096-3245). FIRST PHYSICS BATCH. Coverage maps onto four Physics 1st Paper chapters: measurement and dimensions (Ch1, records 1-3), vectors (Ch2, records 4-36), kinematics (Ch3, records 37-136) and the opening of Newtonian mechanics (Ch4, records 137-150). Uses syllabus topic codes directly. The Physics half of the taxonomy had no content at all before this batch - all twelve topics touched here were empty. No new topics needed. All descriptions are plain text with no backslashes."
+}

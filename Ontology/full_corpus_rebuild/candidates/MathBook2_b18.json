@@ -1,0 +1,707 @@
+{
+ "chunkLabel": "MathBook2_b18",
+ "subject": "Mathematics",
+ "skills": [
+  {
+   "tempId": "MathBook2_b18_s1",
+   "bloom": "Remember",
+   "skillFull": "Recall the equations of motion for a body moving in a straight line with uniform acceleration.",
+   "topicKey": "MAT2_PLANE_MOTION",
+   "topicLabel": "Motion in a Plane",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p93__q07__504"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s2",
+   "bloom": "Apply",
+   "skillFull": "Calculate the displacement, velocity or acceleration of a body moving with uniform acceleration.",
+   "topicKey": "MAT2_PLANE_MOTION",
+   "topicLabel": "Motion in a Plane",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p86__q06__463",
+    "MathBook2__p94__q09__506",
+    "MathBook2__p100__q47__544"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s3",
+   "bloom": "Apply",
+   "skillFull": "Calculate the distance a body travels during a stated second of its motion.",
+   "topicKey": "MAT2_PLANE_MOTION",
+   "topicLabel": "Motion in a Plane",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p95__q19__516",
+    "MathBook2__p92__q37__494"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s4",
+   "bloom": "Apply",
+   "skillFull": "Determine the motion of a body falling freely under gravity from a stated height.",
+   "topicKey": "MAT2_PLANE_MOTION",
+   "topicLabel": "Motion in a Plane",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p93__q06__503",
+    "MathBook2__p96__q27__524",
+    "MathBook2__p100__q45__542"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s5",
+   "bloom": "Apply",
+   "skillFull": "Determine the motion of a body projected vertically upward under gravity.",
+   "topicKey": "MAT2_PLANE_MOTION",
+   "topicLabel": "Motion in a Plane",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p89__q22__479",
+    "MathBook2__p95__q22__519",
+    "MathBook2__p87__q14__471"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s6",
+   "bloom": "Apply",
+   "skillFull": "Calculate the retardation and the stopping distance of a body brought to rest.",
+   "topicKey": "MAT2_PLANE_MOTION",
+   "topicLabel": "Motion in a Plane",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p87__q11__468",
+    "MathBook2__p96__q21__521"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s7",
+   "bloom": "Apply",
+   "skillFull": "Calculate the relative velocity of two bodies moving in the same or in opposite directions.",
+   "topicKey": "MAT2_PLANE_MOTION",
+   "topicLabel": "Motion in a Plane",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p86__q07__464",
+    "MathBook2__p94__q10__507",
+    "MathBook2__p98__q35__532"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s8",
+   "bloom": "Apply",
+   "skillFull": "Determine the time and the place at which two moving bodies meet or one overtakes the other.",
+   "topicKey": "MAT2_PLANE_MOTION",
+   "topicLabel": "Motion in a Plane",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p93__q05__502",
+    "MathBook2__p94__q12__509",
+    "MathBook2__p97__q31__528"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s9",
+   "bloom": "Apply",
+   "skillFull": "Determine the resultant velocity and direction of a swimmer or a boat crossing a stream.",
+   "topicKey": "MAT2_PLANE_MOTION",
+   "topicLabel": "Motion in a Plane",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p86__q09__466",
+    "MathBook2__p92__q40__497",
+    "MathBook2__p95__q16__513",
+    "MathBook2__p98__q38__535"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s10",
+   "bloom": "Apply",
+   "skillFull": "Determine the motion of two connected bodies hanging over a smooth pulley.",
+   "topicKey": "MAT2_PLANE_MOTION",
+   "topicLabel": "Motion in a Plane",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p86__q08__465",
+    "MathBook2__p97__q29__526"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s11",
+   "bloom": "Apply",
+   "skillFull": "Calculate the force or the change of momentum when a bullet penetrates a resisting medium.",
+   "topicKey": "MAT2_PLANE_MOTION",
+   "topicLabel": "Motion in a Plane",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p87__q13__470",
+    "MathBook2__p88__q16__473",
+    "MathBook2__p96__q23__523"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s12",
+   "bloom": "Apply",
+   "skillFull": "Calculate the time a train takes to pass a stationary or a moving object of given length.",
+   "topicKey": "MAT2_PLANE_MOTION",
+   "topicLabel": "Motion in a Plane",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p93__q01__498",
+    "MathBook2__p97__q28__525"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s13",
+   "bloom": "Remember",
+   "skillFull": "Recall the formulas for the time of flight, the maximum height and the horizontal range of a projectile.",
+   "topicKey": "MAT2_PROJECTILE",
+   "topicLabel": "Projectile Motion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p93__q07__504"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s14",
+   "bloom": "Apply",
+   "skillFull": "Calculate the time of flight, the maximum height or the range of a projectile from its initial speed and angle of projection.",
+   "topicKey": "MAT2_PROJECTILE",
+   "topicLabel": "Projectile Motion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p88__q17__474",
+    "MathBook2__p90__q28__485",
+    "MathBook2__p99__q36__536"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s15",
+   "bloom": "Apply",
+   "skillFull": "Determine the angle of projection required to achieve a stated range or a stated height.",
+   "topicKey": "MAT2_PROJECTILE",
+   "topicLabel": "Projectile Motion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p92__q38__495",
+    "MathBook2__p94__q13__510"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s16",
+   "bloom": "Apply",
+   "skillFull": "Determine the maximum horizontal range of a projectile and the angle at which it occurs.",
+   "topicKey": "MAT2_PROJECTILE",
+   "topicLabel": "Projectile Motion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p96__q25__522",
+    "MathBook2__p90__q31__488"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s17",
+   "bloom": "Apply",
+   "skillFull": "Calculate the motion of a projectile launched horizontally from a height.",
+   "topicKey": "MAT2_PROJECTILE",
+   "topicLabel": "Projectile Motion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p85__q02__459",
+    "MathBook2__p88__q20__477",
+    "MathBook2__p98__q34__531"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s18",
+   "bloom": "Apply",
+   "skillFull": "Determine the velocity and the direction of a projectile at a stated instant or point of its path.",
+   "topicKey": "MAT2_PROJECTILE",
+   "topicLabel": "Projectile Motion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p86__q05__462",
+    "MathBook2__p89__q26__483"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s19",
+   "bloom": "Apply",
+   "skillFull": "Determine the two angles of projection that give the same horizontal range.",
+   "topicKey": "MAT2_PROJECTILE",
+   "topicLabel": "Projectile Motion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p92__q39__496",
+    "MathBook2__p99__q41__538"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s20",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of the path traced by a projectile.",
+   "topicKey": "MAT2_PROJECTILE",
+   "topicLabel": "Projectile Motion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p93__q04__501",
+    "MathBook2__p99__q44__541"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s21",
+   "bloom": "Remember",
+   "skillFull": "Recall the definitions of range, mean deviation, variance and standard deviation.",
+   "topicKey": "MAT2_DISPERSION",
+   "topicLabel": "Measures of Dispersion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p106__q05__579"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s22",
+   "bloom": "Apply",
+   "skillFull": "Calculate the mean and the standard deviation of a given set of data values.",
+   "topicKey": "MAT2_DISPERSION",
+   "topicLabel": "Measures of Dispersion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p106__q02__576",
+    "MathBook2__p106__q03__577",
+    "MathBook2__p107__q09__583"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s23",
+   "bloom": "Apply",
+   "skillFull": "Calculate the coefficient of variation of a data set.",
+   "topicKey": "MAT2_DISPERSION",
+   "topicLabel": "Measures of Dispersion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p106__q05__579",
+    "MathBook2__p107__q09__583"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s24",
+   "bloom": "Apply",
+   "skillFull": "Determine an unknown data value from a stated value of the mean or of the standard deviation.",
+   "topicKey": "MAT2_DISPERSION",
+   "topicLabel": "Measures of Dispersion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p107__q13__587"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s25",
+   "bloom": "Remember",
+   "skillFull": "Recall the classical definition of probability, including the probability of an impossible and of a certain event.",
+   "topicKey": "MAT2_PROBABILITY",
+   "topicLabel": "Probability",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p102__q12__556"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s26",
+   "bloom": "Apply",
+   "skillFull": "Calculate the probability of a simple event by counting equally likely outcomes.",
+   "topicKey": "MAT2_PROBABILITY",
+   "topicLabel": "Probability",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p104__q24__568",
+    "MathBook2__p109__q28__602"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s27",
+   "bloom": "Apply",
+   "skillFull": "Calculate the probability of drawing objects of a stated composition from a container.",
+   "topicKey": "MAT2_PROBABILITY",
+   "topicLabel": "Probability",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p100__q02__546",
+    "MathBook2__p104__q22__566",
+    "MathBook2__p105__q26__570",
+    "MathBook2__p109__q26__600"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s28",
+   "bloom": "Apply",
+   "skillFull": "Calculate the probability of an outcome when objects are drawn one after another without replacement.",
+   "topicKey": "MAT2_PROBABILITY",
+   "topicLabel": "Probability",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p103__q19__563",
+    "MathBook2__p109__q27__601"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s29",
+   "bloom": "Apply",
+   "skillFull": "Calculate the probability of a stated outcome when one or more dice are thrown.",
+   "topicKey": "MAT2_PROBABILITY",
+   "topicLabel": "Probability",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p102__q11__555",
+    "MathBook2__p107__q14__588",
+    "MathBook2__p107__q17__591"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s30",
+   "bloom": "Apply",
+   "skillFull": "Calculate the probability of a stated outcome when a coin is tossed several times.",
+   "topicKey": "MAT2_PROBABILITY",
+   "topicLabel": "Probability",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p108__q18__592",
+    "MathBook2__p109__q25__599"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s31",
+   "bloom": "Remember",
+   "skillFull": "Recall the addition rule for the probability of the union of two events.",
+   "topicKey": "MAT2_PROBABILITY",
+   "topicLabel": "Probability",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p106__q04__578"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s32",
+   "bloom": "Apply",
+   "skillFull": "Calculate the probability of the union or the intersection of two events using the addition rule.",
+   "topicKey": "MAT2_PROBABILITY",
+   "topicLabel": "Probability",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p102__q09__553",
+    "MathBook2__p107__q10__584"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s33",
+   "bloom": "Understand",
+   "skillFull": "Determine whether two given events are independent or mutually exclusive.",
+   "topicKey": "MAT2_PROBABILITY",
+   "topicLabel": "Probability",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p102__q09__553"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s34",
+   "bloom": "Apply",
+   "skillFull": "Calculate a conditional probability, or the probability of a compound event, using the multiplication rule.",
+   "topicKey": "MAT2_PROBABILITY",
+   "topicLabel": "Probability",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p101__q07__551",
+    "MathBook2__p108__q19__593",
+    "MathBook2__p108__q21__595"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s35",
+   "bloom": "Apply",
+   "skillFull": "Calculate the probability of an outcome when one of several containers is first chosen at random.",
+   "topicKey": "MAT2_PROBABILITY",
+   "topicLabel": "Probability",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p101__q06__550",
+    "MathBook2__p102__q10__554",
+    "MathBook2__p105__q29__573",
+    "MathBook2__p109__q30__604"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b18_s36",
+   "bloom": "Apply",
+   "skillFull": "Calculate the probability that a number chosen from a stated range satisfies a divisibility or a digit condition.",
+   "topicKey": "MAT2_PROBABILITY",
+   "topicLabel": "Probability",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p100__q01__545",
+    "MathBook2__p103__q18__562",
+    "MathBook2__p106__q01__575",
+    "MathBook2__p109__q24__598"
+   ]
+  }
+ ],
+ "prereqs": [
+  {
+   "fromTempId": "MathBook2_b18_s2",
+   "toTempId": "MathBook2_b18_s1",
+   "toDescription": "Recall the equations of motion for a body moving in a straight line with uniform acceleration.",
+   "toTopicKeyGuess": "MAT2_PLANE_MOTION"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s3",
+   "toTempId": "MathBook2_b18_s2",
+   "toDescription": "Calculate the displacement, velocity or acceleration of a body moving with uniform acceleration.",
+   "toTopicKeyGuess": "MAT2_PLANE_MOTION"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s4",
+   "toTempId": "MathBook2_b18_s2",
+   "toDescription": "Calculate the displacement, velocity or acceleration of a body moving with uniform acceleration.",
+   "toTopicKeyGuess": "MAT2_PLANE_MOTION"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s5",
+   "toTempId": "MathBook2_b18_s4",
+   "toDescription": "Determine the motion of a body falling freely under gravity from a stated height.",
+   "toTopicKeyGuess": "MAT2_PLANE_MOTION"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s6",
+   "toTempId": "MathBook2_b18_s2",
+   "toDescription": "Calculate the displacement, velocity or acceleration of a body moving with uniform acceleration.",
+   "toTopicKeyGuess": "MAT2_PLANE_MOTION"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s7",
+   "toTempId": "MathBook2_b18_s2",
+   "toDescription": "Calculate the displacement, velocity or acceleration of a body moving with uniform acceleration.",
+   "toTopicKeyGuess": "MAT2_PLANE_MOTION"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s8",
+   "toTempId": "MathBook2_b18_s7",
+   "toDescription": "Calculate the relative velocity of two bodies moving in the same or in opposite directions.",
+   "toTopicKeyGuess": "MAT2_PLANE_MOTION"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s9",
+   "toTempId": "MathBook2_b18_s7",
+   "toDescription": "Calculate the relative velocity of two bodies moving in the same or in opposite directions.",
+   "toTopicKeyGuess": "MAT2_PLANE_MOTION"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s10",
+   "toTempId": "MathBook2_b18_s2",
+   "toDescription": "Calculate the displacement, velocity or acceleration of a body moving with uniform acceleration.",
+   "toTopicKeyGuess": "MAT2_PLANE_MOTION"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s11",
+   "toTempId": "MathBook2_b18_s2",
+   "toDescription": "Calculate the displacement, velocity or acceleration of a body moving with uniform acceleration.",
+   "toTopicKeyGuess": "MAT2_PLANE_MOTION"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s12",
+   "toTempId": "MathBook2_b18_s7",
+   "toDescription": "Calculate the relative velocity of two bodies moving in the same or in opposite directions.",
+   "toTopicKeyGuess": "MAT2_PLANE_MOTION"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s13",
+   "toTempId": "MathBook2_b18_s1",
+   "toDescription": "Recall the equations of motion for a body moving in a straight line with uniform acceleration.",
+   "toTopicKeyGuess": "MAT2_PLANE_MOTION"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s14",
+   "toTempId": "MathBook2_b18_s13",
+   "toDescription": "Recall the formulas for the time of flight, the maximum height and the horizontal range of a projectile.",
+   "toTopicKeyGuess": "MAT2_PROJECTILE"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s14",
+   "toTempId": "MathBook2_b18_s4",
+   "toDescription": "Determine the motion of a body falling freely under gravity from a stated height.",
+   "toTopicKeyGuess": "MAT2_PLANE_MOTION"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s15",
+   "toTempId": "MathBook2_b18_s14",
+   "toDescription": "Calculate the time of flight, the maximum height or the range of a projectile from its initial speed and angle of projection.",
+   "toTopicKeyGuess": "MAT2_PROJECTILE"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s16",
+   "toTempId": "MathBook2_b18_s14",
+   "toDescription": "Calculate the time of flight, the maximum height or the range of a projectile from its initial speed and angle of projection.",
+   "toTopicKeyGuess": "MAT2_PROJECTILE"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s17",
+   "toTempId": "MathBook2_b18_s13",
+   "toDescription": "Recall the formulas for the time of flight, the maximum height and the horizontal range of a projectile.",
+   "toTopicKeyGuess": "MAT2_PROJECTILE"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s18",
+   "toTempId": "MathBook2_b18_s14",
+   "toDescription": "Calculate the time of flight, the maximum height or the range of a projectile from its initial speed and angle of projection.",
+   "toTopicKeyGuess": "MAT2_PROJECTILE"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s19",
+   "toTempId": "MathBook2_b18_s16",
+   "toDescription": "Determine the maximum horizontal range of a projectile and the angle at which it occurs.",
+   "toTopicKeyGuess": "MAT2_PROJECTILE"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s20",
+   "toTempId": "MathBook2_b18_s14",
+   "toDescription": "Calculate the time of flight, the maximum height or the range of a projectile from its initial speed and angle of projection.",
+   "toTopicKeyGuess": "MAT2_PROJECTILE"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s22",
+   "toTempId": "MathBook2_b18_s21",
+   "toDescription": "Recall the definitions of range, mean deviation, variance and standard deviation.",
+   "toTopicKeyGuess": "MAT2_DISPERSION"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s23",
+   "toTempId": "MathBook2_b18_s22",
+   "toDescription": "Calculate the mean and the standard deviation of a given set of data values.",
+   "toTopicKeyGuess": "MAT2_DISPERSION"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s24",
+   "toTempId": "MathBook2_b18_s22",
+   "toDescription": "Calculate the mean and the standard deviation of a given set of data values.",
+   "toTopicKeyGuess": "MAT2_DISPERSION"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s24",
+   "toTempId": "MathBook2_b18_s21",
+   "toDescription": "Recall the definitions of range, mean deviation, variance and standard deviation.",
+   "toTopicKeyGuess": "MAT2_DISPERSION"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s26",
+   "toTempId": "MathBook2_b18_s25",
+   "toDescription": "Recall the classical definition of probability, including the probability of an impossible and of a certain event.",
+   "toTopicKeyGuess": "MAT2_PROBABILITY"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s27",
+   "toTempId": "MathBook2_b18_s26",
+   "toDescription": "Calculate the probability of a simple event by counting equally likely outcomes.",
+   "toTopicKeyGuess": "MAT2_PROBABILITY"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s28",
+   "toTempId": "MathBook2_b18_s27",
+   "toDescription": "Calculate the probability of drawing objects of a stated composition from a container.",
+   "toTopicKeyGuess": "MAT2_PROBABILITY"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s29",
+   "toTempId": "MathBook2_b18_s26",
+   "toDescription": "Calculate the probability of a simple event by counting equally likely outcomes.",
+   "toTopicKeyGuess": "MAT2_PROBABILITY"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s30",
+   "toTempId": "MathBook2_b18_s26",
+   "toDescription": "Calculate the probability of a simple event by counting equally likely outcomes.",
+   "toTopicKeyGuess": "MAT2_PROBABILITY"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s31",
+   "toTempId": "MathBook2_b18_s25",
+   "toDescription": "Recall the classical definition of probability, including the probability of an impossible and of a certain event.",
+   "toTopicKeyGuess": "MAT2_PROBABILITY"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s32",
+   "toTempId": "MathBook2_b18_s31",
+   "toDescription": "Recall the addition rule for the probability of the union of two events.",
+   "toTopicKeyGuess": "MAT2_PROBABILITY"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s33",
+   "toTempId": "MathBook2_b18_s32",
+   "toDescription": "Calculate the probability of the union or the intersection of two events using the addition rule.",
+   "toTopicKeyGuess": "MAT2_PROBABILITY"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s34",
+   "toTempId": "MathBook2_b18_s33",
+   "toDescription": "Determine whether two given events are independent or mutually exclusive.",
+   "toTopicKeyGuess": "MAT2_PROBABILITY"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s34",
+   "toTempId": "MathBook2_b18_s28",
+   "toDescription": "Calculate the probability of an outcome when objects are drawn one after another without replacement.",
+   "toTopicKeyGuess": "MAT2_PROBABILITY"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s35",
+   "toTempId": "MathBook2_b18_s34",
+   "toDescription": "Calculate a conditional probability, or the probability of a compound event, using the multiplication rule.",
+   "toTopicKeyGuess": "MAT2_PROBABILITY"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s36",
+   "toTempId": "MathBook2_b18_s26",
+   "toDescription": "Calculate the probability of a simple event by counting equally likely outcomes.",
+   "toTopicKeyGuess": "MAT2_PROBABILITY"
+  },
+  {
+   "fromTempId": "MathBook2_b18_s36",
+   "toTempId": "MathBook2_b18_s25",
+   "toDescription": "Recall the classical definition of probability, including the probability of an impossible and of a certain event.",
+   "toTopicKeyGuess": "MAT2_PROBABILITY"
+  }
+ ],
+ "reusedExistingSkills": [
+  {
+   "existingSkillId": "MAT2_STATICS_FORCE3",
+   "sourceItemIds": [
+    "MathBook2__p83__q44__450",
+    "MathBook2__p84__q50__456"
+   ]
+  },
+  {
+   "existingSkillId": "MAT2_STATICS_FRICTION5",
+   "sourceItemIds": [
+    "MathBook2__p83__q45__451",
+    "MathBook2__p84__q46__452",
+    "MathBook2__p84__q51__457"
+   ]
+  },
+  {
+   "existingSkillId": "MAT2_STATICS_FORCE10",
+   "sourceItemIds": [
+    "MathBook2__p84__q49__455"
+   ]
+  },
+  {
+   "existingSkillId": "MAT_PERMCOMB2",
+   "sourceItemIds": [
+    "MathBook2__p102__q08__552",
+    "MathBook2__p103__q17__561"
+   ]
+  }
+ ],
+ "newTopicsProposed": [],
+ "skippedItems": [],
+ "notes": "Records 451-605 of MathBook2 (parsed_items.jsonl lines 2941-3095). THIS COMPLETES MathBook2.txt AND THE ENTIRE MATHEMATICS SEGMENT - all 1,407 Mathematics records processed across chunks b10-b18. Coverage: the tail of statics (451-457, reused from b17), motion of particles in a plane (HM2 Ch9, records 458-544) split into rectilinear motion and projectiles, and measures of dispersion and probability (HM2 Ch10, records 545-605). Probability questions that are really counting problems reference the MAT1_COMBINATION skill from b11 rather than re-minting it. Fourth consecutive batch needing no new topics - the syllabus taxonomy covered all 605 records of MathBook2 without a single gap. All descriptions are plain text with no backslashes."
+}

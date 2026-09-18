@@ -1,0 +1,50 @@
+{
+ "files_completed": [
+  "ChemBook1.txt",
+  "ChemBook2.txt",
+  "MathBook1.txt",
+  "MathBook2.txt",
+  "PhyBook1.txt",
+  "PhyBook2.txt"
+ ],
+ "in_progress": null,
+ "chunks_merged": [
+  "ChemBook1_b01..b06",
+  "ChemBook2_b07..b09",
+  "MathBook1_b10",
+  "MathBook1_b11",
+  "MathBook1_b12",
+  "MathBook1_b13",
+  "MathBook1_b14",
+  "MathBook2_b15",
+  "MathBook2_b16",
+  "MathBook2_b17",
+  "MathBook2_b18",
+  "PhyBook1_b19",
+  "PhyBook1_b20",
+  "PhyBook1_b21",
+  "PhyBook1_b22",
+  "PhyBook2_b23",
+  "PhyBook2_b24",
+  "PhyBook2_b25",
+  "PhyBook2_b26",
+  "PhyBook2_b27"
+ ],
+ "records_processed": 4474,
+ "records_total": 4474,
+ "skills_so_far": 1624,
+ "edges_so_far": 1535,
+ "last_updated": "2026-09-18",
+ "first_item_id_of_batch": "MathBook1__p2__q01__0",
+ "last_item_id_of_batch": "PhyBook2__p103__q11__763",
+ "open_editorial_decisions": [],
+ "topics_accepted": [
+  "CHEM_NUCLEAR",
+  "CHEM_LAB",
+  "CHEM_DESCRIPTIVE",
+  "MAT_PERMCOMB",
+  "MAT_FUNCTION (superseded by syllabus rebuild)"
+ ],
+ "topic_vocabulary": "HSC/NCTB syllabus, 51 chapters / 183 topics, since 2026-09-18. New batches use syllabus codes directly (b13 onward).",
+ "status": "CORPUS COMPLETE - all 4,474 records of all six source files have been ingested. Remaining work is editorial review, not extraction; see STATUS.md."
+}

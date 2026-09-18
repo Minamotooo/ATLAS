@@ -90,9 +90,13 @@ After **every** sub-batch:
    `prereqs.json`.
 3. Update `progress.json`: append the sub-batch's `item_id`s to
    `processed_item_ids`, refresh `skills_so_far` and `last_updated`.
-4. Print a one-line tally: `"<file>: <n> records processed this batch, <total>
-   skills so far, <m> topics touched."` — this is your own resumoption checkpoint
-   as much as it's a progress signal to the user.
+4. Print a one-line tally: `"<file>: <n> records processed this batch, <k> new
+   skills, <e> new edges (<e/k> per skill), <total> skills so far, <m> topics
+   touched."` — this is your own resumption checkpoint as much as it's a progress
+   signal to the user. **The edges-per-skill figure is not decoration**: it is the
+   check from the Quality Checklist, and printing it every batch is what stops a
+   sparse run going unnoticed for nine batches (which is exactly what happened to
+   Chemistry).
 
 If you are ever unsure whether you have enough context budget left to safely do
 another full sub-batch-plus-merge cycle, stop after completing and checkpointing
@@ -110,9 +114,23 @@ For each record:
    canonical topic list below, reusing an existing one whenever the concept fits;
    check the running `tuples.json` for an existing equivalent skill before minting
    a new `skillId`.
-3. Identify prerequisites: does this skill require another skill (already known,
-   from the legacy ontology, or newly minted earlier in this same run) to make
-   sense first? If so, add an entry to `prereqs.json`.
+3. Identify prerequisites — **against the accumulated ontology, not against this
+   record.** See system prompt Global Constraint 4; the Chemistry pass got this
+   wrong and left 44% of its skills with no edge at all.
+
+   The question is **not** "does anything in this record depend on anything else
+   in this record?" Mean yield is ~1.2 skills per record, so that question is
+   almost always "no" for structural reasons, and asking it is what produced the
+   sparse result. The question is:
+
+   > *Of everything already in `tuples.json` — this run and the legacy ontology —
+   > what must a learner already hold before this new skill is reachable?*
+
+   Search the accumulated skills for that topic (and for the obvious upstream
+   topics — stoichiometry under thermochemistry, oxidation numbers under redox,
+   bonding under organic mechanisms) before concluding a skill is foundational.
+   Most skills have at least one prerequisite; genuinely foundational recall is a
+   minority. Add one entry per prerequisite found.
 
 ### Worked example (reuse this exact shape)
 
@@ -135,8 +153,33 @@ Extracted (all Remember — every verb is recall/recognize/identify):
   { "bloom": "Remember", "skillId": "PHY_UNITS8", "skillFull": "Recognize the correct dimensional equation from multiple choices.", "topicKey": "PHY_UNITS", "topicLabel": "Units, Dimensions and Measurement", "subject": "Physics" }
 ]
 ```
-No prerequisite entry needed here — both skills are foundational recall, nothing in
-this record depends on anything else in it.
+Now the prerequisite step — and note that **neither edge comes from inside this
+record**. Both were found by searching what has already been extracted:
+
+```json
+{
+  "PHY_UNITS8": [
+    { "id": "PHY_UNITS7", "full": "Recall the dimensional formula of force.", "depth": 0 },
+    { "id": "PHY_UNITS2", "full": "Recall the base SI quantities and their dimensional symbols (M, L, T).", "depth": 0 }
+  ],
+  "PHY_UNITS7": [
+    { "id": "PHY_UNITS2", "full": "Recall the base SI quantities and their dimensional symbols (M, L, T).", "depth": 0 }
+  ]
+}
+```
+
+`PHY_UNITS2` was minted from a different record hundreds of items earlier. You
+only find it by asking *"what must the learner already hold?"* and searching the
+accumulated `tuples.json` for it — never by re-reading this record. Recognising a
+dimensional equation (`PHY_UNITS8`) presupposes knowing the formula it encodes
+(`PHY_UNITS7`), which presupposes the base dimensional symbols (`PHY_UNITS2`).
+
+Two skills, three edges. **That ratio is normal.** If a whole batch is coming out
+near zero edges, you are asking the within-record question — go back and ask the
+accumulated-ontology one instead.
+
+A skill with genuinely no prerequisite does exist (the most foundational recall in
+a topic), and for those you simply emit no key. But that is the exception.
 
 ## Canonical topics (reuse before minting — same list the legacy ontology uses)
 
@@ -179,6 +222,8 @@ comparable to the legacy ontology's numbers:
   topics touched          : <n>   (legacy: 66)
   new topics proposed     : <n> (see below)
   prerequisite edges      : <n>
+  edges per skill         : <n.nn>  (target >= 1.0; Chemistry pass was 0.47)
+  skills with no edge     : <n> (<n>%)  (target <= 25%; Chemistry pass was 44%)
   records skipped         : <n> (reasons below)
 ```
 Followed by a bullet list of any proposed-new-topics and any skipped/ambiguous
@@ -195,6 +240,14 @@ records with their `item_id` and a one-line reason.
 - [ ] Every topic used is either from the canonical list above or explicitly logged
       under `new_topics_proposed` in `rebuild_report.md` — nothing silently
       invented.
+- [ ] **Prerequisite coverage: this batch's edges ÷ new skills is at least 1.0.**
+      Compute it explicitly and state the number. Below 0.8, the batch is not
+      finished — re-examine its skills against the accumulated `tuples.json`
+      before merging (system prompt Global Constraint 4). The Chemistry pass
+      averaged 0.47 and left 44% of skills inert; that is the failure this check
+      exists to catch.
+- [ ] **No more than ~25% of this batch's new skills have zero prerequisites.**
+      Foundational recall is real but it is a minority.
 - [ ] Every LaTeX backslash in every `skillFull`/`full` string is doubled.
 - [ ] `progress.json` reflects exactly the records actually merged into
       `tuples.json`/`prereqs.json` this batch — not just "attempted."

@@ -8571,8 +8571,8 @@
   ],
   "MAT_INVTRIG5": [
     {
-      "id": "MAT2_INVERSE_TRIG4",
-      "full": "Recall the principal-value range of each inverse trigonometric function and the relations between complementary pairs.",
+      "id": "MAT_INVTRIG4",
+      "full": "Recall the principal-value ranges of the inverse trigonometric functions.",
       "depth": 0
     }
   ],

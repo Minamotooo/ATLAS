@@ -1259,8 +1259,8 @@
   "bloom": "Remember",
   "skillId": "CHEM_NOM6",
   "skillFull": "Recall the definition of an ore as a naturally occurring mineral deposit from which a metal can be extracted economically.",
-  "topicKey": "CHE2_METALLURGY",
-  "topicLabel": "Ores, Minerals and Metallurgy",
+  "topicKey": "CHE2_ORG_NOMENCLATURE",
+  "topicLabel": "Nomenclature and Homologous Series",
   "subject": "Chemistry"
  },
  {
@@ -9506,6 +9506,14 @@
   "subject": "Mathematics"
  },
  {
+  "bloom": "Remember",
+  "skillId": "MAT_INVTRIG4",
+  "skillFull": "Recall the principal-value ranges of the inverse trigonometric functions.",
+  "topicKey": "MAT2_INVERSE_TRIG",
+  "topicLabel": "Inverse Trigonometric Functions",
+  "subject": "Mathematics"
+ },
+ {
   "bloom": "Apply",
   "skillId": "MAT_INVTRIG5",
   "skillFull": "Simplify a composition of an inverse trigonometric function with a trigonometric function.",
@@ -13494,105 +13502,6 @@
   "topicKey": "CHE1_CATION_ANALYSIS",
   "topicLabel": "Group Analysis of Cations",
   "subject": "Chemistry",
-  "authored": true
- },
- {
-  "bloom": "Remember",
-  "skillId": "CHE2_METALLURGY0",
-  "skillFull": "Recall the meanings of ore, gangue and flux, and the difference between a mineral and an ore.",
-  "topicKey": "CHE2_METALLURGY",
-  "topicLabel": "Ores, Minerals and Metallurgy",
-  "subject": "Chemistry",
-  "authored": true
- },
- {
-  "bloom": "Understand",
-  "skillId": "CHE2_METALLURGY1",
-  "skillFull": "Distinguish roasting from calcination as preliminary treatments of an ore.",
-  "topicKey": "CHE2_METALLURGY",
-  "topicLabel": "Ores, Minerals and Metallurgy",
-  "subject": "Chemistry",
-  "authored": true
- },
- {
-  "bloom": "Apply",
-  "skillId": "CHE2_METALLURGY2",
-  "skillFull": "Determine the reducing agent and the method used to extract a stated metal from its ore.",
-  "topicKey": "CHE2_METALLURGY",
-  "topicLabel": "Ores, Minerals and Metallurgy",
-  "subject": "Chemistry",
-  "authored": true
- },
- {
-  "bloom": "Remember",
-  "skillId": "PHY1_FRICTION0",
-  "skillFull": "Recall the laws of limiting friction and the meaning of the coefficient of friction.",
-  "topicKey": "PHY1_FRICTION",
-  "topicLabel": "Friction",
-  "subject": "Physics",
-  "authored": true
- },
- {
-  "bloom": "Apply",
-  "skillId": "PHY1_FRICTION1",
-  "skillFull": "Calculate the frictional force acting on a body from the normal reaction and the coefficient of friction.",
-  "topicKey": "PHY1_FRICTION",
-  "topicLabel": "Friction",
-  "subject": "Physics",
-  "authored": true
- },
- {
-  "bloom": "Apply",
-  "skillId": "PHY1_FRICTION2",
-  "skillFull": "Determine the angle of repose, or the angle of friction, for a body resting on an inclined plane.",
-  "topicKey": "PHY1_FRICTION",
-  "topicLabel": "Friction",
-  "subject": "Physics",
-  "authored": true
- },
- {
-  "bloom": "Remember",
-  "skillId": "PHY2_LOGIC_GATES1",
-  "skillFull": "Recall the symbol and the truth table of the AND, the OR and the NOT gate.",
-  "topicKey": "PHY2_LOGIC_GATES",
-  "topicLabel": "Digital Logic Gates",
-  "subject": "Physics",
-  "authored": true
- },
- {
-  "bloom": "Apply",
-  "skillId": "PHY2_LOGIC_GATES2",
-  "skillFull": "Determine the output of a combination of logic gates for every combination of its inputs.",
-  "topicKey": "PHY2_LOGIC_GATES",
-  "topicLabel": "Digital Logic Gates",
-  "subject": "Physics",
-  "authored": true
- },
- {
-  "bloom": "Understand",
-  "skillId": "PHY2_LOGIC_GATES3",
-  "skillFull": "Explain why NAND and NOR are called universal gates.",
-  "topicKey": "PHY2_LOGIC_GATES",
-  "topicLabel": "Digital Logic Gates",
-  "subject": "Physics",
-  "authored": true
- },
- {
-  "bloom": "Remember",
-  "skillId": "PHY1_SHM_ENERGY1",
-  "skillFull": "Recall that the total energy of a body in simple harmonic motion is constant and proportional to the square of its amplitude.",
-  "topicKey": "PHY1_SHM_ENERGY",
-  "topicLabel": "Energy in Simple Harmonic Motion",
-  "subject": "Physics",
-  "authored": true
- },
- {
-  "bloom": "Apply",
-  "skillId": "PHY1_SHM_ENERGY2",
-  "skillFull": "Determine the displacement at which the kinetic and the potential energy of a body in simple harmonic motion are equal.",
-  "topicKey": "PHY1_SHM_ENERGY",
-  "topicLabel": "Energy in Simple Harmonic Motion",
-  "subject": "Physics",
   "authored": true
  }
 ]

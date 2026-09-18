@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chemistry Skill Ontology — Legacy (live app)</title>
+<style>
+:root{
+  color-scheme: light;
+  --surface-0:#f4f4f2; --surface-1:#fcfcfb; --surface-2:#eceae5;
+  --border:#d9d7d0; --border-strong:#b9b7ae;
+  --text-primary:#0b0b0b; --text-secondary:#52514e; --text-muted:#7a7873;
+  --role-root:#2a78d6; --role-intermediate:#eb6834; --role-leaf:#1baf7a;
+  --role-isolated:#b9b7ae;
+  --accent:#2a78d6; --edge:#b9b7ae; --edge-strong:#52514e;
+}
+:root:not([data-theme="light"]) { }
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --surface-0:#121211; --surface-1:#1a1a19; --surface-2:#252523;
+    --border:#383835; --border-strong:#4f4f4a;
+    --text-primary:#ffffff; --text-secondary:#c3c2b7; --text-muted:#8e8d84;
+    --role-root:#3987e5; --role-intermediate:#d95926; --role-leaf:#199e70;
+    --role-isolated:#5b5b55;
+    --accent:#3987e5; --edge:#4f4f4a; --edge-strong:#c3c2b7;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --surface-0:#121211; --surface-1:#1a1a19; --surface-2:#252523;
+  --border:#383835; --border-strong:#4f4f4a;
+  --text-primary:#ffffff; --text-secondary:#c3c2b7; --text-muted:#8e8d84;
+  --role-root:#3987e5; --role-intermediate:#d95926; --role-leaf:#199e70;
+  --role-isolated:#5b5b55;
+  --accent:#3987e5; --edge:#4f4f4a; --edge-strong:#c3c2b7;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font:13px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  background:var(--surface-0); color:var(--text-primary);
+  display:flex; flex-direction:column; overflow:hidden;
+}
+
+/* ---------- top bar ---------- */
+#top{
+  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  padding:10px 16px; background:var(--surface-1);
+  border-bottom:1px solid var(--border); flex-shrink:0;
+}
+#top h1{font-size:13px;font-weight:650;letter-spacing:-.1px;white-space:nowrap}
+#top .src{font-size:11px;color:var(--text-muted);white-space:nowrap}
+#stats{display:flex;gap:14px;flex-wrap:wrap;margin-left:auto;align-items:center}
+.stat{display:flex;flex-direction:column;line-height:1.25}
+.stat b{font-size:14px;font-weight:650;font-variant-numeric:tabular-nums}
+.stat span{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.4px}
+.btn{
+  background:var(--surface-2); border:1px solid var(--border); color:var(--text-secondary);
+  padding:5px 11px; border-radius:6px; cursor:pointer; font:inherit; font-size:11.5px;
+  white-space:nowrap;
+}
+.btn:hover{background:var(--surface-0);color:var(--text-primary)}
+.btn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.seg{display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.seg .btn{border:0;border-radius:0}
+.seg .btn+.btn{border-left:1px solid var(--border)}
+
+/* ---------- layout ---------- */
+#main{display:flex;flex:1;min-height:0}
+#side{
+  width:262px; flex-shrink:0; background:var(--surface-1);
+  border-right:1px solid var(--border); display:flex; flex-direction:column; min-height:0;
+}
+#side .sec{padding:11px 13px;border-bottom:1px solid var(--border)}
+#side .sec h2{
+  font-size:10px;text-transform:uppercase;letter-spacing:.5px;
+  color:var(--text-muted);font-weight:650;margin-bottom:8px;
+}
+#search{
+  width:100%;padding:6px 9px;border:1px solid var(--border);border-radius:6px;
+  background:var(--surface-0);color:var(--text-primary);font:inherit;font-size:12px;
+}
+#search::placeholder{color:var(--text-muted)}
+#topicwrap{flex:1;overflow-y:auto;min-height:0;padding:6px}
+.topic{
+  display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:6px;
+  cursor:pointer;font-size:12px;color:var(--text-secondary);
+}
+.topic:hover{background:var(--surface-2);color:var(--text-primary)}
+.topic.on{background:var(--accent);color:#fff}
+.topic .nm{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.topic .n{font-size:10.5px;font-variant-numeric:tabular-nums;opacity:.75}
+.topic .bar{height:3px;border-radius:2px;background:var(--accent);opacity:.5;flex-shrink:0}
+.topic.on .bar{background:#fff;opacity:.8}
+
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{
+  font-size:10.5px;padding:3px 8px;border-radius:99px;cursor:pointer;
+  border:1px solid var(--border);background:var(--surface-0);color:var(--text-secondary);
+  display:flex;align-items:center;gap:5px;
+}
+.chip:hover{border-color:var(--border-strong);color:var(--text-primary)}
+.chip.off{opacity:.4}
+.chip .sw{width:8px;height:8px;border-radius:2px;flex-shrink:0}
+.chip .cnt{font-variant-numeric:tabular-nums;opacity:.7}
+label.opt{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--text-secondary);cursor:pointer;padding:3px 0}
+label.opt input{cursor:pointer;accent-color:var(--accent)}
+
+/* ---------- canvas ---------- */
+#stage{flex:1;position:relative;min-width:0;background:var(--surface-0)}
+#cy{position:absolute;inset:0}
+#empty{
+  position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+  text-align:center;color:var(--text-muted);font-size:12.5px;padding:32px;
+}
+#hint{
+  position:absolute;left:12px;bottom:12px;font-size:10.5px;color:var(--text-muted);
+  background:var(--surface-1);border:1px solid var(--border);border-radius:6px;
+  padding:5px 9px;pointer-events:none;max-width:60%;
+}
+
+/* ---------- detail ---------- */
+#detail{
+  width:308px;flex-shrink:0;background:var(--surface-1);border-left:1px solid var(--border);
+  overflow-y:auto;display:none;
+}
+#detail.show{display:block}
+#detail .pad{padding:14px}
+#detail .close{float:right;cursor:pointer;color:var(--text-muted);font-size:16px;line-height:1;border:0;background:none}
+#detail .close:hover{color:var(--text-primary)}
+#detail .sid{font-size:11px;font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--accent);word-break:break-all}
+#detail h3{font-size:13.5px;font-weight:600;margin:7px 0 11px;line-height:1.45}
+#detail dl{display:grid;grid-template-columns:auto 1fr;gap:5px 11px;font-size:11.5px;margin-bottom:14px}
+#detail dt{color:var(--text-muted)}
+#detail dd{color:var(--text-primary)}
+#detail h4{
+  font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);
+  font-weight:650;margin:13px 0 6px;
+}
+#detail ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+#detail li{
+  font-size:11.5px;padding:6px 8px;background:var(--surface-2);border-radius:5px;cursor:pointer;
+  border-left:2px solid var(--border-strong);
+}
+#detail li:hover{border-left-color:var(--accent)}
+#detail li code{
+  font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;color:var(--accent);
+  display:block;margin-bottom:2px;
+}
+#detail .none{font-size:11.5px;color:var(--text-muted);font-style:italic}
+
+.badge{
+  display:inline-block;font-size:9.5px;font-weight:650;letter-spacing:.3px;
+  padding:2px 6px;border-radius:4px;background:var(--surface-2);
+  color:var(--text-secondary);border:1px solid var(--border);
+}
+#tip{
+  position:absolute;display:none;pointer-events:none;z-index:50;max-width:330px;
+  background:var(--surface-1);border:1px solid var(--border-strong);border-radius:7px;
+  padding:9px 11px;font-size:11.5px;line-height:1.45;
+  box-shadow:0 6px 20px rgba(0,0,0,.18);
+}
+#tip .t{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;color:var(--accent);margin-bottom:4px}
+#tip .m{color:var(--text-muted);font-size:10.5px;margin-top:5px}
+
+@media (max-width:900px){
+  #side{width:210px}
+  #detail{width:250px}
+  #stats{width:100%;margin-left:0;order:3}
+}
+</style>
+</head>
+<body>
+
+<div id="top">
+  <h1>Chemistry Skill Ontology — Legacy (live app)</h1>
+  <span class="src">Ontology - 117 skills, 140 prerequisite edges - generated 2026-09-17</span>
+  <div class="seg">
+    <button class="btn on" id="m-topics">Topic map</button>
+    <button class="btn" id="m-skills">Skill DAG</button>
+  </div>
+  <button class="btn" id="fit">Fit</button>
+  <button class="btn" id="theme">Theme</button>
+  <div id="stats"></div>
+</div>
+
+<div id="main">
+  <aside id="side">
+    <div class="sec"><input id="search" type="search" placeholder="Search skill id or text..." autocomplete="off"></div>
+    <div class="sec">
+      <h2>Structural role</h2>
+      <div class="chips" id="roles"></div>
+    </div>
+    <div class="sec">
+      <h2>Bloom level</h2>
+      <div class="chips" id="blooms"></div>
+    </div>
+    <div class="sec">
+      <label class="opt"><input type="checkbox" id="hide-iso"> Hide unconnected skills</label>
+      <label class="opt"><input type="checkbox" id="show-ext" checked> Show cross-topic prerequisites</label>
+    </div>
+    <div class="sec" style="border-bottom:0;padding-bottom:4px">
+      <h2 id="topichead">Topics</h2>
+    </div>
+    <div id="topicwrap"></div>
+  </aside>
+
+  <div id="stage">
+    <div id="cy"></div>
+    <div id="empty"></div>
+    <div id="hint"></div>
+  </div>
+
+  <aside id="detail"><div class="pad" id="detailbody"></div></aside>
+</div>
+
+<div id="tip"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.26.0/cytoscape.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dagre@0.8.5/dist/dagre.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js"></script>
+<script>
+const DATA = {"nodes":[{"id":"CHEM_AB1","full":"Recall the relative acid-strength trends among common strong and oxo-acids.","bloom":"Remember","topic":"CHEM_AB","topicLabel":"Acids, Bases and Water Quality","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHEM_AB2","full":"Recall WHO water-quality parameters (BOD, DO) associated with conditions suitable for aquatic life.","bloom":"Remember","topic":"CHEM_AB","topicLabel":"Acids, Bases and Water Quality","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":3},{"id":"CHEM_ACIDBASE1","full":"Apply the concept that the equivalence point of a weak acid–strong base titration is basic due to salt hydrolysis to estimate the pH.","bloom":"Apply","topic":"CHEM_ACIDBASE","topicLabel":"7 · Acid-Base Equilibria","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHEM_ACIDBASE2","full":"Explain the limitations of the Arrhenius acid-base concept for non-aqueous or gaseous systems.","bloom":"Understand","topic":"CHEM_ACIDBASE","topicLabel":"7 · Acid-Base Equilibria","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHEM_ANALYTICAL1","full":"Recall the defining criteria of a primary standard solution and identify an example.","bloom":"Remember","topic":"CHEM_ANALYTICAL","topicLabel":"13 · Quantitative (Titrimetric) Analysis","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":1,"degree":2,"component":0},{"id":"CHEM_AT1","full":"Determine the electronic configuration of a given element.","bloom":"Apply","topic":"CHEM_AT","topicLabel":"Atomic Structure and Quantum Numbers","subject":"Chemistry","role":"intermediate","prereqCount":2,"dependentCount":9,"degree":11,"component":0},{"id":"CHEM_AT2","full":"Assign correct quantum numbers (n, l, m, s) to an atom's outermost/valence electron.","bloom":"Apply","topic":"CHEM_AT","topicLabel":"Atomic Structure and Quantum Numbers","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHEM_AT3","full":"Apply the Rydberg/Balmer formula to relate a spectral line's wavelength to an electron transition.","bloom":"Apply","topic":"CHEM_AT","topicLabel":"Atomic Structure and Quantum Numbers","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":2,"degree":3,"component":1},{"id":"CHEM_AT4","full":"Calculate the initial quantum number (n) of an electron transition from a known spectral line wavelength.","bloom":"Apply","topic":"CHEM_AT","topicLabel":"Atomic Structure and Quantum Numbers","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":1},{"id":"CHEM_AT5","full":"Determine the electron configuration of an atom to identify unpaired electrons.","bloom":"Apply","topic":"CHEM_AT","topicLabel":"Atomic Structure and Quantum Numbers","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":2,"degree":3,"component":0},{"id":"CHEM_AT6","full":"Determine whether an atom is paramagnetic or diamagnetic based on its electron configuration.","bloom":"Analyze","topic":"CHEM_AT","topicLabel":"Atomic Structure and Quantum Numbers","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":1,"degree":2,"component":0},{"id":"CHEM_ATOMIC1","full":"Interpret the given quantum numbers (n, l, m) to identify the specific orbital they describe.","bloom":"Apply","topic":"CHEM_ATOMIC","topicLabel":"1 · Atomic Structure","subject":"Chemistry","role":"root","prereqCount":0,"dependentCount":2,"degree":2,"component":0},{"id":"CHEM_ATOMIC2","full":"Apply the rule that a single orbital can hold a maximum of two electrons.","bloom":"Apply","topic":"CHEM_ATOMIC","topicLabel":"1 · Atomic Structure","subject":"Chemistry","role":"root","prereqCount":0,"dependentCount":1,"degree":1,"component":0},{"id":"CHEM_ATOMIC3","full":"Convert a given wavelength to frequency using c = νλ.","bloom":"Apply","topic":"CHEM_ATOMIC","topicLabel":"1 · Atomic Structure","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":2,"degree":3,"component":1},{"id":"CHEM_ATOMIC4","full":"Relate the wavelength value to its corresponding visible-light color.","bloom":"Understand","topic":"CHEM_ATOMIC","topicLabel":"1 · Atomic Structure","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":1,"degree":2,"component":1},{"id":"CHEM_ATOMIC5","full":"Calculate the weighted average atomic mass of an element from isotope masses and their percentage abundances.","bloom":"Apply","topic":"CHEM_ATOMIC","topicLabel":"1 · Atomic Structure","subject":"Chemistry","role":"root","prereqCount":0,"dependentCount":3,"degree":3,"component":0},{"id":"CHEM_BOND1","full":"Recall that pi bonds form via sideways (lateral) overlap of unhybridized p-orbitals.","bloom":"Remember","topic":"CHEM_BOND","topicLabel":"Chemical Bonding","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":2,"degree":3,"component":0},{"id":"CHEM_BOND2","full":"Analyze a compound's structure to identify the different types of bonding present within it (ionic, covalent, coordinate).","bloom":"Analyze","topic":"CHEM_BOND","topicLabel":"Chemical Bonding","subject":"Chemistry","role":"intermediate","prereqCount":2,"dependentCount":5,"degree":7,"component":0},{"id":"CHEM_BOND3","full":"Analyze molecular structures to determine the presence or absence of pi bonds.","bloom":"Analyze","topic":"CHEM_BOND","topicLabel":"Chemical Bonding","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":3,"degree":4,"component":0},{"id":"CHEM_BONDING1","full":"Analyze molecular geometry and symmetry to determine whether a molecule has a net dipole moment.","bloom":"Understand","topic":"CHEM_BONDING","topicLabel":"4 · Chemical Bonding","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHEM_CAT1","full":"Recall the role of a promoter substance in heterogeneous catalytic reactions.","bloom":"Remember","topic":"CHEM_CAT","topicLabel":"Catalysis","subject":"Chemistry","role":"root","prereqCount":0,"dependentCount":1,"degree":1,"component":4},{"id":"CHEM_COORD1","full":"Explain how octahedral crystal field splitting affects the relative energies of the d-orbitals.","bloom":"Understand","topic":"CHEM_COORD","topicLabel":"5.2 · Coordination Chemistry","subject":"Chemistry","role":"intermediate","prereqCount":2,"dependentCount":1,"degree":3,"component":0},{"id":"CHEM_DBLOCK1","full":"Recall the general physical and magnetic properties of d-block (transition) elements.","bloom":"Remember","topic":"CHEM_DBLOCK","topicLabel":"5 · Transition Elements","subject":"Chemistry","role":"intermediate","prereqCount":2,"dependentCount":1,"degree":3,"component":0},{"id":"CHEM_ELECTROCHEM1","full":"Apply the Nernst equation to calculate the cell potential from the standard cell potential and given ion concentrations.","bloom":"Apply","topic":"CHEM_ELECTROCHEM","topicLabel":"15 · Electrochemistry","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHEM_ELECTROCHEM2","full":"Apply Faraday's laws of electrolysis to calculate the mass of metal deposited given the charge passed.","bloom":"Apply","topic":"CHEM_ELECTROCHEM","topicLabel":"15 · Electrochemistry","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHEM_ENV1","full":"Recall the factors considered when determining Biochemical Oxygen Demand (BOD) of a water sample.","bloom":"Remember","topic":"CHEM_ENV","topicLabel":"12 · Environmental Chemistry","subject":"Chemistry","role":"root","prereqCount":0,"dependentCount":1,"degree":1,"component":3},{"id":"CHEM_ENV2","full":"Recall which category of metal ions catalyzes/accelerates the degradation of food.","bloom":"Remember","topic":"CHEM_ENV","topicLabel":"12 · Environmental Chemistry","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":4},{"id":"CHEM_EQ1","full":"Apply Le Chatelier's principle to predict the effect of a pressure change on a gaseous equilibrium.","bloom":"Apply","topic":"CHEM_EQ","topicLabel":"Chemical Equilibrium","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":3,"degree":4,"component":0},{"id":"CHEM_EQ2","full":"Recall that salts formed from a strong acid and a strong base yield neutral aqueous solutions.","bloom":"Understand","topic":"CHEM_EQ","topicLabel":"Chemical Equilibrium","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":2,"degree":3,"component":0},{"id":"CHEM_EQ3","full":"Recall the condition relating ionic product and solubility product (Ksp) that determines precipitation.","bloom":"Understand","topic":"CHEM_EQ","topicLabel":"Chemical Equilibrium","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHEM_EQUILIBRIUM1","full":"Apply the relation Kp = Kc(RT)^Δn to convert Kc to Kp for a gas-phase equilibrium.","bloom":"Apply","topic":"CHEM_EQUILIBRIUM","topicLabel":"8 · Chemical Equilibrium","subject":"Chemistry","role":"intermediate","prereqCount":2,"dependentCount":1,"degree":3,"component":0},{"id":"CHEM_GAS1","full":"Apply Gay-Lussac's law to relate pressure and absolute temperature at constant volume.","bloom":"Apply","topic":"CHEM_GAS","topicLabel":"Gas Laws","subject":"Chemistry","role":"root","prereqCount":0,"dependentCount":3,"degree":3,"component":0},{"id":"CHEM_GAS2","full":"Calculate the factor of pressure change resulting from a given temperature change expressed in Kelvin.","bloom":"Apply","topic":"CHEM_GAS","topicLabel":"Gas Laws","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHEM_GAS3","full":"Apply Graham's law of effusion to compare effusion rates of different gases.","bloom":"Apply","topic":"CHEM_GAS","topicLabel":"Gas Laws","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":1,"degree":2,"component":0},{"id":"CHEM_GAS4","full":"Rank gases by molar mass to determine their relative rates of effusion.","bloom":"Analyze","topic":"CHEM_GAS","topicLabel":"Gas Laws","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHEM_GASLAW1","full":"Explain the pressure and temperature conditions under which real gases approximate ideal gas behavior.","bloom":"Understand","topic":"CHEM_GASLAW","topicLabel":"11 · Gaseous State","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHEM_GASLAW2","full":"Apply the ideal gas law (PV = nRT) to calculate the molar mass of a gas sample.","bloom":"Apply","topic":"CHEM_GASLAW","topicLabel":"11 · Gaseous State","subject":"Chemistry","role":"intermediate","prereqCount":2,"dependentCount":3,"degree":5,"component":0},{"id":"CHEM_GASLAW3","full":"Identify the gas corresponding to the calculated molar mass.","bloom":"Apply","topic":"CHEM_GASLAW","topicLabel":"11 · Gaseous State","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHEM_GASLAW4","full":"Apply the relation between RMS velocity, temperature and molar mass to equate RMS velocities of two different gases.","bloom":"Apply","topic":"CHEM_GASLAW","topicLabel":"11 · Gaseous State","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":1,"degree":2,"component":0},{"id":"CHEM_GASLAW5","full":"Solve for the temperature at which the RMS velocities are equal.","bloom":"Apply","topic":"CHEM_GASLAW","topicLabel":"11 · Gaseous State","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHEM_KIN1","full":"Derive the unit of a reaction rate constant from the overall order of the reaction.","bloom":"Apply","topic":"CHEM_KIN","topicLabel":"Chemical Kinetics","subject":"Chemistry","role":"root","prereqCount":0,"dependentCount":1,"degree":1,"component":2},{"id":"CHEM_KINETICS1","full":"Analyze the integrated rate law for a first-order reaction to identify which plotted quantity is linear through the origin.","bloom":"Analyze","topic":"CHEM_KINETICS","topicLabel":"10 · Chemical Kinetics","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":2},{"id":"CHEM_MOLE1","full":"Calculate the number of moles of a compound from its given mass and molar mass.","bloom":"Apply","topic":"CHEM_MOLE","topicLabel":"Mole Concept and Stoichiometry","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":14,"degree":15,"component":0},{"id":"CHEM_MOLE2","full":"Calculate the number of atoms of a specific element in a sample using Avogadro's number and molecular formula.","bloom":"Apply","topic":"CHEM_MOLE","topicLabel":"Mole Concept and Stoichiometry","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":2,"degree":3,"component":0},{"id":"CHEM_MOLE3","full":"Calculate the mole fraction of a component within a gas mixture.","bloom":"Apply","topic":"CHEM_MOLE","topicLabel":"Mole Concept and Stoichiometry","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHEM_MOLE4","full":"Apply stoichiometric mole ratios from a balanced chemical equation.","bloom":"Apply","topic":"CHEM_MOLE","topicLabel":"Mole Concept and Stoichiometry","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":5,"degree":6,"component":0},{"id":"CHEM_MOLE5","full":"Calculate the number of molecules produced in a reaction using Avogadro's number.","bloom":"Apply","topic":"CHEM_MOLE","topicLabel":"Mole Concept and Stoichiometry","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHEM_MOLE6","full":"Calculate a solute's concentration in parts per million (ppm) from mass ratio data.","bloom":"Apply","topic":"CHEM_MOLE","topicLabel":"Mole Concept and Stoichiometry","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":2,"degree":3,"component":0},{"id":"CHEM_NOM1","full":"Identify the structure of a given alkyl radical from its skeletal/condensed formula.","bloom":"Understand","topic":"CHEM_NOM","topicLabel":"Nomenclature","subject":"Chemistry","role":"root","prereqCount":0,"dependentCount":6,"degree":6,"component":0},{"id":"CHEM_NOM2","full":"Classify an alkyl radical using common nomenclature rules (n-, iso-, sec-, tert-).","bloom":"Apply","topic":"CHEM_NOM","topicLabel":"Nomenclature","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":4,"degree":5,"component":0},{"id":"CHEM_ORG1","full":"Recall which class of carbonyl compounds reacts with a Grignard reagent to yield a secondary alcohol.","bloom":"Understand","topic":"CHEM_ORG","topicLabel":"Organic Reactions","subject":"Chemistry","role":"intermediate","prereqCount":2,"dependentCount":1,"degree":3,"component":0},{"id":"CHEM_ORG2","full":"Recall the mechanism and typical conditions of the Friedel-Crafts reaction.","bloom":"Remember","topic":"CHEM_ORG","topicLabel":"Organic Reactions","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHEM_ORG3","full":"Recall that the absence of an alpha-hydrogen is required for an aldehyde to undergo the Cannizzaro reaction.","bloom":"Understand","topic":"CHEM_ORG","topicLabel":"Organic Reactions","subject":"Chemistry","role":"root","prereqCount":0,"dependentCount":2,"degree":2,"component":0},{"id":"CHEM_ORG4","full":"Analyze given aldehyde structures to identify the presence or absence of alpha-hydrogens.","bloom":"Analyze","topic":"CHEM_ORG","topicLabel":"Organic Reactions","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHEM_ORGANIC1","full":"Use LiAlH4 reduction, the positive iodoform test, and oxidation to carboxylic acid as clues to deduce the identity of compound B.","bloom":"Analyze","topic":"CHEM_ORGANIC","topicLabel":"16 · Organic Chemistry","subject":"Chemistry","role":"leaf","prereqCount":3,"dependentCount":0,"degree":3,"component":0},{"id":"CHEM_ORGANIC2","full":"Classify alcohols as primary, secondary, or tertiary and identify which produces a ketone on oxidation.","bloom":"Understand","topic":"CHEM_ORGANIC","topicLabel":"16 · Organic Chemistry","subject":"Chemistry","role":"intermediate","prereqCount":2,"dependentCount":4,"degree":6,"component":0},{"id":"CHEM_ORGANIC3","full":"Recall the characteristic positive result (red copper(I) oxide precipitate) of an aldehyde with Fehling's solution.","bloom":"Remember","topic":"CHEM_ORGANIC","topicLabel":"16 · Organic Chemistry","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":1,"degree":2,"component":0},{"id":"CHEM_ORGANIC4","full":"Examine each pair of structures to determine whether they differ only in electron placement (true resonance) or represent different compounds.","bloom":"Analyze","topic":"CHEM_ORGANIC","topicLabel":"16 · Organic Chemistry","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":2,"degree":3,"component":0},{"id":"CHEM_ORGANIC5","full":"Apply IUPAC nomenclature rules to name a branched alkyne, including locants and substituent prefixes.","bloom":"Apply","topic":"CHEM_ORGANIC","topicLabel":"16 · Organic Chemistry","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHEM_ORGANIC6","full":"Explain the characteristic mechanism and kinetics (unimolecular, reactivity order) of an SN1 reaction.","bloom":"Understand","topic":"CHEM_ORGANIC","topicLabel":"16 · Organic Chemistry","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHEM_PER1","full":"Recall periodic trends in ionic radius for ions compared to their parent atoms.","bloom":"Understand","topic":"CHEM_PER","topicLabel":"Periodic Trends","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":6,"degree":7,"component":0},{"id":"CHEM_PER2","full":"Compare ionic radii of related species with different charges to rank them correctly.","bloom":"Analyze","topic":"CHEM_PER","topicLabel":"Periodic Trends","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHEM_PER3","full":"Calculate the total electron count for each species (atom/ion/molecule) in a given set.","bloom":"Apply","topic":"CHEM_PER","topicLabel":"Periodic Trends","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":3,"degree":4,"component":0},{"id":"CHEM_PER4","full":"Compare electron counts across a set of species to identify one that is not isoelectronic with the others.","bloom":"Analyze","topic":"CHEM_PER","topicLabel":"Periodic Trends","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":1,"degree":2,"component":0},{"id":"CHEM_PERIODIC1","full":"Compare ionization energies of isoelectronic ions by analyzing effective nuclear charge.","bloom":"Analyze","topic":"CHEM_PERIODIC","topicLabel":"6 · Periodic Properties","subject":"Chemistry","role":"intermediate","prereqCount":2,"dependentCount":1,"degree":3,"component":0},{"id":"CHEM_PERIODIC2","full":"Evaluate given periodic-trend orderings (reactivity, electron affinity) against known chemistry to identify the incorrect one.","bloom":"Evaluate","topic":"CHEM_PERIODIC","topicLabel":"6 · Periodic Properties","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHEM_QUALITATIVE1","full":"Recall the characteristic reaction and precipitate color used to identify Fe2+ ions with potassium ferricyanide.","bloom":"Remember","topic":"CHEM_QUALITATIVE","topicLabel":"2 · Qualitative Analysis","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":1,"degree":2,"component":0},{"id":"CHEM_REDOX1","full":"Identify which given reaction represents a bleaching reaction based on the chemistry of the reactants and products.","bloom":"Understand","topic":"CHEM_REDOX","topicLabel":"14 · Redox Reactions","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":2,"degree":3,"component":0},{"id":"CHEM_REDOX1b","full":"Recall compounds (such as hydrogen peroxide) that can act simultaneously as oxidizing, reducing, and bleaching agents.","bloom":"Remember","topic":"CHEM_REDOX","topicLabel":"Redox Reactions and Electrochemistry","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHEM_REDOX2","full":"Calculate the oxidation number of the central atom in each given compound or ion.","bloom":"Apply","topic":"CHEM_REDOX","topicLabel":"14 · Redox Reactions","subject":"Chemistry","role":"root","prereqCount":0,"dependentCount":7,"degree":7,"component":0},{"id":"CHEM_REDOX2b","full":"Balance a redox reaction between a permanganate oxidizer and a ferrous salt to determine the mole ratio.","bloom":"Apply","topic":"CHEM_REDOX","topicLabel":"Redox Reactions and Electrochemistry","subject":"Chemistry","role":"intermediate","prereqCount":2,"dependentCount":1,"degree":3,"component":0},{"id":"CHEM_REDOX3","full":"Calculate the mass of an oxidizing agent required using redox reaction stoichiometry.","bloom":"Apply","topic":"CHEM_REDOX","topicLabel":"Redox Reactions and Electrochemistry","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHEM_REDOX4","full":"Calculate the standard cell potential of a voltaic cell from the standard reduction potentials of its two half-cells.","bloom":"Apply","topic":"CHEM_REDOX","topicLabel":"Redox Reactions and Electrochemistry","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":2,"degree":3,"component":0},{"id":"CHEM_REDOX5","full":"Apply Faraday's laws of electrolysis to relate charge, current, and time to mass deposited at an electrode.","bloom":"Apply","topic":"CHEM_REDOX","topicLabel":"Redox Reactions and Electrochemistry","subject":"Chemistry","role":"intermediate","prereqCount":2,"dependentCount":3,"degree":5,"component":0},{"id":"CHEM_REDOX6","full":"Calculate the charge (valency) of a metal ion from electrodeposition data.","bloom":"Apply","topic":"CHEM_REDOX","topicLabel":"Redox Reactions and Electrochemistry","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHEM_SOLID1","full":"Recall periodic trends in lattice energy that determine melting points of alkaline-earth metal chlorides.","bloom":"Understand","topic":"CHEM_SOLID","topicLabel":"Solid State and Ionic Compounds","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHEM_SOLUTION1","full":"Apply Le Chatelier's principle to an exothermic dissolution process to predict the effect of increased temperature on solubility.","bloom":"Analyze","topic":"CHEM_SOLUTION","topicLabel":"9 · Solutions","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHEM_SOLUTION2","full":"Convert moles of solute and volume of solution into a concentration expressed in parts per million (ppm).","bloom":"Apply","topic":"CHEM_SOLUTION","topicLabel":"9 · Solutions","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHEM_SPEC1","full":"Recall the characteristic wavelength/frequency ranges of different regions of the electromagnetic spectrum.","bloom":"Remember","topic":"CHEM_SPEC","topicLabel":"Electromagnetic Spectrum","subject":"Chemistry","role":"root","prereqCount":0,"dependentCount":2,"degree":2,"component":1},{"id":"CHEM_SPEC2","full":"Evaluate multiple statements about electromagnetic radiation to identify the false one.","bloom":"Evaluate","topic":"CHEM_SPEC","topicLabel":"Electromagnetic Spectrum","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":1},{"id":"CHEM_STEREO1","full":"Apply the formula 2^n to calculate the number of optical isomers from the number of chiral centers.","bloom":"Apply","topic":"CHEM_STEREO","topicLabel":"Stereochemistry","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":1,"degree":2,"component":0},{"id":"CHEM_STOICH1","full":"Convert a given mass of NH3 to moles using its molar mass.","bloom":"Apply","topic":"CHEM_STOICH","topicLabel":"3 · Stoichiometry (Mole Concept)","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":1,"degree":2,"component":0},{"id":"CHEM_STOICH2","full":"Use Avogadro's number and the number of atoms per molecule to calculate the total number of atoms.","bloom":"Apply","topic":"CHEM_STOICH","topicLabel":"3 · Stoichiometry (Mole Concept)","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHEM_STOICH3","full":"Balance a combustion equation and use atom conservation to deduce the molecular formula of the hydrocarbon.","bloom":"Apply","topic":"CHEM_STOICH","topicLabel":"3 · Stoichiometry (Mole Concept)","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHE_ACIDBASE1","full":"Estimate the pH of a strong acid solution from its concentration.","bloom":"Apply","topic":"CHE_ACIDBASE","topicLabel":"Acids, Bases and pH","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":3,"degree":4,"component":0},{"id":"CHE_ACIDBASE2","full":"Compare the relative strengths of common oxoacids.","bloom":"Understand","topic":"CHE_ACIDBASE","topicLabel":"Acids, Bases and pH","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":1,"degree":2,"component":0},{"id":"CHE_ANALYTICAL1","full":"Recall the method used to determine TDS content in water.","bloom":"Remember","topic":"CHE_QUAL","topicLabel":"Qualitative Analysis","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHE_ATOMIC1","full":"Apply quantum number rules to identify an invalid set of quantum numbers.","bloom":"Apply","topic":"CHE_ATOMIC","topicLabel":"Atomic Structure","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHE_ATOMIC2","full":"Derive the identity of an atom or ion from a given electron configuration.","bloom":"Apply","topic":"CHE_ATOMIC","topicLabel":"Atomic Structure","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHE_ATOMIC3","full":"Compare the energies of different colors of visible light based on wavelength.","bloom":"Understand","topic":"CHE_ATOMIC","topicLabel":"Atomic Structure","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":1},{"id":"CHE_ATOMIC4","full":"Calculate the energy of an excited state of a hydrogen-like ion using the Bohr model.","bloom":"Apply","topic":"CHE_ATOMIC","topicLabel":"Atomic Structure","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":1},{"id":"CHE_ATOMIC5","full":"Derive an ion's electron configuration to identify a transition metal with a given d-electron count.","bloom":"Apply","topic":"CHE_ATOMIC","topicLabel":"Atomic Structure","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHE_BIOMOLECULE1","full":"Explain the mechanism by which vitamin E acts as a food preservative (antioxidant).","bloom":"Understand","topic":"CHE_BIOMOLECULE","topicLabel":"Biomolecules","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHE_BIOMOLECULE2","full":"Recall the number of chiral centers in glucose.","bloom":"Remember","topic":"CHE_BIOMOLECULE","topicLabel":"Biomolecules","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHE_BIOMOLECULE3","full":"Recall the type of bond that stabilizes the DNA double helix.","bloom":"Remember","topic":"CHE_BIOMOLECULE","topicLabel":"Biomolecules","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHE_BIOMOLECULE4","full":"Determine the degree of saturation of a fatty acid from its molecular formula.","bloom":"Apply","topic":"CHE_BIOMOLECULE","topicLabel":"Biomolecules","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHE_BONDING1","full":"Determine isoelectronic species by counting total electrons.","bloom":"Apply","topic":"CHE_BONDING","topicLabel":"Chemical Bonding","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHE_BONDING2","full":"Explain which compounds exhibit expanded-octet bonding.","bloom":"Understand","topic":"CHE_BONDING","topicLabel":"Chemical Bonding","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHE_COORD1","full":"Recall the type of bond formed between a metal ion and ligand in a coordination complex.","bloom":"Remember","topic":"CHE_COORD","topicLabel":"Coordination Compounds","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":1,"degree":2,"component":0},{"id":"CHE_COORD2","full":"Calculate the magnetic moment of a complex ion from its electron configuration.","bloom":"Apply","topic":"CHE_COORD","topicLabel":"Coordination Compounds","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHE_ELECTROCHEM1","full":"Rank reducing agent strength using standard electrode potentials.","bloom":"Apply","topic":"CHE_ELECTROCHEM","topicLabel":"Electrochemistry","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":2,"degree":3,"component":0},{"id":"CHE_ELECTROCHEM2","full":"Apply Faraday's laws of electrolysis to calculate mass deposited at an electrode.","bloom":"Apply","topic":"CHE_ELECTROCHEM","topicLabel":"Electrochemistry","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":1,"degree":2,"component":0},{"id":"CHE_ELECTROCHEM3","full":"Calculate cell EMF from standard electrode potentials.","bloom":"Apply","topic":"CHE_ELECTROCHEM","topicLabel":"Electrochemistry","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHE_EQUILIBRIUM1","full":"Interpret a van't Hoff plot to classify a reaction as exothermic or endothermic.","bloom":"Understand","topic":"CHE_EQUILIBRIUM","topicLabel":"Chemical Equilibrium","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHE_EQUILIBRIUM2","full":"Apply Le Chatelier's principle to predict the shift in equilibrium concentrations.","bloom":"Apply","topic":"CHE_EQUILIBRIUM","topicLabel":"Chemical Equilibrium","subject":"Chemistry","role":"root","prereqCount":0,"dependentCount":1,"degree":1,"component":0},{"id":"CHE_EQUILIBRIUM3","full":"Convert between Kp and Kc using the ideal-gas relation.","bloom":"Apply","topic":"CHE_EQUILIBRIUM","topicLabel":"Chemical Equilibrium","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHE_GASLAWS1","full":"Recall the relationship between rms velocity and average velocity of gas molecules.","bloom":"Remember","topic":"CHE_GASLAWS","topicLabel":"Gaseous State","subject":"Chemistry","role":"root","prereqCount":0,"dependentCount":1,"degree":1,"component":0},{"id":"CHE_GASLAWS2","full":"Apply Avogadro's law to compare molecule counts of different gases at STP.","bloom":"Apply","topic":"CHE_GASLAWS","topicLabel":"Gaseous State","subject":"Chemistry","role":"intermediate","prereqCount":2,"dependentCount":1,"degree":3,"component":0},{"id":"CHE_ORGANIC1","full":"Recall the product formed when formaldehyde reacts with potassium metal.","bloom":"Remember","topic":"CHE_ORGANIC","topicLabel":"Organic Reactions","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHE_ORGANIC2","full":"Determine which compound is an isomer of a given alkene by comparing molecular formulas.","bloom":"Apply","topic":"CHE_ORGANIC","topicLabel":"Organic Reactions","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHE_ORGANIC3","full":"Predict the oxidation product of toluene using KMnO4.","bloom":"Apply","topic":"CHE_ORGANIC","topicLabel":"Organic Reactions","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHE_QUAL1","full":"Recall which ions are detected using the NH4OH reagent.","bloom":"Remember","topic":"CHE_QUAL","topicLabel":"Qualitative Analysis","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHE_STOICH1","full":"Calculate the volume of solution required from molarity and moles.","bloom":"Apply","topic":"CHE_STOICHIOMETRY","topicLabel":"Stoichiometry and Mole Concept","subject":"Chemistry","role":"leaf","prereqCount":1,"dependentCount":0,"degree":1,"component":0},{"id":"CHE_STOICH2","full":"Calculate gas volume at STP from mass using molar volume.","bloom":"Apply","topic":"CHE_STOICHIOMETRY","topicLabel":"Stoichiometry and Mole Concept","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHE_STOICH3","full":"Convert molar concentration to parts-per-million (ppm) units.","bloom":"Apply","topic":"CHE_STOICHIOMETRY","topicLabel":"Stoichiometry and Mole Concept","subject":"Chemistry","role":"intermediate","prereqCount":1,"dependentCount":1,"degree":2,"component":0},{"id":"CHE_STOICH4","full":"Calculate the average oxidation state of an element from a compound's formula.","bloom":"Apply","topic":"CHE_STOICHIOMETRY","topicLabel":"Stoichiometry and Mole Concept","subject":"Chemistry","role":"leaf","prereqCount":2,"dependentCount":0,"degree":2,"component":0},{"id":"CHE_THERMOCHEM1","full":"Calculate heat released using q = m c (delta)T.","bloom":"Apply","topic":"CHE_THERMOCHEM","topicLabel":"Thermochemistry","subject":"Chemistry","role":"root","prereqCount":0,"dependentCount":1,"degree":1,"component":0}],"edges":[{"source":"CHEM_ATOMIC1","target":"CHE_ATOMIC1"},{"source":"CHEM_AT1","target":"CHE_ATOMIC2"},{"source":"CHEM_ATOMIC4","target":"CHE_ATOMIC3"},{"source":"CHEM_AT3","target":"CHE_ATOMIC4"},{"source":"CHEM_AT1","target":"CHE_ATOMIC5"},{"source":"CHEM_QUALITATIVE1","target":"CHE_QUAL1"},{"source":"CHEM_ANALYTICAL1","target":"CHE_ANALYTICAL1"},{"source":"CHEM_PER3","target":"CHE_BONDING1"},{"source":"CHEM_AT1","target":"CHE_BONDING2"},{"source":"CHEM_BOND2","target":"CHE_BONDING2"},{"source":"CHEM_BOND2","target":"CHE_COORD1"},{"source":"CHEM_COORD1","target":"CHE_COORD2"},{"source":"CHEM_AT5","target":"CHE_COORD2"},{"source":"CHE_THERMOCHEM1","target":"CHE_EQUILIBRIUM1"},{"source":"CHEM_EQ1","target":"CHE_EQUILIBRIUM1"},{"source":"CHEM_EQUILIBRIUM1","target":"CHE_EQUILIBRIUM3"},{"source":"CHEM_GASLAW2","target":"CHE_EQUILIBRIUM3"},{"source":"CHEM_MOLE1","target":"CHE_STOICH1"},{"source":"CHE_GASLAWS2","target":"CHE_STOICH2"},{"source":"CHEM_MOLE1","target":"CHE_STOICH2"},{"source":"CHEM_MOLE6","target":"CHE_STOICH3"},{"source":"CHEM_REDOX2","target":"CHE_STOICH4"},{"source":"CHEM_MOLE4","target":"CHE_STOICH4"},{"source":"CHEM_MOLE1","target":"CHE_ACIDBASE1"},{"source":"CHEM_PER1","target":"CHE_ACIDBASE2"},{"source":"CHE_GASLAWS1","target":"CHE_GASLAWS2"},{"source":"CHEM_MOLE1","target":"CHE_GASLAWS2"},{"source":"CHEM_REDOX2","target":"CHE_ELECTROCHEM1"},{"source":"CHEM_REDOX5","target":"CHE_ELECTROCHEM2"},{"source":"CHE_ELECTROCHEM1","target":"CHE_ELECTROCHEM3"},{"source":"CHEM_REDOX4","target":"CHE_ELECTROCHEM3"},{"source":"CHEM_REDOX1","target":"CHE_BIOMOLECULE1"},{"source":"CHEM_STEREO1","target":"CHE_BIOMOLECULE2"},{"source":"CHEM_BOND2","target":"CHE_BIOMOLECULE3"},{"source":"CHEM_BOND3","target":"CHE_BIOMOLECULE4"},{"source":"CHEM_NOM1","target":"CHE_BIOMOLECULE4"},{"source":"CHEM_ORG3","target":"CHE_ORGANIC1"},{"source":"CHEM_NOM1","target":"CHE_ORGANIC2"},{"source":"CHEM_REDOX2","target":"CHE_ORGANIC3"},{"source":"CHEM_ORGANIC2","target":"CHE_ORGANIC3"},{"source":"CHEM_SPEC1","target":"CHEM_ATOMIC3"},{"source":"CHEM_ATOMIC3","target":"CHEM_ATOMIC4"},{"source":"CHEM_REDOX2","target":"CHEM_QUALITATIVE1"},{"source":"CHEM_MOLE1","target":"CHEM_STOICH1"},{"source":"CHEM_STOICH1","target":"CHEM_STOICH2"},{"source":"CHEM_MOLE2","target":"CHEM_STOICH2"},{"source":"CHEM_BOND2","target":"CHEM_BONDING1"},{"source":"CHEM_BOND3","target":"CHEM_BONDING1"},{"source":"CHEM_AT1","target":"CHEM_DBLOCK1"},{"source":"CHEM_AT6","target":"CHEM_DBLOCK1"},{"source":"CHEM_PER1","target":"CHEM_PERIODIC1"},{"source":"CHEM_PER4","target":"CHEM_PERIODIC1"},{"source":"CHEM_PERIODIC1","target":"CHEM_PERIODIC2"},{"source":"CHEM_PER1","target":"CHEM_PERIODIC2"},{"source":"CHE_COORD1","target":"CHEM_COORD1"},{"source":"CHEM_DBLOCK1","target":"CHEM_COORD1"},{"source":"CHE_ACIDBASE1","target":"CHEM_ACIDBASE1"},{"source":"CHEM_EQ2","target":"CHEM_ACIDBASE1"},{"source":"CHEM_MOLE4","target":"CHEM_STOICH3"},{"source":"CHEM_GASLAW2","target":"CHEM_EQUILIBRIUM1"},{"source":"CHEM_MOLE4","target":"CHEM_EQUILIBRIUM1"},{"source":"CHEM_EQ1","target":"CHEM_SOLUTION1"},{"source":"CHEM_KIN1","target":"CHEM_KINETICS1"},{"source":"CHEM_GAS1","target":"CHEM_GASLAW1"},{"source":"CHEM_MOLE1","target":"CHEM_GASLAW2"},{"source":"CHEM_GAS1","target":"CHEM_GASLAW2"},{"source":"CHEM_GASLAW2","target":"CHEM_GASLAW3"},{"source":"CHEM_ATOMIC5","target":"CHEM_GASLAW4"},{"source":"CHEM_GASLAW4","target":"CHEM_GASLAW5"},{"source":"CHE_ACIDBASE1","target":"CHEM_ACIDBASE2"},{"source":"CHEM_MOLE1","target":"CHEM_ANALYTICAL1"},{"source":"CHE_STOICH3","target":"CHEM_SOLUTION2"},{"source":"CHEM_MOLE6","target":"CHEM_SOLUTION2"},{"source":"CHEM_REDOX2","target":"CHEM_REDOX1"},{"source":"CHEM_CAT1","target":"CHEM_ENV2"},{"source":"CHEM_REDOX4","target":"CHEM_ELECTROCHEM1"},{"source":"CHE_ELECTROCHEM2","target":"CHEM_ELECTROCHEM2"},{"source":"CHEM_REDOX5","target":"CHEM_ELECTROCHEM2"},{"source":"CHEM_ORGANIC2","target":"CHEM_ORGANIC1"},{"source":"CHEM_ORGANIC3","target":"CHEM_ORGANIC1"},{"source":"CHEM_ORG1","target":"CHEM_ORGANIC1"},{"source":"CHEM_NOM1","target":"CHEM_ORGANIC2"},{"source":"CHEM_NOM2","target":"CHEM_ORGANIC2"},{"source":"CHEM_ORGANIC2","target":"CHEM_ORGANIC3"},{"source":"CHEM_BOND3","target":"CHEM_ORGANIC4"},{"source":"CHEM_NOM2","target":"CHEM_ORGANIC5"},{"source":"CHEM_ORGANIC4","target":"CHEM_ORGANIC6"},{"source":"CHEM_NOM2","target":"CHEM_ORGANIC6"},{"source":"CHEM_ATOMIC1","target":"CHEM_AT1"},{"source":"CHEM_ATOMIC2","target":"CHEM_AT1"},{"source":"CHEM_AT1","target":"CHEM_AT2"},{"source":"CHEM_ATOMIC3","target":"CHEM_AT3"},{"source":"CHEM_AT3","target":"CHEM_AT4"},{"source":"CHEM_AT1","target":"CHEM_AT5"},{"source":"CHEM_AT5","target":"CHEM_AT6"},{"source":"CHEM_SPEC1","target":"CHEM_SPEC2"},{"source":"CHEM_ATOMIC5","target":"CHEM_MOLE1"},{"source":"CHEM_MOLE1","target":"CHEM_MOLE2"},{"source":"CHEM_MOLE1","target":"CHEM_MOLE3"},{"source":"CHEM_MOLE1","target":"CHEM_MOLE4"},{"source":"CHEM_MOLE2","target":"CHEM_MOLE5"},{"source":"CHEM_MOLE4","target":"CHEM_MOLE5"},{"source":"CHEM_MOLE1","target":"CHEM_MOLE6"},{"source":"CHEM_AT1","target":"CHEM_PER1"},{"source":"CHEM_PER1","target":"CHEM_PER2"},{"source":"CHEM_PER3","target":"CHEM_PER2"},{"source":"CHEM_AT1","target":"CHEM_PER3"},{"source":"CHEM_PER3","target":"CHEM_PER4"},{"source":"CHEM_AT1","target":"CHEM_BOND1"},{"source":"CHEM_PER1","target":"CHEM_BOND2"},{"source":"CHEM_BOND1","target":"CHEM_BOND2"},{"source":"CHEM_BOND1","target":"CHEM_BOND3"},{"source":"CHEM_PER1","target":"CHEM_SOLID1"},{"source":"CHEM_BOND2","target":"CHEM_SOLID1"},{"source":"CHE_EQUILIBRIUM2","target":"CHEM_EQ1"},{"source":"CHE_ACIDBASE1","target":"CHEM_EQ2"},{"source":"CHEM_EQ1","target":"CHEM_EQ3"},{"source":"CHEM_EQ2","target":"CHEM_EQ3"},{"source":"CHEM_GAS1","target":"CHEM_GAS2"},{"source":"CHEM_MOLE1","target":"CHEM_GAS3"},{"source":"CHEM_ATOMIC5","target":"CHEM_GAS4"},{"source":"CHEM_GAS3","target":"CHEM_GAS4"},{"source":"CHE_ACIDBASE2","target":"CHEM_AB1"},{"source":"CHEM_ENV1","target":"CHEM_AB2"},{"source":"CHEM_REDOX1","target":"CHEM_REDOX1b"},{"source":"CHEM_MOLE1","target":"CHEM_REDOX3"},{"source":"CHEM_REDOX2b","target":"CHEM_REDOX3"},{"source":"CHE_ELECTROCHEM1","target":"CHEM_REDOX4"},{"source":"CHEM_REDOX2","target":"CHEM_REDOX5"},{"source":"CHEM_MOLE1","target":"CHEM_REDOX5"},{"source":"CHEM_REDOX5","target":"CHEM_REDOX6"},{"source":"CHEM_ORGANIC2","target":"CHEM_ORG1"},{"source":"CHEM_NOM2","target":"CHEM_ORG1"},{"source":"CHEM_ORGANIC4","target":"CHEM_ORG2"},{"source":"CHEM_ORG3","target":"CHEM_ORG4"},{"source":"CHEM_NOM1","target":"CHEM_ORG4"},{"source":"CHEM_NOM1","target":"CHEM_NOM2"},{"source":"CHEM_NOM1","target":"CHEM_STEREO1"},{"source":"CHEM_REDOX2","target":"CHEM_REDOX2b"},{"source":"CHEM_MOLE4","target":"CHEM_REDOX2b"}],"topics":[{"key":"CHEM_REDOX","label":"14 · Redox Reactions","subject":"Chemistry","count":8,"connected":8,"blooms":{"Understand":1,"Apply":6,"Remember":1}},{"key":"CHEM_AT","label":"Atomic Structure and Quantum Numbers","subject":"Chemistry","count":6,"connected":6,"blooms":{"Apply":5,"Analyze":1}},{"key":"CHEM_MOLE","label":"Mole Concept and Stoichiometry","subject":"Chemistry","count":6,"connected":6,"blooms":{"Apply":6}},{"key":"CHEM_ORGANIC","label":"16 · Organic Chemistry","subject":"Chemistry","count":6,"connected":6,"blooms":{"Analyze":2,"Understand":2,"Remember":1,"Apply":1}},{"key":"CHEM_ATOMIC","label":"1 · Atomic Structure","subject":"Chemistry","count":5,"connected":5,"blooms":{"Apply":4,"Understand":1}},{"key":"CHEM_GASLAW","label":"11 · Gaseous State","subject":"Chemistry","count":5,"connected":5,"blooms":{"Understand":1,"Apply":4}},{"key":"CHE_ATOMIC","label":"Atomic Structure","subject":"Chemistry","count":5,"connected":5,"blooms":{"Apply":4,"Understand":1}},{"key":"CHEM_GAS","label":"Gas Laws","subject":"Chemistry","count":4,"connected":4,"blooms":{"Apply":3,"Analyze":1}},{"key":"CHEM_ORG","label":"Organic Reactions","subject":"Chemistry","count":4,"connected":4,"blooms":{"Understand":2,"Remember":1,"Analyze":1}},{"key":"CHEM_PER","label":"Periodic Trends","subject":"Chemistry","count":4,"connected":4,"blooms":{"Understand":1,"Analyze":2,"Apply":1}},{"key":"CHE_BIOMOLECULE","label":"Biomolecules","subject":"Chemistry","count":4,"connected":4,"blooms":{"Understand":1,"Remember":2,"Apply":1}},{"key":"CHE_STOICHIOMETRY","label":"Stoichiometry and Mole Concept","subject":"Chemistry","count":4,"connected":4,"blooms":{"Apply":4}},{"key":"CHEM_BOND","label":"Chemical Bonding","subject":"Chemistry","count":3,"connected":3,"blooms":{"Remember":1,"Analyze":2}},{"key":"CHEM_EQ","label":"Chemical Equilibrium","subject":"Chemistry","count":3,"connected":3,"blooms":{"Apply":1,"Understand":2}},{"key":"CHEM_STOICH","label":"3 · Stoichiometry (Mole Concept)","subject":"Chemistry","count":3,"connected":3,"blooms":{"Apply":3}},{"key":"CHE_ELECTROCHEM","label":"Electrochemistry","subject":"Chemistry","count":3,"connected":3,"blooms":{"Apply":3}},{"key":"CHE_EQUILIBRIUM","label":"Chemical Equilibrium","subject":"Chemistry","count":3,"connected":3,"blooms":{"Understand":1,"Apply":2}},{"key":"CHE_ORGANIC","label":"Organic Reactions","subject":"Chemistry","count":3,"connected":3,"blooms":{"Remember":1,"Apply":2}},{"key":"CHEM_AB","label":"Acids, Bases and Water Quality","subject":"Chemistry","count":2,"connected":2,"blooms":{"Remember":2}},{"key":"CHEM_ACIDBASE","label":"7 · Acid-Base Equilibria","subject":"Chemistry","count":2,"connected":2,"blooms":{"Apply":1,"Understand":1}},{"key":"CHEM_ELECTROCHEM","label":"15 · Electrochemistry","subject":"Chemistry","count":2,"connected":2,"blooms":{"Apply":2}},{"key":"CHEM_ENV","label":"12 · Environmental Chemistry","subject":"Chemistry","count":2,"connected":2,"blooms":{"Remember":2}},{"key":"CHEM_NOM","label":"Nomenclature","subject":"Chemistry","count":2,"connected":2,"blooms":{"Understand":1,"Apply":1}},{"key":"CHEM_PERIODIC","label":"6 · Periodic Properties","subject":"Chemistry","count":2,"connected":2,"blooms":{"Analyze":1,"Evaluate":1}},{"key":"CHEM_SOLUTION","label":"9 · Solutions","subject":"Chemistry","count":2,"connected":2,"blooms":{"Analyze":1,"Apply":1}},{"key":"CHEM_SPEC","label":"Electromagnetic Spectrum","subject":"Chemistry","count":2,"connected":2,"blooms":{"Remember":1,"Evaluate":1}},{"key":"CHE_ACIDBASE","label":"Acids, Bases and pH","subject":"Chemistry","count":2,"connected":2,"blooms":{"Apply":1,"Understand":1}},{"key":"CHE_BONDING","label":"Chemical Bonding","subject":"Chemistry","count":2,"connected":2,"blooms":{"Apply":1,"Understand":1}},{"key":"CHE_COORD","label":"Coordination Compounds","subject":"Chemistry","count":2,"connected":2,"blooms":{"Remember":1,"Apply":1}},{"key":"CHE_GASLAWS","label":"Gaseous State","subject":"Chemistry","count":2,"connected":2,"blooms":{"Remember":1,"Apply":1}},{"key":"CHE_QUAL","label":"Qualitative Analysis","subject":"Chemistry","count":2,"connected":2,"blooms":{"Remember":2}},{"key":"CHEM_ANALYTICAL","label":"13 · Quantitative (Titrimetric) Analysis","subject":"Chemistry","count":1,"connected":1,"blooms":{"Remember":1}},{"key":"CHEM_BONDING","label":"4 · Chemical Bonding","subject":"Chemistry","count":1,"connected":1,"blooms":{"Understand":1}},{"key":"CHEM_CAT","label":"Catalysis","subject":"Chemistry","count":1,"connected":1,"blooms":{"Remember":1}},{"key":"CHEM_COORD","label":"5.2 · Coordination Chemistry","subject":"Chemistry","count":1,"connected":1,"blooms":{"Understand":1}},{"key":"CHEM_DBLOCK","label":"5 · Transition Elements","subject":"Chemistry","count":1,"connected":1,"blooms":{"Remember":1}},{"key":"CHEM_EQUILIBRIUM","label":"8 · Chemical Equilibrium","subject":"Chemistry","count":1,"connected":1,"blooms":{"Apply":1}},{"key":"CHEM_KIN","label":"Chemical Kinetics","subject":"Chemistry","count":1,"connected":1,"blooms":{"Apply":1}},{"key":"CHEM_KINETICS","label":"10 · Chemical Kinetics","subject":"Chemistry","count":1,"connected":1,"blooms":{"Analyze":1}},{"key":"CHEM_QUALITATIVE","label":"2 · Qualitative Analysis","subject":"Chemistry","count":1,"connected":1,"blooms":{"Remember":1}},{"key":"CHEM_SOLID","label":"Solid State and Ionic Compounds","subject":"Chemistry","count":1,"connected":1,"blooms":{"Understand":1}},{"key":"CHEM_STEREO","label":"Stereochemistry","subject":"Chemistry","count":1,"connected":1,"blooms":{"Apply":1}},{"key":"CHE_THERMOCHEM","label":"Thermochemistry","subject":"Chemistry","count":1,"connected":1,"blooms":{"Apply":1}}],"topicEdges":[{"source":"CHEM_MOLE","target":"CHE_STOICHIOMETRY","weight":4},{"source":"CHEM_NOM","target":"CHEM_ORGANIC","weight":4},{"source":"CHEM_AT","target":"CHE_ATOMIC","weight":3},{"source":"CHEM_REDOX","target":"CHE_ELECTROCHEM","weight":3},{"source":"CHEM_MOLE","target":"CHEM_STOICH","weight":3},{"source":"CHEM_PER","target":"CHEM_PERIODIC","weight":3},{"source":"CHEM_ATOMIC","target":"CHEM_AT","weight":3},{"source":"CHEM_MOLE","target":"CHEM_REDOX","weight":3},{"source":"CHEM_ATOMIC","target":"CHE_ATOMIC","weight":2},{"source":"CHEM_BOND","target":"CHE_BIOMOLECULE","weight":2},{"source":"CHEM_BOND","target":"CHEM_BONDING","weight":2},{"source":"CHEM_AT","target":"CHEM_DBLOCK","weight":2},{"source":"CHE_ACIDBASE","target":"CHEM_ACIDBASE","weight":2},{"source":"CHEM_GAS","target":"CHEM_GASLAW","weight":2},{"source":"CHEM_REDOX","target":"CHEM_ELECTROCHEM","weight":2},{"source":"CHEM_AT","target":"CHEM_PER","weight":2},{"source":"CHEM_ORGANIC","target":"CHEM_ORG","weight":2},{"source":"CHEM_NOM","target":"CHEM_ORG","weight":2},{"source":"CHEM_QUALITATIVE","target":"CHE_QUAL","weight":1},{"source":"CHEM_ANALYTICAL","target":"CHE_QUAL","weight":1},{"source":"CHEM_PER","target":"CHE_BONDING","weight":1},{"source":"CHEM_AT","target":"CHE_BONDING","weight":1},{"source":"CHEM_BOND","target":"CHE_BONDING","weight":1},{"source":"CHEM_BOND","target":"CHE_COORD","weight":1},{"source":"CHEM_COORD","target":"CHE_COORD","weight":1},{"source":"CHEM_AT","target":"CHE_COORD","weight":1},{"source":"CHE_THERMOCHEM","target":"CHE_EQUILIBRIUM","weight":1},{"source":"CHEM_EQ","target":"CHE_EQUILIBRIUM","weight":1},{"source":"CHEM_EQUILIBRIUM","target":"CHE_EQUILIBRIUM","weight":1},{"source":"CHEM_GASLAW","target":"CHE_EQUILIBRIUM","weight":1},{"source":"CHE_GASLAWS","target":"CHE_STOICHIOMETRY","weight":1},{"source":"CHEM_REDOX","target":"CHE_STOICHIOMETRY","weight":1},{"source":"CHEM_MOLE","target":"CHE_ACIDBASE","weight":1},{"source":"CHEM_PER","target":"CHE_ACIDBASE","weight":1},{"source":"CHEM_MOLE","target":"CHE_GASLAWS","weight":1},{"source":"CHEM_REDOX","target":"CHE_BIOMOLECULE","weight":1},{"source":"CHEM_STEREO","target":"CHE_BIOMOLECULE","weight":1},{"source":"CHEM_NOM","target":"CHE_BIOMOLECULE","weight":1},{"source":"CHEM_ORG","target":"CHE_ORGANIC","weight":1},{"source":"CHEM_NOM","target":"CHE_ORGANIC","weight":1},{"source":"CHEM_REDOX","target":"CHE_ORGANIC","weight":1},{"source":"CHEM_ORGANIC","target":"CHE_ORGANIC","weight":1},{"source":"CHEM_SPEC","target":"CHEM_ATOMIC","weight":1},{"source":"CHEM_REDOX","target":"CHEM_QUALITATIVE","weight":1},{"source":"CHE_COORD","target":"CHEM_COORD","weight":1},{"source":"CHEM_DBLOCK","target":"CHEM_COORD","weight":1},{"source":"CHEM_EQ","target":"CHEM_ACIDBASE","weight":1},{"source":"CHEM_GASLAW","target":"CHEM_EQUILIBRIUM","weight":1},{"source":"CHEM_MOLE","target":"CHEM_EQUILIBRIUM","weight":1},{"source":"CHEM_EQ","target":"CHEM_SOLUTION","weight":1},{"source":"CHEM_KIN","target":"CHEM_KINETICS","weight":1},{"source":"CHEM_MOLE","target":"CHEM_GASLAW","weight":1},{"source":"CHEM_ATOMIC","target":"CHEM_GASLAW","weight":1},{"source":"CHEM_MOLE","target":"CHEM_ANALYTICAL","weight":1},{"source":"CHE_STOICHIOMETRY","target":"CHEM_SOLUTION","weight":1},{"source":"CHEM_MOLE","target":"CHEM_SOLUTION","weight":1},{"source":"CHEM_CAT","target":"CHEM_ENV","weight":1},{"source":"CHE_ELECTROCHEM","target":"CHEM_ELECTROCHEM","weight":1},{"source":"CHEM_ORG","target":"CHEM_ORGANIC","weight":1},{"source":"CHEM_BOND","target":"CHEM_ORGANIC","weight":1},{"source":"CHEM_ATOMIC","target":"CHEM_MOLE","weight":1},{"source":"CHEM_AT","target":"CHEM_BOND","weight":1},{"source":"CHEM_PER","target":"CHEM_BOND","weight":1},{"source":"CHEM_PER","target":"CHEM_SOLID","weight":1},{"source":"CHEM_BOND","target":"CHEM_SOLID","weight":1},{"source":"CHE_EQUILIBRIUM","target":"CHEM_EQ","weight":1},{"source":"CHE_ACIDBASE","target":"CHEM_EQ","weight":1},{"source":"CHEM_MOLE","target":"CHEM_GAS","weight":1},{"source":"CHEM_ATOMIC","target":"CHEM_GAS","weight":1},{"source":"CHE_ACIDBASE","target":"CHEM_AB","weight":1},{"source":"CHEM_ENV","target":"CHEM_AB","weight":1},{"source":"CHE_ELECTROCHEM","target":"CHEM_REDOX","weight":1},{"source":"CHEM_NOM","target":"CHEM_STEREO","weight":1}],"stats":{"skills":117,"edges":140,"topics":43,"isolated":0,"isolatedPct":0.0,"components":5,"largestComponent":103,"droppedEdgeRefs":375,"blooms":{"Apply":63,"Understand":20,"Remember":20,"Analyze":12,"Evaluate":2},"roles":{"leaf":58,"intermediate":45,"root":14}}};
+</script>
+<script>
+cytoscape.use(cytoscapeDagre);
+
+const BLOOM_ORDER = ["Remember","Understand","Apply","Analyze","Evaluate","Create","Unspecified"];
+const BLOOM_ABBR  = {Remember:"B1",Understand:"B2",Apply:"B3",Analyze:"B4",Evaluate:"B5",Create:"B6",Unspecified:"--"};
+const ROLE_ORDER  = ["root","intermediate","leaf","isolated"];
+const ROLE_LABEL  = {
+  root:"Foundational", intermediate:"Intermediate", leaf:"Terminal", isolated:"Unconnected"
+};
+const ROLE_DESC = {
+  root:"other skills depend on it; it has no prerequisite of its own",
+  intermediate:"has prerequisites and dependents",
+  leaf:"has prerequisites, nothing depends on it yet",
+  isolated:"no prerequisite edge in either direction"
+};
+
+const byId = new Map(DATA.nodes.map(n => [n.id, n]));
+const prereqsOf = new Map(), dependentsOf = new Map();
+DATA.edges.forEach(e => {
+  if(!prereqsOf.has(e.target)) prereqsOf.set(e.target, []);
+  if(!dependentsOf.has(e.source)) dependentsOf.set(e.source, []);
+  prereqsOf.get(e.target).push(e.source);
+  dependentsOf.get(e.source).push(e.target);
+});
+
+const state = {
+  mode: "topics",
+  topic: null,
+  roles: new Set(ROLE_ORDER),
+  blooms: new Set(BLOOM_ORDER),
+  hideIso: false,
+  showExt: true,
+  query: "",
+  selected: null
+};
+
+function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+function roleColor(r){ return cssVar("--role-" + r) || cssVar("--role-isolated"); }
+
+/* ---------------- header stats ---------------- */
+function renderStats(){
+  const s = DATA.stats;
+  document.getElementById("stats").innerHTML = [
+    ["skills", s.skills],
+    ["topics", s.topics],
+    ["prereq edges", s.edges],
+    ["unconnected", s.isolatedPct + "%"],
+    ["fragments", s.components]
+  ].map(([k,v]) => '<div class="stat"><b>'+v+'</b><span>'+k+'</span></div>').join("");
+}
+
+/* ---------------- sidebar ---------------- */
+function renderChips(){
+  document.getElementById("roles").innerHTML = ROLE_ORDER.map(r => {
+    const n = DATA.stats.roles[r] || 0;
+    return '<div class="chip'+(state.roles.has(r)?"":" off")+'" data-role="'+r+'" title="'+ROLE_DESC[r]+'">'
+         + '<span class="sw" style="background:'+roleColor(r)+'"></span>'+ROLE_LABEL[r]
+         + '<span class="cnt">'+n+'</span></div>';
+  }).join("");
+  document.querySelectorAll("[data-role]").forEach(el => el.onclick = () => {
+    const r = el.dataset.role;
+    state.roles.has(r) ? state.roles.delete(r) : state.roles.add(r);
+    renderChips(); draw();
+  });
+
+  document.getElementById("blooms").innerHTML = BLOOM_ORDER
+    .filter(b => DATA.stats.blooms[b])
+    .map(b => '<div class="chip'+(state.blooms.has(b)?"":" off")+'" data-bloom="'+b+'">'
+            + '<span class="badge" style="padding:1px 4px">'+BLOOM_ABBR[b]+'</span>'+b
+            + '<span class="cnt">'+DATA.stats.blooms[b]+'</span></div>').join("");
+  document.querySelectorAll("[data-bloom]").forEach(el => el.onclick = () => {
+    const b = el.dataset.bloom;
+    state.blooms.has(b) ? state.blooms.delete(b) : state.blooms.add(b);
+    renderChips(); draw();
+  });
+}
+
+function renderTopics(){
+  const max = Math.max.apply(null, DATA.topics.map(t => t.count));
+  const head = document.getElementById("topichead");
+  head.textContent = state.mode === "skills"
+    ? "Topics - pick one to draw" : "Topics (" + DATA.topics.length + ")";
+  document.getElementById("topicwrap").innerHTML =
+    (state.mode === "skills"
+      ? '<div class="topic'+(state.topic===null?" on":"")+'" data-topic="__ALL__">'
+        + '<span class="nm">All topics (slow)</span><span class="n">'+DATA.stats.skills+'</span></div>'
+      : "")
+    + DATA.topics.map(t =>
+        '<div class="topic'+(state.topic===t.key?" on":"")+'" data-topic="'+t.key+'" title="'+t.key+'">'
+      + '<span class="bar" style="width:'+Math.max(4, Math.round(30*t.count/max))+'px"></span>'
+      + '<span class="nm">'+t.label+'</span><span class="n">'+t.count+'</span></div>').join("");
+
+  document.querySelectorAll("[data-topic]").forEach(el => el.onclick = () => {
+    const k = el.dataset.topic;
+    state.topic = (k === "__ALL__") ? null : (state.topic === k ? null : k);
+    if(state.topic && state.mode === "topics") setMode("skills");
+    else { renderTopics(); draw(); }
+  });
+}
+
+/* ---------------- filtering ---------------- */
+function passes(n){
+  if(!state.roles.has(n.role)) return false;
+  if(!state.blooms.has(n.bloom || "Unspecified")) return false;
+  if(state.hideIso && n.role === "isolated") return false;
+  if(state.query){
+    const q = state.query.toLowerCase();
+    if(!(n.id.toLowerCase().includes(q) || n.full.toLowerCase().includes(q))) return false;
+  }
+  return true;
+}
+
+/* ---------------- drawing ---------------- */
+let cy = null;
+
+function baseStyle(){
+  return [
+    { selector:"node", style:{
+        "background-color":"data(color)", "label":"data(label)",
+        "font-size":"9px", "font-family":"ui-monospace,Menlo,Consolas,monospace",
+        "color":cssVar("--text-primary"), "text-valign":"center", "text-halign":"center",
+        "text-max-width":"104px", "text-wrap":"wrap",
+        "width":"data(size)", "height":"data(size)",
+        "border-width":2, "border-color":cssVar("--surface-0"),
+        "shape":"round-rectangle", "padding":"5px"
+    }},
+    { selector:"node[kind='topic']", style:{
+        "shape":"round-rectangle", "font-size":"10px", "font-weight":"600",
+        "font-family":"-apple-system,Segoe UI,Arial,sans-serif",
+        "text-max-width":"122px", "color":"#ffffff"
+    }},
+    { selector:"node[kind='external']", style:{
+        "background-opacity":0.25, "border-style":"dashed",
+        "border-color":cssVar("--border-strong"), "color":cssVar("--text-muted")
+    }},
+    { selector:"edge", style:{
+        "width":"data(w)", "line-color":cssVar("--edge"),
+        "target-arrow-color":cssVar("--edge"), "target-arrow-shape":"triangle",
+        "arrow-scale":0.75, "curve-style":"bezier", "opacity":0.75
+    }},
+    { selector:"node:selected", style:{
+        "border-width":3, "border-color":cssVar("--text-primary")
+    }},
+    { selector:".dim", style:{ "opacity":0.13 }},
+    { selector:".hl", style:{
+        "line-color":cssVar("--edge-strong"), "target-arrow-color":cssVar("--edge-strong"),
+        "opacity":1, "width":2.5
+    }}
+  ];
+}
+
+function drawTopics(){
+  const max = Math.max.apply(null, DATA.topics.map(t => t.count));
+  const els = DATA.topics.map(t => ({ data:{
+      id:"T:"+t.key, kind:"topic", label:t.label,
+      color:cssVar("--role-root"),
+      size: 34 + Math.round(58 * Math.sqrt(t.count / max)),
+      topicKey:t.key
+  }}));
+  DATA.topicEdges.forEach((e,i) => els.push({ data:{
+      id:"TE"+i, source:"T:"+e.source, target:"T:"+e.target,
+      w: Math.min(6, 1 + e.weight * 0.7)
+  }}));
+  mount(els, { name:"cose", animate:false, padding:46, nodeRepulsion:11000,
+               idealEdgeLength:118, nodeOverlap:18, gravity:0.5, numIter:1400 });
+  hint("Bubble area = number of skills. Arrows = prerequisite links that cross a topic boundary (thickness = how many). Click a topic to open its skill DAG.");
+}
+
+function drawSkills(){
+  const wanted = DATA.nodes.filter(n =>
+    (state.topic === null || n.topic === state.topic) && passes(n));
+  const wantedIds = new Set(wanted.map(n => n.id));
+
+  // Pull in out-of-scope prerequisite neighbours as dimmed context nodes.
+  const ext = new Set();
+  if(state.showExt && state.topic !== null){
+    wanted.forEach(n => {
+      (prereqsOf.get(n.id) || []).forEach(p => { if(!wantedIds.has(p)) ext.add(p); });
+      (dependentsOf.get(n.id) || []).forEach(d => { if(!wantedIds.has(d)) ext.add(d); });
+    });
+  }
+
+  if(!wanted.length){
+    mount([], null);
+    empty("No skills match the current filters." +
+          (state.topic ? " Try clearing the Bloom or role filters." : ""));
+    return;
+  }
+
+  const maxDeg = Math.max(1, Math.max.apply(null, wanted.map(n => n.degree)));
+  const els = [];
+  wanted.forEach(n => els.push({ data:{
+      id:n.id, kind:"skill", label:n.id, color:roleColor(n.role),
+      size: 26 + Math.round(24 * (n.degree / maxDeg))
+  }}));
+  ext.forEach(id => { const n = byId.get(id); if(n) els.push({ data:{
+      id:n.id, kind:"external", label:n.id, color:roleColor(n.role), size:24
+  }}); });
+
+  const present = new Set(els.map(e => e.data.id));
+  let edgeCount = 0;
+  DATA.edges.forEach((e,i) => {
+    if(present.has(e.source) && present.has(e.target)){
+      els.push({ data:{ id:"E"+i, source:e.source, target:e.target, w:1.6 } });
+      edgeCount++;
+    }
+  });
+
+  mount(els, { name:"dagre", rankDir:"TB", animate:false, padding:40,
+               nodeSep:26, rankSep:62, edgeSep:12 });
+
+  const isoShown = wanted.filter(n => n.role === "isolated").length;
+  hint(wanted.length + " skills - " + edgeCount + " edges"
+     + (ext.size ? " - " + ext.size + " dashed node(s) from other topics" : "")
+     + (isoShown ? " - " + isoShown + " have no prerequisite link yet" : ""));
+}
+
+function mount(els, layout){
+  document.getElementById("empty").style.display = "none";
+  if(cy) cy.destroy();
+  cy = cytoscape({
+    container: document.getElementById("cy"),
+    elements: els,
+    style: baseStyle(),
+    layout: layout || { name:"preset" },
+    wheelSensitivity: 0.22,
+    minZoom: 0.05, maxZoom: 3.5
+  });
+
+  cy.on("tap","node", ev => {
+    const d = ev.target.data();
+    if(d.kind === "topic"){ state.topic = d.topicKey; setMode("skills"); return; }
+    select(d.id);
+  });
+  cy.on("tap", ev => { if(ev.target === cy) deselect(); });
+
+  cy.on("mouseover","node", ev => showTip(ev));
+  cy.on("mousemove","node", ev => moveTip(ev));
+  cy.on("mouseout","node", hideTip);
+}
+
+function empty(msg){
+  const el = document.getElementById("empty");
+  el.textContent = msg; el.style.display = "flex";
+  document.getElementById("hint").textContent = "";
+}
+function hint(t){ document.getElementById("hint").textContent = t; }
+
+/* ---------------- tooltip ---------------- */
+function showTip(ev){
+  const d = ev.target.data();
+  const tip = document.getElementById("tip");
+  if(d.kind === "topic"){
+    const t = DATA.topics.find(x => x.key === d.topicKey);
+    tip.innerHTML = '<div class="t">'+t.key+'</div><div>'+t.label+'</div>'
+      + '<div class="m">'+t.count+' skills - '+t.connected+' with a prerequisite link</div>';
+  } else {
+    const n = byId.get(d.id); if(!n) return;
+    tip.innerHTML = '<div class="t">'+n.id+'</div><div>'+esc(n.full)+'</div>'
+      + '<div class="m"><span class="badge">'+BLOOM_ABBR[n.bloom||"Unspecified"]+' '+(n.bloom||"Unspecified")+'</span> '
+      + ROLE_LABEL[n.role]+' - '+n.prereqCount+' prereq / '+n.dependentCount+' dependent</div>';
+  }
+  tip.style.display = "block"; moveTip(ev);
+}
+function moveTip(ev){
+  const tip = document.getElementById("tip"), r = document.getElementById("stage").getBoundingClientRect();
+  let x = ev.renderedPosition.x + 16, y = ev.renderedPosition.y + 16;
+  if(x + tip.offsetWidth > r.width) x = ev.renderedPosition.x - tip.offsetWidth - 14;
+  if(y + tip.offsetHeight > r.height) y = ev.renderedPosition.y - tip.offsetHeight - 14;
+  tip.style.left = Math.max(4,x)+"px"; tip.style.top = Math.max(4,y)+"px";
+}
+function hideTip(){ document.getElementById("tip").style.display = "none"; }
+function esc(s){ return String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
+
+/* ---------------- detail panel ---------------- */
+function select(id){
+  const n = byId.get(id); if(!n) return;
+  state.selected = id;
+  const pr = (prereqsOf.get(id) || []).map(i => byId.get(i)).filter(Boolean);
+  const dp = (dependentsOf.get(id) || []).map(i => byId.get(i)).filter(Boolean);
+
+  const list = arr => arr.length
+    ? '<ul>' + arr.map(s => '<li data-goto="'+s.id+'"><code>'+s.id+'</code>'+esc(s.full)+'</li>').join("") + '</ul>'
+    : '<div class="none">none recorded</div>';
+
+  document.getElementById("detailbody").innerHTML =
+      '<button class="close" id="dclose">&times;</button>'
+    + '<div class="sid">'+n.id+'</div><h3>'+esc(n.full)+'</h3>'
+    + '<dl><dt>Bloom</dt><dd><span class="badge">'+BLOOM_ABBR[n.bloom||"Unspecified"]+'</span> '+(n.bloom||"Unspecified")+'</dd>'
+    + '<dt>Topic</dt><dd>'+n.topicLabel+'</dd>'
+    + '<dt>Role</dt><dd>'+ROLE_LABEL[n.role]+'</dd>'
+    + '<dt>Fragment</dt><dd>'+(n.component < 0 ? "unconnected" : "#"+(n.component+1))+'</dd></dl>'
+    + '<h4>Prerequisites ('+pr.length+')</h4>'+list(pr)
+    + '<h4>Depends on this ('+dp.length+')</h4>'+list(dp);
+
+  document.getElementById("detail").classList.add("show");
+  document.getElementById("dclose").onclick = deselect;
+  document.querySelectorAll("[data-goto]").forEach(el => el.onclick = () => {
+    const t = byId.get(el.dataset.goto);
+    if(t && t.topic !== state.topic && state.topic !== null){ state.topic = t.topic; renderTopics(); draw(); }
+    setTimeout(() => { select(el.dataset.goto); focusNode(el.dataset.goto); }, 40);
+  });
+
+  focusNode(id);
+}
+function focusNode(id){
+  if(!cy) return;
+  const node = cy.getElementById(id);
+  if(!node || node.empty()) return;
+  cy.elements().addClass("dim");
+  const nb = node.closedNeighborhood();
+  nb.removeClass("dim");
+  nb.edges().addClass("hl");
+  cy.animate({ center:{ eles:node }, zoom:Math.max(cy.zoom(), 0.85) }, { duration:220 });
+  cy.$(":selected").unselect(); node.select();
+}
+function deselect(){
+  state.selected = null;
+  document.getElementById("detail").classList.remove("show");
+  if(cy){ cy.elements().removeClass("dim hl"); cy.$(":selected").unselect(); }
+}
+
+/* ---------------- mode / wiring ---------------- */
+function setMode(m){
+  state.mode = m;
+  document.getElementById("m-topics").classList.toggle("on", m === "topics");
+  document.getElementById("m-skills").classList.toggle("on", m === "skills");
+  renderTopics(); draw();
+}
+function draw(){
+  deselect();
+  state.mode === "topics" ? drawTopics() : drawSkills();
+}
+
+document.getElementById("m-topics").onclick = () => setMode("topics");
+document.getElementById("m-skills").onclick = () => setMode("skills");
+document.getElementById("fit").onclick = () => cy && cy.fit(undefined, 40);
+document.getElementById("hide-iso").onchange = e => { state.hideIso = e.target.checked; draw(); };
+document.getElementById("show-ext").onchange = e => { state.showExt = e.target.checked; draw(); };
+
+let qt = null;
+document.getElementById("search").oninput = e => {
+  clearTimeout(qt);
+  qt = setTimeout(() => {
+    state.query = e.target.value.trim();
+    if(state.query && state.mode === "topics") setMode("skills");
+    else draw();
+  }, 220);
+};
+
+document.getElementById("theme").onclick = () => {
+  const cur = document.documentElement.getAttribute("data-theme");
+  const next = cur === "dark" ? "light"
+    : cur === "light" ? "dark"
+    : (matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", next);
+  renderChips();
+  if(cy){ cy.style(baseStyle()); redraw_colors(); }
+};
+function redraw_colors(){
+  cy.nodes().forEach(n => {
+    const d = n.data();
+    if(d.kind === "topic") n.data("color", cssVar("--role-root"));
+    else { const s = byId.get(d.id); if(s) n.data("color", roleColor(s.role)); }
+  });
+}
+
+renderStats(); renderChips(); renderTopics(); setMode("topics");
+</script>
+</body>
+</html>

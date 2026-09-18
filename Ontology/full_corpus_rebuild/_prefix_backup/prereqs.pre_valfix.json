@@ -34,13 +34,6 @@
       "depth": 0
     }
   ],
-  "CHE1_PERIODIC_TRENDS0": [
-    {
-      "id": "CHEM_PERIODIC37",
-      "full": "Recall that elements in the modern periodic table are arranged in order of increasing atomic number (proton number).",
-      "depth": 0
-    }
-  ],
   "CHE1_PERIODIC_TRENDS1": [
     {
       "id": "CHE1_PERIODIC_TRENDS0",
@@ -160,20 +153,6 @@
       "depth": 0
     }
   ],
-  "CHE2_METALLURGY1": [
-    {
-      "id": "CHE2_METALLURGY0",
-      "full": "Recall the meanings of ore, gangue and flux, and the difference between a mineral and an ore.",
-      "depth": 0
-    }
-  ],
-  "CHE2_METALLURGY2": [
-    {
-      "id": "CHE2_METALLURGY1",
-      "full": "Distinguish roasting from calcination as preliminary treatments of an ore.",
-      "depth": 0
-    }
-  ],
   "CHE2_MOLE1": [
     {
       "id": "CHE2_MOLE0",
@@ -188,6 +167,13 @@
       "depth": 0
     }
   ],
+  "CHE2_MOLE3": [
+    {
+      "id": "CHE2_MOLE2",
+      "full": "Balance a chemical equation by adjusting its stoichiometric coefficients so that every element is conserved.",
+      "depth": 0
+    }
+  ],
   "CHE2_MOLE4": [
     {
       "id": "CHE_STOICHIOMETRY31",
@@ -196,11 +182,6 @@
     }
   ],
   "CHE2_ORG_ACID0": [
-    {
-      "id": "CHE_ORGANIC47",
-      "full": "Write the acid-catalysed esterification of a carboxylic acid with an alcohol, and the reverse hydrolysis of the ester.",
-      "depth": 0
-    },
     {
       "id": "CHE_ORGANIC50",
       "full": "Recall the definition of saponification as the alkaline hydrolysis of a fat or oil to give soap and glycerol.",
@@ -258,11 +239,6 @@
   ],
   "CHEM_ANALYTICAL10": [
     {
-      "id": "CHEM_ANALYTICAL4",
-      "full": "Define a standard solution as a solution whose concentration is accurately known.",
-      "depth": 0
-    },
-    {
       "id": "CHE_STOICHIOMETRY11",
       "full": "Calculate the moles of acid and base present in a neutralization reaction from concentration and volume (n = C x V).",
       "depth": 0
@@ -300,11 +276,6 @@
     {
       "id": "CHE_STOICHIOMETRY14",
       "full": "Use the mole ratio from a balanced chemical equation to calculate the amount of one reactant required to completely react with a given amount of another reactant.",
-      "depth": 0
-    },
-    {
-      "id": "CHE_STOICHIOMETRY23",
-      "full": "Calculate the percentage of impurity in an impure sample from the amount of gas evolved or residue left when it reacts or is heated, using the reaction stoichiometry.",
       "depth": 0
     }
   ],
@@ -535,13 +506,6 @@
       "depth": 0
     }
   ],
-  "CHEM_DBLOCK2": [
-    {
-      "id": "CHE1_TRANSITION0",
-      "full": "Recall the common oxidation states exhibited by the first-row transition metals.",
-      "depth": 0
-    }
-  ],
   "CHEM_DBLOCK20": [
     {
       "id": "CHE_STOICHIOMETRY14",
@@ -679,11 +643,6 @@
   ],
   "CHEM_DESCRIPTIVE16": [
     {
-      "id": "CHEM_DESCRIPTIVE14",
-      "full": "Recall that hydrofluoric acid (HF) is used to etch glass because it chemically attacks the silica (SiO2) in glass.",
-      "depth": 0
-    },
-    {
       "id": "CHEM_SOLID4",
       "full": "Recall that Pyrex glass contains boron trioxide (B2O3) in addition to silica (SiO2), giving it low thermal expansion.",
       "depth": 0
@@ -759,11 +718,6 @@
     }
   ],
   "CHEM_DESCRIPTIVE3": [
-    {
-      "id": "CHE2_METALLURGY0",
-      "full": "Recall the meanings of ore, gangue and flux, and the difference between a mineral and an ore.",
-      "depth": 0
-    },
     {
       "id": "CHEM_DESCRIPTIVE1",
       "full": "Recall the chemical formula corresponding to the trivial, mineral, or commercial name of a common inorganic or organic compound (or vice versa).",
@@ -981,13 +935,6 @@
       "depth": 0
     }
   ],
-  "CHEM_GAS1": [
-    {
-      "id": "CHE_GASLAWS26",
-      "full": "Define an ideal gas as one that obeys the gas laws at all temperatures and pressures, and a real gas as one that deviates from them.",
-      "depth": 0
-    }
-  ],
   "CHEM_GAS3": [
     {
       "id": "CHE_GASLAWS34",
@@ -1042,13 +989,6 @@
       "depth": 0
     }
   ],
-  "CHEM_KIN10": [
-    {
-      "id": "CHEM_KIN21",
-      "full": "Define the rate of a chemical reaction as the decrease in a reactant's concentration, or the increase in a product's concentration, per unit time.",
-      "depth": 0
-    }
-  ],
   "CHEM_KIN11": [
     {
       "id": "CHEM_KIN5",
@@ -1098,13 +1038,6 @@
       "depth": 0
     }
   ],
-  "CHEM_KIN18": [
-    {
-      "id": "CHEM_KIN21",
-      "full": "Define the rate of a chemical reaction as the decrease in a reactant's concentration, or the increase in a product's concentration, per unit time.",
-      "depth": 0
-    }
-  ],
   "CHEM_KIN19": [
     {
       "id": "CHEM_CAT6",
@@ -1117,31 +1050,10 @@
       "depth": 0
     }
   ],
-  "CHEM_KIN2": [
-    {
-      "id": "CHEM_KIN21",
-      "full": "Define the rate of a chemical reaction as the decrease in a reactant's concentration, or the increase in a product's concentration, per unit time.",
-      "depth": 0
-    }
-  ],
-  "CHEM_KIN20": [
-    {
-      "id": "CHEM_KIN21",
-      "full": "Define the rate of a chemical reaction as the decrease in a reactant's concentration, or the increase in a product's concentration, per unit time.",
-      "depth": 0
-    }
-  ],
   "CHEM_KIN22": [
     {
       "id": "CHEM_KIN23",
       "full": "Recall the characteristic properties of a zero-order reaction: its rate is independent of the reactant concentration and stays constant with time, its rate constant has units of concentration per unit time, and photochemical reactions are a common example.",
-      "depth": 0
-    }
-  ],
-  "CHEM_KIN23": [
-    {
-      "id": "CHEM_KIN21",
-      "full": "Define the rate of a chemical reaction as the decrease in a reactant's concentration, or the increase in a product's concentration, per unit time.",
       "depth": 0
     }
   ],
@@ -1271,11 +1183,6 @@
   ],
   "CHEM_LAB11": [
     {
-      "id": "CHEM_LAB1",
-      "full": "Recall the composition and cleaning function of a named biodegradable laboratory detergent (e.g., Decon-90) used to remove grease, tar, silicone oil and polymeric residue from glassware.",
-      "depth": 0
-    },
-    {
       "id": "CHE_ACIDBASE6",
       "full": "Define 'liquor ammonia' as a saturated aqueous solution of ammonia gas, and recall its typical density and ammonia percentage by mass.",
       "depth": 0
@@ -1288,24 +1195,10 @@
       "depth": 0
     }
   ],
-  "CHEM_LAB14": [
-    {
-      "id": "CHEM_LAB8",
-      "full": "Identify a standard piece of laboratory glassware (e.g., burette, beaker, conical flask, pipette, round-bottom flask, measuring cylinder) by name or image, and recall the specific purpose each is designed for.",
-      "depth": 0
-    }
-  ],
   "CHEM_LAB15": [
     {
       "id": "CHE_COORD7",
       "full": "Recall that the maximum number of monodentate ligands (e.g., NH3) a metal ion can coordinate is commonly twice its oxidation number (the ion's typical coordination number).",
-      "depth": 0
-    }
-  ],
-  "CHEM_LAB2": [
-    {
-      "id": "CHE_ORGANIC137",
-      "full": "Test for unsaturation in a hydrocarbon by adding bromine in carbon tetrachloride and observing the red colour discharge, and recognize that a saturated or aromatic compound does not decolourize it.",
       "depth": 0
     }
   ],
@@ -1332,20 +1225,8 @@
   ],
   "CHEM_LAB7": [
     {
-      "id": "CHEM_LAB1",
-      "full": "Recall the composition and cleaning function of a named biodegradable laboratory detergent (e.g., Decon-90) used to remove grease, tar, silicone oil and polymeric residue from glassware.",
-      "depth": 0
-    },
-    {
       "id": "CHE_BONDING31",
       "full": "Describe the bonding structure of a polyatomic oxoanion (e.g., dichromate, Cr2O7^2-) as two equivalent tetrahedral subunits linked by a bridging oxygen atom, with all terminal Cr-O bonds equivalent.",
-      "depth": 0
-    }
-  ],
-  "CHEM_LAB8": [
-    {
-      "id": "CHEM_LAB0",
-      "full": "Recall which special type of glass (e.g., borosilicate/Pyrex) is used for laboratory apparatus such as distillation flasks because of its heat and chemical resistance.",
       "depth": 0
     }
   ],
@@ -1377,24 +1258,10 @@
       "depth": 0
     }
   ],
-  "CHEM_NOM4": [
-    {
-      "id": "CHEM_NOM13",
-      "full": "Define a functional group as the atom or group of atoms that identifies a homologous series and governs its chemical behaviour.",
-      "depth": 0
-    }
-  ],
   "CHEM_NOM5": [
     {
       "id": "CHEM_NOM8",
       "full": "Write the full structural formula of an organic compound from its IUPAC or trivial name, and conversely give the IUPAC name of a compound from its structure, for compounds containing the common functional groups.",
-      "depth": 0
-    }
-  ],
-  "CHEM_NOM6": [
-    {
-      "id": "CHE2_METALLURGY0",
-      "full": "Recall the meanings of ore, gangue and flux, and the difference between a mineral and an ore.",
       "depth": 0
     }
   ],
@@ -1454,13 +1321,6 @@
       "depth": 0
     }
   ],
-  "CHEM_NUCLEAR16": [
-    {
-      "id": "CHEM_NUCLEAR1",
-      "full": "Recall the charge and identity of the common radioactive emissions: an alpha particle (a He2+ nucleus, charge +2), a beta particle (an electron), and a gamma ray (a high-energy photon).",
-      "depth": 0
-    }
-  ],
   "CHEM_NUCLEAR17": [
     {
       "id": "CHEM_KIN9",
@@ -1507,13 +1367,6 @@
     {
       "id": "CHEM_NUCLEAR6",
       "full": "Recognise which type of nuclear reaction (fission or fusion) is occurring in a described process (e.g., in a hydrogen bomb).",
-      "depth": 0
-    }
-  ],
-  "CHEM_NUCLEAR8": [
-    {
-      "id": "CHEM_NUCLEAR1",
-      "full": "Recall the charge and identity of the common radioactive emissions: an alpha particle (a He2+ nucleus, charge +2), a beta particle (an electron), and a gamma ray (a high-energy photon).",
       "depth": 0
     }
   ],
@@ -1649,13 +1502,6 @@
       "depth": 0
     }
   ],
-  "CHEM_PERIODIC27": [
-    {
-      "id": "CHE1_PERIODIC_TRENDS0",
-      "full": "Recall the periodic trends in atomic and ionic radius across a period and down a group.",
-      "depth": 0
-    }
-  ],
   "CHEM_PERIODIC28": [
     {
       "id": "CHEM_AT1",
@@ -1695,13 +1541,6 @@
     {
       "id": "CHEM_PERIODIC14",
       "full": "Explain why fluorine, chlorine, bromine, and iodine are grouped together as 'halogens' ('salt-formers'), based on their natural occurrence as sodium (and other) salts, e.g. in seawater.",
-      "depth": 0
-    }
-  ],
-  "CHEM_PERIODIC34": [
-    {
-      "id": "CHE1_PERIODIC_TRENDS1",
-      "full": "Recall that metal oxides are generally basic and non-metal oxides generally acidic.",
       "depth": 0
     }
   ],
@@ -1870,13 +1709,6 @@
       "depth": 0
     }
   ],
-  "CHEM_REDOX19": [
-    {
-      "id": "CHE1_REDOX0",
-      "full": "Recall the definitions of oxidation and of reduction, in terms of electron loss and gain and of oxygen and hydrogen transfer.",
-      "depth": 0
-    }
-  ],
   "CHEM_REDOX2": [
     {
       "id": "CHE1_REDOX2",
@@ -1888,13 +1720,6 @@
     {
       "id": "CHE_COORD8",
       "full": "Recall that carbonyl (CO) acts as a neutral ligand in coordination and organometallic compounds.",
-      "depth": 0
-    }
-  ],
-  "CHEM_REDOX21": [
-    {
-      "id": "CHE1_REDOX0",
-      "full": "Recall the definitions of oxidation and of reduction, in terms of electron loss and gain and of oxygen and hydrogen transfer.",
       "depth": 0
     }
   ],
@@ -1931,13 +1756,6 @@
       "depth": 0
     }
   ],
-  "CHEM_REDOX28": [
-    {
-      "id": "CHE1_REDOX0",
-      "full": "Recall the definitions of oxidation and of reduction, in terms of electron loss and gain and of oxygen and hydrogen transfer.",
-      "depth": 0
-    }
-  ],
   "CHEM_REDOX29": [
     {
       "id": "CHEM_REDOX16",
@@ -1954,13 +1772,6 @@
     {
       "id": "CHEM_REDOX31",
       "full": "Apply the reactivity series of metals to predict the outcome of a single-displacement reaction between a more reactive metal and a salt solution of a less reactive metal (e.g., Fe displaces Cu from CuSO4 solution).",
-      "depth": 0
-    }
-  ],
-  "CHEM_REDOX31": [
-    {
-      "id": "CHE1_REDOX4",
-      "full": "Recall the reactivity series of the metals and what it predicts about displacement reactions.",
       "depth": 0
     }
   ],
@@ -2027,11 +1838,6 @@
   ],
   "CHEM_REDOX40": [
     {
-      "id": "CHE1_REDOX6",
-      "full": "Calculate the electrochemical equivalent of an element from its molar mass and the charge on its ion.",
-      "depth": 0
-    },
-    {
       "id": "CHEM_REDOX41",
       "full": "Recall the definition of the electrochemical equivalent of an element as the mass liberated by one coulomb of charge.",
       "depth": 0
@@ -2070,13 +1876,6 @@
       "depth": 0
     }
   ],
-  "CHEM_REDOX7": [
-    {
-      "id": "CHE1_REDOX2",
-      "full": "Recall the rules for assigning oxidation numbers, including the usual values taken by oxygen and by hydrogen.",
-      "depth": 0
-    }
-  ],
   "CHEM_REDOX8": [
     {
       "id": "CHEM_REDOX7",
@@ -2102,13 +1901,6 @@
     {
       "id": "CHE_THERMOCHEM2",
       "full": "Recall which physical state-change process (e.g., condensation, evaporation, sublimation, melting) is exothermic and which is endothermic.",
-      "depth": 0
-    }
-  ],
-  "CHEM_SOLID2": [
-    {
-      "id": "CHEM_SOLID5",
-      "full": "Differentiate between intramolecular covalent bonding and intermolecular forces of attraction when explaining a physical property (e.g., high melting point) of a covalent network solid such as diamond.",
       "depth": 0
     }
   ],
@@ -2201,13 +1993,6 @@
       "depth": 0
     }
   ],
-  "CHEM_SOLUTION17": [
-    {
-      "id": "CHEM_SOLUTION14",
-      "full": "Calculate the volume of water that must be added to a solution to bring it to a required specific gravity, using the inverse proportionality of density and volume.",
-      "depth": 0
-    }
-  ],
   "CHEM_SOLUTION18": [
     {
       "id": "CHE_STOICHIOMETRY17",
@@ -2226,13 +2011,6 @@
     {
       "id": "CHEM_SOLUTION17",
       "full": "Calculate the molarity of a solution and the volume of water that must be added to dilute it to a required concentration, using S1V1 = S2V2.",
-      "depth": 0
-    }
-  ],
-  "CHEM_SOLUTION3": [
-    {
-      "id": "CHEM_SOLUTION7",
-      "full": "Recall general solubility rules for common ionic compounds in water (e.g., Group IIA carbonates such as CaCO3 are insoluble, while most chlorides, nitrates, and sulfates are soluble).",
       "depth": 0
     }
   ],
@@ -2285,24 +2063,10 @@
       "depth": 0
     }
   ],
-  "CHEM_SPEC6": [
-    {
-      "id": "CHEM_SPEC3",
-      "full": "Recall which region of the electromagnetic spectrum (e.g., microwave, UV, visible, radio) is used for a specific named application (e.g., WiFi, counterfeit-currency detection, optical-fibre communication, MRI).",
-      "depth": 0
-    }
-  ],
   "CHEM_SPEC7": [
     {
       "id": "CHEM_SPEC6",
       "full": "Recall the approximate wavelength range of visible light associated with each spectral color, from violet through red.",
-      "depth": 0
-    }
-  ],
-  "CHEM_SPEC8": [
-    {
-      "id": "CHEM_SPEC3",
-      "full": "Recall which region of the electromagnetic spectrum (e.g., microwave, UV, visible, radio) is used for a specific named application (e.g., WiFi, counterfeit-currency detection, optical-fibre communication, MRI).",
       "depth": 0
     }
   ],
@@ -2376,18 +2140,6 @@
       "depth": 0
     }
   ],
-  "CHE_ACIDBASE15": [
-    {
-      "id": "CHE_ACIDBASE43",
-      "full": "Define pH as the negative base-10 logarithm of the molar hydrogen-ion concentration of a solution.",
-      "depth": 0
-    },
-    {
-      "id": "CHE_ACIDBASE50",
-      "full": "Recall that the ionic product of water, Kw, equals 1.0 x 10^-14 mol^2 L^-2 at 298 K, and that pure water therefore has [H+] = [OH-] = 1.0 x 10^-7 M.",
-      "depth": 0
-    }
-  ],
   "CHE_ACIDBASE16": [
     {
       "id": "CHE_STOICHIOMETRY11",
@@ -2399,20 +2151,6 @@
     {
       "id": "CHE_ACIDBASE16",
       "full": "Analyze the mole quantities of H+ and OH- available in a mixture of a strong acid and a strong base, accounting for reaction stoichiometry, to determine whether the resulting mixture is net acidic or net basic.",
-      "depth": 0
-    }
-  ],
-  "CHE_ACIDBASE18": [
-    {
-      "id": "CHE_ACIDBASE50",
-      "full": "Recall that the ionic product of water, Kw, equals 1.0 x 10^-14 mol^2 L^-2 at 298 K, and that pure water therefore has [H+] = [OH-] = 1.0 x 10^-7 M.",
-      "depth": 0
-    }
-  ],
-  "CHE_ACIDBASE19": [
-    {
-      "id": "CHE_STOICHIOMETRY31",
-      "full": "Recall the definition of normality as the number of gram-equivalents of solute per litre of solution.",
       "depth": 0
     }
   ],
@@ -2458,13 +2196,6 @@
       "depth": 0
     }
   ],
-  "CHE_ACIDBASE27": [
-    {
-      "id": "CHE_ACIDBASE26",
-      "full": "Define a buffer solution as one that resists a change in pH when small amounts of acid or base are added to it.",
-      "depth": 0
-    }
-  ],
   "CHE_ACIDBASE28": [
     {
       "id": "CHE_ACIDBASE27",
@@ -2500,13 +2231,6 @@
     {
       "id": "CHE_STOICHIOMETRY11",
       "full": "Calculate the moles of acid and base present in a neutralization reaction from concentration and volume (n = C x V).",
-      "depth": 0
-    }
-  ],
-  "CHE_ACIDBASE32": [
-    {
-      "id": "CHE_ACIDBASE43",
-      "full": "Define pH as the negative base-10 logarithm of the molar hydrogen-ion concentration of a solution.",
       "depth": 0
     }
   ],
@@ -2655,13 +2379,6 @@
       "depth": 0
     }
   ],
-  "CHE_ACIDBASE53": [
-    {
-      "id": "CHE_ACIDBASE43",
-      "full": "Define pH as the negative base-10 logarithm of the molar hydrogen-ion concentration of a solution.",
-      "depth": 0
-    }
-  ],
   "CHE_ACIDBASE54": [
     {
       "id": "CHE_ACIDBASE53",
@@ -2791,13 +2508,6 @@
       "depth": 0
     }
   ],
-  "CHE_ATOMIC14": [
-    {
-      "id": "CHE1_ELECTRON_CONFIG1",
-      "full": "Recall the Aufbau principle, the Pauli exclusion principle and Hund's rule as the three rules governing the filling of atomic orbitals.",
-      "depth": 0
-    }
-  ],
   "CHE_ATOMIC15": [
     {
       "id": "CHE_ATOMIC14",
@@ -2866,13 +2576,6 @@
     {
       "id": "CHE_ATOMIC6",
       "full": "Explain what physical property of an atomic orbital each quantum number represents: the principal quantum number (n) the size/energy, the azimuthal quantum number (l) the shape, and the magnetic quantum number (m) the orientation.",
-      "depth": 0
-    }
-  ],
-  "CHE_ATOMIC22": [
-    {
-      "id": "CHE_ATOMIC49",
-      "full": "Recall the Rydberg formula, 1/lambda = R_H(1/n1-squared - 1/n2-squared), for lines of the hydrogen atomic spectrum.",
       "depth": 0
     }
   ],
@@ -2970,13 +2673,6 @@
       "depth": 0
     }
   ],
-  "CHE_ATOMIC41": [
-    {
-      "id": "CHE_ATOMIC6",
-      "full": "Explain what physical property of an atomic orbital each quantum number represents: the principal quantum number (n) the size/energy, the azimuthal quantum number (l) the shape, and the magnetic quantum number (m) the orientation.",
-      "depth": 0
-    }
-  ],
   "CHE_ATOMIC42": [
     {
       "id": "CHE_ATOMIC41",
@@ -3017,13 +2713,6 @@
       "depth": 0
     }
   ],
-  "CHE_ATOMIC48": [
-    {
-      "id": "CHE_ATOMIC10",
-      "full": "Recall the maximum number of electrons that each type of subshell (s, p, d, f) can hold (2, 6, 10, 14 respectively).",
-      "depth": 0
-    }
-  ],
   "CHE_ATOMIC50": [
     {
       "id": "CHE_ATOMIC23",
@@ -3040,13 +2729,6 @@
     {
       "id": "CHE_ATOMIC50",
       "full": "Determine the initial and final principal quantum numbers (n1 and n2) corresponding to a specified line (e.g. the third line) of a named hydrogen spectral series such as the Brackett series.",
-      "depth": 0
-    }
-  ],
-  "CHE_ATOMIC52": [
-    {
-      "id": "CHE_ATOMIC37",
-      "full": "Recall the outer-shell electron configuration pattern (s^2 p^6) characteristic of noble gases, and identify the element matching a given such configuration.",
       "depth": 0
     }
   ],
@@ -3167,20 +2849,6 @@
       "depth": 0
     }
   ],
-  "CHE_BIOMOLECULE12": [
-    {
-      "id": "CHE_BIOMOLECULE11",
-      "full": "Define a biopolymer and classify the three types (polysaccharides, proteins and nucleic acids), giving an example of each.",
-      "depth": 0
-    }
-  ],
-  "CHE_BIOMOLECULE13": [
-    {
-      "id": "CHE_BIOMOLECULE11",
-      "full": "Define a biopolymer and classify the three types (polysaccharides, proteins and nucleic acids), giving an example of each.",
-      "depth": 0
-    }
-  ],
   "CHE_BIOMOLECULE14": [
     {
       "id": "CHE_BIOMOLECULE13",
@@ -3192,13 +2860,6 @@
     {
       "id": "CHE_ORGANIC16",
       "full": "Recall the composition and preparation of Tollens' reagent (ammoniacal silver nitrate containing the diamminesilver(I) ion) and its use as a test for aldehydes, which deposits a silver mirror.",
-      "depth": 0
-    }
-  ],
-  "CHE_BIOMOLECULE16": [
-    {
-      "id": "CHE_BIOMOLECULE11",
-      "full": "Define a biopolymer and classify the three types (polysaccharides, proteins and nucleic acids), giving an example of each.",
       "depth": 0
     }
   ],
@@ -3293,13 +2954,6 @@
       "depth": 0
     }
   ],
-  "CHE_BIOMOLECULE7": [
-    {
-      "id": "CHE_BIOMOLECULE11",
-      "full": "Define a biopolymer and classify the three types (polysaccharides, proteins and nucleic acids), giving an example of each.",
-      "depth": 0
-    }
-  ],
   "CHE_BIOMOLECULE9": [
     {
       "id": "CHE_BIOMOLECULE8",
@@ -3318,13 +2972,6 @@
     {
       "id": "CHE_BONDING12",
       "full": "Recall the relative strength order of electron-domain repulsions about a central atom: lone pair-lone pair greater than lone pair-bond pair greater than bond pair-bond pair.",
-      "depth": 0
-    }
-  ],
-  "CHE_BONDING12": [
-    {
-      "id": "CHE1_COVALENT_BOND0",
-      "full": "Recall the basic postulate of VSEPR theory, that the electron pairs around a central atom arrange themselves so as to minimise repulsion.",
       "depth": 0
     }
   ],
@@ -3408,13 +3055,6 @@
       "depth": 0
     }
   ],
-  "CHE_BONDING24": [
-    {
-      "id": "CHE1_COVALENT_BOND0",
-      "full": "Recall the basic postulate of VSEPR theory, that the electron pairs around a central atom arrange themselves so as to minimise repulsion.",
-      "depth": 0
-    }
-  ],
   "CHE_BONDING25": [
     {
       "id": "CHE_BONDING30",
@@ -3454,13 +3094,6 @@
     {
       "id": "CHE_BONDING56",
       "full": "Determine whether a given molecule has a net dipole moment by combining its bond polarities with its molecular symmetry, including for cis and trans isomers.",
-      "depth": 0
-    }
-  ],
-  "CHE_BONDING30": [
-    {
-      "id": "CHE_BONDING43",
-      "full": "Compare common intermolecular and intramolecular forces of attraction by relative strength (van der Waals forces < dipole-dipole interaction < hydrogen bonding < covalent bonding).",
       "depth": 0
     }
   ],
@@ -3521,13 +3154,6 @@
       "depth": 0
     }
   ],
-  "CHE_BONDING37": [
-    {
-      "id": "CHE1_COVALENT_BOND1",
-      "full": "Recall the definition of a coordinate (dative) covalent bond, in which both shared electrons come from one atom.",
-      "depth": 0
-    }
-  ],
   "CHE_BONDING38": [
     {
       "id": "CHE1_IONIC_BOND1",
@@ -3537,13 +3163,6 @@
     {
       "id": "CHEM_PERIODIC15",
       "full": "Determine the relative atomic radii of elements identified by their electron configurations, using the trends that atomic radius decreases across a period (left to right) and increases down a group.",
-      "depth": 0
-    }
-  ],
-  "CHE_BONDING39": [
-    {
-      "id": "CHE_BONDING27",
-      "full": "Recall the characteristic bond angle associated with a given hybridization or VSEPR molecular geometry (e.g., 180° for sp/linear, 120° for sp2/trigonal planar, 109.5° for sp3/tetrahedral, 90° for sp3d2/octahedral, 104.5° for a bent AX2E2 molecule like water).",
       "depth": 0
     }
   ],
@@ -3575,13 +3194,6 @@
       "depth": 0
     }
   ],
-  "CHE_BONDING45": [
-    {
-      "id": "CHE1_IONIC_BOND0",
-      "full": "Recall the distinction between ionic and covalent bonding character and the electronegativity difference that separates them.",
-      "depth": 0
-    }
-  ],
   "CHE_BONDING46": [
     {
       "id": "CHE_BONDING24",
@@ -3607,13 +3219,6 @@
     {
       "id": "CHE_BONDING43",
       "full": "Compare common intermolecular and intramolecular forces of attraction by relative strength (van der Waals forces < dipole-dipole interaction < hydrogen bonding < covalent bonding).",
-      "depth": 0
-    }
-  ],
-  "CHE_BONDING50": [
-    {
-      "id": "CHE1_COVALENT_BOND0",
-      "full": "Recall the basic postulate of VSEPR theory, that the electron pairs around a central atom arrange themselves so as to minimise repulsion.",
       "depth": 0
     }
   ],
@@ -3681,20 +3286,6 @@
       "depth": 0
     }
   ],
-  "CHE_BONDING7": [
-    {
-      "id": "CHE_BONDING22",
-      "full": "Recall that a pi (π) bond is formed by the sidewise (lateral, parallel) overlap of unhybridized p orbitals, as distinct from the end-to-end overlap that forms a sigma (σ) bond.",
-      "depth": 0
-    }
-  ],
-  "CHE_BONDING8": [
-    {
-      "id": "CHE_BONDING27",
-      "full": "Recall the characteristic bond angle associated with a given hybridization or VSEPR molecular geometry (e.g., 180° for sp/linear, 120° for sp2/trigonal planar, 109.5° for sp3/tetrahedral, 90° for sp3d2/octahedral, 104.5° for a bent AX2E2 molecule like water).",
-      "depth": 0
-    }
-  ],
   "CHE_BONDING9": [
     {
       "id": "CHE_BONDING8",
@@ -3708,13 +3299,6 @@
       "full": "Calculate the oxidation state of a metal atom in a coordination or organometallic compound from the known charges/nature of its ligands (e.g., Fe in Fe(CO)5 = 0).",
       "depth": 0
     },
-    {
-      "id": "CHE_COORD3",
-      "full": "Identify which formula among given options represents a coordination (complex) compound, based on the presence of a central metal ion surrounded by ligands shown in square-bracket notation.",
-      "depth": 0
-    }
-  ],
-  "CHE_COORD11": [
     {
       "id": "CHE_COORD3",
       "full": "Identify which formula among given options represents a coordination (complex) compound, based on the presence of a central metal ion surrounded by ligands shown in square-bracket notation.",
@@ -3783,31 +3367,10 @@
       "depth": 0
     }
   ],
-  "CHE_ELECTROCHEM1": [
-    {
-      "id": "CHE1_REDOX1",
-      "full": "Recall the definitions of an oxidising agent and of a reducing agent.",
-      "depth": 0
-    }
-  ],
   "CHE_ELECTROCHEM10": [
     {
       "id": "CHE_ELECTROCHEM9",
       "full": "Recall the components of a dry (Leclanche) cell, including the zinc anode, the carbon cathode and the manganese dioxide depolarizer in an ammonium chloride paste.",
-      "depth": 0
-    }
-  ],
-  "CHE_ELECTROCHEM2": [
-    {
-      "id": "CHE_ELECTROCHEM7",
-      "full": "Distinguish an electrolytic cell, which converts electrical energy into chemical energy, from a galvanic (voltaic) cell, which does the reverse.",
-      "depth": 0
-    }
-  ],
-  "CHE_ELECTROCHEM3": [
-    {
-      "id": "CHE_ELECTROCHEM8",
-      "full": "Recall the function and typical composition of the salt bridge in an electrochemical cell (a salt such as potassium nitrate whose ions maintain electrical neutrality without reacting).",
       "depth": 0
     }
   ],
@@ -3855,13 +3418,6 @@
     {
       "id": "CHE_EQUILIBRIUM4",
       "full": "Interpret the dissociation stoichiometry of a sparingly soluble ionic compound to write its solubility-product (Ksp) expression in terms of molar solubility (S) (e.g., A2B <=> 2A+ + B2- gives Ksp = 4S^3).",
-      "depth": 0
-    }
-  ],
-  "CHE_EQUILIBRIUM11": [
-    {
-      "id": "CHE_EQUILIBRIUM30",
-      "full": "State the law of mass action: at a given temperature the rate of a chemical reaction is proportional to the product of the active masses (molar concentrations) of the reactants.",
       "depth": 0
     }
   ],
@@ -3931,13 +3487,6 @@
       "depth": 0
     }
   ],
-  "CHE_EQUILIBRIUM20": [
-    {
-      "id": "CHE2_MOLE2",
-      "full": "Balance a chemical equation by adjusting its stoichiometric coefficients so that every element is conserved.",
-      "depth": 0
-    }
-  ],
   "CHE_EQUILIBRIUM21": [
     {
       "id": "CHE_EQUILIBRIUM14",
@@ -3978,13 +3527,6 @@
       "depth": 0
     }
   ],
-  "CHE_EQUILIBRIUM26": [
-    {
-      "id": "CHE_GASLAWS13",
-      "full": "State Dalton's law of partial pressures: the total pressure of a mixture of non-reacting gases at constant temperature equals the sum of the partial pressures its components would each exert alone.",
-      "depth": 0
-    }
-  ],
   "CHE_EQUILIBRIUM27": [
     {
       "id": "CHE_EQUILIBRIUM19",
@@ -3999,24 +3541,10 @@
       "depth": 0
     }
   ],
-  "CHE_EQUILIBRIUM29": [
-    {
-      "id": "CHE_EQUILIBRIUM30",
-      "full": "State the law of mass action: at a given temperature the rate of a chemical reaction is proportional to the product of the active masses (molar concentrations) of the reactants.",
-      "depth": 0
-    }
-  ],
   "CHE_EQUILIBRIUM3": [
     {
       "id": "CHE_EQUILIBRIUM20",
       "full": "Determine delta-n, the change in the number of moles of gas, from a balanced gas-phase chemical equation.",
-      "depth": 0
-    }
-  ],
-  "CHE_EQUILIBRIUM31": [
-    {
-      "id": "CHE_EQUILIBRIUM30",
-      "full": "State the law of mass action: at a given temperature the rate of a chemical reaction is proportional to the product of the active masses (molar concentrations) of the reactants.",
       "depth": 0
     }
   ],
@@ -4173,27 +3701,6 @@
       "depth": 0
     }
   ],
-  "CHE_GASLAWS17": [
-    {
-      "id": "CHE_GASLAWS26",
-      "full": "Define an ideal gas as one that obeys the gas laws at all temperatures and pressures, and a real gas as one that deviates from them.",
-      "depth": 0
-    }
-  ],
-  "CHE_GASLAWS18": [
-    {
-      "id": "CHE_GASLAWS26",
-      "full": "Define an ideal gas as one that obeys the gas laws at all temperatures and pressures, and a real gas as one that deviates from them.",
-      "depth": 0
-    }
-  ],
-  "CHE_GASLAWS19": [
-    {
-      "id": "CHE_GASLAWS26",
-      "full": "Define an ideal gas as one that obeys the gas laws at all temperatures and pressures, and a real gas as one that deviates from them.",
-      "depth": 0
-    }
-  ],
   "CHE_GASLAWS20": [
     {
       "id": "CHE_GASLAWS19",
@@ -4271,13 +3778,6 @@
       "depth": 0
     }
   ],
-  "CHE_GASLAWS32": [
-    {
-      "id": "CHE_GASLAWS26",
-      "full": "Define an ideal gas as one that obeys the gas laws at all temperatures and pressures, and a real gas as one that deviates from them.",
-      "depth": 0
-    }
-  ],
   "CHE_GASLAWS33": [
     {
       "id": "CHE_GASLAWS34",
@@ -4306,13 +3806,6 @@
       "depth": 0
     }
   ],
-  "CHE_GASLAWS38": [
-    {
-      "id": "CHE_GASLAWS26",
-      "full": "Define an ideal gas as one that obeys the gas laws at all temperatures and pressures, and a real gas as one that deviates from them.",
-      "depth": 0
-    }
-  ],
   "CHE_GASLAWS39": [
     {
       "id": "CHE_GASLAWS38",
@@ -4324,13 +3817,6 @@
     {
       "id": "CHE_GASLAWS3",
       "full": "Recall that gases are generally less soluble in warm water than in cold water.",
-      "depth": 0
-    }
-  ],
-  "CHE_GASLAWS40": [
-    {
-      "id": "CHE_GASLAWS26",
-      "full": "Define an ideal gas as one that obeys the gas laws at all temperatures and pressures, and a real gas as one that deviates from them.",
       "depth": 0
     }
   ],
@@ -4974,6 +4460,13 @@
       "depth": 0
     }
   ],
+  "CHE_ORGANIC50": [
+    {
+      "id": "CHE_ORGANIC47",
+      "full": "Write the acid-catalysed esterification of a carboxylic acid with an alcohol, and the reverse hydrolysis of the ester.",
+      "depth": 0
+    }
+  ],
   "CHE_ORGANIC51": [
     {
       "id": "CHE_ORGANIC50",
@@ -5493,13 +4986,6 @@
       "depth": 0
     }
   ],
-  "CHE_STOICHIOMETRY11": [
-    {
-      "id": "CHE2_MOLE0",
-      "full": "Calculate the molar mass of a compound by summing the atomic masses of the elements in its formula.",
-      "depth": 0
-    }
-  ],
   "CHE_STOICHIOMETRY12": [
     {
       "id": "CHE2_MOLE0",
@@ -5594,11 +5080,6 @@
       "id": "CHE_STOICHIOMETRY14",
       "full": "Use the mole ratio from a balanced chemical equation to calculate the amount of one reactant required to completely react with a given amount of another reactant.",
       "depth": 0
-    },
-    {
-      "id": "CHE_STOICHIOMETRY23",
-      "full": "Calculate the percentage of impurity in an impure sample from the amount of gas evolved or residue left when it reacts or is heated, using the reaction stoichiometry.",
-      "depth": 0
     }
   ],
   "CHE_STOICHIOMETRY25": [
@@ -5633,13 +5114,6 @@
     {
       "id": "CHE_STOICHIOMETRY17",
       "full": "Calculate the molarity of a solution from the mass of solute dissolved, the solute's molar mass, and the volume of the resulting solution.",
-      "depth": 0
-    }
-  ],
-  "CHE_STOICHIOMETRY3": [
-    {
-      "id": "CHE2_MOLE3",
-      "full": "Recall the common reaction types - combination, decomposition, displacement, double displacement and neutralisation.",
       "depth": 0
     }
   ],
@@ -5723,13 +5197,6 @@
       "depth": 0
     }
   ],
-  "CHE_THERMOCHEM1": [
-    {
-      "id": "CHE_THERMOCHEM11",
-      "full": "List the named types of enthalpy change studied in thermochemistry (e.g., enthalpy of formation, combustion, neutralization, vaporization, ionization, and atomization).",
-      "depth": 0
-    }
-  ],
   "CHE_THERMOCHEM10": [
     {
       "id": "CHE_THERMOCHEM12",
@@ -5741,20 +5208,6 @@
     {
       "id": "CHE_THERMOCHEM26",
       "full": "Recall the definition of enthalpy, H = U + PV, which relates a system's enthalpy to its internal energy, pressure and volume.",
-      "depth": 0
-    }
-  ],
-  "CHE_THERMOCHEM12": [
-    {
-      "id": "CHE_THERMOCHEM11",
-      "full": "List the named types of enthalpy change studied in thermochemistry (e.g., enthalpy of formation, combustion, neutralization, vaporization, ionization, and atomization).",
-      "depth": 0
-    }
-  ],
-  "CHE_THERMOCHEM15": [
-    {
-      "id": "CHE_THERMOCHEM11",
-      "full": "List the named types of enthalpy change studied in thermochemistry (e.g., enthalpy of formation, combustion, neutralization, vaporization, ionization, and atomization).",
       "depth": 0
     }
   ],
@@ -5781,13 +5234,6 @@
     {
       "id": "CHE_THERMOCHEM17",
       "full": "Explain why the enthalpy of neutralization of a weak acid or a weak base is numerically smaller than the strong-acid/strong-base value of about 57.3 kJ per mole, because part of the energy released is consumed in ionizing the weak electrolyte.",
-      "depth": 0
-    }
-  ],
-  "CHE_THERMOCHEM19": [
-    {
-      "id": "CHE_THERMOCHEM11",
-      "full": "List the named types of enthalpy change studied in thermochemistry (e.g., enthalpy of formation, combustion, neutralization, vaporization, ionization, and atomization).",
       "depth": 0
     }
   ],
@@ -5845,13 +5291,6 @@
       "depth": 0
     }
   ],
-  "CHE_THERMOCHEM4": [
-    {
-      "id": "CHE_THERMOCHEM13",
-      "full": "Define the heat (enthalpy) of combustion as the heat released when one mole of a substance is completely burned in an adequate supply of oxygen.",
-      "depth": 0
-    }
-  ],
   "CHE_THERMOCHEM5": [
     {
       "id": "CHE_THERMOCHEM1",
@@ -5863,13 +5302,6 @@
     {
       "id": "CHE_THERMOCHEM8",
       "full": "Explain the sign convention used in bond-energy calculations, that breaking a bond absorbs energy (counted positive) while forming a bond releases energy (counted negative).",
-      "depth": 0
-    }
-  ],
-  "CHE_THERMOCHEM8": [
-    {
-      "id": "CHE_THERMOCHEM11",
-      "full": "List the named types of enthalpy change studied in thermochemistry (e.g., enthalpy of formation, combustion, neutralization, vaporization, ionization, and atomization).",
       "depth": 0
     }
   ],
@@ -6367,13 +5799,6 @@
     {
       "id": "MAT_CALC_DIFF6",
       "full": "Calculate the derivative of a function from first principles, as the limit of its difference quotient.",
-      "depth": 0
-    }
-  ],
-  "MAT1_LIMIT12": [
-    {
-      "id": "MAT1_LIMIT5",
-      "full": "Calculate a limit at infinity involving radicals, by rationalising or by dividing through by the highest power present.",
       "depth": 0
     }
   ],
@@ -7200,11 +6625,6 @@
       "id": "MAT2_POLYNOMIAL1",
       "full": "Recall the relations between the roots and the coefficients of a cubic equation.",
       "depth": 0
-    },
-    {
-      "id": "MAT2_POLYNOMIAL9",
-      "full": "Recall the remainder theorem and the factor theorem for a polynomial.",
-      "depth": 0
     }
   ],
   "MAT2_POLY_ROOTS5": [
@@ -7615,13 +7035,6 @@
       "depth": 0
     }
   ],
-  "MAT2_TRIG_EQUATION5": [
-    {
-      "id": "MAT2_TRIG_EQUATION0",
-      "full": "Recall the general solution of the basic trigonometric equations in sine, cosine and tangent.",
-      "depth": 0
-    }
-  ],
   "MAT2_TRIG_EQUATION6": [
     {
       "id": "MAT2_TRIG_EQUATION5",
@@ -7709,11 +7122,6 @@
       "depth": 0
     },
     {
-      "id": "MATH_MECH18",
-      "full": "Calculate the area of a parallelogram from two adjacent side vectors using the cross product.",
-      "depth": 0
-    },
-    {
       "id": "MATH_MECH24",
       "full": "Calculate the vector joining two points from their position vectors.",
       "depth": 0
@@ -7777,11 +7185,6 @@
     }
   ],
   "MATH_MECH27": [
-    {
-      "id": "MATH_MECH18",
-      "full": "Calculate the area of a parallelogram from two adjacent side vectors using the cross product.",
-      "depth": 0
-    },
     {
       "id": "MATH_MECH24",
       "full": "Calculate the vector joining two points from their position vectors.",
@@ -8571,8 +7974,8 @@
   ],
   "MAT_INVTRIG5": [
     {
-      "id": "MAT2_INVERSE_TRIG4",
-      "full": "Recall the principal-value range of each inverse trigonometric function and the relations between complementary pairs.",
+      "id": "MAT_INVTRIG4",
+      "full": "Recall the principal-value ranges of the inverse trigonometric functions.",
       "depth": 0
     }
   ],
@@ -9091,13 +8494,6 @@
       "depth": 0
     }
   ],
-  "MAT_TRIG30": [
-    {
-      "id": "MAT_TRIG29",
-      "full": "Recall the sine rule relating each side of a triangle to the sine of the angle opposite it.",
-      "depth": 0
-    }
-  ],
   "MAT_TRIG31": [
     {
       "id": "MAT_TRIG29",
@@ -9311,22 +8707,12 @@
   ],
   "PHY1_ENERGY_CONSERVATION0": [
     {
-      "id": "PHY1_ENERGY_CONSERVATION2",
-      "full": "Determine which form of energy is converted into which other form in a stated process.",
-      "depth": 0
-    },
-    {
       "id": "PHY1_WORK_ENERGY5",
       "full": "Determine the speed of a falling body from the conservation of mechanical energy.",
       "depth": 0
     }
   ],
   "PHY1_ENERGY_CONSERVATION1": [
-    {
-      "id": "PHY1_ENERGY_CONSERVATION2",
-      "full": "Determine which form of energy is converted into which other form in a stated process.",
-      "depth": 0
-    },
     {
       "id": "PHY1_WORK_ENERGY3",
       "full": "Calculate the kinetic energy of a body and the change in it produced by a force.",
@@ -9382,20 +8768,6 @@
     {
       "id": "PHY1_FLUID_STATICS0",
       "full": "Calculate the pressure at a stated depth in a liquid.",
-      "depth": 0
-    }
-  ],
-  "PHY1_FRICTION1": [
-    {
-      "id": "PHY1_FRICTION0",
-      "full": "Recall the laws of limiting friction and the meaning of the coefficient of friction.",
-      "depth": 0
-    }
-  ],
-  "PHY1_FRICTION2": [
-    {
-      "id": "PHY1_FRICTION1",
-      "full": "Calculate the frictional force acting on a body from the normal reaction and the coefficient of friction.",
       "depth": 0
     }
   ],
@@ -9705,11 +9077,6 @@
   ],
   "PHY1_NEWTON_LAWS6": [
     {
-      "id": "PHY1_FRICTION1",
-      "full": "Calculate the frictional force acting on a body from the normal reaction and the coefficient of friction.",
-      "depth": 0
-    },
-    {
       "id": "PHY1_NEWTON_LAWS4",
       "full": "Determine the acceleration of two connected bodies hanging over a pulley.",
       "depth": 0
@@ -9952,18 +9319,6 @@
     {
       "id": "PHY1_SHM2",
       "full": "Calculate the velocity or the acceleration of a body in simple harmonic motion at a stated displacement.",
-      "depth": 0
-    },
-    {
-      "id": "PHY1_SHM_ENERGY1",
-      "full": "Recall that the total energy of a body in simple harmonic motion is constant and proportional to the square of its amplitude.",
-      "depth": 0
-    }
-  ],
-  "PHY1_SHM_ENERGY2": [
-    {
-      "id": "PHY1_SHM_ENERGY0",
-      "full": "Calculate the kinetic, potential or total energy of a body in simple harmonic motion.",
       "depth": 0
     }
   ],
@@ -10859,13 +10214,6 @@
       "depth": 0
     }
   ],
-  "PHY2_HEAT_TEMPERATURE3": [
-    {
-      "id": "PHY2_HEAT_TEMPERATURE0",
-      "full": "Convert a temperature between the Celsius, Fahrenheit and Kelvin scales.",
-      "depth": 0
-    }
-  ],
   "PHY2_HEAT_TEMPERATURE4": [
     {
       "id": "PHY2_HEAT_TEMPERATURE3",
@@ -10983,27 +10331,8 @@
   ],
   "PHY2_LOGIC_GATES0": [
     {
-      "id": "PHY2_LOGIC_GATES1",
-      "full": "Recall the symbol and the truth table of the AND, the OR and the NOT gate.",
-      "depth": 0
-    },
-    {
       "id": "PHY2_TRANSISTOR2",
       "full": "Calculate the base, the emitter or the collector current of a transistor from its current gain.",
-      "depth": 0
-    }
-  ],
-  "PHY2_LOGIC_GATES2": [
-    {
-      "id": "PHY2_LOGIC_GATES1",
-      "full": "Recall the symbol and the truth table of the AND, the OR and the NOT gate.",
-      "depth": 0
-    }
-  ],
-  "PHY2_LOGIC_GATES3": [
-    {
-      "id": "PHY2_LOGIC_GATES1",
-      "full": "Recall the symbol and the truth table of the AND, the OR and the NOT gate.",
       "depth": 0
     }
   ],

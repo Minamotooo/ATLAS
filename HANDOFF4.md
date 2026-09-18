@@ -185,11 +185,12 @@ Steps 1–3 of `HANDOFF3.md` §7 are now done. The rest, renumbered:
    overdue: Chemistry is complete enough to sample meaningfully. Worth checking
    in particular whether `CHE_ORGANIC` (154 skills, by far the largest topic) has
    drifted in granularity relative to the rest.
-5. **Decide the 3 proposed new topics** (`CHEM_LAB`, `CHEM_NUCLEAR`,
-   `CHEM_DESCRIPTIVE`) in `Backend/tree_data/ontology_config.json`. Unchanged
-   this session — no new topics were proposed in b07–b09 — but it now blocks
-   **58 skills** from ever appearing in the catalog, which the build tool reports
-   as "ingested but invisible". This is a human editorial call.
+5. ~~**Decide the 3 proposed new topics**~~ — **DONE 2026-09-18.** All three
+   (`CHEM_LAB`, `CHEM_NUCLEAR`, `CHEM_DESCRIPTIVE`) were accepted and added to
+   `Backend/tree_data/ontology_config.json`, placed into existing sections so the
+   live catalog is unchanged. The 58 skills are no longer "ingested but
+   invisible". Details and the one caveat to revisit:
+   `Ontology/full_corpus_rebuild/STATUS.md` § "Placement of the 3 accepted topics".
 6. **Decide how/whether this rebuild replaces the legacy ontology.** Still out of
    scope; the legacy files remain untouched.
 

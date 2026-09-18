@@ -1,0 +1,658 @@
+{
+ "chunkLabel": "PhyBook1_b21",
+ "subject": "Physics",
+ "skills": [
+  {
+   "tempId": "PhyBook1_b21_s1",
+   "bloom": "Remember",
+   "skillFull": "Recall Kepler's laws of planetary motion.",
+   "topicKey": "PHY1_SATELLITE",
+   "topicLabel": "Satellites and Escape Velocity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p48__q02__301"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s2",
+   "bloom": "Apply",
+   "skillFull": "Determine the depth or the height at which the acceleration due to gravity falls to a stated fraction of its surface value.",
+   "topicKey": "PHY1_GRAVITY_FIELD",
+   "topicLabel": "Acceleration due to Gravity and Gravitational Field",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p48__q03__302",
+    "PhyBook1__p52__q38__337",
+    "PhyBook1__p48__q04__303"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s3",
+   "bloom": "Apply",
+   "skillFull": "Determine the mass of the sun or of a planet from the orbital period and radius of a body circling it.",
+   "topicKey": "PHY1_SATELLITE",
+   "topicLabel": "Satellites and Escape Velocity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p50__q24__324",
+    "PhyBook1__p51__q31__331"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s4",
+   "bloom": "Remember",
+   "skillFull": "Recall the definitions of stress, strain and the elastic moduli, together with their dimensions.",
+   "topicKey": "PHY1_ELASTICITY",
+   "topicLabel": "Elasticity and Hooke's Law",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p55__q13__355",
+    "PhyBook1__p64__q42__423"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s5",
+   "bloom": "Apply",
+   "skillFull": "Calculate the extension of a wire from Young's modulus, its dimensions and the applied load.",
+   "topicKey": "PHY1_ELASTICITY",
+   "topicLabel": "Elasticity and Hooke's Law",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p53__q03__345",
+    "PhyBook1__p55__q10__352",
+    "PhyBook1__p61__q12__393"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s6",
+   "bloom": "Apply",
+   "skillFull": "Calculate Young's modulus from measurements made on a stretched wire.",
+   "topicKey": "PHY1_ELASTICITY",
+   "topicLabel": "Elasticity and Hooke's Law",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p56__q17__359",
+    "PhyBook1__p58__q30__372",
+    "PhyBook1__p63__q31__412"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s7",
+   "bloom": "Apply",
+   "skillFull": "Compare the extensions of two wires differing in material, length or cross-section under the same load.",
+   "topicKey": "PHY1_ELASTICITY",
+   "topicLabel": "Elasticity and Hooke's Law",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p53__q01__343",
+    "PhyBook1__p55__q11__353",
+    "PhyBook1__p56__q18__360",
+    "PhyBook1__p62__q24__404"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s8",
+   "bloom": "Apply",
+   "skillFull": "Calculate the energy stored in a stretched wire, or the elastic potential energy per unit volume.",
+   "topicKey": "PHY1_ELASTICITY",
+   "topicLabel": "Elasticity and Hooke's Law",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p59__q38__380",
+    "PhyBook1__p61__q17__398",
+    "PhyBook1__p63__q33__414"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s9",
+   "bloom": "Apply",
+   "skillFull": "Calculate the change in volume or in density of a substance under a stated pressure, using the bulk modulus.",
+   "topicKey": "PHY1_ELASTICITY",
+   "topicLabel": "Elasticity and Hooke's Law",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p56__q19__361",
+    "PhyBook1__p59__q36__378"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s10",
+   "bloom": "Remember",
+   "skillFull": "Recall the meaning and the typical value of Poisson's ratio.",
+   "topicKey": "PHY1_ELASTICITY",
+   "topicLabel": "Elasticity and Hooke's Law",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p61__q20__401"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s11",
+   "bloom": "Understand",
+   "skillFull": "Compare the elasticity of two materials such as steel and rubber.",
+   "topicKey": "PHY1_ELASTICITY",
+   "topicLabel": "Elasticity and Hooke's Law",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p58__q29__371",
+    "PhyBook1__p55__q12__354"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s12",
+   "bloom": "Apply",
+   "skillFull": "Calculate the maximum load a wire can carry from its breaking stress and its cross-sectional area.",
+   "topicKey": "PHY1_ELASTICITY",
+   "topicLabel": "Elasticity and Hooke's Law",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p57__q26__368",
+    "PhyBook1__p63__q30__411"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s13",
+   "bloom": "Apply",
+   "skillFull": "Calculate the pressure at a stated depth in a liquid.",
+   "topicKey": "PHY1_FLUID_STATICS",
+   "topicLabel": "Fluid Pressure and Buoyancy",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p53__q05__347"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s14",
+   "bloom": "Apply",
+   "skillFull": "Determine the depth of water from the fractional increase in its density under pressure.",
+   "topicKey": "PHY1_FLUID_STATICS",
+   "topicLabel": "Fluid Pressure and Buoyancy",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p54__q06__348"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s15",
+   "bloom": "Remember",
+   "skillFull": "Recall the definition and the units of surface tension and of surface energy.",
+   "topicKey": "PHY1_SURFACE_TENSION",
+   "topicLabel": "Surface Tension and Capillarity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p62__q22__403"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s16",
+   "bloom": "Apply",
+   "skillFull": "Calculate the excess pressure inside a liquid drop or a soap bubble.",
+   "topicKey": "PHY1_SURFACE_TENSION",
+   "topicLabel": "Surface Tension and Capillarity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p60__q08__389",
+    "PhyBook1__p61__q15__396",
+    "PhyBook1__p64__q38__419"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s17",
+   "bloom": "Apply",
+   "skillFull": "Calculate the work done or the energy change when a drop is split into a number of smaller drops.",
+   "topicKey": "PHY1_SURFACE_TENSION",
+   "topicLabel": "Surface Tension and Capillarity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p57__q23__365",
+    "PhyBook1__p62__q28__409",
+    "PhyBook1__p63__q32__413"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s18",
+   "bloom": "Apply",
+   "skillFull": "Calculate the rise or the fall of a liquid in a capillary tube.",
+   "topicKey": "PHY1_SURFACE_TENSION",
+   "topicLabel": "Surface Tension and Capillarity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p60__q09__390",
+    "PhyBook1__p61__q14__395",
+    "PhyBook1__p64__q43__424"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s19",
+   "bloom": "Understand",
+   "skillFull": "Explain the shape of a liquid meniscus in terms of the angle of contact.",
+   "topicKey": "PHY1_SURFACE_TENSION",
+   "topicLabel": "Surface Tension and Capillarity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p62__q27__408",
+    "PhyBook1__p62__q29__410"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s20",
+   "bloom": "Apply",
+   "skillFull": "Calculate the surface energy of a liquid drop or of a liquid film.",
+   "topicKey": "PHY1_SURFACE_TENSION",
+   "topicLabel": "Surface Tension and Capillarity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p60__q05__386",
+    "PhyBook1__p61__q13__394"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s21",
+   "bloom": "Understand",
+   "skillFull": "Explain why a free liquid drop takes a spherical shape.",
+   "topicKey": "PHY1_SURFACE_TENSION",
+   "topicLabel": "Surface Tension and Capillarity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p62__q21__402",
+    "PhyBook1__p63__q35__416"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s22",
+   "bloom": "Remember",
+   "skillFull": "Recall the definition and the dimensions of the coefficient of viscosity.",
+   "topicKey": "PHY1_VISCOSITY",
+   "topicLabel": "Viscosity and Fluid Flow",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p64__q39__420"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s23",
+   "bloom": "Apply",
+   "skillFull": "Calculate the terminal velocity of a sphere falling through a viscous fluid.",
+   "topicKey": "PHY1_VISCOSITY",
+   "topicLabel": "Viscosity and Fluid Flow",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p60__q01__382",
+    "PhyBook1__p61__q19__400",
+    "PhyBook1__p62__q25__405"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s24",
+   "bloom": "Apply",
+   "skillFull": "Compare the terminal velocities of two spheres differing in radius or in density.",
+   "topicKey": "PHY1_VISCOSITY",
+   "topicLabel": "Viscosity and Fluid Flow",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p62__q25__405",
+    "PhyBook1__p63__q36__417"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s25",
+   "bloom": "Remember",
+   "skillFull": "Recall the defining equation of simple harmonic motion and the meaning of amplitude, period and phase.",
+   "topicKey": "PHY1_SHM",
+   "topicLabel": "Simple Harmonic Motion",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p65__q03__427",
+    "PhyBook1__p66__q10__434"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s26",
+   "bloom": "Apply",
+   "skillFull": "Determine the angular frequency, the period or the amplitude of a body in simple harmonic motion from its equation of motion.",
+   "topicKey": "PHY1_SHM",
+   "topicLabel": "Simple Harmonic Motion",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p65__q04__428",
+    "PhyBook1__p66__q11__435",
+    "PhyBook1__p68__q19__443"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s27",
+   "bloom": "Apply",
+   "skillFull": "Calculate the velocity or the acceleration of a body in simple harmonic motion at a stated displacement.",
+   "topicKey": "PHY1_SHM",
+   "topicLabel": "Simple Harmonic Motion",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p68__q18__442",
+    "PhyBook1__p68__q23__447"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s28",
+   "bloom": "Apply",
+   "skillFull": "Determine the displacement at which the velocity or the acceleration of a body in simple harmonic motion takes a stated value.",
+   "topicKey": "PHY1_SHM",
+   "topicLabel": "Simple Harmonic Motion",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p65__q01__425",
+    "PhyBook1__p68__q22__446"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s29",
+   "bloom": "Remember",
+   "skillFull": "Recall the expression for the period of a simple pendulum and the definition of a seconds pendulum.",
+   "topicKey": "PHY1_PENDULUM",
+   "topicLabel": "Pendulum and Spring Oscillations",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p67__q13__437"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s30",
+   "bloom": "Apply",
+   "skillFull": "Calculate the length or the period of a simple pendulum at a stated value of the acceleration due to gravity.",
+   "topicKey": "PHY1_PENDULUM",
+   "topicLabel": "Pendulum and Spring Oscillations",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p65__q02__426",
+    "PhyBook1__p67__q12__436",
+    "PhyBook1__p68__q20__444"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s31",
+   "bloom": "Apply",
+   "skillFull": "Determine the change in the period, or in the daily count, of a pendulum clock when its length or the local value of g changes.",
+   "topicKey": "PHY1_PENDULUM",
+   "topicLabel": "Pendulum and Spring Oscillations",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p66__q09__433",
+    "PhyBook1__p67__q15__439",
+    "PhyBook1__p69__q24__448",
+    "PhyBook1__p69__q25__449"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s32",
+   "bloom": "Apply",
+   "skillFull": "Calculate the period of a mass oscillating on a spring from the spring constant.",
+   "topicKey": "PHY1_PENDULUM",
+   "topicLabel": "Pendulum and Spring Oscillations",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p67__q16__440",
+    "PhyBook1__p68__q21__445"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b21_s33",
+   "bloom": "Apply",
+   "skillFull": "Calculate the kinetic, potential or total energy of a body in simple harmonic motion.",
+   "topicKey": "PHY1_SHM_ENERGY",
+   "topicLabel": "Energy in Simple Harmonic Motion",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p66__q08__432",
+    "PhyBook1__p68__q22__446"
+   ]
+  }
+ ],
+ "prereqs": [
+  {
+   "fromTempId": "PhyBook1_b21_s3",
+   "toTempId": "PhyBook1_b21_s1",
+   "toDescription": "Recall Kepler's laws of planetary motion.",
+   "toTopicKeyGuess": "PHY1_SATELLITE"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s5",
+   "toTempId": "PhyBook1_b21_s4",
+   "toDescription": "Recall the definitions of stress, strain and the elastic moduli, together with their dimensions.",
+   "toTopicKeyGuess": "PHY1_ELASTICITY"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s6",
+   "toTempId": "PhyBook1_b21_s5",
+   "toDescription": "Calculate the extension of a wire from Young's modulus, its dimensions and the applied load.",
+   "toTopicKeyGuess": "PHY1_ELASTICITY"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s7",
+   "toTempId": "PhyBook1_b21_s5",
+   "toDescription": "Calculate the extension of a wire from Young's modulus, its dimensions and the applied load.",
+   "toTopicKeyGuess": "PHY1_ELASTICITY"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s8",
+   "toTempId": "PhyBook1_b21_s5",
+   "toDescription": "Calculate the extension of a wire from Young's modulus, its dimensions and the applied load.",
+   "toTopicKeyGuess": "PHY1_ELASTICITY"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s9",
+   "toTempId": "PhyBook1_b21_s4",
+   "toDescription": "Recall the definitions of stress, strain and the elastic moduli, together with their dimensions.",
+   "toTopicKeyGuess": "PHY1_ELASTICITY"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s10",
+   "toTempId": "PhyBook1_b21_s4",
+   "toDescription": "Recall the definitions of stress, strain and the elastic moduli, together with their dimensions.",
+   "toTopicKeyGuess": "PHY1_ELASTICITY"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s11",
+   "toTempId": "PhyBook1_b21_s4",
+   "toDescription": "Recall the definitions of stress, strain and the elastic moduli, together with their dimensions.",
+   "toTopicKeyGuess": "PHY1_ELASTICITY"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s12",
+   "toTempId": "PhyBook1_b21_s4",
+   "toDescription": "Recall the definitions of stress, strain and the elastic moduli, together with their dimensions.",
+   "toTopicKeyGuess": "PHY1_ELASTICITY"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s14",
+   "toTempId": "PhyBook1_b21_s13",
+   "toDescription": "Calculate the pressure at a stated depth in a liquid.",
+   "toTopicKeyGuess": "PHY1_FLUID_STATICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s14",
+   "toTempId": "PhyBook1_b21_s9",
+   "toDescription": "Calculate the change in volume or in density of a substance under a stated pressure, using the bulk modulus.",
+   "toTopicKeyGuess": "PHY1_ELASTICITY"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s16",
+   "toTempId": "PhyBook1_b21_s15",
+   "toDescription": "Recall the definition and the units of surface tension and of surface energy.",
+   "toTopicKeyGuess": "PHY1_SURFACE_TENSION"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s17",
+   "toTempId": "PhyBook1_b21_s15",
+   "toDescription": "Recall the definition and the units of surface tension and of surface energy.",
+   "toTopicKeyGuess": "PHY1_SURFACE_TENSION"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s18",
+   "toTempId": "PhyBook1_b21_s15",
+   "toDescription": "Recall the definition and the units of surface tension and of surface energy.",
+   "toTopicKeyGuess": "PHY1_SURFACE_TENSION"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s19",
+   "toTempId": "PhyBook1_b21_s18",
+   "toDescription": "Calculate the rise or the fall of a liquid in a capillary tube.",
+   "toTopicKeyGuess": "PHY1_SURFACE_TENSION"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s20",
+   "toTempId": "PhyBook1_b21_s15",
+   "toDescription": "Recall the definition and the units of surface tension and of surface energy.",
+   "toTopicKeyGuess": "PHY1_SURFACE_TENSION"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s21",
+   "toTempId": "PhyBook1_b21_s15",
+   "toDescription": "Recall the definition and the units of surface tension and of surface energy.",
+   "toTopicKeyGuess": "PHY1_SURFACE_TENSION"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s17",
+   "toTempId": "PhyBook1_b21_s20",
+   "toDescription": "Calculate the surface energy of a liquid drop or of a liquid film.",
+   "toTopicKeyGuess": "PHY1_SURFACE_TENSION"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s16",
+   "toTempId": "PhyBook1_b21_s20",
+   "toDescription": "Calculate the surface energy of a liquid drop or of a liquid film.",
+   "toTopicKeyGuess": "PHY1_SURFACE_TENSION"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s23",
+   "toTempId": "PhyBook1_b21_s22",
+   "toDescription": "Recall the definition and the dimensions of the coefficient of viscosity.",
+   "toTopicKeyGuess": "PHY1_VISCOSITY"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s24",
+   "toTempId": "PhyBook1_b21_s23",
+   "toDescription": "Calculate the terminal velocity of a sphere falling through a viscous fluid.",
+   "toTopicKeyGuess": "PHY1_VISCOSITY"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s23",
+   "toTempId": "PhyBook1_b21_s13",
+   "toDescription": "Calculate the pressure at a stated depth in a liquid.",
+   "toTopicKeyGuess": "PHY1_FLUID_STATICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s26",
+   "toTempId": "PhyBook1_b21_s25",
+   "toDescription": "Recall the defining equation of simple harmonic motion and the meaning of amplitude, period and phase.",
+   "toTopicKeyGuess": "PHY1_SHM"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s27",
+   "toTempId": "PhyBook1_b21_s26",
+   "toDescription": "Determine the angular frequency, the period or the amplitude of a body in simple harmonic motion from its equation of motion.",
+   "toTopicKeyGuess": "PHY1_SHM"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s27",
+   "toTempId": "PhyBook1_b21_s25",
+   "toDescription": "Recall the defining equation of simple harmonic motion and the meaning of amplitude, period and phase.",
+   "toTopicKeyGuess": "PHY1_SHM"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s28",
+   "toTempId": "PhyBook1_b21_s27",
+   "toDescription": "Calculate the velocity or the acceleration of a body in simple harmonic motion at a stated displacement.",
+   "toTopicKeyGuess": "PHY1_SHM"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s29",
+   "toTempId": "PhyBook1_b21_s25",
+   "toDescription": "Recall the defining equation of simple harmonic motion and the meaning of amplitude, period and phase.",
+   "toTopicKeyGuess": "PHY1_SHM"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s30",
+   "toTempId": "PhyBook1_b21_s29",
+   "toDescription": "Recall the expression for the period of a simple pendulum and the definition of a seconds pendulum.",
+   "toTopicKeyGuess": "PHY1_PENDULUM"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s31",
+   "toTempId": "PhyBook1_b21_s30",
+   "toDescription": "Calculate the length or the period of a simple pendulum at a stated value of the acceleration due to gravity.",
+   "toTopicKeyGuess": "PHY1_PENDULUM"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s32",
+   "toTempId": "PhyBook1_b21_s26",
+   "toDescription": "Determine the angular frequency, the period or the amplitude of a body in simple harmonic motion from its equation of motion.",
+   "toTopicKeyGuess": "PHY1_SHM"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s32",
+   "toTempId": "PhyBook1_b21_s8",
+   "toDescription": "Calculate the energy stored in a stretched wire, or the elastic potential energy per unit volume.",
+   "toTopicKeyGuess": "PHY1_ELASTICITY"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s33",
+   "toTempId": "PhyBook1_b21_s27",
+   "toDescription": "Calculate the velocity or the acceleration of a body in simple harmonic motion at a stated displacement.",
+   "toTopicKeyGuess": "PHY1_SHM"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s33",
+   "toTempId": "PhyBook1_b21_s8",
+   "toDescription": "Calculate the energy stored in a stretched wire, or the elastic potential energy per unit volume.",
+   "toTopicKeyGuess": "PHY1_ELASTICITY"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s2",
+   "toSkillId": "PHY1_GRAVITY_FIELD0",
+   "toDescription": "Calculate the acceleration due to gravity at a stated height above or depth below the earth's surface.",
+   "toTopicKeyGuess": "PHY1_GRAVITY_FIELD"
+  },
+  {
+   "fromTempId": "PhyBook1_b21_s13",
+   "toSkillId": "PHY1_WORK_ENERGY0",
+   "toDescription": "Recall the definitions of work, energy and power together with their units and dimensions.",
+   "toTopicKeyGuess": "PHY1_WORK_ENERGY"
+  }
+ ],
+ "reusedExistingSkills": [
+  {
+   "existingSkillId": "PHY1_SATELLITE0",
+   "sourceItemIds": [
+    "PhyBook1__p48__q06__305",
+    "PhyBook1__p49__q11__310",
+    "PhyBook1__p49__q15__315"
+   ]
+  },
+  {
+   "existingSkillId": "PHY1_SATELLITE1",
+   "sourceItemIds": [
+    "PhyBook1__p50__q23__323",
+    "PhyBook1__p50__q25__325",
+    "PhyBook1__p51__q28__328"
+   ]
+  },
+  {
+   "existingSkillId": "PHY1_GRAVITY_FIELD1",
+   "sourceItemIds": [
+    "PhyBook1__p49__q13__313",
+    "PhyBook1__p51__q29__329",
+    "PhyBook1__p52__q41__341"
+   ]
+  },
+  {
+   "existingSkillId": "PHY1_GRAVITY_FIELD2",
+   "sourceItemIds": [
+    "PhyBook1__p49__q09__308",
+    "PhyBook1__p51__q32__332",
+    "PhyBook1__p52__q42__342"
+   ]
+  }
+ ],
+ "newTopicsProposed": [],
+ "skippedItems": [],
+ "notes": "Records 301-450 of PhyBook1 (parsed_items.jsonl lines 3396-3545). Coverage: the rest of gravitation including Kepler's laws (Physics 1st Paper Ch6, records 301-342), structural properties of matter (Ch7, records 343-424) split across elasticity, fluid statics, surface tension and viscosity, and the opening of periodic motion (Ch8, records 425-450). Third consecutive Physics batch needing no new topics. All descriptions are plain text with no backslashes."
+}

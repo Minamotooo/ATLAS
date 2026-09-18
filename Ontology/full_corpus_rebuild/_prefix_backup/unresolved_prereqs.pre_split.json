@@ -1,0 +1,14 @@
+{
+  "CHEM_AT1": [
+    {
+      "description": "Recall the Aufbau principle, the Pauli exclusion principle, and Hund's rule as the rules governing how electrons fill atomic orbitals.",
+      "topicKeyGuess": "CHE_ATOMIC"
+    }
+  ],
+  "CHE_QUAL7": [
+    {
+      "description": "Recall that adding a strong acid such as HCl to a sulfide-containing solution risks releasing toxic/foul-smelling H2S gas and disturbing the intended precipitation.",
+      "topicKeyGuess": "CHE_QUAL"
+    }
+  ]
+}

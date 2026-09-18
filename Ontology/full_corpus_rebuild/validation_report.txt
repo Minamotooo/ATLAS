@@ -1,43 +1,84 @@
 source: tuples.json + prereqs.json
 config: ontology_config.json
-loaded 843 nodes, 348 edges, 30 topics
+loaded 1688 nodes, 1743 edges, 183 topics
 
 --- ontology report ---
-  skills                : 843
-  topics  raw           : 30
-          canonical     : 27  (3 codes merged by ontology_config.json)
-  subjects              : Chemistry
-  edges   raw           : 348
-          reduced       : 345 (3 redundant dropped)
-  root skills           : 519
-  max DAG depth         : 4
-  components            : 499 (largest 44)
+  skills                : 1688
+  topics  raw           : 183
+          canonical     : 183  (0 codes merged by ontology_config.json)
+  subjects              : Chemistry, Mathematics, Physics
+  edges   raw           : 1743
+          reduced       : 1683 (60 redundant dropped)
+  root skills           : 190
+  max DAG depth         : 9
+  components            : 87 (largest 482)
 
-  catalog topics placed : 24
-  WARN 3 topics are not in any section (ingested but invisible):
-    - CHEM_DESCRIPTIVE
-    - CHEM_LAB
-    - CHEM_NUCLEAR
-  WARN sections reference 42 unknown topics:
-    - math_algebra:MAT_ALGEBRA
-    - math_algebra:MAT_EQTHEORY
-    - math_algebra:MAT_MATRIX
-    - math_algebra:MAT_COMPLEX
-    - math_trigonometry:MAT_TRIG
-    - math_trigonometry:MAT_INVTRIG
-    - math_coordinate_geometry:MAT_COORD_LINE
-    - math_coordinate_geometry:MAT_COORD_CONIC
-    - math_coordinate_geometry:MATH_GEOM
-    - math_calculus:MAT_CALC_DIFF
-  WARN empty sections (disabled): math_algebra, math_trigonometry, math_coordinate_geometry, math_calculus, math_mechanics, phy_measurement_vectors, phy_mechanics, phy_properties_of_matter, phy_heat_thermodynamics, phy_waves_optics, phy_electricity_magnetism, phy_modern_physics
+  catalog topics placed : 183
 
-  NOTE 843 skills carry fewer than 6 Bloom levels.
+  NOTE 1688 skills carry fewer than 6 Bloom levels.
     The diagnostic tests one Bloom level ABOVE current mastery, so sparse
     Bloom coverage makes the nearby-Bloom fallback the normal path.
 
   redundant edges removed:
+    CHE1_COVALENT_BOND1 -> CHE_BONDING16
+    CHE1_COVALENT_BOND1 -> CHE_COORD6
+    CHE1_PERIODIC_TRENDS4 -> CHE_BONDING32
+    CHE1_REDOX0 -> CHEM_REDOX23
+    CHE1_REDOX4 -> CHEM_REDOX13
+    CHE2_METALLURGY0 -> CHEM_DESCRIPTIVE3
+    CHE2_MOLE0 -> CHE_STOICHIOMETRY5
+    CHEM_PERIODIC13 -> CHEM_DESCRIPTIVE11
+    CHEM_PERIODIC27 -> CHEM_PERIODIC22
+    CHEM_REDOX41 -> CHEM_REDOX40
+    CHEM_SOLID4 -> CHEM_DESCRIPTIVE16
+    CHE_ACIDBASE3 -> CHEM_DESCRIPTIVE21
+    CHE_ATOMIC33 -> CHE_ATOMIC30
     CHE_ATOMIC6 -> CHE_ATOMIC17
     CHE_ATOMIC6 -> CHE_ATOMIC8
+    CHE_ATOMIC7 -> CHE_ATOMIC19
+    CHE_COORD7 -> CHE_COORD4
+    CHE_COORD7 -> CHE_QUAL10
+    CHE_QUAL2 -> CHE_QUAL13
     CHE_STOICHIOMETRY11 -> CHE_ACIDBASE31
+    CHE_STOICHIOMETRY14 -> CHEM_ANALYTICAL15
+    CHE_STOICHIOMETRY14 -> CHE_STOICHIOMETRY24
+    MAT2_BINOMIAL0 -> MAT2_BINOMIAL2
+    MAT2_COMPLEX_ALGEBRA0 -> MAT2_COMPLEX_ALGEBRA7
+    MAT2_DISPERSION0 -> MAT2_DISPERSION3
+    MAT2_EXPONENTIAL_EQ0 -> MAT2_EXPONENTIAL_EQ3
+    MAT2_PROBABILITY0 -> MAT2_PROBABILITY11
+    MAT2_STATICS_FORCE0 -> MAT2_STATICS_FORCE10
+    MAT2_STATICS_FRICTION6 -> MAT2_STATICS_FRICTION7
+    MAT2_STATICS_FRICTION6 -> MAT2_STATICS_FRICTION8
+    MAT2_TRIG_EQUATION0 -> MAT2_TRIG_EQUATION4
+    MATH_MECH16 -> MATH_MECH19
+    MAT_CALC_DIFF10 -> MAT1_DERIV_APPLICATION1
+    MAT_FUNCTION0 -> MAT_FUNCTION3
+    MAT_MATRIX13 -> MAT_MATRIX15
+    MAT_MATRIX2 -> MAT_MATRIX26
+    MAT_MATRIX5 -> MAT_MATRIX7
+    MAT_MATRIX6 -> MAT_MATRIX12
+    MAT_PERMCOMB1 -> MAT_PERMCOMB14
+    MAT_PERMCOMB1 -> MAT_PERMCOMB3
+    PHY1_ERRORS0 -> PHY1_ERRORS2
+    PHY1_SHM0 -> PHY1_SHM2
+    PHY1_SURFACE_TENSION0 -> PHY1_SURFACE_TENSION1
+    PHY1_SURFACE_TENSION0 -> PHY1_SURFACE_TENSION2
+    PHY1_WAVE_BASICS1 -> PHY1_SOUND5
+    PHY2_ATOMIC_MODELS0 -> PHY2_ATOMIC_MODELS2
+    PHY2_COULOMB1 -> PHY2_COULOMB5
+    PHY2_COULOMB3 -> PHY2_GAUSS2
+    PHY2_INDUCTANCE0 -> PHY2_AC_CIRCUITS3
+    PHY2_PHOTOELECTRIC0 -> PHY2_PHOTOELECTRIC3
+    PHY2_PHOTOELECTRIC1 -> PHY2_SOLAR_SYSTEM3
+    PHY2_PHOTOELECTRIC1 -> PHY2_XRAY0
+    PHY2_PHOTOELECTRIC2 -> PHY2_MATTER_WAVES1
+    PHY2_RADIOACTIVITY0 -> PHY2_FISSION_FUSION3
+    PHY2_REFRACTION0 -> PHY2_DIFFRACTION0
+    PHY2_REFRACTION6 -> PHY2_OPTICAL_INSTRUMENTS1
+    PHY2_RELATIVITY0 -> PHY2_RELATIVITY2
+    PHY2_RELATIVITY0 -> PHY2_RELATIVITY5
+    PHY2_RELATIVITY7 -> PHY2_NUCLEUS1
+    PHY2_TRANSISTOR0 -> PHY2_TRANSISTOR2
 
 (report-only; nothing written)

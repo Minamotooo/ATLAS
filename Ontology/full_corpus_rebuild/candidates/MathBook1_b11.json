@@ -1,0 +1,1199 @@
+{
+ "chunkLabel": "MathBook1_b11",
+ "subject": "Mathematics",
+ "skills": [
+  {
+   "tempId": "MathBook1_b11_s1",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of a straight line from its slope and its intercept on the x-axis.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p31__q38__155"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s2",
+   "bloom": "Apply",
+   "skillFull": "Convert the polar equation of a curve into its cartesian form.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p30__q35__152",
+    "MathBook1__p31__q40__157"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s3",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of a straight line that makes equal intercepts on the two coordinate axes.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p32__q43__160"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s4",
+   "bloom": "Apply",
+   "skillFull": "Calculate the perpendicular distance between two parallel straight lines.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p32__q44__161"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s5",
+   "bloom": "Apply",
+   "skillFull": "Determine the coordinates of a point on a given straight line that is equidistant from two given points.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p32__q45__162"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s6",
+   "bloom": "Apply",
+   "skillFull": "Determine an unknown coordinate of a triangle vertex from a stated area of the triangle.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p32__q46__163"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s7",
+   "bloom": "Remember",
+   "skillFull": "Recall the condition under which two linear equations represent the same straight line.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p33__q52__169"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s8",
+   "bloom": "Apply",
+   "skillFull": "Determine the locus of a point that is equidistant from a fixed point and a fixed straight line.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p31__q41__158"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s9",
+   "bloom": "Remember",
+   "skillFull": "Recall the general second-degree equation of a circle and identify its centre and radius from the coefficients.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p44__q28__225"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s10",
+   "bloom": "Apply",
+   "skillFull": "Determine the centre and the radius of a circle from its general equation by completing the square.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p35__q07__178",
+    "MathBook1__p41__q13__210"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s11",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of a circle from its centre and its radius.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p38__q20__190",
+    "MathBook1__p39__q25__195"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s12",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of the circle passing through three given points.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p34__q03__174"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s13",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of the circle having the segment joining two given points as a diameter.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p42__q22__219"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s14",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of a circle that touches a coordinate axis at a stated point.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p36__q09__180",
+    "MathBook1__p38__q21__192",
+    "MathBook1__p39__q26__197"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s15",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of a circle that touches both coordinate axes.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p37__q15__186"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s16",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of a circle that touches a given straight line at a given point.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p36__q08__179"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s17",
+   "bloom": "Apply",
+   "skillFull": "Determine the condition for a given straight line to be a tangent to a given circle.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p41__q08__205",
+    "MathBook1__p44__q30__227"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s18",
+   "bloom": "Apply",
+   "skillFull": "Determine the value of a parameter for which a given straight line touches a given circle.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p37__q13__184",
+    "MathBook1__p42__q16__213",
+    "MathBook1__p40__q03__200"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s19",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of the tangent to a circle at a given point on the circle.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p36__q11__182",
+    "MathBook1__p40__q01__198"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s20",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of the normal to a circle at a given point on the circle.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p39__q25__196"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s21",
+   "bloom": "Apply",
+   "skillFull": "Determine the equations of the tangents to a circle that are parallel or perpendicular to a given straight line.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p37__q12__183",
+    "MathBook1__p43__q25__222"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s22",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of a tangent to a circle that makes a stated angle with a coordinate axis.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p36__q10__181"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s23",
+   "bloom": "Apply",
+   "skillFull": "Calculate the length of the tangent drawn from an external point to a circle.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p40__q06__203",
+    "MathBook1__p41__q12__209"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s24",
+   "bloom": "Apply",
+   "skillFull": "Calculate the length of the chord that a given straight line cuts from a given circle.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p40__q02__199",
+    "MathBook1__p40__q05__202"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s25",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of the chord of a circle that is bisected at a given point.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p34__q01__172"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s26",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of the common chord of two intersecting circles.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p42__q19__216",
+    "MathBook1__p43__q24__221"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s27",
+   "bloom": "Apply",
+   "skillFull": "Determine the condition under which two given circles touch one another.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p43__q26__223",
+    "MathBook1__p37__q16__187"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s28",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of a circle passing through the intersection points of two given circles.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p43__q27__224"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s29",
+   "bloom": "Understand",
+   "skillFull": "Classify the position of a given point as inside, on, or outside a given circle.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p41__q14__211"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s30",
+   "bloom": "Apply",
+   "skillFull": "Calculate the greatest or least distance from a given point or coordinate axis to a circle.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p41__q10__207",
+    "MathBook1__p44__q33__230"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s31",
+   "bloom": "Apply",
+   "skillFull": "Calculate the intercept a circle makes on a coordinate axis.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p41__q11__208",
+    "MathBook1__p38__q21__191"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s32",
+   "bloom": "Understand",
+   "skillFull": "Determine whether a given second-degree equation represents a circle, by testing the conditions on its coefficients.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p42__q18__215",
+    "MathBook1__p44__q31__228"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s33",
+   "bloom": "Apply",
+   "skillFull": "Determine the radius of the circle inscribed in, or circumscribed about, a given triangle or square.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p40__q04__201",
+    "MathBook1__p33__q51__168",
+    "MathBook1__p44__q29__226"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s34",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of a circle in polar form from a centre and radius given in polar coordinates.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p41__q07__204"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s35",
+   "bloom": "Apply",
+   "skillFull": "Calculate the angle a chord of stated length subtends at the centre of a circle.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p55__q02__298"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s36",
+   "bloom": "Apply",
+   "skillFull": "Calculate the length of an arc of a circle from its radius and the angle the arc subtends at the centre.",
+   "topicKey": "MAT_COORD_CONIC",
+   "topicLabel": "Conic Sections",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p37__q14__185",
+    "MathBook1__p54__q01__294"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s37",
+   "bloom": "Remember",
+   "skillFull": "Recall the definition of a factorial, including the convention that zero factorial equals one.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p53__q31__288"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s38",
+   "bloom": "Remember",
+   "skillFull": "Recall the formula for the number of permutations of n distinct objects taken r at a time.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p47__q10__245"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s39",
+   "bloom": "Remember",
+   "skillFull": "Recall the formula for the number of combinations of n distinct objects taken r at a time.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p50__q09__265"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s40",
+   "bloom": "Understand",
+   "skillFull": "Distinguish a counting situation that requires a permutation from one that requires a combination, according to whether order matters.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p51__q13__270"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s41",
+   "bloom": "Apply",
+   "skillFull": "Calculate the number of arrangements of all the letters of a word that contains repeated letters.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p47__q13__248",
+    "MathBook1__p48__q15__250",
+    "MathBook1__p49__q22__257"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s42",
+   "bloom": "Apply",
+   "skillFull": "Calculate the number of arrangements of the letters of a word in which a stated set of letters must remain together.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p47__q02__237",
+    "MathBook1__p49__q02__254"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s43",
+   "bloom": "Apply",
+   "skillFull": "Calculate the number of arrangements of the letters of a word in which stated letters must not be adjacent to one another.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p45__q03__238",
+    "MathBook1__p49__q01__258",
+    "MathBook1__p50__q06__263"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s44",
+   "bloom": "Apply",
+   "skillFull": "Calculate the number of selections of a stated number of letters from a word containing repeated letters.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p47__q08__243",
+    "MathBook1__p53__q33__290"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s45",
+   "bloom": "Apply",
+   "skillFull": "Calculate how many numbers can be formed from a given set of digits when no digit may be repeated.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p50__q07__264",
+    "MathBook1__p51__q15__272"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s46",
+   "bloom": "Apply",
+   "skillFull": "Calculate how many numbers formed from given digits satisfy a stated divisibility condition.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p46__q05__240",
+    "MathBook1__p50__q05__262"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s47",
+   "bloom": "Apply",
+   "skillFull": "Calculate how many numbers formed from given digits exceed a stated value or contain a stated number of digits.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p49__q02__259",
+    "MathBook1__p51__q11__268"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s48",
+   "bloom": "Apply",
+   "skillFull": "Calculate the number of ways of forming a committee subject to a stated constraint on its composition.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p48__q18__253",
+    "MathBook1__p52__q24__281"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s49",
+   "bloom": "Apply",
+   "skillFull": "Calculate the number of ways of selecting a team from two groups subject to a stated minimum from each group.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p46__q06__241",
+    "MathBook1__p47__q09__244"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s50",
+   "bloom": "Apply",
+   "skillFull": "Calculate the number of circular arrangements of n objects, including the case of a necklace or band where reflections coincide.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p52__q22__282"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s51",
+   "bloom": "Apply",
+   "skillFull": "Solve for n or for r from an equation relating permutation or combination expressions.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p50__q04__261",
+    "MathBook1__p51__q14__271",
+    "MathBook1__p53__q27__284"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s52",
+   "bloom": "Remember",
+   "skillFull": "Recall the identity that the sum of two combinations with consecutive lower indices equals a single combination of the next higher upper index.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p52__q26__283"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s53",
+   "bloom": "Remember",
+   "skillFull": "Recall that if nCr equals nCs with r not equal to s, then r plus s equals n.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p52__q19__276",
+    "MathBook1__p52__q21__278"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s54",
+   "bloom": "Apply",
+   "skillFull": "Calculate the number of handshakes, line segments or diagonals determined by a given set of points or people.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p52__q23__280"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s55",
+   "bloom": "Apply",
+   "skillFull": "Calculate the number of triangles or parallelograms that can be formed from points lying on given straight lines.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p52__q18__275",
+    "MathBook1__p53__q30__287"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s56",
+   "bloom": "Apply",
+   "skillFull": "Calculate the number of ways of distributing distinct objects into distinct boxes under a stated restriction.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p51__q17__274",
+    "MathBook1__p48__q16__251"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s57",
+   "bloom": "Apply",
+   "skillFull": "Calculate the total number of subsets, or of non-empty selections, that can be formed from a set of n distinct elements.",
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p50__q03__260",
+    "MathBook1__p52__q20__277"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s58",
+   "bloom": "Apply",
+   "skillFull": "Calculate the value of a symmetric expression in cosine and secant from a given value of their sum.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p54__q02__295"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s59",
+   "bloom": "Apply",
+   "skillFull": "Demonstrate a trigonometric identity involving cubes of sine and cosine at related angles.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p54__q03__296"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s60",
+   "bloom": "Apply",
+   "skillFull": "Calculate an unknown side of a triangle from two sides and the included angle, using the law of cosines.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p54__q01__297"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b11_s61",
+   "bloom": "Apply",
+   "skillFull": "Simplify a nested radical expression by repeated use of the half-angle cosine formula.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p55__q03__299"
+   ]
+  }
+ ],
+ "prereqs": [
+  {
+   "fromTempId": "MathBook1_b11_s1",
+   "toSkillId": "MAT_COORD_LINE16",
+   "toDescription": "Determine the equation of a straight line through a given point with a given slope.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s2",
+   "toSkillId": "MAT_COORD_LINE34",
+   "toDescription": "Convert the coordinates of a point between polar and rectangular form.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s3",
+   "toSkillId": "MAT_COORD_LINE16",
+   "toDescription": "Determine the equation of a straight line through a given point with a given slope.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s4",
+   "toSkillId": "MAT_COORD_LINE15",
+   "toDescription": "Calculate the perpendicular distance from a given point to a given straight line.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s4",
+   "toSkillId": "MAT_COORD_LINE11",
+   "toDescription": "Recall that two straight lines are parallel when their slopes are equal.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s5",
+   "toSkillId": "MAT_COORD_LINE37",
+   "toDescription": "Determine the coordinates of a point on a coordinate axis that is equidistant from two given points.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s6",
+   "toSkillId": "MAT_COORD_LINE25",
+   "toDescription": "Calculate the area of the triangle formed by three given straight lines.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s7",
+   "toSkillId": "MAT_COORD_LINE11",
+   "toDescription": "Recall that two straight lines are parallel when their slopes are equal.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s8",
+   "toSkillId": "MAT_COORD_LINE15",
+   "toDescription": "Calculate the perpendicular distance from a given point to a given straight line.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s13",
+   "toSkillId": "MAT_COORD_LINE30",
+   "toDescription": "Determine the coordinates of the point dividing the segment joining two given points in a stated ratio.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s16",
+   "toSkillId": "MAT_COORD_LINE15",
+   "toDescription": "Calculate the perpendicular distance from a given point to a given straight line.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s17",
+   "toSkillId": "MAT_COORD_LINE15",
+   "toDescription": "Calculate the perpendicular distance from a given point to a given straight line.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s20",
+   "toSkillId": "MAT_COORD_LINE12",
+   "toDescription": "Recall that two straight lines are perpendicular when the product of their slopes equals minus one.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s21",
+   "toSkillId": "MAT_COORD_LINE11",
+   "toDescription": "Recall that two straight lines are parallel when their slopes are equal.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s22",
+   "toSkillId": "MAT_COORD_LINE10",
+   "toDescription": "Calculate the angle a straight line makes with the positive x-axis from its slope.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s24",
+   "toSkillId": "MAT_COORD_LINE15",
+   "toDescription": "Calculate the perpendicular distance from a given point to a given straight line.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s25",
+   "toSkillId": "MAT_COORD_LINE12",
+   "toDescription": "Recall that two straight lines are perpendicular when the product of their slopes equals minus one.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s34",
+   "toSkillId": "MAT_COORD_LINE34",
+   "toDescription": "Convert the coordinates of a point between polar and rectangular form.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s10",
+   "toTempId": "MathBook1_b11_s9",
+   "toDescription": "Recall the general second-degree equation of a circle and identify its centre and radius from the coefficients.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s11",
+   "toTempId": "MathBook1_b11_s9",
+   "toDescription": "Recall the general second-degree equation of a circle and identify its centre and radius from the coefficients.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s12",
+   "toTempId": "MathBook1_b11_s11",
+   "toDescription": "Determine the equation of a circle from its centre and its radius.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s13",
+   "toTempId": "MathBook1_b11_s11",
+   "toDescription": "Determine the equation of a circle from its centre and its radius.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s14",
+   "toTempId": "MathBook1_b11_s11",
+   "toDescription": "Determine the equation of a circle from its centre and its radius.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s15",
+   "toTempId": "MathBook1_b11_s11",
+   "toDescription": "Determine the equation of a circle from its centre and its radius.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s16",
+   "toTempId": "MathBook1_b11_s11",
+   "toDescription": "Determine the equation of a circle from its centre and its radius.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s17",
+   "toTempId": "MathBook1_b11_s10",
+   "toDescription": "Determine the centre and the radius of a circle from its general equation by completing the square.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s18",
+   "toTempId": "MathBook1_b11_s17",
+   "toDescription": "Determine the condition for a given straight line to be a tangent to a given circle.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s19",
+   "toTempId": "MathBook1_b11_s10",
+   "toDescription": "Determine the centre and the radius of a circle from its general equation by completing the square.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s20",
+   "toTempId": "MathBook1_b11_s19",
+   "toDescription": "Determine the equation of the tangent to a circle at a given point on the circle.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s21",
+   "toTempId": "MathBook1_b11_s19",
+   "toDescription": "Determine the equation of the tangent to a circle at a given point on the circle.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s22",
+   "toTempId": "MathBook1_b11_s19",
+   "toDescription": "Determine the equation of the tangent to a circle at a given point on the circle.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s23",
+   "toTempId": "MathBook1_b11_s10",
+   "toDescription": "Determine the centre and the radius of a circle from its general equation by completing the square.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s24",
+   "toTempId": "MathBook1_b11_s10",
+   "toDescription": "Determine the centre and the radius of a circle from its general equation by completing the square.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s25",
+   "toTempId": "MathBook1_b11_s10",
+   "toDescription": "Determine the centre and the radius of a circle from its general equation by completing the square.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s26",
+   "toTempId": "MathBook1_b11_s9",
+   "toDescription": "Recall the general second-degree equation of a circle and identify its centre and radius from the coefficients.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s27",
+   "toTempId": "MathBook1_b11_s10",
+   "toDescription": "Determine the centre and the radius of a circle from its general equation by completing the square.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s28",
+   "toTempId": "MathBook1_b11_s26",
+   "toDescription": "Determine the equation of the common chord of two intersecting circles.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s29",
+   "toTempId": "MathBook1_b11_s10",
+   "toDescription": "Determine the centre and the radius of a circle from its general equation by completing the square.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s30",
+   "toTempId": "MathBook1_b11_s10",
+   "toDescription": "Determine the centre and the radius of a circle from its general equation by completing the square.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s31",
+   "toTempId": "MathBook1_b11_s10",
+   "toDescription": "Determine the centre and the radius of a circle from its general equation by completing the square.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s32",
+   "toTempId": "MathBook1_b11_s9",
+   "toDescription": "Recall the general second-degree equation of a circle and identify its centre and radius from the coefficients.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s33",
+   "toTempId": "MathBook1_b11_s11",
+   "toDescription": "Determine the equation of a circle from its centre and its radius.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s34",
+   "toTempId": "MathBook1_b11_s11",
+   "toDescription": "Determine the equation of a circle from its centre and its radius.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s35",
+   "toTempId": "MathBook1_b11_s9",
+   "toDescription": "Recall the general second-degree equation of a circle and identify its centre and radius from the coefficients.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s36",
+   "toTempId": "MathBook1_b11_s35",
+   "toDescription": "Calculate the angle a chord of stated length subtends at the centre of a circle.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s38",
+   "toTempId": "MathBook1_b11_s37",
+   "toDescription": "Recall the definition of a factorial, including the convention that zero factorial equals one.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s39",
+   "toTempId": "MathBook1_b11_s38",
+   "toDescription": "Recall the formula for the number of permutations of n distinct objects taken r at a time.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s40",
+   "toTempId": "MathBook1_b11_s38",
+   "toDescription": "Recall the formula for the number of permutations of n distinct objects taken r at a time.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s40",
+   "toTempId": "MathBook1_b11_s39",
+   "toDescription": "Recall the formula for the number of combinations of n distinct objects taken r at a time.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s41",
+   "toTempId": "MathBook1_b11_s38",
+   "toDescription": "Recall the formula for the number of permutations of n distinct objects taken r at a time.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s42",
+   "toTempId": "MathBook1_b11_s41",
+   "toDescription": "Calculate the number of arrangements of all the letters of a word that contains repeated letters.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s43",
+   "toTempId": "MathBook1_b11_s42",
+   "toDescription": "Calculate the number of arrangements of the letters of a word in which a stated set of letters must remain together.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s44",
+   "toTempId": "MathBook1_b11_s39",
+   "toDescription": "Recall the formula for the number of combinations of n distinct objects taken r at a time.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s44",
+   "toTempId": "MathBook1_b11_s41",
+   "toDescription": "Calculate the number of arrangements of all the letters of a word that contains repeated letters.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s45",
+   "toTempId": "MathBook1_b11_s38",
+   "toDescription": "Recall the formula for the number of permutations of n distinct objects taken r at a time.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s46",
+   "toTempId": "MathBook1_b11_s45",
+   "toDescription": "Calculate how many numbers can be formed from a given set of digits when no digit may be repeated.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s47",
+   "toTempId": "MathBook1_b11_s45",
+   "toDescription": "Calculate how many numbers can be formed from a given set of digits when no digit may be repeated.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s48",
+   "toTempId": "MathBook1_b11_s39",
+   "toDescription": "Recall the formula for the number of combinations of n distinct objects taken r at a time.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s49",
+   "toTempId": "MathBook1_b11_s48",
+   "toDescription": "Calculate the number of ways of forming a committee subject to a stated constraint on its composition.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s50",
+   "toTempId": "MathBook1_b11_s38",
+   "toDescription": "Recall the formula for the number of permutations of n distinct objects taken r at a time.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s51",
+   "toTempId": "MathBook1_b11_s38",
+   "toDescription": "Recall the formula for the number of permutations of n distinct objects taken r at a time.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s51",
+   "toTempId": "MathBook1_b11_s39",
+   "toDescription": "Recall the formula for the number of combinations of n distinct objects taken r at a time.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s52",
+   "toTempId": "MathBook1_b11_s39",
+   "toDescription": "Recall the formula for the number of combinations of n distinct objects taken r at a time.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s53",
+   "toTempId": "MathBook1_b11_s39",
+   "toDescription": "Recall the formula for the number of combinations of n distinct objects taken r at a time.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s54",
+   "toTempId": "MathBook1_b11_s39",
+   "toDescription": "Recall the formula for the number of combinations of n distinct objects taken r at a time.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s55",
+   "toTempId": "MathBook1_b11_s39",
+   "toDescription": "Recall the formula for the number of combinations of n distinct objects taken r at a time.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s56",
+   "toTempId": "MathBook1_b11_s38",
+   "toDescription": "Recall the formula for the number of permutations of n distinct objects taken r at a time.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s57",
+   "toTempId": "MathBook1_b11_s39",
+   "toDescription": "Recall the formula for the number of combinations of n distinct objects taken r at a time.",
+   "toTopicKeyGuess": "MAT_PERMCOMB"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s59",
+   "toTempId": "MathBook1_b11_s58",
+   "toDescription": "Calculate the value of a symmetric expression in cosine and secant from a given value of their sum.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s61",
+   "toTempId": "MathBook1_b11_s58",
+   "toDescription": "Calculate the value of a symmetric expression in cosine and secant from a given value of their sum.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b11_s60",
+   "toTempId": "MathBook1_b11_s35",
+   "toDescription": "Calculate the angle a chord of stated length subtends at the centre of a circle.",
+   "toTopicKeyGuess": "MAT_COORD_CONIC"
+  }
+ ],
+ "reusedExistingSkills": [
+  {
+   "existingSkillId": "MAT_COORD_LINE23",
+   "sourceItemIds": [
+    "MathBook1__p30__q33__150",
+    "MathBook1__p33__q50__167"
+   ]
+  },
+  {
+   "existingSkillId": "MAT_COORD_LINE12",
+   "sourceItemIds": [
+    "MathBook1__p30__q37__154"
+   ]
+  },
+  {
+   "existingSkillId": "MAT_COORD_LINE15",
+   "sourceItemIds": [
+    "MathBook1__p32__q48__165",
+    "MathBook1__p33__q49__166"
+   ]
+  },
+  {
+   "existingSkillId": "MAT_COORD_LINE31",
+   "sourceItemIds": [
+    "MathBook1__p33__q53__170",
+    "MathBook1__p33__q54__171"
+   ]
+  },
+  {
+   "existingSkillId": "MAT_COORD_LINE25",
+   "sourceItemIds": [
+    "MathBook1__p31__q39__156"
+   ]
+  },
+  {
+   "existingSkillId": "MAT_COORD_LINE30",
+   "sourceItemIds": [
+    "MathBook1__p30__q34__151"
+   ]
+  },
+  {
+   "existingSkillId": "MAT_COORD_LINE21",
+   "sourceItemIds": [
+    "MathBook1__p30__q36__153"
+   ]
+  }
+ ],
+ "newTopicsProposed": [
+  {
+   "topicKey": "MAT_PERMCOMB",
+   "topicLabel": "Permutations and Combinations",
+   "subject": "Mathematics",
+   "reason": "Records 237-294 of MathBook1 (58 consecutive records, pages 45-53) are entirely permutation and combination counting: arrangements of the letters of a word with repeats, selections under constraints, circular arrangements, numbers formed from digits, and identities in nPr and nCr. None of the 15 canonical Mathematics topics covers counting: MAT_EQTHEORY and MAT_ALGEBRA are equation theory, MATH_GEOM is similar triangles, and the rest are calculus, coordinate geometry, trigonometry or mechanics. Permutations and combinations is a standard HSC Higher Math unit and a recurring admission-test topic, so this is a genuine gap in the canonical list rather than a stray record cluster. The legacy 66-topic list was assembled from a physics-heavy sample, which is the likely reason it was never created."
+  }
+ ],
+ "skippedItems": [],
+ "notes": "Records 151-300 of MathBook1 (parsed_items.jsonl lines 1839-1988). Coverage: straight line completing from b10 (151-172), circles (173-236), permutations and combinations (237-294), trigonometry (295-300). Circles are filed under MAT_COORD_CONIC (Conic Sections), the canonical topic. MAT_PERMCOMB is PROPOSED, not assumed - 21 of this batch's skills carry it and will be ingested but invisible until an editorial decision is made in Backend/tree_data/ontology_config.json. Seven straight-line records re-exercise skills minted in b10 and are listed under reusedExistingSkills rather than re-minted. All descriptions are plain text with no backslashes."
+}

@@ -1,0 +1,1232 @@
+{
+ "chunkLabel": "MathBook1_b12",
+ "subject": "Mathematics",
+ "skills": [
+  {
+   "tempId": "MathBook1_b12_s1",
+   "bloom": "Remember",
+   "skillFull": "Recall the reciprocal and quotient relationships among the six trigonometric ratios.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p68__q34__373"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s2",
+   "bloom": "Apply",
+   "skillFull": "Calculate the remaining trigonometric ratios of an angle from one given ratio together with the quadrant the angle lies in.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p68__q35__374",
+    "MathBook1__p69__q38__378",
+    "MathBook1__p69__q39__378"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s3",
+   "bloom": "Apply",
+   "skillFull": "Determine the sign of a trigonometric ratio from the quadrant in which its angle lies.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p69__q38__378"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s4",
+   "bloom": "Apply",
+   "skillFull": "Calculate the value of a trigonometric ratio of a negative angle or an angle exceeding 360 degrees, by reducing it to an acute angle.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p55__q08__304",
+    "MathBook1__p58__q12__316"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s5",
+   "bloom": "Remember",
+   "skillFull": "Recall the exact trigonometric ratios of the standard angles, including 18, 36, 54 and 72 degrees.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p55__q07__303",
+    "MathBook1__p64__q11__350"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s6",
+   "bloom": "Apply",
+   "skillFull": "Calculate the value of a trigonometric expression using the compound-angle formulae for sine and cosine.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p70__q47__387",
+    "MathBook1__p65__q18__357"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s7",
+   "bloom": "Apply",
+   "skillFull": "Calculate the value of a trigonometric expression using the compound-angle formula for tangent.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p57__q10__314",
+    "MathBook1__p61__q24__328",
+    "MathBook1__p70__q49__388"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s8",
+   "bloom": "Apply",
+   "skillFull": "Demonstrate that a product of tangents of related angles equals a stated constant.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p57__q09__313"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s9",
+   "bloom": "Apply",
+   "skillFull": "Calculate a trigonometric ratio of a double angle using the double-angle formulae.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p55__q06__302",
+    "MathBook1__p57__q07__311"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s10",
+   "bloom": "Apply",
+   "skillFull": "Calculate a trigonometric ratio of a triple angle using the triple-angle formulae.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p58__q11__315",
+    "MathBook1__p61__q23__327"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s11",
+   "bloom": "Apply",
+   "skillFull": "Convert a sum or difference of two sines or two cosines into a product.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p62__q31__335",
+    "MathBook1__p70__q47__387"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s12",
+   "bloom": "Apply",
+   "skillFull": "Convert a product of two trigonometric ratios into a sum or a difference.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p59__q19__323",
+    "MathBook1__p63__q35__339"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s13",
+   "bloom": "Apply",
+   "skillFull": "Solve a pair of simultaneous equations in the sine and cosine of two angles using the sum-to-product formulae.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p56__q01__305",
+    "MathBook1__p56__q02__306",
+    "MathBook1__p69__q42__380"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s14",
+   "bloom": "Apply",
+   "skillFull": "Solve a trigonometric equation of the form a cos x plus b sin x equals c by the auxiliary-angle method.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p63__q33__337"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s15",
+   "bloom": "Apply",
+   "skillFull": "Solve a trigonometric equation by converting sums to products and then factorising.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p62__q31__335",
+    "MathBook1__p59__q20__324"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s16",
+   "bloom": "Apply",
+   "skillFull": "Determine the general solution of a trigonometric equation and select its principal value.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p63__q03__342",
+    "MathBook1__p66__q22__361",
+    "MathBook1__p67__q28__367"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s17",
+   "bloom": "Apply",
+   "skillFull": "Demonstrate a conditional trigonometric identity that holds when the angles concerned sum to pi.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p58__q13__317",
+    "MathBook1__p60__q21__325",
+    "MathBook1__p68__q32__371"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s18",
+   "bloom": "Apply",
+   "skillFull": "Demonstrate a trigonometric identity by expressing every term through the tangent of the half angle.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p56__q04__308",
+    "MathBook1__p66__q25__364"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s19",
+   "bloom": "Apply",
+   "skillFull": "Calculate the sum of a series of squares of sines or cosines of angles in arithmetic progression.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p57__q06__310",
+    "MathBook1__p68__q33__372"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s20",
+   "bloom": "Apply",
+   "skillFull": "Calculate the product of a sequence of cotangents or cosines of related angles.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p57__q08__312",
+    "MathBook1__p63__q35__339"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s21",
+   "bloom": "Apply",
+   "skillFull": "Determine the relation among three angles from a given identity in their tangents or cotangents.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p61__q26__329",
+    "MathBook1__p70__q48__386"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s22",
+   "bloom": "Remember",
+   "skillFull": "Recall the sine rule relating each side of a triangle to the sine of the angle opposite it.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p65__q14__353"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s23",
+   "bloom": "Remember",
+   "skillFull": "Recall the cosine rule relating one side of a triangle to the other two sides and the angle between them.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p64__q09__348"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s24",
+   "bloom": "Apply",
+   "skillFull": "Calculate an unknown side or angle of a triangle using the sine rule.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p64__q05__344",
+    "MathBook1__p68__q36__375"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s25",
+   "bloom": "Apply",
+   "skillFull": "Solve a triangle completely from three given parts.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p62__q30__334",
+    "MathBook1__p70__q45__383"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s26",
+   "bloom": "Apply",
+   "skillFull": "Determine the ratio of two sides of a triangle from two of its given angles.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p65__q14__353"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s27",
+   "bloom": "Analyze",
+   "skillFull": "Determine the largest or smallest angle of a triangle whose sides are given as algebraic expressions.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p61__q27__331",
+    "MathBook1__p68__q37__376"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s28",
+   "bloom": "Apply",
+   "skillFull": "Determine the type of a triangle from a given relation among its sides or its angles.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p60__q22__326",
+    "MathBook1__p66__q24__363",
+    "MathBook1__p70__q46__385"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s29",
+   "bloom": "Apply",
+   "skillFull": "Determine the maximum or the minimum value of a given trigonometric expression.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p65__q20__359"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s30",
+   "bloom": "Apply",
+   "skillFull": "Calculate the value of a trigonometric expression formed from the difference of two reciprocal ratios.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p64__q08__347"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s31",
+   "bloom": "Apply",
+   "skillFull": "Determine an unknown parameter from a trigonometric identity that must hold for every value of the angle.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p63__q02__341"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s32",
+   "bloom": "Apply",
+   "skillFull": "Calculate the value of a trigonometric expression in which the angle is given by an inverse trigonometric function.",
+   "topicKey": "MAT_TRIG",
+   "topicLabel": "Trigonometric Functions and Identities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p64__q07__346"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s33",
+   "bloom": "Remember",
+   "skillFull": "Recall the principal-value ranges of the inverse trigonometric functions.",
+   "topicKey": "MAT_INVTRIG",
+   "topicLabel": "Inverse Trigonometric Functions",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p64__q13__352"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s34",
+   "bloom": "Apply",
+   "skillFull": "Simplify a composition of an inverse trigonometric function with a trigonometric function.",
+   "topicKey": "MAT_INVTRIG",
+   "topicLabel": "Inverse Trigonometric Functions",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p64__q13__352",
+    "MathBook1__p74__q03__407"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s35",
+   "bloom": "Apply",
+   "skillFull": "Calculate the value of a trigonometric ratio of an angle expressed as an inverse trigonometric function.",
+   "topicKey": "MAT_INVTRIG",
+   "topicLabel": "Inverse Trigonometric Functions",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p64__q07__346"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s36",
+   "bloom": "Remember",
+   "skillFull": "Recall the definition of a function as a relation in which every element of the domain has exactly one image.",
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p73__q01__405",
+    "MathBook1__p76__q28__432"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s37",
+   "bloom": "Apply",
+   "skillFull": "Determine the domain of a real-valued function from the restrictions imposed by radicals, denominators and logarithms.",
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p74__q05__409",
+    "MathBook1__p74__q08__412",
+    "MathBook1__p76__q22__426"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s38",
+   "bloom": "Apply",
+   "skillFull": "Determine the range of a real-valued function.",
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p74__q03__407",
+    "MathBook1__p75__q21__425"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s39",
+   "bloom": "Apply",
+   "skillFull": "Calculate the value of a composite function at a given point.",
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p72__q07__396",
+    "MathBook1__p74__q11__411",
+    "MathBook1__p74__q12__416"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s40",
+   "bloom": "Apply",
+   "skillFull": "Determine the composite of two given functions as an explicit expression.",
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p72__q09__398",
+    "MathBook1__p76__q26__430"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s41",
+   "bloom": "Apply",
+   "skillFull": "Determine the inverse of a one-to-one function by solving its defining equation for the independent variable.",
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p73__q15__404",
+    "MathBook1__p75__q15__419"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s42",
+   "bloom": "Apply",
+   "skillFull": "Calculate the value of an inverse function, or of a composite involving an inverse, at a given point.",
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p75__q19__423",
+    "MathBook1__p71__q01__390"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s43",
+   "bloom": "Understand",
+   "skillFull": "Classify a given function as one-to-one, onto, both, or neither.",
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p73__q12__401",
+    "MathBook1__p76__q25__429"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s44",
+   "bloom": "Apply",
+   "skillFull": "Calculate how many distinct functions can be defined from one finite set to another.",
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p73__q01__405"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s45",
+   "bloom": "Apply",
+   "skillFull": "Evaluate a piecewise-defined function at points lying in different pieces of its domain.",
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p75__q13__417",
+    "MathBook1__p76__q27__431"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s46",
+   "bloom": "Apply",
+   "skillFull": "Determine an explicit formula for a function from a functional equation relating the function at x and at minus x.",
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p74__q15__415"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s47",
+   "bloom": "Apply",
+   "skillFull": "Determine a function from a relation in which the function of an expression is given in terms of that expression.",
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p71__q04__393",
+    "MathBook1__p76__q23__427"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s48",
+   "bloom": "Apply",
+   "skillFull": "Calculate a repeated composition of a function with itself.",
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p71__q02__391"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s49",
+   "bloom": "Apply",
+   "skillFull": "Determine the period of a trigonometric function or of a product of trigonometric functions.",
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p71__q03__392"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s50",
+   "bloom": "Apply",
+   "skillFull": "Sketch the graph of a quadratic function and identify its vertex and its axis of symmetry.",
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p71__q05__394"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s51",
+   "bloom": "Apply",
+   "skillFull": "Determine the domain of a logarithmic function whose base itself depends on the variable.",
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p73__q02__406",
+    "MathBook1__p74__q09__413"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s52",
+   "bloom": "Understand",
+   "skillFull": "Interpret the domain and the range of a function presented as a graph.",
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p75__q18__422"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s53",
+   "bloom": "Apply",
+   "skillFull": "Determine the solution set of a quadratic inequality and identify its least upper bound and greatest lower bound.",
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p75__q16__420"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s54",
+   "bloom": "Remember",
+   "skillFull": "Recall the notation for the image and the pre-image of a set under a function.",
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p72__q06__395",
+    "MathBook1__p72__q10__399"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s55",
+   "bloom": "Apply",
+   "skillFull": "Calculate the limit of a rational or radical expression as the variable tends to a finite value or to infinity.",
+   "topicKey": "MAT_CALC_DIFF",
+   "topicLabel": "Differential Calculus",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p77__q10__442"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s56",
+   "bloom": "Apply",
+   "skillFull": "Calculate a limit of indeterminate form using the series expansions of exponential, logarithmic or trigonometric functions.",
+   "topicKey": "MAT_CALC_DIFF",
+   "topicLabel": "Differential Calculus",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p77__q06__438",
+    "MathBook1__p78__q08__440",
+    "MathBook1__p80__q17__449"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s57",
+   "bloom": "Apply",
+   "skillFull": "Calculate a limit of the form one raised to the power infinity using the exponential limit.",
+   "topicKey": "MAT_CALC_DIFF",
+   "topicLabel": "Differential Calculus",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p77__q01__433"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s58",
+   "bloom": "Apply",
+   "skillFull": "Calculate the derivative of a function from first principles, as the limit of its difference quotient.",
+   "topicKey": "MAT_CALC_DIFF",
+   "topicLabel": "Differential Calculus",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p79__q12__444"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s59",
+   "bloom": "Apply",
+   "skillFull": "Calculate the derivative of an implicitly defined function.",
+   "topicKey": "MAT_CALC_DIFF",
+   "topicLabel": "Differential Calculus",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p78__q09__441"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s60",
+   "bloom": "Apply",
+   "skillFull": "Calculate the derivative of a function defined parametrically by two equations in a parameter.",
+   "topicKey": "MAT_CALC_DIFF",
+   "topicLabel": "Differential Calculus",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p77__q02__434"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s61",
+   "bloom": "Apply",
+   "skillFull": "Calculate the derivative of a function raised to a variable power using logarithmic differentiation.",
+   "topicKey": "MAT_CALC_DIFF",
+   "topicLabel": "Differential Calculus",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p78__q09__441"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s62",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of the tangent or the normal to a curve at a given point on it.",
+   "topicKey": "MAT_CALC_DIFF",
+   "topicLabel": "Differential Calculus",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p77__q03__435",
+    "MathBook1__p80__q16__448"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s63",
+   "bloom": "Apply",
+   "skillFull": "Determine the maximum or the minimum value of a function using its first and second derivatives.",
+   "topicKey": "MAT_CALC_DIFF",
+   "topicLabel": "Differential Calculus",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p77__q05__437"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s64",
+   "bloom": "Apply",
+   "skillFull": "Determine the velocity and the acceleration of a particle from its displacement given as a function of time.",
+   "topicKey": "MAT_CALC_DIFF",
+   "topicLabel": "Differential Calculus",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p79__q15__447",
+    "MathBook1__p79__q11__443"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s65",
+   "bloom": "Apply",
+   "skillFull": "Demonstrate that a given function satisfies a stated differential equation, by repeated differentiation.",
+   "topicKey": "MAT_CALC_DIFF",
+   "topicLabel": "Differential Calculus",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p78__q07__439",
+    "MathBook1__p79__q13__445"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b12_s66",
+   "bloom": "Apply",
+   "skillFull": "Determine the dimensions that optimise a geometric quantity subject to a stated constraint.",
+   "topicKey": "MAT_CALC_DIFF",
+   "topicLabel": "Differential Calculus",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p79__q14__446"
+   ]
+  }
+ ],
+ "prereqs": [
+  {
+   "fromTempId": "MathBook1_b12_s2",
+   "toTempId": "MathBook1_b12_s1",
+   "toDescription": "Recall the reciprocal and quotient relationships among the six trigonometric ratios.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s3",
+   "toTempId": "MathBook1_b12_s1",
+   "toDescription": "Recall the reciprocal and quotient relationships among the six trigonometric ratios.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s4",
+   "toTempId": "MathBook1_b12_s3",
+   "toDescription": "Determine the sign of a trigonometric ratio from the quadrant in which its angle lies.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s5",
+   "toTempId": "MathBook1_b12_s1",
+   "toDescription": "Recall the reciprocal and quotient relationships among the six trigonometric ratios.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s6",
+   "toTempId": "MathBook1_b12_s5",
+   "toDescription": "Recall the exact trigonometric ratios of the standard angles, including 18, 36, 54 and 72 degrees.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s7",
+   "toTempId": "MathBook1_b12_s6",
+   "toDescription": "Calculate the value of a trigonometric expression using the compound-angle formulae for sine and cosine.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s8",
+   "toTempId": "MathBook1_b12_s7",
+   "toDescription": "Calculate the value of a trigonometric expression using the compound-angle formula for tangent.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s9",
+   "toTempId": "MathBook1_b12_s6",
+   "toDescription": "Calculate the value of a trigonometric expression using the compound-angle formulae for sine and cosine.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s10",
+   "toTempId": "MathBook1_b12_s9",
+   "toDescription": "Calculate a trigonometric ratio of a double angle using the double-angle formulae.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s11",
+   "toTempId": "MathBook1_b12_s6",
+   "toDescription": "Calculate the value of a trigonometric expression using the compound-angle formulae for sine and cosine.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s12",
+   "toTempId": "MathBook1_b12_s11",
+   "toDescription": "Convert a sum or difference of two sines or two cosines into a product.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s13",
+   "toTempId": "MathBook1_b12_s11",
+   "toDescription": "Convert a sum or difference of two sines or two cosines into a product.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s14",
+   "toTempId": "MathBook1_b12_s6",
+   "toDescription": "Calculate the value of a trigonometric expression using the compound-angle formulae for sine and cosine.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s15",
+   "toTempId": "MathBook1_b12_s11",
+   "toDescription": "Convert a sum or difference of two sines or two cosines into a product.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s16",
+   "toTempId": "MathBook1_b12_s15",
+   "toDescription": "Solve a trigonometric equation by converting sums to products and then factorising.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s17",
+   "toTempId": "MathBook1_b12_s11",
+   "toDescription": "Convert a sum or difference of two sines or two cosines into a product.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s18",
+   "toTempId": "MathBook1_b12_s9",
+   "toDescription": "Calculate a trigonometric ratio of a double angle using the double-angle formulae.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s19",
+   "toTempId": "MathBook1_b12_s9",
+   "toDescription": "Calculate a trigonometric ratio of a double angle using the double-angle formulae.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s20",
+   "toTempId": "MathBook1_b12_s7",
+   "toDescription": "Calculate the value of a trigonometric expression using the compound-angle formula for tangent.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s21",
+   "toTempId": "MathBook1_b12_s7",
+   "toDescription": "Calculate the value of a trigonometric expression using the compound-angle formula for tangent.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s24",
+   "toTempId": "MathBook1_b12_s22",
+   "toDescription": "Recall the sine rule relating each side of a triangle to the sine of the angle opposite it.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s25",
+   "toTempId": "MathBook1_b12_s24",
+   "toDescription": "Calculate an unknown side or angle of a triangle using the sine rule.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s26",
+   "toTempId": "MathBook1_b12_s24",
+   "toDescription": "Calculate an unknown side or angle of a triangle using the sine rule.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s27",
+   "toTempId": "MathBook1_b12_s23",
+   "toDescription": "Recall the cosine rule relating one side of a triangle to the other two sides and the angle between them.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s28",
+   "toTempId": "MathBook1_b12_s23",
+   "toDescription": "Recall the cosine rule relating one side of a triangle to the other two sides and the angle between them.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s29",
+   "toTempId": "MathBook1_b12_s12",
+   "toDescription": "Convert a product of two trigonometric ratios into a sum or a difference.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s30",
+   "toTempId": "MathBook1_b12_s11",
+   "toDescription": "Convert a sum or difference of two sines or two cosines into a product.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s31",
+   "toTempId": "MathBook1_b12_s6",
+   "toDescription": "Calculate the value of a trigonometric expression using the compound-angle formulae for sine and cosine.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s32",
+   "toTempId": "MathBook1_b12_s34",
+   "toDescription": "Simplify a composition of an inverse trigonometric function with a trigonometric function.",
+   "toTopicKeyGuess": "MAT_INVTRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s34",
+   "toTempId": "MathBook1_b12_s33",
+   "toDescription": "Recall the principal-value ranges of the inverse trigonometric functions.",
+   "toTopicKeyGuess": "MAT_INVTRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s35",
+   "toTempId": "MathBook1_b12_s34",
+   "toDescription": "Simplify a composition of an inverse trigonometric function with a trigonometric function.",
+   "toTopicKeyGuess": "MAT_INVTRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s37",
+   "toTempId": "MathBook1_b12_s36",
+   "toDescription": "Recall the definition of a function as a relation in which every element of the domain has exactly one image.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s38",
+   "toTempId": "MathBook1_b12_s37",
+   "toDescription": "Determine the domain of a real-valued function from the restrictions imposed by radicals, denominators and logarithms.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s39",
+   "toTempId": "MathBook1_b12_s36",
+   "toDescription": "Recall the definition of a function as a relation in which every element of the domain has exactly one image.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s39",
+   "toTempId": "MathBook1_b12_s40",
+   "toDescription": "Determine the composite of two given functions as an explicit expression.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s40",
+   "toTempId": "MathBook1_b12_s36",
+   "toDescription": "Recall the definition of a function as a relation in which every element of the domain has exactly one image.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s41",
+   "toTempId": "MathBook1_b12_s36",
+   "toDescription": "Recall the definition of a function as a relation in which every element of the domain has exactly one image.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s42",
+   "toTempId": "MathBook1_b12_s41",
+   "toDescription": "Determine the inverse of a one-to-one function by solving its defining equation for the independent variable.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s43",
+   "toTempId": "MathBook1_b12_s36",
+   "toDescription": "Recall the definition of a function as a relation in which every element of the domain has exactly one image.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s44",
+   "toTempId": "MathBook1_b12_s36",
+   "toDescription": "Recall the definition of a function as a relation in which every element of the domain has exactly one image.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s45",
+   "toTempId": "MathBook1_b12_s36",
+   "toDescription": "Recall the definition of a function as a relation in which every element of the domain has exactly one image.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s46",
+   "toTempId": "MathBook1_b12_s36",
+   "toDescription": "Recall the definition of a function as a relation in which every element of the domain has exactly one image.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s47",
+   "toTempId": "MathBook1_b12_s36",
+   "toDescription": "Recall the definition of a function as a relation in which every element of the domain has exactly one image.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s48",
+   "toTempId": "MathBook1_b12_s40",
+   "toDescription": "Determine the composite of two given functions as an explicit expression.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s49",
+   "toTempId": "MathBook1_b12_s36",
+   "toDescription": "Recall the definition of a function as a relation in which every element of the domain has exactly one image.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s50",
+   "toTempId": "MathBook1_b12_s38",
+   "toDescription": "Determine the range of a real-valued function.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s51",
+   "toTempId": "MathBook1_b12_s37",
+   "toDescription": "Determine the domain of a real-valued function from the restrictions imposed by radicals, denominators and logarithms.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s52",
+   "toTempId": "MathBook1_b12_s38",
+   "toDescription": "Determine the range of a real-valued function.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s53",
+   "toTempId": "MathBook1_b12_s38",
+   "toDescription": "Determine the range of a real-valued function.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s54",
+   "toTempId": "MathBook1_b12_s36",
+   "toDescription": "Recall the definition of a function as a relation in which every element of the domain has exactly one image.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s55",
+   "toTempId": "MathBook1_b12_s37",
+   "toDescription": "Determine the domain of a real-valued function from the restrictions imposed by radicals, denominators and logarithms.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s56",
+   "toTempId": "MathBook1_b12_s55",
+   "toDescription": "Calculate the limit of a rational or radical expression as the variable tends to a finite value or to infinity.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s56",
+   "toTempId": "MathBook1_b12_s9",
+   "toDescription": "Calculate a trigonometric ratio of a double angle using the double-angle formulae.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s57",
+   "toTempId": "MathBook1_b12_s55",
+   "toDescription": "Calculate the limit of a rational or radical expression as the variable tends to a finite value or to infinity.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s58",
+   "toTempId": "MathBook1_b12_s55",
+   "toDescription": "Calculate the limit of a rational or radical expression as the variable tends to a finite value or to infinity.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s59",
+   "toTempId": "MathBook1_b12_s58",
+   "toDescription": "Calculate the derivative of a function from first principles, as the limit of its difference quotient.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s60",
+   "toTempId": "MathBook1_b12_s58",
+   "toDescription": "Calculate the derivative of a function from first principles, as the limit of its difference quotient.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s60",
+   "toTempId": "MathBook1_b12_s40",
+   "toDescription": "Determine the composite of two given functions as an explicit expression.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s61",
+   "toTempId": "MathBook1_b12_s58",
+   "toDescription": "Calculate the derivative of a function from first principles, as the limit of its difference quotient.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s62",
+   "toTempId": "MathBook1_b12_s58",
+   "toDescription": "Calculate the derivative of a function from first principles, as the limit of its difference quotient.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s63",
+   "toTempId": "MathBook1_b12_s58",
+   "toDescription": "Calculate the derivative of a function from first principles, as the limit of its difference quotient.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s63",
+   "toTempId": "MathBook1_b12_s38",
+   "toDescription": "Determine the range of a real-valued function.",
+   "toTopicKeyGuess": "MAT_FUNCTION"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s64",
+   "toTempId": "MathBook1_b12_s58",
+   "toDescription": "Calculate the derivative of a function from first principles, as the limit of its difference quotient.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s65",
+   "toTempId": "MathBook1_b12_s59",
+   "toDescription": "Calculate the derivative of an implicitly defined function.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s66",
+   "toTempId": "MathBook1_b12_s63",
+   "toDescription": "Determine the maximum or the minimum value of a function using its first and second derivatives.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s25",
+   "toSkillId": "MAT_TRIG6",
+   "toDescription": "Calculate an unknown side of a triangle from two sides and the included angle, using the law of cosines.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s49",
+   "toSkillId": "MAT_TRIG4",
+   "toDescription": "Calculate the value of a symmetric expression in cosine and secant from a given value of their sum.",
+   "toTopicKeyGuess": "MAT_TRIG"
+  },
+  {
+   "fromTempId": "MathBook1_b12_s62",
+   "toSkillId": "MAT_COORD_LINE16",
+   "toDescription": "Determine the equation of a straight line through a given point with a given slope.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  }
+ ],
+ "reusedExistingSkills": [
+  {
+   "existingSkillId": "MAT_TRIG4",
+   "sourceItemIds": [
+    "MathBook1__p67__q29__368"
+   ]
+  },
+  {
+   "existingSkillId": "MAT_TRIG5",
+   "sourceItemIds": [
+    "MathBook1__p70__q43__382"
+   ]
+  },
+  {
+   "existingSkillId": "MAT_TRIG6",
+   "sourceItemIds": [
+    "MathBook1__p64__q09__348",
+    "MathBook1__p65__q16__355"
+   ]
+  },
+  {
+   "existingSkillId": "MAT_TRIG7",
+   "sourceItemIds": [
+    "MathBook1__p59__q18__322"
+   ]
+  },
+  {
+   "existingSkillId": "MAT_COORD_LINE9",
+   "sourceItemIds": [
+    "MathBook1__p66__q23__362"
+   ]
+  }
+ ],
+ "newTopicsProposed": [
+  {
+   "topicKey": "MAT_FUNCTION",
+   "topicLabel": "Functions and Relations",
+   "subject": "Mathematics",
+   "reason": "Records 391-433 of MathBook1 (43 consecutive records, pages 71-76) are entirely function theory: domain and range, composition, inverse functions, one-to-one and onto classification, piecewise definitions, functional equations, and the number of functions between finite sets. None of the canonical Mathematics topics covers this: MAT_ALGEBRA is algebraic and exponential equations, MAT_EQTHEORY is theory of equations and polynomials, and the calculus topics presuppose functions rather than defining them. This is the second canonical gap found in Mathematics, after MAT_PERMCOMB, and for the same reason - the legacy 66-topic list was assembled from a physics-heavy sample. 19 skills in this batch carry this topicKey."
+  }
+ ],
+ "skippedItems": [],
+ "notes": "Records 301-450 of MathBook1 (parsed_items.jsonl lines 1989-2138). Coverage: trigonometry and solution of triangles (301-390), functions (391-433), limits and differentiation (434-450). MAT_FUNCTION is PROPOSED, not assumed. Four MAT_TRIG skills minted by b11 and one MAT_COORD_LINE skill from b10 are re-exercised here and listed under reusedExistingSkills rather than re-minted. All descriptions are plain text with no backslashes."
+}

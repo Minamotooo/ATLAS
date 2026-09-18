@@ -1,0 +1,475 @@
+{
+ "chunkLabel": "PhyBook2_b24",
+ "subject": "Physics",
+ "skills": [
+  {
+   "tempId": "PhyBook2_b24_s1",
+   "bloom": "Apply",
+   "skillFull": "Determine the capacitance and the potential of a charged spherical conductor or soap bubble.",
+   "topicKey": "PHY2_CAPACITOR",
+   "topicLabel": "Capacitance and Dielectrics",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p22__q19__154",
+    "PhyBook2__p23__q29__164",
+    "PhyBook2__p24__q37__172"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s2",
+   "bloom": "Apply",
+   "skillFull": "Calculate the energy stored in an electric field or released in a lightning discharge.",
+   "topicKey": "PHY2_CAPACITOR",
+   "topicLabel": "Capacitance and Dielectrics",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p23__q27__162",
+    "PhyBook2__p23__q31__166",
+    "PhyBook2__p24__q35__170"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s3",
+   "bloom": "Remember",
+   "skillFull": "Recall Ohm's law together with the definitions of resistance and resistivity.",
+   "topicKey": "PHY2_OHM",
+   "topicLabel": "Current, Resistance and Ohm's Law",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p25__q02__179"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s4",
+   "bloom": "Apply",
+   "skillFull": "Calculate the resistance of a conductor from its resistivity, its length and its cross-sectional area.",
+   "topicKey": "PHY2_OHM",
+   "topicLabel": "Current, Resistance and Ohm's Law",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p26__q08__185",
+    "PhyBook2__p26__q09__186",
+    "PhyBook2__p31__q35__212"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s5",
+   "bloom": "Apply",
+   "skillFull": "Determine the change in resistance when a wire is stretched or redrawn to a new length.",
+   "topicKey": "PHY2_OHM",
+   "topicLabel": "Current, Resistance and Ohm's Law",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p28__q19__196",
+    "PhyBook2__p32__q44__221"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s6",
+   "bloom": "Apply",
+   "skillFull": "Calculate the resistance of a conductor at a stated temperature from its temperature coefficient of resistance.",
+   "topicKey": "PHY2_OHM",
+   "topicLabel": "Current, Resistance and Ohm's Law",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p29__q24__201",
+    "PhyBook2__p31__q37__214"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s7",
+   "bloom": "Apply",
+   "skillFull": "Determine the resistance of a resistor from its colour code.",
+   "topicKey": "PHY2_OHM",
+   "topicLabel": "Current, Resistance and Ohm's Law",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p31__q36__213"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s8",
+   "bloom": "Apply",
+   "skillFull": "Calculate the equivalent resistance of resistors joined in series or in parallel.",
+   "topicKey": "PHY2_CIRCUITS",
+   "topicLabel": "DC Circuits and Kirchhoff's Laws",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p26__q07__184",
+    "PhyBook2__p27__q13__190",
+    "PhyBook2__p28__q22__199"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s9",
+   "bloom": "Apply",
+   "skillFull": "Calculate the equivalent resistance of a network of resistors using symmetry or successive reduction.",
+   "topicKey": "PHY2_CIRCUITS",
+   "topicLabel": "DC Circuits and Kirchhoff's Laws",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p27__q15__192",
+    "PhyBook2__p30__q33__210",
+    "PhyBook2__p33__q49__226"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s10",
+   "bloom": "Apply",
+   "skillFull": "Calculate the current and the potential difference in each branch of a circuit.",
+   "topicKey": "PHY2_CIRCUITS",
+   "topicLabel": "DC Circuits and Kirchhoff's Laws",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p26__q10__187",
+    "PhyBook2__p28__q20__197",
+    "PhyBook2__p30__q30__207"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s11",
+   "bloom": "Apply",
+   "skillFull": "Apply Kirchhoff's laws to determine the currents in a multi-loop circuit.",
+   "topicKey": "PHY2_CIRCUITS",
+   "topicLabel": "DC Circuits and Kirchhoff's Laws",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p25__q06__183",
+    "PhyBook2__p32__q42__219"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s12",
+   "bloom": "Apply",
+   "skillFull": "Calculate the electrical power dissipated in a resistor or consumed by an appliance.",
+   "topicKey": "PHY2_CIRCUITS",
+   "topicLabel": "DC Circuits and Kirchhoff's Laws",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p25__q04__181",
+    "PhyBook2__p27__q16__193",
+    "PhyBook2__p30__q32__209"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s13",
+   "bloom": "Apply",
+   "skillFull": "Calculate the electrical energy consumed over a stated period and its cost.",
+   "topicKey": "PHY2_CIRCUITS",
+   "topicLabel": "DC Circuits and Kirchhoff's Laws",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p25__q01__178",
+    "PhyBook2__p29__q27__204",
+    "PhyBook2__p32__q47__224"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s14",
+   "bloom": "Apply",
+   "skillFull": "Determine the resistance that must be joined in series to run an appliance at a stated supply voltage.",
+   "topicKey": "PHY2_CIRCUITS",
+   "topicLabel": "DC Circuits and Kirchhoff's Laws",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p25__q05__182",
+    "PhyBook2__p27__q17__194"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s15",
+   "bloom": "Apply",
+   "skillFull": "Calculate the heat produced by a current flowing for a stated time.",
+   "topicKey": "PHY2_CIRCUITS",
+   "topicLabel": "DC Circuits and Kirchhoff's Laws",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p29__q26__203",
+    "PhyBook2__p29__q29__206",
+    "PhyBook2__p32__q41__218"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s16",
+   "bloom": "Remember",
+   "skillFull": "Recall the meaning of electromotive force and of the internal resistance of a cell.",
+   "topicKey": "PHY2_CELLS",
+   "topicLabel": "Cells, EMF and Internal Resistance",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p27__q14__191"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s17",
+   "bloom": "Apply",
+   "skillFull": "Calculate the terminal potential difference of a cell from its electromotive force and internal resistance.",
+   "topicKey": "PHY2_CELLS",
+   "topicLabel": "Cells, EMF and Internal Resistance",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p27__q14__191",
+    "PhyBook2__p28__q18__195"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s18",
+   "bloom": "Apply",
+   "skillFull": "Determine the current supplied by cells combined in series or in parallel.",
+   "topicKey": "PHY2_CELLS",
+   "topicLabel": "Cells, EMF and Internal Resistance",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p31__q40__217",
+    "PhyBook2__p28__q23__200"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s19",
+   "bloom": "Apply",
+   "skillFull": "Determine an unknown resistance using the balance condition of a Wheatstone bridge.",
+   "topicKey": "PHY2_METER_BRIDGE",
+   "topicLabel": "Measuring Instruments and Bridges",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p32__q43__220",
+    "PhyBook2__p32__q45__222"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s20",
+   "bloom": "Apply",
+   "skillFull": "Determine an unknown resistance from the balance point of a metre bridge.",
+   "topicKey": "PHY2_METER_BRIDGE",
+   "topicLabel": "Measuring Instruments and Bridges",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p21__q11__146",
+    "PhyBook2__p32__q45__222"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s21",
+   "bloom": "Apply",
+   "skillFull": "Calculate the shunt resistance required to convert a galvanometer into an ammeter.",
+   "topicKey": "PHY2_METER_BRIDGE",
+   "topicLabel": "Measuring Instruments and Bridges",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p30__q31__208",
+    "PhyBook2__p31__q39__216"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s22",
+   "bloom": "Apply",
+   "skillFull": "Calculate the series resistance required to convert a galvanometer into a voltmeter.",
+   "topicKey": "PHY2_METER_BRIDGE",
+   "topicLabel": "Measuring Instruments and Bridges",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p33__q48__225",
+    "PhyBook2__p32__q46__223"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b24_s23",
+   "bloom": "Apply",
+   "skillFull": "Determine a current or a magnetic field using a tangent galvanometer.",
+   "topicKey": "PHY2_METER_BRIDGE",
+   "topicLabel": "Measuring Instruments and Bridges",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p33__q50__227"
+   ]
+  }
+ ],
+ "prereqs": [
+  {
+   "fromTempId": "PhyBook2_b24_s4",
+   "toTempId": "PhyBook2_b24_s3",
+   "toDescription": "Recall Ohm's law together with the definitions of resistance and resistivity.",
+   "toTopicKeyGuess": "PHY2_OHM"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s5",
+   "toTempId": "PhyBook2_b24_s4",
+   "toDescription": "Calculate the resistance of a conductor from its resistivity, its length and its cross-sectional area.",
+   "toTopicKeyGuess": "PHY2_OHM"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s6",
+   "toTempId": "PhyBook2_b24_s4",
+   "toDescription": "Calculate the resistance of a conductor from its resistivity, its length and its cross-sectional area.",
+   "toTopicKeyGuess": "PHY2_OHM"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s7",
+   "toTempId": "PhyBook2_b24_s3",
+   "toDescription": "Recall Ohm's law together with the definitions of resistance and resistivity.",
+   "toTopicKeyGuess": "PHY2_OHM"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s8",
+   "toTempId": "PhyBook2_b24_s3",
+   "toDescription": "Recall Ohm's law together with the definitions of resistance and resistivity.",
+   "toTopicKeyGuess": "PHY2_OHM"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s9",
+   "toTempId": "PhyBook2_b24_s8",
+   "toDescription": "Calculate the equivalent resistance of resistors joined in series or in parallel.",
+   "toTopicKeyGuess": "PHY2_CIRCUITS"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s10",
+   "toTempId": "PhyBook2_b24_s8",
+   "toDescription": "Calculate the equivalent resistance of resistors joined in series or in parallel.",
+   "toTopicKeyGuess": "PHY2_CIRCUITS"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s11",
+   "toTempId": "PhyBook2_b24_s10",
+   "toDescription": "Calculate the current and the potential difference in each branch of a circuit.",
+   "toTopicKeyGuess": "PHY2_CIRCUITS"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s12",
+   "toTempId": "PhyBook2_b24_s3",
+   "toDescription": "Recall Ohm's law together with the definitions of resistance and resistivity.",
+   "toTopicKeyGuess": "PHY2_OHM"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s13",
+   "toTempId": "PhyBook2_b24_s12",
+   "toDescription": "Calculate the electrical power dissipated in a resistor or consumed by an appliance.",
+   "toTopicKeyGuess": "PHY2_CIRCUITS"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s14",
+   "toTempId": "PhyBook2_b24_s12",
+   "toDescription": "Calculate the electrical power dissipated in a resistor or consumed by an appliance.",
+   "toTopicKeyGuess": "PHY2_CIRCUITS"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s15",
+   "toTempId": "PhyBook2_b24_s12",
+   "toDescription": "Calculate the electrical power dissipated in a resistor or consumed by an appliance.",
+   "toTopicKeyGuess": "PHY2_CIRCUITS"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s17",
+   "toTempId": "PhyBook2_b24_s16",
+   "toDescription": "Recall the meaning of electromotive force and of the internal resistance of a cell.",
+   "toTopicKeyGuess": "PHY2_CELLS"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s18",
+   "toTempId": "PhyBook2_b24_s17",
+   "toDescription": "Calculate the terminal potential difference of a cell from its electromotive force and internal resistance.",
+   "toTopicKeyGuess": "PHY2_CELLS"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s17",
+   "toTempId": "PhyBook2_b24_s10",
+   "toDescription": "Calculate the current and the potential difference in each branch of a circuit.",
+   "toTopicKeyGuess": "PHY2_CIRCUITS"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s11",
+   "toTempId": "PhyBook2_b24_s16",
+   "toDescription": "Recall the meaning of electromotive force and of the internal resistance of a cell.",
+   "toTopicKeyGuess": "PHY2_CELLS"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s19",
+   "toTempId": "PhyBook2_b24_s8",
+   "toDescription": "Calculate the equivalent resistance of resistors joined in series or in parallel.",
+   "toTopicKeyGuess": "PHY2_CIRCUITS"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s20",
+   "toTempId": "PhyBook2_b24_s19",
+   "toDescription": "Determine an unknown resistance using the balance condition of a Wheatstone bridge.",
+   "toTopicKeyGuess": "PHY2_METER_BRIDGE"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s21",
+   "toTempId": "PhyBook2_b24_s8",
+   "toDescription": "Calculate the equivalent resistance of resistors joined in series or in parallel.",
+   "toTopicKeyGuess": "PHY2_CIRCUITS"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s22",
+   "toTempId": "PhyBook2_b24_s8",
+   "toDescription": "Calculate the equivalent resistance of resistors joined in series or in parallel.",
+   "toTopicKeyGuess": "PHY2_CIRCUITS"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s23",
+   "toTempId": "PhyBook2_b24_s21",
+   "toDescription": "Calculate the shunt resistance required to convert a galvanometer into an ammeter.",
+   "toTopicKeyGuess": "PHY2_METER_BRIDGE"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s20",
+   "toTempId": "PhyBook2_b24_s10",
+   "toDescription": "Calculate the current and the potential difference in each branch of a circuit.",
+   "toTopicKeyGuess": "PHY2_CIRCUITS"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s1",
+   "toSkillId": "PHY2_CAPACITOR0",
+   "toDescription": "Recall the definition of capacitance and its unit.",
+   "toTopicKeyGuess": "PHY2_CAPACITOR"
+  },
+  {
+   "fromTempId": "PhyBook2_b24_s2",
+   "toSkillId": "PHY2_CAPACITOR3",
+   "toDescription": "Calculate the charge, the potential difference or the energy stored in a capacitor.",
+   "toTopicKeyGuess": "PHY2_CAPACITOR"
+  }
+ ],
+ "reusedExistingSkills": [
+  {
+   "existingSkillId": "PHY2_CAPACITOR2",
+   "sourceItemIds": [
+    "PhyBook2__p22__q20__155",
+    "PhyBook2__p22__q24__159",
+    "PhyBook2__p23__q33__168"
+   ]
+  },
+  {
+   "existingSkillId": "PHY2_CAPACITOR1",
+   "sourceItemIds": [
+    "PhyBook2__p22__q21__156",
+    "PhyBook2__p23__q26__161",
+    "PhyBook2__p24__q39__174"
+   ]
+  },
+  {
+   "existingSkillId": "PHY2_COULOMB1",
+   "sourceItemIds": [
+    "PhyBook2__p24__q36__171",
+    "PhyBook2__p24__q41__176"
+   ]
+  },
+  {
+   "existingSkillId": "PHY2_GAUSS2",
+   "sourceItemIds": [
+    "PhyBook2__p23__q34__169",
+    "PhyBook2__p24__q38__173"
+   ]
+  },
+  {
+   "existingSkillId": "PHY2_COULOMB5",
+   "sourceItemIds": [
+    "PhyBook2__p21__q15__150",
+    "PhyBook2__p22__q23__158"
+   ]
+  }
+ ],
+ "newTopicsProposed": [],
+ "skippedItems": [],
+ "notes": "Records 151-300 of PhyBook2 (parsed_items.jsonl lines 3861-4010). Coverage: the tail of static electricity (records 151-177, mostly re-exercising b23 skills) and current electricity (Physics 2nd Paper Ch3, records 178-300) split across Ohm's law and resistivity, DC circuits and Kirchhoff's laws, cells and internal resistance, and measuring instruments and bridges. Skill count is modest for 150 records because the current-electricity block is highly repetitive - dozens of near-identical resistance-network and power-consumption exercises. All descriptions are plain text with no backslashes."
+}

@@ -1,0 +1,594 @@
+{
+ "chunkLabel": "PhyBook2_b25",
+ "subject": "Physics",
+ "skills": [
+  {
+   "tempId": "PhyBook2_b25_s1",
+   "bloom": "Remember",
+   "skillFull": "Recall the Biot-Savart law and Ampere's circuital law.",
+   "topicKey": "PHY2_MAGNETIC_FIELD",
+   "topicLabel": "Magnetic Field of a Current",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p49__q19__341"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s2",
+   "bloom": "Apply",
+   "skillFull": "Calculate the magnetic field at the centre of a circular current-carrying coil.",
+   "topicKey": "PHY2_MAGNETIC_FIELD",
+   "topicLabel": "Magnetic Field of a Current",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p44__q09__304",
+    "PhyBook2__p45__q19__314",
+    "PhyBook2__p50__q32__354"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s3",
+   "bloom": "Apply",
+   "skillFull": "Calculate the magnetic field near a long straight current-carrying conductor.",
+   "topicKey": "PHY2_MAGNETIC_FIELD",
+   "topicLabel": "Magnetic Field of a Current",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p47__q07__329",
+    "PhyBook2__p49__q20__342",
+    "PhyBook2__p50__q33__355"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s4",
+   "bloom": "Apply",
+   "skillFull": "Calculate the magnetic field inside a solenoid or a toroid.",
+   "topicKey": "PHY2_MAGNETIC_FIELD",
+   "topicLabel": "Magnetic Field of a Current",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p50__q29__351",
+    "PhyBook2__p53__q18__375"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s5",
+   "bloom": "Apply",
+   "skillFull": "Determine the resultant magnetic field where the earth's field and the field of a current combine.",
+   "topicKey": "PHY2_MAGNETIC_FIELD",
+   "topicLabel": "Magnetic Field of a Current",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p48__q11__333",
+    "PhyBook2__p48__q13__335",
+    "PhyBook2__p49__q22__344"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s6",
+   "bloom": "Apply",
+   "skillFull": "Calculate the force on a current-carrying conductor placed in a magnetic field.",
+   "topicKey": "PHY2_MAGNETIC_FORCE",
+   "topicLabel": "Force on Currents and Moving Charges",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p49__q23__345",
+    "PhyBook2__p49__q27__349",
+    "PhyBook2__p50__q31__353"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s7",
+   "bloom": "Apply",
+   "skillFull": "Calculate the force acting on a moving charge in a magnetic field.",
+   "topicKey": "PHY2_MAGNETIC_FORCE",
+   "topicLabel": "Force on Currents and Moving Charges",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p49__q24__346",
+    "PhyBook2__p50__q30__352",
+    "PhyBook2__p50__q35__357"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s8",
+   "bloom": "Apply",
+   "skillFull": "Calculate the radius or the period of a charged particle moving in a circular path in a magnetic field.",
+   "topicKey": "PHY2_MAGNETIC_FORCE",
+   "topicLabel": "Force on Currents and Moving Charges",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p44__q08__303",
+    "PhyBook2__p45__q16__311",
+    "PhyBook2__p47__q02__324",
+    "PhyBook2__p49__q26__348"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s9",
+   "bloom": "Apply",
+   "skillFull": "Calculate the force between two parallel current-carrying conductors.",
+   "topicKey": "PHY2_MAGNETIC_FORCE",
+   "topicLabel": "Force on Currents and Moving Charges",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p47__q08__330"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s10",
+   "bloom": "Apply",
+   "skillFull": "Calculate the torque acting on a current-carrying coil placed in a magnetic field.",
+   "topicKey": "PHY2_MAGNETIC_FORCE",
+   "topicLabel": "Force on Currents and Moving Charges",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p44__q10__305",
+    "PhyBook2__p46__q22__317",
+    "PhyBook2__p47__q01__323"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s11",
+   "bloom": "Apply",
+   "skillFull": "Calculate the Hall voltage developed across a conductor carrying current in a magnetic field.",
+   "topicKey": "PHY2_MAGNETIC_FORCE",
+   "topicLabel": "Force on Currents and Moving Charges",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p45__q20__315",
+    "PhyBook2__p48__q15__337",
+    "PhyBook2__p47__q05__327"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s12",
+   "bloom": "Apply",
+   "skillFull": "Determine the motion of a charged particle in crossed electric and magnetic fields.",
+   "topicKey": "PHY2_MAGNETIC_FORCE",
+   "topicLabel": "Force on Currents and Moving Charges",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p46__q23__318",
+    "PhyBook2__p48__q09__331",
+    "PhyBook2__p46__q27__322"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s13",
+   "bloom": "Remember",
+   "skillFull": "Recall the meaning of magnetic declination, of the angle of dip and of the horizontal component of the earth's field.",
+   "topicKey": "PHY2_MAGNETIC_MATERIALS",
+   "topicLabel": "Magnetic Properties of Materials",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p44__q12__307",
+    "PhyBook2__p49__q21__343"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s14",
+   "bloom": "Apply",
+   "skillFull": "Calculate the horizontal or the vertical component of the earth's magnetic field from the angle of dip.",
+   "topicKey": "PHY2_MAGNETIC_MATERIALS",
+   "topicLabel": "Magnetic Properties of Materials",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p45__q14__309",
+    "PhyBook2__p48__q14__336",
+    "PhyBook2__p49__q25__346"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s15",
+   "bloom": "Apply",
+   "skillFull": "Calculate the period of oscillation of a magnet suspended in a magnetic field.",
+   "topicKey": "PHY2_MAGNETIC_MATERIALS",
+   "topicLabel": "Magnetic Properties of Materials",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p44__q07__302",
+    "PhyBook2__p48__q12__334",
+    "PhyBook2__p50__q28__350"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s16",
+   "bloom": "Understand",
+   "skillFull": "Classify a material as diamagnetic, paramagnetic or ferromagnetic.",
+   "topicKey": "PHY2_MAGNETIC_MATERIALS",
+   "topicLabel": "Magnetic Properties of Materials",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p49__q25__347",
+    "PhyBook2__p50__q34__356"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s17",
+   "bloom": "Remember",
+   "skillFull": "Recall the meaning of the Curie temperature of a ferromagnetic material.",
+   "topicKey": "PHY2_MAGNETIC_MATERIALS",
+   "topicLabel": "Magnetic Properties of Materials",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p44__q11__306"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s18",
+   "bloom": "Remember",
+   "skillFull": "Recall Faraday's laws of electromagnetic induction together with Lenz's law.",
+   "topicKey": "PHY2_INDUCTION",
+   "topicLabel": "Electromagnetic Induction and Faraday's Law",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p53__q14__371"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s19",
+   "bloom": "Apply",
+   "skillFull": "Calculate the induced electromotive force from the rate of change of magnetic flux.",
+   "topicKey": "PHY2_INDUCTION",
+   "topicLabel": "Electromagnetic Induction and Faraday's Law",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p51__q04__361",
+    "PhyBook2__p52__q07__364",
+    "PhyBook2__p53__q13__370"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s20",
+   "bloom": "Apply",
+   "skillFull": "Calculate the magnetic flux linked with a coil placed in a magnetic field.",
+   "topicKey": "PHY2_INDUCTION",
+   "topicLabel": "Electromagnetic Induction and Faraday's Law",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p53__q15__372",
+    "PhyBook2__p51__q04__361"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s21",
+   "bloom": "Apply",
+   "skillFull": "Calculate the electromotive force induced in a rod moving through a magnetic field.",
+   "topicKey": "PHY2_INDUCTION",
+   "topicLabel": "Electromagnetic Induction and Faraday's Law",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p54__q20__377",
+    "PhyBook2__p52__q09__366"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s22",
+   "bloom": "Apply",
+   "skillFull": "Calculate the self-inductance of a coil or of a solenoid.",
+   "topicKey": "PHY2_INDUCTANCE",
+   "topicLabel": "Self and Mutual Inductance",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p52__q11__368",
+    "PhyBook2__p53__q18__375"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s23",
+   "bloom": "Apply",
+   "skillFull": "Calculate the mutual inductance of two coupled coils.",
+   "topicKey": "PHY2_INDUCTANCE",
+   "topicLabel": "Self and Mutual Inductance",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p51__q05__362"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s24",
+   "bloom": "Apply",
+   "skillFull": "Calculate the energy stored in an inductor.",
+   "topicKey": "PHY2_INDUCTANCE",
+   "topicLabel": "Self and Mutual Inductance",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p52__q11__368"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s25",
+   "bloom": "Remember",
+   "skillFull": "Recall the relation between the peak value and the root-mean-square value of an alternating current or voltage.",
+   "topicKey": "PHY2_AC_CIRCUITS",
+   "topicLabel": "Alternating Current Circuits",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p51__q02__359"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s26",
+   "bloom": "Apply",
+   "skillFull": "Calculate the root-mean-square or the peak value of an alternating current or voltage.",
+   "topicKey": "PHY2_AC_CIRCUITS",
+   "topicLabel": "Alternating Current Circuits",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p51__q06__363",
+    "PhyBook2__p52__q08__365",
+    "PhyBook2__p53__q19__376"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s27",
+   "bloom": "Apply",
+   "skillFull": "Calculate the reactance of an inductor or of a capacitor at a stated frequency.",
+   "topicKey": "PHY2_AC_CIRCUITS",
+   "topicLabel": "Alternating Current Circuits",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p51__q01__358"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s28",
+   "bloom": "Apply",
+   "skillFull": "Calculate the impedance and the phase angle of a series alternating-current circuit.",
+   "topicKey": "PHY2_AC_CIRCUITS",
+   "topicLabel": "Alternating Current Circuits",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p51__q01__358"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s29",
+   "bloom": "Apply",
+   "skillFull": "Determine the phase difference between two alternating currents or voltages.",
+   "topicKey": "PHY2_AC_CIRCUITS",
+   "topicLabel": "Alternating Current Circuits",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p53__q17__374"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s30",
+   "bloom": "Apply",
+   "skillFull": "Calculate the output voltage or current of a transformer from its turns ratio.",
+   "topicKey": "PHY2_TRANSFORMER",
+   "topicLabel": "Transformers and Power Transmission",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p51__q03__360",
+    "PhyBook2__p52__q10__367",
+    "PhyBook2__p53__q16__373"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b25_s31",
+   "bloom": "Apply",
+   "skillFull": "Calculate the efficiency or the power loss of a transformer.",
+   "topicKey": "PHY2_TRANSFORMER",
+   "topicLabel": "Transformers and Power Transmission",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p52__q12__369"
+   ]
+  }
+ ],
+ "prereqs": [
+  {
+   "fromTempId": "PhyBook2_b25_s2",
+   "toTempId": "PhyBook2_b25_s1",
+   "toDescription": "Recall the Biot-Savart law and Ampere's circuital law.",
+   "toTopicKeyGuess": "PHY2_MAGNETIC_FIELD"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s3",
+   "toTempId": "PhyBook2_b25_s1",
+   "toDescription": "Recall the Biot-Savart law and Ampere's circuital law.",
+   "toTopicKeyGuess": "PHY2_MAGNETIC_FIELD"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s4",
+   "toTempId": "PhyBook2_b25_s1",
+   "toDescription": "Recall the Biot-Savart law and Ampere's circuital law.",
+   "toTopicKeyGuess": "PHY2_MAGNETIC_FIELD"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s5",
+   "toTempId": "PhyBook2_b25_s3",
+   "toDescription": "Calculate the magnetic field near a long straight current-carrying conductor.",
+   "toTopicKeyGuess": "PHY2_MAGNETIC_FIELD"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s5",
+   "toTempId": "PhyBook2_b25_s14",
+   "toDescription": "Calculate the horizontal or the vertical component of the earth's magnetic field from the angle of dip.",
+   "toTopicKeyGuess": "PHY2_MAGNETIC_MATERIALS"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s6",
+   "toTempId": "PhyBook2_b25_s1",
+   "toDescription": "Recall the Biot-Savart law and Ampere's circuital law.",
+   "toTopicKeyGuess": "PHY2_MAGNETIC_FIELD"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s7",
+   "toTempId": "PhyBook2_b25_s1",
+   "toDescription": "Recall the Biot-Savart law and Ampere's circuital law.",
+   "toTopicKeyGuess": "PHY2_MAGNETIC_FIELD"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s8",
+   "toTempId": "PhyBook2_b25_s7",
+   "toDescription": "Calculate the force acting on a moving charge in a magnetic field.",
+   "toTopicKeyGuess": "PHY2_MAGNETIC_FORCE"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s9",
+   "toTempId": "PhyBook2_b25_s6",
+   "toDescription": "Calculate the force on a current-carrying conductor placed in a magnetic field.",
+   "toTopicKeyGuess": "PHY2_MAGNETIC_FORCE"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s10",
+   "toTempId": "PhyBook2_b25_s6",
+   "toDescription": "Calculate the force on a current-carrying conductor placed in a magnetic field.",
+   "toTopicKeyGuess": "PHY2_MAGNETIC_FORCE"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s11",
+   "toTempId": "PhyBook2_b25_s7",
+   "toDescription": "Calculate the force acting on a moving charge in a magnetic field.",
+   "toTopicKeyGuess": "PHY2_MAGNETIC_FORCE"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s12",
+   "toTempId": "PhyBook2_b25_s7",
+   "toDescription": "Calculate the force acting on a moving charge in a magnetic field.",
+   "toTopicKeyGuess": "PHY2_MAGNETIC_FORCE"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s14",
+   "toTempId": "PhyBook2_b25_s13",
+   "toDescription": "Recall the meaning of magnetic declination, of the angle of dip and of the horizontal component of the earth's field.",
+   "toTopicKeyGuess": "PHY2_MAGNETIC_MATERIALS"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s15",
+   "toTempId": "PhyBook2_b25_s13",
+   "toDescription": "Recall the meaning of magnetic declination, of the angle of dip and of the horizontal component of the earth's field.",
+   "toTopicKeyGuess": "PHY2_MAGNETIC_MATERIALS"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s16",
+   "toTempId": "PhyBook2_b25_s1",
+   "toDescription": "Recall the Biot-Savart law and Ampere's circuital law.",
+   "toTopicKeyGuess": "PHY2_MAGNETIC_FIELD"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s17",
+   "toTempId": "PhyBook2_b25_s16",
+   "toDescription": "Classify a material as diamagnetic, paramagnetic or ferromagnetic.",
+   "toTopicKeyGuess": "PHY2_MAGNETIC_MATERIALS"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s19",
+   "toTempId": "PhyBook2_b25_s18",
+   "toDescription": "Recall Faraday's laws of electromagnetic induction together with Lenz's law.",
+   "toTopicKeyGuess": "PHY2_INDUCTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s20",
+   "toTempId": "PhyBook2_b25_s18",
+   "toDescription": "Recall Faraday's laws of electromagnetic induction together with Lenz's law.",
+   "toTopicKeyGuess": "PHY2_INDUCTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s21",
+   "toTempId": "PhyBook2_b25_s19",
+   "toDescription": "Calculate the induced electromotive force from the rate of change of magnetic flux.",
+   "toTopicKeyGuess": "PHY2_INDUCTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s20",
+   "toTempId": "PhyBook2_b25_s2",
+   "toDescription": "Calculate the magnetic field at the centre of a circular current-carrying coil.",
+   "toTopicKeyGuess": "PHY2_MAGNETIC_FIELD"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s22",
+   "toTempId": "PhyBook2_b25_s19",
+   "toDescription": "Calculate the induced electromotive force from the rate of change of magnetic flux.",
+   "toTopicKeyGuess": "PHY2_INDUCTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s23",
+   "toTempId": "PhyBook2_b25_s22",
+   "toDescription": "Calculate the self-inductance of a coil or of a solenoid.",
+   "toTopicKeyGuess": "PHY2_INDUCTANCE"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s24",
+   "toTempId": "PhyBook2_b25_s22",
+   "toDescription": "Calculate the self-inductance of a coil or of a solenoid.",
+   "toTopicKeyGuess": "PHY2_INDUCTANCE"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s26",
+   "toTempId": "PhyBook2_b25_s25",
+   "toDescription": "Recall the relation between the peak value and the root-mean-square value of an alternating current or voltage.",
+   "toTopicKeyGuess": "PHY2_AC_CIRCUITS"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s27",
+   "toTempId": "PhyBook2_b25_s25",
+   "toDescription": "Recall the relation between the peak value and the root-mean-square value of an alternating current or voltage.",
+   "toTopicKeyGuess": "PHY2_AC_CIRCUITS"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s28",
+   "toTempId": "PhyBook2_b25_s27",
+   "toDescription": "Calculate the reactance of an inductor or of a capacitor at a stated frequency.",
+   "toTopicKeyGuess": "PHY2_AC_CIRCUITS"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s29",
+   "toTempId": "PhyBook2_b25_s26",
+   "toDescription": "Calculate the root-mean-square or the peak value of an alternating current or voltage.",
+   "toTopicKeyGuess": "PHY2_AC_CIRCUITS"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s27",
+   "toTempId": "PhyBook2_b25_s22",
+   "toDescription": "Calculate the self-inductance of a coil or of a solenoid.",
+   "toTopicKeyGuess": "PHY2_INDUCTANCE"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s28",
+   "toTempId": "PhyBook2_b25_s22",
+   "toDescription": "Calculate the self-inductance of a coil or of a solenoid.",
+   "toTopicKeyGuess": "PHY2_INDUCTANCE"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s30",
+   "toTempId": "PhyBook2_b25_s19",
+   "toDescription": "Calculate the induced electromotive force from the rate of change of magnetic flux.",
+   "toTopicKeyGuess": "PHY2_INDUCTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s31",
+   "toTempId": "PhyBook2_b25_s30",
+   "toDescription": "Calculate the output voltage or current of a transformer from its turns ratio.",
+   "toTopicKeyGuess": "PHY2_TRANSFORMER"
+  },
+  {
+   "fromTempId": "PhyBook2_b25_s10",
+   "toTempId": "PhyBook2_b25_s20",
+   "toDescription": "Calculate the magnetic flux linked with a coil placed in a magnetic field.",
+   "toTopicKeyGuess": "PHY2_INDUCTION"
+  }
+ ],
+ "reusedExistingSkills": [
+  {
+   "existingSkillId": "PHY2_OHM1",
+   "sourceItemIds": [
+    "PhyBook2__p44__q06__301",
+    "PhyBook2__p45__q15__310"
+   ]
+  },
+  {
+   "existingSkillId": "PHY2_COULOMB5",
+   "sourceItemIds": [
+    "PhyBook2__p48__q09__331"
+   ]
+  }
+ ],
+ "newTopicsProposed": [],
+ "skippedItems": [],
+ "notes": "Records 301-450 of PhyBook2 (parsed_items.jsonl lines 4011-4160). Coverage: magnetic effect of current and magnetism (Physics 2nd Paper Ch4, records 301-357) split across the field of a current, forces on currents and moving charges, and magnetic properties of materials including the earth's field; then electromagnetic induction and alternating current (Ch5, records 358-450) split across Faraday's law, inductance, AC circuits and transformers. All descriptions are plain text with no backslashes."
+}

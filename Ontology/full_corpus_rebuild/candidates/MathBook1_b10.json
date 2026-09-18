@@ -1,0 +1,1493 @@
+{
+ "chunkLabel": "MathBook1_b10",
+ "subject": "Mathematics",
+ "skills": [
+  {
+   "tempId": "MathBook1_b10_s1",
+   "bloom": "Remember",
+   "skillFull": "Recall the condition under which two matrices are conformable for multiplication, namely that the number of columns of the first equals the number of rows of the second.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p5__q11__10"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s2",
+   "bloom": "Apply",
+   "skillFull": "Determine the order of a matrix product from the orders of its factors.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p10__q17__34",
+    "MathBook1__p11__q22__39"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s3",
+   "bloom": "Apply",
+   "skillFull": "Calculate the product of two conformable matrices.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p6__q14__13",
+    "MathBook1__p10__q16__33"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s4",
+   "bloom": "Apply",
+   "skillFull": "Calculate the transpose of a given matrix.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p11__q22__39"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s5",
+   "bloom": "Apply",
+   "skillFull": "Determine unknown entries by equating corresponding elements of two equal matrices.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p11__q25__42"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s6",
+   "bloom": "Remember",
+   "skillFull": "Recall that the identity matrix leaves any conformable matrix unchanged under multiplication.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p7__q17__16"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s7",
+   "bloom": "Apply",
+   "skillFull": "Calculate a matrix polynomial expression such as A squared minus 4A minus 5I for a given square matrix.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p5__q12__11",
+    "MathBook1__p6__q15__14"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s8",
+   "bloom": "Apply",
+   "skillFull": "Determine an unknown matrix from a matrix equation of the form AB = C.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p2__q02__1",
+    "MathBook1__p2__q03__2",
+    "MathBook1__p9__q13__30"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s9",
+   "bloom": "Apply",
+   "skillFull": "Calculate the value of a 3x3 determinant by expansion along a row or a column.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p8__q07__24"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s10",
+   "bloom": "Apply",
+   "skillFull": "Determine which row or column of a higher-order determinant to expand along, by selecting the one containing the most zero entries.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p3__q04__3"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s11",
+   "bloom": "Apply",
+   "skillFull": "Evaluate a determinant by applying row and column operations to create zero entries before expanding.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p3__q06__5",
+    "MathBook1__p5__q13__12"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s12",
+   "bloom": "Remember",
+   "skillFull": "Recall that a determinant having two identical rows or two identical columns has the value zero.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p10__q18__35"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s13",
+   "bloom": "Remember",
+   "skillFull": "Recall that interchanging two rows or two columns of a determinant reverses the sign of its value.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p7__q18__17"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s14",
+   "bloom": "Analyze",
+   "skillFull": "Examine a proposed equality between two determinants and determine whether it holds without expanding either, by citing the relevant row or column property.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p7__q18__17"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s15",
+   "bloom": "Apply",
+   "skillFull": "Demonstrate that a given symbolic determinant equals a stated factored expression, using row and column operations.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p3__q07__6",
+    "MathBook1__p4__q08__7",
+    "MathBook1__p6__q16__15"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s16",
+   "bloom": "Apply",
+   "skillFull": "Solve for an unknown appearing in the entries of a determinant that is set equal to zero.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p3__q05__4",
+    "MathBook1__p11__q24__41"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s17",
+   "bloom": "Apply",
+   "skillFull": "Calculate the value of a determinant whose entries are logarithms, using logarithm laws together with column operations.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p10__q21__38"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s18",
+   "bloom": "Apply",
+   "skillFull": "Calculate the value of a determinant whose entries involve the complex cube roots of unity.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p11__q23__40"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s19",
+   "bloom": "Apply",
+   "skillFull": "Determine the value of the determinant of a diagonal matrix as the product of its diagonal entries.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p8__q06__23"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s20",
+   "bloom": "Apply",
+   "skillFull": "Determine the determinant of a scalar multiple of an n by n matrix, using the relation that the determinant of kA equals k to the power n times the determinant of A.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p9__q10__27"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s21",
+   "bloom": "Remember",
+   "skillFull": "Recall that the determinant of an inverse matrix equals the reciprocal of the determinant of the original matrix.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p9__q10__27"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s22",
+   "bloom": "Apply",
+   "skillFull": "Calculate the inverse of a 2x2 matrix as its adjugate divided by its determinant.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p9__q14__31",
+    "MathBook1__p9__q15__32",
+    "MathBook1__p2__q01__0"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s23",
+   "bloom": "Apply",
+   "skillFull": "Determine the value of a parameter for which a given matrix has no inverse, by setting its determinant equal to zero.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p8__q03__20",
+    "MathBook1__p8__q04__21"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s24",
+   "bloom": "Apply",
+   "skillFull": "Determine the inverse of a matrix product using the relation that the inverse of AB equals the inverse of B times the inverse of A.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p8__q08__25"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s25",
+   "bloom": "Apply",
+   "skillFull": "Verify that two given matrices are inverses of one another by forming their product and comparing it with the identity matrix.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p9__q10__27"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s26",
+   "bloom": "Understand",
+   "skillFull": "Classify a given square matrix by name (identity, diagonal, symmetric or singular) from the pattern of its entries.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p9__q11__28"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s27",
+   "bloom": "Apply",
+   "skillFull": "Solve a system of three linear equations in three unknowns using determinants.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p4__q09__8"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s28",
+   "bloom": "Apply",
+   "skillFull": "Determine the angle parameter in a rotation matrix from a given power of that matrix.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p5__q10__9",
+    "MathBook1__p10__q20__37"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s29",
+   "bloom": "Apply",
+   "skillFull": "Calculate the cofactor of a specified entry of a determinant.",
+   "topicKey": "MAT_MATRIX",
+   "topicLabel": "Matrices and Determinants",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p9__q12__29"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s30",
+   "bloom": "Apply",
+   "skillFull": "Calculate the magnitude of a vector from its rectangular components.",
+   "topicKey": "MATH_MECH",
+   "topicLabel": "Vector, Statics and Dynamics",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p16__q13__74"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s31",
+   "bloom": "Apply",
+   "skillFull": "Calculate the unit vector in the direction of a given vector.",
+   "topicKey": "MATH_MECH",
+   "topicLabel": "Vector, Statics and Dynamics",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p12__q01__43"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s32",
+   "bloom": "Apply",
+   "skillFull": "Calculate the scalar (dot) product of two vectors from their components.",
+   "topicKey": "MATH_MECH",
+   "topicLabel": "Vector, Statics and Dynamics",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p15__q01__62"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s33",
+   "bloom": "Apply",
+   "skillFull": "Calculate the angle between two vectors from their scalar product and their magnitudes.",
+   "topicKey": "MATH_MECH",
+   "topicLabel": "Vector, Statics and Dynamics",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p15__q01__62",
+    "MathBook1__p16__q10__71"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s34",
+   "bloom": "Apply",
+   "skillFull": "Determine whether two given vectors are mutually perpendicular by testing whether their scalar product is zero.",
+   "topicKey": "MATH_MECH",
+   "topicLabel": "Vector, Statics and Dynamics",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p13__q08__50",
+    "MathBook1__p17__q17__78"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s35",
+   "bloom": "Apply",
+   "skillFull": "Calculate the angle a vector makes with a specified coordinate axis from its components.",
+   "topicKey": "MATH_MECH",
+   "topicLabel": "Vector, Statics and Dynamics",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p12__q02__44",
+    "MathBook1__p14__q13__55",
+    "MathBook1__p15__q03__64"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s36",
+   "bloom": "Apply",
+   "skillFull": "Calculate the vector (cross) product of two vectors from their components.",
+   "topicKey": "MATH_MECH",
+   "topicLabel": "Vector, Statics and Dynamics",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p15__q19__61"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s37",
+   "bloom": "Apply",
+   "skillFull": "Calculate a unit vector perpendicular to the plane of two given vectors.",
+   "topicKey": "MATH_MECH",
+   "topicLabel": "Vector, Statics and Dynamics",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p16__q08__69",
+    "MathBook1__p17__q15__76"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s38",
+   "bloom": "Apply",
+   "skillFull": "Calculate the area of a parallelogram from two adjacent side vectors using the cross product.",
+   "topicKey": "MATH_MECH",
+   "topicLabel": "Vector, Statics and Dynamics",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p13__q07__49",
+    "MathBook1__p15__q05__66"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s39",
+   "bloom": "Apply",
+   "skillFull": "Calculate the area of a triangle from the position vectors of its three vertices.",
+   "topicKey": "MATH_MECH",
+   "topicLabel": "Vector, Statics and Dynamics",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p12__q05__47",
+    "MathBook1__p13__q12__54"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s40",
+   "bloom": "Apply",
+   "skillFull": "Calculate the scalar triple product of three vectors and use it to obtain the volume of the parallelepiped they form.",
+   "topicKey": "MATH_MECH",
+   "topicLabel": "Vector, Statics and Dynamics",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p14__q17__59"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s41",
+   "bloom": "Apply",
+   "skillFull": "Determine the value of a parameter for which three given vectors are coplanar, by setting their scalar triple product to zero.",
+   "topicKey": "MATH_MECH",
+   "topicLabel": "Vector, Statics and Dynamics",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p13__q09__51",
+    "MathBook1__p15__q02__63"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s42",
+   "bloom": "Apply",
+   "skillFull": "Calculate the scalar projection of one vector onto another.",
+   "topicKey": "MATH_MECH",
+   "topicLabel": "Vector, Statics and Dynamics",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p14__q16__58",
+    "MathBook1__p16__q09__70"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s43",
+   "bloom": "Apply",
+   "skillFull": "Calculate the vector component of one vector perpendicular to another.",
+   "topicKey": "MATH_MECH",
+   "topicLabel": "Vector, Statics and Dynamics",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p12__q06__48"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s44",
+   "bloom": "Apply",
+   "skillFull": "Calculate the vector joining two points from their position vectors.",
+   "topicKey": "MATH_MECH",
+   "topicLabel": "Vector, Statics and Dynamics",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p13__q10__52",
+    "MathBook1__p14__q14__56"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s45",
+   "bloom": "Apply",
+   "skillFull": "Determine an unknown component of a vector from a stated cross-product or angle condition.",
+   "topicKey": "MATH_MECH",
+   "topicLabel": "Vector, Statics and Dynamics",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p14__q18__60",
+    "MathBook1__p16__q12__73"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s46",
+   "bloom": "Understand",
+   "skillFull": "Distinguish which combinations of vector operations are meaningful, separating those that give a scalar from those that give a vector.",
+   "topicKey": "MATH_MECH",
+   "topicLabel": "Vector, Statics and Dynamics",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p16__q07__68"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s47",
+   "bloom": "Apply",
+   "skillFull": "Calculate the resultant of the vectors drawn from one vertex of a regular polygon to its remaining vertices.",
+   "topicKey": "MATH_MECH",
+   "topicLabel": "Vector, Statics and Dynamics",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p15__q04__65"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s48",
+   "bloom": "Remember",
+   "skillFull": "Recall that a vector equally inclined to all three coordinate axes has equal direction cosines.",
+   "topicKey": "MATH_MECH",
+   "topicLabel": "Vector, Statics and Dynamics",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p13__q11__53"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s49",
+   "bloom": "Apply",
+   "skillFull": "Calculate the slope of a straight line from the coordinates of two points on it.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p28__q22__139"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s50",
+   "bloom": "Apply",
+   "skillFull": "Calculate the angle a straight line makes with the positive x-axis from its slope.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p19__q11__89",
+    "MathBook1__p28__q22__139"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s51",
+   "bloom": "Remember",
+   "skillFull": "Recall that two straight lines are parallel when their slopes are equal.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p28__q19__136"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s52",
+   "bloom": "Remember",
+   "skillFull": "Recall that two straight lines are perpendicular when the product of their slopes equals minus one.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p19__q12__90"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s53",
+   "bloom": "Apply",
+   "skillFull": "Determine the value of a parameter that makes two given straight lines parallel or perpendicular.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p23__q28__106",
+    "MathBook1__p27__q16__133"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s54",
+   "bloom": "Apply",
+   "skillFull": "Calculate the acute angle between two straight lines from their slopes.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p22__q25__103",
+    "MathBook1__p19__q08__86",
+    "MathBook1__p28__q25__142"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s55",
+   "bloom": "Apply",
+   "skillFull": "Calculate the perpendicular distance from a given point to a given straight line.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p19__q09__87"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s56",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of a straight line through a given point with a given slope.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p26__q02__119"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s57",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of a straight line parallel to a given line and at a stated distance from it.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p18__q04__82",
+    "MathBook1__p28__q17__134"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s58",
+   "bloom": "Apply",
+   "skillFull": "Determine the equations of the bisectors of the angles between two given straight lines.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p18__q06__84",
+    "MathBook1__p19__q07__85"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s59",
+   "bloom": "Analyze",
+   "skillFull": "Determine which of the two angle bisectors of a pair of straight lines bisects the acute angle and which bisects the obtuse angle.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p19__q10__88",
+    "MathBook1__p27__q09__126"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s60",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of the perpendicular bisector of the segment joining two given points.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p23__q27__105",
+    "MathBook1__p26__q08__125"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s61",
+   "bloom": "Apply",
+   "skillFull": "Calculate the coordinates of the foot of the perpendicular drawn from a given point to a given straight line.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p23__q31__109"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s62",
+   "bloom": "Apply",
+   "skillFull": "Calculate the coordinates of the image of a point reflected in a given straight line.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p25__q38__116"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s63",
+   "bloom": "Apply",
+   "skillFull": "Determine the value of a parameter for which three given straight lines are concurrent.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p24__q32__110",
+    "MathBook1__p27__q13__130"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s64",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of a straight line passing through the intersection point of two given straight lines.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p20__q14__92"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s65",
+   "bloom": "Apply",
+   "skillFull": "Calculate the area of the triangle formed by three given straight lines.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p20__q15__93",
+    "MathBook1__p29__q32__149"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s66",
+   "bloom": "Apply",
+   "skillFull": "Calculate the area of the triangle a straight line forms with the two coordinate axes.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p24__q35__113"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s67",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of a straight line through a given point making a stated angle with a given line.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p18__q05__83",
+    "MathBook1__p21__q20__98"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s68",
+   "bloom": "Understand",
+   "skillFull": "Interpret the normal form of a straight line equation, identifying the perpendicular distance from the origin and the inclination of that perpendicular.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p22__q24__102",
+    "MathBook1__p18__q03__81"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s69",
+   "bloom": "Apply",
+   "skillFull": "Convert the equation of a straight line between its general, slope-intercept and normal forms.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p22__q24__102"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s70",
+   "bloom": "Apply",
+   "skillFull": "Determine the coordinates of the point dividing the segment joining two given points in a stated ratio.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p18__q02__80",
+    "MathBook1__p27__q11__128"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s71",
+   "bloom": "Understand",
+   "skillFull": "Classify a quadrilateral from the coordinates of its four vertices by comparing the slopes of its opposite sides.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p22__q23__101"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s72",
+   "bloom": "Apply",
+   "skillFull": "Determine the remaining vertices of a square from the coordinates of two of its vertices.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p21__q18__96",
+    "MathBook1__p17__q01__79"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s73",
+   "bloom": "Understand",
+   "skillFull": "Interpret a polar equation such as theta equals a constant, or r equals sine theta, as the curve it describes.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p27__q12__129",
+    "MathBook1__p29__q28__145"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s74",
+   "bloom": "Apply",
+   "skillFull": "Convert the coordinates of a point between polar and rectangular form.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p26__q04__121"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s75",
+   "bloom": "Apply",
+   "skillFull": "Calculate the distance between two points whose polar coordinates are given.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p26__q04__121"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s76",
+   "bloom": "Apply",
+   "skillFull": "Determine the intercept that a straight line given in polar form makes on a coordinate axis.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p26__q07__124"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s77",
+   "bloom": "Apply",
+   "skillFull": "Determine the coordinates of a point on a coordinate axis that is equidistant from two given points.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p28__q23__143"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s78",
+   "bloom": "Apply",
+   "skillFull": "Determine the coordinates of the vertices of a triangle from the midpoints of its three sides.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p25__q39__117"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s79",
+   "bloom": "Apply",
+   "skillFull": "Determine the new coordinates of a point after a line segment through the origin is rotated through a given angle.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p28__q18__135"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b10_s80",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of a straight line that passes through a given point and lies at a stated distance from another given point.",
+   "topicKey": "MAT_COORD_LINE",
+   "topicLabel": "Straight Line",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p20__q17__95",
+    "MathBook1__p26__q03__120"
+   ]
+  }
+ ],
+ "prereqs": [
+  {
+   "fromTempId": "MathBook1_b10_s2",
+   "toTempId": "MathBook1_b10_s1",
+   "toDescription": "Recall the condition under which two matrices are conformable for multiplication, namely that the number of columns of the first equals the number of rows of the second.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s2",
+   "toTempId": "MathBook1_b10_s4",
+   "toDescription": "Calculate the transpose of a given matrix.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s3",
+   "toTempId": "MathBook1_b10_s1",
+   "toDescription": "Recall the condition under which two matrices are conformable for multiplication, namely that the number of columns of the first equals the number of rows of the second.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s3",
+   "toTempId": "MathBook1_b10_s2",
+   "toDescription": "Determine the order of a matrix product from the orders of its factors.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s5",
+   "toTempId": "MathBook1_b10_s2",
+   "toDescription": "Determine the order of a matrix product from the orders of its factors.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s7",
+   "toTempId": "MathBook1_b10_s3",
+   "toDescription": "Calculate the product of two conformable matrices.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s7",
+   "toTempId": "MathBook1_b10_s6",
+   "toDescription": "Recall that the identity matrix leaves any conformable matrix unchanged under multiplication.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s8",
+   "toTempId": "MathBook1_b10_s3",
+   "toDescription": "Calculate the product of two conformable matrices.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s8",
+   "toTempId": "MathBook1_b10_s2",
+   "toDescription": "Determine the order of a matrix product from the orders of its factors.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s9",
+   "toTempId": "MathBook1_b10_s29",
+   "toDescription": "Calculate the cofactor of a specified entry of a determinant.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s10",
+   "toTempId": "MathBook1_b10_s9",
+   "toDescription": "Calculate the value of a 3x3 determinant by expansion along a row or a column.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s11",
+   "toTempId": "MathBook1_b10_s9",
+   "toDescription": "Calculate the value of a 3x3 determinant by expansion along a row or a column.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s11",
+   "toTempId": "MathBook1_b10_s13",
+   "toDescription": "Recall that interchanging two rows or two columns of a determinant reverses the sign of its value.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s12",
+   "toTempId": "MathBook1_b10_s9",
+   "toDescription": "Calculate the value of a 3x3 determinant by expansion along a row or a column.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s13",
+   "toTempId": "MathBook1_b10_s9",
+   "toDescription": "Calculate the value of a 3x3 determinant by expansion along a row or a column.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s14",
+   "toTempId": "MathBook1_b10_s12",
+   "toDescription": "Recall that a determinant having two identical rows or two identical columns has the value zero.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s14",
+   "toTempId": "MathBook1_b10_s13",
+   "toDescription": "Recall that interchanging two rows or two columns of a determinant reverses the sign of its value.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s15",
+   "toTempId": "MathBook1_b10_s11",
+   "toDescription": "Evaluate a determinant by applying row and column operations to create zero entries before expanding.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s16",
+   "toTempId": "MathBook1_b10_s9",
+   "toDescription": "Calculate the value of a 3x3 determinant by expansion along a row or a column.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s17",
+   "toTempId": "MathBook1_b10_s11",
+   "toDescription": "Evaluate a determinant by applying row and column operations to create zero entries before expanding.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s18",
+   "toTempId": "MathBook1_b10_s11",
+   "toDescription": "Evaluate a determinant by applying row and column operations to create zero entries before expanding.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s19",
+   "toTempId": "MathBook1_b10_s9",
+   "toDescription": "Calculate the value of a 3x3 determinant by expansion along a row or a column.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s20",
+   "toTempId": "MathBook1_b10_s9",
+   "toDescription": "Calculate the value of a 3x3 determinant by expansion along a row or a column.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s21",
+   "toTempId": "MathBook1_b10_s22",
+   "toDescription": "Calculate the inverse of a 2x2 matrix as its adjugate divided by its determinant.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s22",
+   "toTempId": "MathBook1_b10_s9",
+   "toDescription": "Calculate the value of a 3x3 determinant by expansion along a row or a column.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s22",
+   "toTempId": "MathBook1_b10_s29",
+   "toDescription": "Calculate the cofactor of a specified entry of a determinant.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s23",
+   "toTempId": "MathBook1_b10_s22",
+   "toDescription": "Calculate the inverse of a 2x2 matrix as its adjugate divided by its determinant.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s24",
+   "toTempId": "MathBook1_b10_s22",
+   "toDescription": "Calculate the inverse of a 2x2 matrix as its adjugate divided by its determinant.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s24",
+   "toTempId": "MathBook1_b10_s3",
+   "toDescription": "Calculate the product of two conformable matrices.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s25",
+   "toTempId": "MathBook1_b10_s3",
+   "toDescription": "Calculate the product of two conformable matrices.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s25",
+   "toTempId": "MathBook1_b10_s6",
+   "toDescription": "Recall that the identity matrix leaves any conformable matrix unchanged under multiplication.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s26",
+   "toTempId": "MathBook1_b10_s19",
+   "toDescription": "Determine the value of the determinant of a diagonal matrix as the product of its diagonal entries.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s27",
+   "toTempId": "MathBook1_b10_s9",
+   "toDescription": "Calculate the value of a 3x3 determinant by expansion along a row or a column.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s28",
+   "toTempId": "MathBook1_b10_s3",
+   "toDescription": "Calculate the product of two conformable matrices.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s31",
+   "toTempId": "MathBook1_b10_s30",
+   "toDescription": "Calculate the magnitude of a vector from its rectangular components.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s33",
+   "toTempId": "MathBook1_b10_s32",
+   "toDescription": "Calculate the scalar (dot) product of two vectors from their components.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s33",
+   "toTempId": "MathBook1_b10_s30",
+   "toDescription": "Calculate the magnitude of a vector from its rectangular components.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s34",
+   "toTempId": "MathBook1_b10_s32",
+   "toDescription": "Calculate the scalar (dot) product of two vectors from their components.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s35",
+   "toTempId": "MathBook1_b10_s33",
+   "toDescription": "Calculate the angle between two vectors from their scalar product and their magnitudes.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s37",
+   "toTempId": "MathBook1_b10_s36",
+   "toDescription": "Calculate the vector (cross) product of two vectors from their components.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s37",
+   "toTempId": "MathBook1_b10_s31",
+   "toDescription": "Calculate the unit vector in the direction of a given vector.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s38",
+   "toTempId": "MathBook1_b10_s36",
+   "toDescription": "Calculate the vector (cross) product of two vectors from their components.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s39",
+   "toTempId": "MathBook1_b10_s36",
+   "toDescription": "Calculate the vector (cross) product of two vectors from their components.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s39",
+   "toTempId": "MathBook1_b10_s44",
+   "toDescription": "Calculate the vector joining two points from their position vectors.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s40",
+   "toTempId": "MathBook1_b10_s36",
+   "toDescription": "Calculate the vector (cross) product of two vectors from their components.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s40",
+   "toTempId": "MathBook1_b10_s32",
+   "toDescription": "Calculate the scalar (dot) product of two vectors from their components.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s41",
+   "toTempId": "MathBook1_b10_s40",
+   "toDescription": "Calculate the scalar triple product of three vectors and use it to obtain the volume of the parallelepiped they form.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s42",
+   "toTempId": "MathBook1_b10_s32",
+   "toDescription": "Calculate the scalar (dot) product of two vectors from their components.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s42",
+   "toTempId": "MathBook1_b10_s30",
+   "toDescription": "Calculate the magnitude of a vector from its rectangular components.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s43",
+   "toTempId": "MathBook1_b10_s42",
+   "toDescription": "Calculate the scalar projection of one vector onto another.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s45",
+   "toTempId": "MathBook1_b10_s36",
+   "toDescription": "Calculate the vector (cross) product of two vectors from their components.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s46",
+   "toTempId": "MathBook1_b10_s32",
+   "toDescription": "Calculate the scalar (dot) product of two vectors from their components.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s46",
+   "toTempId": "MathBook1_b10_s36",
+   "toDescription": "Calculate the vector (cross) product of two vectors from their components.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s47",
+   "toTempId": "MathBook1_b10_s44",
+   "toDescription": "Calculate the vector joining two points from their position vectors.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s48",
+   "toTempId": "MathBook1_b10_s35",
+   "toDescription": "Calculate the angle a vector makes with a specified coordinate axis from its components.",
+   "toTopicKeyGuess": "MATH_MECH"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s50",
+   "toTempId": "MathBook1_b10_s49",
+   "toDescription": "Calculate the slope of a straight line from the coordinates of two points on it.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s51",
+   "toTempId": "MathBook1_b10_s49",
+   "toDescription": "Calculate the slope of a straight line from the coordinates of two points on it.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s52",
+   "toTempId": "MathBook1_b10_s49",
+   "toDescription": "Calculate the slope of a straight line from the coordinates of two points on it.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s53",
+   "toTempId": "MathBook1_b10_s51",
+   "toDescription": "Recall that two straight lines are parallel when their slopes are equal.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s53",
+   "toTempId": "MathBook1_b10_s52",
+   "toDescription": "Recall that two straight lines are perpendicular when the product of their slopes equals minus one.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s54",
+   "toTempId": "MathBook1_b10_s49",
+   "toDescription": "Calculate the slope of a straight line from the coordinates of two points on it.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s56",
+   "toTempId": "MathBook1_b10_s49",
+   "toDescription": "Calculate the slope of a straight line from the coordinates of two points on it.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s57",
+   "toTempId": "MathBook1_b10_s55",
+   "toDescription": "Calculate the perpendicular distance from a given point to a given straight line.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s57",
+   "toTempId": "MathBook1_b10_s51",
+   "toDescription": "Recall that two straight lines are parallel when their slopes are equal.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s58",
+   "toTempId": "MathBook1_b10_s54",
+   "toDescription": "Calculate the acute angle between two straight lines from their slopes.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s59",
+   "toTempId": "MathBook1_b10_s58",
+   "toDescription": "Determine the equations of the bisectors of the angles between two given straight lines.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s60",
+   "toTempId": "MathBook1_b10_s52",
+   "toDescription": "Recall that two straight lines are perpendicular when the product of their slopes equals minus one.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s60",
+   "toTempId": "MathBook1_b10_s70",
+   "toDescription": "Determine the coordinates of the point dividing the segment joining two given points in a stated ratio.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s61",
+   "toTempId": "MathBook1_b10_s52",
+   "toDescription": "Recall that two straight lines are perpendicular when the product of their slopes equals minus one.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s61",
+   "toTempId": "MathBook1_b10_s56",
+   "toDescription": "Determine the equation of a straight line through a given point with a given slope.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s62",
+   "toTempId": "MathBook1_b10_s61",
+   "toDescription": "Calculate the coordinates of the foot of the perpendicular drawn from a given point to a given straight line.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s63",
+   "toTempId": "MathBook1_b10_s64",
+   "toDescription": "Determine the equation of a straight line passing through the intersection point of two given straight lines.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s64",
+   "toTempId": "MathBook1_b10_s56",
+   "toDescription": "Determine the equation of a straight line through a given point with a given slope.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s65",
+   "toTempId": "MathBook1_b10_s66",
+   "toDescription": "Calculate the area of the triangle a straight line forms with the two coordinate axes.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s66",
+   "toTempId": "MathBook1_b10_s56",
+   "toDescription": "Determine the equation of a straight line through a given point with a given slope.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s67",
+   "toTempId": "MathBook1_b10_s54",
+   "toDescription": "Calculate the acute angle between two straight lines from their slopes.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s67",
+   "toTempId": "MathBook1_b10_s56",
+   "toDescription": "Determine the equation of a straight line through a given point with a given slope.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s68",
+   "toTempId": "MathBook1_b10_s55",
+   "toDescription": "Calculate the perpendicular distance from a given point to a given straight line.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s69",
+   "toTempId": "MathBook1_b10_s68",
+   "toDescription": "Interpret the normal form of a straight line equation, identifying the perpendicular distance from the origin and the inclination of that perpendicular.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s69",
+   "toTempId": "MathBook1_b10_s56",
+   "toDescription": "Determine the equation of a straight line through a given point with a given slope.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s71",
+   "toTempId": "MathBook1_b10_s49",
+   "toDescription": "Calculate the slope of a straight line from the coordinates of two points on it.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s72",
+   "toTempId": "MathBook1_b10_s52",
+   "toDescription": "Recall that two straight lines are perpendicular when the product of their slopes equals minus one.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s72",
+   "toTempId": "MathBook1_b10_s70",
+   "toDescription": "Determine the coordinates of the point dividing the segment joining two given points in a stated ratio.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s73",
+   "toTempId": "MathBook1_b10_s74",
+   "toDescription": "Convert the coordinates of a point between polar and rectangular form.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s75",
+   "toTempId": "MathBook1_b10_s74",
+   "toDescription": "Convert the coordinates of a point between polar and rectangular form.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s76",
+   "toTempId": "MathBook1_b10_s68",
+   "toDescription": "Interpret the normal form of a straight line equation, identifying the perpendicular distance from the origin and the inclination of that perpendicular.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s76",
+   "toTempId": "MathBook1_b10_s74",
+   "toDescription": "Convert the coordinates of a point between polar and rectangular form.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s77",
+   "toTempId": "MathBook1_b10_s70",
+   "toDescription": "Determine the coordinates of the point dividing the segment joining two given points in a stated ratio.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s78",
+   "toTempId": "MathBook1_b10_s70",
+   "toDescription": "Determine the coordinates of the point dividing the segment joining two given points in a stated ratio.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s79",
+   "toTempId": "MathBook1_b10_s74",
+   "toDescription": "Convert the coordinates of a point between polar and rectangular form.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s80",
+   "toTempId": "MathBook1_b10_s55",
+   "toDescription": "Calculate the perpendicular distance from a given point to a given straight line.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s80",
+   "toTempId": "MathBook1_b10_s56",
+   "toDescription": "Determine the equation of a straight line through a given point with a given slope.",
+   "toTopicKeyGuess": "MAT_COORD_LINE"
+  },
+  {
+   "fromTempId": "MathBook1_b10_s63",
+   "toTempId": "MathBook1_b10_s9",
+   "toDescription": "Calculate the value of a 3x3 determinant by expansion along a row or a column.",
+   "toTopicKeyGuess": "MAT_MATRIX"
+  }
+ ],
+ "newTopicsProposed": [],
+ "skippedItems": [],
+ "notes": "Records 1-150 of MathBook1 (parsed_items.jsonl lines 1689-1838). Coverage: matrices and determinants (records 1-43), vectors (44-78), straight line (79-150). Legacy-reuse candidates for the consolidator to check: s9, s29, s22 and s23 against legacy MAT_MATRIX1 (2x2 determinant), MAT_MATRIX2 (cofactor), MAT_MATRIX3 (minor) and MAT_MATRIX4 (singular-matrix condition). Vectors are filed under MATH_MECH, the canonical Mathematics vector topic. All descriptions are plain text with no backslashes, per the LaTeX-escaping rule.",
+ "legacyIdReuse": {
+  "MathBook1_b10_s29": "MAT_MATRIX2",
+  "MathBook1_b10_s23": "MAT_MATRIX4"
+ }
+}

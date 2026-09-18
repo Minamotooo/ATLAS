@@ -1,0 +1,897 @@
+{
+ "chunkLabel": "MathBook2_b15",
+ "subject": "Mathematics",
+ "skills": [
+  {
+   "tempId": "MathBook2_b15_s1",
+   "bloom": "Remember",
+   "skillFull": "Recall the definition of the absolute value of a real number and its basic properties.",
+   "topicKey": "MAT2_REAL_NUMBERS",
+   "topicLabel": "Real Numbers and Absolute Value",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p4__q11__22"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s2",
+   "bloom": "Understand",
+   "skillFull": "Classify a given number as rational or as irrational.",
+   "topicKey": "MAT2_REAL_NUMBERS",
+   "topicLabel": "Real Numbers and Absolute Value",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p4__q05__16",
+    "MathBook2__p4__q08__19"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s3",
+   "bloom": "Apply",
+   "skillFull": "Determine the least upper bound and the greatest lower bound of a given set of real numbers.",
+   "topicKey": "MAT2_REAL_NUMBERS",
+   "topicLabel": "Real Numbers and Absolute Value",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p3__q09__8",
+    "MathBook2__p4__q07__18"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s4",
+   "bloom": "Apply",
+   "skillFull": "Demonstrate the triangle inequality for the absolute value of a sum or a difference.",
+   "topicKey": "MAT2_REAL_NUMBERS",
+   "topicLabel": "Real Numbers and Absolute Value",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p2__q05__4",
+    "MathBook2__p4__q12__21"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s5",
+   "bloom": "Understand",
+   "skillFull": "Determine which of several order relations between real numbers holds, given stated sign conditions on them.",
+   "topicKey": "MAT2_REAL_NUMBERS",
+   "topicLabel": "Real Numbers and Absolute Value",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p4__q10__21",
+    "MathBook2__p4__q13__23",
+    "MathBook2__p4__q09__20"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s6",
+   "bloom": "Apply",
+   "skillFull": "Solve a linear inequality involving an absolute value.",
+   "topicKey": "MAT2_INEQUALITY",
+   "topicLabel": "Inequalities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p2__q06__5",
+    "MathBook2__p4__q04__15",
+    "MathBook2__p4__q06__17"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s7",
+   "bloom": "Apply",
+   "skillFull": "Solve an inequality in which an absolute value appears in a denominator.",
+   "topicKey": "MAT2_INEQUALITY",
+   "topicLabel": "Inequalities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p2__q04__2",
+    "MathBook2__p3__q08__6",
+    "MathBook2__p3__q12__11"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s8",
+   "bloom": "Apply",
+   "skillFull": "Solve a quadratic inequality by factorising it and testing the sign on each resulting interval.",
+   "topicKey": "MAT2_INEQUALITY",
+   "topicLabel": "Inequalities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p3__q10__9",
+    "MathBook2__p3__q11__10",
+    "MathBook2__p3__q10__8"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s9",
+   "bloom": "Apply",
+   "skillFull": "Solve a rational inequality by comparing two fractional expressions.",
+   "topicKey": "MAT2_INEQUALITY",
+   "topicLabel": "Inequalities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p3__q01__12"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s10",
+   "bloom": "Apply",
+   "skillFull": "Determine the solution set of an inequality containing a radical.",
+   "topicKey": "MAT2_INEQUALITY",
+   "topicLabel": "Inequalities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p4__q02__13"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s11",
+   "bloom": "Apply",
+   "skillFull": "Determine the greatest lower bound and least upper bound of the solution set of a quadratic inequality.",
+   "topicKey": "MAT2_INEQUALITY",
+   "topicLabel": "Inequalities",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p4__q07__17"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s12",
+   "bloom": "Apply",
+   "skillFull": "Formulate a linear programming problem from a worded situation, writing its objective function and its constraints.",
+   "topicKey": "MAT2_LINEAR_PROG",
+   "topicLabel": "Linear Programming",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p5__q02__25",
+    "MathBook2__p6__q02__28",
+    "MathBook2__p7__q05__31"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s13",
+   "bloom": "Apply",
+   "skillFull": "Determine the feasible region of a system of linear inequalities by graphing them.",
+   "topicKey": "MAT2_LINEAR_PROG",
+   "topicLabel": "Linear Programming",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p6__q01__27",
+    "MathBook2__p7__q08__34"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s14",
+   "bloom": "Apply",
+   "skillFull": "Determine the maximum or the minimum value of a linear objective function over a feasible region, by testing its vertices.",
+   "topicKey": "MAT2_LINEAR_PROG",
+   "topicLabel": "Linear Programming",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p5__q03__26",
+    "MathBook2__p6__q04__30",
+    "MathBook2__p7__q06__32"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s15",
+   "bloom": "Remember",
+   "skillFull": "Recall the definition of the imaginary unit and the cyclic pattern of its integer powers.",
+   "topicKey": "MAT2_COMPLEX_ALGEBRA",
+   "topicLabel": "Complex Number Algebra",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p14__q27__85",
+    "MathBook2__p9__q13__48"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s16",
+   "bloom": "Apply",
+   "skillFull": "Calculate the square root of a negative real number.",
+   "topicKey": "MAT2_COMPLEX_ALGEBRA",
+   "topicLabel": "Complex Number Algebra",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p5__q01__24",
+    "MathBook2__p9__q10__45",
+    "MathBook2__p9__q12__47"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s17",
+   "bloom": "Apply",
+   "skillFull": "Calculate the product or the quotient of two complex numbers given in rectangular form.",
+   "topicKey": "MAT2_COMPLEX_ALGEBRA",
+   "topicLabel": "Complex Number Algebra",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p8__q04__38",
+    "MathBook2__p12__q10__68"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s18",
+   "bloom": "Apply",
+   "skillFull": "Express a quotient of complex numbers in the form a plus ib by rationalising the denominator.",
+   "topicKey": "MAT2_COMPLEX_ALGEBRA",
+   "topicLabel": "Complex Number Algebra",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p11__q01__58",
+    "MathBook2__p12__q12__70"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s19",
+   "bloom": "Apply",
+   "skillFull": "Calculate the square root of a complex number given in rectangular form.",
+   "topicKey": "MAT2_COMPLEX_ALGEBRA",
+   "topicLabel": "Complex Number Algebra",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p8__q05__39",
+    "MathBook2__p9__q09__44",
+    "MathBook2__p11__q03__61",
+    "MathBook2__p13__q15__73"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s20",
+   "bloom": "Apply",
+   "skillFull": "Calculate the value of a polynomial expression at a given complex value of the variable.",
+   "topicKey": "MAT2_COMPLEX_ALGEBRA",
+   "topicLabel": "Complex Number Algebra",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p10__q16__51",
+    "MathBook2__p10__q21__56",
+    "MathBook2__p11__q22__57"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s21",
+   "bloom": "Apply",
+   "skillFull": "Demonstrate a stated relation between the real and the imaginary parts of a complex cube root.",
+   "topicKey": "MAT2_COMPLEX_ALGEBRA",
+   "topicLabel": "Complex Number Algebra",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p8__q03__37",
+    "MathBook2__p9__q07__42",
+    "MathBook2__p9__q14__49"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s22",
+   "bloom": "Understand",
+   "skillFull": "Interpret an equation in the modulus of a complex expression as a locus of points in the plane.",
+   "topicKey": "MAT2_COMPLEX_ALGEBRA",
+   "topicLabel": "Complex Number Algebra",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p12__q14__72",
+    "MathBook2__p14__q22__80"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s23",
+   "bloom": "Apply",
+   "skillFull": "Calculate the modulus of a complex number.",
+   "topicKey": "MAT2_COMPLEX_POLAR",
+   "topicLabel": "Polar Form and De Moivre's Theorem",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p9__q11__46",
+    "MathBook2__p13__q16__74"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s24",
+   "bloom": "Apply",
+   "skillFull": "Calculate the argument of a complex number, taking account of the quadrant in which it lies.",
+   "topicKey": "MAT2_COMPLEX_POLAR",
+   "topicLabel": "Polar Form and De Moivre's Theorem",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p9__q08__43",
+    "MathBook2__p15__q29__87"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s25",
+   "bloom": "Apply",
+   "skillFull": "Express a complex number in polar or in exponential form.",
+   "topicKey": "MAT2_COMPLEX_POLAR",
+   "topicLabel": "Polar Form and De Moivre's Theorem",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p8__q04__38",
+    "MathBook2__p13__q18__76",
+    "MathBook2__p15__q31__89"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s26",
+   "bloom": "Apply",
+   "skillFull": "Calculate a power of a complex number using De Moivre's theorem.",
+   "topicKey": "MAT2_COMPLEX_POLAR",
+   "topicLabel": "Polar Form and De Moivre's Theorem",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p13__q19__77",
+    "MathBook2__p14__q26__84"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s27",
+   "bloom": "Apply",
+   "skillFull": "Calculate the modulus of a product or a quotient of complex numbers using the multiplicative property of the modulus.",
+   "topicKey": "MAT2_COMPLEX_POLAR",
+   "topicLabel": "Polar Form and De Moivre's Theorem",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p14__q21__79"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s28",
+   "bloom": "Apply",
+   "skillFull": "Calculate the principal value of the logarithm of a complex number.",
+   "topicKey": "MAT2_COMPLEX_POLAR",
+   "topicLabel": "Polar Form and De Moivre's Theorem",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p12__q11__69",
+    "MathBook2__p8__q02__36"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s29",
+   "bloom": "Remember",
+   "skillFull": "Recall the three cube roots of unity and the relations that they satisfy.",
+   "topicKey": "MAT2_COMPLEX_ROOTS",
+   "topicLabel": "Roots of Unity",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p9__q13__48",
+    "MathBook2__p11__q05__63"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s30",
+   "bloom": "Apply",
+   "skillFull": "Calculate the value of an expression in the complex cube roots of unity by reducing its exponents.",
+   "topicKey": "MAT2_COMPLEX_ROOTS",
+   "topicLabel": "Roots of Unity",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p11__q29__60",
+    "MathBook2__p13__q17__75",
+    "MathBook2__p14__q20__78"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s31",
+   "bloom": "Apply",
+   "skillFull": "Calculate the nth roots of a given complex number using De Moivre's theorem.",
+   "topicKey": "MAT2_COMPLEX_ROOTS",
+   "topicLabel": "Roots of Unity",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p10__q19__54",
+    "MathBook2__p11__q02__59",
+    "MathBook2__p15__q30__88",
+    "MathBook2__p14__q24__82"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s32",
+   "bloom": "Apply",
+   "skillFull": "Determine the sum of all the nth roots of a given complex number.",
+   "topicKey": "MAT2_COMPLEX_ROOTS",
+   "topicLabel": "Roots of Unity",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p7__q01__35",
+    "MathBook2__p10__q17__52"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s33",
+   "bloom": "Apply",
+   "skillFull": "Factorise a symmetric cubic expression using the complex cube roots of unity.",
+   "topicKey": "MAT2_COMPLEX_ROOTS",
+   "topicLabel": "Roots of Unity",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p11__q04__62"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s34",
+   "bloom": "Remember",
+   "skillFull": "Recall the relations between the roots and the coefficients of a quadratic equation.",
+   "topicKey": "MAT2_POLYNOMIAL",
+   "topicLabel": "Polynomials and the Remainder Theorem",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p15__q01__90"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s35",
+   "bloom": "Remember",
+   "skillFull": "Recall the relations between the roots and the coefficients of a cubic equation.",
+   "topicKey": "MAT2_POLYNOMIAL",
+   "topicLabel": "Polynomials and the Remainder Theorem",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p16__q07__96",
+    "MathBook2__p22__q04__123"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s36",
+   "bloom": "Apply",
+   "skillFull": "Calculate a symmetric function of the roots of a quadratic equation from its coefficients.",
+   "topicKey": "MAT2_POLYNOMIAL",
+   "topicLabel": "Polynomials and the Remainder Theorem",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p16__q02__91",
+    "MathBook2__p17__q12__101",
+    "MathBook2__p20__q22__111"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s37",
+   "bloom": "Apply",
+   "skillFull": "Calculate a symmetric function of the roots of a cubic equation from its coefficients.",
+   "topicKey": "MAT2_POLYNOMIAL",
+   "topicLabel": "Polynomials and the Remainder Theorem",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p21__q28__117",
+    "MathBook2__p21__q03__122"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s38",
+   "bloom": "Apply",
+   "skillFull": "Form a quadratic equation whose roots are given expressions in the roots of another quadratic equation.",
+   "topicKey": "MAT2_POLYNOMIAL",
+   "topicLabel": "Polynomials and the Remainder Theorem",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p16__q04__94",
+    "MathBook2__p17__q10__99",
+    "MathBook2__p25__q28__147"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s39",
+   "bloom": "Apply",
+   "skillFull": "Form an equation whose roots are the reciprocals, the squares or another stated transform of the roots of a given equation.",
+   "topicKey": "MAT2_POLYNOMIAL",
+   "topicLabel": "Polynomials and the Remainder Theorem",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p21__q27__116",
+    "MathBook2__p24__q23__142"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s40",
+   "bloom": "Apply",
+   "skillFull": "Determine the nature of the roots of a quadratic equation from the sign and form of its discriminant.",
+   "topicKey": "MAT2_POLY_ROOTS",
+   "topicLabel": "Roots of Polynomial Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p18__q15__104",
+    "MathBook2__p24__q21__140",
+    "MathBook2__p23__q18__137"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s41",
+   "bloom": "Apply",
+   "skillFull": "Determine the value of a parameter for which a quadratic equation has equal roots.",
+   "topicKey": "MAT2_POLY_ROOTS",
+   "topicLabel": "Roots of Polynomial Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p20__q24__113",
+    "MathBook2__p25__q26__145",
+    "MathBook2__p23__q16__134"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s42",
+   "bloom": "Apply",
+   "skillFull": "Determine the value of a parameter for which the roots of a quadratic satisfy a stated ratio or relation.",
+   "topicKey": "MAT2_POLY_ROOTS",
+   "topicLabel": "Roots of Polynomial Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p17__q11__100",
+    "MathBook2__p18__q17__107",
+    "MathBook2__p20__q23__112",
+    "MathBook2__p22__q06__125"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s43",
+   "bloom": "Apply",
+   "skillFull": "Determine the condition under which two given quadratic equations have a common root.",
+   "topicKey": "MAT2_POLY_ROOTS",
+   "topicLabel": "Roots of Polynomial Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p18__q14__103",
+    "MathBook2__p20__q26__115",
+    "MathBook2__p25__q30__149"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s44",
+   "bloom": "Apply",
+   "skillFull": "Determine the remaining roots of a polynomial equation when one root is given.",
+   "topicKey": "MAT2_POLY_ROOTS",
+   "topicLabel": "Roots of Polynomial Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p17__q09__98",
+    "MathBook2__p23__q12__131",
+    "MathBook2__p23__q13__132"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s45",
+   "bloom": "Apply",
+   "skillFull": "Solve a cubic equation whose roots are in arithmetic or in geometric progression.",
+   "topicKey": "MAT2_POLY_ROOTS",
+   "topicLabel": "Roots of Polynomial Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p21__q30__119"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s46",
+   "bloom": "Apply",
+   "skillFull": "Determine the value of a parameter for which a quadratic expression is a perfect square.",
+   "topicKey": "MAT2_POLY_ROOTS",
+   "topicLabel": "Roots of Polynomial Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p24__q25__143",
+    "MathBook2__p23__q20__139"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s47",
+   "bloom": "Analyze",
+   "skillFull": "Determine the interval in which a real root of a polynomial equation lies, by evaluating the polynomial at the endpoints.",
+   "topicKey": "MAT2_POLY_ROOTS",
+   "topicLabel": "Roots of Polynomial Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p23__q17__136",
+    "MathBook2__p22__q09__128"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b15_s48",
+   "bloom": "Apply",
+   "skillFull": "Solve a polynomial equation that reduces to a quadratic after expansion or a suitable substitution.",
+   "topicKey": "MAT2_POLY_ROOTS",
+   "topicLabel": "Roots of Polynomial Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p23__q14__133",
+    "MathBook2__p24__q22__141"
+   ]
+  }
+ ],
+ "prereqs": [
+  {
+   "fromTempId": "MathBook2_b15_s3",
+   "toTempId": "MathBook2_b15_s1",
+   "toDescription": "Recall the definition of the absolute value of a real number and its basic properties.",
+   "toTopicKeyGuess": "MAT2_REAL_NUMBERS"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s3",
+   "toTempId": "MathBook2_b15_s2",
+   "toDescription": "Classify a given number as rational or as irrational.",
+   "toTopicKeyGuess": "MAT2_REAL_NUMBERS"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s4",
+   "toTempId": "MathBook2_b15_s1",
+   "toDescription": "Recall the definition of the absolute value of a real number and its basic properties.",
+   "toTopicKeyGuess": "MAT2_REAL_NUMBERS"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s5",
+   "toTempId": "MathBook2_b15_s1",
+   "toDescription": "Recall the definition of the absolute value of a real number and its basic properties.",
+   "toTopicKeyGuess": "MAT2_REAL_NUMBERS"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s6",
+   "toTempId": "MathBook2_b15_s1",
+   "toDescription": "Recall the definition of the absolute value of a real number and its basic properties.",
+   "toTopicKeyGuess": "MAT2_REAL_NUMBERS"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s7",
+   "toTempId": "MathBook2_b15_s6",
+   "toDescription": "Solve a linear inequality involving an absolute value.",
+   "toTopicKeyGuess": "MAT2_INEQUALITY"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s8",
+   "toTempId": "MathBook2_b15_s2",
+   "toDescription": "Classify a given number as rational or as irrational.",
+   "toTopicKeyGuess": "MAT2_REAL_NUMBERS"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s9",
+   "toTempId": "MathBook2_b15_s8",
+   "toDescription": "Solve a quadratic inequality by factorising it and testing the sign on each resulting interval.",
+   "toTopicKeyGuess": "MAT2_INEQUALITY"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s10",
+   "toTempId": "MathBook2_b15_s8",
+   "toDescription": "Solve a quadratic inequality by factorising it and testing the sign on each resulting interval.",
+   "toTopicKeyGuess": "MAT2_INEQUALITY"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s11",
+   "toTempId": "MathBook2_b15_s8",
+   "toDescription": "Solve a quadratic inequality by factorising it and testing the sign on each resulting interval.",
+   "toTopicKeyGuess": "MAT2_INEQUALITY"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s13",
+   "toTempId": "MathBook2_b15_s12",
+   "toDescription": "Formulate a linear programming problem from a worded situation, writing its objective function and its constraints.",
+   "toTopicKeyGuess": "MAT2_LINEAR_PROG"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s14",
+   "toTempId": "MathBook2_b15_s13",
+   "toDescription": "Determine the feasible region of a system of linear inequalities by graphing them.",
+   "toTopicKeyGuess": "MAT2_LINEAR_PROG"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s13",
+   "toTempId": "MathBook2_b15_s8",
+   "toDescription": "Solve a quadratic inequality by factorising it and testing the sign on each resulting interval.",
+   "toTopicKeyGuess": "MAT2_INEQUALITY"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s16",
+   "toTempId": "MathBook2_b15_s15",
+   "toDescription": "Recall the definition of the imaginary unit and the cyclic pattern of its integer powers.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_ALGEBRA"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s17",
+   "toTempId": "MathBook2_b15_s15",
+   "toDescription": "Recall the definition of the imaginary unit and the cyclic pattern of its integer powers.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_ALGEBRA"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s18",
+   "toTempId": "MathBook2_b15_s17",
+   "toDescription": "Calculate the product or the quotient of two complex numbers given in rectangular form.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_ALGEBRA"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s19",
+   "toTempId": "MathBook2_b15_s17",
+   "toDescription": "Calculate the product or the quotient of two complex numbers given in rectangular form.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_ALGEBRA"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s20",
+   "toTempId": "MathBook2_b15_s17",
+   "toDescription": "Calculate the product or the quotient of two complex numbers given in rectangular form.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_ALGEBRA"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s21",
+   "toTempId": "MathBook2_b15_s19",
+   "toDescription": "Calculate the square root of a complex number given in rectangular form.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_ALGEBRA"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s22",
+   "toTempId": "MathBook2_b15_s23",
+   "toDescription": "Calculate the modulus of a complex number.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_POLAR"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s22",
+   "toTempId": "MathBook2_b15_s15",
+   "toDescription": "Recall the definition of the imaginary unit and the cyclic pattern of its integer powers.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_ALGEBRA"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s23",
+   "toTempId": "MathBook2_b15_s15",
+   "toDescription": "Recall the definition of the imaginary unit and the cyclic pattern of its integer powers.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_ALGEBRA"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s24",
+   "toTempId": "MathBook2_b15_s23",
+   "toDescription": "Calculate the modulus of a complex number.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_POLAR"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s25",
+   "toTempId": "MathBook2_b15_s24",
+   "toDescription": "Calculate the argument of a complex number, taking account of the quadrant in which it lies.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_POLAR"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s26",
+   "toTempId": "MathBook2_b15_s25",
+   "toDescription": "Express a complex number in polar or in exponential form.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_POLAR"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s27",
+   "toTempId": "MathBook2_b15_s23",
+   "toDescription": "Calculate the modulus of a complex number.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_POLAR"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s28",
+   "toTempId": "MathBook2_b15_s25",
+   "toDescription": "Express a complex number in polar or in exponential form.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_POLAR"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s29",
+   "toTempId": "MathBook2_b15_s15",
+   "toDescription": "Recall the definition of the imaginary unit and the cyclic pattern of its integer powers.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_ALGEBRA"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s30",
+   "toTempId": "MathBook2_b15_s29",
+   "toDescription": "Recall the three cube roots of unity and the relations that they satisfy.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_ROOTS"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s31",
+   "toTempId": "MathBook2_b15_s26",
+   "toDescription": "Calculate a power of a complex number using De Moivre's theorem.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_POLAR"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s32",
+   "toTempId": "MathBook2_b15_s31",
+   "toDescription": "Calculate the nth roots of a given complex number using De Moivre's theorem.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_ROOTS"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s33",
+   "toTempId": "MathBook2_b15_s29",
+   "toDescription": "Recall the three cube roots of unity and the relations that they satisfy.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_ROOTS"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s33",
+   "toTempId": "MathBook2_b15_s17",
+   "toDescription": "Calculate the product or the quotient of two complex numbers given in rectangular form.",
+   "toTopicKeyGuess": "MAT2_COMPLEX_ALGEBRA"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s35",
+   "toTempId": "MathBook2_b15_s34",
+   "toDescription": "Recall the relations between the roots and the coefficients of a quadratic equation.",
+   "toTopicKeyGuess": "MAT2_POLYNOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s36",
+   "toTempId": "MathBook2_b15_s34",
+   "toDescription": "Recall the relations between the roots and the coefficients of a quadratic equation.",
+   "toTopicKeyGuess": "MAT2_POLYNOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s37",
+   "toTempId": "MathBook2_b15_s35",
+   "toDescription": "Recall the relations between the roots and the coefficients of a cubic equation.",
+   "toTopicKeyGuess": "MAT2_POLYNOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s38",
+   "toTempId": "MathBook2_b15_s36",
+   "toDescription": "Calculate a symmetric function of the roots of a quadratic equation from its coefficients.",
+   "toTopicKeyGuess": "MAT2_POLYNOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s39",
+   "toTempId": "MathBook2_b15_s36",
+   "toDescription": "Calculate a symmetric function of the roots of a quadratic equation from its coefficients.",
+   "toTopicKeyGuess": "MAT2_POLYNOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s39",
+   "toTempId": "MathBook2_b15_s35",
+   "toDescription": "Recall the relations between the roots and the coefficients of a cubic equation.",
+   "toTopicKeyGuess": "MAT2_POLYNOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s40",
+   "toTempId": "MathBook2_b15_s34",
+   "toDescription": "Recall the relations between the roots and the coefficients of a quadratic equation.",
+   "toTopicKeyGuess": "MAT2_POLYNOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s41",
+   "toTempId": "MathBook2_b15_s40",
+   "toDescription": "Determine the nature of the roots of a quadratic equation from the sign and form of its discriminant.",
+   "toTopicKeyGuess": "MAT2_POLY_ROOTS"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s42",
+   "toTempId": "MathBook2_b15_s36",
+   "toDescription": "Calculate a symmetric function of the roots of a quadratic equation from its coefficients.",
+   "toTopicKeyGuess": "MAT2_POLYNOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s43",
+   "toTempId": "MathBook2_b15_s34",
+   "toDescription": "Recall the relations between the roots and the coefficients of a quadratic equation.",
+   "toTopicKeyGuess": "MAT2_POLYNOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s44",
+   "toTempId": "MathBook2_b15_s35",
+   "toDescription": "Recall the relations between the roots and the coefficients of a cubic equation.",
+   "toTopicKeyGuess": "MAT2_POLYNOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s45",
+   "toTempId": "MathBook2_b15_s35",
+   "toDescription": "Recall the relations between the roots and the coefficients of a cubic equation.",
+   "toTopicKeyGuess": "MAT2_POLYNOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s46",
+   "toTempId": "MathBook2_b15_s41",
+   "toDescription": "Determine the value of a parameter for which a quadratic equation has equal roots.",
+   "toTopicKeyGuess": "MAT2_POLY_ROOTS"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s47",
+   "toTempId": "MathBook2_b15_s35",
+   "toDescription": "Recall the relations between the roots and the coefficients of a cubic equation.",
+   "toTopicKeyGuess": "MAT2_POLYNOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s47",
+   "toTempId": "MathBook2_b15_s8",
+   "toDescription": "Solve a quadratic inequality by factorising it and testing the sign on each resulting interval.",
+   "toTopicKeyGuess": "MAT2_INEQUALITY"
+  },
+  {
+   "fromTempId": "MathBook2_b15_s48",
+   "toTempId": "MathBook2_b15_s34",
+   "toDescription": "Recall the relations between the roots and the coefficients of a quadratic equation.",
+   "toTopicKeyGuess": "MAT2_POLYNOMIAL"
+  }
+ ],
+ "reusedExistingSkills": [],
+ "newTopicsProposed": [],
+ "skippedItems": [],
+ "notes": "Records 1-150 of MathBook2 (parsed_items.jsonl lines 2491-2640). FIRST BATCH OF MathBook2. Coverage maps cleanly onto four HM 2nd Paper chapters: real numbers and inequalities (Ch1, records 1-24), linear programming (Ch2, records 25-35), complex numbers (Ch3, records 36-90), and polynomials and polynomial equations (Ch4, records 91-150). Uses syllabus topic codes directly - eight of them, all previously empty, so this batch is the first content for HM 2nd Paper Ch1, Ch2 and Ch3. No new topics needed: the syllabus taxonomy covered every record. All descriptions are plain text with no backslashes."
+}

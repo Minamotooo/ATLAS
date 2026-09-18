@@ -1,0 +1,783 @@
+{
+ "chunkLabel": "MathBook2_b16",
+ "subject": "Mathematics",
+ "skills": [
+  {
+   "tempId": "MathBook2_b16_s1",
+   "bloom": "Remember",
+   "skillFull": "Recall the general term of the binomial expansion of a positive integral power.",
+   "topicKey": "MAT2_BINOMIAL",
+   "topicLabel": "Binomial Expansion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p31__q09__182"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s2",
+   "bloom": "Apply",
+   "skillFull": "Determine the coefficient of a stated power of the variable in a binomial expansion.",
+   "topicKey": "MAT2_BINOMIAL",
+   "topicLabel": "Binomial Expansion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p30__q20__171",
+    "MathBook2__p33__q20__193",
+    "MathBook2__p32__q13__186"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s3",
+   "bloom": "Apply",
+   "skillFull": "Determine the term independent of the variable in a binomial expansion.",
+   "topicKey": "MAT2_BINOMIAL",
+   "topicLabel": "Binomial Expansion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p27__q05__156",
+    "MathBook2__p28__q10__161",
+    "MathBook2__p31__q06__179",
+    "MathBook2__p33__q22__195"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s4",
+   "bloom": "Apply",
+   "skillFull": "Determine the middle term or the two middle terms of a binomial expansion.",
+   "topicKey": "MAT2_BINOMIAL",
+   "topicLabel": "Binomial Expansion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p29__q19__170",
+    "MathBook2__p33__q19__192"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s5",
+   "bloom": "Apply",
+   "skillFull": "Determine a stated numbered term of a binomial expansion from its general term.",
+   "topicKey": "MAT2_BINOMIAL",
+   "topicLabel": "Binomial Expansion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p31__q09__182",
+    "MathBook2__p32__q12__185"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s6",
+   "bloom": "Apply",
+   "skillFull": "Determine an unknown constant in a binomial expression from a stated condition relating two of its coefficients.",
+   "topicKey": "MAT2_BINOMIAL",
+   "topicLabel": "Binomial Expansion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p27__q08__158",
+    "MathBook2__p31__q04__177",
+    "MathBook2__p32__q14__187"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s7",
+   "bloom": "Apply",
+   "skillFull": "Determine the exponent of a binomial expansion from a stated relation between consecutive coefficients.",
+   "topicKey": "MAT2_BINOMIAL",
+   "topicLabel": "Binomial Expansion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p27__q07__157",
+    "MathBook2__p27__q09__160",
+    "MathBook2__p33__q21__194"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s8",
+   "bloom": "Remember",
+   "skillFull": "Recall the condition of validity for the binomial expansion of a negative or a fractional index.",
+   "topicKey": "MAT2_BINOMIAL",
+   "topicLabel": "Binomial Expansion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p29__q18__169",
+    "MathBook2__p30__q22__172"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s9",
+   "bloom": "Apply",
+   "skillFull": "Expand a binomial with a negative or a fractional index as an infinite series.",
+   "topicKey": "MAT2_BINOMIAL",
+   "topicLabel": "Binomial Expansion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p29__q18__169",
+    "MathBook2__p31__q10__183"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s10",
+   "bloom": "Apply",
+   "skillFull": "Determine the coefficient of a general term in the expansion of a rational function, by first resolving it into partial fractions.",
+   "topicKey": "MAT2_BINOMIAL",
+   "topicLabel": "Binomial Expansion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p31__q08__181",
+    "MathBook2__p32__q16__189",
+    "MathBook2__p33__q17__190",
+    "MathBook2__p33__q18__191"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s11",
+   "bloom": "Apply",
+   "skillFull": "Calculate the sum of an infinite series by recognising it as a binomial expansion.",
+   "topicKey": "MAT2_BINOMIAL",
+   "topicLabel": "Binomial Expansion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p26__q01__152",
+    "MathBook2__p26__q04__155",
+    "MathBook2__p28__q12__162"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s12",
+   "bloom": "Apply",
+   "skillFull": "Calculate the sum of an infinite series by recognising it as a logarithmic or an exponential expansion.",
+   "topicKey": "MAT2_BINOMIAL",
+   "topicLabel": "Binomial Expansion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p31__q03__176",
+    "MathBook2__p32__q15__188"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s13",
+   "bloom": "Apply",
+   "skillFull": "Determine the variable of an infinite series by inverting the series relation.",
+   "topicKey": "MAT2_BINOMIAL",
+   "topicLabel": "Binomial Expansion",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p29__q16__167",
+    "MathBook2__p30__q21__173"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s14",
+   "bloom": "Remember",
+   "skillFull": "Recall the standard equation of a parabola and the meaning of its focus, directrix, vertex and latus rectum.",
+   "topicKey": "MAT2_PARABOLA",
+   "topicLabel": "Parabola",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p48__q28__262"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s15",
+   "bloom": "Apply",
+   "skillFull": "Determine the vertex, focus, axis and directrix of a parabola from its equation, by completing the square.",
+   "topicKey": "MAT2_PARABOLA",
+   "topicLabel": "Parabola",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p38__q20__215",
+    "MathBook2__p41__q29__224",
+    "MathBook2__p43__q36__231"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s16",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of a parabola from its focus and its directrix.",
+   "topicKey": "MAT2_PARABOLA",
+   "topicLabel": "Parabola",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p38__q18__213",
+    "MathBook2__p48__q31__266"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s17",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of a parabola from its vertex and its focus.",
+   "topicKey": "MAT2_PARABOLA",
+   "topicLabel": "Parabola",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p40__q27__222",
+    "MathBook2__p48__q30__265",
+    "MathBook2__p37__q16__211"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s18",
+   "bloom": "Apply",
+   "skillFull": "Calculate the length of the latus rectum of a parabola.",
+   "topicKey": "MAT2_PARABOLA",
+   "topicLabel": "Parabola",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p42__q35__230"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s19",
+   "bloom": "Apply",
+   "skillFull": "Determine the condition for a given straight line to be a tangent to a parabola.",
+   "topicKey": "MAT2_PARABOLA",
+   "topicLabel": "Parabola",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p34__q02__197",
+    "MathBook2__p41__q31__226",
+    "MathBook2__p45__q07__242",
+    "MathBook2__p47__q25__261"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s20",
+   "bloom": "Apply",
+   "skillFull": "Determine a point on a parabola that satisfies a stated condition.",
+   "topicKey": "MAT2_PARABOLA",
+   "topicLabel": "Parabola",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p40__q25__220",
+    "MathBook2__p45__q09__244",
+    "MathBook2__p47__q24__259"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s21",
+   "bloom": "Remember",
+   "skillFull": "Recall the parametric equations of a parabola.",
+   "topicKey": "MAT2_PARABOLA",
+   "topicLabel": "Parabola",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p45__q13__248"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s22",
+   "bloom": "Remember",
+   "skillFull": "Recall the standard equation of an ellipse and the meaning of its axes, foci, directrices and eccentricity.",
+   "topicKey": "MAT2_ELLIPSE",
+   "topicLabel": "Ellipse",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p44__q01__236"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s23",
+   "bloom": "Apply",
+   "skillFull": "Determine the centre, foci, axes and eccentricity of an ellipse from its equation, by completing the square.",
+   "topicKey": "MAT2_ELLIPSE",
+   "topicLabel": "Ellipse",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p35__q08__203",
+    "MathBook2__p43__q39__234",
+    "MathBook2__p44__q06__241",
+    "MathBook2__p46__q14__249"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s24",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of an ellipse from stated axes, foci or eccentricity.",
+   "topicKey": "MAT2_ELLIPSE",
+   "topicLabel": "Ellipse",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p34__q03__198",
+    "MathBook2__p38__q19__214",
+    "MathBook2__p40__q26__221",
+    "MathBook2__p47__q23__258"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s25",
+   "bloom": "Apply",
+   "skillFull": "Calculate the length of the latus rectum of an ellipse.",
+   "topicKey": "MAT2_ELLIPSE",
+   "topicLabel": "Ellipse",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p45__q12__247",
+    "MathBook2__p46__q20__255",
+    "MathBook2__p49__q34__269"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s26",
+   "bloom": "Apply",
+   "skillFull": "Determine the equations of the directrices of an ellipse.",
+   "topicKey": "MAT2_ELLIPSE",
+   "topicLabel": "Ellipse",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p41__q30__225",
+    "MathBook2__p46__q18__253"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s27",
+   "bloom": "Apply",
+   "skillFull": "Determine an unknown parameter of an ellipse from a stated condition on its eccentricity or latus rectum.",
+   "topicKey": "MAT2_ELLIPSE",
+   "topicLabel": "Ellipse",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p35__q07__202",
+    "MathBook2__p45__q11__246",
+    "MathBook2__p50__q38__273"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s28",
+   "bloom": "Apply",
+   "skillFull": "Calculate the area enclosed by an ellipse.",
+   "topicKey": "MAT2_ELLIPSE",
+   "topicLabel": "Ellipse",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p46__q16__251"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s29",
+   "bloom": "Remember",
+   "skillFull": "Recall the standard equation of a hyperbola and the meaning of its transverse and conjugate axes.",
+   "topicKey": "MAT2_HYPERBOLA",
+   "topicLabel": "Hyperbola",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p36__q14__209",
+    "MathBook2__p36__q13__208"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s30",
+   "bloom": "Apply",
+   "skillFull": "Determine the centre, foci, axes and eccentricity of a hyperbola from its equation.",
+   "topicKey": "MAT2_HYPERBOLA",
+   "topicLabel": "Hyperbola",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p36__q11__206",
+    "MathBook2__p48__q29__263",
+    "MathBook2__p49__q36__270"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s31",
+   "bloom": "Apply",
+   "skillFull": "Determine the equation of a hyperbola from its foci, its axes or its eccentricity.",
+   "topicKey": "MAT2_HYPERBOLA",
+   "topicLabel": "Hyperbola",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p35__q09__204",
+    "MathBook2__p46__q19__254",
+    "MathBook2__p50__q37__272"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s32",
+   "bloom": "Understand",
+   "skillFull": "Classify a general second-degree equation as a parabola, an ellipse or a hyperbola.",
+   "topicKey": "MAT2_HYPERBOLA",
+   "topicLabel": "Hyperbola",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p44__q05__240",
+    "MathBook2__p50__q40__275",
+    "MathBook2__p43__q38__233"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s33",
+   "bloom": "Apply",
+   "skillFull": "Calculate the value of a trigonometric function applied to an inverse trigonometric expression.",
+   "topicKey": "MAT2_INVERSE_TRIG",
+   "topicLabel": "Inverse Trigonometric Functions",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p52__q10__287",
+    "MathBook2__p52__q09__286"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s34",
+   "bloom": "Apply",
+   "skillFull": "Solve an equation involving a sum or a difference of inverse trigonometric functions.",
+   "topicKey": "MAT2_INVERSE_TRIG",
+   "topicLabel": "Inverse Trigonometric Functions",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p51__q01__278",
+    "MathBook2__p51__q03__280",
+    "MathBook2__p52__q08__285"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s35",
+   "bloom": "Apply",
+   "skillFull": "Demonstrate an identity relating two inverse trigonometric expressions.",
+   "topicKey": "MAT2_INVERSE_TRIG",
+   "topicLabel": "Inverse Trigonometric Functions",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p53__q14__291",
+    "MathBook2__p54__q19__296"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s36",
+   "bloom": "Apply",
+   "skillFull": "Calculate the value of a sum of two inverse sine or inverse tangent expressions.",
+   "topicKey": "MAT2_INVERSE_TRIG",
+   "topicLabel": "Inverse Trigonometric Functions",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p53__q16__293"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s37",
+   "bloom": "Remember",
+   "skillFull": "Recall the general solution of the basic trigonometric equations in sine, cosine and tangent.",
+   "topicKey": "MAT2_TRIG_EQUATION",
+   "topicLabel": "Trigonometric Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p52__q11__288",
+    "MathBook2__p53__q12__289"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s38",
+   "bloom": "Apply",
+   "skillFull": "Solve a trigonometric equation of the form a sine x plus b cosine x equals c.",
+   "topicKey": "MAT2_TRIG_EQUATION",
+   "topicLabel": "Trigonometric Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p54__q17__294",
+    "MathBook2__p54__q18__295",
+    "MathBook2__p55__q22__299"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s39",
+   "bloom": "Apply",
+   "skillFull": "Solve a trigonometric equation by converting a sum of sines or cosines into a product.",
+   "topicKey": "MAT2_TRIG_EQUATION",
+   "topicLabel": "Trigonometric Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p52__q05__282",
+    "MathBook2__p53__q13__290",
+    "MathBook2__p54__q21__298"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s40",
+   "bloom": "Apply",
+   "skillFull": "Solve a trigonometric equation by factorising it after applying a multiple-angle identity.",
+   "topicKey": "MAT2_TRIG_EQUATION",
+   "topicLabel": "Trigonometric Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p53__q15__292",
+    "MathBook2__p54__q20__297",
+    "MathBook2__p51__q04__281"
+   ]
+  },
+  {
+   "tempId": "MathBook2_b16_s41",
+   "bloom": "Apply",
+   "skillFull": "Determine the solutions of a trigonometric equation that lie within a stated interval.",
+   "topicKey": "MAT2_TRIG_EQUATION",
+   "topicLabel": "Trigonometric Equations",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook2__p54__q18__295",
+    "MathBook2__p53__q15__292"
+   ]
+  }
+ ],
+ "prereqs": [
+  {
+   "fromTempId": "MathBook2_b16_s2",
+   "toTempId": "MathBook2_b16_s1",
+   "toDescription": "Recall the general term of the binomial expansion of a positive integral power.",
+   "toTopicKeyGuess": "MAT2_BINOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s3",
+   "toTempId": "MathBook2_b16_s1",
+   "toDescription": "Recall the general term of the binomial expansion of a positive integral power.",
+   "toTopicKeyGuess": "MAT2_BINOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s3",
+   "toTempId": "MathBook2_b16_s2",
+   "toDescription": "Determine the coefficient of a stated power of the variable in a binomial expansion.",
+   "toTopicKeyGuess": "MAT2_BINOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s4",
+   "toTempId": "MathBook2_b16_s1",
+   "toDescription": "Recall the general term of the binomial expansion of a positive integral power.",
+   "toTopicKeyGuess": "MAT2_BINOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s5",
+   "toTempId": "MathBook2_b16_s1",
+   "toDescription": "Recall the general term of the binomial expansion of a positive integral power.",
+   "toTopicKeyGuess": "MAT2_BINOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s6",
+   "toTempId": "MathBook2_b16_s2",
+   "toDescription": "Determine the coefficient of a stated power of the variable in a binomial expansion.",
+   "toTopicKeyGuess": "MAT2_BINOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s7",
+   "toTempId": "MathBook2_b16_s2",
+   "toDescription": "Determine the coefficient of a stated power of the variable in a binomial expansion.",
+   "toTopicKeyGuess": "MAT2_BINOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s8",
+   "toTempId": "MathBook2_b16_s1",
+   "toDescription": "Recall the general term of the binomial expansion of a positive integral power.",
+   "toTopicKeyGuess": "MAT2_BINOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s9",
+   "toTempId": "MathBook2_b16_s8",
+   "toDescription": "Recall the condition of validity for the binomial expansion of a negative or a fractional index.",
+   "toTopicKeyGuess": "MAT2_BINOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s10",
+   "toTempId": "MathBook2_b16_s9",
+   "toDescription": "Expand a binomial with a negative or a fractional index as an infinite series.",
+   "toTopicKeyGuess": "MAT2_BINOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s11",
+   "toTempId": "MathBook2_b16_s9",
+   "toDescription": "Expand a binomial with a negative or a fractional index as an infinite series.",
+   "toTopicKeyGuess": "MAT2_BINOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s12",
+   "toTempId": "MathBook2_b16_s11",
+   "toDescription": "Calculate the sum of an infinite series by recognising it as a binomial expansion.",
+   "toTopicKeyGuess": "MAT2_BINOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s13",
+   "toTempId": "MathBook2_b16_s11",
+   "toDescription": "Calculate the sum of an infinite series by recognising it as a binomial expansion.",
+   "toTopicKeyGuess": "MAT2_BINOMIAL"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s15",
+   "toTempId": "MathBook2_b16_s14",
+   "toDescription": "Recall the standard equation of a parabola and the meaning of its focus, directrix, vertex and latus rectum.",
+   "toTopicKeyGuess": "MAT2_PARABOLA"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s16",
+   "toTempId": "MathBook2_b16_s14",
+   "toDescription": "Recall the standard equation of a parabola and the meaning of its focus, directrix, vertex and latus rectum.",
+   "toTopicKeyGuess": "MAT2_PARABOLA"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s17",
+   "toTempId": "MathBook2_b16_s14",
+   "toDescription": "Recall the standard equation of a parabola and the meaning of its focus, directrix, vertex and latus rectum.",
+   "toTopicKeyGuess": "MAT2_PARABOLA"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s18",
+   "toTempId": "MathBook2_b16_s14",
+   "toDescription": "Recall the standard equation of a parabola and the meaning of its focus, directrix, vertex and latus rectum.",
+   "toTopicKeyGuess": "MAT2_PARABOLA"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s19",
+   "toTempId": "MathBook2_b16_s15",
+   "toDescription": "Determine the vertex, focus, axis and directrix of a parabola from its equation, by completing the square.",
+   "toTopicKeyGuess": "MAT2_PARABOLA"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s20",
+   "toTempId": "MathBook2_b16_s15",
+   "toDescription": "Determine the vertex, focus, axis and directrix of a parabola from its equation, by completing the square.",
+   "toTopicKeyGuess": "MAT2_PARABOLA"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s21",
+   "toTempId": "MathBook2_b16_s14",
+   "toDescription": "Recall the standard equation of a parabola and the meaning of its focus, directrix, vertex and latus rectum.",
+   "toTopicKeyGuess": "MAT2_PARABOLA"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s22",
+   "toTempId": "MathBook2_b16_s14",
+   "toDescription": "Recall the standard equation of a parabola and the meaning of its focus, directrix, vertex and latus rectum.",
+   "toTopicKeyGuess": "MAT2_PARABOLA"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s23",
+   "toTempId": "MathBook2_b16_s22",
+   "toDescription": "Recall the standard equation of an ellipse and the meaning of its axes, foci, directrices and eccentricity.",
+   "toTopicKeyGuess": "MAT2_ELLIPSE"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s24",
+   "toTempId": "MathBook2_b16_s22",
+   "toDescription": "Recall the standard equation of an ellipse and the meaning of its axes, foci, directrices and eccentricity.",
+   "toTopicKeyGuess": "MAT2_ELLIPSE"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s25",
+   "toTempId": "MathBook2_b16_s22",
+   "toDescription": "Recall the standard equation of an ellipse and the meaning of its axes, foci, directrices and eccentricity.",
+   "toTopicKeyGuess": "MAT2_ELLIPSE"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s26",
+   "toTempId": "MathBook2_b16_s23",
+   "toDescription": "Determine the centre, foci, axes and eccentricity of an ellipse from its equation, by completing the square.",
+   "toTopicKeyGuess": "MAT2_ELLIPSE"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s27",
+   "toTempId": "MathBook2_b16_s24",
+   "toDescription": "Determine the equation of an ellipse from stated axes, foci or eccentricity.",
+   "toTopicKeyGuess": "MAT2_ELLIPSE"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s28",
+   "toTempId": "MathBook2_b16_s22",
+   "toDescription": "Recall the standard equation of an ellipse and the meaning of its axes, foci, directrices and eccentricity.",
+   "toTopicKeyGuess": "MAT2_ELLIPSE"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s29",
+   "toTempId": "MathBook2_b16_s22",
+   "toDescription": "Recall the standard equation of an ellipse and the meaning of its axes, foci, directrices and eccentricity.",
+   "toTopicKeyGuess": "MAT2_ELLIPSE"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s30",
+   "toTempId": "MathBook2_b16_s29",
+   "toDescription": "Recall the standard equation of a hyperbola and the meaning of its transverse and conjugate axes.",
+   "toTopicKeyGuess": "MAT2_HYPERBOLA"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s31",
+   "toTempId": "MathBook2_b16_s29",
+   "toDescription": "Recall the standard equation of a hyperbola and the meaning of its transverse and conjugate axes.",
+   "toTopicKeyGuess": "MAT2_HYPERBOLA"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s32",
+   "toTempId": "MathBook2_b16_s23",
+   "toDescription": "Determine the centre, foci, axes and eccentricity of an ellipse from its equation, by completing the square.",
+   "toTopicKeyGuess": "MAT2_ELLIPSE"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s32",
+   "toTempId": "MathBook2_b16_s30",
+   "toDescription": "Determine the centre, foci, axes and eccentricity of a hyperbola from its equation.",
+   "toTopicKeyGuess": "MAT2_HYPERBOLA"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s32",
+   "toTempId": "MathBook2_b16_s15",
+   "toDescription": "Determine the vertex, focus, axis and directrix of a parabola from its equation, by completing the square.",
+   "toTopicKeyGuess": "MAT2_PARABOLA"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s34",
+   "toTempId": "MathBook2_b16_s33",
+   "toDescription": "Calculate the value of a trigonometric function applied to an inverse trigonometric expression.",
+   "toTopicKeyGuess": "MAT2_INVERSE_TRIG"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s35",
+   "toTempId": "MathBook2_b16_s33",
+   "toDescription": "Calculate the value of a trigonometric function applied to an inverse trigonometric expression.",
+   "toTopicKeyGuess": "MAT2_INVERSE_TRIG"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s36",
+   "toTempId": "MathBook2_b16_s34",
+   "toDescription": "Solve an equation involving a sum or a difference of inverse trigonometric functions.",
+   "toTopicKeyGuess": "MAT2_INVERSE_TRIG"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s38",
+   "toTempId": "MathBook2_b16_s37",
+   "toDescription": "Recall the general solution of the basic trigonometric equations in sine, cosine and tangent.",
+   "toTopicKeyGuess": "MAT2_TRIG_EQUATION"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s39",
+   "toTempId": "MathBook2_b16_s37",
+   "toDescription": "Recall the general solution of the basic trigonometric equations in sine, cosine and tangent.",
+   "toTopicKeyGuess": "MAT2_TRIG_EQUATION"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s40",
+   "toTempId": "MathBook2_b16_s39",
+   "toDescription": "Solve a trigonometric equation by converting a sum of sines or cosines into a product.",
+   "toTopicKeyGuess": "MAT2_TRIG_EQUATION"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s41",
+   "toTempId": "MathBook2_b16_s37",
+   "toDescription": "Recall the general solution of the basic trigonometric equations in sine, cosine and tangent.",
+   "toTopicKeyGuess": "MAT2_TRIG_EQUATION"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s41",
+   "toTempId": "MathBook2_b16_s38",
+   "toDescription": "Solve a trigonometric equation of the form a sine x plus b cosine x equals c.",
+   "toTopicKeyGuess": "MAT2_TRIG_EQUATION"
+  },
+  {
+   "fromTempId": "MathBook2_b16_s33",
+   "toTempId": "MathBook2_b16_s37",
+   "toDescription": "Recall the general solution of the basic trigonometric equations in sine, cosine and tangent.",
+   "toTopicKeyGuess": "MAT2_TRIG_EQUATION"
+  }
+ ],
+ "reusedExistingSkills": [
+  {
+   "existingSkillId": "MAT2_POLY_ROOTS0",
+   "sourceItemIds": [
+    "MathBook2__p25__q31__150",
+    "MathBook2__p25__q32__151"
+   ]
+  }
+ ],
+ "newTopicsProposed": [],
+ "skippedItems": [],
+ "notes": "Records 151-300 of MathBook2 (parsed_items.jsonl lines 2641-2790). Coverage: binomial expansion (HM2 Ch5, records 153-196), conics (HM2 Ch6, records 197-278), inverse trigonometric functions and trigonometric equations (HM2 Ch7, records 279-300). Records 151-152 are the tail of the polynomial chapter and re-exercise a b15 skill. Conics are split across the three syllabus sub-topics MAT2_PARABOLA, MAT2_ELLIPSE and MAT2_HYPERBOLA rather than lumped under one code - the split the old MAT_COORD_CONIC could not express. Second consecutive batch needing no new topics. All descriptions are plain text with no backslashes."
+}

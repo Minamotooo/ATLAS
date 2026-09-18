@@ -1,0 +1,1298 @@
+{
+ "chunkLabel": "PhyBook2_b27",
+ "subject": "Physics",
+ "skills": [
+  {
+   "tempId": "PhyBook2_b27_s1",
+   "bloom": "Apply",
+   "skillFull": "Calculate the relativistic mass of a body moving at a stated speed.",
+   "topicKey": "PHY2_RELATIVITY",
+   "topicLabel": "Special Relativity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p87__q09__616",
+    "PhyBook2__p91__q45__652"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s2",
+   "bloom": "Apply",
+   "skillFull": "Determine the speed at which the relativistic mass of a body reaches a stated value.",
+   "topicKey": "PHY2_RELATIVITY",
+   "topicLabel": "Special Relativity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p84__q33__600",
+    "PhyBook2__p85__q36__603",
+    "PhyBook2__p90__q36__643"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s3",
+   "bloom": "Apply",
+   "skillFull": "Determine the speed at which the length of a moving body contracts to a stated fraction.",
+   "topicKey": "PHY2_RELATIVITY",
+   "topicLabel": "Special Relativity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p87__q13__620",
+    "PhyBook2__p88__q22__629",
+    "PhyBook2__p89__q32__639"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s4",
+   "bloom": "Apply",
+   "skillFull": "Calculate the contracted length or the proper length of a moving rod.",
+   "topicKey": "PHY2_RELATIVITY",
+   "topicLabel": "Special Relativity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p90__q35__642",
+    "PhyBook2__p91__q47__654"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s5",
+   "bloom": "Apply",
+   "skillFull": "Calculate the time dilation experienced by a moving observer.",
+   "topicKey": "PHY2_RELATIVITY",
+   "topicLabel": "Special Relativity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p86__q03__610",
+    "PhyBook2__p87__q05__612",
+    "PhyBook2__p88__q17__624"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s6",
+   "bloom": "Apply",
+   "skillFull": "Calculate the relativistic kinetic energy or the total energy of a fast-moving particle.",
+   "topicKey": "PHY2_RELATIVITY",
+   "topicLabel": "Special Relativity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p85__q38__605",
+    "PhyBook2__p87__q04__611",
+    "PhyBook2__p87__q12__619",
+    "PhyBook2__p90__q39__646"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s7",
+   "bloom": "Understand",
+   "skillFull": "Compare the relativistic value of the kinetic energy of a particle with its Newtonian value.",
+   "topicKey": "PHY2_RELATIVITY",
+   "topicLabel": "Special Relativity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p85__q37__604",
+    "PhyBook2__p86__q39__606",
+    "PhyBook2__p86__q40__607"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s8",
+   "bloom": "Apply",
+   "skillFull": "Calculate the energy equivalent of a stated mass using the mass-energy relation.",
+   "topicKey": "PHY2_RELATIVITY",
+   "topicLabel": "Special Relativity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p88__q15__622",
+    "PhyBook2__p90__q37__644"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s9",
+   "bloom": "Apply",
+   "skillFull": "Calculate the relative velocity of two particles that are moving at relativistic speeds.",
+   "topicKey": "PHY2_RELATIVITY",
+   "topicLabel": "Special Relativity",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p91__q44__651"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s10",
+   "bloom": "Remember",
+   "skillFull": "Recall Einstein's photoelectric equation together with the meaning of work function, threshold frequency and stopping potential.",
+   "topicKey": "PHY2_PHOTOELECTRIC",
+   "topicLabel": "Photoelectric Effect and Photons",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p88__q20__627",
+    "PhyBook2__p91__q42__649"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s11",
+   "bloom": "Apply",
+   "skillFull": "Calculate the energy of a photon from its wavelength or its frequency.",
+   "topicKey": "PHY2_PHOTOELECTRIC",
+   "topicLabel": "Photoelectric Effect and Photons",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p87__q07__614",
+    "PhyBook2__p88__q19__626",
+    "PhyBook2__p88__q21__628",
+    "PhyBook2__p88__q23__630",
+    "PhyBook2__p89__q33__640"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s12",
+   "bloom": "Apply",
+   "skillFull": "Calculate the momentum of a photon or of a massless particle from its energy.",
+   "topicKey": "PHY2_PHOTOELECTRIC",
+   "topicLabel": "Photoelectric Effect and Photons",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p89__q28__635",
+    "PhyBook2__p91__q41__648"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s13",
+   "bloom": "Apply",
+   "skillFull": "Calculate the maximum kinetic energy or the stopping potential of the emitted photoelectrons.",
+   "topicKey": "PHY2_PHOTOELECTRIC",
+   "topicLabel": "Photoelectric Effect and Photons",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p85__q35__602",
+    "PhyBook2__p86__q02__609",
+    "PhyBook2__p87__q06__613",
+    "PhyBook2__p91__q48__655"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s14",
+   "bloom": "Apply",
+   "skillFull": "Calculate the work function of a metal from its threshold frequency or its threshold wavelength.",
+   "topicKey": "PHY2_PHOTOELECTRIC",
+   "topicLabel": "Photoelectric Effect and Photons",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p88__q16__623",
+    "PhyBook2__p89__q26__633"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s15",
+   "bloom": "Apply",
+   "skillFull": "Calculate the threshold frequency or the threshold wavelength of a metal from its work function.",
+   "topicKey": "PHY2_PHOTOELECTRIC",
+   "topicLabel": "Photoelectric Effect and Photons",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p91__q43__650"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s16",
+   "bloom": "Apply",
+   "skillFull": "Calculate the number of photons emitted per second by a source of stated power.",
+   "topicKey": "PHY2_PHOTOELECTRIC",
+   "topicLabel": "Photoelectric Effect and Photons",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p91__q46__653"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s17",
+   "bloom": "Apply",
+   "skillFull": "Calculate the speed acquired by an electron accelerated through a stated potential difference.",
+   "topicKey": "PHY2_PHOTOELECTRIC",
+   "topicLabel": "Photoelectric Effect and Photons",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p87__q08__615",
+    "PhyBook2__p88__q18__625"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s18",
+   "bloom": "Apply",
+   "skillFull": "Calculate the kinetic energy of a moving particle and express it in electron-volts.",
+   "topicKey": "PHY2_PHOTOELECTRIC",
+   "topicLabel": "Photoelectric Effect and Photons",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p85__q34__601",
+    "PhyBook2__p89__q27__634"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s19",
+   "bloom": "Apply",
+   "skillFull": "Calculate the accelerating voltage or the minimum wavelength of the X-rays produced in an X-ray tube.",
+   "topicKey": "PHY2_XRAY",
+   "topicLabel": "X-rays",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p90__q34__641"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s20",
+   "bloom": "Apply",
+   "skillFull": "Calculate the change in the frequency or the wavelength of a photon that is scattered by an electron.",
+   "topicKey": "PHY2_XRAY",
+   "topicLabel": "X-rays",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p87__q14__621",
+    "PhyBook2__p96__q29__684"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s21",
+   "bloom": "Remember",
+   "skillFull": "Recall the properties and the practical uses of X-rays.",
+   "topicKey": "PHY2_XRAY",
+   "topicLabel": "X-rays",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p89__q29__636",
+    "PhyBook2__p98__q59__714"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s22",
+   "bloom": "Remember",
+   "skillFull": "Recall the order of the electromagnetic spectrum and which of its radiations are ionizing.",
+   "topicKey": "PHY2_XRAY",
+   "topicLabel": "X-rays",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p97__q39__694",
+    "PhyBook2__p98__q54__709",
+    "PhyBook2__p103__q10__762"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s23",
+   "bloom": "Remember",
+   "skillFull": "Recall the de Broglie relation between the wavelength of a particle and its momentum.",
+   "topicKey": "PHY2_MATTER_WAVES",
+   "topicLabel": "Matter Waves and the Uncertainty Principle",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p87__q11__618"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s24",
+   "bloom": "Apply",
+   "skillFull": "Calculate the de Broglie wavelength of a particle of stated momentum or energy.",
+   "topicKey": "PHY2_MATTER_WAVES",
+   "topicLabel": "Matter Waves and the Uncertainty Principle",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p87__q10__617",
+    "PhyBook2__p91__q40__647"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s25",
+   "bloom": "Apply",
+   "skillFull": "Apply the uncertainty principle to relate the uncertainty in position to the uncertainty in momentum.",
+   "topicKey": "PHY2_MATTER_WAVES",
+   "topicLabel": "Matter Waves and the Uncertainty Principle",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p86__q01__608"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s26",
+   "bloom": "Remember",
+   "skillFull": "Recall the postulates of the Bohr model of the hydrogen atom.",
+   "topicKey": "PHY2_ATOMIC_MODELS",
+   "topicLabel": "Atomic Models and Spectra",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p97__q42__697",
+    "PhyBook2__p97__q46__701"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s27",
+   "bloom": "Apply",
+   "skillFull": "Calculate the radius of a Bohr orbit of the hydrogen atom, or the ratio of the radii of two orbits.",
+   "topicKey": "PHY2_ATOMIC_MODELS",
+   "topicLabel": "Atomic Models and Spectra",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p97__q43__698",
+    "PhyBook2__p97__q49__704"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s28",
+   "bloom": "Apply",
+   "skillFull": "Calculate the energy of an electron in a stated Bohr orbit of the hydrogen atom.",
+   "topicKey": "PHY2_ATOMIC_MODELS",
+   "topicLabel": "Atomic Models and Spectra",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p96__q33__688",
+    "PhyBook2__p97__q46__701"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s29",
+   "bloom": "Apply",
+   "skillFull": "Calculate the orbital angular momentum of an electron, or its change during a transition between orbits.",
+   "topicKey": "PHY2_ATOMIC_MODELS",
+   "topicLabel": "Atomic Models and Spectra",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p96__q36__691",
+    "PhyBook2__p97__q40__695",
+    "PhyBook2__p97__q42__697"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s30",
+   "bloom": "Apply",
+   "skillFull": "Calculate the speed, the acceleration or the period of an electron moving in a Bohr orbit.",
+   "topicKey": "PHY2_ATOMIC_MODELS",
+   "topicLabel": "Atomic Models and Spectra",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p92__q03__658",
+    "PhyBook2__p93__q12__667",
+    "PhyBook2__p98__q55__710"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s31",
+   "bloom": "Apply",
+   "skillFull": "Calculate the frequency or the wavelength of the photon emitted when an electron falls between two energy levels.",
+   "topicKey": "PHY2_ATOMIC_MODELS",
+   "topicLabel": "Atomic Models and Spectra",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p95__q21__676"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s32",
+   "bloom": "Remember",
+   "skillFull": "Recall the constituents of the atom, their antiparticles, and the fundamental force that binds the electron to the nucleus.",
+   "topicKey": "PHY2_ATOMIC_MODELS",
+   "topicLabel": "Atomic Models and Spectra",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p89__q30__637",
+    "PhyBook2__p89__q31__638",
+    "PhyBook2__p99__q65__720"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s33",
+   "bloom": "Apply",
+   "skillFull": "Calculate the mass defect of a nucleus from the masses of its constituent nucleons.",
+   "topicKey": "PHY2_NUCLEUS",
+   "topicLabel": "Nuclear Structure and Binding Energy",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p95__q24__679",
+    "PhyBook2__p95__q28__683"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s34",
+   "bloom": "Apply",
+   "skillFull": "Calculate the binding energy, or the binding energy per nucleon, of a nucleus.",
+   "topicKey": "PHY2_NUCLEUS",
+   "topicLabel": "Nuclear Structure and Binding Energy",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p88__q24__631",
+    "PhyBook2__p92__q04__659",
+    "PhyBook2__p96__q34__689"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s35",
+   "bloom": "Understand",
+   "skillFull": "Explain why the atomic masses of the elements are not whole numbers.",
+   "topicKey": "PHY2_NUCLEUS",
+   "topicLabel": "Nuclear Structure and Binding Energy",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p99__q69__724"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s36",
+   "bloom": "Remember",
+   "skillFull": "Recall the nature, the charge and the relative mass of alpha, beta and gamma radiation.",
+   "topicKey": "PHY2_RADIOACTIVITY",
+   "topicLabel": "Radioactivity and Decay",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p96__q38__693"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s37",
+   "bloom": "Remember",
+   "skillFull": "Recall the meaning of half-life and of the decay constant together with their units.",
+   "topicKey": "PHY2_RADIOACTIVITY",
+   "topicLabel": "Radioactivity and Decay",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p98__q58__713",
+    "PhyBook2__p99__q68__723"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s38",
+   "bloom": "Apply",
+   "skillFull": "Convert between the half-life, the decay constant and the mean life of a radioactive substance.",
+   "topicKey": "PHY2_RADIOACTIVITY",
+   "topicLabel": "Radioactivity and Decay",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p93__q08__663",
+    "PhyBook2__p93__q10__665",
+    "PhyBook2__p94__q15__670",
+    "PhyBook2__p94__q16__671",
+    "PhyBook2__p97__q50__705",
+    "PhyBook2__p98__q56__711",
+    "PhyBook2__p98__q57__712",
+    "PhyBook2__p99__q62__717"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s39",
+   "bloom": "Apply",
+   "skillFull": "Calculate the fraction or the percentage of a radioactive sample that remains after a stated time.",
+   "topicKey": "PHY2_RADIOACTIVITY",
+   "topicLabel": "Radioactivity and Decay",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p94__q13__668",
+    "PhyBook2__p94__q19__674",
+    "PhyBook2__p95__q26__681",
+    "PhyBook2__p97__q45__700"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s40",
+   "bloom": "Apply",
+   "skillFull": "Determine the time required for a radioactive sample to decay to a stated fraction of its initial amount.",
+   "topicKey": "PHY2_RADIOACTIVITY",
+   "topicLabel": "Radioactivity and Decay",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p92__q01__656",
+    "PhyBook2__p92__q05__660",
+    "PhyBook2__p93__q09__664",
+    "PhyBook2__p93__q11__666",
+    "PhyBook2__p94__q18__673",
+    "PhyBook2__p96__q30__685",
+    "PhyBook2__p96__q32__687",
+    "PhyBook2__p97__q41__696",
+    "PhyBook2__p97__q44__699",
+    "PhyBook2__p98__q52__707",
+    "PhyBook2__p98__q53__708",
+    "PhyBook2__p99__q61__716"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s41",
+   "bloom": "Apply",
+   "skillFull": "Determine the half-life or the decay constant of a substance from the amount that decays in a stated time.",
+   "topicKey": "PHY2_RADIOACTIVITY",
+   "topicLabel": "Radioactivity and Decay",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p94__q17__672",
+    "PhyBook2__p95__q22__677",
+    "PhyBook2__p96__q31__686",
+    "PhyBook2__p96__q35__690",
+    "PhyBook2__p99__q63__718",
+    "PhyBook2__p99__q66__721",
+    "PhyBook2__p99__q67__722"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s42",
+   "bloom": "Apply",
+   "skillFull": "Calculate the activity of a radioactive sample, or the mass of sample required for a stated activity.",
+   "topicKey": "PHY2_RADIOACTIVITY",
+   "topicLabel": "Radioactivity and Decay",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p92__q06__661",
+    "PhyBook2__p93__q07__662",
+    "PhyBook2__p94__q14__669",
+    "PhyBook2__p95__q20__675"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s43",
+   "bloom": "Apply",
+   "skillFull": "Calculate the mass converted into energy by a reactor or a power station from its energy output.",
+   "topicKey": "PHY2_FISSION_FUSION",
+   "topicLabel": "Fission, Fusion and Reactors",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p89__q25__632",
+    "PhyBook2__p90__q38__645",
+    "PhyBook2__p95__q23__678"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s44",
+   "bloom": "Apply",
+   "skillFull": "Calculate the number of fissions per second needed to sustain a reactor of stated power and efficiency.",
+   "topicKey": "PHY2_FISSION_FUSION",
+   "topicLabel": "Fission, Fusion and Reactors",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p92__q02__657",
+    "PhyBook2__p97__q48__703"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s45",
+   "bloom": "Apply",
+   "skillFull": "Identify the missing particle in a nuclear reaction by balancing the mass and the charge numbers.",
+   "topicKey": "PHY2_FISSION_FUSION",
+   "topicLabel": "Fission, Fusion and Reactors",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p95__q25__680",
+    "PhyBook2__p98__q60__715"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s46",
+   "bloom": "Understand",
+   "skillFull": "Determine the change in the atomic number and the mass number of a nucleus produced by alpha or beta emission.",
+   "topicKey": "PHY2_FISSION_FUSION",
+   "topicLabel": "Fission, Fusion and Reactors",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p97__q47__702",
+    "PhyBook2__p99__q64__719"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s47",
+   "bloom": "Apply",
+   "skillFull": "Calculate the energy released when a particle and its antiparticle annihilate.",
+   "topicKey": "PHY2_FISSION_FUSION",
+   "topicLabel": "Fission, Fusion and Reactors",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p96__q37__692"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s48",
+   "bloom": "Remember",
+   "skillFull": "Recall the composition of the plasma state in which fusion takes place.",
+   "topicKey": "PHY2_FISSION_FUSION",
+   "topicLabel": "Fission, Fusion and Reactors",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p97__q51__706"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s49",
+   "bloom": "Remember",
+   "skillFull": "Recall the meaning of an n-type and of a p-type semiconductor and the dopants that produce each.",
+   "topicKey": "PHY2_SEMICONDUCTOR",
+   "topicLabel": "Semiconductors and Doping",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p100__q03__727",
+    "PhyBook2__p101__q04__736",
+    "PhyBook2__p102__q18__750"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s50",
+   "bloom": "Understand",
+   "skillFull": "Determine whether a doped semiconductor is of the p-type or of the n-type.",
+   "topicKey": "PHY2_SEMICONDUCTOR",
+   "topicLabel": "Semiconductors and Doping",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p102__q11__743"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s51",
+   "bloom": "Remember",
+   "skillFull": "Recall the forbidden energy gap of common semiconductors such as silicon and germanium.",
+   "topicKey": "PHY2_SEMICONDUCTOR",
+   "topicLabel": "Semiconductors and Doping",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p102__q15__747",
+    "PhyBook2__p102__q16__748"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s52",
+   "bloom": "Apply",
+   "skillFull": "Calculate the forbidden energy gap of a material from the longest wavelength that it absorbs.",
+   "topicKey": "PHY2_SEMICONDUCTOR",
+   "topicLabel": "Semiconductors and Doping",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p95__q27__682"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s53",
+   "bloom": "Understand",
+   "skillFull": "Explain why the conductivity of a semiconductor increases as its temperature rises.",
+   "topicKey": "PHY2_SEMICONDUCTOR",
+   "topicLabel": "Semiconductors and Doping",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p102__q17__749"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s54",
+   "bloom": "Remember",
+   "skillFull": "Recall the structure of a p-n junction and the origin of its depletion layer.",
+   "topicKey": "PHY2_DIODE",
+   "topicLabel": "Diodes and Rectification",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p102__q19__751"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s55",
+   "bloom": "Apply",
+   "skillFull": "Calculate the dynamic resistance of a p-n junction from the change of current with the applied voltage.",
+   "topicKey": "PHY2_DIODE",
+   "topicLabel": "Diodes and Rectification",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p101__q08__732",
+    "PhyBook2__p101__q08__740",
+    "PhyBook2__p102__q20__752"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s56",
+   "bloom": "Understand",
+   "skillFull": "Explain the action of a rectifier and of the smoothing capacitor placed across its load.",
+   "topicKey": "PHY2_DIODE",
+   "topicLabel": "Diodes and Rectification",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p101__q02__734",
+    "PhyBook2__p101__q06__738"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s57",
+   "bloom": "Remember",
+   "skillFull": "Recall the bias under which a Zener diode operates.",
+   "topicKey": "PHY2_DIODE",
+   "topicLabel": "Diodes and Rectification",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p102__q14__746"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s58",
+   "bloom": "Apply",
+   "skillFull": "Calculate the current gain of a transistor in the common-base or in the common-emitter configuration.",
+   "topicKey": "PHY2_TRANSISTOR",
+   "topicLabel": "Transistors and Amplifiers",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p100__q01__725",
+    "PhyBook2__p100__q04__728",
+    "PhyBook2__p100__q05__729",
+    "PhyBook2__p100__q06__730",
+    "PhyBook2__p101__q07__731",
+    "PhyBook2__p101__q07__739",
+    "PhyBook2__p102__q09__741"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s59",
+   "bloom": "Apply",
+   "skillFull": "Convert between the common-base current gain and the common-emitter current gain of a transistor.",
+   "topicKey": "PHY2_TRANSISTOR",
+   "topicLabel": "Transistors and Amplifiers",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p101__q01__733",
+    "PhyBook2__p101__q03__735",
+    "PhyBook2__p102__q10__742"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s60",
+   "bloom": "Apply",
+   "skillFull": "Calculate the base, the emitter or the collector current of a transistor from its current gain.",
+   "topicKey": "PHY2_TRANSISTOR",
+   "topicLabel": "Transistors and Amplifiers",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p100__q02__726",
+    "PhyBook2__p102__q12__744",
+    "PhyBook2__p102__q13__745"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s61",
+   "bloom": "Apply",
+   "skillFull": "Convert a number between the decimal and the binary system.",
+   "topicKey": "PHY2_LOGIC_GATES",
+   "topicLabel": "Digital Logic Gates",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p101__q05__737"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s62",
+   "bloom": "Apply",
+   "skillFull": "Calculate the Schwarzschild radius of a body from its mass.",
+   "topicKey": "PHY2_SOLAR_SYSTEM",
+   "topicLabel": "Solar System and Stars",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p103__q02__754",
+    "PhyBook2__p103__q05__757"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s63",
+   "bloom": "Apply",
+   "skillFull": "Determine the mass or the density of a black hole from the radius of its event horizon.",
+   "topicKey": "PHY2_SOLAR_SYSTEM",
+   "topicLabel": "Solar System and Stars",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p103__q01__753",
+    "PhyBook2__p103__q06__758",
+    "PhyBook2__p103__q09__761"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s64",
+   "bloom": "Remember",
+   "skillFull": "Recall the Chandrasekhar limit and the stages of stellar evolution, including supernovae and neutron stars.",
+   "topicKey": "PHY2_SOLAR_SYSTEM",
+   "topicLabel": "Solar System and Stars",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p103__q04__756",
+    "PhyBook2__p103__q11__763"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s65",
+   "bloom": "Understand",
+   "skillFull": "Determine what the colour of a star reveals about its surface temperature.",
+   "topicKey": "PHY2_SOLAR_SYSTEM",
+   "topicLabel": "Solar System and Stars",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p103__q08__760"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s66",
+   "bloom": "Apply",
+   "skillFull": "Calculate the distance of a galaxy or a quasar from its recession velocity.",
+   "topicKey": "PHY2_COSMOLOGY",
+   "topicLabel": "The Universe and Cosmology",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p103__q03__755"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b27_s67",
+   "bloom": "Understand",
+   "skillFull": "Compare the densities of astronomical objects such as white dwarfs, neutron stars and black holes.",
+   "topicKey": "PHY2_COSMOLOGY",
+   "topicLabel": "The Universe and Cosmology",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p103__q07__759"
+   ]
+  }
+ ],
+ "prereqs": [
+  {
+   "fromTempId": "PhyBook2_b27_s2",
+   "toTempId": "PhyBook2_b27_s1",
+   "toDescription": "Calculate the relativistic mass of a body moving at a stated speed.",
+   "toTopicKeyGuess": "PHY2_RELATIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s4",
+   "toTempId": "PhyBook2_b27_s1",
+   "toDescription": "Calculate the relativistic mass of a body moving at a stated speed.",
+   "toTopicKeyGuess": "PHY2_RELATIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s3",
+   "toTempId": "PhyBook2_b27_s4",
+   "toDescription": "Calculate the contracted length or the proper length of a moving rod.",
+   "toTopicKeyGuess": "PHY2_RELATIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s3",
+   "toTempId": "PhyBook2_b27_s1",
+   "toDescription": "Calculate the relativistic mass of a body moving at a stated speed.",
+   "toTopicKeyGuess": "PHY2_RELATIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s5",
+   "toTempId": "PhyBook2_b27_s1",
+   "toDescription": "Calculate the relativistic mass of a body moving at a stated speed.",
+   "toTopicKeyGuess": "PHY2_RELATIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s6",
+   "toTempId": "PhyBook2_b27_s1",
+   "toDescription": "Calculate the relativistic mass of a body moving at a stated speed.",
+   "toTopicKeyGuess": "PHY2_RELATIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s6",
+   "toTempId": "PhyBook2_b27_s8",
+   "toDescription": "Calculate the energy equivalent of a stated mass using the mass-energy relation.",
+   "toTopicKeyGuess": "PHY2_RELATIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s7",
+   "toTempId": "PhyBook2_b27_s6",
+   "toDescription": "Calculate the relativistic kinetic energy or the total energy of a fast-moving particle.",
+   "toTopicKeyGuess": "PHY2_RELATIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s8",
+   "toTempId": "PhyBook2_b27_s1",
+   "toDescription": "Calculate the relativistic mass of a body moving at a stated speed.",
+   "toTopicKeyGuess": "PHY2_RELATIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s9",
+   "toTempId": "PhyBook2_b27_s1",
+   "toDescription": "Calculate the relativistic mass of a body moving at a stated speed.",
+   "toTopicKeyGuess": "PHY2_RELATIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s11",
+   "toTempId": "PhyBook2_b27_s10",
+   "toDescription": "Recall Einstein's photoelectric equation together with the meaning of work function, threshold frequency and stopping potential.",
+   "toTopicKeyGuess": "PHY2_PHOTOELECTRIC"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s12",
+   "toTempId": "PhyBook2_b27_s11",
+   "toDescription": "Calculate the energy of a photon from its wavelength or its frequency.",
+   "toTopicKeyGuess": "PHY2_PHOTOELECTRIC"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s13",
+   "toTempId": "PhyBook2_b27_s10",
+   "toDescription": "Recall Einstein's photoelectric equation together with the meaning of work function, threshold frequency and stopping potential.",
+   "toTopicKeyGuess": "PHY2_PHOTOELECTRIC"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s13",
+   "toTempId": "PhyBook2_b27_s11",
+   "toDescription": "Calculate the energy of a photon from its wavelength or its frequency.",
+   "toTopicKeyGuess": "PHY2_PHOTOELECTRIC"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s14",
+   "toTempId": "PhyBook2_b27_s13",
+   "toDescription": "Calculate the maximum kinetic energy or the stopping potential of the emitted photoelectrons.",
+   "toTopicKeyGuess": "PHY2_PHOTOELECTRIC"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s15",
+   "toTempId": "PhyBook2_b27_s14",
+   "toDescription": "Calculate the work function of a metal from its threshold frequency or its threshold wavelength.",
+   "toTopicKeyGuess": "PHY2_PHOTOELECTRIC"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s16",
+   "toTempId": "PhyBook2_b27_s11",
+   "toDescription": "Calculate the energy of a photon from its wavelength or its frequency.",
+   "toTopicKeyGuess": "PHY2_PHOTOELECTRIC"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s18",
+   "toTempId": "PhyBook2_b27_s11",
+   "toDescription": "Calculate the energy of a photon from its wavelength or its frequency.",
+   "toTopicKeyGuess": "PHY2_PHOTOELECTRIC"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s17",
+   "toTempId": "PhyBook2_b27_s18",
+   "toDescription": "Calculate the kinetic energy of a moving particle and express it in electron-volts.",
+   "toTopicKeyGuess": "PHY2_PHOTOELECTRIC"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s19",
+   "toTempId": "PhyBook2_b27_s11",
+   "toDescription": "Calculate the energy of a photon from its wavelength or its frequency.",
+   "toTopicKeyGuess": "PHY2_PHOTOELECTRIC"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s19",
+   "toTempId": "PhyBook2_b27_s17",
+   "toDescription": "Calculate the speed acquired by an electron accelerated through a stated potential difference.",
+   "toTopicKeyGuess": "PHY2_PHOTOELECTRIC"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s20",
+   "toTempId": "PhyBook2_b27_s12",
+   "toDescription": "Calculate the momentum of a photon or of a massless particle from its energy.",
+   "toTopicKeyGuess": "PHY2_PHOTOELECTRIC"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s21",
+   "toTempId": "PhyBook2_b27_s19",
+   "toDescription": "Calculate the accelerating voltage or the minimum wavelength of the X-rays produced in an X-ray tube.",
+   "toTopicKeyGuess": "PHY2_XRAY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s22",
+   "toTempId": "PhyBook2_b27_s11",
+   "toDescription": "Calculate the energy of a photon from its wavelength or its frequency.",
+   "toTopicKeyGuess": "PHY2_PHOTOELECTRIC"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s23",
+   "toTempId": "PhyBook2_b27_s12",
+   "toDescription": "Calculate the momentum of a photon or of a massless particle from its energy.",
+   "toTopicKeyGuess": "PHY2_PHOTOELECTRIC"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s24",
+   "toTempId": "PhyBook2_b27_s23",
+   "toDescription": "Recall the de Broglie relation between the wavelength of a particle and its momentum.",
+   "toTopicKeyGuess": "PHY2_MATTER_WAVES"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s24",
+   "toTempId": "PhyBook2_b27_s12",
+   "toDescription": "Calculate the momentum of a photon or of a massless particle from its energy.",
+   "toTopicKeyGuess": "PHY2_PHOTOELECTRIC"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s25",
+   "toTempId": "PhyBook2_b27_s24",
+   "toDescription": "Calculate the de Broglie wavelength of a particle of stated momentum or energy.",
+   "toTopicKeyGuess": "PHY2_MATTER_WAVES"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s26",
+   "toTempId": "PhyBook2_b27_s32",
+   "toDescription": "Recall the constituents of the atom, their antiparticles, and the fundamental force that binds the electron to the nucleus.",
+   "toTopicKeyGuess": "PHY2_ATOMIC_MODELS"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s27",
+   "toTempId": "PhyBook2_b27_s26",
+   "toDescription": "Recall the postulates of the Bohr model of the hydrogen atom.",
+   "toTopicKeyGuess": "PHY2_ATOMIC_MODELS"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s28",
+   "toTempId": "PhyBook2_b27_s26",
+   "toDescription": "Recall the postulates of the Bohr model of the hydrogen atom.",
+   "toTopicKeyGuess": "PHY2_ATOMIC_MODELS"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s28",
+   "toTempId": "PhyBook2_b27_s27",
+   "toDescription": "Calculate the radius of a Bohr orbit of the hydrogen atom, or the ratio of the radii of two orbits.",
+   "toTopicKeyGuess": "PHY2_ATOMIC_MODELS"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s29",
+   "toTempId": "PhyBook2_b27_s26",
+   "toDescription": "Recall the postulates of the Bohr model of the hydrogen atom.",
+   "toTopicKeyGuess": "PHY2_ATOMIC_MODELS"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s30",
+   "toTempId": "PhyBook2_b27_s27",
+   "toDescription": "Calculate the radius of a Bohr orbit of the hydrogen atom, or the ratio of the radii of two orbits.",
+   "toTopicKeyGuess": "PHY2_ATOMIC_MODELS"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s31",
+   "toTempId": "PhyBook2_b27_s28",
+   "toDescription": "Calculate the energy of an electron in a stated Bohr orbit of the hydrogen atom.",
+   "toTopicKeyGuess": "PHY2_ATOMIC_MODELS"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s31",
+   "toTempId": "PhyBook2_b27_s11",
+   "toDescription": "Calculate the energy of a photon from its wavelength or its frequency.",
+   "toTopicKeyGuess": "PHY2_PHOTOELECTRIC"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s33",
+   "toTempId": "PhyBook2_b27_s8",
+   "toDescription": "Calculate the energy equivalent of a stated mass using the mass-energy relation.",
+   "toTopicKeyGuess": "PHY2_RELATIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s34",
+   "toTempId": "PhyBook2_b27_s33",
+   "toDescription": "Calculate the mass defect of a nucleus from the masses of its constituent nucleons.",
+   "toTopicKeyGuess": "PHY2_NUCLEUS"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s34",
+   "toTempId": "PhyBook2_b27_s8",
+   "toDescription": "Calculate the energy equivalent of a stated mass using the mass-energy relation.",
+   "toTopicKeyGuess": "PHY2_RELATIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s35",
+   "toTempId": "PhyBook2_b27_s33",
+   "toDescription": "Calculate the mass defect of a nucleus from the masses of its constituent nucleons.",
+   "toTopicKeyGuess": "PHY2_NUCLEUS"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s37",
+   "toTempId": "PhyBook2_b27_s36",
+   "toDescription": "Recall the nature, the charge and the relative mass of alpha, beta and gamma radiation.",
+   "toTopicKeyGuess": "PHY2_RADIOACTIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s38",
+   "toTempId": "PhyBook2_b27_s37",
+   "toDescription": "Recall the meaning of half-life and of the decay constant together with their units.",
+   "toTopicKeyGuess": "PHY2_RADIOACTIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s39",
+   "toTempId": "PhyBook2_b27_s38",
+   "toDescription": "Convert between the half-life, the decay constant and the mean life of a radioactive substance.",
+   "toTopicKeyGuess": "PHY2_RADIOACTIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s40",
+   "toTempId": "PhyBook2_b27_s39",
+   "toDescription": "Calculate the fraction or the percentage of a radioactive sample that remains after a stated time.",
+   "toTopicKeyGuess": "PHY2_RADIOACTIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s41",
+   "toTempId": "PhyBook2_b27_s40",
+   "toDescription": "Determine the time required for a radioactive sample to decay to a stated fraction of its initial amount.",
+   "toTopicKeyGuess": "PHY2_RADIOACTIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s42",
+   "toTempId": "PhyBook2_b27_s38",
+   "toDescription": "Convert between the half-life, the decay constant and the mean life of a radioactive substance.",
+   "toTopicKeyGuess": "PHY2_RADIOACTIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s43",
+   "toTempId": "PhyBook2_b27_s8",
+   "toDescription": "Calculate the energy equivalent of a stated mass using the mass-energy relation.",
+   "toTopicKeyGuess": "PHY2_RELATIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s44",
+   "toTempId": "PhyBook2_b27_s43",
+   "toDescription": "Calculate the mass converted into energy by a reactor or a power station from its energy output.",
+   "toTopicKeyGuess": "PHY2_FISSION_FUSION"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s44",
+   "toTempId": "PhyBook2_b27_s34",
+   "toDescription": "Calculate the binding energy, or the binding energy per nucleon, of a nucleus.",
+   "toTopicKeyGuess": "PHY2_NUCLEUS"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s45",
+   "toTempId": "PhyBook2_b27_s36",
+   "toDescription": "Recall the nature, the charge and the relative mass of alpha, beta and gamma radiation.",
+   "toTopicKeyGuess": "PHY2_RADIOACTIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s46",
+   "toTempId": "PhyBook2_b27_s36",
+   "toDescription": "Recall the nature, the charge and the relative mass of alpha, beta and gamma radiation.",
+   "toTopicKeyGuess": "PHY2_RADIOACTIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s46",
+   "toTempId": "PhyBook2_b27_s45",
+   "toDescription": "Identify the missing particle in a nuclear reaction by balancing the mass and the charge numbers.",
+   "toTopicKeyGuess": "PHY2_FISSION_FUSION"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s47",
+   "toTempId": "PhyBook2_b27_s8",
+   "toDescription": "Calculate the energy equivalent of a stated mass using the mass-energy relation.",
+   "toTopicKeyGuess": "PHY2_RELATIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s48",
+   "toTempId": "PhyBook2_b27_s32",
+   "toDescription": "Recall the constituents of the atom, their antiparticles, and the fundamental force that binds the electron to the nucleus.",
+   "toTopicKeyGuess": "PHY2_ATOMIC_MODELS"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s50",
+   "toTempId": "PhyBook2_b27_s49",
+   "toDescription": "Recall the meaning of an n-type and of a p-type semiconductor and the dopants that produce each.",
+   "toTopicKeyGuess": "PHY2_SEMICONDUCTOR"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s51",
+   "toTempId": "PhyBook2_b27_s49",
+   "toDescription": "Recall the meaning of an n-type and of a p-type semiconductor and the dopants that produce each.",
+   "toTopicKeyGuess": "PHY2_SEMICONDUCTOR"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s52",
+   "toTempId": "PhyBook2_b27_s51",
+   "toDescription": "Recall the forbidden energy gap of common semiconductors such as silicon and germanium.",
+   "toTopicKeyGuess": "PHY2_SEMICONDUCTOR"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s52",
+   "toTempId": "PhyBook2_b27_s11",
+   "toDescription": "Calculate the energy of a photon from its wavelength or its frequency.",
+   "toTopicKeyGuess": "PHY2_PHOTOELECTRIC"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s53",
+   "toTempId": "PhyBook2_b27_s51",
+   "toDescription": "Recall the forbidden energy gap of common semiconductors such as silicon and germanium.",
+   "toTopicKeyGuess": "PHY2_SEMICONDUCTOR"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s54",
+   "toTempId": "PhyBook2_b27_s49",
+   "toDescription": "Recall the meaning of an n-type and of a p-type semiconductor and the dopants that produce each.",
+   "toTopicKeyGuess": "PHY2_SEMICONDUCTOR"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s55",
+   "toTempId": "PhyBook2_b27_s54",
+   "toDescription": "Recall the structure of a p-n junction and the origin of its depletion layer.",
+   "toTopicKeyGuess": "PHY2_DIODE"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s56",
+   "toTempId": "PhyBook2_b27_s54",
+   "toDescription": "Recall the structure of a p-n junction and the origin of its depletion layer.",
+   "toTopicKeyGuess": "PHY2_DIODE"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s57",
+   "toTempId": "PhyBook2_b27_s54",
+   "toDescription": "Recall the structure of a p-n junction and the origin of its depletion layer.",
+   "toTopicKeyGuess": "PHY2_DIODE"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s58",
+   "toTempId": "PhyBook2_b27_s54",
+   "toDescription": "Recall the structure of a p-n junction and the origin of its depletion layer.",
+   "toTopicKeyGuess": "PHY2_DIODE"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s59",
+   "toTempId": "PhyBook2_b27_s58",
+   "toDescription": "Calculate the current gain of a transistor in the common-base or in the common-emitter configuration.",
+   "toTopicKeyGuess": "PHY2_TRANSISTOR"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s60",
+   "toTempId": "PhyBook2_b27_s58",
+   "toDescription": "Calculate the current gain of a transistor in the common-base or in the common-emitter configuration.",
+   "toTopicKeyGuess": "PHY2_TRANSISTOR"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s60",
+   "toTempId": "PhyBook2_b27_s59",
+   "toDescription": "Convert between the common-base current gain and the common-emitter current gain of a transistor.",
+   "toTopicKeyGuess": "PHY2_TRANSISTOR"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s61",
+   "toTempId": "PhyBook2_b27_s60",
+   "toDescription": "Calculate the base, the emitter or the collector current of a transistor from its current gain.",
+   "toTopicKeyGuess": "PHY2_TRANSISTOR"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s62",
+   "toTempId": "PhyBook2_b27_s8",
+   "toDescription": "Calculate the energy equivalent of a stated mass using the mass-energy relation.",
+   "toTopicKeyGuess": "PHY2_RELATIVITY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s63",
+   "toTempId": "PhyBook2_b27_s62",
+   "toDescription": "Calculate the Schwarzschild radius of a body from its mass.",
+   "toTopicKeyGuess": "PHY2_SOLAR_SYSTEM"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s64",
+   "toTempId": "PhyBook2_b27_s62",
+   "toDescription": "Calculate the Schwarzschild radius of a body from its mass.",
+   "toTopicKeyGuess": "PHY2_SOLAR_SYSTEM"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s65",
+   "toTempId": "PhyBook2_b27_s11",
+   "toDescription": "Calculate the energy of a photon from its wavelength or its frequency.",
+   "toTopicKeyGuess": "PHY2_PHOTOELECTRIC"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s65",
+   "toTempId": "PhyBook2_b27_s22",
+   "toDescription": "Recall the order of the electromagnetic spectrum and which of its radiations are ionizing.",
+   "toTopicKeyGuess": "PHY2_XRAY"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s66",
+   "toTempId": "PhyBook2_b27_s65",
+   "toDescription": "Determine what the colour of a star reveals about its surface temperature.",
+   "toTopicKeyGuess": "PHY2_SOLAR_SYSTEM"
+  },
+  {
+   "fromTempId": "PhyBook2_b27_s67",
+   "toTempId": "PhyBook2_b27_s63",
+   "toDescription": "Determine the mass or the density of a black hole from the radius of its event horizon.",
+   "toTopicKeyGuess": "PHY2_SOLAR_SYSTEM"
+  }
+ ],
+ "reusedExistingSkills": [],
+ "newTopicsProposed": [],
+ "skippedItems": [],
+ "notes": "Records 601-764 of PhyBook2 (parsed_items.jsonl lines 4311-4474, item_id suffixes 600-763). THIS COMPLETES PhyBook2.txt, THE PHYSICS SEGMENT AND THE ENTIRE 4,474-RECORD CORPUS. Coverage: introduction to modern physics (Physics 2nd Paper Ch8, suffixes 600-655) split across relativity, the photoelectric effect, X-rays and matter waves; atomic model and nuclear physics (Ch9, 656-724) split across the Bohr model, nuclear structure, radioactivity and fission/fusion; semiconductor and electronics (Ch10, 725-752); and astronomy (Ch11, 753-763). Radioactivity is by far the heaviest block here - roughly sixty records of half-life arithmetic - so it is split by the quantity being solved for (fraction remaining, elapsed time, half-life, activity) rather than by the physical situation, which is identical throughout. Astronomy had no content in the ontology before this batch; it was the last Physics section still showing as empty. No new topics needed: the syllabus taxonomy covered every record. All descriptions are plain text with no backslashes."
+}

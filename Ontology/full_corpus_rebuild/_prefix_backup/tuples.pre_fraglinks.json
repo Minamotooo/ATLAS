@@ -9506,6 +9506,14 @@
   "subject": "Mathematics"
  },
  {
+  "bloom": "Remember",
+  "skillId": "MAT_INVTRIG4",
+  "skillFull": "Recall the principal-value ranges of the inverse trigonometric functions.",
+  "topicKey": "MAT2_INVERSE_TRIG",
+  "topicLabel": "Inverse Trigonometric Functions",
+  "subject": "Mathematics"
+ },
+ {
   "bloom": "Apply",
   "skillId": "MAT_INVTRIG5",
   "skillFull": "Simplify a composition of an inverse trigonometric function with a trigonometric function.",

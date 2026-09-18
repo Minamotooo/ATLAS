@@ -1,0 +1,807 @@
+{
+ "chunkLabel": "MathBook1_b13",
+ "subject": "Mathematics",
+ "skills": [
+  {
+   "tempId": "MathBook1_b13_s1",
+   "bloom": "Remember",
+   "skillFull": "Recall the standard limit that sine x divided by x tends to one as x tends to zero.",
+   "topicKey": "MAT1_LIMIT",
+   "topicLabel": "Limits and Continuity",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p91__q64__498"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s2",
+   "bloom": "Remember",
+   "skillFull": "Recall the standard limits of (e to the x minus 1) over x and of ln(1 plus x) over x as x tends to zero.",
+   "topicKey": "MAT1_LIMIT",
+   "topicLabel": "Limits and Continuity",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p87__q48__482"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s3",
+   "bloom": "Apply",
+   "skillFull": "Calculate a limit of indeterminate form zero over zero involving trigonometric functions, using the standard sine limit.",
+   "topicKey": "MAT1_LIMIT",
+   "topicLabel": "Limits and Continuity",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p87__q46__480",
+    "MathBook1__p101__q37__561",
+    "MathBook1__p103__q50__574"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s4",
+   "bloom": "Apply",
+   "skillFull": "Calculate a limit of indeterminate form involving exponential or logarithmic functions, using the standard exponential and logarithmic limits.",
+   "topicKey": "MAT1_LIMIT",
+   "topicLabel": "Limits and Continuity",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p81__q22__454",
+    "MathBook1__p89__q57__491",
+    "MathBook1__p101__q41__565"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s5",
+   "bloom": "Apply",
+   "skillFull": "Calculate a limit of the form one raised to the power infinity by rewriting it as an exponential limit.",
+   "topicKey": "MAT1_LIMIT",
+   "topicLabel": "Limits and Continuity",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p96__q01__525",
+    "MathBook1__p84__q36__469",
+    "MathBook1__p98__q13__537"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s6",
+   "bloom": "Apply",
+   "skillFull": "Calculate a limit at infinity involving radicals, by rationalising or by dividing through by the highest power present.",
+   "topicKey": "MAT1_LIMIT",
+   "topicLabel": "Limits and Continuity",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p102__q48__572"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s7",
+   "bloom": "Apply",
+   "skillFull": "Calculate a limit of indeterminate form infinity minus infinity by combining the terms into a single fraction.",
+   "topicKey": "MAT1_LIMIT",
+   "topicLabel": "Limits and Continuity",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p95__q81__517",
+    "MathBook1__p95__q80__516"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s8",
+   "bloom": "Apply",
+   "skillFull": "Calculate a limit of indeterminate form zero times infinity by rewriting the product as a quotient.",
+   "topicKey": "MAT1_LIMIT",
+   "topicLabel": "Limits and Continuity",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p102__q45__569",
+    "MathBook1__p99__q19__543"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s9",
+   "bloom": "Apply",
+   "skillFull": "Calculate a limit of an indeterminate power of the form zero to the power zero or infinity to the power zero.",
+   "topicKey": "MAT1_LIMIT",
+   "topicLabel": "Limits and Continuity",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p99__q25__549"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s10",
+   "bloom": "Apply",
+   "skillFull": "Calculate a limit of a difference of two logarithms by first combining them into a single logarithm.",
+   "topicKey": "MAT1_LIMIT",
+   "topicLabel": "Limits and Continuity",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p93__q71__507"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s11",
+   "bloom": "Apply",
+   "skillFull": "Determine the value of a constant that makes a given limit take a stated finite value.",
+   "topicKey": "MAT1_LIMIT",
+   "topicLabel": "Limits and Continuity",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p103__q52__576",
+    "MathBook1__p98__q17__541",
+    "MathBook1__p106__q72__596"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s12",
+   "bloom": "Apply",
+   "skillFull": "Calculate a limit of a difference quotient in which the increment appears as a multiple, recognising it as a derivative.",
+   "topicKey": "MAT1_LIMIT",
+   "topicLabel": "Limits and Continuity",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p84__q34__467",
+    "MathBook1__p96__q87__523",
+    "MathBook1__p93__q70__506"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s13",
+   "bloom": "Remember",
+   "skillFull": "Recall the derivative of an exponential function with a constant base.",
+   "topicKey": "MAT1_DERIVATIVE",
+   "topicLabel": "Rules of Differentiation",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p84__q35__468"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s14",
+   "bloom": "Apply",
+   "skillFull": "Calculate the derivative of a logarithmic function taken to an arbitrary base.",
+   "topicKey": "MAT1_DERIVATIVE",
+   "topicLabel": "Rules of Differentiation",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p98__q15__539",
+    "MathBook1__p88__q53__487"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s15",
+   "bloom": "Apply",
+   "skillFull": "Calculate the derivative of a product or a quotient of two functions.",
+   "topicKey": "MAT1_DERIVATIVE",
+   "topicLabel": "Rules of Differentiation",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p91__q62__496",
+    "MathBook1__p94__q18__514"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s16",
+   "bloom": "Apply",
+   "skillFull": "Calculate the derivative of a composite function using the chain rule.",
+   "topicKey": "MAT1_DERIVATIVE",
+   "topicLabel": "Rules of Differentiation",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p86__q43__477",
+    "MathBook1__p105__q68__592"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s17",
+   "bloom": "Apply",
+   "skillFull": "Calculate the derivative of an inverse trigonometric function.",
+   "topicKey": "MAT1_DERIVATIVE",
+   "topicLabel": "Rules of Differentiation",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p86__q44__478",
+    "MathBook1__p89__q56__490",
+    "MathBook1__p104__q63__587"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s18",
+   "bloom": "Apply",
+   "skillFull": "Simplify an inverse trigonometric expression by a trigonometric substitution before differentiating it.",
+   "topicKey": "MAT1_DERIVATIVE",
+   "topicLabel": "Rules of Differentiation",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p82__q25__457",
+    "MathBook1__p86__q40__474",
+    "MathBook1__p95__q84__520",
+    "MathBook1__p98__q16__540"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s19",
+   "bloom": "Apply",
+   "skillFull": "Calculate the derivative of a sum of two terms, each of which is a function raised to a variable power.",
+   "topicKey": "MAT1_DERIVATIVE",
+   "topicLabel": "Rules of Differentiation",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p94__q19__515",
+    "MathBook1__p83__q28__460"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s20",
+   "bloom": "Apply",
+   "skillFull": "Calculate the derivative of a relation of the form x to the a times y to the b equals a power of a sum.",
+   "topicKey": "MAT1_DERIVATIVE",
+   "topicLabel": "Rules of Differentiation",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p83__q31(b)__464",
+    "MathBook1__p100__q32__556"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s21",
+   "bloom": "Apply",
+   "skillFull": "Calculate the derivative of an implicit relation in which each side is a function raised to a variable power.",
+   "topicKey": "MAT1_DERIVATIVE",
+   "topicLabel": "Rules of Differentiation",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p81__q23__455",
+    "MathBook1__p92__q67(a)__502",
+    "MathBook1__p95__q82__518"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s22",
+   "bloom": "Apply",
+   "skillFull": "Calculate the second derivative of a given explicit function.",
+   "topicKey": "MAT1_DERIVATIVE",
+   "topicLabel": "Rules of Differentiation",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p97__q02__526",
+    "MathBook1__p99__q24__548"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s23",
+   "bloom": "Apply",
+   "skillFull": "Determine the nth derivative of a trigonometric or an exponential function.",
+   "topicKey": "MAT1_DERIVATIVE",
+   "topicLabel": "Rules of Differentiation",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p95__q85__521",
+    "MathBook1__p98__q11__535",
+    "MathBook1__p103__q53__577"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s24",
+   "bloom": "Apply",
+   "skillFull": "Calculate the derivative of an expression after simplifying it first with the laws of logarithms.",
+   "topicKey": "MAT1_DERIVATIVE",
+   "topicLabel": "Rules of Differentiation",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p93__q69__505",
+    "MathBook1__p106__q71__595"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s25",
+   "bloom": "Apply",
+   "skillFull": "Calculate the derivative of a function given as a power series in x.",
+   "topicKey": "MAT1_DERIVATIVE",
+   "topicLabel": "Rules of Differentiation",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p100__q26__550"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s26",
+   "bloom": "Apply",
+   "skillFull": "Determine the points on a curve at which the tangent is parallel or perpendicular to a given straight line.",
+   "topicKey": "MAT1_DERIV_APPLICATION",
+   "topicLabel": "Applications of Derivatives",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p89__q55__489",
+    "MathBook1__p88__q50__484"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s27",
+   "bloom": "Apply",
+   "skillFull": "Determine the points on a curve at which the tangent is parallel to a coordinate axis.",
+   "topicKey": "MAT1_DERIV_APPLICATION",
+   "topicLabel": "Applications of Derivatives",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p90__q60__494",
+    "MathBook1__p98__q14__538",
+    "MathBook1__p99__q18__542"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s28",
+   "bloom": "Apply",
+   "skillFull": "Determine the value of a parameter from a stated condition on the tangent to a curve.",
+   "topicKey": "MAT1_DERIV_APPLICATION",
+   "topicLabel": "Applications of Derivatives",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p92__q65__500",
+    "MathBook1__p103__q54__578",
+    "MathBook1__p104__q59__583"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s29",
+   "bloom": "Apply",
+   "skillFull": "Calculate the length of the subtangent or the subnormal at a point on a curve.",
+   "topicKey": "MAT1_DERIV_APPLICATION",
+   "topicLabel": "Applications of Derivatives",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p85__q39__473",
+    "MathBook1__p88__q51__485"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s30",
+   "bloom": "Apply",
+   "skillFull": "Calculate the angle at which a curve cuts a coordinate axis, from the slope of its tangent there.",
+   "topicKey": "MAT1_DERIV_APPLICATION",
+   "topicLabel": "Applications of Derivatives",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p93__q73__509"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s31",
+   "bloom": "Analyze",
+   "skillFull": "Determine the stationary points of a function and classify each as a maximum, a minimum or neither, using the sign of the derivatives.",
+   "topicKey": "MAT1_DERIV_APPLICATION",
+   "topicLabel": "Applications of Derivatives",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p96__q86__522",
+    "MathBook1__p101__q40__564",
+    "MathBook1__p103__q57__581"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s32",
+   "bloom": "Apply",
+   "skillFull": "Determine the greatest or least value of an algebraic expression using differentiation.",
+   "topicKey": "MAT1_DERIV_APPLICATION",
+   "topicLabel": "Applications of Derivatives",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p82__q26__458",
+    "MathBook1__p97__q05__528",
+    "MathBook1__p100__q27__551",
+    "MathBook1__p105__q66__590"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s33",
+   "bloom": "Apply",
+   "skillFull": "Determine the greatest or least value of a trigonometric expression using differentiation.",
+   "topicKey": "MAT1_DERIV_APPLICATION",
+   "topicLabel": "Applications of Derivatives",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p99__q23__547",
+    "MathBook1__p103__q56__580"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s34",
+   "bloom": "Apply",
+   "skillFull": "Determine two numbers satisfying a stated condition that optimise a given expression.",
+   "topicKey": "MAT1_DERIV_APPLICATION",
+   "topicLabel": "Applications of Derivatives",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p100__q33__557"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s35",
+   "bloom": "Apply",
+   "skillFull": "Calculate the rate of change of one quantity from the known rate of change of a related quantity.",
+   "topicKey": "MAT1_DERIV_APPLICATION",
+   "topicLabel": "Applications of Derivatives",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p83__q30__462",
+    "MathBook1__p103__q58__582",
+    "MathBook1__p105__q69__593"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s36",
+   "bloom": "Apply",
+   "skillFull": "Calculate the velocity or the acceleration of a moving body at a stated time from its displacement function.",
+   "topicKey": "MAT1_DERIV_APPLICATION",
+   "topicLabel": "Applications of Derivatives",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p102__q44__568",
+    "MathBook1__p105__q67__591"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s37",
+   "bloom": "Apply",
+   "skillFull": "Determine the dimensions of a container or a solid that optimise its volume or its surface area.",
+   "topicKey": "MAT1_DERIV_APPLICATION",
+   "topicLabel": "Applications of Derivatives",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p81__q20__452",
+    "MathBook1__p97__q06__530"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s38",
+   "bloom": "Apply",
+   "skillFull": "Demonstrate that a given function satisfies a stated second-order differential equation, by differentiating it twice.",
+   "topicKey": "MAT1_DERIV_APPLICATION",
+   "topicLabel": "Applications of Derivatives",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p82__q24__456",
+    "MathBook1__p86__q45__479",
+    "MathBook1__p90__q58__492",
+    "MathBook1__p94__q16__512"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b13_s39",
+   "bloom": "Apply",
+   "skillFull": "Determine the value of an expression in the first and second derivatives of a given function.",
+   "topicKey": "MAT1_DERIV_APPLICATION",
+   "topicLabel": "Applications of Derivatives",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p94__q14__510",
+    "MathBook1__p102__q43__567",
+    "MathBook1__p106__q73__597"
+   ]
+  }
+ ],
+ "prereqs": [
+  {
+   "fromTempId": "MathBook1_b13_s3",
+   "toTempId": "MathBook1_b13_s1",
+   "toDescription": "Recall the standard limit that sine x divided by x tends to one as x tends to zero.",
+   "toTopicKeyGuess": "MAT1_LIMIT"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s4",
+   "toTempId": "MathBook1_b13_s2",
+   "toDescription": "Recall the standard limits of (e to the x minus 1) over x and of ln(1 plus x) over x as x tends to zero.",
+   "toTopicKeyGuess": "MAT1_LIMIT"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s5",
+   "toTempId": "MathBook1_b13_s2",
+   "toDescription": "Recall the standard limits of (e to the x minus 1) over x and of ln(1 plus x) over x as x tends to zero.",
+   "toTopicKeyGuess": "MAT1_LIMIT"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s7",
+   "toTempId": "MathBook1_b13_s3",
+   "toDescription": "Calculate a limit of indeterminate form zero over zero involving trigonometric functions, using the standard sine limit.",
+   "toTopicKeyGuess": "MAT1_LIMIT"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s8",
+   "toTempId": "MathBook1_b13_s3",
+   "toDescription": "Calculate a limit of indeterminate form zero over zero involving trigonometric functions, using the standard sine limit.",
+   "toTopicKeyGuess": "MAT1_LIMIT"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s9",
+   "toTempId": "MathBook1_b13_s5",
+   "toDescription": "Calculate a limit of the form one raised to the power infinity by rewriting it as an exponential limit.",
+   "toTopicKeyGuess": "MAT1_LIMIT"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s10",
+   "toTempId": "MathBook1_b13_s2",
+   "toDescription": "Recall the standard limits of (e to the x minus 1) over x and of ln(1 plus x) over x as x tends to zero.",
+   "toTopicKeyGuess": "MAT1_LIMIT"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s11",
+   "toTempId": "MathBook1_b13_s4",
+   "toDescription": "Calculate a limit of indeterminate form involving exponential or logarithmic functions, using the standard exponential and logarithmic limits.",
+   "toTopicKeyGuess": "MAT1_LIMIT"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s11",
+   "toTempId": "MathBook1_b13_s3",
+   "toDescription": "Calculate a limit of indeterminate form zero over zero involving trigonometric functions, using the standard sine limit.",
+   "toTopicKeyGuess": "MAT1_LIMIT"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s12",
+   "toTempId": "MathBook1_b13_s1",
+   "toDescription": "Recall the standard limit that sine x divided by x tends to one as x tends to zero.",
+   "toTopicKeyGuess": "MAT1_LIMIT"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s6",
+   "toTempId": "MathBook1_b13_s1",
+   "toDescription": "Recall the standard limit that sine x divided by x tends to one as x tends to zero.",
+   "toTopicKeyGuess": "MAT1_LIMIT"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s14",
+   "toTempId": "MathBook1_b13_s13",
+   "toDescription": "Recall the derivative of an exponential function with a constant base.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s15",
+   "toTempId": "MathBook1_b13_s13",
+   "toDescription": "Recall the derivative of an exponential function with a constant base.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s16",
+   "toTempId": "MathBook1_b13_s15",
+   "toDescription": "Calculate the derivative of a product or a quotient of two functions.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s17",
+   "toTempId": "MathBook1_b13_s16",
+   "toDescription": "Calculate the derivative of a composite function using the chain rule.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s18",
+   "toTempId": "MathBook1_b13_s17",
+   "toDescription": "Calculate the derivative of an inverse trigonometric function.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s19",
+   "toTempId": "MathBook1_b13_s16",
+   "toDescription": "Calculate the derivative of a composite function using the chain rule.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s20",
+   "toTempId": "MathBook1_b13_s16",
+   "toDescription": "Calculate the derivative of a composite function using the chain rule.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s21",
+   "toTempId": "MathBook1_b13_s16",
+   "toDescription": "Calculate the derivative of a composite function using the chain rule.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s22",
+   "toTempId": "MathBook1_b13_s15",
+   "toDescription": "Calculate the derivative of a product or a quotient of two functions.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s23",
+   "toTempId": "MathBook1_b13_s22",
+   "toDescription": "Calculate the second derivative of a given explicit function.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s24",
+   "toTempId": "MathBook1_b13_s14",
+   "toDescription": "Calculate the derivative of a logarithmic function taken to an arbitrary base.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s25",
+   "toTempId": "MathBook1_b13_s15",
+   "toDescription": "Calculate the derivative of a product or a quotient of two functions.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s19",
+   "toTempId": "MathBook1_b13_s24",
+   "toDescription": "Calculate the derivative of an expression after simplifying it first with the laws of logarithms.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s21",
+   "toTempId": "MathBook1_b13_s24",
+   "toDescription": "Calculate the derivative of an expression after simplifying it first with the laws of logarithms.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s26",
+   "toTempId": "MathBook1_b13_s16",
+   "toDescription": "Calculate the derivative of a composite function using the chain rule.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s27",
+   "toTempId": "MathBook1_b13_s26",
+   "toDescription": "Determine the points on a curve at which the tangent is parallel or perpendicular to a given straight line.",
+   "toTopicKeyGuess": "MAT1_DERIV_APPLICATION"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s28",
+   "toTempId": "MathBook1_b13_s26",
+   "toDescription": "Determine the points on a curve at which the tangent is parallel or perpendicular to a given straight line.",
+   "toTopicKeyGuess": "MAT1_DERIV_APPLICATION"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s29",
+   "toTempId": "MathBook1_b13_s26",
+   "toDescription": "Determine the points on a curve at which the tangent is parallel or perpendicular to a given straight line.",
+   "toTopicKeyGuess": "MAT1_DERIV_APPLICATION"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s30",
+   "toTempId": "MathBook1_b13_s26",
+   "toDescription": "Determine the points on a curve at which the tangent is parallel or perpendicular to a given straight line.",
+   "toTopicKeyGuess": "MAT1_DERIV_APPLICATION"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s31",
+   "toTempId": "MathBook1_b13_s22",
+   "toDescription": "Calculate the second derivative of a given explicit function.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s32",
+   "toTempId": "MathBook1_b13_s31",
+   "toDescription": "Determine the stationary points of a function and classify each as a maximum, a minimum or neither, using the sign of the derivatives.",
+   "toTopicKeyGuess": "MAT1_DERIV_APPLICATION"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s33",
+   "toTempId": "MathBook1_b13_s31",
+   "toDescription": "Determine the stationary points of a function and classify each as a maximum, a minimum or neither, using the sign of the derivatives.",
+   "toTopicKeyGuess": "MAT1_DERIV_APPLICATION"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s34",
+   "toTempId": "MathBook1_b13_s32",
+   "toDescription": "Determine the greatest or least value of an algebraic expression using differentiation.",
+   "toTopicKeyGuess": "MAT1_DERIV_APPLICATION"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s35",
+   "toTempId": "MathBook1_b13_s16",
+   "toDescription": "Calculate the derivative of a composite function using the chain rule.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s36",
+   "toTempId": "MathBook1_b13_s35",
+   "toDescription": "Calculate the rate of change of one quantity from the known rate of change of a related quantity.",
+   "toTopicKeyGuess": "MAT1_DERIV_APPLICATION"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s37",
+   "toTempId": "MathBook1_b13_s32",
+   "toDescription": "Determine the greatest or least value of an algebraic expression using differentiation.",
+   "toTopicKeyGuess": "MAT1_DERIV_APPLICATION"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s38",
+   "toTempId": "MathBook1_b13_s22",
+   "toDescription": "Calculate the second derivative of a given explicit function.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s39",
+   "toTempId": "MathBook1_b13_s22",
+   "toDescription": "Calculate the second derivative of a given explicit function.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s6",
+   "toSkillId": "MAT_CALC_DIFF3",
+   "toDescription": "Calculate the limit of a rational or radical expression as the variable tends to a finite value or to infinity.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s12",
+   "toSkillId": "MAT_CALC_DIFF6",
+   "toDescription": "Calculate the derivative of a function from first principles, as the limit of its difference quotient.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s20",
+   "toSkillId": "MAT_CALC_DIFF7",
+   "toDescription": "Calculate the derivative of an implicitly defined function.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s21",
+   "toSkillId": "MAT_CALC_DIFF9",
+   "toDescription": "Calculate the derivative of a function raised to a variable power using logarithmic differentiation.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s19",
+   "toSkillId": "MAT_CALC_DIFF9",
+   "toDescription": "Calculate the derivative of a function raised to a variable power using logarithmic differentiation.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s26",
+   "toSkillId": "MAT_CALC_DIFF10",
+   "toDescription": "Determine the equation of the tangent or the normal to a curve at a given point.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s27",
+   "toSkillId": "MAT_CALC_DIFF10",
+   "toDescription": "Determine the equation of the tangent or the normal to a curve at a given point.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s31",
+   "toSkillId": "MAT_CALC_DIFF11",
+   "toDescription": "Determine the maximum or the minimum value of a function using its first and second derivatives.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  },
+  {
+   "fromTempId": "MathBook1_b13_s3",
+   "toSkillId": "MAT_CALC_DIFF4",
+   "toDescription": "Calculate a limit of indeterminate form using the series expansions of exponential, logarithmic or trigonometric functions.",
+   "toTopicKeyGuess": "MAT_CALC_DIFF"
+  }
+ ],
+ "reusedExistingSkills": [
+  {
+   "existingSkillId": "MAT_CALC_DIFF8",
+   "sourceItemIds": [
+    "MathBook1__p85__q37__471",
+    "MathBook1__p92__q66__501",
+    "MathBook1__p102__q42__566"
+   ]
+  },
+  {
+   "existingSkillId": "MAT_CALC_DIFF13",
+   "sourceItemIds": [
+    "MathBook1__p85__q38__472",
+    "MathBook1__p92__q67(b)__503",
+    "MathBook1__p103__q55__579"
+   ]
+  },
+  {
+   "existingSkillId": "MAT_CALC_DIFF5",
+   "sourceItemIds": [
+    "MathBook1__p97__q04__528"
+   ]
+  },
+  {
+   "existingSkillId": "MAT_CALC_DIFF14",
+   "sourceItemIds": [
+    "MathBook1__p99__q21__545"
+   ]
+  }
+ ],
+ "newTopicsProposed": [],
+ "skippedItems": [],
+ "notes": "Records 451-600 of MathBook1 (parsed_items.jsonl lines 2139-2288). One dense homogeneous block: limits and differentiation, HM 1st Paper Ch 9. FIRST BATCH USING THE SYLLABUS TOPIC VOCABULARY DIRECTLY - topicKeys are MAT1_LIMIT / MAT1_DERIVATIVE / MAT1_DERIV_APPLICATION from the rebuilt ontology_config.json, so no alias is needed for them. Skill count is low relative to record count (39 skills from 150 records) because the block is highly repetitive - dozens of near-identical limit and derivative exercises. That is the reuse rule working, not under-extraction: eleven b12 calculus skills are referenced or reused rather than re-minted. All descriptions are plain text with no backslashes."
+}

@@ -1,0 +1,663 @@
+{
+ "chunkLabel": "PhyBook1_b22",
+ "subject": "Physics",
+ "skills": [
+  {
+   "tempId": "PhyBook1_b22_s1",
+   "bloom": "Remember",
+   "skillFull": "Recall the relation between the speed, the frequency and the wavelength of a wave.",
+   "topicKey": "PHY1_WAVE_BASICS",
+   "topicLabel": "Wave Motion and Its Parameters",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p78__q28__515"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s2",
+   "bloom": "Apply",
+   "skillFull": "Calculate the wavelength, frequency or speed of a wave from the other two quantities.",
+   "topicKey": "PHY1_WAVE_BASICS",
+   "topicLabel": "Wave Motion and Its Parameters",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p77__q22__509",
+    "PhyBook1__p84__q43__563",
+    "PhyBook1__p82__q26__547"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s3",
+   "bloom": "Understand",
+   "skillFull": "Distinguish transverse from longitudinal waves and identify examples of each.",
+   "topicKey": "PHY1_WAVE_BASICS",
+   "topicLabel": "Wave Motion and Its Parameters",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p83__q37__557",
+    "PhyBook1__p80__q09__530"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s4",
+   "bloom": "Apply",
+   "skillFull": "Calculate the phase difference or the path difference between two points on a wave.",
+   "topicKey": "PHY1_WAVE_BASICS",
+   "topicLabel": "Wave Motion and Its Parameters",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p70__q08__461",
+    "PhyBook1__p72__q18__471",
+    "PhyBook1__p83__q33__553"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s5",
+   "bloom": "Apply",
+   "skillFull": "Determine the amplitude, wavelength, frequency and speed of a progressive wave from its equation.",
+   "topicKey": "PHY1_WAVE_EQUATION",
+   "topicLabel": "Progressive Wave Equation",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p74__q02__489",
+    "PhyBook1__p77__q21__508",
+    "PhyBook1__p85__q50__571"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s6",
+   "bloom": "Apply",
+   "skillFull": "Determine the displacement, velocity or acceleration of a particle in a progressive wave at a stated time.",
+   "topicKey": "PHY1_WAVE_EQUATION",
+   "topicLabel": "Progressive Wave Equation",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p78__q27__514",
+    "PhyBook1__p85__q49__570"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s7",
+   "bloom": "Apply",
+   "skillFull": "Write the equation of a progressive wave from its stated parameters.",
+   "topicKey": "PHY1_WAVE_EQUATION",
+   "topicLabel": "Progressive Wave Equation",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p74__q05__492",
+    "PhyBook1__p79__q02__523"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s8",
+   "bloom": "Apply",
+   "skillFull": "Determine the resultant of two waves superposed with a stated phase difference.",
+   "topicKey": "PHY1_SUPERPOSITION",
+   "topicLabel": "Superposition, Stationary Waves and Beats",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p74__q04__491",
+    "PhyBook1__p75__q06__493"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s9",
+   "bloom": "Understand",
+   "skillFull": "Recall the characteristics of a stationary wave and the positions of its nodes and antinodes.",
+   "topicKey": "PHY1_SUPERPOSITION",
+   "topicLabel": "Superposition, Stationary Waves and Beats",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p82__q29__549",
+    "PhyBook1__p84__q41__562",
+    "PhyBook1__p80__q05__526"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s10",
+   "bloom": "Apply",
+   "skillFull": "Calculate the beat frequency produced by two sources of slightly different frequency.",
+   "topicKey": "PHY1_SUPERPOSITION",
+   "topicLabel": "Superposition, Stationary Waves and Beats",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p78__q31__518",
+    "PhyBook1__p82__q28__548",
+    "PhyBook1__p85__q48__569"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s11",
+   "bloom": "Apply",
+   "skillFull": "Determine the unknown frequency of a tuning fork from the beats it makes with a fork of known frequency.",
+   "topicKey": "PHY1_SUPERPOSITION",
+   "topicLabel": "Superposition, Stationary Waves and Beats",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p76__q17__504",
+    "PhyBook1__p80__q11__532",
+    "PhyBook1__p80__q13__534"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s12",
+   "bloom": "Apply",
+   "skillFull": "Calculate the frequency of a stretched string from its length, its tension and its mass per unit length.",
+   "topicKey": "PHY1_SUPERPOSITION",
+   "topicLabel": "Superposition, Stationary Waves and Beats",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p76__q12__499",
+    "PhyBook1__p79__q01__522",
+    "PhyBook1__p84__q44__564"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s13",
+   "bloom": "Apply",
+   "skillFull": "Determine the frequency of a vibrating air column in a closed or an open pipe, and the condition for resonance.",
+   "topicKey": "PHY1_SUPERPOSITION",
+   "topicLabel": "Superposition, Stationary Waves and Beats",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p77__q23__510",
+    "PhyBook1__p84__q46__566",
+    "PhyBook1__p76__q16__503"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s14",
+   "bloom": "Apply",
+   "skillFull": "Calculate the speed of sound in air at a stated temperature.",
+   "topicKey": "PHY1_SOUND",
+   "topicLabel": "Sound Waves and the Doppler Effect",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p85__q01__572",
+    "PhyBook1__p86__q02__573"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s15",
+   "bloom": "Apply",
+   "skillFull": "Determine the distance of a reflecting surface from the time taken by an echo to return.",
+   "topicKey": "PHY1_SOUND",
+   "topicLabel": "Sound Waves and the Doppler Effect",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p75__q09__496",
+    "PhyBook1__p75__q10__497",
+    "PhyBook1__p76__q13__500"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s16",
+   "bloom": "Apply",
+   "skillFull": "Calculate the intensity of sound at a stated distance from a point source.",
+   "topicKey": "PHY1_SOUND",
+   "topicLabel": "Sound Waves and the Doppler Effect",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p78__q29__516",
+    "PhyBook1__p82__q25__545",
+    "PhyBook1__p83__q34__555"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s17",
+   "bloom": "Apply",
+   "skillFull": "Calculate the intensity level of a sound in decibels.",
+   "topicKey": "PHY1_SOUND",
+   "topicLabel": "Sound Waves and the Doppler Effect",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p76__q14__501",
+    "PhyBook1__p80__q12__533",
+    "PhyBook1__p83__q31__552"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s18",
+   "bloom": "Apply",
+   "skillFull": "Determine the combined intensity level produced by several sound sources acting together.",
+   "topicKey": "PHY1_SOUND",
+   "topicLabel": "Sound Waves and the Doppler Effect",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p75__q08__495",
+    "PhyBook1__p78__q30__517",
+    "PhyBook1__p83__q35__556"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s19",
+   "bloom": "Apply",
+   "skillFull": "Calculate the apparent frequency heard when the source or the observer is in motion.",
+   "topicKey": "PHY1_SOUND",
+   "topicLabel": "Sound Waves and the Doppler Effect",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p81__q15__535",
+    "PhyBook1__p82__q30__550"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s20",
+   "bloom": "Remember",
+   "skillFull": "Recall what ultrasound is and state a practical application of it.",
+   "topicKey": "PHY1_SOUND",
+   "topicLabel": "Sound Waves and the Doppler Effect",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p76__q11__498"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s21",
+   "bloom": "Remember",
+   "skillFull": "Recall the ideal gas equation and the value of the universal gas constant.",
+   "topicKey": "PHY1_GAS_LAWS",
+   "topicLabel": "Ideal Gas Laws",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p90__q23__609",
+    "PhyBook1__p86__q07__578"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s22",
+   "bloom": "Apply",
+   "skillFull": "Calculate the pressure, the volume or the temperature of a gas using the ideal gas equation.",
+   "topicKey": "PHY1_GAS_LAWS",
+   "topicLabel": "Ideal Gas Laws",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p86__q04__575",
+    "PhyBook1__p88__q05__591",
+    "PhyBook1__p89__q19__605"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s23",
+   "bloom": "Apply",
+   "skillFull": "Determine the volume of a gas bubble rising from the bottom of a lake to the surface.",
+   "topicKey": "PHY1_GAS_LAWS",
+   "topicLabel": "Ideal Gas Laws",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p86__q03__574",
+    "PhyBook1__p86__q05__576",
+    "PhyBook1__p88__q01__587"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s24",
+   "bloom": "Apply",
+   "skillFull": "Calculate the mass or the number of moles of a gas from its pressure, volume and temperature.",
+   "topicKey": "PHY1_GAS_LAWS",
+   "topicLabel": "Ideal Gas Laws",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p86__q09__580",
+    "PhyBook1__p88__q08__594",
+    "PhyBook1__p90__q24__610"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s25",
+   "bloom": "Apply",
+   "skillFull": "Calculate the density of a gas at a stated temperature and pressure.",
+   "topicKey": "PHY1_GAS_LAWS",
+   "topicLabel": "Ideal Gas Laws",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p87__q13__584",
+    "PhyBook1__p89__q13__599"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s26",
+   "bloom": "Remember",
+   "skillFull": "Recall the postulates of the kinetic theory of gases and the value of the Boltzmann constant.",
+   "topicKey": "PHY1_KINETIC_THEORY",
+   "topicLabel": "Kinetic Theory of Gases",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p86__q07__578",
+    "PhyBook1__p90__q25__611"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s27",
+   "bloom": "Apply",
+   "skillFull": "Calculate the mean free path of a gas molecule.",
+   "topicKey": "PHY1_KINETIC_THEORY",
+   "topicLabel": "Kinetic Theory of Gases",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p88__q02__588",
+    "PhyBook1__p88__q04__590",
+    "PhyBook1__p89__q14__600"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s28",
+   "bloom": "Apply",
+   "skillFull": "Calculate the average kinetic energy of a gas molecule at a stated temperature.",
+   "topicKey": "PHY1_KINETIC_THEORY",
+   "topicLabel": "Kinetic Theory of Gases",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p88__q06__592",
+    "PhyBook1__p90__q28__614"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s29",
+   "bloom": "Apply",
+   "skillFull": "Calculate the number of molecules present in a stated volume of gas.",
+   "topicKey": "PHY1_KINETIC_THEORY",
+   "topicLabel": "Kinetic Theory of Gases",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p87__q12__583",
+    "PhyBook1__p88__q10__596"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s30",
+   "bloom": "Apply",
+   "skillFull": "Calculate the root-mean-square speed of gas molecules at a stated temperature.",
+   "topicKey": "PHY1_MOLECULAR_SPEED",
+   "topicLabel": "Molecular Speeds and Degrees of Freedom",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p86__q08__579",
+    "PhyBook1__p88__q09__595"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s31",
+   "bloom": "Apply",
+   "skillFull": "Determine the temperature at which the root-mean-square speed of a gas takes a stated value.",
+   "topicKey": "PHY1_MOLECULAR_SPEED",
+   "topicLabel": "Molecular Speeds and Degrees of Freedom",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p89__q12__598",
+    "PhyBook1__p90__q28__614"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s32",
+   "bloom": "Apply",
+   "skillFull": "Calculate the ratio of the specific heats, or the degrees of freedom, of a gas.",
+   "topicKey": "PHY1_MOLECULAR_SPEED",
+   "topicLabel": "Molecular Speeds and Degrees of Freedom",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p90__q26__612",
+    "PhyBook1__p90__q22__608"
+   ]
+  },
+  {
+   "tempId": "PhyBook1_b22_s33",
+   "bloom": "Apply",
+   "skillFull": "Calculate the relative humidity or the dew point of the air.",
+   "topicKey": "PHY1_MOLECULAR_SPEED",
+   "topicLabel": "Molecular Speeds and Degrees of Freedom",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook1__p87__q14__585",
+    "PhyBook1__p88__q07__593",
+    "PhyBook1__p89__q15__601"
+   ]
+  }
+ ],
+ "prereqs": [
+  {
+   "fromTempId": "PhyBook1_b22_s2",
+   "toTempId": "PhyBook1_b22_s1",
+   "toDescription": "Recall the relation between the speed, the frequency and the wavelength of a wave.",
+   "toTopicKeyGuess": "PHY1_WAVE_BASICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s3",
+   "toTempId": "PhyBook1_b22_s1",
+   "toDescription": "Recall the relation between the speed, the frequency and the wavelength of a wave.",
+   "toTopicKeyGuess": "PHY1_WAVE_BASICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s4",
+   "toTempId": "PhyBook1_b22_s1",
+   "toDescription": "Recall the relation between the speed, the frequency and the wavelength of a wave.",
+   "toTopicKeyGuess": "PHY1_WAVE_BASICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s5",
+   "toTempId": "PhyBook1_b22_s1",
+   "toDescription": "Recall the relation between the speed, the frequency and the wavelength of a wave.",
+   "toTopicKeyGuess": "PHY1_WAVE_BASICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s6",
+   "toTempId": "PhyBook1_b22_s5",
+   "toDescription": "Determine the amplitude, wavelength, frequency and speed of a progressive wave from its equation.",
+   "toTopicKeyGuess": "PHY1_WAVE_EQUATION"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s7",
+   "toTempId": "PhyBook1_b22_s5",
+   "toDescription": "Determine the amplitude, wavelength, frequency and speed of a progressive wave from its equation.",
+   "toTopicKeyGuess": "PHY1_WAVE_EQUATION"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s8",
+   "toTempId": "PhyBook1_b22_s4",
+   "toDescription": "Calculate the phase difference or the path difference between two points on a wave.",
+   "toTopicKeyGuess": "PHY1_WAVE_BASICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s9",
+   "toTempId": "PhyBook1_b22_s8",
+   "toDescription": "Determine the resultant of two waves superposed with a stated phase difference.",
+   "toTopicKeyGuess": "PHY1_SUPERPOSITION"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s10",
+   "toTempId": "PhyBook1_b22_s2",
+   "toDescription": "Calculate the wavelength, frequency or speed of a wave from the other two quantities.",
+   "toTopicKeyGuess": "PHY1_WAVE_BASICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s11",
+   "toTempId": "PhyBook1_b22_s10",
+   "toDescription": "Calculate the beat frequency produced by two sources of slightly different frequency.",
+   "toTopicKeyGuess": "PHY1_SUPERPOSITION"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s12",
+   "toTempId": "PhyBook1_b22_s9",
+   "toDescription": "Recall the characteristics of a stationary wave and the positions of its nodes and antinodes.",
+   "toTopicKeyGuess": "PHY1_SUPERPOSITION"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s13",
+   "toTempId": "PhyBook1_b22_s9",
+   "toDescription": "Recall the characteristics of a stationary wave and the positions of its nodes and antinodes.",
+   "toTopicKeyGuess": "PHY1_SUPERPOSITION"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s12",
+   "toTempId": "PhyBook1_b22_s2",
+   "toDescription": "Calculate the wavelength, frequency or speed of a wave from the other two quantities.",
+   "toTopicKeyGuess": "PHY1_WAVE_BASICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s14",
+   "toTempId": "PhyBook1_b22_s2",
+   "toDescription": "Calculate the wavelength, frequency or speed of a wave from the other two quantities.",
+   "toTopicKeyGuess": "PHY1_WAVE_BASICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s15",
+   "toTempId": "PhyBook1_b22_s14",
+   "toDescription": "Calculate the speed of sound in air at a stated temperature.",
+   "toTopicKeyGuess": "PHY1_SOUND"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s16",
+   "toTempId": "PhyBook1_b22_s1",
+   "toDescription": "Recall the relation between the speed, the frequency and the wavelength of a wave.",
+   "toTopicKeyGuess": "PHY1_WAVE_BASICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s17",
+   "toTempId": "PhyBook1_b22_s16",
+   "toDescription": "Calculate the intensity of sound at a stated distance from a point source.",
+   "toTopicKeyGuess": "PHY1_SOUND"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s18",
+   "toTempId": "PhyBook1_b22_s17",
+   "toDescription": "Calculate the intensity level of a sound in decibels.",
+   "toTopicKeyGuess": "PHY1_SOUND"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s19",
+   "toTempId": "PhyBook1_b22_s14",
+   "toDescription": "Calculate the speed of sound in air at a stated temperature.",
+   "toTopicKeyGuess": "PHY1_SOUND"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s19",
+   "toTempId": "PhyBook1_b22_s2",
+   "toDescription": "Calculate the wavelength, frequency or speed of a wave from the other two quantities.",
+   "toTopicKeyGuess": "PHY1_WAVE_BASICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s20",
+   "toTempId": "PhyBook1_b22_s3",
+   "toDescription": "Distinguish transverse from longitudinal waves and identify examples of each.",
+   "toTopicKeyGuess": "PHY1_WAVE_BASICS"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s22",
+   "toTempId": "PhyBook1_b22_s21",
+   "toDescription": "Recall the ideal gas equation and the value of the universal gas constant.",
+   "toTopicKeyGuess": "PHY1_GAS_LAWS"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s23",
+   "toTempId": "PhyBook1_b22_s22",
+   "toDescription": "Calculate the pressure, the volume or the temperature of a gas using the ideal gas equation.",
+   "toTopicKeyGuess": "PHY1_GAS_LAWS"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s24",
+   "toTempId": "PhyBook1_b22_s22",
+   "toDescription": "Calculate the pressure, the volume or the temperature of a gas using the ideal gas equation.",
+   "toTopicKeyGuess": "PHY1_GAS_LAWS"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s25",
+   "toTempId": "PhyBook1_b22_s22",
+   "toDescription": "Calculate the pressure, the volume or the temperature of a gas using the ideal gas equation.",
+   "toTopicKeyGuess": "PHY1_GAS_LAWS"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s26",
+   "toTempId": "PhyBook1_b22_s21",
+   "toDescription": "Recall the ideal gas equation and the value of the universal gas constant.",
+   "toTopicKeyGuess": "PHY1_GAS_LAWS"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s27",
+   "toTempId": "PhyBook1_b22_s26",
+   "toDescription": "Recall the postulates of the kinetic theory of gases and the value of the Boltzmann constant.",
+   "toTopicKeyGuess": "PHY1_KINETIC_THEORY"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s28",
+   "toTempId": "PhyBook1_b22_s26",
+   "toDescription": "Recall the postulates of the kinetic theory of gases and the value of the Boltzmann constant.",
+   "toTopicKeyGuess": "PHY1_KINETIC_THEORY"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s29",
+   "toTempId": "PhyBook1_b22_s21",
+   "toDescription": "Recall the ideal gas equation and the value of the universal gas constant.",
+   "toTopicKeyGuess": "PHY1_GAS_LAWS"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s30",
+   "toTempId": "PhyBook1_b22_s28",
+   "toDescription": "Calculate the average kinetic energy of a gas molecule at a stated temperature.",
+   "toTopicKeyGuess": "PHY1_KINETIC_THEORY"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s31",
+   "toTempId": "PhyBook1_b22_s30",
+   "toDescription": "Calculate the root-mean-square speed of gas molecules at a stated temperature.",
+   "toTopicKeyGuess": "PHY1_MOLECULAR_SPEED"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s32",
+   "toTempId": "PhyBook1_b22_s26",
+   "toDescription": "Recall the postulates of the kinetic theory of gases and the value of the Boltzmann constant.",
+   "toTopicKeyGuess": "PHY1_KINETIC_THEORY"
+  },
+  {
+   "fromTempId": "PhyBook1_b22_s33",
+   "toTempId": "PhyBook1_b22_s22",
+   "toDescription": "Calculate the pressure, the volume or the temperature of a gas using the ideal gas equation.",
+   "toTopicKeyGuess": "PHY1_GAS_LAWS"
+  }
+ ],
+ "reusedExistingSkills": [
+  {
+   "existingSkillId": "PHY1_PENDULUM2",
+   "sourceItemIds": [
+    "PhyBook1__p69__q26__450",
+    "PhyBook1__p69__q27__451",
+    "PhyBook1__p70__q04__457",
+    "PhyBook1__p72__q22__475"
+   ]
+  },
+  {
+   "existingSkillId": "PHY1_PENDULUM3",
+   "sourceItemIds": [
+    "PhyBook1__p71__q11__464",
+    "PhyBook1__p72__q24__477",
+    "PhyBook1__p72__q25__478"
+   ]
+  },
+  {
+   "existingSkillId": "PHY1_SHM1",
+   "sourceItemIds": [
+    "PhyBook1__p70__q02__455",
+    "PhyBook1__p73__q28__481",
+    "PhyBook1__p73__q30__483"
+   ]
+  },
+  {
+   "existingSkillId": "PHY1_SHM2",
+   "sourceItemIds": [
+    "PhyBook1__p70__q05__458",
+    "PhyBook1__p72__q19__472",
+    "PhyBook1__p80__q07__528"
+   ]
+  },
+  {
+   "existingSkillId": "PHY1_SHM_ENERGY0",
+   "sourceItemIds": [
+    "PhyBook1__p70__q09__462",
+    "PhyBook1__p71__q15__468",
+    "PhyBook1__p73__q31__484"
+   ]
+  }
+ ],
+ "newTopicsProposed": [],
+ "skippedItems": [],
+ "notes": "Records 451-615 of PhyBook1 (parsed_items.jsonl lines 3546-3710). THIS COMPLETES PhyBook1.txt - all 615 records processed across b19-b22. Coverage: the tail of periodic motion (451-487, reused from b21), waves and sound (Physics 1st Paper Ch9, records 488-571) split across wave parameters, the progressive wave equation, superposition and stationary waves, and sound including the Doppler effect; then ideal gases and the kinetic theory (Ch10, records 572-615). Fourth consecutive Physics batch needing no new topics - Physics 1st Paper is fully covered by the syllabus taxonomy with no gaps. All descriptions are plain text with no backslashes."
+}

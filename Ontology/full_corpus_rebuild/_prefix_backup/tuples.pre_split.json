@@ -498,7 +498,7 @@
  {
   "bloom": "Remember",
   "skillId": "CHEM_DESCRIPTIVE21",
-  "skillFull": "Recall that amphoteric metals such as lead, zinc and aluminium react with hot alkali to liberate hydrogen gas.",
+  "skillFull": "Recall that amphoteric metals such as lead, zinc and aluminium react with hot alkali to liberate hydrogen gas, and write the equation.",
   "topicKey": "CHE2_DESCRIPTIVE",
   "topicLabel": "Descriptive Inorganic Chemistry",
   "subject": "Chemistry"
@@ -514,7 +514,7 @@
  {
   "bloom": "Remember",
   "skillId": "CHEM_DESCRIPTIVE23",
-  "skillFull": "Recall that water gas is produced by passing steam over red-hot coke.",
+  "skillFull": "Recall that water gas is produced by passing steam over red-hot coke, and write the equation.",
   "topicKey": "CHE2_INDUSTRIAL",
   "topicLabel": "Industrial Chemical Processes",
   "subject": "Chemistry"
@@ -525,6 +525,14 @@
   "skillFull": "Recall the principal natural mineral source(s) of a given metallic element (e.g., sodium from rock salt, potassium from saltpetre/sylvite, magnesium from dolomite/carnallite, calcium from fluorspar/phosphorite), including the mineral's chemical formula.",
   "topicKey": "CHE2_METALLURGY",
   "topicLabel": "Ores, Minerals and Metallurgy",
+  "subject": "Chemistry"
+ },
+ {
+  "bloom": "Remember",
+  "skillId": "CHEM_DESCRIPTIVE4",
+  "skillFull": "Recall the characteristic flame-test colour produced by a given metal ion (e.g., sodium - golden yellow, calcium - brick red, potassium - lilac/violet, copper - bluish green), and that some metals (e.g., magnesium) show no characteristic flame colour.",
+  "topicKey": "CHE1_FLAME_TEST",
+  "topicLabel": "Flame Tests and Emission Colours",
   "subject": "Chemistry"
  },
  {
@@ -594,7 +602,7 @@
  {
   "bloom": "Apply",
   "skillId": "CHEM_ENV13",
-  "skillFull": "Write the sequence of reactions by which atmospheric nitrogen is fixed during a lightning discharge, from N2 through NO and NO2 to nitric acid and nitrate salts.",
+  "skillFull": "Write the sequence of reactions by which atmospheric nitrogen is fixed during a lightning discharge (N2 to NO to NO2 to HNO3 to nitrate salts), and explain how the resulting nitrate is absorbed by plants to build plant and then animal protein.",
   "topicKey": "CHE2_ATMOSPHERE",
   "topicLabel": "Atmosphere and Air Pollution",
   "subject": "Chemistry"
@@ -1259,8 +1267,8 @@
   "bloom": "Remember",
   "skillId": "CHEM_NOM6",
   "skillFull": "Recall the definition of an ore as a naturally occurring mineral deposit from which a metal can be extracted economically.",
-  "topicKey": "CHE2_METALLURGY",
-  "topicLabel": "Ores, Minerals and Metallurgy",
+  "topicKey": "CHE2_ORG_NOMENCLATURE",
+  "topicLabel": "Nomenclature and Homologous Series",
   "subject": "Chemistry"
  },
  {
@@ -1299,6 +1307,14 @@
   "bloom": "Remember",
   "skillId": "CHEM_NUCLEAR1",
   "skillFull": "Recall the charge and identity of the common radioactive emissions: an alpha particle (a He2+ nucleus, charge +2), a beta particle (an electron), and a gamma ray (a high-energy photon).",
+  "topicKey": "CHE1_NUCLEAR_CHEM",
+  "topicLabel": "Nuclear Chemistry and Radioactivity",
+  "subject": "Chemistry"
+ },
+ {
+  "bloom": "Apply",
+  "skillId": "CHEM_NUCLEAR10",
+  "skillFull": "Complete and balance a nuclear reaction equation, conserving total mass number and total atomic number across reactants and products.",
   "topicKey": "CHE1_NUCLEAR_CHEM",
   "topicLabel": "Nuclear Chemistry and Radioactivity",
   "subject": "Chemistry"
@@ -1602,7 +1618,7 @@
  {
   "bloom": "Remember",
   "skillId": "CHEM_PERIODIC31",
-  "skillFull": "Recall the periodic trend that electronegativity increases across a period and decreases down a group.",
+  "skillFull": "Recall the periodic trend that electronegativity increases across a period and decreases down a group, and use it to identify the most/least electronegative element in a set.",
   "topicKey": "CHE1_PERIODIC_TRENDS",
   "topicLabel": "Periodic Properties and Trends",
   "subject": "Chemistry"
@@ -1994,7 +2010,7 @@
  {
   "bloom": "Remember",
   "skillId": "CHEM_REDOX41",
-  "skillFull": "Recall the definition of the electrochemical equivalent of an element as the mass liberated by one coulomb of charge.",
+  "skillFull": "Define the electrochemical equivalent of an element as the mass liberated by one coulomb of charge, and calculate it from the element's molar mass, its ionic charge and the Faraday constant.",
   "topicKey": "CHE1_REDOX",
   "topicLabel": "Oxidation, Reduction and Oxidation Number",
   "subject": "Chemistry"
@@ -2002,7 +2018,7 @@
  {
   "bloom": "Remember",
   "skillId": "CHEM_REDOX42",
-  "skillFull": "Recall that one faraday is the charge carried by one mole of electrons, about 96500 coulombs.",
+  "skillFull": "Recall that one faraday is the charge carried by one mole of electrons (about 96500 coulombs), and determine how many faradays are needed to deposit one mole of a metal of a given ionic charge.",
   "topicKey": "CHE1_REDOX",
   "topicLabel": "Oxidation, Reduction and Oxidation Number",
   "subject": "Chemistry"
@@ -2346,7 +2362,7 @@
  {
   "bloom": "Understand",
   "skillId": "CHEM_STEREO3",
-  "skillFull": "Explain that optical isomerism requires a carbon atom carrying four different groups.",
+  "skillFull": "Explain that optical isomerism requires a chiral carbon atom, and determine whether a given compound is optically active (for example glycine is not, whereas lactic acid is).",
   "topicKey": "CHE2_ORG_STEREO",
   "topicLabel": "Stereochemistry",
   "subject": "Chemistry"
@@ -2370,7 +2386,7 @@
  {
   "bloom": "Understand",
   "skillId": "CHEM_STEREO6",
-  "skillFull": "Explain tautomerism as the dynamic equilibrium between the keto and the enol form of a carbonyl compound.",
+  "skillFull": "Explain tautomerism as the dynamic equilibrium between keto and enol forms of a carbonyl compound, and identify which compounds can show it.",
   "topicKey": "CHE2_ORG_STEREO",
   "topicLabel": "Stereochemistry",
   "subject": "Chemistry"
@@ -2874,7 +2890,7 @@
  {
   "bloom": "Apply",
   "skillId": "CHEM_AT1",
-  "skillFull": "Apply the Aufbau principle, the Pauli exclusion principle and Hund's rule to write the full ground-state electron configuration of an atom.",
+  "skillFull": "Apply the Aufbau principle, Pauli exclusion principle, and Hund's rule to write the full ground-state electron configuration of an atom given its atomic number.",
   "topicKey": "CHE1_ELECTRON_CONFIG",
   "topicLabel": "Electron Configuration",
   "subject": "Chemistry"
@@ -3322,7 +3338,7 @@
  {
   "bloom": "Understand",
   "skillId": "CHE_ATOMIC62",
-  "skillFull": "Explain why an atom or ion with a half-filled or a fully-filled p or d subshell has extra stability.",
+  "skillFull": "Explain why an ion or atom with a half-filled (or fully-filled) p or d subshell has extra stability, and use this to compare relative (e.g., second) ionization energies among neighbouring elements.",
   "topicKey": "CHE1_ELECTRON_CONFIG",
   "topicLabel": "Electron Configuration",
   "subject": "Chemistry"
@@ -4882,7 +4898,7 @@
  {
   "bloom": "Understand",
   "skillId": "CHE_ORGANIC108",
-  "skillFull": "Distinguish the SN1 and the SN2 substitution mechanisms by their rate-determining step and their stereochemical outcome.",
+  "skillFull": "Distinguish the SN1 and SN2 substitution mechanisms and recall that the order of SN1 reactivity of alkyl halides is tertiary greater than secondary greater than primary.",
   "topicKey": "CHE2_ORG_HALIDE",
   "topicLabel": "Halogen Derivatives",
   "subject": "Chemistry"
@@ -4890,7 +4906,7 @@
  {
   "bloom": "Apply",
   "skillId": "CHE_ORGANIC109",
-  "skillFull": "Predict the anti-Markovnikov product formed when a hydrogen halide adds to an alkene in the presence of a peroxide.",
+  "skillFull": "Predict the anti-Markovnikov product formed when a hydrogen halide adds to an alkene in the presence of a peroxide, and explain it by the free-radical mechanism that operates.",
   "topicKey": "CHE2_ORG_HYDROCARBON",
   "topicLabel": "Alkanes, Alkenes and Alkynes",
   "subject": "Chemistry"
@@ -4930,7 +4946,7 @@
  {
   "bloom": "Understand",
   "skillId": "CHE_ORGANIC113",
-  "skillFull": "Explain the iodoform test, in which iodine and alkali give a yellow precipitate of iodoform.",
+  "skillFull": "Explain the iodoform test, in which a compound containing a methyl ketone or a CH3CH(OH) group gives a yellow precipitate of iodoform with iodine and alkali, and use it to distinguish such compounds.",
   "topicKey": "CHE2_ORG_CARBONYL",
   "topicLabel": "Aldehydes and Ketones",
   "subject": "Chemistry"
@@ -5010,7 +5026,7 @@
  {
   "bloom": "Apply",
   "skillId": "CHE_ORGANIC122",
-  "skillFull": "Write the dehydration of an alcohol to an alkene over heated alumina.",
+  "skillFull": "Write the dehydration of an alcohol to an alkene over heated alumina, and recall that phosphoric acid gives a purer alkene than concentrated sulfuric acid because it does not char the substrate.",
   "topicKey": "CHE2_ORG_ALCOHOL",
   "topicLabel": "Alcohols, Phenols and Ethers",
   "subject": "Chemistry"
@@ -5434,7 +5450,7 @@
  {
   "bloom": "Apply",
   "skillId": "CHE_ORGANIC30",
-  "skillFull": "Write the diazo-coupling reaction of a benzenediazonium salt with a phenol or an aromatic amine to form an azo dye.",
+  "skillFull": "Write the diazo-coupling reaction of a benzenediazonium salt with phenol or an aromatic amine to form an azo dye, and name the dye produced (e.g., aniline yellow, methyl orange, chrysoidine).",
   "topicKey": "CHE2_ORG_AMINE",
   "topicLabel": "Amines and Nitrogen Compounds",
   "subject": "Chemistry"
@@ -5610,7 +5626,7 @@
  {
   "bloom": "Remember",
   "skillId": "CHE_ORGANIC50",
-  "skillFull": "Recall the definition of saponification as the alkaline hydrolysis of a fat or oil to give soap and glycerol.",
+  "skillFull": "Define saponification as the alkaline hydrolysis of a fat or oil (a glyceride) with sodium or potassium hydroxide to give soap and glycerol, and write the reaction.",
   "topicKey": "CHE2_ORG_ACID",
   "topicLabel": "Carboxylic Acids and Their Derivatives",
   "subject": "Chemistry"
@@ -5706,7 +5722,7 @@
  {
   "bloom": "Remember",
   "skillId": "CHE_ORGANIC61",
-  "skillFull": "Recall that formalin is a 30 to 40 per cent aqueous solution of methanal, and that it is used to preserve biological tissue.",
+  "skillFull": "Define formalin as a 30-40% aqueous solution of methanal, recall its use in preserving biological tissue, and explain why alcohol is added to it to prevent polymerisation.",
   "topicKey": "CHE2_ORG_CARBONYL",
   "topicLabel": "Aldehydes and Ketones",
   "subject": "Chemistry"
@@ -5746,7 +5762,7 @@
  {
   "bloom": "Apply",
   "skillId": "CHE_ORGANIC66",
-  "skillFull": "Write the conversion of ammonium cyanate to urea on heating.",
+  "skillFull": "Write the conversion of ammonium cyanate to urea on heating, and identify it as a rearrangement reaction (the Wohler synthesis).",
   "topicKey": "CHE2_ORG_ACID",
   "topicLabel": "Carboxylic Acids and Their Derivatives",
   "subject": "Chemistry"
@@ -5906,7 +5922,7 @@
  {
   "bloom": "Understand",
   "skillId": "CHE_ORGANIC84",
-  "skillFull": "Explain how the oxy-acetylene flame is produced by burning ethyne in excess oxygen, and recall the approximate temperature it reaches.",
+  "skillFull": "Explain how the oxy-acetylene flame is produced by burning ethyne in excess oxygen, write the combustion equation, and recall the approximate temperature it reaches.",
   "topicKey": "CHE2_ORG_HYDROCARBON",
   "topicLabel": "Alkanes, Alkenes and Alkynes",
   "subject": "Chemistry"
@@ -6145,6 +6161,14 @@
  },
  {
   "bloom": "Remember",
+  "skillId": "CHE_QUAL22",
+  "skillFull": "Recall the characteristic flame-test color produced by a specific metal ion (e.g., calcium gives a brick-red flame).",
+  "topicKey": "CHE1_FLAME_TEST",
+  "topicLabel": "Flame Tests and Emission Colours",
+  "subject": "Chemistry"
+ },
+ {
+  "bloom": "Remember",
   "skillId": "CHE_QUAL23",
   "skillFull": "Recall the characteristic precipitate colors of Group IIB/IVA metal sulfides formed in qualitative analysis (e.g., CuS, PbS, HgS black; CdS yellow; Sb2S3 orange).",
   "topicKey": "CHE1_CATION_ANALYSIS",
@@ -6178,9 +6202,17 @@
  {
   "bloom": "Remember",
   "skillId": "CHE_QUAL6",
-  "skillFull": "Recall the characteristic flame-test colour produced by a given metal ion, such as golden yellow for sodium, brick red for calcium and lilac for potassium, and how the colour is observed.",
+  "skillFull": "Recall the characteristic flame-test colour produced by a given metal cation (e.g., brick-red for calcium), including how the colour appears differently when viewed through a blue/cobalt glass.",
   "topicKey": "CHE1_FLAME_TEST",
   "topicLabel": "Flame Tests and Emission Colours",
+  "subject": "Chemistry"
+ },
+ {
+  "bloom": "Understand",
+  "skillId": "CHE_QUAL7",
+  "skillFull": "Explain why a weak acid (e.g. acetic acid) rather than a strong acid (e.g. hydrochloric acid) is used to acidify a solution before a qualitative precipitation test, to avoid decomposing or prematurely releasing the analyte.",
+  "topicKey": "CHE1_CATION_ANALYSIS",
+  "topicLabel": "Group Analysis of Cations",
   "subject": "Chemistry"
  },
  {
@@ -6418,7 +6450,7 @@
  {
   "bloom": "Remember",
   "skillId": "CHE_STOICHIOMETRY31",
-  "skillFull": "Recall the definition of normality as the number of gram-equivalents of solute per litre of solution.",
+  "skillFull": "Define normality as the number of gram-equivalents of solute per litre of solution, and convert between normality and molarity using the equivalence factor of the solute.",
   "topicKey": "CHE2_MOLE",
   "topicLabel": "Mole Concept and Stoichiometry",
   "subject": "Chemistry"
@@ -7730,7 +7762,7 @@
  {
   "bloom": "Apply",
   "skillId": "MAT2_INVERSE_TRIG0",
-  "skillFull": "Calculate the value of a trigonometric function, or of its square, applied to an inverse trigonometric expression.",
+  "skillFull": "Calculate the value of a trigonometric function applied to an inverse trigonometric expression.",
   "topicKey": "MAT2_INVERSE_TRIG",
   "topicLabel": "Inverse Trigonometric Functions",
   "subject": "Mathematics"
@@ -7795,6 +7827,14 @@
   "bloom": "Apply",
   "skillId": "MAT2_INVERSE_TRIG8",
   "skillFull": "Determine a variable from an equation in the sum of two inverse trigonometric functions.",
+  "topicKey": "MAT2_INVERSE_TRIG",
+  "topicLabel": "Inverse Trigonometric Functions",
+  "subject": "Mathematics"
+ },
+ {
+  "bloom": "Apply",
+  "skillId": "MAT2_INVERSE_TRIG9",
+  "skillFull": "Calculate the value of a squared trigonometric function applied to an inverse trigonometric expression.",
   "topicKey": "MAT2_INVERSE_TRIG",
   "topicLabel": "Inverse Trigonometric Functions",
   "subject": "Mathematics"
@@ -7893,8 +7933,7 @@
   "skillFull": "Recall the equations of motion for a body moving in a straight line with uniform acceleration.",
   "topicKey": "MAT2_PLANE_MOTION",
   "topicLabel": "Motion in a Plane",
-  "subject": "Mathematics",
-  "crossSubjectEquivalent": "PHY1_KINEMATICS0"
+  "subject": "Mathematics"
  },
  {
   "bloom": "Apply",
@@ -7902,8 +7941,7 @@
   "skillFull": "Calculate the displacement, velocity or acceleration of a body moving with uniform acceleration.",
   "topicKey": "MAT2_PLANE_MOTION",
   "topicLabel": "Motion in a Plane",
-  "subject": "Mathematics",
-  "crossSubjectEquivalent": "PHY1_KINEMATICS1"
+  "subject": "Mathematics"
  },
  {
   "bloom": "Apply",
@@ -7927,8 +7965,7 @@
   "skillFull": "Calculate the distance a body travels during a stated second of its motion.",
   "topicKey": "MAT2_PLANE_MOTION",
   "topicLabel": "Motion in a Plane",
-  "subject": "Mathematics",
-  "crossSubjectEquivalent": "PHY1_KINEMATICS2"
+  "subject": "Mathematics"
  },
  {
   "bloom": "Apply",
@@ -7936,8 +7973,7 @@
   "skillFull": "Determine the motion of a body falling freely under gravity from a stated height.",
   "topicKey": "MAT2_PLANE_MOTION",
   "topicLabel": "Motion in a Plane",
-  "subject": "Mathematics",
-  "crossSubjectEquivalent": "PHY1_KINEMATICS3"
+  "subject": "Mathematics"
  },
  {
   "bloom": "Apply",
@@ -7945,8 +7981,7 @@
   "skillFull": "Determine the motion of a body projected vertically upward under gravity.",
   "topicKey": "MAT2_PLANE_MOTION",
   "topicLabel": "Motion in a Plane",
-  "subject": "Mathematics",
-  "crossSubjectEquivalent": "PHY1_KINEMATICS4"
+  "subject": "Mathematics"
  },
  {
   "bloom": "Apply",
@@ -7986,8 +8021,7 @@
   "skillFull": "Determine the motion of two connected bodies hanging over a smooth pulley.",
   "topicKey": "MAT2_PLANE_MOTION",
   "topicLabel": "Motion in a Plane",
-  "subject": "Mathematics",
-  "crossSubjectEquivalent": "PHY1_NEWTON_LAWS4"
+  "subject": "Mathematics"
  },
  {
   "bloom": "Remember",
@@ -8211,8 +8245,7 @@
   "skillFull": "Recall the formulas for the time of flight, the maximum height and the horizontal range of a projectile.",
   "topicKey": "MAT2_PROJECTILE",
   "topicLabel": "Projectile Motion",
-  "subject": "Mathematics",
-  "crossSubjectEquivalent": "PHY1_PROJECTILE0"
+  "subject": "Mathematics"
  },
  {
   "bloom": "Apply",
@@ -8220,8 +8253,7 @@
   "skillFull": "Calculate the time of flight, the maximum height or the range of a projectile from its initial speed and angle of projection.",
   "topicKey": "MAT2_PROJECTILE",
   "topicLabel": "Projectile Motion",
-  "subject": "Mathematics",
-  "crossSubjectEquivalent": "PHY1_PROJECTILE1"
+  "subject": "Mathematics"
  },
  {
   "bloom": "Apply",
@@ -8589,8 +8621,7 @@
   "skillFull": "Calculate the scalar (dot) product of two vectors from their components.",
   "topicKey": "MAT1_VECTOR_PRODUCT",
   "topicLabel": "Scalar and Vector Products",
-  "subject": "Mathematics",
-  "crossSubjectEquivalent": "PHY1_VECTOR_PRODUCTS0"
+  "subject": "Mathematics"
  },
  {
   "bloom": "Apply",
@@ -8622,8 +8653,7 @@
   "skillFull": "Calculate the vector (cross) product of two vectors from their components.",
   "topicKey": "MAT1_VECTOR_PRODUCT",
   "topicLabel": "Scalar and Vector Products",
-  "subject": "Mathematics",
-  "crossSubjectEquivalent": "PHY1_VECTOR_PRODUCTS1"
+  "subject": "Mathematics"
  },
  {
   "bloom": "Apply",
@@ -8773,6 +8803,14 @@
   "bloom": "Apply",
   "skillId": "MAT_CALC_DIFF4",
   "skillFull": "Calculate a limit of indeterminate form using the series expansions of exponential, logarithmic or trigonometric functions.",
+  "topicKey": "MAT1_DERIVATIVE",
+  "topicLabel": "Rules of Differentiation",
+  "subject": "Mathematics"
+ },
+ {
+  "bloom": "Apply",
+  "skillId": "MAT_CALC_DIFF5",
+  "skillFull": "Calculate a limit of the form one raised to the power infinity using the exponential limit.",
   "topicKey": "MAT1_DERIVATIVE",
   "topicLabel": "Rules of Differentiation",
   "subject": "Mathematics"
@@ -9503,6 +9541,14 @@
   "skillFull": "Evaluate a piecewise-defined function at points lying in different pieces of its domain.",
   "topicKey": "MAT1_FUNCTION_BASICS",
   "topicLabel": "Functions, Domain and Range",
+  "subject": "Mathematics"
+ },
+ {
+  "bloom": "Remember",
+  "skillId": "MAT_INVTRIG4",
+  "skillFull": "Recall the principal-value ranges of the inverse trigonometric functions.",
+  "topicKey": "MAT2_INVERSE_TRIG",
+  "topicLabel": "Inverse Trigonometric Functions",
   "subject": "Mathematics"
  },
  {
@@ -10495,8 +10541,7 @@
   "skillFull": "Recall the equations of motion of a body moving with uniform acceleration.",
   "topicKey": "PHY1_KINEMATICS",
   "topicLabel": "Motion in a Straight Line",
-  "subject": "Physics",
-  "crossSubjectEquivalent": "MAT2_PLANE_MOTION0"
+  "subject": "Physics"
  },
  {
   "bloom": "Apply",
@@ -10504,8 +10549,7 @@
   "skillFull": "Calculate the displacement, velocity or acceleration of a body moving with uniform acceleration.",
   "topicKey": "PHY1_KINEMATICS",
   "topicLabel": "Motion in a Straight Line",
-  "subject": "Physics",
-  "crossSubjectEquivalent": "MAT2_PLANE_MOTION1"
+  "subject": "Physics"
  },
  {
   "bloom": "Apply",
@@ -10521,8 +10565,7 @@
   "skillFull": "Calculate the distance a body travels during a stated second of its motion.",
   "topicKey": "PHY1_KINEMATICS",
   "topicLabel": "Motion in a Straight Line",
-  "subject": "Physics",
-  "crossSubjectEquivalent": "MAT2_PLANE_MOTION2"
+  "subject": "Physics"
  },
  {
   "bloom": "Apply",
@@ -10530,8 +10573,7 @@
   "skillFull": "Determine the motion of a body falling freely under gravity from a stated height.",
   "topicKey": "PHY1_KINEMATICS",
   "topicLabel": "Motion in a Straight Line",
-  "subject": "Physics",
-  "crossSubjectEquivalent": "MAT2_PLANE_MOTION3"
+  "subject": "Physics"
  },
  {
   "bloom": "Apply",
@@ -10539,8 +10581,7 @@
   "skillFull": "Determine the motion of a body projected vertically upward under gravity.",
   "topicKey": "PHY1_KINEMATICS",
   "topicLabel": "Motion in a Straight Line",
-  "subject": "Physics",
-  "crossSubjectEquivalent": "MAT2_PLANE_MOTION4"
+  "subject": "Physics"
  },
  {
   "bloom": "Apply",
@@ -10756,8 +10797,7 @@
   "skillFull": "Determine the acceleration of two connected bodies hanging over a pulley.",
   "topicKey": "PHY1_NEWTON_LAWS",
   "topicLabel": "Newton's Laws of Motion",
-  "subject": "Physics",
-  "crossSubjectEquivalent": "MAT2_PLANE_MOTION9"
+  "subject": "Physics"
  },
  {
   "bloom": "Apply",
@@ -10845,8 +10885,7 @@
   "skillFull": "Recall the expressions for the time of flight, the maximum height and the horizontal range of a projectile.",
   "topicKey": "PHY1_PROJECTILE",
   "topicLabel": "Projectile Motion",
-  "subject": "Physics",
-  "crossSubjectEquivalent": "MAT2_PROJECTILE0"
+  "subject": "Physics"
  },
  {
   "bloom": "Apply",
@@ -10854,8 +10893,7 @@
   "skillFull": "Calculate the range, the maximum height or the time of flight of a projectile from its initial velocity and angle of projection.",
   "topicKey": "PHY1_PROJECTILE",
   "topicLabel": "Projectile Motion",
-  "subject": "Physics",
-  "crossSubjectEquivalent": "MAT2_PROJECTILE1"
+  "subject": "Physics"
  },
  {
   "bloom": "Apply",
@@ -11279,8 +11317,7 @@
   "skillFull": "Calculate the scalar product of two vectors from their rectangular components.",
   "topicKey": "PHY1_VECTOR_PRODUCTS",
   "topicLabel": "Scalar and Vector Products",
-  "subject": "Physics",
-  "crossSubjectEquivalent": "MATH_MECH12"
+  "subject": "Physics"
  },
  {
   "bloom": "Apply",
@@ -11288,8 +11325,7 @@
   "skillFull": "Calculate the vector product of two vectors from their rectangular components.",
   "topicKey": "PHY1_VECTOR_PRODUCTS",
   "topicLabel": "Scalar and Vector Products",
-  "subject": "Physics",
-  "crossSubjectEquivalent": "MATH_MECH16"
+  "subject": "Physics"
  },
  {
   "bloom": "Apply",
@@ -12470,7 +12506,15 @@
  {
   "bloom": "Apply",
   "skillId": "PHY2_PHOTOELECTRIC4",
-  "skillFull": "Convert between the work function of a metal and its threshold frequency or threshold wavelength, in either direction.",
+  "skillFull": "Calculate the work function of a metal from its threshold frequency or its threshold wavelength.",
+  "topicKey": "PHY2_PHOTOELECTRIC",
+  "topicLabel": "Photoelectric Effect and Photons",
+  "subject": "Physics"
+ },
+ {
+  "bloom": "Apply",
+  "skillId": "PHY2_PHOTOELECTRIC5",
+  "skillFull": "Calculate the threshold frequency or the threshold wavelength of a metal from its work function.",
   "topicKey": "PHY2_PHOTOELECTRIC",
   "topicLabel": "Photoelectric Effect and Photons",
   "subject": "Physics"
@@ -13305,294 +13349,6 @@
   "topicKey": "CHE1_TRANSITION",
   "topicLabel": "Transition Elements",
   "subject": "Chemistry",
-  "authored": true
- },
- {
-  "bloom": "Apply",
-  "skillId": "CHE2_DESCRIPTIVE0",
-  "skillFull": "Write the balanced equation for the reaction of an amphoteric metal with hot alkali.",
-  "topicKey": "CHE2_DESCRIPTIVE",
-  "topicLabel": "Descriptive Inorganic Chemistry",
-  "subject": "Chemistry",
-  "splitFrom": "CHEM_DESCRIPTIVE21"
- },
- {
-  "bloom": "Apply",
-  "skillId": "CHE2_INDUSTRIAL0",
-  "skillFull": "Write the balanced equation for the production of water gas from steam and red-hot coke.",
-  "topicKey": "CHE2_INDUSTRIAL",
-  "topicLabel": "Industrial Chemical Processes",
-  "subject": "Chemistry",
-  "splitFrom": "CHEM_DESCRIPTIVE23"
- },
- {
-  "bloom": "Apply",
-  "skillId": "CHE1_REDOX6",
-  "skillFull": "Calculate the electrochemical equivalent of an element from its molar mass and the charge on its ion.",
-  "topicKey": "CHE1_REDOX",
-  "topicLabel": "Oxidation, Reduction and Oxidation Number",
-  "subject": "Chemistry",
-  "splitFrom": "CHEM_REDOX41"
- },
- {
-  "bloom": "Apply",
-  "skillId": "CHE1_REDOX7",
-  "skillFull": "Determine the number of faradays required to deposit or liberate a stated amount of a substance at an electrode.",
-  "topicKey": "CHE1_REDOX",
-  "topicLabel": "Oxidation, Reduction and Oxidation Number",
-  "subject": "Chemistry",
-  "splitFrom": "CHEM_REDOX42"
- },
- {
-  "bloom": "Apply",
-  "skillId": "CHE2_ORG_ACID0",
-  "skillFull": "Write the equation for the saponification of a named glyceride with sodium or potassium hydroxide.",
-  "topicKey": "CHE2_ORG_ACID",
-  "topicLabel": "Carboxylic Acids and Their Derivatives",
-  "subject": "Chemistry",
-  "splitFrom": "CHE_ORGANIC50"
- },
- {
-  "bloom": "Understand",
-  "skillId": "CHE2_ORG_CARBONYL0",
-  "skillFull": "Explain why a little alcohol is added to formalin, namely to stop the methanal polymerising to paraformaldehyde.",
-  "topicKey": "CHE2_ORG_CARBONYL",
-  "topicLabel": "Aldehydes and Ketones",
-  "subject": "Chemistry",
-  "splitFrom": "CHE_ORGANIC61"
- },
- {
-  "bloom": "Apply",
-  "skillId": "CHE2_MOLE4",
-  "skillFull": "Convert between the normality and the molarity of a solution using its equivalence factor.",
-  "topicKey": "CHE2_MOLE",
-  "topicLabel": "Mole Concept and Stoichiometry",
-  "subject": "Chemistry",
-  "splitFrom": "CHE_STOICHIOMETRY31"
- },
- {
-  "bloom": "Apply",
-  "skillId": "CHE1_PERIODIC_TRENDS5",
-  "skillFull": "Identify the most or the least electronegative element in a given set by applying the periodic trend.",
-  "topicKey": "CHE1_PERIODIC_TRENDS",
-  "topicLabel": "Periodic Properties and Trends",
-  "subject": "Chemistry",
-  "splitFrom": "CHEM_PERIODIC31"
- },
- {
-  "bloom": "Apply",
-  "skillId": "CHE2_ORG_STEREO0",
-  "skillFull": "Determine whether a given compound is optically active by testing its carbon atoms for chirality.",
-  "topicKey": "CHE2_ORG_STEREO",
-  "topicLabel": "Stereochemistry",
-  "subject": "Chemistry",
-  "splitFrom": "CHEM_STEREO3"
- },
- {
-  "bloom": "Apply",
-  "skillId": "CHE2_ORG_STEREO1",
-  "skillFull": "Identify which of a set of carbonyl compounds can show keto-enol tautomerism.",
-  "topicKey": "CHE2_ORG_STEREO",
-  "topicLabel": "Stereochemistry",
-  "subject": "Chemistry",
-  "splitFrom": "CHEM_STEREO6"
- },
- {
-  "bloom": "Apply",
-  "skillId": "CHE1_ELECTRON_CONFIG0",
-  "skillFull": "Compare the successive ionisation energies of related elements using the extra stability of half-filled and fully-filled subshells.",
-  "topicKey": "CHE1_ELECTRON_CONFIG",
-  "topicLabel": "Electron Configuration",
-  "subject": "Chemistry",
-  "splitFrom": "CHE_ATOMIC62"
- },
- {
-  "bloom": "Apply",
-  "skillId": "CHE2_ORG_HYDROCARBON0",
-  "skillFull": "Write the balanced equation for the complete combustion of ethyne in oxygen.",
-  "topicKey": "CHE2_ORG_HYDROCARBON",
-  "topicLabel": "Alkanes, Alkenes and Alkynes",
-  "subject": "Chemistry",
-  "splitFrom": "CHE_ORGANIC84"
- },
- {
-  "bloom": "Apply",
-  "skillId": "CHE2_ORG_CARBONYL1",
-  "skillFull": "Determine which compounds give a positive iodoform test, namely those containing a methyl ketone or a CH3CH(OH) group.",
-  "topicKey": "CHE2_ORG_CARBONYL",
-  "topicLabel": "Aldehydes and Ketones",
-  "subject": "Chemistry",
-  "splitFrom": "CHE_ORGANIC113"
- },
- {
-  "bloom": "Remember",
-  "skillId": "CHE2_ORG_ALCOHOL0",
-  "skillFull": "Recall that phosphoric acid gives a purer alkene than concentrated sulfuric acid when an alcohol is dehydrated.",
-  "topicKey": "CHE2_ORG_ALCOHOL",
-  "topicLabel": "Alcohols, Phenols and Ethers",
-  "subject": "Chemistry",
-  "splitFrom": "CHE_ORGANIC122"
- },
- {
-  "bloom": "Remember",
-  "skillId": "CHE2_ORG_AMINE0",
-  "skillFull": "Recall the name of the azo dye formed by coupling a benzenediazonium salt with a named phenol or aromatic amine.",
-  "topicKey": "CHE2_ORG_AMINE",
-  "topicLabel": "Amines and Nitrogen Compounds",
-  "subject": "Chemistry",
-  "splitFrom": "CHE_ORGANIC30"
- },
- {
-  "bloom": "Remember",
-  "skillId": "CHE2_ORG_ACID1",
-  "skillFull": "Recall that the conversion of ammonium cyanate to urea is a rearrangement, and that this Wohler synthesis was the first preparation of an organic compound from an inorganic one.",
-  "topicKey": "CHE2_ORG_ACID",
-  "topicLabel": "Carboxylic Acids and Their Derivatives",
-  "subject": "Chemistry",
-  "splitFrom": "CHE_ORGANIC66"
- },
- {
-  "bloom": "Remember",
-  "skillId": "CHE2_ORG_HALIDE0",
-  "skillFull": "Recall that the order of SN1 reactivity of the alkyl halides is tertiary greater than secondary greater than primary.",
-  "topicKey": "CHE2_ORG_HALIDE",
-  "topicLabel": "Halogen Derivatives",
-  "subject": "Chemistry",
-  "splitFrom": "CHE_ORGANIC108"
- },
- {
-  "bloom": "Understand",
-  "skillId": "CHE2_ORG_HYDROCARBON1",
-  "skillFull": "Explain the anti-Markovnikov orientation of peroxide-catalysed addition in terms of the free-radical mechanism and the stability of the radical formed.",
-  "topicKey": "CHE2_ORG_HYDROCARBON",
-  "topicLabel": "Alkanes, Alkenes and Alkynes",
-  "subject": "Chemistry",
-  "splitFrom": "CHE_ORGANIC109"
- },
- {
-  "bloom": "Understand",
-  "skillId": "CHE2_ATMOSPHERE0",
-  "skillFull": "Explain why the high temperature of a lightning discharge is what allows atmospheric nitrogen to react with oxygen.",
-  "topicKey": "CHE2_ATMOSPHERE",
-  "topicLabel": "Atmosphere and Air Pollution",
-  "subject": "Chemistry",
-  "splitFrom": "CHEM_ENV13"
- },
- {
-  "bloom": "Remember",
-  "skillId": "CHE1_ELECTRON_CONFIG1",
-  "skillFull": "Recall the Aufbau principle, the Pauli exclusion principle and Hund's rule as the three rules governing the filling of atomic orbitals.",
-  "topicKey": "CHE1_ELECTRON_CONFIG",
-  "topicLabel": "Electron Configuration",
-  "subject": "Chemistry",
-  "splitFrom": "CHEM_AT1"
- },
- {
-  "bloom": "Remember",
-  "skillId": "CHE1_CATION_ANALYSIS0",
-  "skillFull": "Recall that adding a strong acid to a sulfide-containing solution suppresses the ionisation of hydrogen sulfide and so lowers the sulfide-ion concentration.",
-  "topicKey": "CHE1_CATION_ANALYSIS",
-  "topicLabel": "Group Analysis of Cations",
-  "subject": "Chemistry",
-  "authored": true
- },
- {
-  "bloom": "Remember",
-  "skillId": "CHE2_METALLURGY0",
-  "skillFull": "Recall the meanings of ore, gangue and flux, and the difference between a mineral and an ore.",
-  "topicKey": "CHE2_METALLURGY",
-  "topicLabel": "Ores, Minerals and Metallurgy",
-  "subject": "Chemistry",
-  "authored": true
- },
- {
-  "bloom": "Understand",
-  "skillId": "CHE2_METALLURGY1",
-  "skillFull": "Distinguish roasting from calcination as preliminary treatments of an ore.",
-  "topicKey": "CHE2_METALLURGY",
-  "topicLabel": "Ores, Minerals and Metallurgy",
-  "subject": "Chemistry",
-  "authored": true
- },
- {
-  "bloom": "Apply",
-  "skillId": "CHE2_METALLURGY2",
-  "skillFull": "Determine the reducing agent and the method used to extract a stated metal from its ore.",
-  "topicKey": "CHE2_METALLURGY",
-  "topicLabel": "Ores, Minerals and Metallurgy",
-  "subject": "Chemistry",
-  "authored": true
- },
- {
-  "bloom": "Remember",
-  "skillId": "PHY1_FRICTION0",
-  "skillFull": "Recall the laws of limiting friction and the meaning of the coefficient of friction.",
-  "topicKey": "PHY1_FRICTION",
-  "topicLabel": "Friction",
-  "subject": "Physics",
-  "authored": true
- },
- {
-  "bloom": "Apply",
-  "skillId": "PHY1_FRICTION1",
-  "skillFull": "Calculate the frictional force acting on a body from the normal reaction and the coefficient of friction.",
-  "topicKey": "PHY1_FRICTION",
-  "topicLabel": "Friction",
-  "subject": "Physics",
-  "authored": true
- },
- {
-  "bloom": "Apply",
-  "skillId": "PHY1_FRICTION2",
-  "skillFull": "Determine the angle of repose, or the angle of friction, for a body resting on an inclined plane.",
-  "topicKey": "PHY1_FRICTION",
-  "topicLabel": "Friction",
-  "subject": "Physics",
-  "authored": true
- },
- {
-  "bloom": "Remember",
-  "skillId": "PHY2_LOGIC_GATES1",
-  "skillFull": "Recall the symbol and the truth table of the AND, the OR and the NOT gate.",
-  "topicKey": "PHY2_LOGIC_GATES",
-  "topicLabel": "Digital Logic Gates",
-  "subject": "Physics",
-  "authored": true
- },
- {
-  "bloom": "Apply",
-  "skillId": "PHY2_LOGIC_GATES2",
-  "skillFull": "Determine the output of a combination of logic gates for every combination of its inputs.",
-  "topicKey": "PHY2_LOGIC_GATES",
-  "topicLabel": "Digital Logic Gates",
-  "subject": "Physics",
-  "authored": true
- },
- {
-  "bloom": "Understand",
-  "skillId": "PHY2_LOGIC_GATES3",
-  "skillFull": "Explain why NAND and NOR are called universal gates.",
-  "topicKey": "PHY2_LOGIC_GATES",
-  "topicLabel": "Digital Logic Gates",
-  "subject": "Physics",
-  "authored": true
- },
- {
-  "bloom": "Remember",
-  "skillId": "PHY1_SHM_ENERGY1",
-  "skillFull": "Recall that the total energy of a body in simple harmonic motion is constant and proportional to the square of its amplitude.",
-  "topicKey": "PHY1_SHM_ENERGY",
-  "topicLabel": "Energy in Simple Harmonic Motion",
-  "subject": "Physics",
-  "authored": true
- },
- {
-  "bloom": "Apply",
-  "skillId": "PHY1_SHM_ENERGY2",
-  "skillFull": "Determine the displacement at which the kinetic and the potential energy of a body in simple harmonic motion are equal.",
-  "topicKey": "PHY1_SHM_ENERGY",
-  "topicLabel": "Energy in Simple Harmonic Motion",
-  "subject": "Physics",
   "authored": true
  }
 ]

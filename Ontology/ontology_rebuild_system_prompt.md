@@ -91,16 +91,48 @@ re-derive it) has this shape:
    instead of per atomic-skill has failed regardless of how correct each individual
    entry looks.
 
-4. **Topic reuse.** Prefer an existing canonical topic (66 of them; the actual
+4. **Prerequisite density — a skill with no prerequisite edge is inert.**
+   This constraint was added after the Chemistry pass produced 843 skills with
+   only 348 edges: **44% of skills ended with no prerequisite link in either
+   direction**, and the connected remainder broke into 126 fragments instead of
+   one spine. See `Ontology/full_corpus_rebuild/quality_audit.md`.
+
+   Why it matters: the whole point of this ontology is the DAG. `MasteryUpdater`
+   reads `parent_ids` for its conjunctive readiness gate and for the ancestor
+   pull-up. A skill with no parents is never gated — the learner can reach it
+   without demonstrating anything first — and a skill with no children never
+   propagates evidence. An ontology of isolated nodes is a flat skill *list* with
+   a DAG-shaped file format, and every adaptive behaviour the platform is built
+   on silently degrades to nothing.
+
+   **Prerequisites are found by comparing a skill against the accumulated
+   ontology, never by looking inside one source record.** A record testing redox
+   balancing does not contain the oxidation-number skill it presupposes — that
+   skill was extracted 300 records ago. Mean yield is ~1.2 skills per record, so
+   "does anything in this record depend on anything else in this record?" is
+   structurally almost always "no". That question is the wrong one. The right one
+   is: *"of everything I have extracted so far, what must a learner already hold
+   before this new skill is reachable?"*
+
+   Target: **at least 1.0 edges per new skill across a batch**, and every batch
+   reports its own ratio. Below 0.8 the batch is not finished — go back through
+   its skills against the accumulated `tuples.json` before merging. A skill that
+   genuinely has no prerequisite is fine and expected (foundational recall), but
+   those should be a minority, not 44%.
+
+   A rebuild whose skills are individually correct but mutually unconnected has
+   failed in exactly the same way as one that mints a fresh id per record.
+
+5. **Topic reuse.** Prefer an existing canonical topic (66 of them; the actual
    prompt lists them) over minting a new one. Only propose a new topic when the
    material genuinely doesn't fit — and flag it, don't decide it (new topics need a
    human editorial call in `Backend/tree_data/ontology_config.json`).
 
-5. **Technical accuracy.** Every skill description is a correct, unambiguous
+6. **Technical accuracy.** Every skill description is a correct, unambiguous
    statement of what it is. Every prerequisite you assert is a real logical
    dependency, not "usually taught earlier."
 
-6. **JSON escaping — a documented, previously-shipped bug in this exact corpus.**
+7. **JSON escaping — a documented, previously-shipped bug in this exact corpus.**
    `HANDOFF2.md` §2 and `rag/ingest.py`'s `repair_json_escapes()` describe it:
    source records contain LaTeX with single backslashes (`\tan`, `\frac`,
    `\therefore`), and a naive `json.loads()` silently swallows `\t`/`\n`/`\r`-shaped
@@ -109,7 +141,7 @@ re-derive it) has this shape:
    LaTeX you write into a `skillFull`/`full` string must have every backslash
    doubled (`\\tan`, not `\tan`) so it survives a JSON round-trip intact.
 
-7. **Silent reasoning, structured output.** Do the extraction reasoning internally.
+8. **Silent reasoning, structured output.** Do the extraction reasoning internally.
    Emitted output follows the actual prompt's exact file/format spec — no prose
    interleaved with the JSON artifacts themselves.
 

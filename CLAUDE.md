@@ -114,14 +114,36 @@ the user explicitly asks in that specific message. Read-only exploration
   routes, the `data-gen` question-generation pipeline, known limitations.
 - [HANDOFF.md](HANDOFF.md), [HANDOFF2.md](HANDOFF2.md) — chronological dev history
   and rationale for major decisions.
+- [HANDOFF5.md](HANDOFF5.md) — **start here for anything ontology- or
+  question-generation-related.** The ontology is finished; HANDOFF5 records its
+  final state, the decisions already taken (so they are not relitigated), the
+  one config change needed before generating questions, and what is genuinely
+  left. It supersedes the ontology figures in HANDOFF3/HANDOFF4.
 - [HANDOFF3.md](HANDOFF3.md) then [HANDOFF4.md](HANDOFF4.md) — **read both if
-  you're touching anything under `Ontology/`.** An in-progress, separate
-  initiative to rebuild the skill ontology from the full `documents/` corpus (the
-  live 430-skill ontology only used a small sample). Not finished. HANDOFF3 has
-  the rationale, the standing instructions, a cost-blowout to not repeat, and the
-  consolidation judgement rules; HANDOFF4 has the current state (`ChemBook1`
-  complete, 514 skills, 16.3% of the corpus), the cheaper no-subagent method that
-  now works end to end, and the exact resume point. Check them before assuming
-  `Ontology/tuples.json` is the only or the current ontology work.
+  you're touching anything under `Ontology/`.** A separate initiative to rebuild
+  the skill ontology from the full `documents/` corpus (the live 430-skill
+  ontology only used a small sample). HANDOFF3 has the rationale, the standing
+  instructions, a cost-blowout to not repeat, and the consolidation judgement
+  rules; HANDOFF4 has the cheaper no-subagent method that works end to end.
+  Check them before assuming `Ontology/tuples.json` is the only or the current
+  ontology work.
+  **For the current rebuild state, read
+  [Ontology/full_corpus_rebuild/STATUS.md](Ontology/full_corpus_rebuild/STATUS.md)
+  — it supersedes the figures quoted in HANDOFF3/HANDOFF4.** Extraction is
+  **complete** as of 2026-09-18, and so is the pre-adoption editorial pass:
+  all 4,474 records of all six books → **1,689 skills and 1,695 prerequisite
+  edges**, every one of the 183 syllabus topics populated, **zero unconnected
+  skills**, zero unresolved prerequisites, validated as an acyclic DAG of depth
+  9. `Ontology/full_corpus_rebuild/_validate_ontology.py` reports zero errors;
+  run it after any change to the ontology. What remains is domain-expert review
+  by a chemist and a physicist, listed in STATUS.md.
+  **`Backend/tree_data/*.json` has deliberately not been regenerated**, so the
+  live app still runs on the legacy 430-skill catalog; adopting the rebuild is a
+  separate, explicit step.
+- [Ontology/viz/README.md](Ontology/viz/README.md) — generated interactive HTML
+  viewers for any ontology, plus the script that builds them. Read it before
+  adding another viewer: a generated file named `skill_ontology_dag.html` inside a
+  `--source-dir` silently overrides `tuples.json` as `build_from_ontology.py`'s
+  authoritative input.
 - [BKT-DAG Policy For Skill Mastery.txt](BKT-DAG%20Policy%20For%20Skill%20Mastery.txt)
   — exact current mastery/gating policy constants and trigger rules.

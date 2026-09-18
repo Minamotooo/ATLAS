@@ -1,0 +1,704 @@
+{
+ "chunkLabel": "MathBook1_b14",
+ "subject": "Mathematics",
+ "skills": [
+  {
+   "tempId": "MathBook1_b14_s1",
+   "bloom": "Apply",
+   "skillFull": "Calculate the limit of a ratio of exponential terms as the variable tends to infinity, by dividing through by the dominant term.",
+   "topicKey": "MAT1_LIMIT",
+   "topicLabel": "Limits and Continuity",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p107__q76__600"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s2",
+   "bloom": "Apply",
+   "skillFull": "Calculate a limit of a piecewise-defined function by comparing its one-sided limits.",
+   "topicKey": "MAT1_LIMIT",
+   "topicLabel": "Limits and Continuity",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p110__q94__618"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s3",
+   "bloom": "Apply",
+   "skillFull": "Calculate the derivative of a piecewise-defined function at a point where its definition changes.",
+   "topicKey": "MAT1_DERIVATIVE",
+   "topicLabel": "Rules of Differentiation",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p110__q94__618"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s4",
+   "bloom": "Apply",
+   "skillFull": "Calculate the derivative of a function involving an absolute value.",
+   "topicKey": "MAT1_DERIVATIVE",
+   "topicLabel": "Rules of Differentiation",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p108__q84__608"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s5",
+   "bloom": "Apply",
+   "skillFull": "Determine the nth derivative of a logarithmic or a reciprocal function.",
+   "topicKey": "MAT1_DERIVATIVE",
+   "topicLabel": "Rules of Differentiation",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p111__q96__620",
+    "MathBook1__p115__q117__641",
+    "MathBook1__p112__q100__624"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s6",
+   "bloom": "Apply",
+   "skillFull": "Calculate the derivative of one function with respect to another function of the same variable.",
+   "topicKey": "MAT1_DERIVATIVE",
+   "topicLabel": "Rules of Differentiation",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p116__q125__649"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s7",
+   "bloom": "Remember",
+   "skillFull": "Recall the standard integrals of powers, exponentials, logarithms and the basic trigonometric functions.",
+   "topicKey": "MAT1_INTEGRAL",
+   "topicLabel": "Indefinite Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p146__q67__788",
+    "MathBook1__p140__q40__760"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s8",
+   "bloom": "Apply",
+   "skillFull": "Calculate an integral by substituting a new variable.",
+   "topicKey": "MAT1_INTEGRAL",
+   "topicLabel": "Indefinite Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p140__q38__759",
+    "MathBook1__p139__q35__755",
+    "MathBook1__p133__q59__719"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s9",
+   "bloom": "Apply",
+   "skillFull": "Calculate an integral by parts.",
+   "topicKey": "MAT1_INTEGRAL",
+   "topicLabel": "Indefinite Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p140__q42__762",
+    "MathBook1__p128__q40.__699",
+    "MathBook1__p145__q66__786"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s10",
+   "bloom": "Apply",
+   "skillFull": "Calculate an integral by repeated integration by parts, including the cyclic exponential-times-trigonometric case.",
+   "topicKey": "MAT1_INTEGRAL",
+   "topicLabel": "Indefinite Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p126__q32__689",
+    "MathBook1__p130__q45__705"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s11",
+   "bloom": "Apply",
+   "skillFull": "Calculate an integral of a rational function by resolving it into partial fractions.",
+   "topicKey": "MAT1_INTEGRAL",
+   "topicLabel": "Indefinite Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p125__q30__687",
+    "MathBook1__p135__q09__730",
+    "MathBook1__p148__q80__800"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s12",
+   "bloom": "Apply",
+   "skillFull": "Calculate an integral by completing the square in a quadratic under a radical or in a denominator.",
+   "topicKey": "MAT1_INTEGRAL",
+   "topicLabel": "Indefinite Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p134__q01__722",
+    "MathBook1__p142__q47__768",
+    "MathBook1__p140__q41__761"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s13",
+   "bloom": "Apply",
+   "skillFull": "Calculate an integral of a linear expression over a quadratic by splitting the numerator into the derivative of the denominator plus a constant.",
+   "topicKey": "MAT1_INTEGRAL",
+   "topicLabel": "Indefinite Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p134__q05__726",
+    "MathBook1__p137__q21__742"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s14",
+   "bloom": "Apply",
+   "skillFull": "Calculate an integral of a trigonometric expression using the half-angle tangent substitution.",
+   "topicKey": "MAT1_INTEGRAL",
+   "topicLabel": "Indefinite Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p123__q23(a)__677",
+    "MathBook1__p124__q27(a)__683",
+    "MathBook1__p132__q56__717"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s15",
+   "bloom": "Apply",
+   "skillFull": "Calculate an integral involving powers of sine and cosine by a suitable substitution or reduction.",
+   "topicKey": "MAT1_INTEGRAL",
+   "topicLabel": "Indefinite Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p137__q25__745",
+    "MathBook1__p147__q73__793",
+    "MathBook1__p131__q50__710"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s16",
+   "bloom": "Apply",
+   "skillFull": "Calculate an integral of an exponential multiplied by the sum of a function and its own derivative.",
+   "topicKey": "MAT1_INTEGRAL",
+   "topicLabel": "Indefinite Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p141__q46__766",
+    "MathBook1__p128__q39. (ii)__698",
+    "MathBook1__p144__q57__778"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s17",
+   "bloom": "Apply",
+   "skillFull": "Calculate an integral in which an inverse trigonometric function is the integrand.",
+   "topicKey": "MAT1_INTEGRAL",
+   "topicLabel": "Indefinite Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p145__q66__786",
+    "MathBook1__p123__q24(a)__679",
+    "MathBook1__p128__q(b)__696"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s18",
+   "bloom": "Apply",
+   "skillFull": "Calculate an integral by substituting for an exponential term appearing throughout the integrand.",
+   "topicKey": "MAT1_INTEGRAL",
+   "topicLabel": "Indefinite Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p130__q47__708",
+    "MathBook1__p138__q32__752",
+    "MathBook1__p145__q67__787"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s19",
+   "bloom": "Apply",
+   "skillFull": "Calculate an integral by recognising the integrand as the derivative of a known composite function.",
+   "topicKey": "MAT1_INTEGRAL",
+   "topicLabel": "Indefinite Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p136__q15__736",
+    "MathBook1__p139__q34__755"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s20",
+   "bloom": "Apply",
+   "skillFull": "Calculate an integral of a quotient of trigonometric functions by dividing through by a suitable power of cosine.",
+   "topicKey": "MAT1_INTEGRAL",
+   "topicLabel": "Indefinite Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p141__q44__765",
+    "MathBook1__p145__q64__785",
+    "MathBook1__p147__q74__795"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s21",
+   "bloom": "Apply",
+   "skillFull": "Evaluate a definite integral by finding an antiderivative and substituting the limits of integration.",
+   "topicKey": "MAT1_INTEGRAL_DEF",
+   "topicLabel": "Definite Integrals",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p138__q29__749",
+    "MathBook1__p147__q71__792"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s22",
+   "bloom": "Apply",
+   "skillFull": "Evaluate a definite integral by substitution, transforming the limits along with the variable.",
+   "topicKey": "MAT1_INTEGRAL_DEF",
+   "topicLabel": "Definite Integrals",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p131__q51__711",
+    "MathBook1__p121__q17__670",
+    "MathBook1__p119__q13(a)__663"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s23",
+   "bloom": "Apply",
+   "skillFull": "Evaluate a definite integral using the symmetry of an odd or an even integrand over a symmetric interval.",
+   "topicKey": "MAT1_INTEGRAL_DEF",
+   "topicLabel": "Definite Integrals",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p117__q04__654",
+    "MathBook1__p148__q79__799",
+    "MathBook1__p144__q60__781"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s24",
+   "bloom": "Apply",
+   "skillFull": "Evaluate a definite integral using the property that relates the integral over an interval to the integral of its reflection.",
+   "topicKey": "MAT1_INTEGRAL_DEF",
+   "topicLabel": "Definite Integrals",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p135__q11__731",
+    "MathBook1__p124__q26__682"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s25",
+   "bloom": "Apply",
+   "skillFull": "Evaluate an improper integral having an infinite limit of integration.",
+   "topicKey": "MAT1_INTEGRAL_DEF",
+   "topicLabel": "Definite Integrals",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p117__q02__652",
+    "MathBook1__p140__q43__764",
+    "MathBook1__p137__q21__742"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s26",
+   "bloom": "Apply",
+   "skillFull": "Evaluate a definite integral of a function containing an absolute value, by splitting the interval at the sign change.",
+   "topicKey": "MAT1_INTEGRAL_DEF",
+   "topicLabel": "Definite Integrals",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p136__q18__739",
+    "MathBook1__p136__q20__741"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s27",
+   "bloom": "Apply",
+   "skillFull": "Determine the value of a parameter appearing in a limit of a definite integral from a stated value of that integral.",
+   "topicKey": "MAT1_INTEGRAL_DEF",
+   "topicLabel": "Definite Integrals",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p136__q13__734",
+    "MathBook1__p136__q17__737",
+    "MathBook1__p143__q52__773"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s28",
+   "bloom": "Analyze",
+   "skillFull": "Determine the stationary points or the sign of a function defined as a definite integral with a variable upper limit.",
+   "topicKey": "MAT1_INTEGRAL_DEF",
+   "topicLabel": "Definite Integrals",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p144__q55__776"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s29",
+   "bloom": "Apply",
+   "skillFull": "Calculate the area bounded by a curve, the x-axis and two given ordinates.",
+   "topicKey": "MAT1_INTEGRAL_APP",
+   "topicLabel": "Areas and Applications of Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p144__q56__777",
+    "MathBook1__p139__q33__754"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s30",
+   "bloom": "Apply",
+   "skillFull": "Calculate the area enclosed between two intersecting curves.",
+   "topicKey": "MAT1_INTEGRAL_APP",
+   "topicLabel": "Areas and Applications of Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p127__q36__693",
+    "MathBook1__p119__q13(b)__664"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s31",
+   "bloom": "Apply",
+   "skillFull": "Calculate the area enclosed between a parabola and a straight line.",
+   "topicKey": "MAT1_INTEGRAL_APP",
+   "topicLabel": "Areas and Applications of Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p136__q19__740",
+    "MathBook1__p137__q23__744",
+    "MathBook1__p144__q58__779"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s32",
+   "bloom": "Apply",
+   "skillFull": "Calculate the area of a region bounded by a circle together with a chord or a straight line.",
+   "topicKey": "MAT1_INTEGRAL_APP",
+   "topicLabel": "Areas and Applications of Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p129__q42__701",
+    "MathBook1__p118__q08__658"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s33",
+   "bloom": "Apply",
+   "skillFull": "Determine the value of a parameter that divides a region into parts of stated areas.",
+   "topicKey": "MAT1_INTEGRAL_APP",
+   "topicLabel": "Areas and Applications of Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p117__q01__651",
+    "MathBook1__p118__q09__659"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s34",
+   "bloom": "Apply",
+   "skillFull": "Calculate the volume of a solid of revolution generated by rotating a region about a coordinate axis.",
+   "topicKey": "MAT1_INTEGRAL_APP",
+   "topicLabel": "Areas and Applications of Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p129__q43__703",
+    "MathBook1__p135__q07__728"
+   ]
+  },
+  {
+   "tempId": "MathBook1_b14_s35",
+   "bloom": "Apply",
+   "skillFull": "Calculate the area bounded by a parabola and its latus rectum.",
+   "topicKey": "MAT1_INTEGRAL_APP",
+   "topicLabel": "Areas and Applications of Integration",
+   "subject": "Mathematics",
+   "sourceItemIds": [
+    "MathBook1__p145__q61__782"
+   ]
+  }
+ ],
+ "prereqs": [
+  {
+   "fromTempId": "MathBook1_b14_s2",
+   "toTempId": "MathBook1_b14_s1",
+   "toDescription": "Calculate the limit of a ratio of exponential terms as the variable tends to infinity, by dividing through by the dominant term.",
+   "toTopicKeyGuess": "MAT1_LIMIT"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s4",
+   "toTempId": "MathBook1_b14_s3",
+   "toDescription": "Calculate the derivative of a piecewise-defined function at a point where its definition changes.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s8",
+   "toTempId": "MathBook1_b14_s7",
+   "toDescription": "Recall the standard integrals of powers, exponentials, logarithms and the basic trigonometric functions.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s9",
+   "toTempId": "MathBook1_b14_s7",
+   "toDescription": "Recall the standard integrals of powers, exponentials, logarithms and the basic trigonometric functions.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s10",
+   "toTempId": "MathBook1_b14_s9",
+   "toDescription": "Calculate an integral by parts.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s11",
+   "toTempId": "MathBook1_b14_s7",
+   "toDescription": "Recall the standard integrals of powers, exponentials, logarithms and the basic trigonometric functions.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s12",
+   "toTempId": "MathBook1_b14_s8",
+   "toDescription": "Calculate an integral by substituting a new variable.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s13",
+   "toTempId": "MathBook1_b14_s11",
+   "toDescription": "Calculate an integral of a rational function by resolving it into partial fractions.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s13",
+   "toTempId": "MathBook1_b14_s12",
+   "toDescription": "Calculate an integral by completing the square in a quadratic under a radical or in a denominator.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s14",
+   "toTempId": "MathBook1_b14_s8",
+   "toDescription": "Calculate an integral by substituting a new variable.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s15",
+   "toTempId": "MathBook1_b14_s8",
+   "toDescription": "Calculate an integral by substituting a new variable.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s16",
+   "toTempId": "MathBook1_b14_s9",
+   "toDescription": "Calculate an integral by parts.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s17",
+   "toTempId": "MathBook1_b14_s9",
+   "toDescription": "Calculate an integral by parts.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s18",
+   "toTempId": "MathBook1_b14_s8",
+   "toDescription": "Calculate an integral by substituting a new variable.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s19",
+   "toTempId": "MathBook1_b14_s8",
+   "toDescription": "Calculate an integral by substituting a new variable.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s20",
+   "toTempId": "MathBook1_b14_s8",
+   "toDescription": "Calculate an integral by substituting a new variable.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s21",
+   "toTempId": "MathBook1_b14_s7",
+   "toDescription": "Recall the standard integrals of powers, exponentials, logarithms and the basic trigonometric functions.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s22",
+   "toTempId": "MathBook1_b14_s8",
+   "toDescription": "Calculate an integral by substituting a new variable.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s22",
+   "toTempId": "MathBook1_b14_s21",
+   "toDescription": "Evaluate a definite integral by finding an antiderivative and substituting the limits of integration.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL_DEF"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s23",
+   "toTempId": "MathBook1_b14_s21",
+   "toDescription": "Evaluate a definite integral by finding an antiderivative and substituting the limits of integration.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL_DEF"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s24",
+   "toTempId": "MathBook1_b14_s21",
+   "toDescription": "Evaluate a definite integral by finding an antiderivative and substituting the limits of integration.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL_DEF"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s25",
+   "toTempId": "MathBook1_b14_s21",
+   "toDescription": "Evaluate a definite integral by finding an antiderivative and substituting the limits of integration.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL_DEF"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s26",
+   "toTempId": "MathBook1_b14_s21",
+   "toDescription": "Evaluate a definite integral by finding an antiderivative and substituting the limits of integration.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL_DEF"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s27",
+   "toTempId": "MathBook1_b14_s21",
+   "toDescription": "Evaluate a definite integral by finding an antiderivative and substituting the limits of integration.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL_DEF"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s28",
+   "toTempId": "MathBook1_b14_s21",
+   "toDescription": "Evaluate a definite integral by finding an antiderivative and substituting the limits of integration.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL_DEF"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s29",
+   "toTempId": "MathBook1_b14_s21",
+   "toDescription": "Evaluate a definite integral by finding an antiderivative and substituting the limits of integration.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL_DEF"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s30",
+   "toTempId": "MathBook1_b14_s29",
+   "toDescription": "Calculate the area bounded by a curve, the x-axis and two given ordinates.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL_APP"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s31",
+   "toTempId": "MathBook1_b14_s30",
+   "toDescription": "Calculate the area enclosed between two intersecting curves.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL_APP"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s32",
+   "toTempId": "MathBook1_b14_s30",
+   "toDescription": "Calculate the area enclosed between two intersecting curves.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL_APP"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s33",
+   "toTempId": "MathBook1_b14_s29",
+   "toDescription": "Calculate the area bounded by a curve, the x-axis and two given ordinates.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL_APP"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s34",
+   "toTempId": "MathBook1_b14_s21",
+   "toDescription": "Evaluate a definite integral by finding an antiderivative and substituting the limits of integration.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL_DEF"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s35",
+   "toTempId": "MathBook1_b14_s31",
+   "toDescription": "Calculate the area enclosed between a parabola and a straight line.",
+   "toTopicKeyGuess": "MAT1_INTEGRAL_APP"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s3",
+   "toSkillId": "MAT1_DERIVATIVE2",
+   "toDescription": "Calculate the derivative of a product or a quotient of two functions.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s5",
+   "toSkillId": "MAT1_DERIVATIVE10",
+   "toDescription": "Determine the nth derivative of a trigonometric or an exponential function.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s6",
+   "toSkillId": "MAT1_DERIVATIVE3",
+   "toDescription": "Calculate the derivative of a composite function using the chain rule.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  },
+  {
+   "fromTempId": "MathBook1_b14_s4",
+   "toSkillId": "MAT1_DERIVATIVE3",
+   "toDescription": "Calculate the derivative of a composite function using the chain rule.",
+   "toTopicKeyGuess": "MAT1_DERIVATIVE"
+  }
+ ],
+ "reusedExistingSkills": [
+  {
+   "existingSkillId": "MAT1_LIMIT4",
+   "sourceItemIds": [
+    "MathBook1__p108__q85__609",
+    "MathBook1__p113__q105__629",
+    "MathBook1__p115__q116__640"
+   ]
+  },
+  {
+   "existingSkillId": "MAT1_LIMIT2",
+   "sourceItemIds": [
+    "MathBook1__p113__q109__633",
+    "MathBook1__p111__q95__619",
+    "MathBook1__p113__q108__632"
+   ]
+  },
+  {
+   "existingSkillId": "MAT1_LIMIT3",
+   "sourceItemIds": [
+    "MathBook1__p108__q83__607",
+    "MathBook1__p110__q90__614"
+   ]
+  },
+  {
+   "existingSkillId": "MAT1_DERIVATIVE7",
+   "sourceItemIds": [
+    "MathBook1__p114__q115__639",
+    "MathBook1__p116__q124__648",
+    "MathBook1__p115__q121__645"
+   ]
+  },
+  {
+   "existingSkillId": "MAT1_DERIVATIVE5",
+   "sourceItemIds": [
+    "MathBook1__p112__q103__627",
+    "MathBook1__p112__q104__628",
+    "MathBook1__p114__q114__638"
+   ]
+  },
+  {
+   "existingSkillId": "MAT1_DERIV_APPLICATION5",
+   "sourceItemIds": [
+    "MathBook1__p111__q97__621",
+    "MathBook1__p114__q112__636"
+   ]
+  }
+ ],
+ "newTopicsProposed": [],
+ "skippedItems": [],
+ "notes": "Records 601-802 of MathBook1 (parsed_items.jsonl lines 2289-2490). THIS COMPLETES MathBook1.txt - all 802 records processed across b10-b14. Coverage: the tail of limits and differentiation (601-650), then integration (651-802) - indefinite techniques, definite integrals and their properties, and areas and volumes. HM 1st Paper Ch 10. Uses the syllabus topic vocabulary directly (MAT1_INTEGRAL, MAT1_INTEGRAL_DEF, MAT1_INTEGRAL_APP), so no aliases are needed. Six b13 skills are re-exercised rather than re-minted. All descriptions are plain text with no backslashes."
+}

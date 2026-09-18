@@ -28,7 +28,7 @@ Run from Ontology/full_corpus_rebuild/.
 """
 import json, re, collections, datetime
 
-CAND_FILES = ['ChemBook2_b09.json']
+CAND_FILES = ['PhyBook2_b27.json']
 
 # Previously-unresolved prereq mentions (from the b01-b04 batch) that this
 # batch's review resolved by hand. The fuzzy matcher scored these at 0.50-0.58,
@@ -74,7 +74,13 @@ by_temp = {s['tempId']: s for s in batch_skills}
 # consolidated rebuild, so a newly minted id can never collide with either.
 used_by_prefix = collections.defaultdict(set)
 for s in list(legacy) + list(existing):
-    m = re.match(r'^([A-Za-z_]+?)(\d+)$', s['skillId'])
+    # Prefix = everything up to the FINAL run of digits. The old pattern
+    # ^([A-Za-z_]+?)(\d+)$ could not match ids whose topic code itself contains a
+    # digit (MAT1_DERIVATIVE0, PHY2_OHM3, CHE1_REDOX7). Those ids were silently
+    # not registered as taken, so mint() restarted at 0 and produced duplicate
+    # skillIds - which then showed up as a cycle in the DAG. Syllabus topic codes
+    # all carry a paper number, so this matters for every batch from b13 on.
+    m = re.match(r'^(.*[^0-9])(\d+)$', s['skillId'])
     if m:
         used_by_prefix[m.group(1)].add(int(m.group(2)))
 
@@ -219,6 +225,15 @@ for frm, mentions in unresolved.items():
             still_unresolved[frm].append(m)
 
 # ---------------------------------------------------------------------- write
+# Guard: a duplicate skillId means id allocation went wrong (it did once, when a
+# topic code containing a digit slipped past the prefix pattern above). Two
+# skills sharing an id merge into one node and can fabricate a cycle, so refuse
+# to write rather than corrupt the output.
+_dupes = sorted({s['skillId'] for s in existing
+                 if [x['skillId'] for x in existing].count(s['skillId']) > 1})
+if _dupes:
+    raise SystemExit(f'ABORT: duplicate skillIds after minting, nothing written: {_dupes}')
+
 existing.sort(key=lambda s: (s['topicKey'], s['skillId']))
 json.dump(existing, open('tuples.json', 'w', encoding='utf-8'),
           ensure_ascii=False, indent=2)

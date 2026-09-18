@@ -1,0 +1,474 @@
+{
+ "chunkLabel": "PhyBook2_b26",
+ "subject": "Physics",
+ "skills": [
+  {
+   "tempId": "PhyBook2_b26_s1",
+   "bloom": "Remember",
+   "skillFull": "Recall the mirror formula together with the sign convention used for mirrors.",
+   "topicKey": "PHY2_REFLECTION",
+   "topicLabel": "Reflection and Mirrors",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p73__q58__510"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s2",
+   "bloom": "Apply",
+   "skillFull": "Calculate the image position, size or magnification produced by a concave or a convex mirror.",
+   "topicKey": "PHY2_REFLECTION",
+   "topicLabel": "Reflection and Mirrors",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p68__q21__473",
+    "PhyBook2__p69__q28__480",
+    "PhyBook2__p71__q45__497"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s3",
+   "bloom": "Apply",
+   "skillFull": "Determine the focal length or the radius of curvature of a mirror from the object and image distances.",
+   "topicKey": "PHY2_REFLECTION",
+   "topicLabel": "Reflection and Mirrors",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p70__q34__486",
+    "PhyBook2__p72__q56__508",
+    "PhyBook2__p73__q58__510"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s4",
+   "bloom": "Remember",
+   "skillFull": "Recall Snell's law and the definition of refractive index.",
+   "topicKey": "PHY2_REFRACTION",
+   "topicLabel": "Refraction and Lenses",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p67__q09__461",
+    "PhyBook2__p73__q65__517"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s5",
+   "bloom": "Apply",
+   "skillFull": "Calculate the refractive index of a medium from the angles of incidence and refraction.",
+   "topicKey": "PHY2_REFRACTION",
+   "topicLabel": "Refraction and Lenses",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p68__q15__467",
+    "PhyBook2__p70__q40__492"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s6",
+   "bloom": "Apply",
+   "skillFull": "Calculate the critical angle for a pair of media and explain total internal reflection.",
+   "topicKey": "PHY2_REFRACTION",
+   "topicLabel": "Refraction and Lenses",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p67__q12__462",
+    "PhyBook2__p72__q55__505",
+    "PhyBook2__p73__q60__512"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s7",
+   "bloom": "Apply",
+   "skillFull": "Calculate the apparent depth or the apparent shift of an object viewed through a refracting medium.",
+   "topicKey": "PHY2_REFRACTION",
+   "topicLabel": "Refraction and Lenses",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p69__q32__484",
+    "PhyBook2__p70__q39__491",
+    "PhyBook2__p73__q57__509"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s8",
+   "bloom": "Apply",
+   "skillFull": "Calculate the angle of deviation produced by a prism, and the refractive index from the angle of minimum deviation.",
+   "topicKey": "PHY2_REFRACTION",
+   "topicLabel": "Refraction and Lenses",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p66__q03__455",
+    "PhyBook2__p69__q26__478",
+    "PhyBook2__p69__q27__479"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s9",
+   "bloom": "Apply",
+   "skillFull": "Calculate the focal length or the power of a lens using the lens maker's formula.",
+   "topicKey": "PHY2_REFRACTION",
+   "topicLabel": "Refraction and Lenses",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p66__q01__453",
+    "PhyBook2__p70__q37__489",
+    "PhyBook2__p71__q42__494"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s10",
+   "bloom": "Apply",
+   "skillFull": "Calculate the image position, size or magnification produced by a lens.",
+   "topicKey": "PHY2_REFRACTION",
+   "topicLabel": "Refraction and Lenses",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p67__q13__463",
+    "PhyBook2__p70__q41__493",
+    "PhyBook2__p73__q61__513"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s11",
+   "bloom": "Apply",
+   "skillFull": "Calculate the equivalent power or focal length of two lenses placed in contact.",
+   "topicKey": "PHY2_REFRACTION",
+   "topicLabel": "Refraction and Lenses",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p69__q24__476",
+    "PhyBook2__p72__q57__507"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s12",
+   "bloom": "Apply",
+   "skillFull": "Calculate the speed of light in a medium from its refractive index.",
+   "topicKey": "PHY2_REFRACTION",
+   "topicLabel": "Refraction and Lenses",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p67__q14__464",
+    "PhyBook2__p70__q38__488",
+    "PhyBook2__p73__q64__516"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s13",
+   "bloom": "Understand",
+   "skillFull": "Explain an everyday optical phenomenon such as a mirage or the flattened appearance of the setting sun.",
+   "topicKey": "PHY2_REFRACTION",
+   "topicLabel": "Refraction and Lenses",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p71__q49__501",
+    "PhyBook2__p72__q54__504"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s14",
+   "bloom": "Apply",
+   "skillFull": "Calculate the magnifying power of a simple or a compound microscope.",
+   "topicKey": "PHY2_OPTICAL_INSTRUMENTS",
+   "topicLabel": "Optical Instruments",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p66__q02__454",
+    "PhyBook2__p68__q17__469",
+    "PhyBook2__p73__q59__511"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s15",
+   "bloom": "Apply",
+   "skillFull": "Calculate the magnifying power and the tube length of an astronomical telescope.",
+   "topicKey": "PHY2_OPTICAL_INSTRUMENTS",
+   "topicLabel": "Optical Instruments",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p66__q51__451",
+    "PhyBook2__p69__q25__477",
+    "PhyBook2__p71__q46__498"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s16",
+   "bloom": "Apply",
+   "skillFull": "Determine the power of the corrective lens required for a short-sighted or a long-sighted eye.",
+   "topicKey": "PHY2_OPTICAL_INSTRUMENTS",
+   "topicLabel": "Optical Instruments",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p68__q14__466",
+    "PhyBook2__p68__q20__472",
+    "PhyBook2__p70__q33__485"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s17",
+   "bloom": "Remember",
+   "skillFull": "Recall the conditions for constructive and for destructive interference.",
+   "topicKey": "PHY2_INTERFERENCE",
+   "topicLabel": "Interference of Light",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p75__q09__527"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s18",
+   "bloom": "Apply",
+   "skillFull": "Calculate the fringe width in Young's double-slit experiment.",
+   "topicKey": "PHY2_INTERFERENCE",
+   "topicLabel": "Interference of Light",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p74__q01__519",
+    "PhyBook2__p75__q08__526",
+    "PhyBook2__p75__q10__528"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s19",
+   "bloom": "Apply",
+   "skillFull": "Determine the wavelength of light from measurements made in a double-slit experiment.",
+   "topicKey": "PHY2_INTERFERENCE",
+   "topicLabel": "Interference of Light",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p74__q02__520",
+    "PhyBook2__p74__q05__523"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s20",
+   "bloom": "Apply",
+   "skillFull": "Determine the effect on the fringe pattern of changing the slit separation, the screen distance or the medium.",
+   "topicKey": "PHY2_INTERFERENCE",
+   "topicLabel": "Interference of Light",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p74__q04__522",
+    "PhyBook2__p75__q07__525"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s21",
+   "bloom": "Apply",
+   "skillFull": "Calculate the position of a diffraction maximum or minimum for a grating or a single slit.",
+   "topicKey": "PHY2_DIFFRACTION",
+   "topicLabel": "Diffraction",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p74__q03__521",
+    "PhyBook2__p75__q11__529"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s22",
+   "bloom": "Apply",
+   "skillFull": "Determine the number of lines per unit length of a diffraction grating.",
+   "topicKey": "PHY2_DIFFRACTION",
+   "topicLabel": "Diffraction",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p74__q03__521"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s23",
+   "bloom": "Understand",
+   "skillFull": "Distinguish interference from diffraction of light.",
+   "topicKey": "PHY2_DIFFRACTION",
+   "topicLabel": "Diffraction",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p74__q06__524"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s24",
+   "bloom": "Remember",
+   "skillFull": "Recall that the polarisation of light demonstrates its transverse nature.",
+   "topicKey": "PHY2_POLARISATION",
+   "topicLabel": "Polarisation",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p74__q06__524"
+   ]
+  },
+  {
+   "tempId": "PhyBook2_b26_s25",
+   "bloom": "Apply",
+   "skillFull": "Calculate the polarising angle of a medium using Brewster's law.",
+   "topicKey": "PHY2_POLARISATION",
+   "topicLabel": "Polarisation",
+   "subject": "Physics",
+   "sourceItemIds": [
+    "PhyBook2__p73__q63__515"
+   ]
+  }
+ ],
+ "prereqs": [
+  {
+   "fromTempId": "PhyBook2_b26_s2",
+   "toTempId": "PhyBook2_b26_s1",
+   "toDescription": "Recall the mirror formula together with the sign convention used for mirrors.",
+   "toTopicKeyGuess": "PHY2_REFLECTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s3",
+   "toTempId": "PhyBook2_b26_s2",
+   "toDescription": "Calculate the image position, size or magnification produced by a concave or a convex mirror.",
+   "toTopicKeyGuess": "PHY2_REFLECTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s5",
+   "toTempId": "PhyBook2_b26_s4",
+   "toDescription": "Recall Snell's law and the definition of refractive index.",
+   "toTopicKeyGuess": "PHY2_REFRACTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s6",
+   "toTempId": "PhyBook2_b26_s4",
+   "toDescription": "Recall Snell's law and the definition of refractive index.",
+   "toTopicKeyGuess": "PHY2_REFRACTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s7",
+   "toTempId": "PhyBook2_b26_s5",
+   "toDescription": "Calculate the refractive index of a medium from the angles of incidence and refraction.",
+   "toTopicKeyGuess": "PHY2_REFRACTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s8",
+   "toTempId": "PhyBook2_b26_s5",
+   "toDescription": "Calculate the refractive index of a medium from the angles of incidence and refraction.",
+   "toTopicKeyGuess": "PHY2_REFRACTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s9",
+   "toTempId": "PhyBook2_b26_s4",
+   "toDescription": "Recall Snell's law and the definition of refractive index.",
+   "toTopicKeyGuess": "PHY2_REFRACTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s10",
+   "toTempId": "PhyBook2_b26_s9",
+   "toDescription": "Calculate the focal length or the power of a lens using the lens maker's formula.",
+   "toTopicKeyGuess": "PHY2_REFRACTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s11",
+   "toTempId": "PhyBook2_b26_s9",
+   "toDescription": "Calculate the focal length or the power of a lens using the lens maker's formula.",
+   "toTopicKeyGuess": "PHY2_REFRACTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s12",
+   "toTempId": "PhyBook2_b26_s4",
+   "toDescription": "Recall Snell's law and the definition of refractive index.",
+   "toTopicKeyGuess": "PHY2_REFRACTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s13",
+   "toTempId": "PhyBook2_b26_s6",
+   "toDescription": "Calculate the critical angle for a pair of media and explain total internal reflection.",
+   "toTopicKeyGuess": "PHY2_REFRACTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s10",
+   "toTempId": "PhyBook2_b26_s2",
+   "toDescription": "Calculate the image position, size or magnification produced by a concave or a convex mirror.",
+   "toTopicKeyGuess": "PHY2_REFLECTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s14",
+   "toTempId": "PhyBook2_b26_s10",
+   "toDescription": "Calculate the image position, size or magnification produced by a lens.",
+   "toTopicKeyGuess": "PHY2_REFRACTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s15",
+   "toTempId": "PhyBook2_b26_s10",
+   "toDescription": "Calculate the image position, size or magnification produced by a lens.",
+   "toTopicKeyGuess": "PHY2_REFRACTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s16",
+   "toTempId": "PhyBook2_b26_s9",
+   "toDescription": "Calculate the focal length or the power of a lens using the lens maker's formula.",
+   "toTopicKeyGuess": "PHY2_REFRACTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s15",
+   "toTempId": "PhyBook2_b26_s14",
+   "toDescription": "Calculate the magnifying power of a simple or a compound microscope.",
+   "toTopicKeyGuess": "PHY2_OPTICAL_INSTRUMENTS"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s18",
+   "toTempId": "PhyBook2_b26_s17",
+   "toDescription": "Recall the conditions for constructive and for destructive interference.",
+   "toTopicKeyGuess": "PHY2_INTERFERENCE"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s19",
+   "toTempId": "PhyBook2_b26_s18",
+   "toDescription": "Calculate the fringe width in Young's double-slit experiment.",
+   "toTopicKeyGuess": "PHY2_INTERFERENCE"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s20",
+   "toTempId": "PhyBook2_b26_s18",
+   "toDescription": "Calculate the fringe width in Young's double-slit experiment.",
+   "toTopicKeyGuess": "PHY2_INTERFERENCE"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s17",
+   "toTempId": "PhyBook2_b26_s12",
+   "toDescription": "Calculate the speed of light in a medium from its refractive index.",
+   "toTopicKeyGuess": "PHY2_REFRACTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s21",
+   "toTempId": "PhyBook2_b26_s17",
+   "toDescription": "Recall the conditions for constructive and for destructive interference.",
+   "toTopicKeyGuess": "PHY2_INTERFERENCE"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s22",
+   "toTempId": "PhyBook2_b26_s21",
+   "toDescription": "Calculate the position of a diffraction maximum or minimum for a grating or a single slit.",
+   "toTopicKeyGuess": "PHY2_DIFFRACTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s23",
+   "toTempId": "PhyBook2_b26_s17",
+   "toDescription": "Recall the conditions for constructive and for destructive interference.",
+   "toTopicKeyGuess": "PHY2_INTERFERENCE"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s21",
+   "toTempId": "PhyBook2_b26_s4",
+   "toDescription": "Recall Snell's law and the definition of refractive index.",
+   "toTopicKeyGuess": "PHY2_REFRACTION"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s25",
+   "toTempId": "PhyBook2_b26_s24",
+   "toDescription": "Recall that the polarisation of light demonstrates its transverse nature.",
+   "toTopicKeyGuess": "PHY2_POLARISATION"
+  },
+  {
+   "fromTempId": "PhyBook2_b26_s25",
+   "toTempId": "PhyBook2_b26_s4",
+   "toDescription": "Recall Snell's law and the definition of refractive index.",
+   "toTopicKeyGuess": "PHY2_REFRACTION"
+  }
+ ],
+ "reusedExistingSkills": [],
+ "newTopicsProposed": [],
+ "skippedItems": [],
+ "notes": "Records 451-600 of PhyBook2 (parsed_items.jsonl lines 4161-4310). Coverage: geometrical optics (Physics 2nd Paper Ch6, records 451-518) split across mirrors, refraction and lenses, and optical instruments; then physical optics (Ch7, records 519-600) split across interference, diffraction and polarisation. All descriptions are plain text with no backslashes."
+}
