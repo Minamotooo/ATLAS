@@ -22,6 +22,11 @@ Checks, in the order they are reported:
       is exactly right. Of 147 flagged, hand-review found 3 genuinely reversed.
       The list is kept because that hand-review is worth repeating when edges
       change, not because a hit means something is broken.
+      A second reason it cannot be an error: the per-skill `bloom` field is
+      never read at runtime. It is not compiled into Backend/tree_data/, the
+      diagnostic derives each question's Bloom level from the learner's mastery
+      band, and guess/slip comes from that question's level. A skill's stored
+      Bloom is provenance, not a control input.
   E3  stale cached text - prereqs.json caches each parent's description; if it
       has drifted from tuples.json the viewers and the compiled catalog will
       disagree.

@@ -2,11 +2,16 @@
 
 WHY THIS MATTERS
 ----------------
-`MasteryUpdater` assigns one guess/slip pair per skill, chosen from the skill's
-Bloom level. A node that says "Recall X **and** write the equation for it" is two
-skills wearing one id: a student who can do the first but not the second is
-scored as though those were the same competence, and the DAG cannot express that
-one leads to the other.
+A node that says "Recall X **and** write the equation for it" is two skills
+wearing one id. BKT keeps a single `p_learned` per skill, so a student who can do
+the first but not the second is scored as though those were one competence, and
+the DAG cannot express that one leads to the other.
+
+(An earlier version of this docstring said the split mattered because guess/slip
+is chosen from the skill's Bloom level. That is wrong: `mastery_updater.py`
+selects guess/slip from the Bloom level of the **question**, which the diagnostic
+computes per learner. The reason above is the real one and does not depend on
+Bloom at all.)
 
 WHAT THIS IS NOT
 ----------------

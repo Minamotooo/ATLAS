@@ -10,9 +10,17 @@ THE FIVE CRITERIA
                 rather than being hand-authored. An authored skill has no past
                 question behind it, so the RAG retriever has nothing to ground
                 generation on.
-2. LADDER     - how many distinct Bloom levels it spans. The engine tests one
-                level above a learner's current band; a topic sitting at a
-                single level gives that ladder nothing to climb.
+2. LADDER     - how many distinct Bloom levels its skills span. NOTE: this is
+                NOT an engine requirement. The per-skill `bloom` field is never
+                read at runtime - it is not even compiled into
+                Backend/tree_data/. `diagnostic.py::_select_bloom` derives each
+                question's level from the LEARNER's mastery band, and the
+                generator expands every skill to all six levels regardless.
+                What this criterion actually measures is the cognitive spread of
+                the SOURCE QUESTIONS behind the topic: a topic whose questions
+                only ever asked recall is thinner corpus evidence than one whose
+                questions ranged from recall to analysis. Useful signal, but
+                indirect - read it that way.
 3. INTERNAL   - internal edges per skill. A topic with no internal edges has no
                 learning order of its own, only a label.
 4. REACH      - what fraction of its skills sit in the largest connected
