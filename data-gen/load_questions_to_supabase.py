@@ -343,20 +343,41 @@ def validate_question(q: dict, topic_resolver: "TopicResolver") -> dict:
 # ---------------------------------------------------------------------------
 # DB reads
 # ---------------------------------------------------------------------------
+def _fetch_all_rows(db, table: str, select: str) -> List[dict]:
+    """
+    PostgREST silently caps a response at its project's max-rows setting
+    (1000 on this Supabase project) regardless of what `.limit()` asks for -
+    not an error, just a truncated result. A single unpaged select works
+    fine while the table is small and quietly starts dropping rows once it
+    crosses that cap (see fetch_existing_keys's docstring for the first time
+    this bit us). Page explicitly with `.range()` so a table growing past
+    1000 rows - true here for `skills` for the first time after the
+    full-corpus ontology adoption - doesn't silently reintroduce it.
+    """
+    rows: List[dict] = []
+    page_size = 1000
+    offset = 0
+    while True:
+        result = db.table(table).select(select).range(offset, offset + page_size - 1).execute()
+        data, error = payload(result)
+        if error:
+            raise SystemExit(f"ERROR: could not read {table}: {error}")
+        page = rows_of(data)
+        rows.extend(page)
+        if len(page) < page_size:
+            break
+        offset += page_size
+    return rows
+
+
 def fetch_topics(db) -> Dict[str, str]:
-    result = db.table("ontology_topics").select("topic_code, topic_label").limit(10000).execute()
-    data, error = payload(result)
-    if error:
-        raise SystemExit(f"ERROR: could not read ontology_topics: {error}")
-    return {r["topic_code"]: r.get("topic_label") for r in rows_of(data)}
+    rows = _fetch_all_rows(db, "ontology_topics", "topic_code, topic_label")
+    return {r["topic_code"]: r.get("topic_label") for r in rows}
 
 
 def fetch_skill_ids(db) -> Set[str]:
-    result = db.table("skills").select("skill_id").limit(100000).execute()
-    data, error = payload(result)
-    if error:
-        raise SystemExit(f"ERROR: could not read skills: {error}")
-    return {r["skill_id"] for r in rows_of(data) if r.get("skill_id")}
+    rows = _fetch_all_rows(db, "skills", "skill_id")
+    return {r["skill_id"] for r in rows if r.get("skill_id")}
 
 
 def fetch_existing_keys(db, skill_ids: List[str]) -> Set[Tuple[str, str, str, str]]:

@@ -70,8 +70,17 @@ _HTTP_HARD_TIMEOUT_SEC = 75.0  # a bit above requests' own 60s timeout
 # answer check) - that's true regardless of which model generated it, so
 # pilot/test runs accumulate into the same file as the real run rather than
 # a separate throwaway one. A verified-good question is real usable data.
-OUTPUT_PATH = _DATA_GEN / "output_questions_gemini.json"
-PROGRESS_PATH = _DATA_GEN / "gemini_progress.json"
+#
+# _v2 = the full-corpus-rebuild ontology (1,688 skills), NOT the legacy
+# 430-skill run. Deliberately a separate file: 26 skillIds collide as
+# STRINGS between the two ontologies (same id, different or reworded skill -
+# see the reassignment feasibility probe from 2026-09-18), so reusing the
+# legacy progress/output file could silently mark new-ontology tuples "done"
+# off a stale legacy match, or interleave two unrelated corpora in one file.
+# The legacy output_questions_gemini.json / gemini_progress.json are left
+# on disk untouched as historical reference for the old 430-skill campaign.
+OUTPUT_PATH = _DATA_GEN / "output_questions_gemini_v2.json"
+PROGRESS_PATH = _DATA_GEN / "gemini_progress_v2.json"
 
 # Conservative default; adjusted downward automatically if a 429 says otherwise.
 DEFAULT_RPM = 15

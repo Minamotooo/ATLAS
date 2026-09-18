@@ -6,8 +6,11 @@ from pathlib import Path
 DATA_GEN_DIR = Path(__file__).resolve().parent.parent
 # repository root
 BKTBACK_DIR = DATA_GEN_DIR.parent
-# Canonical ontology lives with the Backend that serves it.
-ONTOLOGY_SOURCE_DIR = BKTBACK_DIR / "Backend" / "tree_data" / "ontology_source"
+# Full-corpus rebuild (1,688 skills, all 6 source books) - supersedes the
+# legacy 430-skill set that used to live at Backend/tree_data/ontology_source.
+# See HANDOFF5.md section 5.1. The legacy dir is left on disk as read-only
+# reference; do not point back at it without updating HANDOFF5's decision.
+ONTOLOGY_SOURCE_DIR = BKTBACK_DIR / "Ontology" / "full_corpus_rebuild"
 
 DOCUMENTS_DIR = BKTBACK_DIR / "documents"
 KB_DIR = Path(__file__).resolve().parent / "kb"
