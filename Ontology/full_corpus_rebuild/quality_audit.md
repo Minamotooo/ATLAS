@@ -1,5 +1,17 @@
 # Quality Audit — Chemistry Rebuild (843 skills)
 
+> **CORRECTION (2026-09-18).** Two statements below about how Bloom feeds the
+> engine are wrong, and are left in place only so the reasoning stays traceable.
+> The ontology's per-skill `bloom` field is **never read at runtime**: it is not
+> compiled into `Backend/tree_data/*.json` at all. `diagnostic.py::_select_bloom`
+> derives the Bloom level of each question from the **learner's** current mastery
+> band for that skill, and `mastery_updater.py` then picks guess/slip from that
+> **question's** level. A skill's stored Bloom level is provenance - the level the
+> source question was pitched at - not a control input. The 68 Bloom corrections
+> in this audit were still worth making for description accuracy, but they did
+> not change engine behaviour as claimed.
+
+
 Date: 2026-09-18. Scope: all 843 skills in this directory's `tuples.json`,
 compared against the 117 legacy Chemistry skills in `Ontology/tuples.json`.
 This is the audit called for in `HANDOFF4.md` §7 item 4.
