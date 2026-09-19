@@ -1,0 +1,32 @@
+Bloom expansion: 1688 tuples -> 10128 (all 6 levels)
+Generation model: gemini-3.1-flash-lite  (test model)
+Verification model: gemini-3.1-flash-lite (always, regardless of --real)
+Loaded 18 API keys from F:\Repositories\ATLAS\keys\.gemini_keys
+Loading retriever + KB ...
+Loading sentence-transformers on CPU: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:   3%|2         | 5/199 [00:00<00:05, 37.40it/s]Loading weights:   7%|6         | 13/199 [00:00<00:04, 41.94it/s]Loading weights:  17%|#6        | 33/199 [00:00<00:01, 94.62it/s]Loading weights:  37%|###7      | 74/199 [00:00<00:00, 178.18it/s]Loading weights:  47%|####6     | 93/199 [00:00<00:00, 174.20it/s]Loading weights:  67%|######7   | 134/199 [00:00<00:00, 241.78it/s]Loading weights: 100%|##########| 199/199 [00:00<00:00, 248.75it/s]
+Retriever backend: sentence-transformers (sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2)
+KB size: 4474 items
+Tuples to generate: 10128
+Already done (resume): 2539 | remaining: 7589
+Traceback (most recent call last):
+  File "F:\Repositories\ATLAS\data-gen\generate_question_gemini.py", line 985, in <module>
+    main()
+    ~~~~^^
+  File "F:\Repositories\ATLAS\data-gen\generate_question_gemini.py", line 966, in main
+    t.join()
+    ~~~~~~^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\threading.py", line 1133, in join
+    self._os_thread_handle.join(timeout)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyboardInterrupt
+Exception ignored in atexit callback <bound method finalize._exitfunc of <class 'weakref.finalize'>>:
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\weakref.py", line 566, in _exitfunc
+    f()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\weakref.py", line 490, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+  File "F:\Repositories\ATLAS\data-gen\.venv\Lib\site-packages\torch\library.py", line 674, in _del_library
+    m.reset()
+KeyboardInterrupt: 

@@ -1,0 +1,151 @@
+% Chapter 7 -- Rubric: PO12 (12.1)
+\chapter{Conclusion}
+\label{ch:conclusion}
+
+\section{Conclusion and Future Work}
+\label{sec:conclusion}
+
+\subsection{Achievement against objectives}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Achievement against the objectives of \Cref{sec:objectives}}
+  \label{tab:objectives-status}
+  \begin{tabularx}{\textwidth}{>{\hsize=0.22\hsize}Y>{\hsize=0.45\hsize}Y>{\hsize=2.33\hsize}Y}
+    \toprule
+    Obj. & Status & Basis \\
+    \midrule
+    O1 & Achieved & 1{,}688 skills, 1{,}743 edges, all 183 syllabus topics populated; validated acyclic, depth 9, zero isolated skills, zero unresolved references; adopted as the served catalogue \\
+    O2 & Achieved & Bloom-conditioned BKT implemented from the equations; exercised on every response by the verification harness \\
+    O3 & Achieved in implementation & Ancestor pull-up and conjunctive gating implemented; the ancestor-ordering invariant is checked explicitly and holds. Whether the resulting estimates match real learner knowledge is untested \\
+    O4 & Achieved & The diagnostic sizes itself to the section under test, runs to completion, and releases the mastery gate; the ancestor invariant holds afterwards \\
+    O5 & Achieved & Topic practice runs to the mastery threshold; spillover fires on the intended evidence \\
+    O6 & \textbf{Partially achieved} & Pipeline built, validated, and producing verified items; coverage incomplete, and reset by adoption --- the $1{,}688 \times 6 = 10{,}128$ specification space is largely ungenerated because existing items are keyed to legacy skill identifiers \\
+    O7 & Achieved & Seven-route web client with diagnostic, practice and mastery views, bilingual, with Bangla and \LaTeX{} rendering \\
+    O8 & Achieved & 18-check end-to-end harness, credential-free, passing completely \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+The project set out to build a tutor that could tell a student \emph{which}
+foundation is missing rather than merely that they are wrong, and the mechanism
+for that --- an interpretable per-skill model, propagating along an explicit
+prerequisite graph, gated conjunctively --- is built and demonstrably
+self-consistent. The single most valuable thing the project learned is not in
+the engine at all: it is that the knowledge structure, not the inference
+algorithm, is the binding constraint on a system like this. A sophisticated
+update rule over a graph with 1.1 edges per skill has almost nothing to reason
+with. Most of the engineering effort in the second half of the project went into
+the ontology for exactly that reason, and that is the finding most likely to
+transfer to anyone attempting similar work.
+
+\subsection{Limitations}
+
+Stated plainly, and in the order that matters:
+
+\begin{enumerate}
+  \item \textbf{No efficacy evidence.} The system has never been used by a real
+    learner. Every claim about learning benefit is an argument from design.
+  \item \textbf{No fitted parameters.} All model parameters are pedagogical
+    priors; the literature is clear that fitted and individualised parameters do
+    better \cite{yudelson2013individualized,baker2008more}.
+  \item \textbf{Question-bank coverage is the binding limitation.} The rebuilt
+    ontology has been adopted as the served catalogue, which is the right
+    outcome structurally but converts the project's structural deficit into a
+    coverage one: existing items are keyed to legacy skill identifiers, so the
+    $10{,}128$-specification space against the served ontology is largely
+    ungenerated. The system can now diagnose more finely than it can ask.
+  \item \textbf{The ontology has not been reviewed by domain experts} --- 32
+    disconnected fragments and a body of hand-authored chemistry edges await a
+    chemist and a physicist.
+  \item \textbf{Production-readiness gaps:} no password authentication,
+    in-memory session state, wide-open CORS, no accessibility audit, no
+    performance benchmark.
+\end{enumerate}
+
+\subsection{Future work}
+\label{sec:future}
+
+\textbf{Immediate, and blocking deployment.} Password authentication and
+server-side sessions; persistent session state; CORS restriction. These are
+small, well-understood, and are the difference between a demonstrator and
+something that may lawfully hold real learner data.
+
+\textbf{Completing the knowledge base --- the largest outstanding item.} The
+rebuilt ontology is adopted and the generator has been repointed at it; what
+remains is the budgeted generation run itself across the
+$1{,}688 \times 6 = 10{,}128$ specification space, prioritised by the topics a
+learner reaches first rather than run uniformly. Alongside it, domain-expert
+review of the 32 disconnected fragments and the hand-authored edges, since a
+wrong prerequisite edge propagates silently under \Cref{eq:pullup}.
+
+\textbf{Establishing efficacy --- the most important item.} A controlled study
+with real candidates: does the system's mastery estimate predict performance on
+held-out questions better than a baseline, measured by AUC as the knowledge
+tracing literature does; and does directing study by the system's diagnosis
+produce better outcomes than self-directed study? Until this is done, the central
+claim of the project is unverified.
+
+\textbf{Model improvements once data exists.} Fitted and individualised BKT
+parameters \cite{yudelson2013individualized}; contextual estimation of slip and
+guess \cite{baker2008more}; and, with sufficient data, a comparison against a
+deep knowledge tracing baseline \cite{piech2015deep}. The engine was
+deliberately built with a stateless, replaceable model interface so that this
+substitution requires no change to its call sites.
+
+\textbf{Pedagogical extensions.} Forgetting/decay in the mastery estimate, which
+the current model omits entirely and which matters over a months-long
+preparation period \cite{ebbinghaus1885memory}; spaced review scheduling; and
+session pacing that resists the intensification risk noted in
+\Cref{sec:society}.
+
+\section{Continuous Engagement and Self-directed Learning}
+\label{sec:lessons}
+
+Little of what this project required was covered by prior coursework, and the
+learning it forced was mostly self-directed.
+
+\textbf{Domain literature learned independently.} The knowledge-tracing
+literature was new to the team: the original BKT formulation
+\cite{corbett1995knowledge}, the variants that refine its noise parameters and
+individualise them \cite{baker2008more,yudelson2013individualized,pardos2011kt},
+the competing model families \cite{cen2006learning,pavlik2009performance,piech2015deep},
+the prerequisite-structured student models closest to this design
+\cite{kaser2017dynamic}, and the older knowledge-space theory that supplies the
+graph formulation \cite{doignon1985spaces,falmagne2011learning}. The educational
+side --- the revised Bloom taxonomy \cite{anderson2001revised} and the zone of
+proximal development \cite{vygotsky1978mind} --- was read as source material for
+design decisions rather than as background, since both appear directly in the
+implemented policy.
+
+\textbf{Emerging technical practice.} Retrieval-augmented generation
+\cite{lewis2020retrieval} and multilingual sentence embeddings
+\cite{reimers2019sentence} were adopted from current practice; the survey
+literature on automatic question generation \cite{kurdi2020systematic} was what
+convinced the team that generation without an independent verification stage
+would not produce usable assessment items, which directly shaped
+\Cref{sec:generation-pipeline}.
+
+\textbf{Tools and technologies learned during the project.} FastAPI and Pydantic;
+React with Vite and Tailwind; Supabase and its constraint model; KaTeX and the
+specific difficulties of mixing Bangla text with \LaTeX{} mathematics; local and
+hosted large-language-model inference including quantised local serving, and the
+practical engineering around hosted APIs --- rate limiting, key pooling, adaptive
+backoff and resumable batch jobs.
+
+\textbf{Learning from failure, which was the majority of it.} Three episodes
+taught more than any tutorial. Measuring local inference before committing to it
+would have saved weeks --- the lesson being to measure the throughput of a
+critical dependency before building on it. The silent JSON escape corruption
+taught that a parser accepting input is not evidence the input was understood,
+and that data corruption which raises no error is the expensive kind. The two
+over-flagging validators taught that a heuristic must be calibrated against hand
+review before its output is treated as a defect list.
+
+\textbf{Practices adopted.} The habit that most changed how the team works is
+documentary: writing down the reasoning behind a decision at the moment it is
+taken, not afterwards. On a five-person project spanning months, the recurring
+bottleneck was not writing code but recovering context --- why a constant has the
+value it has, why an approach was abandoned, what a validator's output actually
+means. The chain of handover documents in the repository exists because of that,
+and it is the practice the team expects to carry into work beyond this course.

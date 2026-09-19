@@ -1,0 +1,198 @@
+% Chapter 1 -- Rubric: PO1 (1.1), PO2 (problem identification), PO3 (3.2 objectives)
+\chapter{Problem Identification and Formulation}
+\label{ch:problem}
+
+\section{Background and Motivation}
+\label{sec:background}
+
+Admission to the engineering universities of Bangladesh --- BUET, KUET, RUET
+and CUET --- is decided by a single competitive examination taken after the
+Higher Secondary Certificate (HSC). The test covers Mathematics, Physics and
+Chemistry, and the ratio of candidates to available seats is severe enough that
+preparation is effectively a year-long full-time activity for those who attempt
+it. The dominant preparation method is volume: a student buys one or more
+question banks compiled from previous years' papers and works through them,
+usually alongside coaching-centre classes that move at a fixed pace through a
+fixed syllabus.
+
+This method has a structural weakness that has nothing to do with effort. When
+a student fails a question, the question bank tells them the correct answer; it
+does not tell them \emph{why} they failed. A wrong answer on a problem
+requiring integration by parts may indicate that the student does not recognise
+when the technique applies, or cannot choose $u$ and $dv$ correctly, or chose
+them correctly but made an algebraic error in the resulting simpler integral,
+or does not know the derivative of the function involved. These are four
+different deficits requiring four different remedies, and they are invisible in
+a score. A human tutor localises them by watching the student work --- which is
+precisely what one-to-one tutoring is effective at, and precisely what does not
+scale to a national cohort \cite{vanlehn2011relative}.
+
+The consequence is misallocated study time. A student who does not know which
+of their foundations is weak has no rational basis for choosing what to study
+next, and defaults to either linear syllabus coverage or to practising the
+topics where failure is most visible --- often the topics \emph{downstream} of
+the actual gap. Time spent re-attempting integration problems does not repair
+an algebra deficit; it merely produces repeated failure on the same
+prerequisite, which is both inefficient and demoralising.
+
+What is needed is a system that infers, from the student's own answers, where
+in the structure of the subject their knowledge stops --- and then selects the
+next question at that frontier rather than at the point in the syllabus the
+calendar happens to have reached.
+
+\section{Problem Statement}
+\label{sec:problem-statement}
+
+\textbf{Problem.} Given a learner and a sequence of their responses to
+multiple-choice questions, estimate the learner's mastery of every skill in a
+subject domain, and select the next question so as to localise and repair the
+learner's knowledge frontier.
+
+Formulated in engineering terms:
+
+\begin{itemize}
+  \item \textbf{Entities.} A set of \emph{skills} $S = \{s_1,\dots,s_n\}$, each
+    an atomic, independently testable unit of knowledge or procedure, annotated
+    with one Bloom's Taxonomy cognitive level. A set of directed
+    \emph{prerequisite} edges $E \subseteq S \times S$, where $(s_i,s_j) \in E$
+    means $s_i$ must be held before $s_j$ is reachable. A bank of questions,
+    each tagged with the skill it tests, its Bloom level and its topic. A set of
+    learners.
+  \item \textbf{Inputs.} For a learner $u$, an observed sequence of binary
+    outcomes $(q_1,c_1),(q_2,c_2),\dots$ where $q_t$ is the question served at
+    step $t$ and $c_t \in \{\text{correct},\text{incorrect}\}$.
+  \item \textbf{Latent state.} For each skill, $P(L_{u,s}) \in [0,1]$, the
+    probability that learner $u$ has learned skill $s$. This is never observed
+    directly; it must be inferred from noisy evidence.
+  \item \textbf{Outputs.} (i) The posterior $P(L_{u,s})$ for all $s \in S$
+    after each response; (ii) the identity of the next question to serve.
+  \item \textbf{Quantities to be guaranteed.} The graph $(S,E)$ must be acyclic,
+    or the notion of ``prerequisite'' is incoherent and propagation does not
+    terminate. Mastery estimates must respect the graph: no skill may be
+    credited as mastered while an ancestor it depends on is estimated as
+    unmastered. Question selection must terminate even when the bank has no
+    item matching the ideal specification.
+  \item \textbf{Assumptions.} Responses are conditionally independent given the
+    latent state; a learner does not forget within a session (no decay term);
+    each question tests primarily one skill; the prerequisite structure is the
+    same for all learners.
+\end{itemize}
+
+\noindent\textbf{Engineering knowledge demanded.} The formulation above is not
+solvable by routine application of standard components. It requires: probability
+theory and Bayesian inference (the latent-state update); graph theory (acyclicity
+checking, topological ordering, transitive reduction, ancestor traversal);
+algorithm design (the question-selection heuristic and its fallback ladder);
+database design under referential constraints; the pedagogical literature on
+knowledge tracing and cognitive taxonomies, which supplies the model family and
+the level annotation scheme; and, for the content pipeline, applied natural
+language processing --- retrieval-augmented generation, embedding-based
+retrieval, and the validation of machine-generated assessment items.
+
+\section{Complexity of the Problem}
+\label{sec:complexity}
+A complex engineering problem must have characteristic P1 and some or all of
+P2--P7 (\Cref{tab:complexity}). P1 requires in-depth knowledge at the level
+of one or more of the knowledge profiles K3--K8 listed in
+\Cref{tab:knowledge-profile}.
+
+% Rendered as a longtable (not a float) so it flows across pages at readable
+% size instead of being squeezed onto one rotated page.
+\setlength{\LTcapwidth}{\textwidth}
+{\small\setstretch{1.1}
+\begin{longtable}{@{}p{11mm}p{56mm}p{\dimexpr\textwidth-11mm-56mm-4\tabcolsep\relax}@{}}
+  \caption{Complex engineering problem characteristics (P1--P7) and evidence from this project}
+  \label{tab:complexity}\\
+    \toprule
+    Code & Definition & Evidence from this project \\
+    \midrule
+  \endfirsthead
+    \multicolumn{3}{@{}l}{\small\itshape \tablename~\thetable{} --- continued from previous page}\\[2pt]
+    \toprule
+    Code & Definition & Evidence from this project \\
+    \midrule
+  \endhead
+    \midrule
+    \multicolumn{3}{r@{}}{\small\itshape continued on next page}\\
+  \endfoot
+    \bottomrule
+  \endlastfoot
+    P1 & \textbf{Depth of knowledge required.} Cannot be resolved without in-depth engineering knowledge at the level of one or more of K3, K4, K5, K6, or K8, which allows a fundamentals-based, first-principles analytical approach. &
+    \textbf{K3, K4, K5, K8.} K3: the Bayesian update is derived from first principles, not called from a library --- the posterior and transition equations are implemented directly (\Cref{sec:bkt-model}). K4: knowledge tracing and cognitive-taxonomy literature supplies the model family \cite{corbett1995knowledge,anderson2001revised}. K5: the DAG, its acyclicity guarantee and transitive reduction are what make the gating policy implementable. K8: the design engages directly with the research literature on BKT variants \cite{baker2008more,yudelson2013individualized,pardos2011kt} and on prerequisite-structured student models \cite{kaser2017dynamic}. \\
+    P2 & \textbf{Range of conflicting requirements.} Involves wide-ranging or conflicting technical, engineering, and other issues. &
+    Granularity conflicts with question-bank coverage: finer skills localise gaps better but multiply the items needed (the rebuilt ontology raised the generation space from $430\times6$ to $1{,}688\times6$ tuples). Diagnostic length conflicts with learner patience: a diagnostic short enough to be sat through cannot directly measure 1{,}688 skills, forcing inference by propagation rather than measurement. Adaptivity conflicts with stability: an aggressive learning rate tracks change quickly but overreacts to a lucky guess. \Cref{sec:alternatives} resolves these explicitly. \\
+    P3 & \textbf{Depth of analysis required.} Has no obvious solution and requires abstract thinking and originality in analysis to formulate suitable models. &
+    Textbook BKT is per-skill and independent; it cannot express ``mastery of $s_j$ is impossible while $s_i$ is unmastered.'' Making it graph-aware required an original three-phase policy (Bloom-conditioned update, ancestor pull-up, conjunctive transition gating) that is not a published algorithm but a composition designed for this problem (\Cref{sec:mastery-policy}). \\
+    P4 & \textbf{Familiarity of issues.} Involves infrequently encountered issues. &
+    Bangla-language STEM content with embedded \LaTeX{} mathematics is outside the well-trodden path: it broke JSON escaping (a corruption affecting a measured 13.4\% of one generated batch), broke text rendering in the browser, and is poorly served by English-centric embedding models. \\
+    P5 & \textbf{Extent of applicable codes.} Is outside problems encompassed by standards and codes of practice for professional engineering. &
+    No standard governs what a ``skill'' is, how finely a syllabus should be decomposed, or when an automatically generated assessment item is fit to serve to a student. These decisions were made against explicit project-defined criteria (\Cref{sec:standards}) because no code of practice supplies them. \\
+    P6 & \textbf{Extent of stakeholder involvement and conflicting requirements.} Involves diverse groups of stakeholders with widely varying needs. &
+    Learners want the shortest path to a higher score; teachers want syllabus fidelity and correct content; the system's own policy wants maximal information per question. These pull in different directions --- the most informative question is often not the most encouraging one. \Cref{sec:requirements} tabulates the conflicts. \\
+    P7 & \textbf{Interdependence.} Is a high-level problem including many component parts or sub-problems. &
+    Five interdependent subsystems: the knowledge ontology, the inference engine, the question bank and its generation pipeline, the serving API, and the learner-facing interface. The ontology is upstream of all others --- its granularity determines what the engine can infer and what the generator must produce, which is why a sparse first ontology forced a full rebuild (\Cref{sec:ontology-rebuild}). \\
+\end{longtable}}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Knowledge profiles referenced by P1}
+  \label{tab:knowledge-profile}
+  \begin{tabularx}{\textwidth}{lY}
+    \toprule
+    Code & Description \\
+    \midrule
+    K3 & A systematic, theory-based formulation of engineering fundamentals required in the engineering discipline. \\
+    K4 & Engineering specialist knowledge that provides theoretical frameworks and bodies of knowledge for the accepted practice areas in the engineering discipline; much is at the forefront of the discipline. \\
+    K5 & Knowledge that supports engineering design in a practice area. \\
+    K6 & Knowledge of engineering practice (technology) in the practice areas in the engineering discipline. \\
+    K8 & Engagement with selected knowledge in the research literature of the discipline. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\section{Project Objectives and Scope}
+\label{sec:objectives}
+
+\subsection{Objectives}
+
+The project set the following verifiable objectives. \Cref{ch:evaluation}
+evaluates the delivered system against each.
+
+\begin{enumerate}[label=\textbf{O\arabic*.}, leftmargin=*]
+  \item \textbf{Construct a prerequisite skill graph} for the HSC Mathematics,
+    Physics and Chemistry syllabus at a granularity fine enough that a single
+    node names one independently testable action, and verify that the graph is
+    acyclic and free of isolated nodes.
+  \item \textbf{Implement a knowledge-tracing engine} that maintains a
+    per-learner, per-skill mastery estimate, updates it from each response by
+    Bayesian inference, and conditions that inference on the cognitive level of
+    the question.
+  \item \textbf{Make the estimate graph-aware}, such that evidence propagates to
+    prerequisite skills and no skill can be credited above an unmastered
+    prerequisite.
+  \item \textbf{Deliver an adaptive diagnostic} that localises a learner's
+    frontier within a bounded number of questions (target 30) rather than
+    testing every skill.
+  \item \textbf{Deliver targeted practice} that drives a chosen topic to a
+    defined mastery threshold and detects when repeated failure is caused by a
+    missing prerequisite rather than by the topic itself.
+  \item \textbf{Produce a question bank} aligned to the skill graph, in Bangla
+    with correct mathematical typesetting, via an automated pipeline with a
+    verification stage.
+  \item \textbf{Deliver a usable web application} exposing the diagnostic,
+    practice and a mastery view to a learner.
+  \item \textbf{Verify the engine end to end} with an automated test harness that
+    runs without external credentials.
+\end{enumerate}
+
+\subsection{Scope}
+
+\textbf{Included:} the three admission-test subjects; multiple-choice items
+with four options; a single-process web deployment sufficient for demonstration;
+Bangla content with \LaTeX{} mathematics; English and Bangla interface text.
+
+\textbf{Explicitly excluded:} written/subjective answer grading; handwriting or
+image input; mobile-native applications; teacher-facing classroom analytics;
+multi-tenant institutional deployment; live proctoring; and any claim of
+improved examination outcomes, which would require a controlled study with human
+participants that this project did not undertake (\Cref{sec:eval-limits}).
