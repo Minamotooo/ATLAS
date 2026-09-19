@@ -164,6 +164,32 @@ class _ModelLimiter:
         self.daily_count = 0
         self.exhausted = False
         self.consecutive_429s = 0
+        # Per (key, model): serializes every outbound HTTP call for this
+        # exact key+model pair. wait_for_turn() only paces calls against
+        # the SAME model's _ModelLimiter, so nothing previously stopped two
+        # verify_worker threads that round-robin onto the same key from
+        # both being in flight for it at once (4 verify threads cycling
+        # through 18 keys can easily lap a slow call). Holding this for the
+        # whole wait+call+response cycle guarantees at most one in-flight
+        # request per (key, model) at any time.
+        #
+        # Deliberately scoped to (key, model), NOT the whole key: Gemini's
+        # quota is confirmed per-model (a real 429 body's quotaId reads
+        # "GenerateRequestsPerDayPerProjectPerModel-FreeTier"), so
+        # generation and verification calls for the same key were never
+        # actually contending for the same budget. An earlier version of
+        # this lock was scoped to the whole KeyState, shared across models -
+        # that meant a verification call (gemini-3.1-flash-lite) holding the
+        # lock, including its own wait_for_turn sleep, could delay the
+        # generation worker (gemini-3.5-flash-lite) for that same key past
+        # its intended send time. Confirmed directly: all 18 keys reported
+        # "exhausted" by the pipeline mid-run, yet a standalone test of
+        # every one of them - individually AND as a 15-way concurrent burst
+        # across different keys - succeeded immediately. The delayed calls
+        # were arriving bunched up once the shared lock freed, violating
+        # the real per-model RPM window even though each model's own pacing
+        # math looked correct in isolation.
+        self.http_lock = threading.Lock()
 
 
 class KeyState:
@@ -175,18 +201,6 @@ class KeyState:
         self.label = label
         self.lock = threading.Lock()
         self._limiters: dict[str, _ModelLimiter] = {}
-        # Per-KEY (not per key+model): serializes every outbound HTTP call
-        # for this key across ALL callers/models. wait_for_turn() only paces
-        # calls against the SAME model's _ModelLimiter, so nothing previously
-        # stopped a generation call and a verification call for the same key
-        # - or two verify_worker threads that round-robin onto the same key
-        # while an earlier call for it is still in flight (4 verify threads
-        # cycling through 18 keys can easily lap a slow call) - from actually
-        # being in flight at the same instant. Holding this for the whole
-        # wait+call+response cycle guarantees at most one in-flight request
-        # per key at any time, which is what the account's real per-key RPM
-        # limit needs, regardless of how many threads/models touch it.
-        self.http_lock = threading.Lock()
 
     def _limiter(self, model: str) -> _ModelLimiter:
         with self.lock:
@@ -319,16 +333,12 @@ def gemini_generate(key_state: KeyState, model: str, system_prompt: str, user_pr
         if key_state.is_exhausted(model):
             return None, "key exhausted"
 
-        # Held across wait_for_turn's sleep AND the call itself: this key's
-        # per-model pacers are independent of each other (see http_lock's
-        # docstring), so without this, a generation call and a verification
-        # call - or two verify_worker threads round-robined onto the same
-        # key - could both be in flight for this key at once. Holding the
-        # lock this early means a second caller doesn't even start its OWN
-        # wait_for_turn timer until the first caller's full cycle is done,
-        # which is the strict "one in-flight request per key, ever" this
-        # exists for.
-        with key_state.http_lock:
+        # Held across wait_for_turn's sleep AND the call itself: see
+        # _ModelLimiter.http_lock's docstring for why this is scoped to
+        # (key, model) and not the whole key. Holding it this early means a
+        # second caller for the SAME key+model doesn't even start its own
+        # wait_for_turn timer until the first caller's full cycle is done.
+        with key_state._limiter(model).http_lock:
             key_state.wait_for_turn(model)
             # A fresh single-use executor per call, not a shared pool: if requests'
             # own timeout=60 fails to fire (observed platform issue) and the call
