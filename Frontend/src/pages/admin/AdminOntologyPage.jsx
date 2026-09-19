@@ -2,7 +2,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import cytoscape from 'cytoscape';
 import dagre from 'cytoscape-dagre';
-import { useAuth, buildApiUrl } from '../../context/AuthContext';
+import { useAuth } from '../../context/AuthContext';
+import { adminFetch } from './adminApi';
 import { AlertCircle, ChevronDown, Plus, Search, ShieldAlert, Trash2, X } from 'lucide-react';
 
 cytoscape.use(dagre);
@@ -16,18 +17,6 @@ const ROLE_COLOR = {
   leaf: '#199e70',
   isolated: '#5b5b55',
 };
-
-async function adminFetch(path, username, options = {}) {
-  const response = await fetch(buildApiUrl(path), {
-    ...options,
-    headers: {
-      'X-User-Name': username,
-      ...(options.body ? { 'Content-Type': 'application/json' } : {}),
-      ...options.headers,
-    },
-  });
-  return response;
-}
 
 export default function AdminOntologyPage() {
   const { user, loading } = useAuth();
