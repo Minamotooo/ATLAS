@@ -198,8 +198,14 @@ TEST_MODEL = "gemini-3.1-flash-lite"
 
 def main() -> None:
     extra_args = sys.argv[1:]
-    model = REAL_MODEL if "--real" in extra_args else TEST_MODEL
-    check_key_health(model)
+    # Always check against REAL_MODEL specifically, even for a --limit test-
+    # model pilot: Gemini's quota is per-model
+    # (GenerateRequestsPerDayPerProjectPerModel-FreeTier, confirmed directly
+    # against a real 429 body), so gemini-3.1-flash-lite being healthy says
+    # nothing about gemini-3.5-flash-lite's quota - the model that actually
+    # matters, since it's what --real spends. Checking the wrong model here
+    # is exactly how an earlier run got its "keys are back up" signal wrong.
+    check_key_health(REAL_MODEL)
     run_generation(extra_args)
     push_to_supabase()
     print_summary()
