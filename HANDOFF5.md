@@ -168,7 +168,35 @@ required fields, same `prereqs.json` shape. The rebuild's extra keys
 (`authored`, `splitFrom`, `crossSubjectEquivalent`) pass through `dict(tup)`
 harmlessly.
 
-### 5.2 Things already handled — do not "fix" them
+### 5.2 How Bloom actually works here — read this before touching anything Bloom
+
+Each skill in `tuples.json` carries a `bloom` field, but **the running system
+never reads it.** Three facts, all verifiable in the code:
+
+- it is **not compiled** into `Backend/tree_data/*.json` at all;
+- `Backend/diagnostic.py::_select_bloom` derives the Bloom level of each question
+  from the **learner's** current mastery of that skill - mastery 0-100 is split
+  into six equal bands, and the engine asks one level above the learner's band;
+- `Backend/mastery_updater.py` then picks guess/slip from that **question's**
+  Bloom level, not the skill's (see its module docstring).
+
+So a skill's stored Bloom level is **provenance** - the level the source question
+was pitched at - not a control input. Consequences:
+
+- a topic spanning only one Bloom level is not a defect; the generator emits all
+  six levels per skill anyway;
+- `_validate_ontology.py` check E2 ("Bloom inversions") cannot be an error, for
+  this reason on top of the one in its docstring;
+- `_topic_quality.py`'s LADDER criterion measures the cognitive spread of the
+  *source questions*, not an engine requirement.
+
+An earlier version of `_split_cross_tier.py` and of `quality_audit.md` claimed
+guess/slip is chosen from the skill's Bloom level. That was wrong and is
+corrected in place. The cross-tier splits were still worth doing, for a reason
+that does not involve Bloom at all: BKT keeps one `p_learned` per skill, so two
+competencies under one id share a single mastery estimate.
+
+### 5.3 Things already handled — do not "fix" them
 
 - **Bloom coverage.** 36 topics hold only one Bloom level, but
   `question_gen_common.py::expand_bloom_levels` already emits one tuple per
@@ -179,14 +207,14 @@ harmlessly.
   (Traceability is ~91.5% recoverable by exact description match against
   `candidates/*.json` if you ever want it for auditing.)
 
-### 5.3 Expect these to generate badly
+### 5.4 Expect these to generate badly
 
 - The **51 authored skills**, especially the three all-authored topics — no
   corpus question supports them, so retrieval returns weak or unrelated context.
 - The **4 exact duplicate descriptions** from the cross-subject pairs will
   generate near-identical questions in two subjects. That is expected.
 
-### 5.4 Scale
+### 5.5 Scale
 
 1,688 skills × 6 Bloom levels = **10,128 tuples**. `HANDOFF3.md` documents a
 cost blow-out on this project — read it before starting a long run, and use

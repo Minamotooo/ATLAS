@@ -70,12 +70,27 @@ _HTTP_HARD_TIMEOUT_SEC = 75.0  # a bit above requests' own 60s timeout
 # answer check) - that's true regardless of which model generated it, so
 # pilot/test runs accumulate into the same file as the real run rather than
 # a separate throwaway one. A verified-good question is real usable data.
-OUTPUT_PATH = _DATA_GEN / "output_questions_gemini.json"
-PROGRESS_PATH = _DATA_GEN / "gemini_progress.json"
+#
+# _v2 = the full-corpus-rebuild ontology (1,688 skills), NOT the legacy
+# 430-skill run. Deliberately a separate file: 26 skillIds collide as
+# STRINGS between the two ontologies (same id, different or reworded skill -
+# see the reassignment feasibility probe from 2026-09-18), so reusing the
+# legacy progress/output file could silently mark new-ontology tuples "done"
+# off a stale legacy match, or interleave two unrelated corpora in one file.
+# The legacy output_questions_gemini.json / gemini_progress.json are left
+# on disk untouched as historical reference for the old 430-skill campaign.
+OUTPUT_PATH = _DATA_GEN / "output_questions_gemini_v2.json"
+PROGRESS_PATH = _DATA_GEN / "gemini_progress_v2.json"
 
 # Conservative default; adjusted downward automatically if a 429 says otherwise.
 DEFAULT_RPM = 15
 MAX_RETRIES_PER_TUPLE = 2
+# A key/model pair that racks up this many CONSECUTIVE 429s (reset to 0 by
+# any success) gets marked exhausted rather than retried forever. See
+# note_rate_limited's docstring for why this threshold is set high and not
+# the low one ("4") that was tried and reverted earlier in this file's
+# history - that was a pacing false-positive; this is a different situation.
+CONSECUTIVE_429_EXHAUSTION_THRESHOLD = 10
 # Batched verification: up to this many tuples' worth of questions go into
 # ONE verification call, cutting call count ~N-fold vs one call per tuple.
 BATCH_VERIFY_SIZE = 8
@@ -149,6 +164,32 @@ class _ModelLimiter:
         self.daily_count = 0
         self.exhausted = False
         self.consecutive_429s = 0
+        # Per (key, model): serializes every outbound HTTP call for this
+        # exact key+model pair. wait_for_turn() only paces calls against
+        # the SAME model's _ModelLimiter, so nothing previously stopped two
+        # verify_worker threads that round-robin onto the same key from
+        # both being in flight for it at once (4 verify threads cycling
+        # through 18 keys can easily lap a slow call). Holding this for the
+        # whole wait+call+response cycle guarantees at most one in-flight
+        # request per (key, model) at any time.
+        #
+        # Deliberately scoped to (key, model), NOT the whole key: Gemini's
+        # quota is confirmed per-model (a real 429 body's quotaId reads
+        # "GenerateRequestsPerDayPerProjectPerModel-FreeTier"), so
+        # generation and verification calls for the same key were never
+        # actually contending for the same budget. An earlier version of
+        # this lock was scoped to the whole KeyState, shared across models -
+        # that meant a verification call (gemini-3.1-flash-lite) holding the
+        # lock, including its own wait_for_turn sleep, could delay the
+        # generation worker (gemini-3.5-flash-lite) for that same key past
+        # its intended send time. Confirmed directly: all 18 keys reported
+        # "exhausted" by the pipeline mid-run, yet a standalone test of
+        # every one of them - individually AND as a 15-way concurrent burst
+        # across different keys - succeeded immediately. The delayed calls
+        # were arriving bunched up once the shared lock freed, violating
+        # the real per-model RPM window even though each model's own pacing
+        # math looked correct in isolation.
+        self.http_lock = threading.Lock()
 
 
 class KeyState:
@@ -189,17 +230,32 @@ class KeyState:
     def note_rate_limited(self, model: str, retry_after: float | None) -> None:
         """
         429s are transient by nature - the server itself hands back a
-        retryDelay, which only makes sense if waiting recovers the key. This
-        NEVER marks the key exhausted: an earlier version did after 4
-        consecutive 429s, reasoning that repeats meant the daily cap - that
-        was wrong. Confirmed directly: a key marked "exhausted" this way
-        during a real batch responded HTTP 200 immediately when tested
-        moments later. The actual cause was gemini-3.1-flash-lite's per-key
-        RPM being lower than DEFAULT_RPM assumed, so 10 keys all pacing at
-        the same (too-fast) rate all hit 429s in the same run - a pacing
-        problem, not a capacity one. Fixed by adaptively slowing this key's
-        OWN pacing (min_interval grows on each 429) rather than giving up on
-        it - only a genuine 401/403 (mark_blocked) is treated as permanent.
+        retryDelay, which only makes sense if waiting recovers the key. A
+        SMALL number of them does NOT mark the key exhausted: an earlier
+        version did after 4 consecutive 429s, reasoning that repeats meant
+        the daily cap - that was wrong. Confirmed directly: a key marked
+        "exhausted" this way during a real batch responded HTTP 200
+        immediately when tested moments later. The actual cause was
+        gemini-3.1-flash-lite's per-key RPM being lower than DEFAULT_RPM
+        assumed, so 10 keys all pacing at the same (too-fast) rate all hit
+        429s in the same run - a pacing problem, not a capacity one. Fixed
+        by adaptively slowing this key's OWN pacing (min_interval grows on
+        each 429) rather than giving up on it.
+
+        That fix still stands for a burst of a few 429s. But a key that
+        keeps getting 429'd for CONSECUTIVE_429_EXHAUSTION_THRESHOLD (10)
+        calls in a row - already paced at up to min_interval=60s by this
+        same adaptive logic - is a materially different signal than the
+        original false positive: this isn't "our pacing is a bit too fast
+        and will settle," it's sustained rejection despite already being
+        slow, observed directly during the full-corpus real run (2026-09-19)
+        as several keys racking up 400-500+ consecutive 429s while a
+        [gen] FAILED ... "exhausted internal retries" tuple loss started
+        appearing. Left unbounded, a key in that state gets retried forever
+        (every ~60s) for no benefit - genuine 401/403 (mark_blocked) is
+        still the only OTHER thing that marks exhausted; this is a second,
+        narrower path for a consecutive-429 streak long enough that
+        "temporary pacing hiccup" no longer fits the evidence.
         """
         lim = self._limiter(model)
         lim.consecutive_429s += 1
@@ -216,7 +272,12 @@ class KeyState:
             # we'd rather retry sooner and eat another 429 than block that long.
             backoff = min(60.0, retry_after) if retry_after else min(45.0, 2.0 ** lim.consecutive_429s)
             lim.next_allowed = time.monotonic() + backoff
-        if backoff >= 5.0:
+            if lim.consecutive_429s >= CONSECUTIVE_429_EXHAUSTION_THRESHOLD:
+                lim.exhausted = True
+        if lim.exhausted and lim.consecutive_429s == CONSECUTIVE_429_EXHAUSTION_THRESHOLD:
+            print(f"[ratelimit] {self.label}/{model} marked EXHAUSTED after "
+                  f"{lim.consecutive_429s} consecutive 429s - no longer retried this run")
+        elif backoff >= 5.0:
             print(f"[ratelimit] {self.label}/{model} backing off {backoff:.1f}s "
                   f"(consecutive 429s={lim.consecutive_429s}, new min_interval={lim.min_interval:.1f}s)")
 
@@ -272,27 +333,33 @@ def gemini_generate(key_state: KeyState, model: str, system_prompt: str, user_pr
         if key_state.is_exhausted(model):
             return None, "key exhausted"
 
-        key_state.wait_for_turn(model)
-        # A fresh single-use executor per call, not a shared pool: if requests'
-        # own timeout=60 fails to fire (observed platform issue) and the call
-        # blocks forever past _HTTP_HARD_TIMEOUT_SEC, .result(timeout=...) only
-        # abandons OUR wait - the underlying thread stays blocked forever. A
-        # shared fixed-size pool would permanently lose that worker slot, and
-        # after enough leaks (observed after ~40min/~650 calls under heavy
-        # rate-limit retry volume) every slot is gone and ALL future calls
-        # queue forever with zero free workers - a full stall. A disposable
-        # one-off executor lets the leaked thread die alone without shrinking
-        # capacity for calls that come after it.
-        one_shot = concurrent.futures.ThreadPoolExecutor(max_workers=1, thread_name_prefix="gemini-http")
-        try:
-            resp = one_shot.submit(requests.post, url, json=payload, timeout=60) \
-                .result(timeout=_HTTP_HARD_TIMEOUT_SEC)
-        except concurrent.futures.TimeoutError:
-            return None, f"network error: hard timeout after {_HTTP_HARD_TIMEOUT_SEC}s (requests' own timeout did not fire)"
-        except requests.RequestException as exc:
-            return None, f"network error: {exc}"
-        finally:
-            one_shot.shutdown(wait=False)
+        # Held across wait_for_turn's sleep AND the call itself: see
+        # _ModelLimiter.http_lock's docstring for why this is scoped to
+        # (key, model) and not the whole key. Holding it this early means a
+        # second caller for the SAME key+model doesn't even start its own
+        # wait_for_turn timer until the first caller's full cycle is done.
+        with key_state._limiter(model).http_lock:
+            key_state.wait_for_turn(model)
+            # A fresh single-use executor per call, not a shared pool: if requests'
+            # own timeout=60 fails to fire (observed platform issue) and the call
+            # blocks forever past _HTTP_HARD_TIMEOUT_SEC, .result(timeout=...) only
+            # abandons OUR wait - the underlying thread stays blocked forever. A
+            # shared fixed-size pool would permanently lose that worker slot, and
+            # after enough leaks (observed after ~40min/~650 calls under heavy
+            # rate-limit retry volume) every slot is gone and ALL future calls
+            # queue forever with zero free workers - a full stall. A disposable
+            # one-off executor lets the leaked thread die alone without shrinking
+            # capacity for calls that come after it.
+            one_shot = concurrent.futures.ThreadPoolExecutor(max_workers=1, thread_name_prefix="gemini-http")
+            try:
+                resp = one_shot.submit(requests.post, url, json=payload, timeout=60) \
+                    .result(timeout=_HTTP_HARD_TIMEOUT_SEC)
+            except concurrent.futures.TimeoutError:
+                return None, f"network error: hard timeout after {_HTTP_HARD_TIMEOUT_SEC}s (requests' own timeout did not fire)"
+            except requests.RequestException as exc:
+                return None, f"network error: {exc}"
+            finally:
+                one_shot.shutdown(wait=False)
 
         if resp.status_code == 429:
             retry_after = None
@@ -721,9 +788,41 @@ def main() -> None:
     accum_lock = threading.Lock()
     MAX_VERIFY_RETRIES = 2
 
+    # Set when the watchdog below detects every key is exhausted for
+    # GENERATION_MODEL with tuples still stuck in work_q - a state no
+    # worker can ever clear on its own. Without this, gen_workers exit
+    # (each checks is_exhausted() and returns), but verify_workers keep
+    # looping in `while not all_done()` forever: pending_verify_q goes
+    # empty and stays empty (nothing left generates), yet work_q is
+    # non-empty and nothing is left alive to drain it, so all_done() can
+    # never become True. Observed directly (2026-09-19): the process sat
+    # alive but fully idle for ~1h45m after every key hit the new
+    # consecutive-429 exhaustion threshold, with zero indication anything
+    # was wrong short of noticing the progress file had stopped moving.
+    stuck = threading.Event()
+
     def all_done() -> bool:
+        if stuck.is_set():
+            return True
         with flight_lock:
             return in_flight["n"] == 0 and work_q.empty() and pending_verify_q.empty()
+
+    def watchdog() -> None:
+        while not stuck.is_set():
+            time.sleep(15)
+            with flight_lock:
+                nothing_pending_verify = pending_verify_q.empty()
+                work_left = work_q.qsize()
+            if in_flight["n"] == 0:
+                return  # legitimately finished, not stuck
+            if work_left > 0 and nothing_pending_verify and \
+                    all(ks.is_exhausted(GENERATION_MODEL) for ks in key_states):
+                print(f"\n[FATAL] All {len(key_states)} keys are exhausted for "
+                      f"{GENERATION_MODEL} and {work_left} tuple(s) remain unprocessed. "
+                      f"No key can make further progress this run - stopping instead of "
+                      f"spinning forever. Re-run once at least one key's quota has reset.")
+                stuck.set()
+                return
 
     def finalize_success(tup: dict, questions: list, verified_ok: bool) -> None:
         with out_lock:
@@ -858,16 +957,21 @@ def main() -> None:
     N_VERIFY_WORKERS = min(4, len(key_states))
     gen_threads = [threading.Thread(target=gen_worker, args=(ks,), daemon=True) for ks in key_states]
     verify_threads = [threading.Thread(target=verify_worker, daemon=True) for _ in range(N_VERIFY_WORKERS)]
+    watchdog_thread = threading.Thread(target=watchdog, daemon=True)
 
     start = time.time()
-    for t in gen_threads + verify_threads:
+    for t in gen_threads + verify_threads + [watchdog_thread]:
         t.start()
     for t in gen_threads + verify_threads:
         t.join()
     elapsed = time.time() - start
 
-    print(f"\nDone in {elapsed:.1f}s. ok={stats['ok']} failed={stats['failed']} "
-          f"total_questions={len(all_questions)}")
+    if stuck.is_set():
+        print(f"\nStopped after {elapsed:.1f}s (all keys exhausted, work remaining) - "
+              f"ok={stats['ok']} failed={stats['failed']} total_questions={len(all_questions)}")
+    else:
+        print(f"\nDone in {elapsed:.1f}s. ok={stats['ok']} failed={stats['failed']} "
+              f"total_questions={len(all_questions)}")
     for ks in key_states:
         gen_calls = ks.daily_count_for(GENERATION_MODEL)
         gen_exh = ks.is_exhausted(GENERATION_MODEL)

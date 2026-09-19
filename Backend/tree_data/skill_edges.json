@@ -1,27 +1,323 @@
 [
   {
-    "source": "CHEM_ANALYTICAL1",
-    "target": "CHE_ANALYTICAL1"
+    "source": "CHE1_CATION_ANALYSIS0",
+    "target": "CHE_QUAL4"
+  },
+  {
+    "source": "CHE1_COVALENT_BOND0",
+    "target": "CHE1_COVALENT_BOND2"
+  },
+  {
+    "source": "CHE1_COVALENT_BOND0",
+    "target": "CHE_BONDING12"
+  },
+  {
+    "source": "CHE1_COVALENT_BOND0",
+    "target": "CHE_BONDING19"
+  },
+  {
+    "source": "CHE1_COVALENT_BOND0",
+    "target": "CHE_BONDING20"
+  },
+  {
+    "source": "CHE1_COVALENT_BOND0",
+    "target": "CHE_BONDING24"
+  },
+  {
+    "source": "CHE1_COVALENT_BOND0",
+    "target": "CHE_BONDING50"
+  },
+  {
+    "source": "CHE1_COVALENT_BOND1",
+    "target": "CHE_BONDING37"
+  },
+  {
+    "source": "CHE1_COVALENT_BOND1",
+    "target": "CHE_COORD5"
+  },
+  {
+    "source": "CHE1_COVALENT_BOND2",
+    "target": "CHE_BONDING35"
+  },
+  {
+    "source": "CHE1_ELECTRON_CONFIG1",
+    "target": "CHEM_AT1"
+  },
+  {
+    "source": "CHE1_ELECTRON_CONFIG1",
+    "target": "CHE_ATOMIC14"
+  },
+  {
+    "source": "CHE1_IONIC_BOND0",
+    "target": "CHE1_COVALENT_BOND1"
+  },
+  {
+    "source": "CHE1_IONIC_BOND0",
+    "target": "CHE1_IONIC_BOND1"
+  },
+  {
+    "source": "CHE1_IONIC_BOND0",
+    "target": "CHE1_SOLUBILITY_RULES0"
+  },
+  {
+    "source": "CHE1_IONIC_BOND0",
+    "target": "CHE_ACIDBASE3"
+  },
+  {
+    "source": "CHE1_IONIC_BOND0",
+    "target": "CHE_BONDING45"
+  },
+  {
+    "source": "CHE1_IONIC_BOND1",
+    "target": "CHE_BONDING38"
+  },
+  {
+    "source": "CHE1_PERIODIC_TRENDS0",
+    "target": "CHE1_IONIC_BOND0"
+  },
+  {
+    "source": "CHE1_PERIODIC_TRENDS0",
+    "target": "CHE1_PERIODIC_TRENDS1"
+  },
+  {
+    "source": "CHE1_PERIODIC_TRENDS0",
+    "target": "CHE1_PERIODIC_TRENDS2"
+  },
+  {
+    "source": "CHE1_PERIODIC_TRENDS0",
+    "target": "CHE1_PERIODIC_TRENDS3"
+  },
+  {
+    "source": "CHE1_PERIODIC_TRENDS0",
+    "target": "CHE1_PERIODIC_TRENDS4"
+  },
+  {
+    "source": "CHE1_PERIODIC_TRENDS0",
+    "target": "CHE1_TRANSITION0"
+  },
+  {
+    "source": "CHE1_PERIODIC_TRENDS0",
+    "target": "CHEM_PERIODIC15"
+  },
+  {
+    "source": "CHE1_PERIODIC_TRENDS0",
+    "target": "CHEM_PERIODIC27"
+  },
+  {
+    "source": "CHE1_PERIODIC_TRENDS0",
+    "target": "CHE_ACIDBASE7"
+  },
+  {
+    "source": "CHE1_PERIODIC_TRENDS1",
+    "target": "CHEM_PERIODIC34"
+  },
+  {
+    "source": "CHE1_PERIODIC_TRENDS1",
+    "target": "CHE_ACIDBASE8"
+  },
+  {
+    "source": "CHE1_PERIODIC_TRENDS2",
+    "target": "CHE_BONDING15"
+  },
+  {
+    "source": "CHE1_PERIODIC_TRENDS3",
+    "target": "CHE_BONDING51"
+  },
+  {
+    "source": "CHE1_PERIODIC_TRENDS4",
+    "target": "CHE_BONDING34"
+  },
+  {
+    "source": "CHE1_REDOX0",
+    "target": "CHE1_REDOX1"
+  },
+  {
+    "source": "CHE1_REDOX0",
+    "target": "CHE1_REDOX2"
+  },
+  {
+    "source": "CHE1_REDOX0",
+    "target": "CHE1_REDOX4"
+  },
+  {
+    "source": "CHE1_REDOX0",
+    "target": "CHEM_REDOX19"
+  },
+  {
+    "source": "CHE1_REDOX0",
+    "target": "CHEM_REDOX21"
+  },
+  {
+    "source": "CHE1_REDOX0",
+    "target": "CHEM_REDOX28"
+  },
+  {
+    "source": "CHE1_REDOX1",
+    "target": "CHE1_REDOX5"
+  },
+  {
+    "source": "CHE1_REDOX1",
+    "target": "CHEM_REDOX11"
+  },
+  {
+    "source": "CHE1_REDOX1",
+    "target": "CHE_ELECTROCHEM1"
+  },
+  {
+    "source": "CHE1_REDOX2",
+    "target": "CHE1_REDOX3"
+  },
+  {
+    "source": "CHE1_REDOX2",
+    "target": "CHEM_REDOX2"
+  },
+  {
+    "source": "CHE1_REDOX2",
+    "target": "CHEM_REDOX7"
+  },
+  {
+    "source": "CHE1_REDOX3",
+    "target": "CHEM_REDOX14"
+  },
+  {
+    "source": "CHE1_REDOX4",
+    "target": "CHEM_REDOX31"
+  },
+  {
+    "source": "CHE1_REDOX5",
+    "target": "CHEM_REDOX17"
+  },
+  {
+    "source": "CHE1_REDOX6",
+    "target": "CHEM_REDOX40"
+  },
+  {
+    "source": "CHE1_SOLUBILITY_RULES0",
+    "target": "CHE1_SOLUBILITY_RULES1"
+  },
+  {
+    "source": "CHE1_SOLUBILITY_RULES0",
+    "target": "CHEM_LAB10"
+  },
+  {
+    "source": "CHE1_SOLUBILITY_RULES1",
+    "target": "CHE_QUAL9"
+  },
+  {
+    "source": "CHE1_TRANSITION0",
+    "target": "CHEM_DBLOCK2"
+  },
+  {
+    "source": "CHE1_TRANSITION0",
+    "target": "CHE_COORD9"
+  },
+  {
+    "source": "CHE2_ATMOSPHERE0",
+    "target": "CHEM_ENV13"
+  },
+  {
+    "source": "CHE2_METALLURGY0",
+    "target": "CHE2_METALLURGY1"
+  },
+  {
+    "source": "CHE2_METALLURGY0",
+    "target": "CHEM_NOM6"
+  },
+  {
+    "source": "CHE2_METALLURGY1",
+    "target": "CHE2_METALLURGY2"
+  },
+  {
+    "source": "CHE2_MOLE0",
+    "target": "CHE2_MOLE1"
+  },
+  {
+    "source": "CHE2_MOLE0",
+    "target": "CHE2_MOLE2"
+  },
+  {
+    "source": "CHE2_MOLE0",
+    "target": "CHE_STOICHIOMETRY10"
+  },
+  {
+    "source": "CHE2_MOLE0",
+    "target": "CHE_STOICHIOMETRY11"
+  },
+  {
+    "source": "CHE2_MOLE0",
+    "target": "CHE_STOICHIOMETRY12"
+  },
+  {
+    "source": "CHE2_MOLE1",
+    "target": "CHE_STOICHIOMETRY7"
+  },
+  {
+    "source": "CHE2_MOLE2",
+    "target": "CHEM_DESCRIPTIVE0"
+  },
+  {
+    "source": "CHE2_MOLE2",
+    "target": "CHEM_REDOX39"
+  },
+  {
+    "source": "CHE2_MOLE2",
+    "target": "CHE_EQUILIBRIUM20"
+  },
+  {
+    "source": "CHE2_MOLE3",
+    "target": "CHEM_REDOX12"
+  },
+  {
+    "source": "CHE2_MOLE3",
+    "target": "CHE_STOICHIOMETRY3"
+  },
+  {
+    "source": "CHE2_ORG_ACID1",
+    "target": "CHE_ORGANIC66"
+  },
+  {
+    "source": "CHE2_ORG_HALIDE0",
+    "target": "CHE_ORGANIC108"
+  },
+  {
+    "source": "CHE2_ORG_HYDROCARBON1",
+    "target": "CHE_ORGANIC109"
+  },
+  {
+    "source": "CHEM_ANALYTICAL10",
+    "target": "CHEM_ANALYTICAL14"
+  },
+  {
+    "source": "CHEM_ANALYTICAL4",
+    "target": "CHEM_ANALYTICAL10"
+  },
+  {
+    "source": "CHEM_ANALYTICAL4",
+    "target": "CHEM_ANALYTICAL17"
   },
   {
     "source": "CHEM_AT1",
-    "target": "CHEM_AT2"
+    "target": "CHEM_DBLOCK10"
   },
   {
     "source": "CHEM_AT1",
-    "target": "CHEM_AT5"
+    "target": "CHEM_DBLOCK13"
   },
   {
     "source": "CHEM_AT1",
-    "target": "CHEM_BOND1"
+    "target": "CHEM_PERIODIC28"
   },
   {
     "source": "CHEM_AT1",
-    "target": "CHEM_PER1"
+    "target": "CHEM_PERIODIC29"
   },
   {
     "source": "CHEM_AT1",
-    "target": "CHEM_PER3"
+    "target": "CHEM_PERIODIC36"
+  },
+  {
+    "source": "CHEM_AT1",
+    "target": "CHEM_PERIODIC38"
   },
   {
     "source": "CHEM_AT1",
@@ -29,155 +325,247 @@
   },
   {
     "source": "CHEM_AT1",
-    "target": "CHE_ATOMIC5"
+    "target": "CHE_ATOMIC46"
   },
   {
-    "source": "CHEM_AT3",
-    "target": "CHEM_AT4"
+    "source": "CHEM_AT1",
+    "target": "CHE_ATOMIC47"
   },
   {
-    "source": "CHEM_AT3",
-    "target": "CHE_ATOMIC4"
+    "source": "CHEM_AT1",
+    "target": "CHE_ATOMIC55"
   },
   {
-    "source": "CHEM_AT5",
-    "target": "CHEM_AT6"
+    "source": "CHEM_AT1",
+    "target": "CHE_ATOMIC58"
   },
   {
-    "source": "CHEM_AT6",
-    "target": "CHEM_DBLOCK1"
+    "source": "CHEM_AT1",
+    "target": "CHE_ATOMIC60"
   },
   {
-    "source": "CHEM_ATOMIC1",
-    "target": "CHEM_AT1"
-  },
-  {
-    "source": "CHEM_ATOMIC1",
-    "target": "CHE_ATOMIC1"
-  },
-  {
-    "source": "CHEM_ATOMIC2",
-    "target": "CHEM_AT1"
-  },
-  {
-    "source": "CHEM_ATOMIC3",
-    "target": "CHEM_AT3"
-  },
-  {
-    "source": "CHEM_ATOMIC3",
-    "target": "CHEM_ATOMIC4"
-  },
-  {
-    "source": "CHEM_ATOMIC4",
-    "target": "CHE_ATOMIC3"
+    "source": "CHEM_AT1",
+    "target": "CHE_BONDING18"
   },
   {
     "source": "CHEM_ATOMIC5",
-    "target": "CHEM_GASLAW4"
+    "target": "CHE_ATOMIC29"
   },
   {
-    "source": "CHEM_ATOMIC5",
-    "target": "CHEM_MOLE1"
+    "source": "CHEM_CAT10",
+    "target": "CHEM_CAT11"
   },
   {
-    "source": "CHEM_BOND1",
-    "target": "CHEM_BOND2"
+    "source": "CHEM_CAT2",
+    "target": "CHEM_CAT13"
   },
   {
-    "source": "CHEM_BOND1",
-    "target": "CHEM_BOND3"
+    "source": "CHEM_CAT2",
+    "target": "CHEM_CAT3"
   },
   {
-    "source": "CHEM_BOND2",
-    "target": "CHEM_BONDING1"
+    "source": "CHEM_CAT2",
+    "target": "CHEM_CAT4"
   },
   {
-    "source": "CHEM_BOND2",
-    "target": "CHEM_SOLID1"
+    "source": "CHEM_CAT2",
+    "target": "CHEM_CAT5"
   },
   {
-    "source": "CHEM_BOND2",
-    "target": "CHE_BIOMOLECULE3"
+    "source": "CHEM_CAT6",
+    "target": "CHEM_CAT1"
   },
   {
-    "source": "CHEM_BOND2",
-    "target": "CHE_BONDING2"
+    "source": "CHEM_CAT6",
+    "target": "CHEM_CAT11"
   },
   {
-    "source": "CHEM_BOND2",
-    "target": "CHE_COORD1"
+    "source": "CHEM_CAT6",
+    "target": "CHEM_CAT2"
   },
   {
-    "source": "CHEM_BOND2",
-    "target": "PHY_SOLID1"
+    "source": "CHEM_CAT6",
+    "target": "CHEM_CAT8"
   },
   {
-    "source": "CHEM_BOND3",
-    "target": "CHEM_BONDING1"
+    "source": "CHEM_CAT6",
+    "target": "CHEM_KIN19"
   },
   {
-    "source": "CHEM_BOND3",
-    "target": "CHEM_ORGANIC4"
+    "source": "CHEM_CAT6",
+    "target": "CHE_EQUILIBRIUM35"
   },
   {
-    "source": "CHEM_BOND3",
-    "target": "CHE_BIOMOLECULE4"
+    "source": "CHEM_CAT7",
+    "target": "CHE_ORGANIC11"
   },
   {
-    "source": "CHEM_CAT1",
-    "target": "CHEM_ENV2"
+    "source": "CHEM_CAT7",
+    "target": "CHE_ORGANIC58"
   },
   {
-    "source": "CHEM_COORD1",
-    "target": "CHE_COORD2"
+    "source": "CHEM_CAT8",
+    "target": "CHEM_CAT12"
   },
   {
-    "source": "CHEM_DBLOCK1",
-    "target": "CHEM_COORD1"
+    "source": "CHEM_CAT8",
+    "target": "CHEM_CAT9"
   },
   {
-    "source": "CHEM_ENV1",
-    "target": "CHEM_AB2"
+    "source": "CHEM_DBLOCK14",
+    "target": "CHEM_DBLOCK4"
   },
   {
-    "source": "CHEM_EQ1",
-    "target": "CHEM_EQ3"
+    "source": "CHEM_DBLOCK14",
+    "target": "CHEM_DBLOCK5"
   },
   {
-    "source": "CHEM_EQ1",
-    "target": "CHEM_SOLUTION1"
+    "source": "CHEM_DBLOCK14",
+    "target": "CHEM_DBLOCK8"
   },
   {
-    "source": "CHEM_EQ1",
-    "target": "CHE_EQUILIBRIUM1"
+    "source": "CHEM_DBLOCK2",
+    "target": "CHEM_DBLOCK3"
   },
   {
-    "source": "CHEM_EQ2",
-    "target": "CHEM_ACIDBASE1"
+    "source": "CHEM_DBLOCK6",
+    "target": "CHEM_PERIODIC19"
   },
   {
-    "source": "CHEM_EQ2",
-    "target": "CHEM_EQ3"
+    "source": "CHEM_DESCRIPTIVE1",
+    "target": "CHEM_DESCRIPTIVE18"
   },
   {
-    "source": "CHEM_EQUILIBRIUM1",
-    "target": "CHE_EQUILIBRIUM3"
+    "source": "CHEM_DESCRIPTIVE1",
+    "target": "CHEM_DESCRIPTIVE19"
+  },
+  {
+    "source": "CHEM_DESCRIPTIVE1",
+    "target": "CHEM_DESCRIPTIVE3"
+  },
+  {
+    "source": "CHEM_DESCRIPTIVE1",
+    "target": "CHEM_DESCRIPTIVE6"
+  },
+  {
+    "source": "CHEM_DESCRIPTIVE1",
+    "target": "CHEM_DESCRIPTIVE7"
+  },
+  {
+    "source": "CHEM_DESCRIPTIVE1",
+    "target": "CHEM_ENV12"
+  },
+  {
+    "source": "CHEM_DESCRIPTIVE1",
+    "target": "CHEM_SOLID8"
+  },
+  {
+    "source": "CHEM_DESCRIPTIVE14",
+    "target": "CHEM_DESCRIPTIVE16"
+  },
+  {
+    "source": "CHEM_DESCRIPTIVE2",
+    "target": "CHEM_DBLOCK12"
+  },
+  {
+    "source": "CHEM_DESCRIPTIVE2",
+    "target": "CHEM_DBLOCK16"
+  },
+  {
+    "source": "CHEM_DESCRIPTIVE2",
+    "target": "CHEM_DBLOCK19"
+  },
+  {
+    "source": "CHEM_DESCRIPTIVE2",
+    "target": "CHEM_DESCRIPTIVE13"
+  },
+  {
+    "source": "CHEM_DESCRIPTIVE21",
+    "target": "CHE2_DESCRIPTIVE0"
+  },
+  {
+    "source": "CHEM_DESCRIPTIVE23",
+    "target": "CHE2_INDUSTRIAL0"
+  },
+  {
+    "source": "CHEM_DESCRIPTIVE6",
+    "target": "CHEM_DBLOCK15"
+  },
+  {
+    "source": "CHEM_DESCRIPTIVE8",
+    "target": "CHEM_DESCRIPTIVE11"
+  },
+  {
+    "source": "CHEM_DESCRIPTIVE9",
+    "target": "CHEM_DESCRIPTIVE23"
+  },
+  {
+    "source": "CHEM_DESCRIPTIVE9",
+    "target": "CHE_ORGANIC60"
+  },
+  {
+    "source": "CHEM_ELECTROCHEM1",
+    "target": "CHE_ELECTROCHEM4"
+  },
+  {
+    "source": "CHEM_ENV13",
+    "target": "CHEM_ENV19"
+  },
+  {
+    "source": "CHEM_ENV15",
+    "target": "CHEM_ENV16"
+  },
+  {
+    "source": "CHEM_ENV17",
+    "target": "CHEM_ENV14"
+  },
+  {
+    "source": "CHEM_ENV17",
+    "target": "CHEM_ENV28"
+  },
+  {
+    "source": "CHEM_ENV18",
+    "target": "CHEM_ANALYTICAL8"
+  },
+  {
+    "source": "CHEM_ENV20",
+    "target": "CHEM_ENV13"
+  },
+  {
+    "source": "CHEM_ENV20",
+    "target": "CHEM_ENV21"
+  },
+  {
+    "source": "CHEM_ENV20",
+    "target": "CHEM_ENV3"
+  },
+  {
+    "source": "CHEM_ENV20",
+    "target": "CHEM_ENV4"
+  },
+  {
+    "source": "CHEM_ENV22",
+    "target": "CHEM_ENV23"
+  },
+  {
+    "source": "CHEM_ENV22",
+    "target": "CHEM_ENV24"
+  },
+  {
+    "source": "CHEM_ENV26",
+    "target": "CHEM_ENV10"
+  },
+  {
+    "source": "CHEM_ENV26",
+    "target": "CHEM_ENV27"
+  },
+  {
+    "source": "CHEM_ENV7",
+    "target": "CHEM_ENV8"
   },
   {
     "source": "CHEM_GAS1",
-    "target": "CHEM_GAS2"
-  },
-  {
-    "source": "CHEM_GAS1",
-    "target": "CHEM_GASLAW1"
-  },
-  {
-    "source": "CHEM_GAS1",
-    "target": "CHEM_GASLAW2"
-  },
-  {
-    "source": "CHEM_GAS1",
-    "target": "PHY_KTG3"
+    "target": "CHE_GASLAWS6"
   },
   {
     "source": "CHEM_GAS3",
@@ -185,1702 +573,6162 @@
   },
   {
     "source": "CHEM_GASLAW2",
-    "target": "CHEM_EQUILIBRIUM1"
+    "target": "CHE_GASLAWS42"
   },
   {
-    "source": "CHEM_GASLAW2",
-    "target": "CHEM_GASLAW3"
+    "source": "CHEM_GASLAW3",
+    "target": "CHE_GASLAWS10"
   },
   {
-    "source": "CHEM_GASLAW4",
-    "target": "CHEM_GASLAW5"
+    "source": "CHEM_KIN10",
+    "target": "CHEM_KIN12"
   },
   {
-    "source": "CHEM_KIN1",
+    "source": "CHEM_KIN10",
+    "target": "CHEM_KIN9"
+  },
+  {
+    "source": "CHEM_KIN12",
+    "target": "CHEM_KIN24"
+  },
+  {
+    "source": "CHEM_KIN12",
+    "target": "CHEM_KIN25"
+  },
+  {
+    "source": "CHEM_KIN15",
+    "target": "CHEM_KIN16"
+  },
+  {
+    "source": "CHEM_KIN15",
+    "target": "CHEM_KIN28"
+  },
+  {
+    "source": "CHEM_KIN18",
+    "target": "CHEM_KIN17"
+  },
+  {
+    "source": "CHEM_KIN18",
+    "target": "CHEM_KIN19"
+  },
+  {
+    "source": "CHEM_KIN18",
+    "target": "CHEM_KIN7"
+  },
+  {
+    "source": "CHEM_KIN18",
+    "target": "CHEM_KIN8"
+  },
+  {
+    "source": "CHEM_KIN2",
+    "target": "CHEM_KIN1"
+  },
+  {
+    "source": "CHEM_KIN2",
+    "target": "CHEM_KIN13"
+  },
+  {
+    "source": "CHEM_KIN2",
+    "target": "CHEM_KIN27"
+  },
+  {
+    "source": "CHEM_KIN2",
+    "target": "CHEM_KIN3"
+  },
+  {
+    "source": "CHEM_KIN2",
+    "target": "CHEM_KIN6"
+  },
+  {
+    "source": "CHEM_KIN20",
     "target": "CHEM_KINETICS1"
   },
   {
-    "source": "CHEM_MOLE1",
-    "target": "CHEM_ANALYTICAL1"
+    "source": "CHEM_KIN21",
+    "target": "CHEM_KIN10"
   },
   {
-    "source": "CHEM_MOLE1",
-    "target": "CHEM_GAS3"
+    "source": "CHEM_KIN21",
+    "target": "CHEM_KIN15"
   },
   {
-    "source": "CHEM_MOLE1",
-    "target": "CHEM_GASLAW2"
+    "source": "CHEM_KIN21",
+    "target": "CHEM_KIN18"
   },
   {
-    "source": "CHEM_MOLE1",
-    "target": "CHEM_MOLE2"
+    "source": "CHEM_KIN21",
+    "target": "CHEM_KIN2"
   },
   {
-    "source": "CHEM_MOLE1",
-    "target": "CHEM_MOLE3"
+    "source": "CHEM_KIN21",
+    "target": "CHEM_KIN20"
   },
   {
-    "source": "CHEM_MOLE1",
-    "target": "CHEM_MOLE4"
+    "source": "CHEM_KIN21",
+    "target": "CHEM_KIN23"
   },
   {
-    "source": "CHEM_MOLE1",
-    "target": "CHEM_MOLE6"
+    "source": "CHEM_KIN21",
+    "target": "CHEM_KIN26"
   },
   {
-    "source": "CHEM_MOLE1",
-    "target": "CHEM_REDOX5"
+    "source": "CHEM_KIN23",
+    "target": "CHEM_KIN22"
   },
   {
-    "source": "CHEM_MOLE1",
-    "target": "CHEM_STOICH1"
+    "source": "CHEM_KIN4",
+    "target": "CHEM_KIN14"
   },
   {
-    "source": "CHEM_MOLE1",
-    "target": "CHE_ACIDBASE1"
+    "source": "CHEM_KIN5",
+    "target": "CHEM_KIN11"
   },
   {
-    "source": "CHEM_MOLE1",
-    "target": "CHE_GASLAWS2"
+    "source": "CHEM_KIN7",
+    "target": "CHEM_KIN29"
   },
   {
-    "source": "CHEM_MOLE1",
-    "target": "CHE_STOICH1"
+    "source": "CHEM_KIN9",
+    "target": "CHEM_NUCLEAR17"
   },
   {
-    "source": "CHEM_MOLE2",
-    "target": "CHEM_MOLE5"
+    "source": "CHEM_LAB0",
+    "target": "CHEM_LAB8"
   },
   {
-    "source": "CHEM_MOLE2",
-    "target": "CHEM_STOICH2"
+    "source": "CHEM_LAB1",
+    "target": "CHEM_LAB11"
   },
   {
-    "source": "CHEM_MOLE4",
-    "target": "CHEM_EQUILIBRIUM1"
+    "source": "CHEM_LAB1",
+    "target": "CHEM_LAB7"
   },
   {
-    "source": "CHEM_MOLE4",
-    "target": "CHEM_MOLE5"
+    "source": "CHEM_LAB12",
+    "target": "CHEM_LAB13"
   },
   {
-    "source": "CHEM_MOLE4",
-    "target": "CHEM_REDOX2b"
+    "source": "CHEM_LAB3",
+    "target": "CHEM_LAB5"
   },
   {
-    "source": "CHEM_MOLE4",
-    "target": "CHEM_STOICH3"
+    "source": "CHEM_LAB3",
+    "target": "CHEM_LAB6"
   },
   {
-    "source": "CHEM_MOLE4",
-    "target": "CHE_STOICH4"
+    "source": "CHEM_LAB4",
+    "target": "CHEM_LAB3"
   },
   {
-    "source": "CHEM_MOLE6",
-    "target": "CHE_STOICH3"
+    "source": "CHEM_LAB8",
+    "target": "CHEM_LAB14"
   },
   {
-    "source": "CHEM_NOM1",
-    "target": "CHEM_NOM2"
+    "source": "CHEM_LAB8",
+    "target": "CHEM_LAB9"
   },
   {
-    "source": "CHEM_NOM1",
-    "target": "CHEM_ORG4"
+    "source": "CHEM_NOM10",
+    "target": "CHEM_NOM12"
   },
   {
-    "source": "CHEM_NOM1",
-    "target": "CHEM_STEREO1"
+    "source": "CHEM_NOM10",
+    "target": "CHEM_NOM13"
   },
   {
-    "source": "CHEM_NOM1",
-    "target": "CHE_BIOMOLECULE4"
+    "source": "CHEM_NOM13",
+    "target": "CHEM_NOM4"
   },
   {
-    "source": "CHEM_NOM1",
-    "target": "CHE_ORGANIC2"
+    "source": "CHEM_NOM3",
+    "target": "CHEM_ENV5"
   },
   {
-    "source": "CHEM_NOM2",
-    "target": "CHEM_ORGANIC2"
+    "source": "CHEM_NOM3",
+    "target": "CHEM_NOM7"
   },
   {
-    "source": "CHEM_NOM2",
-    "target": "CHEM_ORGANIC5"
+    "source": "CHEM_NOM3",
+    "target": "CHE_ACIDBASE11"
   },
   {
-    "source": "CHEM_NOM2",
-    "target": "CHEM_ORGANIC6"
+    "source": "CHEM_NOM6",
+    "target": "CHEM_DBLOCK11"
   },
   {
-    "source": "CHEM_ORG1",
-    "target": "CHEM_ORGANIC1"
+    "source": "CHEM_NOM6",
+    "target": "CHEM_DBLOCK17"
   },
   {
-    "source": "CHEM_ORG3",
-    "target": "CHEM_ORG4"
+    "source": "CHEM_NOM6",
+    "target": "CHEM_DBLOCK18"
   },
   {
-    "source": "CHEM_ORG3",
-    "target": "CHE_ORGANIC1"
+    "source": "CHEM_NOM6",
+    "target": "CHEM_DBLOCK7"
   },
   {
-    "source": "CHEM_ORGANIC2",
-    "target": "CHEM_ORG1"
+    "source": "CHEM_NOM6",
+    "target": "CHEM_DBLOCK9"
   },
   {
-    "source": "CHEM_ORGANIC2",
-    "target": "CHEM_ORGANIC3"
+    "source": "CHEM_NOM6",
+    "target": "CHEM_DESCRIPTIVE3"
   },
   {
-    "source": "CHEM_ORGANIC2",
-    "target": "CHE_ORGANIC3"
+    "source": "CHEM_NOM8",
+    "target": "CHEM_NOM11"
   },
   {
-    "source": "CHEM_ORGANIC3",
-    "target": "CHEM_ORGANIC1"
+    "source": "CHEM_NOM8",
+    "target": "CHEM_NOM5"
   },
   {
-    "source": "CHEM_ORGANIC4",
-    "target": "CHEM_ORG2"
+    "source": "CHEM_NOM8",
+    "target": "CHEM_NOM9"
   },
   {
-    "source": "CHEM_ORGANIC4",
-    "target": "CHEM_ORGANIC6"
+    "source": "CHEM_NOM8",
+    "target": "CHE_ORGANIC20"
   },
   {
-    "source": "CHEM_PER1",
-    "target": "CHEM_BOND2"
+    "source": "CHEM_NUCLEAR0",
+    "target": "CHEM_NUCLEAR11"
   },
   {
-    "source": "CHEM_PER1",
-    "target": "CHEM_PER2"
+    "source": "CHEM_NUCLEAR1",
+    "target": "CHEM_NUCLEAR0"
   },
   {
-    "source": "CHEM_PER1",
-    "target": "CHEM_PERIODIC1"
+    "source": "CHEM_NUCLEAR1",
+    "target": "CHEM_NUCLEAR13"
   },
   {
-    "source": "CHEM_PER1",
-    "target": "CHE_ACIDBASE2"
+    "source": "CHEM_NUCLEAR1",
+    "target": "CHEM_NUCLEAR16"
   },
   {
-    "source": "CHEM_PER3",
-    "target": "CHEM_PER2"
+    "source": "CHEM_NUCLEAR1",
+    "target": "CHEM_NUCLEAR8"
   },
   {
-    "source": "CHEM_PER3",
-    "target": "CHEM_PER4"
+    "source": "CHEM_NUCLEAR16",
+    "target": "CHEM_NUCLEAR15"
   },
   {
-    "source": "CHEM_PER3",
-    "target": "CHE_BONDING1"
+    "source": "CHEM_NUCLEAR2",
+    "target": "CHEM_NUCLEAR6"
   },
   {
-    "source": "CHEM_PER4",
-    "target": "CHEM_PERIODIC1"
+    "source": "CHEM_NUCLEAR3",
+    "target": "CHEM_NUCLEAR4"
   },
   {
-    "source": "CHEM_PERIODIC1",
-    "target": "CHEM_PERIODIC2"
+    "source": "CHEM_NUCLEAR4",
+    "target": "CHEM_NUCLEAR12"
   },
   {
-    "source": "CHEM_QUALITATIVE1",
-    "target": "CHE_QUAL1"
+    "source": "CHEM_NUCLEAR6",
+    "target": "CHEM_NUCLEAR5"
   },
   {
-    "source": "CHEM_REDOX1",
-    "target": "CHEM_REDOX1b"
+    "source": "CHEM_NUCLEAR6",
+    "target": "CHEM_NUCLEAR7"
   },
   {
-    "source": "CHEM_REDOX1",
-    "target": "CHE_BIOMOLECULE1"
+    "source": "CHEM_NUCLEAR8",
+    "target": "CHEM_NUCLEAR9"
+  },
+  {
+    "source": "CHEM_PERIODIC11",
+    "target": "CHEM_DESCRIPTIVE17"
+  },
+  {
+    "source": "CHEM_PERIODIC11",
+    "target": "CHEM_PERIODIC14"
+  },
+  {
+    "source": "CHEM_PERIODIC13",
+    "target": "CHEM_DESCRIPTIVE15"
+  },
+  {
+    "source": "CHEM_PERIODIC13",
+    "target": "CHEM_DESCRIPTIVE8"
+  },
+  {
+    "source": "CHEM_PERIODIC13",
+    "target": "CHEM_PERIODIC24"
+  },
+  {
+    "source": "CHEM_PERIODIC13",
+    "target": "CHEM_PERIODIC35"
+  },
+  {
+    "source": "CHEM_PERIODIC14",
+    "target": "CHEM_PERIODIC17"
+  },
+  {
+    "source": "CHEM_PERIODIC14",
+    "target": "CHEM_PERIODIC33"
+  },
+  {
+    "source": "CHEM_PERIODIC15",
+    "target": "CHE_BONDING26"
+  },
+  {
+    "source": "CHEM_PERIODIC15",
+    "target": "CHE_BONDING38"
+  },
+  {
+    "source": "CHEM_PERIODIC16",
+    "target": "CHEM_PERIODIC41"
+  },
+  {
+    "source": "CHEM_PERIODIC23",
+    "target": "CHEM_PERIODIC22"
+  },
+  {
+    "source": "CHEM_PERIODIC27",
+    "target": "CHEM_PERIODIC23"
+  },
+  {
+    "source": "CHEM_PERIODIC27",
+    "target": "CHEM_PERIODIC3"
+  },
+  {
+    "source": "CHEM_PERIODIC30",
+    "target": "CHEM_SOLID9"
+  },
+  {
+    "source": "CHEM_PERIODIC31",
+    "target": "CHE1_PERIODIC_TRENDS5"
+  },
+  {
+    "source": "CHEM_PERIODIC31",
+    "target": "CHEM_PERIODIC16"
+  },
+  {
+    "source": "CHEM_PERIODIC31",
+    "target": "CHEM_REDOX26"
+  },
+  {
+    "source": "CHEM_PERIODIC31",
+    "target": "CHE_ACIDBASE47"
+  },
+  {
+    "source": "CHEM_PERIODIC31",
+    "target": "CHE_BONDING34"
+  },
+  {
+    "source": "CHEM_PERIODIC34",
+    "target": "CHE_ACIDBASE13"
+  },
+  {
+    "source": "CHEM_PERIODIC37",
+    "target": "CHE1_PERIODIC_TRENDS0"
+  },
+  {
+    "source": "CHEM_PERIODIC37",
+    "target": "CHEM_PERIODIC18"
+  },
+  {
+    "source": "CHEM_PERIODIC37",
+    "target": "CHEM_PERIODIC25"
+  },
+  {
+    "source": "CHEM_PERIODIC37",
+    "target": "CHEM_PERIODIC26"
+  },
+  {
+    "source": "CHEM_PERIODIC40",
+    "target": "CHEM_PERIODIC20"
+  },
+  {
+    "source": "CHEM_PERIODIC40",
+    "target": "CHEM_PERIODIC21"
+  },
+  {
+    "source": "CHEM_PERIODIC6",
+    "target": "CHEM_PERIODIC12"
+  },
+  {
+    "source": "CHEM_PERIODIC6",
+    "target": "CHEM_PERIODIC15"
+  },
+  {
+    "source": "CHEM_PERIODIC6",
+    "target": "CHEM_PERIODIC31"
+  },
+  {
+    "source": "CHEM_PERIODIC6",
+    "target": "CHEM_PERIODIC7"
+  },
+  {
+    "source": "CHEM_PERIODIC6",
+    "target": "CHEM_PERIODIC8"
+  },
+  {
+    "source": "CHEM_PERIODIC6",
+    "target": "CHEM_PERIODIC9"
+  },
+  {
+    "source": "CHEM_PERIODIC6",
+    "target": "CHE_BONDING44"
+  },
+  {
+    "source": "CHEM_REDOX14",
+    "target": "CHEM_REDOX18"
+  },
+  {
+    "source": "CHEM_REDOX15",
+    "target": "CHEM_REDOX22"
+  },
+  {
+    "source": "CHEM_REDOX16",
+    "target": "CHEM_REDOX29"
+  },
+  {
+    "source": "CHEM_REDOX19",
+    "target": "CHE_STOICHIOMETRY8"
   },
   {
     "source": "CHEM_REDOX2",
-    "target": "CHEM_QUALITATIVE1"
+    "target": "CHEM_ANALYTICAL7"
   },
   {
     "source": "CHEM_REDOX2",
-    "target": "CHEM_REDOX1"
+    "target": "CHEM_DESCRIPTIVE0"
   },
   {
     "source": "CHEM_REDOX2",
-    "target": "CHEM_REDOX2b"
+    "target": "CHEM_REDOX11"
   },
   {
     "source": "CHEM_REDOX2",
-    "target": "CHEM_REDOX5"
+    "target": "CHEM_REDOX12"
   },
   {
     "source": "CHEM_REDOX2",
-    "target": "CHE_ELECTROCHEM1"
+    "target": "CHEM_REDOX34"
   },
   {
     "source": "CHEM_REDOX2",
-    "target": "CHE_ORGANIC3"
+    "target": "CHEM_REDOX36"
   },
   {
     "source": "CHEM_REDOX2",
-    "target": "CHE_STOICH4"
+    "target": "CHEM_REDOX38"
   },
   {
-    "source": "CHEM_REDOX2b",
-    "target": "CHEM_REDOX3"
+    "source": "CHEM_REDOX2",
+    "target": "CHE_ACIDBASE46"
   },
   {
-    "source": "CHEM_REDOX4",
-    "target": "CHEM_ELECTROCHEM1"
+    "source": "CHEM_REDOX20",
+    "target": "CHE_COORD10"
   },
   {
-    "source": "CHEM_REDOX4",
-    "target": "CHE_ELECTROCHEM3"
+    "source": "CHEM_REDOX21",
+    "target": "CHEM_REDOX45"
   },
   {
-    "source": "CHEM_REDOX5",
-    "target": "CHEM_REDOX6"
+    "source": "CHEM_REDOX25",
+    "target": "CHEM_DESCRIPTIVE22"
   },
   {
-    "source": "CHEM_REDOX5",
-    "target": "CHE_ELECTROCHEM2"
+    "source": "CHEM_REDOX26",
+    "target": "CHEM_REDOX10"
   },
   {
-    "source": "CHEM_SPEC1",
-    "target": "CHEM_ATOMIC3"
+    "source": "CHEM_REDOX27",
+    "target": "CHEM_DESCRIPTIVE20"
   },
   {
-    "source": "CHEM_SPEC1",
-    "target": "CHEM_SPEC2"
+    "source": "CHEM_REDOX28",
+    "target": "CHEM_DESCRIPTIVE0"
   },
   {
-    "source": "CHEM_STEREO1",
-    "target": "CHE_BIOMOLECULE2"
+    "source": "CHEM_REDOX30",
+    "target": "CHEM_REDOX17"
   },
   {
-    "source": "CHEM_STOICH1",
-    "target": "CHEM_STOICH2"
+    "source": "CHEM_REDOX31",
+    "target": "CHEM_DESCRIPTIVE0"
   },
   {
-    "source": "CHE_ACIDBASE1",
-    "target": "CHEM_ACIDBASE2"
+    "source": "CHEM_REDOX31",
+    "target": "CHEM_DESCRIPTIVE17"
   },
   {
-    "source": "CHE_ACIDBASE1",
-    "target": "CHEM_EQ2"
+    "source": "CHEM_REDOX31",
+    "target": "CHEM_REDOX10"
   },
   {
-    "source": "CHE_ACIDBASE2",
-    "target": "CHEM_AB1"
+    "source": "CHEM_REDOX31",
+    "target": "CHEM_REDOX13"
   },
   {
-    "source": "CHE_COORD1",
-    "target": "CHEM_COORD1"
+    "source": "CHEM_REDOX31",
+    "target": "CHEM_REDOX30"
+  },
+  {
+    "source": "CHEM_REDOX31",
+    "target": "CHE_ELECTROCHEM5"
+  },
+  {
+    "source": "CHEM_REDOX34",
+    "target": "CHEM_ANALYTICAL13"
+  },
+  {
+    "source": "CHEM_REDOX34",
+    "target": "CHEM_REDOX29"
+  },
+  {
+    "source": "CHEM_REDOX34",
+    "target": "CHEM_REDOX35"
+  },
+  {
+    "source": "CHEM_REDOX34",
+    "target": "CHEM_REDOX37"
+  },
+  {
+    "source": "CHEM_REDOX34",
+    "target": "CHEM_REDOX39"
+  },
+  {
+    "source": "CHEM_REDOX35",
+    "target": "CHEM_REDOX23"
+  },
+  {
+    "source": "CHEM_REDOX36",
+    "target": "CHEM_ANALYTICAL11"
+  },
+  {
+    "source": "CHEM_REDOX36",
+    "target": "CHEM_REDOX15"
+  },
+  {
+    "source": "CHEM_REDOX36",
+    "target": "CHEM_REDOX16"
+  },
+  {
+    "source": "CHEM_REDOX36",
+    "target": "CHEM_REDOX24"
+  },
+  {
+    "source": "CHEM_REDOX36",
+    "target": "CHEM_REDOX33"
+  },
+  {
+    "source": "CHEM_REDOX36",
+    "target": "CHEM_REDOX9"
+  },
+  {
+    "source": "CHEM_REDOX40",
+    "target": "CHEM_REDOX43"
+  },
+  {
+    "source": "CHEM_REDOX41",
+    "target": "CHE1_REDOX6"
+  },
+  {
+    "source": "CHEM_REDOX42",
+    "target": "CHE1_REDOX7"
+  },
+  {
+    "source": "CHEM_REDOX42",
+    "target": "CHEM_REDOX41"
+  },
+  {
+    "source": "CHEM_REDOX42",
+    "target": "CHEM_REDOX44"
+  },
+  {
+    "source": "CHEM_REDOX45",
+    "target": "CHEM_DESCRIPTIVE20"
+  },
+  {
+    "source": "CHEM_REDOX7",
+    "target": "CHEM_REDOX8"
+  },
+  {
+    "source": "CHEM_SOLID4",
+    "target": "CHEM_DESCRIPTIVE14"
+  },
+  {
+    "source": "CHEM_SOLID4",
+    "target": "CHEM_LAB0"
+  },
+  {
+    "source": "CHEM_SOLID4",
+    "target": "CHEM_SOLID7"
+  },
+  {
+    "source": "CHEM_SOLID5",
+    "target": "CHEM_SOLID2"
+  },
+  {
+    "source": "CHEM_SOLID9",
+    "target": "CHEM_SOLID6"
+  },
+  {
+    "source": "CHEM_SOLUTION12",
+    "target": "CHEM_SOLUTION13"
+  },
+  {
+    "source": "CHEM_SOLUTION14",
+    "target": "CHEM_SOLUTION17"
+  },
+  {
+    "source": "CHEM_SOLUTION16",
+    "target": "CHEM_SOLUTION15"
+  },
+  {
+    "source": "CHEM_SOLUTION17",
+    "target": "CHEM_SOLUTION20"
+  },
+  {
+    "source": "CHEM_SOLUTION3",
+    "target": "CHEM_SOLUTION14"
+  },
+  {
+    "source": "CHEM_SOLUTION3",
+    "target": "CHEM_SOLUTION4"
+  },
+  {
+    "source": "CHEM_SOLUTION6",
+    "target": "CHEM_LAB10"
+  },
+  {
+    "source": "CHEM_SOLUTION6",
+    "target": "CHEM_SOLUTION11"
+  },
+  {
+    "source": "CHEM_SOLUTION6",
+    "target": "CHEM_SOLUTION12"
+  },
+  {
+    "source": "CHEM_SOLUTION7",
+    "target": "CHEM_ANALYTICAL5"
+  },
+  {
+    "source": "CHEM_SOLUTION7",
+    "target": "CHEM_DESCRIPTIVE0"
+  },
+  {
+    "source": "CHEM_SOLUTION7",
+    "target": "CHEM_DESCRIPTIVE10"
+  },
+  {
+    "source": "CHEM_SOLUTION7",
+    "target": "CHEM_SOLUTION3"
+  },
+  {
+    "source": "CHEM_SOLUTION7",
+    "target": "CHEM_SOLUTION5"
+  },
+  {
+    "source": "CHEM_SOLUTION7",
+    "target": "CHE_GASLAWS3"
+  },
+  {
+    "source": "CHEM_SOLUTION7",
+    "target": "CHE_QUAL12"
+  },
+  {
+    "source": "CHEM_SOLUTION7",
+    "target": "CHE_QUAL13"
+  },
+  {
+    "source": "CHEM_SOLUTION7",
+    "target": "CHE_QUAL17"
+  },
+  {
+    "source": "CHEM_SOLUTION7",
+    "target": "CHE_QUAL18"
+  },
+  {
+    "source": "CHEM_SOLUTION8",
+    "target": "CHE_GASLAWS21"
+  },
+  {
+    "source": "CHEM_SPEC3",
+    "target": "CHEM_SPEC6"
+  },
+  {
+    "source": "CHEM_SPEC3",
+    "target": "CHEM_SPEC8"
+  },
+  {
+    "source": "CHEM_SPEC4",
+    "target": "CHEM_SPEC3"
+  },
+  {
+    "source": "CHEM_SPEC4",
+    "target": "CHEM_SPEC5"
+  },
+  {
+    "source": "CHEM_SPEC6",
+    "target": "CHEM_SPEC7"
+  },
+  {
+    "source": "CHEM_SPEC8",
+    "target": "CHEM_SPEC9"
+  },
+  {
+    "source": "CHEM_STEREO3",
+    "target": "CHE2_ORG_STEREO0"
+  },
+  {
+    "source": "CHEM_STEREO3",
+    "target": "CHEM_STEREO5"
+  },
+  {
+    "source": "CHEM_STEREO4",
+    "target": "CHEM_STEREO2"
+  },
+  {
+    "source": "CHEM_STEREO4",
+    "target": "CHEM_STEREO3"
+  },
+  {
+    "source": "CHEM_STEREO4",
+    "target": "CHEM_STEREO6"
+  },
+  {
+    "source": "CHEM_STEREO6",
+    "target": "CHE2_ORG_STEREO1"
+  },
+  {
+    "source": "CHE_ACIDBASE11",
+    "target": "CHE_ACIDBASE9"
+  },
+  {
+    "source": "CHE_ACIDBASE15",
+    "target": "CHEM_ANALYTICAL3"
+  },
+  {
+    "source": "CHE_ACIDBASE15",
+    "target": "CHE_ACIDBASE33"
+  },
+  {
+    "source": "CHE_ACIDBASE15",
+    "target": "CHE_ACIDBASE34"
+  },
+  {
+    "source": "CHE_ACIDBASE15",
+    "target": "CHE_EQUILIBRIUM9"
+  },
+  {
+    "source": "CHE_ACIDBASE16",
+    "target": "CHE_ACIDBASE17"
+  },
+  {
+    "source": "CHE_ACIDBASE18",
+    "target": "CHE_ACIDBASE45"
+  },
+  {
+    "source": "CHE_ACIDBASE19",
+    "target": "CHE_ACIDBASE63"
+  },
+  {
+    "source": "CHE_ACIDBASE20",
+    "target": "CHE_ACIDBASE14"
+  },
+  {
+    "source": "CHE_ACIDBASE20",
+    "target": "CHE_ACIDBASE31"
+  },
+  {
+    "source": "CHE_ACIDBASE20",
+    "target": "CHE_ACIDBASE42"
+  },
+  {
+    "source": "CHE_ACIDBASE21",
+    "target": "CHE_ACIDBASE24"
+  },
+  {
+    "source": "CHE_ACIDBASE23",
+    "target": "CHEM_ANALYTICAL2"
+  },
+  {
+    "source": "CHE_ACIDBASE23",
+    "target": "CHE_ACIDBASE35"
+  },
+  {
+    "source": "CHE_ACIDBASE23",
+    "target": "CHE_ACIDBASE36"
+  },
+  {
+    "source": "CHE_ACIDBASE23",
+    "target": "CHE_ACIDBASE63"
+  },
+  {
+    "source": "CHE_ACIDBASE26",
+    "target": "CHE_ACIDBASE27"
+  },
+  {
+    "source": "CHE_ACIDBASE26",
+    "target": "CHE_ACIDBASE51"
+  },
+  {
+    "source": "CHE_ACIDBASE26",
+    "target": "CHE_ACIDBASE52"
+  },
+  {
+    "source": "CHE_ACIDBASE27",
+    "target": "CHE_ACIDBASE28"
+  },
+  {
+    "source": "CHE_ACIDBASE27",
+    "target": "CHE_ACIDBASE41"
+  },
+  {
+    "source": "CHE_ACIDBASE27",
+    "target": "CHE_ACIDBASE55"
+  },
+  {
+    "source": "CHE_ACIDBASE28",
+    "target": "CHE_ACIDBASE30"
+  },
+  {
+    "source": "CHE_ACIDBASE29",
+    "target": "CHE_ACIDBASE28"
+  },
+  {
+    "source": "CHE_ACIDBASE3",
+    "target": "CHEM_DESCRIPTIVE16"
+  },
+  {
+    "source": "CHE_ACIDBASE3",
+    "target": "CHEM_ENV20"
+  },
+  {
+    "source": "CHE_ACIDBASE3",
+    "target": "CHEM_PERIODIC32"
+  },
+  {
+    "source": "CHE_ACIDBASE3",
+    "target": "CHE_ACIDBASE4"
+  },
+  {
+    "source": "CHE_ACIDBASE3",
+    "target": "CHE_ACIDBASE5"
+  },
+  {
+    "source": "CHE_ACIDBASE3",
+    "target": "CHE_ACIDBASE56"
+  },
+  {
+    "source": "CHE_ACIDBASE3",
+    "target": "CHE_ACIDBASE8"
+  },
+  {
+    "source": "CHE_ACIDBASE32",
+    "target": "CHE_ACIDBASE36"
+  },
+  {
+    "source": "CHE_ACIDBASE32",
+    "target": "CHE_ACIDBASE37"
+  },
+  {
+    "source": "CHE_ACIDBASE33",
+    "target": "CHE_ACIDBASE22"
+  },
+  {
+    "source": "CHE_ACIDBASE33",
+    "target": "CHE_ACIDBASE25"
+  },
+  {
+    "source": "CHE_ACIDBASE38",
+    "target": "CHE_ACIDBASE39"
+  },
+  {
+    "source": "CHE_ACIDBASE38",
+    "target": "CHE_ACIDBASE49"
+  },
+  {
+    "source": "CHE_ACIDBASE38",
+    "target": "CHE_STOICHIOMETRY16"
+  },
+  {
+    "source": "CHE_ACIDBASE4",
+    "target": "CHEM_DESCRIPTIVE21"
+  },
+  {
+    "source": "CHE_ACIDBASE40",
+    "target": "CHE_ACIDBASE10"
+  },
+  {
+    "source": "CHE_ACIDBASE43",
+    "target": "CHE_ACIDBASE15"
+  },
+  {
+    "source": "CHE_ACIDBASE43",
+    "target": "CHE_ACIDBASE32"
+  },
+  {
+    "source": "CHE_ACIDBASE43",
+    "target": "CHE_ACIDBASE38"
+  },
+  {
+    "source": "CHE_ACIDBASE43",
+    "target": "CHE_ACIDBASE48"
+  },
+  {
+    "source": "CHE_ACIDBASE43",
+    "target": "CHE_ACIDBASE53"
+  },
+  {
+    "source": "CHE_ACIDBASE5",
+    "target": "CHE_ACIDBASE12"
+  },
+  {
+    "source": "CHE_ACIDBASE50",
+    "target": "CHEM_ANALYTICAL12"
+  },
+  {
+    "source": "CHE_ACIDBASE50",
+    "target": "CHEM_ENV11"
+  },
+  {
+    "source": "CHE_ACIDBASE50",
+    "target": "CHEM_ENV26"
+  },
+  {
+    "source": "CHE_ACIDBASE50",
+    "target": "CHE_ACIDBASE15"
+  },
+  {
+    "source": "CHE_ACIDBASE50",
+    "target": "CHE_ACIDBASE18"
+  },
+  {
+    "source": "CHE_ACIDBASE50",
+    "target": "CHE_ACIDBASE21"
+  },
+  {
+    "source": "CHE_ACIDBASE50",
+    "target": "CHE_ACIDBASE57"
+  },
+  {
+    "source": "CHE_ACIDBASE52",
+    "target": "CHEM_DESCRIPTIVE10"
+  },
+  {
+    "source": "CHE_ACIDBASE53",
+    "target": "CHE_ACIDBASE54"
+  },
+  {
+    "source": "CHE_ACIDBASE56",
+    "target": "CHE_ACIDBASE40"
+  },
+  {
+    "source": "CHE_ACIDBASE56",
+    "target": "CHE_ACIDBASE58"
+  },
+  {
+    "source": "CHE_ACIDBASE56",
+    "target": "CHE_ACIDBASE60"
+  },
+  {
+    "source": "CHE_ACIDBASE56",
+    "target": "CHE_ACIDBASE62"
+  },
+  {
+    "source": "CHE_ACIDBASE6",
+    "target": "CHEM_LAB11"
+  },
+  {
+    "source": "CHE_ACIDBASE7",
+    "target": "CHE_ACIDBASE44"
+  },
+  {
+    "source": "CHE_ACIDBASE7",
+    "target": "CHE_ACIDBASE59"
+  },
+  {
+    "source": "CHE_ATOMIC10",
+    "target": "CHE_ATOMIC11"
+  },
+  {
+    "source": "CHE_ATOMIC10",
+    "target": "CHE_ATOMIC48"
+  },
+  {
+    "source": "CHE_ATOMIC11",
+    "target": "CHEM_DBLOCK14"
+  },
+  {
+    "source": "CHE_ATOMIC11",
+    "target": "CHEM_DBLOCK6"
+  },
+  {
+    "source": "CHE_ATOMIC11",
+    "target": "CHEM_PERIODIC15"
+  },
+  {
+    "source": "CHE_ATOMIC11",
+    "target": "CHEM_PERIODIC4"
+  },
+  {
+    "source": "CHE_ATOMIC11",
+    "target": "CHEM_PERIODIC5"
+  },
+  {
+    "source": "CHE_ATOMIC11",
+    "target": "CHE_ATOMIC12"
+  },
+  {
+    "source": "CHE_ATOMIC11",
+    "target": "CHE_ATOMIC13"
+  },
+  {
+    "source": "CHE_ATOMIC11",
+    "target": "CHE_ATOMIC16"
+  },
+  {
+    "source": "CHE_ATOMIC11",
+    "target": "CHE_ATOMIC17"
+  },
+  {
+    "source": "CHE_ATOMIC11",
+    "target": "CHE_ATOMIC20"
+  },
+  {
+    "source": "CHE_ATOMIC11",
+    "target": "CHE_ATOMIC54"
+  },
+  {
+    "source": "CHE_ATOMIC11",
+    "target": "CHE_BONDING35"
+  },
+  {
+    "source": "CHE_ATOMIC14",
+    "target": "CHE_ATOMIC15"
+  },
+  {
+    "source": "CHE_ATOMIC17",
+    "target": "CHE_ATOMIC19"
+  },
+  {
+    "source": "CHE_ATOMIC17",
+    "target": "CHE_ATOMIC45"
+  },
+  {
+    "source": "CHE_ATOMIC22",
+    "target": "CHE_ATOMIC24"
+  },
+  {
+    "source": "CHE_ATOMIC22",
+    "target": "CHE_ATOMIC28"
+  },
+  {
+    "source": "CHE_ATOMIC23",
+    "target": "CHE_ATOMIC43"
+  },
+  {
+    "source": "CHE_ATOMIC23",
+    "target": "CHE_ATOMIC50"
+  },
+  {
+    "source": "CHE_ATOMIC25",
+    "target": "CHEM_SPEC4"
+  },
+  {
+    "source": "CHE_ATOMIC25",
+    "target": "CHE_ATOMIC26"
+  },
+  {
+    "source": "CHE_ATOMIC25",
+    "target": "CHE_ATOMIC27"
+  },
+  {
+    "source": "CHE_ATOMIC31",
+    "target": "CHE_ATOMIC64"
+  },
+  {
+    "source": "CHE_ATOMIC33",
+    "target": "CHEM_NUCLEAR14"
+  },
+  {
+    "source": "CHE_ATOMIC33",
+    "target": "CHEM_NUCLEAR2"
+  },
+  {
+    "source": "CHE_ATOMIC33",
+    "target": "CHE_ATOMIC32"
+  },
+  {
+    "source": "CHE_ATOMIC33",
+    "target": "CHE_ATOMIC34"
+  },
+  {
+    "source": "CHE_ATOMIC34",
+    "target": "CHE_ATOMIC30"
+  },
+  {
+    "source": "CHE_ATOMIC35",
+    "target": "CHEM_ATOMIC5"
+  },
+  {
+    "source": "CHE_ATOMIC37",
+    "target": "CHE_ATOMIC52"
+  },
+  {
+    "source": "CHE_ATOMIC37",
+    "target": "CHE_ATOMIC53"
+  },
+  {
+    "source": "CHE_ATOMIC37",
+    "target": "CHE_BONDING29"
+  },
+  {
+    "source": "CHE_ATOMIC38",
+    "target": "CHE_BONDING6"
+  },
+  {
+    "source": "CHE_ATOMIC39",
+    "target": "CHEM_NUCLEAR9"
+  },
+  {
+    "source": "CHE_ATOMIC39",
+    "target": "CHE_ATOMIC40"
+  },
+  {
+    "source": "CHE_ATOMIC41",
+    "target": "CHE_ATOMIC42"
+  },
+  {
+    "source": "CHE_ATOMIC44",
+    "target": "CHE_ATOMIC45"
+  },
+  {
+    "source": "CHE_ATOMIC46",
+    "target": "CHEM_PERIODIC10"
+  },
+  {
+    "source": "CHE_ATOMIC46",
+    "target": "CHEM_PERIODIC39"
+  },
+  {
+    "source": "CHE_ATOMIC46",
+    "target": "CHE_ATOMIC37"
+  },
+  {
+    "source": "CHE_ATOMIC46",
+    "target": "CHE_ATOMIC59"
+  },
+  {
+    "source": "CHE_ATOMIC46",
+    "target": "CHE_ATOMIC61"
+  },
+  {
+    "source": "CHE_ATOMIC48",
+    "target": "CHE_ATOMIC9"
+  },
+  {
+    "source": "CHE_ATOMIC49",
+    "target": "CHE_ATOMIC22"
+  },
+  {
+    "source": "CHE_ATOMIC49",
+    "target": "CHE_ATOMIC51"
+  },
+  {
+    "source": "CHE_ATOMIC50",
+    "target": "CHE_ATOMIC51"
+  },
+  {
+    "source": "CHE_ATOMIC52",
+    "target": "CHE_ATOMIC63"
+  },
+  {
+    "source": "CHE_ATOMIC54",
+    "target": "CHEM_PERIODIC40"
+  },
+  {
+    "source": "CHE_ATOMIC57",
+    "target": "CHE_ATOMIC36"
+  },
+  {
+    "source": "CHE_ATOMIC6",
+    "target": "CHE_ATOMIC18"
+  },
+  {
+    "source": "CHE_ATOMIC6",
+    "target": "CHE_ATOMIC21"
+  },
+  {
+    "source": "CHE_ATOMIC6",
+    "target": "CHE_ATOMIC31"
+  },
+  {
+    "source": "CHE_ATOMIC6",
+    "target": "CHE_ATOMIC41"
+  },
+  {
+    "source": "CHE_ATOMIC6",
+    "target": "CHE_ATOMIC56"
+  },
+  {
+    "source": "CHE_ATOMIC6",
+    "target": "CHE_ATOMIC7"
+  },
+  {
+    "source": "CHE_ATOMIC60",
+    "target": "CHE_ATOMIC62"
+  },
+  {
+    "source": "CHE_ATOMIC62",
+    "target": "CHE1_ELECTRON_CONFIG0"
+  },
+  {
+    "source": "CHE_ATOMIC7",
+    "target": "CHE_ATOMIC57"
+  },
+  {
+    "source": "CHE_ATOMIC7",
+    "target": "CHE_ATOMIC8"
+  },
+  {
+    "source": "CHE_ATOMIC8",
+    "target": "CHE_ATOMIC17"
+  },
+  {
+    "source": "CHE_BIOMOLECULE11",
+    "target": "CHE_BIOMOLECULE12"
+  },
+  {
+    "source": "CHE_BIOMOLECULE11",
+    "target": "CHE_BIOMOLECULE13"
+  },
+  {
+    "source": "CHE_BIOMOLECULE11",
+    "target": "CHE_BIOMOLECULE16"
+  },
+  {
+    "source": "CHE_BIOMOLECULE11",
+    "target": "CHE_BIOMOLECULE17"
+  },
+  {
+    "source": "CHE_BIOMOLECULE11",
+    "target": "CHE_BIOMOLECULE5"
+  },
+  {
+    "source": "CHE_BIOMOLECULE11",
+    "target": "CHE_BIOMOLECULE7"
+  },
+  {
+    "source": "CHE_BIOMOLECULE12",
+    "target": "CHE_BIOMOLECULE20"
+  },
+  {
+    "source": "CHE_BIOMOLECULE13",
+    "target": "CHE_BIOMOLECULE14"
+  },
+  {
+    "source": "CHE_BIOMOLECULE13",
+    "target": "CHE_BIOMOLECULE19"
+  },
+  {
+    "source": "CHE_BIOMOLECULE13",
+    "target": "CHE_BIOMOLECULE21"
+  },
+  {
+    "source": "CHE_BIOMOLECULE16",
+    "target": "CHE_BIOMOLECULE23"
+  },
+  {
+    "source": "CHE_BIOMOLECULE17",
+    "target": "CHE_BIOMOLECULE22"
+  },
+  {
+    "source": "CHE_BIOMOLECULE17",
+    "target": "CHE_BIOMOLECULE26"
+  },
+  {
+    "source": "CHE_BIOMOLECULE20",
+    "target": "CHE_BIOMOLECULE6"
+  },
+  {
+    "source": "CHE_BIOMOLECULE21",
+    "target": "CHE_BIOMOLECULE10"
+  },
+  {
+    "source": "CHE_BIOMOLECULE21",
+    "target": "CHE_BIOMOLECULE18"
+  },
+  {
+    "source": "CHE_BIOMOLECULE27",
+    "target": "CHE_ORGANIC18"
+  },
+  {
+    "source": "CHE_BIOMOLECULE7",
+    "target": "CHE_BIOMOLECULE24"
+  },
+  {
+    "source": "CHE_BIOMOLECULE8",
+    "target": "CHE_BIOMOLECULE9"
+  },
+  {
+    "source": "CHE_BONDING10",
+    "target": "CHE_BONDING15"
+  },
+  {
+    "source": "CHE_BONDING10",
+    "target": "CHE_BONDING33"
+  },
+  {
+    "source": "CHE_BONDING12",
+    "target": "CHE_BONDING11"
+  },
+  {
+    "source": "CHE_BONDING12",
+    "target": "CHE_BONDING13"
+  },
+  {
+    "source": "CHE_BONDING19",
+    "target": "CHE_BONDING28"
+  },
+  {
+    "source": "CHE_BONDING19",
+    "target": "CHE_BONDING36"
+  },
+  {
+    "source": "CHE_BONDING20",
+    "target": "CHE_BONDING27"
+  },
+  {
+    "source": "CHE_BONDING20",
+    "target": "CHE_BONDING31"
+  },
+  {
+    "source": "CHE_BONDING22",
+    "target": "CHE_BONDING23"
+  },
+  {
+    "source": "CHE_BONDING22",
+    "target": "CHE_BONDING7"
+  },
+  {
+    "source": "CHE_BONDING24",
+    "target": "CHE_BONDING46"
+  },
+  {
+    "source": "CHE_BONDING24",
+    "target": "CHE_BONDING47"
+  },
+  {
+    "source": "CHE_BONDING25",
+    "target": "CHEM_SOLID3"
+  },
+  {
+    "source": "CHE_BONDING26",
+    "target": "CHE_BONDING51"
+  },
+  {
+    "source": "CHE_BONDING27",
+    "target": "CHE_BONDING39"
+  },
+  {
+    "source": "CHE_BONDING27",
+    "target": "CHE_BONDING8"
+  },
+  {
+    "source": "CHE_BONDING29",
+    "target": "CHE_BONDING17"
+  },
+  {
+    "source": "CHE_BONDING30",
+    "target": "CHE_BONDING25"
+  },
+  {
+    "source": "CHE_BONDING30",
+    "target": "CHE_ORGANIC115"
+  },
+  {
+    "source": "CHE_BONDING31",
+    "target": "CHEM_LAB7"
+  },
+  {
+    "source": "CHE_BONDING34",
+    "target": "CHE_BONDING21"
+  },
+  {
+    "source": "CHE_BONDING34",
+    "target": "CHE_BONDING32"
+  },
+  {
+    "source": "CHE_BONDING36",
+    "target": "CHE_BONDING55"
+  },
+  {
+    "source": "CHE_BONDING37",
+    "target": "CHE_BONDING16"
+  },
+  {
+    "source": "CHE_BONDING37",
+    "target": "CHE_COORD6"
+  },
+  {
+    "source": "CHE_BONDING39",
+    "target": "CHE_BONDING40"
+  },
+  {
+    "source": "CHE_BONDING39",
+    "target": "CHE_BONDING41"
+  },
+  {
+    "source": "CHE_BONDING39",
+    "target": "CHE_BONDING54"
+  },
+  {
+    "source": "CHE_BONDING39",
+    "target": "CHE_ORGANIC75"
+  },
+  {
+    "source": "CHE_BONDING39",
+    "target": "CHE_ORGANIC8"
+  },
+  {
+    "source": "CHE_BONDING39",
+    "target": "CHE_ORGANIC9"
+  },
+  {
+    "source": "CHE_BONDING4",
+    "target": "CHE_BONDING6"
+  },
+  {
+    "source": "CHE_BONDING43",
+    "target": "CHEM_SOLID10"
+  },
+  {
+    "source": "CHE_BONDING43",
+    "target": "CHEM_SOLID5"
+  },
+  {
+    "source": "CHE_BONDING43",
+    "target": "CHEM_SOLID6"
+  },
+  {
+    "source": "CHE_BONDING43",
+    "target": "CHEM_SOLUTION10"
+  },
+  {
+    "source": "CHE_BONDING43",
+    "target": "CHE_BONDING30"
+  },
+  {
+    "source": "CHE_BONDING43",
+    "target": "CHE_BONDING48"
+  },
+  {
+    "source": "CHE_BONDING43",
+    "target": "CHE_BONDING49"
+  },
+  {
+    "source": "CHE_BONDING43",
+    "target": "CHE_BONDING53"
+  },
+  {
+    "source": "CHE_BONDING43",
+    "target": "CHE_ORGANIC114"
+  },
+  {
+    "source": "CHE_BONDING44",
+    "target": "CHE_ACIDBASE61"
+  },
+  {
+    "source": "CHE_BONDING45",
+    "target": "CHE_BONDING56"
+  },
+  {
+    "source": "CHE_BONDING5",
+    "target": "CHE_BONDING6"
+  },
+  {
+    "source": "CHE_BONDING50",
+    "target": "CHE_BONDING42"
+  },
+  {
+    "source": "CHE_BONDING50",
+    "target": "CHE_BONDING52"
+  },
+  {
+    "source": "CHE_BONDING56",
+    "target": "CHE_BONDING3"
+  },
+  {
+    "source": "CHE_BONDING7",
+    "target": "CHE_BONDING14"
+  },
+  {
+    "source": "CHE_BONDING8",
+    "target": "CHE_BONDING10"
+  },
+  {
+    "source": "CHE_BONDING8",
+    "target": "CHE_BONDING9"
+  },
+  {
+    "source": "CHE_BONDING8",
+    "target": "CHE_ORGANIC6"
+  },
+  {
+    "source": "CHE_BONDING8",
+    "target": "CHE_ORGANIC7"
+  },
+  {
+    "source": "CHE_COORD11",
+    "target": "CHE_QUAL8"
+  },
+  {
+    "source": "CHE_COORD3",
+    "target": "CHE_COORD10"
+  },
+  {
+    "source": "CHE_COORD3",
+    "target": "CHE_COORD11"
+  },
+  {
+    "source": "CHE_COORD3",
+    "target": "CHE_COORD12"
+  },
+  {
+    "source": "CHE_COORD3",
+    "target": "CHE_COORD4"
+  },
+  {
+    "source": "CHE_COORD3",
+    "target": "CHE_COORD6"
+  },
+  {
+    "source": "CHE_COORD4",
+    "target": "CHE_COORD9"
+  },
+  {
+    "source": "CHE_COORD5",
+    "target": "CHEM_DESCRIPTIVE12"
+  },
+  {
+    "source": "CHE_COORD7",
+    "target": "CHEM_LAB15"
+  },
+  {
+    "source": "CHE_COORD7",
+    "target": "CHE_COORD3"
+  },
+  {
+    "source": "CHE_COORD7",
+    "target": "CHE_QUAL20"
+  },
+  {
+    "source": "CHE_COORD7",
+    "target": "CHE_QUAL9"
+  },
+  {
+    "source": "CHE_COORD8",
+    "target": "CHEM_REDOX20"
   },
   {
     "source": "CHE_ELECTROCHEM1",
-    "target": "CHEM_REDOX4"
+    "target": "CHE_ELECTROCHEM5"
   },
   {
     "source": "CHE_ELECTROCHEM2",
-    "target": "CHEM_ELECTROCHEM2"
+    "target": "CHEM_REDOX32"
   },
   {
-    "source": "CHE_EQUILIBRIUM2",
-    "target": "CHEM_EQ1"
+    "source": "CHE_ELECTROCHEM2",
+    "target": "CHEM_REDOX40"
   },
   {
-    "source": "CHE_GASLAWS1",
-    "target": "CHE_GASLAWS2"
-  },
-  {
-    "source": "CHE_GASLAWS2",
-    "target": "CHE_STOICH2"
-  },
-  {
-    "source": "CHE_STOICH3",
-    "target": "CHEM_SOLUTION2"
-  },
-  {
-    "source": "CHE_THERMOCHEM1",
-    "target": "CHE_EQUILIBRIUM1"
-  },
-  {
-    "source": "MATH_ALG1",
-    "target": "MATH_ALG2"
-  },
-  {
-    "source": "MATH_ALG2",
-    "target": "MATH_ALG3"
-  },
-  {
-    "source": "MATH_ALG2",
-    "target": "MATH_POLY6"
-  },
-  {
-    "source": "MATH_ALG3",
+    "source": "CHE_ELECTROCHEM3",
     "target": "CHEM_ELECTROCHEM1"
   },
   {
-    "source": "MATH_ALG3",
-    "target": "CHEM_KINETICS1"
+    "source": "CHE_ELECTROCHEM7",
+    "target": "CHE_ELECTROCHEM2"
   },
   {
-    "source": "MATH_ALG3",
-    "target": "CHE_ACIDBASE1"
+    "source": "CHE_ELECTROCHEM7",
+    "target": "CHE_ELECTROCHEM6"
   },
   {
-    "source": "MATH_ALG3",
-    "target": "MATH_ALG4"
+    "source": "CHE_ELECTROCHEM7",
+    "target": "CHE_ELECTROCHEM8"
   },
   {
-    "source": "MATH_CALC1",
-    "target": "MATH_CALC2"
+    "source": "CHE_ELECTROCHEM7",
+    "target": "CHE_ELECTROCHEM9"
   },
   {
-    "source": "MATH_CALC10",
-    "target": "MATH_INTEG5"
+    "source": "CHE_ELECTROCHEM8",
+    "target": "CHE_ELECTROCHEM3"
   },
   {
-    "source": "MATH_CALC11",
-    "target": "MATH_CALC16"
+    "source": "CHE_ELECTROCHEM9",
+    "target": "CHE_ELECTROCHEM10"
   },
   {
-    "source": "MATH_CALC12",
-    "target": "MATH_CALC13"
+    "source": "CHE_EQUILIBRIUM10",
+    "target": "CHE_QUAL4"
   },
   {
-    "source": "MATH_CALC14",
-    "target": "MAT_CALC_INTEG1"
+    "source": "CHE_EQUILIBRIUM11",
+    "target": "CHE_EQUILIBRIUM12"
   },
   {
-    "source": "MATH_CALC16",
-    "target": "MAT_CALC_INTEG1"
+    "source": "CHE_EQUILIBRIUM11",
+    "target": "CHE_EQUILIBRIUM13"
   },
   {
-    "source": "MATH_CALC17",
-    "target": "MATH_CALC5"
+    "source": "CHE_EQUILIBRIUM12",
+    "target": "CHE_EQUILIBRIUM28"
   },
   {
-    "source": "MATH_CALC1b",
-    "target": "MATH_CALC2b"
+    "source": "CHE_EQUILIBRIUM12",
+    "target": "CHE_EQUILIBRIUM32"
   },
   {
-    "source": "MATH_CALC2b",
-    "target": "MATH_CALC3b"
+    "source": "CHE_EQUILIBRIUM12",
+    "target": "CHE_EQUILIBRIUM33"
   },
   {
-    "source": "MATH_CALC5",
-    "target": "MATH_CALC11"
+    "source": "CHE_EQUILIBRIUM14",
+    "target": "CHE_EQUILIBRIUM15"
   },
   {
-    "source": "MATH_CALC5",
-    "target": "MATH_LIMIT1"
+    "source": "CHE_EQUILIBRIUM14",
+    "target": "CHE_EQUILIBRIUM21"
   },
   {
-    "source": "MATH_CALC6",
-    "target": "MATH_CALC7"
+    "source": "CHE_EQUILIBRIUM14",
+    "target": "CHE_EQUILIBRIUM22"
   },
   {
-    "source": "MATH_CALC8",
-    "target": "MATH_CALC16"
+    "source": "CHE_EQUILIBRIUM15",
+    "target": "CHE_EQUILIBRIUM24"
   },
   {
-    "source": "MATH_CALC8",
-    "target": "MATH_CALC2"
+    "source": "CHE_EQUILIBRIUM15",
+    "target": "CHE_QUAL4"
   },
   {
-    "source": "MATH_CALC8",
-    "target": "MATH_CALC9"
+    "source": "CHE_EQUILIBRIUM19",
+    "target": "CHE_EQUILIBRIUM27"
   },
   {
-    "source": "MATH_CALC8",
-    "target": "MAT_CALC_DIFF1"
+    "source": "CHE_EQUILIBRIUM20",
+    "target": "CHE_EQUILIBRIUM3"
   },
   {
-    "source": "MATH_CALC8",
-    "target": "PHY_SHM1b"
+    "source": "CHE_EQUILIBRIUM20",
+    "target": "CHE_EQUILIBRIUM38"
   },
   {
-    "source": "MATH_CALC9",
-    "target": "MATH_CALC10"
+    "source": "CHE_EQUILIBRIUM20",
+    "target": "CHE_THERMOCHEM21"
   },
   {
-    "source": "MATH_COMPLEX1",
-    "target": "MATH_COMPLEX2"
+    "source": "CHE_EQUILIBRIUM22",
+    "target": "CHE_EQUILIBRIUM23"
   },
   {
-    "source": "MATH_COMPLEX1",
-    "target": "MAT_COMPLEX6"
+    "source": "CHE_EQUILIBRIUM24",
+    "target": "CHE_EQUILIBRIUM25"
   },
   {
-    "source": "MATH_COMPLEX2",
-    "target": "MATH_COMPLEX5"
+    "source": "CHE_EQUILIBRIUM26",
+    "target": "CHE_EQUILIBRIUM19"
   },
   {
-    "source": "MATH_COMPLEX3",
-    "target": "MATH_COMPLEX4"
+    "source": "CHE_EQUILIBRIUM26",
+    "target": "CHE_EQUILIBRIUM24"
   },
   {
-    "source": "MATH_CONIC1",
-    "target": "MATH_CONIC1b"
+    "source": "CHE_EQUILIBRIUM29",
+    "target": "CHEM_EQ1"
   },
   {
-    "source": "MATH_CONIC1",
-    "target": "MATH_CONIC2"
+    "source": "CHE_EQUILIBRIUM29",
+    "target": "CHE_EQUILIBRIUM34"
   },
   {
-    "source": "MATH_CONIC1b",
-    "target": "MATH_CONIC2b"
+    "source": "CHE_EQUILIBRIUM30",
+    "target": "CHE_EQUILIBRIUM11"
   },
   {
-    "source": "MATH_CONIC2",
-    "target": "MATH_CONIC3"
+    "source": "CHE_EQUILIBRIUM30",
+    "target": "CHE_EQUILIBRIUM18"
   },
   {
-    "source": "MATH_CONIC2b",
-    "target": "MATH_CONIC4"
+    "source": "CHE_EQUILIBRIUM30",
+    "target": "CHE_EQUILIBRIUM29"
   },
   {
-    "source": "MATH_CONIC3b",
-    "target": "MATH_CONIC4b"
+    "source": "CHE_EQUILIBRIUM30",
+    "target": "CHE_EQUILIBRIUM31"
   },
   {
-    "source": "MATH_CONIC4",
-    "target": "MATH_CONIC5"
+    "source": "CHE_EQUILIBRIUM30",
+    "target": "CHE_EQUILIBRIUM36"
   },
   {
-    "source": "MATH_CONIC5",
-    "target": "MATH_CONIC6"
+    "source": "CHE_EQUILIBRIUM31",
+    "target": "CHE_EQUILIBRIUM37"
   },
   {
-    "source": "MATH_CONIC5b",
-    "target": "MATH_CONIC6"
+    "source": "CHE_EQUILIBRIUM31",
+    "target": "CHE_EQUILIBRIUM39"
   },
   {
-    "source": "MATH_CONIC7",
-    "target": "MATH_CONIC8"
+    "source": "CHE_EQUILIBRIUM4",
+    "target": "CHE_EQUILIBRIUM10"
   },
   {
-    "source": "MATH_CONIC7",
-    "target": "MAT_COORD_CONIC5"
+    "source": "CHE_EQUILIBRIUM4",
+    "target": "CHE_EQUILIBRIUM5"
   },
   {
-    "source": "MATH_COORD1",
-    "target": "MATH_COORD2"
+    "source": "CHE_EQUILIBRIUM4",
+    "target": "CHE_EQUILIBRIUM6"
   },
   {
-    "source": "MATH_COORD2",
-    "target": "MATH_COORD3"
+    "source": "CHE_EQUILIBRIUM4",
+    "target": "CHE_EQUILIBRIUM7"
   },
   {
-    "source": "MATH_COORD2",
-    "target": "MATH_LINE4"
+    "source": "CHE_EQUILIBRIUM4",
+    "target": "CHE_EQUILIBRIUM9"
   },
   {
-    "source": "MATH_COORD2",
-    "target": "MATH_LINE6"
+    "source": "CHE_EQUILIBRIUM7",
+    "target": "CHE_EQUILIBRIUM16"
   },
   {
-    "source": "MATH_COORD2",
-    "target": "MAT_CALC_DIFF2"
+    "source": "CHE_EQUILIBRIUM7",
+    "target": "CHE_EQUILIBRIUM8"
   },
   {
-    "source": "MATH_COORD2",
-    "target": "MAT_COORD_LINE1"
+    "source": "CHE_GASLAWS13",
+    "target": "CHE_EQUILIBRIUM26"
   },
   {
-    "source": "MATH_COORD2",
-    "target": "MAT_COORD_LINE8"
+    "source": "CHE_GASLAWS13",
+    "target": "CHE_GASLAWS14"
   },
   {
-    "source": "MATH_COORD3",
-    "target": "MATH_COORD4"
+    "source": "CHE_GASLAWS15",
+    "target": "CHE_GASLAWS16"
   },
   {
-    "source": "MATH_CX1",
-    "target": "MATH_CX2"
+    "source": "CHE_GASLAWS17",
+    "target": "CHE_GASLAWS15"
   },
   {
-    "source": "MATH_CX3",
-    "target": "MATH_CX4"
+    "source": "CHE_GASLAWS18",
+    "target": "CHE_GASLAWS15"
   },
   {
-    "source": "MATH_CX3",
-    "target": "MAT_COMPLEX1"
+    "source": "CHE_GASLAWS19",
+    "target": "CHE_GASLAWS20"
   },
   {
-    "source": "MATH_CX4",
-    "target": "MATH_CX5"
+    "source": "CHE_GASLAWS22",
+    "target": "CHEM_GASLAW1"
   },
   {
-    "source": "MATH_DYNAMICS1",
-    "target": "MATH_DYNAMICS2"
+    "source": "CHE_GASLAWS22",
+    "target": "CHE_GASLAWS23"
   },
   {
-    "source": "MATH_DYNAMICS1",
-    "target": "MAT_DYNAMICS1"
+    "source": "CHE_GASLAWS22",
+    "target": "CHE_GASLAWS24"
   },
   {
-    "source": "MATH_GEOM1",
-    "target": "MATH_GEOM2"
+    "source": "CHE_GASLAWS22",
+    "target": "CHE_GASLAWS37"
   },
   {
-    "source": "MATH_INTEG1",
-    "target": "MATH_CALC2b"
+    "source": "CHE_GASLAWS26",
+    "target": "CHEM_GAS1"
   },
   {
-    "source": "MATH_INTEG1",
-    "target": "MATH_INTEG2"
+    "source": "CHE_GASLAWS26",
+    "target": "CHEM_GASLAW1"
   },
   {
-    "source": "MATH_INTEG11",
-    "target": "MATH_INTEG12"
+    "source": "CHE_GASLAWS26",
+    "target": "CHE_GASLAWS17"
   },
   {
-    "source": "MATH_INTEG2",
-    "target": "MATH_CALC14"
+    "source": "CHE_GASLAWS26",
+    "target": "CHE_GASLAWS18"
   },
   {
-    "source": "MATH_INTEG2",
-    "target": "MATH_INTEG12"
+    "source": "CHE_GASLAWS26",
+    "target": "CHE_GASLAWS19"
   },
   {
-    "source": "MATH_INTEG2",
-    "target": "MATH_INTEG9"
+    "source": "CHE_GASLAWS26",
+    "target": "CHE_GASLAWS32"
   },
   {
-    "source": "MATH_INTEG3",
-    "target": "MATH_INTEG4"
+    "source": "CHE_GASLAWS26",
+    "target": "CHE_GASLAWS35"
   },
   {
-    "source": "MATH_INTEG3",
-    "target": "MATH_INTEG7"
+    "source": "CHE_GASLAWS26",
+    "target": "CHE_GASLAWS36"
   },
   {
-    "source": "MATH_INTEG5",
-    "target": "MATH_INTEG6"
+    "source": "CHE_GASLAWS26",
+    "target": "CHE_GASLAWS38"
   },
   {
-    "source": "MATH_INTEG7",
-    "target": "MATH_INTEG8"
+    "source": "CHE_GASLAWS26",
+    "target": "CHE_GASLAWS40"
   },
   {
-    "source": "MATH_INTEG9",
-    "target": "MATH_INTEG10"
+    "source": "CHE_GASLAWS3",
+    "target": "CHE_GASLAWS4"
   },
   {
-    "source": "MATH_LINE1",
-    "target": "MATH_CALC1b"
+    "source": "CHE_GASLAWS30",
+    "target": "CHE_GASLAWS44"
   },
   {
-    "source": "MATH_LINE1",
-    "target": "MATH_INTEG11"
+    "source": "CHE_GASLAWS32",
+    "target": "CHE_GASLAWS31"
   },
   {
-    "source": "MATH_LINE1",
-    "target": "MATH_LINE3"
+    "source": "CHE_GASLAWS34",
+    "target": "CHEM_GAS3"
   },
   {
-    "source": "MATH_LINE1",
-    "target": "MAT_COORD_CONIC1"
+    "source": "CHE_GASLAWS34",
+    "target": "CHEM_GASLAW5"
   },
   {
-    "source": "MATH_LINE2",
-    "target": "MATH_LINE1"
+    "source": "CHE_GASLAWS34",
+    "target": "CHE_GASLAWS33"
   },
   {
-    "source": "MATH_LINE4",
-    "target": "MATH_LINE1"
+    "source": "CHE_GASLAWS34",
+    "target": "CHE_GASLAWS7"
   },
   {
-    "source": "MATH_LINE4",
-    "target": "MATH_LINE5"
+    "source": "CHE_GASLAWS34",
+    "target": "CHE_GASLAWS9"
   },
   {
-    "source": "MATH_MAT1",
-    "target": "MATH_MAT2"
+    "source": "CHE_GASLAWS38",
+    "target": "CHE_GASLAWS39"
   },
   {
-    "source": "MATH_MAT1",
-    "target": "MATH_MAT3"
+    "source": "CHE_GASLAWS40",
+    "target": "CHE_GASLAWS28"
   },
   {
-    "source": "MATH_MAT1b",
-    "target": "MATH_LINE3"
+    "source": "CHE_GASLAWS5",
+    "target": "CHEM_GASLAW2"
   },
   {
-    "source": "MATH_MAT1b",
-    "target": "MATH_MAT1"
+    "source": "CHE_GASLAWS5",
+    "target": "CHE_EQUILIBRIUM14"
   },
   {
-    "source": "MATH_MAT1b",
-    "target": "MATH_MAT2b"
+    "source": "CHE_GASLAWS5",
+    "target": "CHE_GASLAWS25"
   },
   {
-    "source": "MATH_MAT1b",
-    "target": "MATH_MAT7"
+    "source": "CHE_GASLAWS5",
+    "target": "CHE_GASLAWS27"
   },
   {
-    "source": "MATH_MAT1b",
-    "target": "MATH_MAT9"
+    "source": "CHE_GASLAWS5",
+    "target": "CHE_GASLAWS29"
   },
   {
-    "source": "MATH_MAT2b",
-    "target": "MATH_MAT3b"
+    "source": "CHE_GASLAWS5",
+    "target": "CHE_GASLAWS30"
   },
   {
-    "source": "MATH_MAT3",
-    "target": "MATH_MAT4"
+    "source": "CHE_GASLAWS5",
+    "target": "CHE_GASLAWS41"
   },
   {
-    "source": "MATH_MAT4b",
-    "target": "MATH_MAT5"
+    "source": "CHE_GASLAWS5",
+    "target": "CHE_GASLAWS43"
   },
   {
-    "source": "MATH_MAT6",
-    "target": "MATH_MAT7"
+    "source": "CHE_GASLAWS5",
+    "target": "CHE_STOICHIOMETRY14"
   },
   {
-    "source": "MATH_MAT8",
-    "target": "MATH_MAT9"
-  },
-  {
-    "source": "MATH_MAT9",
-    "target": "MATH_LINE5"
-  },
-  {
-    "source": "MATH_MECH1",
-    "target": "MATH_MECH2"
-  },
-  {
-    "source": "MATH_MECH1",
-    "target": "MATH_MECH5"
-  },
-  {
-    "source": "MATH_MECH1",
-    "target": "MATH_STATICS1"
-  },
-  {
-    "source": "MATH_MECH1",
-    "target": "MATH_STATICS3"
-  },
-  {
-    "source": "MATH_MECH1",
-    "target": "MAT_STATICS1"
-  },
-  {
-    "source": "MATH_MECH1",
-    "target": "PHY_NEWTON1"
-  },
-  {
-    "source": "MATH_MECH2",
-    "target": "MATH_STATICS5"
-  },
-  {
-    "source": "MATH_MECH2",
-    "target": "MAT_DYNAMICS3"
-  },
-  {
-    "source": "MATH_MECH3",
-    "target": "MATH_MECH4"
-  },
-  {
-    "source": "MATH_MECH5",
-    "target": "MATH_MECH6"
-  },
-  {
-    "source": "MATH_MECH8",
-    "target": "MATH_MECH9"
-  },
-  {
-    "source": "MATH_MECH9",
-    "target": "MATH_MECH7"
-  },
-  {
-    "source": "MATH_POLY1",
-    "target": "MATH_POLY4"
-  },
-  {
-    "source": "MATH_POLY1",
-    "target": "MATH_POLY6"
-  },
-  {
-    "source": "MATH_POLY2",
-    "target": "MATH_CX2"
-  },
-  {
-    "source": "MATH_POLY2",
-    "target": "MATH_POLY3"
-  },
-  {
-    "source": "MATH_POLY2",
-    "target": "MAT_EQTHEORY2"
-  },
-  {
-    "source": "MATH_POLY4",
-    "target": "MATH_POLY5"
-  },
-  {
-    "source": "MATH_POLY6",
-    "target": "MATH_POLY7"
-  },
-  {
-    "source": "MATH_STATICS1",
-    "target": "MATH_STATICS2"
-  },
-  {
-    "source": "MATH_STATICS3",
-    "target": "MATH_STATICS4"
-  },
-  {
-    "source": "MATH_STATICS3",
-    "target": "MATH_STATICS5"
-  },
-  {
-    "source": "MATH_STATICS3",
-    "target": "MAT_STATICS2"
-  },
-  {
-    "source": "MATH_TRIG1",
-    "target": "MATH_TRIG3"
-  },
-  {
-    "source": "MATH_TRIG1b",
-    "target": "MATH_TRIG2b"
-  },
-  {
-    "source": "MATH_TRIG2",
-    "target": "MATH_TRIG3"
-  },
-  {
-    "source": "MATH_TRIG2b",
-    "target": "MATH_TRIG3b"
-  },
-  {
-    "source": "MATH_TRIG3",
-    "target": "MATH_TRIG7"
-  },
-  {
-    "source": "MATH_TRIG3b",
-    "target": "MATH_TRIG4b"
-  },
-  {
-    "source": "MATH_TRIG4",
-    "target": "MATH_TRIG5"
-  },
-  {
-    "source": "MATH_TRIG4",
-    "target": "PHY_OPT1"
-  },
-  {
-    "source": "MATH_TRIG5",
-    "target": "MATH_TRIG6"
-  },
-  {
-    "source": "MATH_TRIG5",
-    "target": "MAT_INVTRIG3"
-  },
-  {
-    "source": "MATH_TRIG5b",
-    "target": "MATH_TRIG6b"
-  },
-  {
-    "source": "MATH_TRIG5b",
-    "target": "MATH_TRIG9"
-  },
-  {
-    "source": "MATH_TRIG6",
-    "target": "MATH_TRIG7"
-  },
-  {
-    "source": "MATH_TRIG6b",
-    "target": "MATH_CALC17"
-  },
-  {
-    "source": "MATH_TRIG6b",
-    "target": "MATH_INTEG3"
-  },
-  {
-    "source": "MATH_TRIG7b",
-    "target": "MATH_TRIG8"
-  },
-  {
-    "source": "MATH_TRIG9",
-    "target": "MATH_CALC1"
-  },
-  {
-    "source": "MATH_TRIG9",
-    "target": "MATH_TRIG10"
-  },
-  {
-    "source": "MAT_ALGEBRA1",
-    "target": "MATH_ALG1"
-  },
-  {
-    "source": "MAT_ALGEBRA1",
-    "target": "MAT_ALGEBRA2"
-  },
-  {
-    "source": "MAT_CALC_DIFF1",
-    "target": "MATH_CALC12"
-  },
-  {
-    "source": "MAT_CALC_DIFF1",
-    "target": "MATH_CALC3"
-  },
-  {
-    "source": "MAT_CALC_DIFF1",
-    "target": "MATH_CALC6"
-  },
-  {
-    "source": "MAT_CALC_DIFF1",
-    "target": "MAT_CALC_DIFF2"
-  },
-  {
-    "source": "MAT_CALC_DIFF1",
-    "target": "PHY_OSC3"
-  },
-  {
-    "source": "MAT_CALC_DIFF2",
-    "target": "MATH_CONIC2"
-  },
-  {
-    "source": "MAT_COMPLEX2",
-    "target": "MATH_COMPLEX3"
-  },
-  {
-    "source": "MAT_COMPLEX2",
-    "target": "MAT_COMPLEX6"
-  },
-  {
-    "source": "MAT_COMPLEX3",
-    "target": "MATH_COMPLEX2"
-  },
-  {
-    "source": "MAT_COMPLEX3",
-    "target": "MATH_COMPLEX3"
-  },
-  {
-    "source": "MAT_COMPLEX3",
-    "target": "MAT_COMPLEX4"
-  },
-  {
-    "source": "MAT_COMPLEX5",
-    "target": "MATH_CX1"
-  },
-  {
-    "source": "MAT_COMPLEX5",
-    "target": "MAT_COMPLEX3"
-  },
-  {
-    "source": "MAT_COORD_CONIC1",
-    "target": "MATH_CONIC5"
-  },
-  {
-    "source": "MAT_COORD_CONIC1",
-    "target": "MATH_CONIC5b"
-  },
-  {
-    "source": "MAT_COORD_CONIC2",
-    "target": "MATH_INTEG1"
-  },
-  {
-    "source": "MAT_COORD_CONIC2",
-    "target": "MAT_COORD_CONIC1"
-  },
-  {
-    "source": "MAT_COORD_CONIC2",
-    "target": "MAT_COORD_CONIC3"
-  },
-  {
-    "source": "MAT_COORD_CONIC4",
-    "target": "MATH_CONIC1"
-  },
-  {
-    "source": "MAT_COORD_LINE2",
-    "target": "MAT_COORD_LINE1"
-  },
-  {
-    "source": "MAT_COORD_LINE2",
-    "target": "MAT_COORD_LINE3"
-  },
-  {
-    "source": "MAT_COORD_LINE2",
-    "target": "MAT_COORD_LINE5"
-  },
-  {
-    "source": "MAT_COORD_LINE2",
-    "target": "MAT_COORD_LINE7"
-  },
-  {
-    "source": "MAT_COORD_LINE4",
-    "target": "MATH_CONIC3b"
-  },
-  {
-    "source": "MAT_COORD_LINE4",
-    "target": "MATH_COORD1"
-  },
-  {
-    "source": "MAT_COORD_LINE4",
-    "target": "MAT_COORD_LINE5"
-  },
-  {
-    "source": "MAT_COORD_LINE5",
-    "target": "MATH_LINE6"
-  },
-  {
-    "source": "MAT_COORD_LINE6",
-    "target": "MATH_CONIC8"
-  },
-  {
-    "source": "MAT_COORD_LINE6",
-    "target": "MATH_COORD4"
-  },
-  {
-    "source": "MAT_COORD_LINE6",
-    "target": "MAT_COMPLEX4"
-  },
-  {
-    "source": "MAT_COORD_LINE6",
-    "target": "MAT_COORD_LINE1"
-  },
-  {
-    "source": "MAT_COORD_LINE6",
-    "target": "MAT_COORD_LINE7"
-  },
-  {
-    "source": "MAT_COORD_LINE6",
-    "target": "MAT_COORD_LINE8"
-  },
-  {
-    "source": "MAT_DYNAMICS2",
-    "target": "MATH_DYNAMICS1"
-  },
-  {
-    "source": "MAT_DYNAMICS2",
-    "target": "MATH_MECH8"
-  },
-  {
-    "source": "MAT_DYNAMICS2",
-    "target": "MAT_DYNAMICS3"
-  },
-  {
-    "source": "MAT_DYNAMICS2",
-    "target": "PHY_NEWT3"
-  },
-  {
-    "source": "MAT_DYNAMICS2",
-    "target": "PHY_PROJ1"
-  },
-  {
-    "source": "MAT_DYNAMICS2",
-    "target": "PHY_ROTATION4"
-  },
-  {
-    "source": "MAT_EQTHEORY1",
-    "target": "MATH_ALG5"
-  },
-  {
-    "source": "MAT_EQTHEORY1",
-    "target": "MAT_EQTHEORY6"
-  },
-  {
-    "source": "MAT_EQTHEORY2",
-    "target": "MATH_POLY1"
-  },
-  {
-    "source": "MAT_EQTHEORY2",
-    "target": "MAT_EQTHEORY3"
-  },
-  {
-    "source": "MAT_EQTHEORY2",
-    "target": "MAT_EQTHEORY4"
-  },
-  {
-    "source": "MAT_EQTHEORY4",
-    "target": "MAT_EQTHEORY5"
-  },
-  {
-    "source": "MAT_EQTHEORY6",
-    "target": "MATH_CX1"
-  },
-  {
-    "source": "MAT_EQTHEORY6",
-    "target": "MATH_POLY5"
-  },
-  {
-    "source": "MAT_INVTRIG1",
-    "target": "MAT_INVTRIG2"
-  },
-  {
-    "source": "MAT_INVTRIG1",
-    "target": "MAT_INVTRIG3"
-  },
-  {
-    "source": "MAT_INVTRIG2",
-    "target": "MATH_CALC1"
-  },
-  {
-    "source": "MAT_INVTRIG2",
-    "target": "MATH_CALC4"
-  },
-  {
-    "source": "MAT_INVTRIG3",
-    "target": "MATH_TRIG1"
-  },
-  {
-    "source": "MAT_INVTRIG3",
-    "target": "MAT_COMPLEX6"
-  },
-  {
-    "source": "MAT_MATRIX1",
-    "target": "MATH_MAT1b"
-  },
-  {
-    "source": "MAT_MATRIX1",
-    "target": "MAT_MATRIX3"
-  },
-  {
-    "source": "MAT_MATRIX1",
-    "target": "MAT_MATRIX4"
-  },
-  {
-    "source": "MAT_MATRIX2",
-    "target": "MATH_MAT1"
-  },
-  {
-    "source": "MAT_MATRIX3",
-    "target": "MAT_MATRIX2"
-  },
-  {
-    "source": "MAT_STATICS1",
-    "target": "MAT_STATICS2"
-  },
-  {
-    "source": "MAT_TRIG1",
-    "target": "MATH_TRIG8"
-  },
-  {
-    "source": "MAT_TRIG2",
-    "target": "MATH_CALC4"
-  },
-  {
-    "source": "MAT_TRIG2",
-    "target": "MATH_COMPLEX1"
-  },
-  {
-    "source": "MAT_TRIG2",
-    "target": "MATH_LINE6"
-  },
-  {
-    "source": "MAT_TRIG2",
-    "target": "MATH_MECH1"
-  },
-  {
-    "source": "MAT_TRIG2",
-    "target": "MATH_TRIG2"
-  },
-  {
-    "source": "MAT_TRIG2",
-    "target": "MATH_TRIG4"
-  },
-  {
-    "source": "MAT_TRIG2",
-    "target": "MATH_TRIG5b"
-  },
-  {
-    "source": "MAT_TRIG2",
-    "target": "MATH_TRIG7b"
-  },
-  {
-    "source": "MAT_TRIG2",
-    "target": "MAT_COORD_CONIC3"
-  },
-  {
-    "source": "MAT_TRIG2",
-    "target": "MAT_TRIG1"
-  },
-  {
-    "source": "MAT_TRIG2",
-    "target": "MAT_TRIG3"
-  },
-  {
-    "source": "MAT_TRIG2",
-    "target": "PHY_CIRC2"
-  },
-  {
-    "source": "MAT_TRIG2",
-    "target": "PHY_OSC2"
-  },
-  {
-    "source": "MAT_TRIG2",
-    "target": "PHY_WAVE1b"
-  },
-  {
-    "source": "MAT_TRIG3",
-    "target": "MATH_TRIG3"
-  },
-  {
-    "source": "PHY_AT1",
-    "target": "PHY_AT2"
-  },
-  {
-    "source": "PHY_AT1",
-    "target": "PHY_AT3"
-  },
-  {
-    "source": "PHY_AT1",
-    "target": "PHY_XRAY1"
-  },
-  {
-    "source": "PHY_AT3",
-    "target": "CHEM_AT3"
-  },
-  {
-    "source": "PHY_AT3",
-    "target": "PHY_AT4"
-  },
-  {
-    "source": "PHY_AT4",
-    "target": "PHY_MODERN2b"
-  },
-  {
-    "source": "PHY_CAP1",
-    "target": "PHY_EM4"
-  },
-  {
-    "source": "PHY_CIRC1",
-    "target": "PHY_CIRC2"
-  },
-  {
-    "source": "PHY_CIRC2",
-    "target": "PHY_CIRC3"
-  },
-  {
-    "source": "PHY_CUR1",
-    "target": "PHY_CUR2"
-  },
-  {
-    "source": "PHY_CUR1",
-    "target": "PHY_CURRENT1"
-  },
-  {
-    "source": "PHY_CUR1",
-    "target": "PHY_CURRENT2"
-  },
-  {
-    "source": "PHY_CURRENT2",
-    "target": "PHY_CIRCUIT1"
-  },
-  {
-    "source": "PHY_CURRENT2",
-    "target": "PHY_SEMICONDUCTOR1"
-  },
-  {
-    "source": "PHY_CURRENT2",
-    "target": "PHY_THERMO2b"
-  },
-  {
-    "source": "PHY_ELASTICITY1",
-    "target": "PHY_ELASTICITY1b"
-  },
-  {
-    "source": "PHY_ELASTICITY1",
-    "target": "PHY_ELASTICITY2"
-  },
-  {
-    "source": "PHY_ELEC1",
-    "target": "PHY_CAP1"
-  },
-  {
-    "source": "PHY_ELEC1",
-    "target": "PHY_ELECTROSTATICS4"
-  },
-  {
-    "source": "PHY_ELEC1",
-    "target": "PHY_EM1"
-  },
-  {
-    "source": "PHY_ELECTROSTATICS1",
-    "target": "PHY_ELECTROSTATICS2"
-  },
-  {
-    "source": "PHY_ELECTROSTATICS2",
-    "target": "PHY_CAP1"
-  },
-  {
-    "source": "PHY_ELECTROSTATICS2",
-    "target": "PHY_ELECTROSTATICS3"
-  },
-  {
-    "source": "PHY_EM1",
-    "target": "PHY_EM2"
-  },
-  {
-    "source": "PHY_EM2",
-    "target": "PHY_EM3"
-  },
-  {
-    "source": "PHY_FLUID1",
-    "target": "PHY_FLUID2"
-  },
-  {
-    "source": "PHY_GRAV1b",
-    "target": "PHY_GRAV2b"
-  },
-  {
-    "source": "PHY_GRAV2",
-    "target": "PHY_GRAV3"
-  },
-  {
-    "source": "PHY_GRAV3b",
-    "target": "PHY_GRAV4"
-  },
-  {
-    "source": "PHY_GRAV3b",
-    "target": "PHY_GRAVITATION2"
-  },
-  {
-    "source": "PHY_GRAV5",
-    "target": "PHY_GRAVITATION1"
-  },
-  {
-    "source": "PHY_GRAVITATION2",
-    "target": "PHY_GRAV1"
-  },
-  {
-    "source": "PHY_GRAVITATION3",
-    "target": "PHY_GRAV1b"
-  },
-  {
-    "source": "PHY_GRAVITATION3",
-    "target": "PHY_GRAV2"
-  },
-  {
-    "source": "PHY_GRAVITATION3",
-    "target": "PHY_GRAV5"
-  },
-  {
-    "source": "PHY_GRAVITATION3",
-    "target": "PHY_GRAVITATION2"
-  },
-  {
-    "source": "PHY_GRAVITATION3",
-    "target": "PHY_GRAVITATION4"
-  },
-  {
-    "source": "PHY_GRAVITATION3",
-    "target": "PHY_UNITS1"
-  },
-  {
-    "source": "PHY_GRAVITATION4",
-    "target": "PHY_GRAV4"
-  },
-  {
-    "source": "PHY_KINETIC1",
-    "target": "CHE_GASLAWS1"
-  },
-  {
-    "source": "PHY_KINETIC1",
-    "target": "PHY_KINETIC2"
-  },
-  {
-    "source": "PHY_KINETIC1",
-    "target": "PHY_KTG1"
-  },
-  {
-    "source": "PHY_KTG1",
+    "source": "CHE_GASLAWS8",
     "target": "CHEM_GASLAW4"
   },
   {
-    "source": "PHY_KTG1",
-    "target": "PHY_KTG2"
+    "source": "CHE_GASLAWS8",
+    "target": "CHE_GASLAWS10"
   },
   {
-    "source": "PHY_KTG3",
-    "target": "PHY_KTG4"
+    "source": "CHE_GASLAWS9",
+    "target": "CHE_GASLAWS8"
   },
   {
-    "source": "PHY_KTG3",
-    "target": "PHY_THERMO1b"
+    "source": "CHE_ORGANIC101",
+    "target": "CHE_ORGANIC155"
   },
   {
-    "source": "PHY_MAG1",
-    "target": "PHY_MAG2"
+    "source": "CHE_ORGANIC101",
+    "target": "CHE_ORGANIC73"
   },
   {
-    "source": "PHY_MAGNETISM1",
-    "target": "PHY_EM1b"
+    "source": "CHE_ORGANIC101",
+    "target": "CHE_ORGANIC78"
   },
   {
-    "source": "PHY_MAGNETISM1",
-    "target": "PHY_MAG1"
+    "source": "CHE_ORGANIC101",
+    "target": "CHE_ORGANIC93"
   },
   {
-    "source": "PHY_MAGNETISM1",
-    "target": "PHY_MAGNETISM2"
+    "source": "CHE_ORGANIC101",
+    "target": "CHE_ORGANIC98"
   },
   {
-    "source": "PHY_MEAS1b",
-    "target": "PHY_EM1b"
+    "source": "CHE_ORGANIC101",
+    "target": "CHE_ORGANIC99"
   },
   {
-    "source": "PHY_MEAS1b",
-    "target": "PHY_MEAS1"
+    "source": "CHE_ORGANIC106",
+    "target": "CHE_ACIDBASE64"
   },
   {
-    "source": "PHY_MEAS1b",
-    "target": "PHY_UNITS1"
+    "source": "CHE_ORGANIC106",
+    "target": "CHE_ORGANIC105"
   },
   {
-    "source": "PHY_MEAS2",
-    "target": "PHY_MEAS3"
+    "source": "CHE_ORGANIC106",
+    "target": "CHE_ORGANIC128"
   },
   {
-    "source": "PHY_MOD1",
-    "target": "CHEM_SPEC1"
+    "source": "CHE_ORGANIC107",
+    "target": "CHE_ORGANIC108"
   },
   {
-    "source": "PHY_MOD1",
-    "target": "PHY_SEMICOND1"
+    "source": "CHE_ORGANIC107",
+    "target": "CHE_ORGANIC14"
   },
   {
-    "source": "PHY_MOD2",
-    "target": "CHEM_SPEC2"
+    "source": "CHE_ORGANIC107",
+    "target": "CHE_ORGANIC156"
   },
   {
-    "source": "PHY_MOD2",
-    "target": "CHE_ATOMIC3"
+    "source": "CHE_ORGANIC11",
+    "target": "CHE_ORGANIC10"
   },
   {
-    "source": "PHY_MOD2",
-    "target": "PHY_MOD3"
+    "source": "CHE_ORGANIC111",
+    "target": "CHE_ORGANIC121"
   },
   {
-    "source": "PHY_MOD2",
-    "target": "PHY_XRAY1"
+    "source": "CHE_ORGANIC111",
+    "target": "CHE_ORGANIC124"
   },
   {
-    "source": "PHY_MODERN1",
-    "target": "PHY_MODERN1b"
+    "source": "CHE_ORGANIC111",
+    "target": "CHE_ORGANIC129"
   },
   {
-    "source": "PHY_MODERN2",
-    "target": "PHY_AT4"
+    "source": "CHE_ORGANIC111",
+    "target": "CHE_ORGANIC136"
   },
   {
-    "source": "PHY_MODERN2",
-    "target": "PHY_MOD2"
+    "source": "CHE_ORGANIC111",
+    "target": "CHE_ORGANIC147"
   },
   {
-    "source": "PHY_MODERN2b",
-    "target": "PHY_MODERN3"
+    "source": "CHE_ORGANIC111",
+    "target": "CHE_ORGANIC70"
   },
   {
-    "source": "PHY_NEWT1",
-    "target": "PHY_NEWT2"
+    "source": "CHE_ORGANIC111",
+    "target": "CHE_ORGANIC76"
   },
   {
-    "source": "PHY_NEWT1",
-    "target": "PHY_NEWTON3"
+    "source": "CHE_ORGANIC111",
+    "target": "CHE_ORGANIC77"
   },
   {
-    "source": "PHY_NEWT2",
-    "target": "PHY_NEWTON4"
+    "source": "CHE_ORGANIC111",
+    "target": "CHE_ORGANIC94"
   },
   {
-    "source": "PHY_NEWT3",
-    "target": "PHY_NEWT4"
+    "source": "CHE_ORGANIC113",
+    "target": "CHE2_ORG_CARBONYL1"
   },
   {
-    "source": "PHY_NEWTON1",
-    "target": "MATH_MECH7"
+    "source": "CHE_ORGANIC113",
+    "target": "CHE_ORGANIC80"
   },
   {
-    "source": "PHY_NEWTON1",
-    "target": "PHY_NEWTON2"
+    "source": "CHE_ORGANIC119",
+    "target": "CHE_ORGANIC4"
   },
   {
-    "source": "PHY_NEWTON2",
-    "target": "PHY_DYNAMICS1"
+    "source": "CHE_ORGANIC12",
+    "target": "CHE_ORGANIC13"
   },
   {
-    "source": "PHY_NEWTON3",
-    "target": "PHY_NEWTON4"
+    "source": "CHE_ORGANIC12",
+    "target": "CHE_ORGANIC71"
   },
   {
-    "source": "PHY_NUC1",
-    "target": "PHY_NUCLEAR1"
+    "source": "CHE_ORGANIC12",
+    "target": "CHE_ORGANIC89"
   },
   {
-    "source": "PHY_NUC1",
-    "target": "PHY_NUCLEAR1b"
+    "source": "CHE_ORGANIC12",
+    "target": "CHE_ORGANIC95"
   },
   {
-    "source": "PHY_OPT1",
-    "target": "PHY_OPT2"
+    "source": "CHE_ORGANIC122",
+    "target": "CHE2_ORG_ALCOHOL0"
   },
   {
-    "source": "PHY_OPT1",
-    "target": "PHY_OPTICS3"
+    "source": "CHE_ORGANIC127",
+    "target": "CHE_ORGANIC103"
   },
   {
-    "source": "PHY_OPTICS1",
-    "target": "PHY_OPTICS3"
+    "source": "CHE_ORGANIC129",
+    "target": "CHE_ORGANIC126"
   },
   {
-    "source": "PHY_OPTICS1b",
-    "target": "PHY_OPTICS2"
+    "source": "CHE_ORGANIC132",
+    "target": "CHE_ORGANIC52"
   },
   {
-    "source": "PHY_OPTICS1b",
-    "target": "PHY_OPTICS2b"
+    "source": "CHE_ORGANIC135",
+    "target": "CHE_ORGANIC134"
   },
   {
-    "source": "PHY_OPTICS1b",
-    "target": "PHY_WAVE3"
+    "source": "CHE_ORGANIC135",
+    "target": "CHE_ORGANIC82"
   },
   {
-    "source": "PHY_OSC1",
-    "target": "PHY_OSC2"
+    "source": "CHE_ORGANIC137",
+    "target": "CHEM_LAB2"
   },
   {
-    "source": "PHY_OSC3",
-    "target": "PHY_OSC4"
+    "source": "CHE_ORGANIC138",
+    "target": "CHE_ORGANIC83"
   },
   {
-    "source": "PHY_PROJ1",
-    "target": "MATH_MECH3"
+    "source": "CHE_ORGANIC139",
+    "target": "CHEM_ENV25"
   },
   {
-    "source": "PHY_PROJ1",
-    "target": "PHY_PROJ2"
+    "source": "CHE_ORGANIC142",
+    "target": "CHE_ORGANIC141"
   },
   {
-    "source": "PHY_ROT1",
-    "target": "PHY_ROT2"
+    "source": "CHE_ORGANIC142",
+    "target": "CHE_ORGANIC56"
   },
   {
-    "source": "PHY_ROT1b",
-    "target": "PHY_ROT1"
+    "source": "CHE_ORGANIC147",
+    "target": "CHE_ORGANIC41"
   },
   {
-    "source": "PHY_ROT1b",
-    "target": "PHY_ROTATION2"
+    "source": "CHE_ORGANIC150",
+    "target": "CHE_ORGANIC113"
   },
   {
-    "source": "PHY_ROT2b",
-    "target": "PHY_ROTATION2"
+    "source": "CHE_ORGANIC150",
+    "target": "CHE_ORGANIC144"
   },
   {
-    "source": "PHY_ROT3",
-    "target": "PHY_MEAS1"
+    "source": "CHE_ORGANIC150",
+    "target": "CHE_ORGANIC43"
   },
   {
-    "source": "PHY_ROT3",
-    "target": "PHY_ROT4"
+    "source": "CHE_ORGANIC156",
+    "target": "CHE_ORGANIC40"
   },
   {
-    "source": "PHY_ROT3",
-    "target": "PHY_ROTATION3"
+    "source": "CHE_ORGANIC16",
+    "target": "CHE_BIOMOLECULE15"
   },
   {
-    "source": "PHY_ROTATION1",
-    "target": "PHY_CIRC1"
+    "source": "CHE_ORGANIC16",
+    "target": "CHE_ORGANIC15"
   },
   {
-    "source": "PHY_ROTATION1",
-    "target": "PHY_ROTATION4"
+    "source": "CHE_ORGANIC16",
+    "target": "CHE_ORGANIC154"
   },
   {
-    "source": "PHY_ROTATION2",
-    "target": "PHY_ROTATION3"
+    "source": "CHE_ORGANIC17",
+    "target": "CHE_BIOMOLECULE27"
   },
   {
-    "source": "PHY_SEMI1",
-    "target": "PHY_SEMICOND2"
+    "source": "CHE_ORGANIC20",
+    "target": "CHE_ORGANIC100"
   },
   {
-    "source": "PHY_SEMI1",
-    "target": "PHY_SEMICOND3"
+    "source": "CHE_ORGANIC20",
+    "target": "CHE_ORGANIC145"
   },
   {
-    "source": "PHY_SEMICOND2",
-    "target": "PHY_SEMICONDUCTOR1"
+    "source": "CHE_ORGANIC21",
+    "target": "CHE_ORGANIC22"
   },
   {
-    "source": "PHY_SHM1",
-    "target": "PHY_GRAV2b"
+    "source": "CHE_ORGANIC24",
+    "target": "CHE_ORGANIC25"
   },
   {
-    "source": "PHY_SHM1b",
-    "target": "PHY_OSC3"
+    "source": "CHE_ORGANIC28",
+    "target": "CHE_ORGANIC104"
   },
   {
-    "source": "PHY_SHM1b",
-    "target": "PHY_SHM2"
+    "source": "CHE_ORGANIC28",
+    "target": "CHE_ORGANIC125"
   },
   {
-    "source": "PHY_SHM1b",
-    "target": "PHY_SHM3"
+    "source": "CHE_ORGANIC28",
+    "target": "CHE_ORGANIC29"
   },
   {
-    "source": "PHY_SHM3",
-    "target": "PHY_OSC4"
+    "source": "CHE_ORGANIC28",
+    "target": "CHE_ORGANIC30"
   },
   {
-    "source": "PHY_SHM3",
-    "target": "PHY_SHM4"
+    "source": "CHE_ORGANIC30",
+    "target": "CHE2_ORG_AMINE0"
   },
   {
-    "source": "PHY_SHM5",
-    "target": "PHY_SHM1"
+    "source": "CHE_ORGANIC31",
+    "target": "CHE_ORGANIC32"
   },
   {
-    "source": "PHY_SHM5",
-    "target": "PHY_SHM6"
+    "source": "CHE_ORGANIC33",
+    "target": "CHE_ORGANIC116"
   },
   {
-    "source": "PHY_SOLID1",
-    "target": "PHY_SOLID2"
+    "source": "CHE_ORGANIC33",
+    "target": "CHE_ORGANIC153"
   },
   {
-    "source": "PHY_SOLID3",
-    "target": "PHY_ELASTICITY1"
+    "source": "CHE_ORGANIC34",
+    "target": "CHE_ORGANIC152"
   },
   {
-    "source": "PHY_SOLID3",
-    "target": "PHY_SOLID4"
+    "source": "CHE_ORGANIC34",
+    "target": "CHE_ORGANIC33"
   },
   {
-    "source": "PHY_THERMO1",
-    "target": "PHY_THERMO1c"
+    "source": "CHE_ORGANIC34",
+    "target": "CHE_ORGANIC35"
   },
   {
-    "source": "PHY_THERMO1c",
-    "target": "PHY_THERMO1b"
+    "source": "CHE_ORGANIC35",
+    "target": "CHE_ORGANIC127"
   },
   {
-    "source": "PHY_THERMO2",
-    "target": "PHY_THERMO3"
+    "source": "CHE_ORGANIC37",
+    "target": "CHE_ORGANIC122"
   },
   {
-    "source": "PHY_THERMO2b",
-    "target": "PHY_THERMO3b"
+    "source": "CHE_ORGANIC37",
+    "target": "CHE_ORGANIC149"
   },
   {
-    "source": "PHY_THERMO3",
+    "source": "CHE_ORGANIC37",
+    "target": "CHE_ORGANIC36"
+  },
+  {
+    "source": "CHE_ORGANIC38",
+    "target": "CHE_ORGANIC109"
+  },
+  {
+    "source": "CHE_ORGANIC39",
+    "target": "CHE_ORGANIC110"
+  },
+  {
+    "source": "CHE_ORGANIC4",
+    "target": "CHE_ORGANIC27"
+  },
+  {
+    "source": "CHE_ORGANIC40",
+    "target": "CHE_ORGANIC68"
+  },
+  {
+    "source": "CHE_ORGANIC41",
+    "target": "CHE_ORGANIC92"
+  },
+  {
+    "source": "CHE_ORGANIC42",
+    "target": "CHE_ORGANIC120"
+  },
+  {
+    "source": "CHE_ORGANIC42",
+    "target": "CHE_ORGANIC150"
+  },
+  {
+    "source": "CHE_ORGANIC44",
+    "target": "CHE_ORGANIC151"
+  },
+  {
+    "source": "CHE_ORGANIC45",
+    "target": "CHE_BIOMOLECULE25"
+  },
+  {
+    "source": "CHE_ORGANIC46",
+    "target": "CHE_ORGANIC72"
+  },
+  {
+    "source": "CHE_ORGANIC47",
+    "target": "CHE2_ORG_ACID0"
+  },
+  {
+    "source": "CHE_ORGANIC47",
+    "target": "CHE_ORGANIC117"
+  },
+  {
+    "source": "CHE_ORGANIC47",
+    "target": "CHE_ORGANIC48"
+  },
+  {
+    "source": "CHE_ORGANIC47",
+    "target": "CHE_ORGANIC67"
+  },
+  {
+    "source": "CHE_ORGANIC49",
+    "target": "CHE_ORGANIC102"
+  },
+  {
+    "source": "CHE_ORGANIC49",
+    "target": "CHE_ORGANIC118"
+  },
+  {
+    "source": "CHE_ORGANIC49",
+    "target": "CHE_ORGANIC119"
+  },
+  {
+    "source": "CHE_ORGANIC49",
+    "target": "CHE_ORGANIC19"
+  },
+  {
+    "source": "CHE_ORGANIC5",
+    "target": "CHE_ORGANIC44"
+  },
+  {
+    "source": "CHE_ORGANIC50",
+    "target": "CHE2_ORG_ACID0"
+  },
+  {
+    "source": "CHE_ORGANIC50",
+    "target": "CHE_ORGANIC138"
+  },
+  {
+    "source": "CHE_ORGANIC50",
+    "target": "CHE_ORGANIC51"
+  },
+  {
+    "source": "CHE_ORGANIC51",
+    "target": "CHEM_ENV25"
+  },
+  {
+    "source": "CHE_ORGANIC51",
+    "target": "CHEM_LAB1"
+  },
+  {
+    "source": "CHE_ORGANIC52",
+    "target": "CHE_ORGANIC133"
+  },
+  {
+    "source": "CHE_ORGANIC53",
+    "target": "CHE_ORGANIC56"
+  },
+  {
+    "source": "CHE_ORGANIC55",
+    "target": "CHE_ORGANIC131"
+  },
+  {
+    "source": "CHE_ORGANIC55",
+    "target": "CHE_ORGANIC146"
+  },
+  {
+    "source": "CHE_ORGANIC55",
+    "target": "CHE_ORGANIC53"
+  },
+  {
+    "source": "CHE_ORGANIC55",
+    "target": "CHE_ORGANIC54"
+  },
+  {
+    "source": "CHE_ORGANIC55",
+    "target": "CHE_ORGANIC57"
+  },
+  {
+    "source": "CHE_ORGANIC58",
+    "target": "CHE_ORGANIC59"
+  },
+  {
+    "source": "CHE_ORGANIC59",
+    "target": "CHE_ORGANIC97"
+  },
+  {
+    "source": "CHE_ORGANIC6",
+    "target": "CHE_ORGANIC84"
+  },
+  {
+    "source": "CHE_ORGANIC6",
+    "target": "CHE_ORGANIC85"
+  },
+  {
+    "source": "CHE_ORGANIC60",
+    "target": "CHE_ORGANIC140"
+  },
+  {
+    "source": "CHE_ORGANIC60",
+    "target": "CHE_ORGANIC61"
+  },
+  {
+    "source": "CHE_ORGANIC61",
+    "target": "CHE2_ORG_CARBONYL0"
+  },
+  {
+    "source": "CHE_ORGANIC62",
+    "target": "CHE_ORGANIC63"
+  },
+  {
+    "source": "CHE_ORGANIC62",
+    "target": "CHE_ORGANIC64"
+  },
+  {
+    "source": "CHE_ORGANIC65",
+    "target": "CHE_ORGANIC66"
+  },
+  {
+    "source": "CHE_ORGANIC68",
+    "target": "CHE_ORGANIC143"
+  },
+  {
+    "source": "CHE_ORGANIC68",
+    "target": "CHE_ORGANIC69"
+  },
+  {
+    "source": "CHE_ORGANIC7",
+    "target": "CHE_ORGANIC111"
+  },
+  {
+    "source": "CHE_ORGANIC7",
+    "target": "CHE_ORGANIC112"
+  },
+  {
+    "source": "CHE_ORGANIC70",
+    "target": "CHE_ORGANIC130"
+  },
+  {
+    "source": "CHE_ORGANIC70",
+    "target": "CHE_ORGANIC23"
+  },
+  {
+    "source": "CHE_ORGANIC70",
+    "target": "CHE_ORGANIC79"
+  },
+  {
+    "source": "CHE_ORGANIC72",
+    "target": "CHE_ORGANIC157"
+  },
+  {
+    "source": "CHE_ORGANIC74",
+    "target": "CHE_ORGANIC107"
+  },
+  {
+    "source": "CHE_ORGANIC76",
+    "target": "CHE_ORGANIC148"
+  },
+  {
+    "source": "CHE_ORGANIC76",
+    "target": "CHE_ORGANIC91"
+  },
+  {
+    "source": "CHE_ORGANIC78",
+    "target": "CHE_ORGANIC123"
+  },
+  {
+    "source": "CHE_ORGANIC80",
+    "target": "CHE_ORGANIC135"
+  },
+  {
+    "source": "CHE_ORGANIC81",
+    "target": "CHE_ORGANIC96"
+  },
+  {
+    "source": "CHE_ORGANIC84",
+    "target": "CHE2_ORG_HYDROCARBON0"
+  },
+  {
+    "source": "CHE_ORGANIC85",
+    "target": "CHE_ORGANIC86"
+  },
+  {
+    "source": "CHE_ORGANIC87",
+    "target": "CHE_ORGANIC137"
+  },
+  {
+    "source": "CHE_ORGANIC89",
+    "target": "CHE_ORGANIC26"
+  },
+  {
+    "source": "CHE_ORGANIC89",
+    "target": "CHE_ORGANIC88"
+  },
+  {
+    "source": "CHE_ORGANIC9",
+    "target": "CHE_ORGANIC38"
+  },
+  {
+    "source": "CHE_ORGANIC91",
+    "target": "CHE_ORGANIC31"
+  },
+  {
+    "source": "CHE_ORGANIC91",
+    "target": "CHE_ORGANIC90"
+  },
+  {
+    "source": "CHE_ORGANIC99",
+    "target": "CHE_ORGANIC132"
+  },
+  {
+    "source": "CHE_QUAL11",
+    "target": "CHE_QUAL16"
+  },
+  {
+    "source": "CHE_QUAL11",
+    "target": "CHE_QUAL21"
+  },
+  {
+    "source": "CHE_QUAL12",
+    "target": "CHE_QUAL9"
+  },
+  {
+    "source": "CHE_QUAL13",
+    "target": "CHE_QUAL16"
+  },
+  {
+    "source": "CHE_QUAL15",
+    "target": "CHE_QUAL14"
+  },
+  {
+    "source": "CHE_QUAL19",
+    "target": "CHE_QUAL13"
+  },
+  {
+    "source": "CHE_QUAL19",
+    "target": "CHE_QUAL23"
+  },
+  {
+    "source": "CHE_QUAL2",
+    "target": "CHE_QUAL19"
+  },
+  {
+    "source": "CHE_QUAL2",
+    "target": "CHE_QUAL3"
+  },
+  {
+    "source": "CHE_QUAL20",
+    "target": "CHE_QUAL10"
+  },
+  {
+    "source": "CHE_QUAL21",
+    "target": "CHE_QUAL5"
+  },
+  {
+    "source": "CHE_QUAL6",
+    "target": "CHEM_DESCRIPTIVE5"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY0",
+    "target": "CHEM_SOLUTION19"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY0",
+    "target": "CHE_STOICHIOMETRY1"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY10",
+    "target": "CHEM_ENV6"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY11",
+    "target": "CHEM_ANALYTICAL10"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY11",
+    "target": "CHEM_ANALYTICAL6"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY11",
+    "target": "CHEM_ANALYTICAL8"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY11",
+    "target": "CHEM_ANALYTICAL9"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY11",
+    "target": "CHE_ACIDBASE16"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY11",
+    "target": "CHE_STOICHIOMETRY13"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY11",
+    "target": "CHE_STOICHIOMETRY15"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY11",
+    "target": "CHE_STOICHIOMETRY21"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY12",
+    "target": "CHEM_ENV9"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY12",
+    "target": "CHEM_SOLUTION8"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY12",
+    "target": "CHEM_SOLUTION9"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY12",
+    "target": "CHE_EQUILIBRIUM14"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY12",
+    "target": "CHE_STOICHIOMETRY14"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY12",
+    "target": "CHE_STOICHIOMETRY17"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY12",
+    "target": "CHE_STOICHIOMETRY18"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY12",
+    "target": "CHE_STOICHIOMETRY2"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY12",
+    "target": "CHE_STOICHIOMETRY20"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY12",
+    "target": "CHE_STOICHIOMETRY28"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY13",
+    "target": "CHE_ACIDBASE20"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY14",
+    "target": "CHEM_DBLOCK20"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY14",
+    "target": "CHE_GASLAWS11"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY14",
+    "target": "CHE_GASLAWS12"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY14",
+    "target": "CHE_STOICH2"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY14",
+    "target": "CHE_STOICHIOMETRY23"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY14",
+    "target": "CHE_STOICHIOMETRY34"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY17",
+    "target": "CHEM_SOLUTION18"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY17",
+    "target": "CHE_STOICHIOMETRY29"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY17",
+    "target": "CHE_STOICHIOMETRY9"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY20",
+    "target": "CHE_STOICHIOMETRY19"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY20",
+    "target": "CHE_STOICHIOMETRY35"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY21",
+    "target": "CHEM_ANALYTICAL16"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY22",
+    "target": "CHEM_ENV29"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY22",
+    "target": "CHE_STOICH3"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY23",
+    "target": "CHEM_ANALYTICAL15"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY23",
+    "target": "CHE_STOICHIOMETRY24"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY26",
+    "target": "CHE_STOICHIOMETRY27"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY26",
+    "target": "CHE_STOICHIOMETRY30"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY28",
+    "target": "CHE_STOICHIOMETRY25"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY28",
+    "target": "CHE_STOICHIOMETRY26"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY28",
+    "target": "CHE_STOICHIOMETRY33"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY28",
+    "target": "CHE_STOICHIOMETRY5"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY3",
+    "target": "CHE_STOICHIOMETRY4"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY31",
+    "target": "CHE2_MOLE4"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY31",
+    "target": "CHE_ACIDBASE19"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY31",
+    "target": "CHE_STOICHIOMETRY32"
+  },
+  {
+    "source": "CHE_STOICHIOMETRY6",
+    "target": "CHE_STOICHIOMETRY7"
+  },
+  {
+    "source": "CHE_THERMOCHEM1",
+    "target": "CHE_THERMOCHEM16"
+  },
+  {
+    "source": "CHE_THERMOCHEM1",
+    "target": "CHE_THERMOCHEM5"
+  },
+  {
+    "source": "CHE_THERMOCHEM10",
+    "target": "CHE_THERMOCHEM24"
+  },
+  {
+    "source": "CHE_THERMOCHEM11",
     "target": "CHE_THERMOCHEM1"
   },
   {
-    "source": "PHY_THERMO3",
-    "target": "PHY_THERMO3b"
+    "source": "CHE_THERMOCHEM11",
+    "target": "CHE_THERMOCHEM12"
   },
   {
-    "source": "PHY_VEC1",
-    "target": "PHY_VEC2"
+    "source": "CHE_THERMOCHEM11",
+    "target": "CHE_THERMOCHEM15"
   },
   {
-    "source": "PHY_VEC1",
-    "target": "PHY_WORK1"
+    "source": "CHE_THERMOCHEM11",
+    "target": "CHE_THERMOCHEM19"
   },
   {
-    "source": "PHY_VEC1b",
-    "target": "PHY_NEWTON1"
+    "source": "CHE_THERMOCHEM11",
+    "target": "CHE_THERMOCHEM23"
   },
   {
-    "source": "PHY_VEC1b",
-    "target": "PHY_ROTATION1"
+    "source": "CHE_THERMOCHEM11",
+    "target": "CHE_THERMOCHEM8"
   },
   {
-    "source": "PHY_VEC1b",
-    "target": "PHY_VEC1c"
+    "source": "CHE_THERMOCHEM12",
+    "target": "CHE_THERMOCHEM10"
   },
   {
-    "source": "PHY_VEC1c",
-    "target": "PHY_VEC2b"
+    "source": "CHE_THERMOCHEM12",
+    "target": "CHE_THERMOCHEM9"
   },
   {
-    "source": "PHY_VEC1d",
-    "target": "PHY_MAGNETISM2"
+    "source": "CHE_THERMOCHEM13",
+    "target": "CHE_THERMOCHEM16"
   },
   {
-    "source": "PHY_VEC1d",
-    "target": "PHY_ROT3"
+    "source": "CHE_THERMOCHEM13",
+    "target": "CHE_THERMOCHEM25"
   },
   {
-    "source": "PHY_VEC1d",
-    "target": "PHY_VEC1"
+    "source": "CHE_THERMOCHEM13",
+    "target": "CHE_THERMOCHEM4"
   },
   {
-    "source": "PHY_VEC1d",
-    "target": "PHY_VEC1b"
+    "source": "CHE_THERMOCHEM14",
+    "target": "CHE_THERMOCHEM9"
   },
   {
-    "source": "PHY_VEC3",
-    "target": "PHY_VEC4"
+    "source": "CHE_THERMOCHEM15",
+    "target": "CHE_THERMOCHEM17"
   },
   {
-    "source": "PHY_VEC3b",
-    "target": "PHY_VEC3"
+    "source": "CHE_THERMOCHEM17",
+    "target": "CHE_THERMOCHEM18"
   },
   {
-    "source": "PHY_VEC3b",
-    "target": "PHY_VEC4b"
+    "source": "CHE_THERMOCHEM19",
+    "target": "CHE_THERMOCHEM21"
   },
   {
-    "source": "PHY_WAVE1",
-    "target": "PHY_OPTICS1b"
+    "source": "CHE_THERMOCHEM2",
+    "target": "CHEM_SOLID11"
   },
   {
-    "source": "PHY_WAVE1",
-    "target": "PHY_WAVE1b"
+    "source": "CHE_THERMOCHEM21",
+    "target": "CHE_THERMOCHEM22"
   },
   {
-    "source": "PHY_WAVE1",
-    "target": "PHY_WAVE2"
+    "source": "CHE_THERMOCHEM26",
+    "target": "CHE_THERMOCHEM11"
   },
   {
-    "source": "PHY_WORK2",
-    "target": "PHY_WORK3"
+    "source": "CHE_THERMOCHEM26",
+    "target": "CHE_THERMOCHEM20"
   },
   {
-    "source": "PHY_WORK_ENERGY1",
-    "target": "PHY_ROT4"
+    "source": "CHE_THERMOCHEM4",
+    "target": "CHE_THERMOCHEM3"
   },
   {
-    "source": "PHY_WORK_ENERGY1",
-    "target": "PHY_VEC2"
+    "source": "CHE_THERMOCHEM6",
+    "target": "CHE_EQUILIBRIUM17"
   },
   {
-    "source": "PHY_WORK_ENERGY1",
-    "target": "PHY_WORK_ENERGY2"
+    "source": "CHE_THERMOCHEM8",
+    "target": "CHE_THERMOCHEM7"
   },
   {
-    "source": "PHY_WORK_ENERGY2",
-    "target": "PHY_AT1"
+    "source": "MAT1_DERIVATIVE0",
+    "target": "MAT1_DERIVATIVE1"
   },
   {
-    "source": "PHY_WORK_ENERGY2",
-    "target": "PHY_OSC1"
+    "source": "MAT1_DERIVATIVE0",
+    "target": "MAT1_DERIVATIVE2"
   },
   {
-    "source": "PHY_WORK_ENERGY2",
-    "target": "PHY_ROT1"
+    "source": "MAT1_DERIVATIVE1",
+    "target": "MAT1_DERIVATIVE11"
   },
   {
-    "source": "PHY_WORK_ENERGY2",
-    "target": "PHY_SHM4"
+    "source": "MAT1_DERIVATIVE10",
+    "target": "MAT1_DERIVATIVE15"
   },
   {
-    "source": "PHY_WORK_ENERGY2",
-    "target": "PHY_THERMO2"
+    "source": "MAT1_DERIVATIVE11",
+    "target": "MAT1_DERIVATIVE6"
   },
   {
-    "source": "PHY_WORK_ENERGY2",
-    "target": "PHY_WORK_ENERGY3"
+    "source": "MAT1_DERIVATIVE11",
+    "target": "MAT1_DERIVATIVE8"
   },
   {
-    "source": "PHY_XRAY1",
-    "target": "PHY_XRAY2"
+    "source": "MAT1_DERIVATIVE13",
+    "target": "MAT1_DERIVATIVE14"
+  },
+  {
+    "source": "MAT1_DERIVATIVE2",
+    "target": "MAT1_DERIVATIVE12"
+  },
+  {
+    "source": "MAT1_DERIVATIVE2",
+    "target": "MAT1_DERIVATIVE13"
+  },
+  {
+    "source": "MAT1_DERIVATIVE2",
+    "target": "MAT1_DERIVATIVE3"
+  },
+  {
+    "source": "MAT1_DERIVATIVE2",
+    "target": "MAT1_DERIVATIVE9"
+  },
+  {
+    "source": "MAT1_DERIVATIVE3",
+    "target": "MAT1_DERIVATIVE14"
+  },
+  {
+    "source": "MAT1_DERIVATIVE3",
+    "target": "MAT1_DERIVATIVE16"
+  },
+  {
+    "source": "MAT1_DERIVATIVE3",
+    "target": "MAT1_DERIVATIVE4"
+  },
+  {
+    "source": "MAT1_DERIVATIVE3",
+    "target": "MAT1_DERIVATIVE6"
+  },
+  {
+    "source": "MAT1_DERIVATIVE3",
+    "target": "MAT1_DERIVATIVE7"
+  },
+  {
+    "source": "MAT1_DERIVATIVE3",
+    "target": "MAT1_DERIVATIVE8"
+  },
+  {
+    "source": "MAT1_DERIVATIVE3",
+    "target": "MAT1_DERIV_APPLICATION0"
+  },
+  {
+    "source": "MAT1_DERIVATIVE3",
+    "target": "MAT1_DERIV_APPLICATION9"
+  },
+  {
+    "source": "MAT1_DERIVATIVE4",
+    "target": "MAT1_DERIVATIVE5"
+  },
+  {
+    "source": "MAT1_DERIVATIVE9",
+    "target": "MAT1_DERIVATIVE10"
+  },
+  {
+    "source": "MAT1_DERIVATIVE9",
+    "target": "MAT1_DERIV_APPLICATION12"
+  },
+  {
+    "source": "MAT1_DERIVATIVE9",
+    "target": "MAT1_DERIV_APPLICATION13"
+  },
+  {
+    "source": "MAT1_DERIVATIVE9",
+    "target": "MAT1_DERIV_APPLICATION5"
+  },
+  {
+    "source": "MAT1_DERIV_APPLICATION0",
+    "target": "MAT1_DERIV_APPLICATION1"
+  },
+  {
+    "source": "MAT1_DERIV_APPLICATION0",
+    "target": "MAT1_DERIV_APPLICATION2"
+  },
+  {
+    "source": "MAT1_DERIV_APPLICATION0",
+    "target": "MAT1_DERIV_APPLICATION3"
+  },
+  {
+    "source": "MAT1_DERIV_APPLICATION0",
+    "target": "MAT1_DERIV_APPLICATION4"
+  },
+  {
+    "source": "MAT1_DERIV_APPLICATION5",
+    "target": "MAT1_DERIV_APPLICATION6"
+  },
+  {
+    "source": "MAT1_DERIV_APPLICATION5",
+    "target": "MAT1_DERIV_APPLICATION7"
+  },
+  {
+    "source": "MAT1_DERIV_APPLICATION6",
+    "target": "MAT1_DERIV_APPLICATION11"
+  },
+  {
+    "source": "MAT1_DERIV_APPLICATION6",
+    "target": "MAT1_DERIV_APPLICATION8"
+  },
+  {
+    "source": "MAT1_DERIV_APPLICATION9",
+    "target": "MAT1_DERIV_APPLICATION10"
+  },
+  {
+    "source": "MAT1_INTEGRAL0",
+    "target": "MAT1_INTEGRAL1"
+  },
+  {
+    "source": "MAT1_INTEGRAL0",
+    "target": "MAT1_INTEGRAL2"
+  },
+  {
+    "source": "MAT1_INTEGRAL0",
+    "target": "MAT1_INTEGRAL4"
+  },
+  {
+    "source": "MAT1_INTEGRAL0",
+    "target": "MAT1_INTEGRAL_DEF0"
+  },
+  {
+    "source": "MAT1_INTEGRAL1",
+    "target": "MAT1_INTEGRAL11"
+  },
+  {
+    "source": "MAT1_INTEGRAL1",
+    "target": "MAT1_INTEGRAL12"
+  },
+  {
+    "source": "MAT1_INTEGRAL1",
+    "target": "MAT1_INTEGRAL13"
+  },
+  {
+    "source": "MAT1_INTEGRAL1",
+    "target": "MAT1_INTEGRAL5"
+  },
+  {
+    "source": "MAT1_INTEGRAL1",
+    "target": "MAT1_INTEGRAL7"
+  },
+  {
+    "source": "MAT1_INTEGRAL1",
+    "target": "MAT1_INTEGRAL8"
+  },
+  {
+    "source": "MAT1_INTEGRAL1",
+    "target": "MAT1_INTEGRAL_DEF1"
+  },
+  {
+    "source": "MAT1_INTEGRAL2",
+    "target": "MAT1_INTEGRAL10"
+  },
+  {
+    "source": "MAT1_INTEGRAL2",
+    "target": "MAT1_INTEGRAL3"
+  },
+  {
+    "source": "MAT1_INTEGRAL2",
+    "target": "MAT1_INTEGRAL9"
+  },
+  {
+    "source": "MAT1_INTEGRAL4",
+    "target": "MAT1_INTEGRAL6"
+  },
+  {
+    "source": "MAT1_INTEGRAL5",
+    "target": "MAT1_INTEGRAL6"
+  },
+  {
+    "source": "MAT1_INTEGRAL_APP0",
+    "target": "MAT1_INTEGRAL_APP1"
+  },
+  {
+    "source": "MAT1_INTEGRAL_APP0",
+    "target": "MAT1_INTEGRAL_APP4"
+  },
+  {
+    "source": "MAT1_INTEGRAL_APP1",
+    "target": "MAT1_INTEGRAL_APP2"
+  },
+  {
+    "source": "MAT1_INTEGRAL_APP1",
+    "target": "MAT1_INTEGRAL_APP3"
+  },
+  {
+    "source": "MAT1_INTEGRAL_APP2",
+    "target": "MAT1_INTEGRAL_APP6"
+  },
+  {
+    "source": "MAT1_INTEGRAL_DEF0",
+    "target": "MAT1_INTEGRAL_APP0"
+  },
+  {
+    "source": "MAT1_INTEGRAL_DEF0",
+    "target": "MAT1_INTEGRAL_APP5"
+  },
+  {
+    "source": "MAT1_INTEGRAL_DEF0",
+    "target": "MAT1_INTEGRAL_DEF1"
+  },
+  {
+    "source": "MAT1_INTEGRAL_DEF0",
+    "target": "MAT1_INTEGRAL_DEF2"
+  },
+  {
+    "source": "MAT1_INTEGRAL_DEF0",
+    "target": "MAT1_INTEGRAL_DEF3"
+  },
+  {
+    "source": "MAT1_INTEGRAL_DEF0",
+    "target": "MAT1_INTEGRAL_DEF4"
+  },
+  {
+    "source": "MAT1_INTEGRAL_DEF0",
+    "target": "MAT1_INTEGRAL_DEF5"
+  },
+  {
+    "source": "MAT1_INTEGRAL_DEF0",
+    "target": "MAT1_INTEGRAL_DEF6"
+  },
+  {
+    "source": "MAT1_INTEGRAL_DEF0",
+    "target": "MAT1_INTEGRAL_DEF7"
+  },
+  {
+    "source": "MAT1_LIMIT0",
+    "target": "MAT1_LIMIT11"
+  },
+  {
+    "source": "MAT1_LIMIT0",
+    "target": "MAT1_LIMIT2"
+  },
+  {
+    "source": "MAT1_LIMIT0",
+    "target": "MAT1_LIMIT5"
+  },
+  {
+    "source": "MAT1_LIMIT1",
+    "target": "MAT1_LIMIT3"
+  },
+  {
+    "source": "MAT1_LIMIT1",
+    "target": "MAT1_LIMIT4"
+  },
+  {
+    "source": "MAT1_LIMIT1",
+    "target": "MAT1_LIMIT9"
+  },
+  {
+    "source": "MAT1_LIMIT12",
+    "target": "MAT1_LIMIT13"
+  },
+  {
+    "source": "MAT1_LIMIT2",
+    "target": "MAT1_LIMIT10"
+  },
+  {
+    "source": "MAT1_LIMIT2",
+    "target": "MAT1_LIMIT6"
+  },
+  {
+    "source": "MAT1_LIMIT2",
+    "target": "MAT1_LIMIT7"
+  },
+  {
+    "source": "MAT1_LIMIT3",
+    "target": "MAT1_LIMIT10"
+  },
+  {
+    "source": "MAT1_LIMIT4",
+    "target": "MAT1_LIMIT8"
+  },
+  {
+    "source": "MAT1_LIMIT5",
+    "target": "MAT1_LIMIT12"
+  },
+  {
+    "source": "MAT2_BINOMIAL0",
+    "target": "MAT2_BINOMIAL1"
+  },
+  {
+    "source": "MAT2_BINOMIAL0",
+    "target": "MAT2_BINOMIAL3"
+  },
+  {
+    "source": "MAT2_BINOMIAL0",
+    "target": "MAT2_BINOMIAL4"
+  },
+  {
+    "source": "MAT2_BINOMIAL0",
+    "target": "MAT2_BINOMIAL7"
+  },
+  {
+    "source": "MAT2_BINOMIAL1",
+    "target": "MAT2_BINOMIAL2"
+  },
+  {
+    "source": "MAT2_BINOMIAL1",
+    "target": "MAT2_BINOMIAL5"
+  },
+  {
+    "source": "MAT2_BINOMIAL1",
+    "target": "MAT2_BINOMIAL6"
+  },
+  {
+    "source": "MAT2_BINOMIAL10",
+    "target": "MAT2_BINOMIAL11"
+  },
+  {
+    "source": "MAT2_BINOMIAL10",
+    "target": "MAT2_BINOMIAL12"
+  },
+  {
+    "source": "MAT2_BINOMIAL7",
+    "target": "MAT2_BINOMIAL8"
+  },
+  {
+    "source": "MAT2_BINOMIAL8",
+    "target": "MAT2_BINOMIAL10"
+  },
+  {
+    "source": "MAT2_BINOMIAL8",
+    "target": "MAT2_BINOMIAL9"
+  },
+  {
+    "source": "MAT2_COMPLEX_ALGEBRA0",
+    "target": "MAT2_COMPLEX_ALGEBRA1"
+  },
+  {
+    "source": "MAT2_COMPLEX_ALGEBRA0",
+    "target": "MAT2_COMPLEX_ALGEBRA2"
+  },
+  {
+    "source": "MAT2_COMPLEX_ALGEBRA0",
+    "target": "MAT2_COMPLEX_POLAR0"
+  },
+  {
+    "source": "MAT2_COMPLEX_ALGEBRA0",
+    "target": "MAT2_COMPLEX_ROOTS0"
+  },
+  {
+    "source": "MAT2_COMPLEX_ALGEBRA2",
+    "target": "MAT2_COMPLEX_ALGEBRA3"
+  },
+  {
+    "source": "MAT2_COMPLEX_ALGEBRA2",
+    "target": "MAT2_COMPLEX_ALGEBRA4"
+  },
+  {
+    "source": "MAT2_COMPLEX_ALGEBRA2",
+    "target": "MAT2_COMPLEX_ALGEBRA5"
+  },
+  {
+    "source": "MAT2_COMPLEX_ALGEBRA2",
+    "target": "MAT2_COMPLEX_ROOTS4"
+  },
+  {
+    "source": "MAT2_COMPLEX_ALGEBRA4",
+    "target": "MAT2_COMPLEX_ALGEBRA6"
+  },
+  {
+    "source": "MAT2_COMPLEX_POLAR0",
+    "target": "MAT2_COMPLEX_ALGEBRA7"
+  },
+  {
+    "source": "MAT2_COMPLEX_POLAR0",
+    "target": "MAT2_COMPLEX_POLAR1"
+  },
+  {
+    "source": "MAT2_COMPLEX_POLAR0",
+    "target": "MAT2_COMPLEX_POLAR4"
+  },
+  {
+    "source": "MAT2_COMPLEX_POLAR1",
+    "target": "MAT2_COMPLEX_POLAR2"
+  },
+  {
+    "source": "MAT2_COMPLEX_POLAR2",
+    "target": "MAT2_COMPLEX_POLAR3"
+  },
+  {
+    "source": "MAT2_COMPLEX_POLAR2",
+    "target": "MAT2_COMPLEX_POLAR5"
+  },
+  {
+    "source": "MAT2_COMPLEX_POLAR3",
+    "target": "MAT2_COMPLEX_ROOTS2"
+  },
+  {
+    "source": "MAT2_COMPLEX_ROOTS0",
+    "target": "MAT2_COMPLEX_ROOTS1"
+  },
+  {
+    "source": "MAT2_COMPLEX_ROOTS0",
+    "target": "MAT2_COMPLEX_ROOTS4"
+  },
+  {
+    "source": "MAT2_COMPLEX_ROOTS2",
+    "target": "MAT2_COMPLEX_ROOTS3"
+  },
+  {
+    "source": "MAT2_DISPERSION0",
+    "target": "MAT2_DISPERSION1"
+  },
+  {
+    "source": "MAT2_DISPERSION1",
+    "target": "MAT2_DISPERSION2"
+  },
+  {
+    "source": "MAT2_DISPERSION1",
+    "target": "MAT2_DISPERSION3"
+  },
+  {
+    "source": "MAT2_ELLIPSE0",
+    "target": "MAT2_ELLIPSE1"
+  },
+  {
+    "source": "MAT2_ELLIPSE0",
+    "target": "MAT2_ELLIPSE2"
+  },
+  {
+    "source": "MAT2_ELLIPSE0",
+    "target": "MAT2_ELLIPSE3"
+  },
+  {
+    "source": "MAT2_ELLIPSE0",
+    "target": "MAT2_ELLIPSE6"
+  },
+  {
+    "source": "MAT2_ELLIPSE0",
+    "target": "MAT2_HYPERBOLA0"
+  },
+  {
+    "source": "MAT2_ELLIPSE1",
+    "target": "MAT2_ELLIPSE4"
+  },
+  {
+    "source": "MAT2_ELLIPSE1",
+    "target": "MAT2_HYPERBOLA3"
+  },
+  {
+    "source": "MAT2_ELLIPSE2",
+    "target": "MAT2_ELLIPSE5"
+  },
+  {
+    "source": "MAT2_EXPONENTIAL_EQ0",
+    "target": "MAT2_EXPONENTIAL_EQ1"
+  },
+  {
+    "source": "MAT2_EXPONENTIAL_EQ0",
+    "target": "MAT2_EXPONENTIAL_EQ2"
+  },
+  {
+    "source": "MAT2_EXPONENTIAL_EQ0",
+    "target": "MAT2_EXPONENTIAL_EQ4"
+  },
+  {
+    "source": "MAT2_EXPONENTIAL_EQ1",
+    "target": "CHE_ACIDBASE23"
+  },
+  {
+    "source": "MAT2_EXPONENTIAL_EQ2",
+    "target": "CHEM_KIN4"
+  },
+  {
+    "source": "MAT2_EXPONENTIAL_EQ2",
+    "target": "CHEM_KIN5"
+  },
+  {
+    "source": "MAT2_EXPONENTIAL_EQ2",
+    "target": "MAT2_EXPONENTIAL_EQ3"
+  },
+  {
+    "source": "MAT2_EXPONENTIAL_EQ3",
+    "target": "CHE_EQUILIBRIUM18"
+  },
+  {
+    "source": "MAT2_HYPERBOLA0",
+    "target": "MAT2_HYPERBOLA1"
+  },
+  {
+    "source": "MAT2_HYPERBOLA0",
+    "target": "MAT2_HYPERBOLA2"
+  },
+  {
+    "source": "MAT2_HYPERBOLA1",
+    "target": "MAT2_HYPERBOLA3"
+  },
+  {
+    "source": "MAT2_INEQUALITY0",
+    "target": "MAT2_INEQUALITY1"
+  },
+  {
+    "source": "MAT2_INEQUALITY2",
+    "target": "MAT2_INEQUALITY3"
+  },
+  {
+    "source": "MAT2_INEQUALITY2",
+    "target": "MAT2_INEQUALITY4"
+  },
+  {
+    "source": "MAT2_INEQUALITY2",
+    "target": "MAT2_INEQUALITY5"
+  },
+  {
+    "source": "MAT2_INEQUALITY2",
+    "target": "MAT2_LINEAR_PROG1"
+  },
+  {
+    "source": "MAT2_INEQUALITY2",
+    "target": "MAT2_POLY_ROOTS7"
+  },
+  {
+    "source": "MAT2_INVERSE_TRIG0",
+    "target": "MAT2_INVERSE_TRIG1"
+  },
+  {
+    "source": "MAT2_INVERSE_TRIG0",
+    "target": "MAT2_INVERSE_TRIG2"
+  },
+  {
+    "source": "MAT2_INVERSE_TRIG1",
+    "target": "MAT2_INVERSE_TRIG3"
+  },
+  {
+    "source": "MAT2_INVERSE_TRIG4",
+    "target": "MAT2_INVERSE_TRIG5"
+  },
+  {
+    "source": "MAT2_INVERSE_TRIG4",
+    "target": "MAT2_INVERSE_TRIG6"
+  },
+  {
+    "source": "MAT2_INVERSE_TRIG4",
+    "target": "MAT2_INVERSE_TRIG7"
+  },
+  {
+    "source": "MAT2_INVERSE_TRIG4",
+    "target": "MAT_INVTRIG5"
+  },
+  {
+    "source": "MAT2_INVERSE_TRIG5",
+    "target": "MAT2_INVERSE_TRIG0"
+  },
+  {
+    "source": "MAT2_INVERSE_TRIG6",
+    "target": "MAT2_INVERSE_TRIG8"
+  },
+  {
+    "source": "MAT2_LINEAR_PROG0",
+    "target": "MAT2_LINEAR_PROG1"
+  },
+  {
+    "source": "MAT2_LINEAR_PROG1",
+    "target": "MAT2_LINEAR_PROG2"
+  },
+  {
+    "source": "MAT2_PARABOLA0",
+    "target": "MAT2_ELLIPSE0"
+  },
+  {
+    "source": "MAT2_PARABOLA0",
+    "target": "MAT2_PARABOLA1"
+  },
+  {
+    "source": "MAT2_PARABOLA0",
+    "target": "MAT2_PARABOLA2"
+  },
+  {
+    "source": "MAT2_PARABOLA0",
+    "target": "MAT2_PARABOLA3"
+  },
+  {
+    "source": "MAT2_PARABOLA0",
+    "target": "MAT2_PARABOLA4"
+  },
+  {
+    "source": "MAT2_PARABOLA0",
+    "target": "MAT2_PARABOLA7"
+  },
+  {
+    "source": "MAT2_PARABOLA1",
+    "target": "MAT2_HYPERBOLA3"
+  },
+  {
+    "source": "MAT2_PARABOLA1",
+    "target": "MAT2_PARABOLA5"
+  },
+  {
+    "source": "MAT2_PARABOLA1",
+    "target": "MAT2_PARABOLA6"
+  },
+  {
+    "source": "MAT2_PLANE_MOTION0",
+    "target": "MAT2_PLANE_MOTION1"
+  },
+  {
+    "source": "MAT2_PLANE_MOTION0",
+    "target": "MAT2_PROJECTILE0"
+  },
+  {
+    "source": "MAT2_PLANE_MOTION1",
+    "target": "MAT2_PLANE_MOTION10"
+  },
+  {
+    "source": "MAT2_PLANE_MOTION1",
+    "target": "MAT2_PLANE_MOTION2"
+  },
+  {
+    "source": "MAT2_PLANE_MOTION1",
+    "target": "MAT2_PLANE_MOTION3"
+  },
+  {
+    "source": "MAT2_PLANE_MOTION1",
+    "target": "MAT2_PLANE_MOTION5"
+  },
+  {
+    "source": "MAT2_PLANE_MOTION1",
+    "target": "MAT2_PLANE_MOTION6"
+  },
+  {
+    "source": "MAT2_PLANE_MOTION1",
+    "target": "MAT2_PLANE_MOTION9"
+  },
+  {
+    "source": "MAT2_PLANE_MOTION3",
+    "target": "MAT2_PLANE_MOTION4"
+  },
+  {
+    "source": "MAT2_PLANE_MOTION3",
+    "target": "MAT2_PROJECTILE1"
+  },
+  {
+    "source": "MAT2_PLANE_MOTION6",
+    "target": "MAT2_PLANE_MOTION11"
+  },
+  {
+    "source": "MAT2_PLANE_MOTION6",
+    "target": "MAT2_PLANE_MOTION7"
+  },
+  {
+    "source": "MAT2_PLANE_MOTION6",
+    "target": "MAT2_PLANE_MOTION8"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL0",
+    "target": "MAT2_POLYNOMIAL1"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL0",
+    "target": "MAT2_POLYNOMIAL2"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL0",
+    "target": "MAT2_POLY_ROOTS0"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL0",
+    "target": "MAT2_POLY_ROOTS3"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL0",
+    "target": "MAT2_POLY_ROOTS8"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL1",
+    "target": "MAT2_POLYNOMIAL3"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL1",
+    "target": "MAT2_POLYNOMIAL5"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL1",
+    "target": "MAT2_POLY_ROOTS4"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL1",
+    "target": "MAT2_POLY_ROOTS5"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL1",
+    "target": "MAT2_POLY_ROOTS7"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL2",
+    "target": "MAT2_POLYNOMIAL4"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL2",
+    "target": "MAT2_POLYNOMIAL5"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL2",
+    "target": "MAT2_POLY_ROOTS2"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL6",
+    "target": "CHE_ATOMIC29"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL6",
+    "target": "MAT2_POLYNOMIAL7"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL6",
+    "target": "MAT2_POLYNOMIAL8"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL7",
+    "target": "CHE_GASLAWS5"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL8",
+    "target": "CHE_EQUILIBRIUM6"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL9",
+    "target": "MAT2_POLYNOMIAL10"
+  },
+  {
+    "source": "MAT2_POLYNOMIAL9",
+    "target": "MAT2_POLY_ROOTS4"
+  },
+  {
+    "source": "MAT2_POLY_ROOTS0",
+    "target": "MAT2_POLY_ROOTS1"
+  },
+  {
+    "source": "MAT2_POLY_ROOTS1",
+    "target": "MAT2_POLY_ROOTS6"
+  },
+  {
+    "source": "MAT2_PROBABILITY0",
+    "target": "MAT2_PROBABILITY1"
+  },
+  {
+    "source": "MAT2_PROBABILITY0",
+    "target": "MAT2_PROBABILITY6"
+  },
+  {
+    "source": "MAT2_PROBABILITY1",
+    "target": "MAT2_PROBABILITY11"
+  },
+  {
+    "source": "MAT2_PROBABILITY1",
+    "target": "MAT2_PROBABILITY2"
+  },
+  {
+    "source": "MAT2_PROBABILITY1",
+    "target": "MAT2_PROBABILITY4"
+  },
+  {
+    "source": "MAT2_PROBABILITY1",
+    "target": "MAT2_PROBABILITY5"
+  },
+  {
+    "source": "MAT2_PROBABILITY2",
+    "target": "MAT2_PROBABILITY3"
+  },
+  {
+    "source": "MAT2_PROBABILITY3",
+    "target": "MAT2_PROBABILITY9"
+  },
+  {
+    "source": "MAT2_PROBABILITY6",
+    "target": "MAT2_PROBABILITY7"
+  },
+  {
+    "source": "MAT2_PROBABILITY7",
+    "target": "MAT2_PROBABILITY8"
+  },
+  {
+    "source": "MAT2_PROBABILITY8",
+    "target": "MAT2_PROBABILITY9"
+  },
+  {
+    "source": "MAT2_PROBABILITY9",
+    "target": "MAT2_PROBABILITY10"
+  },
+  {
+    "source": "MAT2_PROJECTILE0",
+    "target": "MAT2_PROJECTILE1"
+  },
+  {
+    "source": "MAT2_PROJECTILE0",
+    "target": "MAT2_PROJECTILE4"
+  },
+  {
+    "source": "MAT2_PROJECTILE1",
+    "target": "MAT2_PROJECTILE2"
+  },
+  {
+    "source": "MAT2_PROJECTILE1",
+    "target": "MAT2_PROJECTILE3"
+  },
+  {
+    "source": "MAT2_PROJECTILE1",
+    "target": "MAT2_PROJECTILE5"
+  },
+  {
+    "source": "MAT2_PROJECTILE1",
+    "target": "MAT2_PROJECTILE7"
+  },
+  {
+    "source": "MAT2_PROJECTILE3",
+    "target": "MAT2_PROJECTILE6"
+  },
+  {
+    "source": "MAT2_REAL_NUMBERS0",
+    "target": "MAT2_INEQUALITY0"
+  },
+  {
+    "source": "MAT2_REAL_NUMBERS0",
+    "target": "MAT2_REAL_NUMBERS2"
+  },
+  {
+    "source": "MAT2_REAL_NUMBERS0",
+    "target": "MAT2_REAL_NUMBERS3"
+  },
+  {
+    "source": "MAT2_REAL_NUMBERS0",
+    "target": "MAT2_REAL_NUMBERS4"
+  },
+  {
+    "source": "MAT2_REAL_NUMBERS1",
+    "target": "MAT2_INEQUALITY2"
+  },
+  {
+    "source": "MAT2_REAL_NUMBERS1",
+    "target": "MAT2_REAL_NUMBERS2"
+  },
+  {
+    "source": "MAT2_STATICS_FORCE0",
+    "target": "MAT2_STATICS_FORCE1"
+  },
+  {
+    "source": "MAT2_STATICS_FORCE0",
+    "target": "MAT2_STATICS_FORCE4"
+  },
+  {
+    "source": "MAT2_STATICS_FORCE0",
+    "target": "MAT2_STATICS_FORCE5"
+  },
+  {
+    "source": "MAT2_STATICS_FORCE1",
+    "target": "MAT2_STATICS_FORCE2"
+  },
+  {
+    "source": "MAT2_STATICS_FORCE1",
+    "target": "MAT2_STATICS_FORCE3"
+  },
+  {
+    "source": "MAT2_STATICS_FORCE2",
+    "target": "MAT2_STATICS_FORCE10"
+  },
+  {
+    "source": "MAT2_STATICS_FORCE4",
+    "target": "MAT2_STATICS_FORCE7"
+  },
+  {
+    "source": "MAT2_STATICS_FORCE4",
+    "target": "MAT2_STATICS_FORCE9"
+  },
+  {
+    "source": "MAT2_STATICS_FORCE5",
+    "target": "MAT2_STATICS_FORCE6"
+  },
+  {
+    "source": "MAT2_STATICS_FORCE6",
+    "target": "MAT2_STATICS_FORCE8"
+  },
+  {
+    "source": "MAT2_STATICS_FORCE9",
+    "target": "MAT2_STATICS_FRICTION7"
+  },
+  {
+    "source": "MAT2_STATICS_FRICTION0",
+    "target": "MAT2_STATICS_FRICTION1"
+  },
+  {
+    "source": "MAT2_STATICS_FRICTION0",
+    "target": "MAT2_STATICS_FRICTION4"
+  },
+  {
+    "source": "MAT2_STATICS_FRICTION0",
+    "target": "MAT2_STATICS_FRICTION9"
+  },
+  {
+    "source": "MAT2_STATICS_FRICTION1",
+    "target": "MAT2_STATICS_FRICTION2"
+  },
+  {
+    "source": "MAT2_STATICS_FRICTION1",
+    "target": "MAT2_STATICS_FRICTION3"
+  },
+  {
+    "source": "MAT2_STATICS_FRICTION3",
+    "target": "MAT2_STATICS_FRICTION5"
+  },
+  {
+    "source": "MAT2_STATICS_FRICTION4",
+    "target": "MAT2_STATICS_FRICTION5"
+  },
+  {
+    "source": "MAT2_STATICS_FRICTION6",
+    "target": "MAT2_STATICS_FORCE9"
+  },
+  {
+    "source": "MAT2_STATICS_FRICTION7",
+    "target": "MAT2_STATICS_FRICTION8"
+  },
+  {
+    "source": "MAT2_TRIG_EQUATION0",
+    "target": "MAT2_INVERSE_TRIG0"
+  },
+  {
+    "source": "MAT2_TRIG_EQUATION0",
+    "target": "MAT2_TRIG_EQUATION1"
+  },
+  {
+    "source": "MAT2_TRIG_EQUATION0",
+    "target": "MAT2_TRIG_EQUATION2"
+  },
+  {
+    "source": "MAT2_TRIG_EQUATION0",
+    "target": "MAT2_TRIG_EQUATION5"
+  },
+  {
+    "source": "MAT2_TRIG_EQUATION1",
+    "target": "MAT2_TRIG_EQUATION4"
+  },
+  {
+    "source": "MAT2_TRIG_EQUATION2",
+    "target": "MAT2_TRIG_EQUATION3"
+  },
+  {
+    "source": "MAT2_TRIG_EQUATION5",
+    "target": "MAT2_TRIG_EQUATION10"
+  },
+  {
+    "source": "MAT2_TRIG_EQUATION5",
+    "target": "MAT2_TRIG_EQUATION6"
+  },
+  {
+    "source": "MAT2_TRIG_EQUATION5",
+    "target": "MAT2_TRIG_EQUATION7"
+  },
+  {
+    "source": "MAT2_TRIG_EQUATION5",
+    "target": "MAT2_TRIG_EQUATION8"
+  },
+  {
+    "source": "MAT2_TRIG_EQUATION5",
+    "target": "MAT2_TRIG_EQUATION9"
+  },
+  {
+    "source": "MATH_MECH10",
+    "target": "MATH_MECH11"
+  },
+  {
+    "source": "MATH_MECH10",
+    "target": "MATH_MECH13"
+  },
+  {
+    "source": "MATH_MECH10",
+    "target": "MATH_MECH22"
+  },
+  {
+    "source": "MATH_MECH11",
+    "target": "MATH_MECH17"
+  },
+  {
+    "source": "MATH_MECH12",
+    "target": "MATH_MECH13"
+  },
+  {
+    "source": "MATH_MECH12",
+    "target": "MATH_MECH14"
+  },
+  {
+    "source": "MATH_MECH12",
+    "target": "MATH_MECH20"
+  },
+  {
+    "source": "MATH_MECH12",
+    "target": "MATH_MECH22"
+  },
+  {
+    "source": "MATH_MECH12",
+    "target": "MATH_MECH26"
+  },
+  {
+    "source": "MATH_MECH12",
+    "target": "PHY1_VECTOR_PRODUCTS0"
+  },
+  {
+    "source": "MATH_MECH13",
+    "target": "MATH_MECH15"
+  },
+  {
+    "source": "MATH_MECH15",
+    "target": "MATH_MECH28"
+  },
+  {
+    "source": "MATH_MECH16",
+    "target": "MATH_MECH17"
+  },
+  {
+    "source": "MATH_MECH16",
+    "target": "MATH_MECH18"
+  },
+  {
+    "source": "MATH_MECH16",
+    "target": "MATH_MECH20"
+  },
+  {
+    "source": "MATH_MECH16",
+    "target": "MATH_MECH25"
+  },
+  {
+    "source": "MATH_MECH16",
+    "target": "MATH_MECH26"
+  },
+  {
+    "source": "MATH_MECH16",
+    "target": "PHY1_VECTOR_PRODUCTS1"
+  },
+  {
+    "source": "MATH_MECH18",
+    "target": "MATH_MECH19"
+  },
+  {
+    "source": "MATH_MECH18",
+    "target": "MATH_MECH27"
+  },
+  {
+    "source": "MATH_MECH20",
+    "target": "MATH_MECH21"
+  },
+  {
+    "source": "MATH_MECH22",
+    "target": "MATH_MECH23"
+  },
+  {
+    "source": "MATH_MECH24",
+    "target": "MATH_MECH19"
+  },
+  {
+    "source": "MATH_MECH24",
+    "target": "MATH_MECH27"
+  },
+  {
+    "source": "MAT_CALC_DIFF10",
+    "target": "MAT1_DERIV_APPLICATION0"
+  },
+  {
+    "source": "MAT_CALC_DIFF11",
+    "target": "MAT1_DERIV_APPLICATION5"
+  },
+  {
+    "source": "MAT_CALC_DIFF11",
+    "target": "MAT_CALC_DIFF14"
+  },
+  {
+    "source": "MAT_CALC_DIFF3",
+    "target": "MAT1_LIMIT4"
+  },
+  {
+    "source": "MAT_CALC_DIFF3",
+    "target": "MAT1_LIMIT5"
+  },
+  {
+    "source": "MAT_CALC_DIFF3",
+    "target": "MAT_CALC_DIFF4"
+  },
+  {
+    "source": "MAT_CALC_DIFF3",
+    "target": "MAT_CALC_DIFF6"
+  },
+  {
+    "source": "MAT_CALC_DIFF4",
+    "target": "MAT1_LIMIT2"
+  },
+  {
+    "source": "MAT_CALC_DIFF6",
+    "target": "MAT1_LIMIT11"
+  },
+  {
+    "source": "MAT_CALC_DIFF6",
+    "target": "MAT_CALC_DIFF10"
+  },
+  {
+    "source": "MAT_CALC_DIFF6",
+    "target": "MAT_CALC_DIFF11"
+  },
+  {
+    "source": "MAT_CALC_DIFF6",
+    "target": "MAT_CALC_DIFF12"
+  },
+  {
+    "source": "MAT_CALC_DIFF6",
+    "target": "MAT_CALC_DIFF7"
+  },
+  {
+    "source": "MAT_CALC_DIFF6",
+    "target": "MAT_CALC_DIFF8"
+  },
+  {
+    "source": "MAT_CALC_DIFF6",
+    "target": "MAT_CALC_DIFF9"
+  },
+  {
+    "source": "MAT_CALC_DIFF7",
+    "target": "MAT1_DERIVATIVE7"
+  },
+  {
+    "source": "MAT_CALC_DIFF7",
+    "target": "MAT_CALC_DIFF13"
+  },
+  {
+    "source": "MAT_CALC_DIFF9",
+    "target": "MAT1_DERIVATIVE6"
+  },
+  {
+    "source": "MAT_CALC_DIFF9",
+    "target": "MAT1_DERIVATIVE8"
+  },
+  {
+    "source": "MAT_COORD_CONIC14",
+    "target": "MAT_COORD_CONIC15"
+  },
+  {
+    "source": "MAT_COORD_CONIC16",
+    "target": "MAT_COORD_CONIC17"
+  },
+  {
+    "source": "MAT_COORD_CONIC16",
+    "target": "MAT_COORD_CONIC18"
+  },
+  {
+    "source": "MAT_COORD_CONIC16",
+    "target": "MAT_COORD_CONIC19"
+  },
+  {
+    "source": "MAT_COORD_CONIC23",
+    "target": "MAT_COORD_CONIC25"
+  },
+  {
+    "source": "MAT_COORD_CONIC32",
+    "target": "MAT_COORD_CONIC33"
+  },
+  {
+    "source": "MAT_COORD_CONIC32",
+    "target": "MAT_TRIG6"
+  },
+  {
+    "source": "MAT_COORD_CONIC6",
+    "target": "MAT_COORD_CONIC23"
+  },
+  {
+    "source": "MAT_COORD_CONIC6",
+    "target": "MAT_COORD_CONIC29"
+  },
+  {
+    "source": "MAT_COORD_CONIC6",
+    "target": "MAT_COORD_CONIC32"
+  },
+  {
+    "source": "MAT_COORD_CONIC6",
+    "target": "MAT_COORD_CONIC7"
+  },
+  {
+    "source": "MAT_COORD_CONIC6",
+    "target": "MAT_COORD_CONIC8"
+  },
+  {
+    "source": "MAT_COORD_CONIC7",
+    "target": "MAT_COORD_CONIC14"
+  },
+  {
+    "source": "MAT_COORD_CONIC7",
+    "target": "MAT_COORD_CONIC16"
+  },
+  {
+    "source": "MAT_COORD_CONIC7",
+    "target": "MAT_COORD_CONIC20"
+  },
+  {
+    "source": "MAT_COORD_CONIC7",
+    "target": "MAT_COORD_CONIC21"
+  },
+  {
+    "source": "MAT_COORD_CONIC7",
+    "target": "MAT_COORD_CONIC22"
+  },
+  {
+    "source": "MAT_COORD_CONIC7",
+    "target": "MAT_COORD_CONIC24"
+  },
+  {
+    "source": "MAT_COORD_CONIC7",
+    "target": "MAT_COORD_CONIC26"
+  },
+  {
+    "source": "MAT_COORD_CONIC7",
+    "target": "MAT_COORD_CONIC27"
+  },
+  {
+    "source": "MAT_COORD_CONIC7",
+    "target": "MAT_COORD_CONIC28"
+  },
+  {
+    "source": "MAT_COORD_CONIC8",
+    "target": "MAT_COORD_CONIC10"
+  },
+  {
+    "source": "MAT_COORD_CONIC8",
+    "target": "MAT_COORD_CONIC11"
+  },
+  {
+    "source": "MAT_COORD_CONIC8",
+    "target": "MAT_COORD_CONIC12"
+  },
+  {
+    "source": "MAT_COORD_CONIC8",
+    "target": "MAT_COORD_CONIC13"
+  },
+  {
+    "source": "MAT_COORD_CONIC8",
+    "target": "MAT_COORD_CONIC30"
+  },
+  {
+    "source": "MAT_COORD_CONIC8",
+    "target": "MAT_COORD_CONIC31"
+  },
+  {
+    "source": "MAT_COORD_CONIC8",
+    "target": "MAT_COORD_CONIC9"
+  },
+  {
+    "source": "MAT_COORD_LINE10",
+    "target": "MAT_COORD_CONIC19"
+  },
+  {
+    "source": "MAT_COORD_LINE11",
+    "target": "MAT_COORD_CONIC18"
+  },
+  {
+    "source": "MAT_COORD_LINE11",
+    "target": "MAT_COORD_LINE13"
+  },
+  {
+    "source": "MAT_COORD_LINE11",
+    "target": "MAT_COORD_LINE17"
+  },
+  {
+    "source": "MAT_COORD_LINE11",
+    "target": "MAT_COORD_LINE44"
+  },
+  {
+    "source": "MAT_COORD_LINE11",
+    "target": "MAT_COORD_LINE47"
+  },
+  {
+    "source": "MAT_COORD_LINE12",
+    "target": "MAT_COORD_CONIC17"
+  },
+  {
+    "source": "MAT_COORD_LINE12",
+    "target": "MAT_COORD_CONIC22"
+  },
+  {
+    "source": "MAT_COORD_LINE12",
+    "target": "MAT_COORD_LINE13"
+  },
+  {
+    "source": "MAT_COORD_LINE12",
+    "target": "MAT_COORD_LINE20"
+  },
+  {
+    "source": "MAT_COORD_LINE12",
+    "target": "MAT_COORD_LINE21"
+  },
+  {
+    "source": "MAT_COORD_LINE12",
+    "target": "MAT_COORD_LINE32"
+  },
+  {
+    "source": "MAT_COORD_LINE14",
+    "target": "MAT_COORD_LINE18"
+  },
+  {
+    "source": "MAT_COORD_LINE14",
+    "target": "MAT_COORD_LINE27"
+  },
+  {
+    "source": "MAT_COORD_LINE15",
+    "target": "MAT_COORD_CONIC13"
+  },
+  {
+    "source": "MAT_COORD_LINE15",
+    "target": "MAT_COORD_CONIC14"
+  },
+  {
+    "source": "MAT_COORD_LINE15",
+    "target": "MAT_COORD_CONIC21"
+  },
+  {
+    "source": "MAT_COORD_LINE15",
+    "target": "MAT_COORD_LINE17"
+  },
+  {
+    "source": "MAT_COORD_LINE15",
+    "target": "MAT_COORD_LINE28"
+  },
+  {
+    "source": "MAT_COORD_LINE15",
+    "target": "MAT_COORD_LINE40"
+  },
+  {
+    "source": "MAT_COORD_LINE15",
+    "target": "MAT_COORD_LINE44"
+  },
+  {
+    "source": "MAT_COORD_LINE15",
+    "target": "MAT_COORD_LINE48"
+  },
+  {
+    "source": "MAT_COORD_LINE16",
+    "target": "MAT_CALC_DIFF10"
+  },
+  {
+    "source": "MAT_COORD_LINE16",
+    "target": "MAT_COORD_LINE21"
+  },
+  {
+    "source": "MAT_COORD_LINE16",
+    "target": "MAT_COORD_LINE24"
+  },
+  {
+    "source": "MAT_COORD_LINE16",
+    "target": "MAT_COORD_LINE26"
+  },
+  {
+    "source": "MAT_COORD_LINE16",
+    "target": "MAT_COORD_LINE27"
+  },
+  {
+    "source": "MAT_COORD_LINE16",
+    "target": "MAT_COORD_LINE29"
+  },
+  {
+    "source": "MAT_COORD_LINE16",
+    "target": "MAT_COORD_LINE40"
+  },
+  {
+    "source": "MAT_COORD_LINE16",
+    "target": "MAT_COORD_LINE41"
+  },
+  {
+    "source": "MAT_COORD_LINE16",
+    "target": "MAT_COORD_LINE43"
+  },
+  {
+    "source": "MAT_COORD_LINE18",
+    "target": "MAT_COORD_LINE19"
+  },
+  {
+    "source": "MAT_COORD_LINE21",
+    "target": "MAT_COORD_LINE22"
+  },
+  {
+    "source": "MAT_COORD_LINE24",
+    "target": "MAT_COORD_LINE23"
+  },
+  {
+    "source": "MAT_COORD_LINE25",
+    "target": "MAT_COORD_LINE46"
+  },
+  {
+    "source": "MAT_COORD_LINE26",
+    "target": "MAT_COORD_LINE25"
+  },
+  {
+    "source": "MAT_COORD_LINE28",
+    "target": "MAT_COORD_LINE29"
+  },
+  {
+    "source": "MAT_COORD_LINE28",
+    "target": "MAT_COORD_LINE36"
+  },
+  {
+    "source": "MAT_COORD_LINE30",
+    "target": "MAT_COORD_CONIC10"
+  },
+  {
+    "source": "MAT_COORD_LINE30",
+    "target": "MAT_COORD_LINE20"
+  },
+  {
+    "source": "MAT_COORD_LINE30",
+    "target": "MAT_COORD_LINE32"
+  },
+  {
+    "source": "MAT_COORD_LINE30",
+    "target": "MAT_COORD_LINE37"
+  },
+  {
+    "source": "MAT_COORD_LINE30",
+    "target": "MAT_COORD_LINE38"
+  },
+  {
+    "source": "MAT_COORD_LINE34",
+    "target": "MAT_COORD_CONIC31"
+  },
+  {
+    "source": "MAT_COORD_LINE34",
+    "target": "MAT_COORD_LINE33"
+  },
+  {
+    "source": "MAT_COORD_LINE34",
+    "target": "MAT_COORD_LINE35"
+  },
+  {
+    "source": "MAT_COORD_LINE34",
+    "target": "MAT_COORD_LINE36"
+  },
+  {
+    "source": "MAT_COORD_LINE34",
+    "target": "MAT_COORD_LINE39"
+  },
+  {
+    "source": "MAT_COORD_LINE34",
+    "target": "MAT_COORD_LINE42"
+  },
+  {
+    "source": "MAT_COORD_LINE37",
+    "target": "MAT_COORD_LINE45"
+  },
+  {
+    "source": "MAT_COORD_LINE9",
+    "target": "MAT_COORD_LINE10"
+  },
+  {
+    "source": "MAT_COORD_LINE9",
+    "target": "MAT_COORD_LINE11"
+  },
+  {
+    "source": "MAT_COORD_LINE9",
+    "target": "MAT_COORD_LINE12"
+  },
+  {
+    "source": "MAT_COORD_LINE9",
+    "target": "MAT_COORD_LINE14"
+  },
+  {
+    "source": "MAT_COORD_LINE9",
+    "target": "MAT_COORD_LINE16"
+  },
+  {
+    "source": "MAT_COORD_LINE9",
+    "target": "MAT_COORD_LINE31"
+  },
+  {
+    "source": "MAT_FUNCTION0",
+    "target": "MAT_FUNCTION1"
+  },
+  {
+    "source": "MAT_FUNCTION0",
+    "target": "MAT_FUNCTION10"
+  },
+  {
+    "source": "MAT_FUNCTION0",
+    "target": "MAT_FUNCTION11"
+  },
+  {
+    "source": "MAT_FUNCTION0",
+    "target": "MAT_FUNCTION13"
+  },
+  {
+    "source": "MAT_FUNCTION0",
+    "target": "MAT_FUNCTION18"
+  },
+  {
+    "source": "MAT_FUNCTION0",
+    "target": "MAT_FUNCTION4"
+  },
+  {
+    "source": "MAT_FUNCTION0",
+    "target": "MAT_FUNCTION5"
+  },
+  {
+    "source": "MAT_FUNCTION0",
+    "target": "MAT_FUNCTION7"
+  },
+  {
+    "source": "MAT_FUNCTION0",
+    "target": "MAT_FUNCTION8"
+  },
+  {
+    "source": "MAT_FUNCTION0",
+    "target": "MAT_FUNCTION9"
+  },
+  {
+    "source": "MAT_FUNCTION1",
+    "target": "MAT_CALC_DIFF3"
+  },
+  {
+    "source": "MAT_FUNCTION1",
+    "target": "MAT_FUNCTION15"
+  },
+  {
+    "source": "MAT_FUNCTION1",
+    "target": "MAT_FUNCTION2"
+  },
+  {
+    "source": "MAT_FUNCTION2",
+    "target": "MAT_CALC_DIFF11"
+  },
+  {
+    "source": "MAT_FUNCTION2",
+    "target": "MAT_FUNCTION14"
+  },
+  {
+    "source": "MAT_FUNCTION2",
+    "target": "MAT_FUNCTION16"
+  },
+  {
+    "source": "MAT_FUNCTION2",
+    "target": "MAT_FUNCTION17"
+  },
+  {
+    "source": "MAT_FUNCTION4",
+    "target": "MAT_CALC_DIFF8"
+  },
+  {
+    "source": "MAT_FUNCTION4",
+    "target": "MAT_FUNCTION12"
+  },
+  {
+    "source": "MAT_FUNCTION4",
+    "target": "MAT_FUNCTION3"
+  },
+  {
+    "source": "MAT_FUNCTION5",
+    "target": "MAT_FUNCTION6"
+  },
+  {
+    "source": "MAT_INVTRIG5",
+    "target": "MAT_INVTRIG6"
+  },
+  {
+    "source": "MAT_INVTRIG5",
+    "target": "MAT_TRIG39"
+  },
+  {
+    "source": "MAT_MATRIX10",
+    "target": "MAT_MATRIX11"
+  },
+  {
+    "source": "MAT_MATRIX10",
+    "target": "MAT_MATRIX28"
+  },
+  {
+    "source": "MAT_MATRIX13",
+    "target": "MAT_COORD_LINE23"
+  },
+  {
+    "source": "MAT_MATRIX13",
+    "target": "MAT_MATRIX14"
+  },
+  {
+    "source": "MAT_MATRIX13",
+    "target": "MAT_MATRIX16"
+  },
+  {
+    "source": "MAT_MATRIX13",
+    "target": "MAT_MATRIX17"
+  },
+  {
+    "source": "MAT_MATRIX13",
+    "target": "MAT_MATRIX20"
+  },
+  {
+    "source": "MAT_MATRIX13",
+    "target": "MAT_MATRIX23"
+  },
+  {
+    "source": "MAT_MATRIX13",
+    "target": "MAT_MATRIX24"
+  },
+  {
+    "source": "MAT_MATRIX13",
+    "target": "MAT_MATRIX26"
+  },
+  {
+    "source": "MAT_MATRIX13",
+    "target": "MAT_MATRIX30"
+  },
+  {
+    "source": "MAT_MATRIX15",
+    "target": "MAT_MATRIX19"
+  },
+  {
+    "source": "MAT_MATRIX15",
+    "target": "MAT_MATRIX21"
+  },
+  {
+    "source": "MAT_MATRIX15",
+    "target": "MAT_MATRIX22"
+  },
+  {
+    "source": "MAT_MATRIX16",
+    "target": "MAT_MATRIX18"
+  },
+  {
+    "source": "MAT_MATRIX17",
+    "target": "MAT_MATRIX15"
+  },
+  {
+    "source": "MAT_MATRIX17",
+    "target": "MAT_MATRIX18"
+  },
+  {
+    "source": "MAT_MATRIX2",
+    "target": "MAT_MATRIX13"
+  },
+  {
+    "source": "MAT_MATRIX23",
+    "target": "MAT_MATRIX29"
+  },
+  {
+    "source": "MAT_MATRIX26",
+    "target": "MAT_MATRIX25"
+  },
+  {
+    "source": "MAT_MATRIX26",
+    "target": "MAT_MATRIX27"
+  },
+  {
+    "source": "MAT_MATRIX26",
+    "target": "MAT_MATRIX4"
+  },
+  {
+    "source": "MAT_MATRIX5",
+    "target": "MAT_MATRIX6"
+  },
+  {
+    "source": "MAT_MATRIX6",
+    "target": "MAT_MATRIX7"
+  },
+  {
+    "source": "MAT_MATRIX6",
+    "target": "MAT_MATRIX9"
+  },
+  {
+    "source": "MAT_MATRIX7",
+    "target": "MAT_MATRIX11"
+  },
+  {
+    "source": "MAT_MATRIX7",
+    "target": "MAT_MATRIX12"
+  },
+  {
+    "source": "MAT_MATRIX7",
+    "target": "MAT_MATRIX27"
+  },
+  {
+    "source": "MAT_MATRIX7",
+    "target": "MAT_MATRIX28"
+  },
+  {
+    "source": "MAT_MATRIX7",
+    "target": "MAT_MATRIX31"
+  },
+  {
+    "source": "MAT_MATRIX8",
+    "target": "MAT_MATRIX6"
+  },
+  {
+    "source": "MAT_PERMCOMB0",
+    "target": "MAT_PERMCOMB1"
+  },
+  {
+    "source": "MAT_PERMCOMB1",
+    "target": "MAT_PERMCOMB13"
+  },
+  {
+    "source": "MAT_PERMCOMB1",
+    "target": "MAT_PERMCOMB19"
+  },
+  {
+    "source": "MAT_PERMCOMB1",
+    "target": "MAT_PERMCOMB2"
+  },
+  {
+    "source": "MAT_PERMCOMB1",
+    "target": "MAT_PERMCOMB4"
+  },
+  {
+    "source": "MAT_PERMCOMB1",
+    "target": "MAT_PERMCOMB8"
+  },
+  {
+    "source": "MAT_PERMCOMB11",
+    "target": "MAT_PERMCOMB12"
+  },
+  {
+    "source": "MAT_PERMCOMB2",
+    "target": "MAT_PERMCOMB11"
+  },
+  {
+    "source": "MAT_PERMCOMB2",
+    "target": "MAT_PERMCOMB14"
+  },
+  {
+    "source": "MAT_PERMCOMB2",
+    "target": "MAT_PERMCOMB15"
+  },
+  {
+    "source": "MAT_PERMCOMB2",
+    "target": "MAT_PERMCOMB16"
+  },
+  {
+    "source": "MAT_PERMCOMB2",
+    "target": "MAT_PERMCOMB17"
+  },
+  {
+    "source": "MAT_PERMCOMB2",
+    "target": "MAT_PERMCOMB18"
+  },
+  {
+    "source": "MAT_PERMCOMB2",
+    "target": "MAT_PERMCOMB20"
+  },
+  {
+    "source": "MAT_PERMCOMB2",
+    "target": "MAT_PERMCOMB3"
+  },
+  {
+    "source": "MAT_PERMCOMB2",
+    "target": "MAT_PERMCOMB7"
+  },
+  {
+    "source": "MAT_PERMCOMB4",
+    "target": "MAT_PERMCOMB5"
+  },
+  {
+    "source": "MAT_PERMCOMB4",
+    "target": "MAT_PERMCOMB7"
+  },
+  {
+    "source": "MAT_PERMCOMB5",
+    "target": "MAT_PERMCOMB6"
+  },
+  {
+    "source": "MAT_PERMCOMB8",
+    "target": "MAT_PERMCOMB10"
+  },
+  {
+    "source": "MAT_PERMCOMB8",
+    "target": "MAT_PERMCOMB9"
+  },
+  {
+    "source": "MAT_TRIG10",
+    "target": "MAT_TRIG11"
+  },
+  {
+    "source": "MAT_TRIG12",
+    "target": "MAT_TRIG13"
+  },
+  {
+    "source": "MAT_TRIG13",
+    "target": "MAT_TRIG14"
+  },
+  {
+    "source": "MAT_TRIG13",
+    "target": "MAT_TRIG16"
+  },
+  {
+    "source": "MAT_TRIG13",
+    "target": "MAT_TRIG18"
+  },
+  {
+    "source": "MAT_TRIG13",
+    "target": "MAT_TRIG21"
+  },
+  {
+    "source": "MAT_TRIG13",
+    "target": "MAT_TRIG38"
+  },
+  {
+    "source": "MAT_TRIG14",
+    "target": "MAT_TRIG15"
+  },
+  {
+    "source": "MAT_TRIG14",
+    "target": "MAT_TRIG27"
+  },
+  {
+    "source": "MAT_TRIG14",
+    "target": "MAT_TRIG28"
+  },
+  {
+    "source": "MAT_TRIG16",
+    "target": "MAT_CALC_DIFF4"
+  },
+  {
+    "source": "MAT_TRIG16",
+    "target": "MAT_TRIG17"
+  },
+  {
+    "source": "MAT_TRIG16",
+    "target": "MAT_TRIG25"
+  },
+  {
+    "source": "MAT_TRIG16",
+    "target": "MAT_TRIG26"
+  },
+  {
+    "source": "MAT_TRIG18",
+    "target": "MAT_TRIG19"
+  },
+  {
+    "source": "MAT_TRIG18",
+    "target": "MAT_TRIG20"
+  },
+  {
+    "source": "MAT_TRIG18",
+    "target": "MAT_TRIG22"
+  },
+  {
+    "source": "MAT_TRIG18",
+    "target": "MAT_TRIG24"
+  },
+  {
+    "source": "MAT_TRIG18",
+    "target": "MAT_TRIG37"
+  },
+  {
+    "source": "MAT_TRIG19",
+    "target": "MAT_TRIG36"
+  },
+  {
+    "source": "MAT_TRIG22",
+    "target": "MAT_TRIG23"
+  },
+  {
+    "source": "MAT_TRIG29",
+    "target": "MAT_TRIG30"
+  },
+  {
+    "source": "MAT_TRIG29",
+    "target": "MAT_TRIG31"
+  },
+  {
+    "source": "MAT_TRIG30",
+    "target": "MAT_TRIG34"
+  },
+  {
+    "source": "MAT_TRIG30",
+    "target": "MAT_TRIG35"
+  },
+  {
+    "source": "MAT_TRIG31",
+    "target": "MAT_TRIG32"
+  },
+  {
+    "source": "MAT_TRIG31",
+    "target": "MAT_TRIG33"
+  },
+  {
+    "source": "MAT_TRIG4",
+    "target": "MAT_FUNCTION13"
+  },
+  {
+    "source": "MAT_TRIG4",
+    "target": "MAT_TRIG5"
+  },
+  {
+    "source": "MAT_TRIG4",
+    "target": "MAT_TRIG7"
+  },
+  {
+    "source": "MAT_TRIG6",
+    "target": "MAT_TRIG32"
+  },
+  {
+    "source": "MAT_TRIG8",
+    "target": "MAT_TRIG10"
+  },
+  {
+    "source": "MAT_TRIG8",
+    "target": "MAT_TRIG12"
+  },
+  {
+    "source": "MAT_TRIG8",
+    "target": "MAT_TRIG9"
+  },
+  {
+    "source": "PHY1_CIRCULAR_MOTION0",
+    "target": "PHY1_CIRCULAR_MOTION2"
+  },
+  {
+    "source": "PHY1_CIRCULAR_MOTION1",
+    "target": "PHY1_CIRCULAR_MOTION0"
+  },
+  {
+    "source": "PHY1_CIRCULAR_MOTION1",
+    "target": "PHY1_ROTATIONAL0"
+  },
+  {
+    "source": "PHY1_CIRCULAR_MOTION3",
+    "target": "PHY1_CIRCULAR_MOTION4"
+  },
+  {
+    "source": "PHY1_CIRCULAR_MOTION3",
+    "target": "PHY1_CIRCULAR_MOTION5"
+  },
+  {
+    "source": "PHY1_DIMENSIONS0",
+    "target": "PHY1_DIMENSIONS1"
+  },
+  {
+    "source": "PHY1_DIMENSIONS0",
+    "target": "PHY1_MEASUREMENT_UNITS0"
+  },
+  {
+    "source": "PHY1_DIMENSIONS0",
+    "target": "PHY1_MEASUREMENT_UNITS1"
+  },
+  {
+    "source": "PHY1_ELASTICITY0",
+    "target": "PHY1_ELASTICITY1"
+  },
+  {
+    "source": "PHY1_ELASTICITY0",
+    "target": "PHY1_ELASTICITY5"
+  },
+  {
+    "source": "PHY1_ELASTICITY0",
+    "target": "PHY1_ELASTICITY6"
+  },
+  {
+    "source": "PHY1_ELASTICITY0",
+    "target": "PHY1_ELASTICITY7"
+  },
+  {
+    "source": "PHY1_ELASTICITY0",
+    "target": "PHY1_ELASTICITY8"
+  },
+  {
+    "source": "PHY1_ELASTICITY1",
+    "target": "PHY1_ELASTICITY2"
+  },
+  {
+    "source": "PHY1_ELASTICITY1",
+    "target": "PHY1_ELASTICITY3"
+  },
+  {
+    "source": "PHY1_ELASTICITY1",
+    "target": "PHY1_ELASTICITY4"
+  },
+  {
+    "source": "PHY1_ELASTICITY4",
+    "target": "PHY1_PENDULUM3"
+  },
+  {
+    "source": "PHY1_ELASTICITY4",
+    "target": "PHY1_SHM_ENERGY0"
+  },
+  {
+    "source": "PHY1_ELASTICITY5",
+    "target": "PHY1_FLUID_STATICS1"
+  },
+  {
+    "source": "PHY1_ENERGY_CONSERVATION2",
+    "target": "PHY1_ENERGY_CONSERVATION0"
+  },
+  {
+    "source": "PHY1_ENERGY_CONSERVATION2",
+    "target": "PHY1_ENERGY_CONSERVATION1"
+  },
+  {
+    "source": "PHY1_ERRORS0",
+    "target": "PHY1_ERRORS1"
+  },
+  {
+    "source": "PHY1_ERRORS1",
+    "target": "PHY1_ERRORS2"
+  },
+  {
+    "source": "PHY1_ERRORS1",
+    "target": "PHY1_ERRORS3"
+  },
+  {
+    "source": "PHY1_ERRORS3",
+    "target": "CHEM_NUCLEAR3"
+  },
+  {
+    "source": "PHY1_FLUID_STATICS0",
+    "target": "PHY1_FLUID_STATICS1"
+  },
+  {
+    "source": "PHY1_FLUID_STATICS0",
+    "target": "PHY1_VISCOSITY1"
+  },
+  {
+    "source": "PHY1_FRICTION0",
+    "target": "PHY1_FRICTION1"
+  },
+  {
+    "source": "PHY1_FRICTION1",
+    "target": "PHY1_FRICTION2"
+  },
+  {
+    "source": "PHY1_FRICTION1",
+    "target": "PHY1_NEWTON_LAWS6"
+  },
+  {
+    "source": "PHY1_GAS_LAWS0",
+    "target": "PHY1_GAS_LAWS1"
+  },
+  {
+    "source": "PHY1_GAS_LAWS0",
+    "target": "PHY1_KINETIC_THEORY0"
+  },
+  {
+    "source": "PHY1_GAS_LAWS0",
+    "target": "PHY1_KINETIC_THEORY3"
+  },
+  {
+    "source": "PHY1_GAS_LAWS1",
+    "target": "PHY1_GAS_LAWS2"
+  },
+  {
+    "source": "PHY1_GAS_LAWS1",
+    "target": "PHY1_GAS_LAWS3"
+  },
+  {
+    "source": "PHY1_GAS_LAWS1",
+    "target": "PHY1_GAS_LAWS4"
+  },
+  {
+    "source": "PHY1_GAS_LAWS1",
+    "target": "PHY1_MOLECULAR_SPEED3"
+  },
+  {
+    "source": "PHY1_GRAVITATION_LAW0",
+    "target": "PHY1_GRAVITATION_LAW1"
+  },
+  {
+    "source": "PHY1_GRAVITATION_LAW0",
+    "target": "PHY1_GRAVITATION_LAW2"
+  },
+  {
+    "source": "PHY1_GRAVITATION_LAW1",
+    "target": "PHY1_GRAVITY_FIELD0"
+  },
+  {
+    "source": "PHY1_GRAVITATION_LAW1",
+    "target": "PHY1_GRAVITY_FIELD1"
+  },
+  {
+    "source": "PHY1_GRAVITATION_LAW1",
+    "target": "PHY1_GRAVITY_FIELD3"
+  },
+  {
+    "source": "PHY1_GRAVITY_FIELD0",
+    "target": "PHY1_GRAVITY_FIELD2"
+  },
+  {
+    "source": "PHY1_GRAVITY_FIELD0",
+    "target": "PHY1_GRAVITY_FIELD4"
+  },
+  {
+    "source": "PHY1_GRAVITY_FIELD0",
+    "target": "PHY1_SATELLITE0"
+  },
+  {
+    "source": "PHY1_GRAVITY_FIELD0",
+    "target": "PHY1_SATELLITE1"
+  },
+  {
+    "source": "PHY1_KINEMATICS0",
+    "target": "MAT2_PLANE_MOTION0"
+  },
+  {
+    "source": "PHY1_KINEMATICS0",
+    "target": "PHY1_CIRCULAR_MOTION1"
+  },
+  {
+    "source": "PHY1_KINEMATICS0",
+    "target": "PHY1_KINEMATICS1"
+  },
+  {
+    "source": "PHY1_KINEMATICS0",
+    "target": "PHY1_PROJECTILE0"
+  },
+  {
+    "source": "PHY1_KINEMATICS1",
+    "target": "MAT2_PLANE_MOTION1"
+  },
+  {
+    "source": "PHY1_KINEMATICS1",
+    "target": "PHY1_KINEMATICS2"
+  },
+  {
+    "source": "PHY1_KINEMATICS1",
+    "target": "PHY1_KINEMATICS3"
+  },
+  {
+    "source": "PHY1_KINEMATICS1",
+    "target": "PHY1_KINEMATICS5"
+  },
+  {
+    "source": "PHY1_KINEMATICS1",
+    "target": "PHY1_KINEMATICS6"
+  },
+  {
+    "source": "PHY1_KINEMATICS1",
+    "target": "PHY1_KINEMATICS7"
+  },
+  {
+    "source": "PHY1_KINEMATICS1",
+    "target": "PHY1_KINEMATICS8"
+  },
+  {
+    "source": "PHY1_KINEMATICS1",
+    "target": "PHY1_RELATIVE_MOTION0"
+  },
+  {
+    "source": "PHY1_KINEMATICS1",
+    "target": "PHY1_WORK_ENERGY3"
+  },
+  {
+    "source": "PHY1_KINEMATICS2",
+    "target": "MAT2_PLANE_MOTION2"
+  },
+  {
+    "source": "PHY1_KINEMATICS3",
+    "target": "MAT2_PLANE_MOTION3"
+  },
+  {
+    "source": "PHY1_KINEMATICS3",
+    "target": "PHY1_KINEMATICS4"
+  },
+  {
+    "source": "PHY1_KINEMATICS4",
+    "target": "MAT2_PLANE_MOTION4"
+  },
+  {
+    "source": "PHY1_KINEMATICS5",
+    "target": "PHY1_KINEMATICS9"
+  },
+  {
+    "source": "PHY1_KINEMATICS9",
+    "target": "PHY1_KINEMATICS10"
+  },
+  {
+    "source": "PHY1_KINETIC_THEORY0",
+    "target": "PHY1_KINETIC_THEORY1"
+  },
+  {
+    "source": "PHY1_KINETIC_THEORY0",
+    "target": "PHY1_KINETIC_THEORY2"
+  },
+  {
+    "source": "PHY1_KINETIC_THEORY0",
+    "target": "PHY1_MOLECULAR_SPEED2"
+  },
+  {
+    "source": "PHY1_KINETIC_THEORY2",
+    "target": "PHY1_MOLECULAR_SPEED0"
+  },
+  {
+    "source": "PHY1_MEASUREMENT_UNITS0",
+    "target": "PHY1_VECTOR_ALGEBRA0"
+  },
+  {
+    "source": "PHY1_MOLECULAR_SPEED0",
+    "target": "PHY1_MOLECULAR_SPEED1"
+  },
+  {
+    "source": "PHY1_MOMENTUM0",
+    "target": "PHY1_MOMENTUM1"
+  },
+  {
+    "source": "PHY1_MOMENTUM1",
+    "target": "PHY1_MOMENTUM2"
+  },
+  {
+    "source": "PHY1_MOMENTUM4",
+    "target": "PHY1_MOMENTUM5"
+  },
+  {
+    "source": "PHY1_MOMENTUM4",
+    "target": "PHY1_MOMENTUM6"
+  },
+  {
+    "source": "PHY1_NEWTON_LAWS0",
+    "target": "PHY1_MOMENTUM3"
+  },
+  {
+    "source": "PHY1_NEWTON_LAWS0",
+    "target": "PHY1_NEWTON_LAWS1"
+  },
+  {
+    "source": "PHY1_NEWTON_LAWS1",
+    "target": "PHY1_CIRCULAR_MOTION0"
+  },
+  {
+    "source": "PHY1_NEWTON_LAWS1",
+    "target": "PHY1_MOMENTUM0"
+  },
+  {
+    "source": "PHY1_NEWTON_LAWS1",
+    "target": "PHY1_NEWTON_LAWS3"
+  },
+  {
+    "source": "PHY1_NEWTON_LAWS2",
+    "target": "PHY1_NEWTON_LAWS3"
+  },
+  {
+    "source": "PHY1_NEWTON_LAWS3",
+    "target": "PHY1_NEWTON_LAWS4"
+  },
+  {
+    "source": "PHY1_NEWTON_LAWS4",
+    "target": "MAT2_PLANE_MOTION9"
+  },
+  {
+    "source": "PHY1_NEWTON_LAWS4",
+    "target": "PHY1_NEWTON_LAWS5"
+  },
+  {
+    "source": "PHY1_NEWTON_LAWS4",
+    "target": "PHY1_NEWTON_LAWS6"
+  },
+  {
+    "source": "PHY1_NEWTON_LAWS5",
+    "target": "PHY1_MOMENTUM4"
+  },
+  {
+    "source": "PHY1_NEWTON_LAWS6",
+    "target": "PHY1_CIRCULAR_MOTION3"
+  },
+  {
+    "source": "PHY1_PENDULUM0",
+    "target": "PHY1_PENDULUM1"
+  },
+  {
+    "source": "PHY1_PENDULUM1",
+    "target": "PHY1_PENDULUM2"
+  },
+  {
+    "source": "PHY1_POWER0",
+    "target": "PHY1_POWER1"
+  },
+  {
+    "source": "PHY1_POWER0",
+    "target": "PHY1_POWER2"
+  },
+  {
+    "source": "PHY1_PROJECTILE0",
+    "target": "MAT2_PROJECTILE0"
+  },
+  {
+    "source": "PHY1_PROJECTILE0",
+    "target": "PHY1_PROJECTILE1"
+  },
+  {
+    "source": "PHY1_PROJECTILE0",
+    "target": "PHY1_PROJECTILE3"
+  },
+  {
+    "source": "PHY1_PROJECTILE1",
+    "target": "MAT2_PROJECTILE1"
+  },
+  {
+    "source": "PHY1_PROJECTILE1",
+    "target": "PHY1_PROJECTILE2"
+  },
+  {
+    "source": "PHY1_PROJECTILE1",
+    "target": "PHY1_PROJECTILE4"
+  },
+  {
+    "source": "PHY1_RELATIVE_MOTION0",
+    "target": "PHY1_RELATIVE_MOTION1"
+  },
+  {
+    "source": "PHY1_RELATIVE_MOTION0",
+    "target": "PHY1_RELATIVE_MOTION2"
+  },
+  {
+    "source": "PHY1_ROTATIONAL1",
+    "target": "PHY1_ROTATIONAL2"
+  },
+  {
+    "source": "PHY1_ROTATIONAL2",
+    "target": "PHY1_ROTATIONAL3"
+  },
+  {
+    "source": "PHY1_ROTATIONAL2",
+    "target": "PHY1_ROTATIONAL5"
+  },
+  {
+    "source": "PHY1_ROTATIONAL2",
+    "target": "PHY1_ROTATIONAL6"
+  },
+  {
+    "source": "PHY1_ROTATIONAL3",
+    "target": "PHY1_CIRCULAR_MOTION4"
+  },
+  {
+    "source": "PHY1_ROTATIONAL3",
+    "target": "PHY1_ROTATIONAL4"
+  },
+  {
+    "source": "PHY1_SATELLITE0",
+    "target": "PHY1_SATELLITE2"
+  },
+  {
+    "source": "PHY1_SATELLITE3",
+    "target": "PHY1_SATELLITE4"
+  },
+  {
+    "source": "PHY1_SHM0",
+    "target": "PHY1_PENDULUM0"
+  },
+  {
+    "source": "PHY1_SHM0",
+    "target": "PHY1_SHM1"
+  },
+  {
+    "source": "PHY1_SHM1",
+    "target": "PHY1_PENDULUM3"
+  },
+  {
+    "source": "PHY1_SHM1",
+    "target": "PHY1_SHM2"
+  },
+  {
+    "source": "PHY1_SHM2",
+    "target": "PHY1_SHM3"
+  },
+  {
+    "source": "PHY1_SHM2",
+    "target": "PHY1_SHM_ENERGY0"
+  },
+  {
+    "source": "PHY1_SHM_ENERGY0",
+    "target": "PHY1_SHM_ENERGY2"
+  },
+  {
+    "source": "PHY1_SHM_ENERGY1",
+    "target": "PHY1_SHM_ENERGY0"
+  },
+  {
+    "source": "PHY1_SOLID_BONDING0",
+    "target": "PHY1_SOLID_BONDING1"
+  },
+  {
+    "source": "PHY1_SOLID_BONDING0",
+    "target": "PHY1_SOLID_BONDING2"
+  },
+  {
+    "source": "PHY1_SOUND0",
+    "target": "PHY1_SOUND1"
+  },
+  {
+    "source": "PHY1_SOUND0",
+    "target": "PHY1_SOUND5"
+  },
+  {
+    "source": "PHY1_SOUND2",
+    "target": "PHY1_SOUND3"
+  },
+  {
+    "source": "PHY1_SOUND3",
+    "target": "PHY1_SOUND4"
+  },
+  {
+    "source": "PHY1_SUPERPOSITION0",
+    "target": "PHY1_SUPERPOSITION1"
+  },
+  {
+    "source": "PHY1_SUPERPOSITION1",
+    "target": "PHY1_SUPERPOSITION4"
+  },
+  {
+    "source": "PHY1_SUPERPOSITION1",
+    "target": "PHY1_SUPERPOSITION5"
+  },
+  {
+    "source": "PHY1_SUPERPOSITION2",
+    "target": "PHY1_SUPERPOSITION3"
+  },
+  {
+    "source": "PHY1_SURFACE_TENSION0",
+    "target": "PHY1_SURFACE_TENSION3"
+  },
+  {
+    "source": "PHY1_SURFACE_TENSION0",
+    "target": "PHY1_SURFACE_TENSION5"
+  },
+  {
+    "source": "PHY1_SURFACE_TENSION0",
+    "target": "PHY1_SURFACE_TENSION6"
+  },
+  {
+    "source": "PHY1_SURFACE_TENSION3",
+    "target": "PHY1_SURFACE_TENSION4"
+  },
+  {
+    "source": "PHY1_SURFACE_TENSION5",
+    "target": "PHY1_SURFACE_TENSION1"
+  },
+  {
+    "source": "PHY1_SURFACE_TENSION5",
+    "target": "PHY1_SURFACE_TENSION2"
+  },
+  {
+    "source": "PHY1_VECTOR_ALGEBRA0",
+    "target": "PHY1_VECTOR_ALGEBRA1"
+  },
+  {
+    "source": "PHY1_VECTOR_ALGEBRA0",
+    "target": "PHY1_VECTOR_ALGEBRA2"
+  },
+  {
+    "source": "PHY1_VECTOR_ALGEBRA0",
+    "target": "PHY1_VECTOR_ALGEBRA3"
+  },
+  {
+    "source": "PHY1_VECTOR_ALGEBRA2",
+    "target": "PHY1_PROJECTILE1"
+  },
+  {
+    "source": "PHY1_VECTOR_ALGEBRA2",
+    "target": "PHY1_VECTOR_ALGEBRA4"
+  },
+  {
+    "source": "PHY1_VECTOR_ALGEBRA2",
+    "target": "PHY1_VECTOR_CALCULUS2"
+  },
+  {
+    "source": "PHY1_VECTOR_ALGEBRA2",
+    "target": "PHY1_VECTOR_PRODUCTS0"
+  },
+  {
+    "source": "PHY1_VECTOR_ALGEBRA2",
+    "target": "PHY1_VECTOR_PRODUCTS1"
+  },
+  {
+    "source": "PHY1_VECTOR_ALGEBRA4",
+    "target": "PHY1_VECTOR_ALGEBRA5"
+  },
+  {
+    "source": "PHY1_VECTOR_CALCULUS0",
+    "target": "PHY1_VECTOR_CALCULUS1"
+  },
+  {
+    "source": "PHY1_VECTOR_PRODUCTS0",
+    "target": "PHY1_VECTOR_PRODUCTS2"
+  },
+  {
+    "source": "PHY1_VECTOR_PRODUCTS0",
+    "target": "PHY1_VECTOR_PRODUCTS3"
+  },
+  {
+    "source": "PHY1_VECTOR_PRODUCTS0",
+    "target": "PHY1_VECTOR_PRODUCTS5"
+  },
+  {
+    "source": "PHY1_VECTOR_PRODUCTS1",
+    "target": "PHY1_VECTOR_CALCULUS0"
+  },
+  {
+    "source": "PHY1_VECTOR_PRODUCTS1",
+    "target": "PHY1_VECTOR_PRODUCTS2"
+  },
+  {
+    "source": "PHY1_VECTOR_PRODUCTS1",
+    "target": "PHY1_VECTOR_PRODUCTS4"
+  },
+  {
+    "source": "PHY1_VECTOR_PRODUCTS1",
+    "target": "PHY1_VECTOR_PRODUCTS6"
+  },
+  {
+    "source": "PHY1_VISCOSITY0",
+    "target": "PHY1_VISCOSITY1"
+  },
+  {
+    "source": "PHY1_VISCOSITY1",
+    "target": "PHY1_VISCOSITY2"
+  },
+  {
+    "source": "PHY1_WAVE_BASICS0",
+    "target": "PHY1_SOUND2"
+  },
+  {
+    "source": "PHY1_WAVE_BASICS0",
+    "target": "PHY1_WAVE_BASICS1"
+  },
+  {
+    "source": "PHY1_WAVE_BASICS0",
+    "target": "PHY1_WAVE_BASICS2"
+  },
+  {
+    "source": "PHY1_WAVE_BASICS0",
+    "target": "PHY1_WAVE_BASICS3"
+  },
+  {
+    "source": "PHY1_WAVE_BASICS0",
+    "target": "PHY1_WAVE_EQUATION0"
+  },
+  {
+    "source": "PHY1_WAVE_BASICS1",
+    "target": "PHY1_SOUND0"
+  },
+  {
+    "source": "PHY1_WAVE_BASICS1",
+    "target": "PHY1_SUPERPOSITION2"
+  },
+  {
+    "source": "PHY1_WAVE_BASICS1",
+    "target": "PHY1_SUPERPOSITION4"
+  },
+  {
+    "source": "PHY1_WAVE_BASICS2",
+    "target": "PHY1_SOUND6"
+  },
+  {
+    "source": "PHY1_WAVE_BASICS3",
+    "target": "PHY1_SUPERPOSITION0"
+  },
+  {
+    "source": "PHY1_WAVE_EQUATION0",
+    "target": "PHY1_WAVE_EQUATION1"
+  },
+  {
+    "source": "PHY1_WAVE_EQUATION0",
+    "target": "PHY1_WAVE_EQUATION2"
+  },
+  {
+    "source": "PHY1_WORK_ENERGY0",
+    "target": "PHY1_ENERGY_CONSERVATION2"
+  },
+  {
+    "source": "PHY1_WORK_ENERGY0",
+    "target": "PHY1_FLUID_STATICS0"
+  },
+  {
+    "source": "PHY1_WORK_ENERGY0",
+    "target": "PHY1_POWER0"
+  },
+  {
+    "source": "PHY1_WORK_ENERGY0",
+    "target": "PHY1_POWER3"
+  },
+  {
+    "source": "PHY1_WORK_ENERGY0",
+    "target": "PHY1_WORK_ENERGY1"
+  },
+  {
+    "source": "PHY1_WORK_ENERGY0",
+    "target": "PHY1_WORK_ENERGY3"
+  },
+  {
+    "source": "PHY1_WORK_ENERGY0",
+    "target": "PHY1_WORK_ENERGY4"
+  },
+  {
+    "source": "PHY1_WORK_ENERGY1",
+    "target": "PHY1_WORK_ENERGY2"
+  },
+  {
+    "source": "PHY1_WORK_ENERGY3",
+    "target": "PHY1_ENERGY_CONSERVATION1"
+  },
+  {
+    "source": "PHY1_WORK_ENERGY3",
+    "target": "PHY1_MOMENTUM4"
+  },
+  {
+    "source": "PHY1_WORK_ENERGY3",
+    "target": "PHY1_ROTATIONAL4"
+  },
+  {
+    "source": "PHY1_WORK_ENERGY4",
+    "target": "PHY1_SATELLITE1"
+  },
+  {
+    "source": "PHY1_WORK_ENERGY4",
+    "target": "PHY1_WORK_ENERGY5"
+  },
+  {
+    "source": "PHY1_WORK_ENERGY5",
+    "target": "PHY1_ENERGY_CONSERVATION0"
+  },
+  {
+    "source": "PHY2_AC_CIRCUITS0",
+    "target": "PHY2_AC_CIRCUITS1"
+  },
+  {
+    "source": "PHY2_AC_CIRCUITS0",
+    "target": "PHY2_AC_CIRCUITS2"
+  },
+  {
+    "source": "PHY2_AC_CIRCUITS1",
+    "target": "PHY2_AC_CIRCUITS4"
+  },
+  {
+    "source": "PHY2_AC_CIRCUITS2",
+    "target": "PHY2_AC_CIRCUITS3"
+  },
+  {
+    "source": "PHY2_ATOMIC_MODELS0",
+    "target": "PHY2_ATOMIC_MODELS1"
+  },
+  {
+    "source": "PHY2_ATOMIC_MODELS0",
+    "target": "PHY2_ATOMIC_MODELS3"
+  },
+  {
+    "source": "PHY2_ATOMIC_MODELS1",
+    "target": "PHY2_ATOMIC_MODELS2"
+  },
+  {
+    "source": "PHY2_ATOMIC_MODELS1",
+    "target": "PHY2_ATOMIC_MODELS4"
+  },
+  {
+    "source": "PHY2_ATOMIC_MODELS2",
+    "target": "PHY2_ATOMIC_MODELS5"
+  },
+  {
+    "source": "PHY2_ATOMIC_MODELS6",
+    "target": "PHY2_ATOMIC_MODELS0"
+  },
+  {
+    "source": "PHY2_ATOMIC_MODELS6",
+    "target": "PHY2_FISSION_FUSION5"
+  },
+  {
+    "source": "PHY2_CAPACITOR0",
+    "target": "PHY2_CAPACITOR1"
+  },
+  {
+    "source": "PHY2_CAPACITOR0",
+    "target": "PHY2_CAPACITOR2"
+  },
+  {
+    "source": "PHY2_CAPACITOR0",
+    "target": "PHY2_CAPACITOR3"
+  },
+  {
+    "source": "PHY2_CAPACITOR0",
+    "target": "PHY2_CAPACITOR6"
+  },
+  {
+    "source": "PHY2_CAPACITOR1",
+    "target": "PHY2_CAPACITOR4"
+  },
+  {
+    "source": "PHY2_CAPACITOR3",
+    "target": "PHY2_CAPACITOR5"
+  },
+  {
+    "source": "PHY2_CAPACITOR3",
+    "target": "PHY2_CAPACITOR7"
+  },
+  {
+    "source": "PHY2_CELLS0",
+    "target": "PHY2_CELLS1"
+  },
+  {
+    "source": "PHY2_CELLS0",
+    "target": "PHY2_CIRCUITS3"
+  },
+  {
+    "source": "PHY2_CELLS1",
+    "target": "PHY2_CELLS2"
+  },
+  {
+    "source": "PHY2_CIRCUITS0",
+    "target": "PHY2_CIRCUITS1"
+  },
+  {
+    "source": "PHY2_CIRCUITS0",
+    "target": "PHY2_CIRCUITS2"
+  },
+  {
+    "source": "PHY2_CIRCUITS0",
+    "target": "PHY2_METER_BRIDGE0"
+  },
+  {
+    "source": "PHY2_CIRCUITS0",
+    "target": "PHY2_METER_BRIDGE2"
+  },
+  {
+    "source": "PHY2_CIRCUITS0",
+    "target": "PHY2_METER_BRIDGE3"
+  },
+  {
+    "source": "PHY2_CIRCUITS2",
+    "target": "PHY2_CELLS1"
+  },
+  {
+    "source": "PHY2_CIRCUITS2",
+    "target": "PHY2_CIRCUITS3"
+  },
+  {
+    "source": "PHY2_CIRCUITS2",
+    "target": "PHY2_METER_BRIDGE1"
+  },
+  {
+    "source": "PHY2_CIRCUITS4",
+    "target": "PHY2_CIRCUITS5"
+  },
+  {
+    "source": "PHY2_CIRCUITS4",
+    "target": "PHY2_CIRCUITS6"
+  },
+  {
+    "source": "PHY2_CIRCUITS4",
+    "target": "PHY2_CIRCUITS7"
+  },
+  {
+    "source": "PHY2_COULOMB0",
+    "target": "PHY2_COULOMB1"
+  },
+  {
+    "source": "PHY2_COULOMB0",
+    "target": "PHY2_COULOMB4"
+  },
+  {
+    "source": "PHY2_COULOMB1",
+    "target": "PHY2_COULOMB2"
+  },
+  {
+    "source": "PHY2_COULOMB1",
+    "target": "PHY2_COULOMB3"
+  },
+  {
+    "source": "PHY2_COULOMB3",
+    "target": "PHY2_COULOMB5"
+  },
+  {
+    "source": "PHY2_COULOMB3",
+    "target": "PHY2_GAUSS0"
+  },
+  {
+    "source": "PHY2_COULOMB5",
+    "target": "PHY2_COULOMB6"
+  },
+  {
+    "source": "PHY2_DIFFRACTION0",
+    "target": "PHY2_DIFFRACTION1"
+  },
+  {
+    "source": "PHY2_DIODE0",
+    "target": "PHY2_DIODE1"
+  },
+  {
+    "source": "PHY2_DIODE0",
+    "target": "PHY2_DIODE2"
+  },
+  {
+    "source": "PHY2_DIODE0",
+    "target": "PHY2_DIODE3"
+  },
+  {
+    "source": "PHY2_DIODE0",
+    "target": "PHY2_TRANSISTOR0"
+  },
+  {
+    "source": "PHY2_FISSION_FUSION0",
+    "target": "PHY2_FISSION_FUSION1"
+  },
+  {
+    "source": "PHY2_FISSION_FUSION2",
+    "target": "PHY2_FISSION_FUSION3"
+  },
+  {
+    "source": "PHY2_GAUSS0",
+    "target": "PHY2_CAPACITOR1"
+  },
+  {
+    "source": "PHY2_GAUSS0",
+    "target": "PHY2_GAUSS1"
+  },
+  {
+    "source": "PHY2_GAUSS0",
+    "target": "PHY2_GAUSS2"
+  },
+  {
+    "source": "PHY2_GAUSS2",
+    "target": "PHY2_CAPACITOR3"
+  },
+  {
+    "source": "PHY2_GAUSS2",
+    "target": "PHY2_GAUSS3"
+  },
+  {
+    "source": "PHY2_GAUSS2",
+    "target": "PHY2_GAUSS4"
+  },
+  {
+    "source": "PHY2_HEAT_ENGINE0",
+    "target": "PHY2_HEAT_ENGINE1"
+  },
+  {
+    "source": "PHY2_HEAT_ENGINE0",
+    "target": "PHY2_HEAT_ENGINE5"
+  },
+  {
+    "source": "PHY2_HEAT_ENGINE1",
+    "target": "PHY2_HEAT_ENGINE2"
+  },
+  {
+    "source": "PHY2_HEAT_ENGINE1",
+    "target": "PHY2_HEAT_ENGINE3"
+  },
+  {
+    "source": "PHY2_HEAT_ENGINE1",
+    "target": "PHY2_HEAT_ENGINE6"
+  },
+  {
+    "source": "PHY2_HEAT_ENGINE3",
+    "target": "PHY2_HEAT_ENGINE4"
+  },
+  {
+    "source": "PHY2_HEAT_TEMPERATURE0",
+    "target": "PHY2_HEAT_TEMPERATURE1"
+  },
+  {
+    "source": "PHY2_HEAT_TEMPERATURE0",
+    "target": "PHY2_HEAT_TEMPERATURE2"
+  },
+  {
+    "source": "PHY2_HEAT_TEMPERATURE0",
+    "target": "PHY2_HEAT_TEMPERATURE3"
+  },
+  {
+    "source": "PHY2_HEAT_TEMPERATURE0",
+    "target": "PHY2_HEAT_TEMPERATURE8"
+  },
+  {
+    "source": "PHY2_HEAT_TEMPERATURE3",
+    "target": "PHY2_HEAT_TEMPERATURE4"
+  },
+  {
+    "source": "PHY2_HEAT_TEMPERATURE4",
+    "target": "PHY2_HEAT_TEMPERATURE5"
+  },
+  {
+    "source": "PHY2_HEAT_TEMPERATURE4",
+    "target": "PHY2_HEAT_TEMPERATURE6"
+  },
+  {
+    "source": "PHY2_HEAT_TEMPERATURE4",
+    "target": "PHY2_HEAT_TEMPERATURE7"
+  },
+  {
+    "source": "PHY2_HEAT_TEMPERATURE4",
+    "target": "PHY2_THERMO_LAWS2"
+  },
+  {
+    "source": "PHY2_INDUCTANCE0",
+    "target": "PHY2_AC_CIRCUITS2"
+  },
+  {
+    "source": "PHY2_INDUCTANCE0",
+    "target": "PHY2_INDUCTANCE1"
+  },
+  {
+    "source": "PHY2_INDUCTANCE0",
+    "target": "PHY2_INDUCTANCE2"
+  },
+  {
+    "source": "PHY2_INDUCTION0",
+    "target": "PHY2_INDUCTION1"
+  },
+  {
+    "source": "PHY2_INDUCTION0",
+    "target": "PHY2_INDUCTION2"
+  },
+  {
+    "source": "PHY2_INDUCTION1",
+    "target": "PHY2_INDUCTANCE0"
+  },
+  {
+    "source": "PHY2_INDUCTION1",
+    "target": "PHY2_INDUCTION3"
+  },
+  {
+    "source": "PHY2_INDUCTION1",
+    "target": "PHY2_TRANSFORMER0"
+  },
+  {
+    "source": "PHY2_INDUCTION2",
+    "target": "PHY2_MAGNETIC_FORCE4"
+  },
+  {
+    "source": "PHY2_INTERFERENCE0",
+    "target": "PHY2_DIFFRACTION0"
+  },
+  {
+    "source": "PHY2_INTERFERENCE0",
+    "target": "PHY2_DIFFRACTION2"
+  },
+  {
+    "source": "PHY2_INTERFERENCE0",
+    "target": "PHY2_INTERFERENCE1"
+  },
+  {
+    "source": "PHY2_INTERFERENCE1",
+    "target": "PHY2_INTERFERENCE2"
+  },
+  {
+    "source": "PHY2_INTERFERENCE1",
+    "target": "PHY2_INTERFERENCE3"
+  },
+  {
+    "source": "PHY2_LOGIC_GATES1",
+    "target": "PHY2_LOGIC_GATES0"
+  },
+  {
+    "source": "PHY2_LOGIC_GATES1",
+    "target": "PHY2_LOGIC_GATES2"
+  },
+  {
+    "source": "PHY2_LOGIC_GATES1",
+    "target": "PHY2_LOGIC_GATES3"
+  },
+  {
+    "source": "PHY2_MAGNETIC_FIELD0",
+    "target": "PHY2_MAGNETIC_FIELD1"
+  },
+  {
+    "source": "PHY2_MAGNETIC_FIELD0",
+    "target": "PHY2_MAGNETIC_FIELD2"
+  },
+  {
+    "source": "PHY2_MAGNETIC_FIELD0",
+    "target": "PHY2_MAGNETIC_FIELD3"
+  },
+  {
+    "source": "PHY2_MAGNETIC_FIELD0",
+    "target": "PHY2_MAGNETIC_FORCE0"
+  },
+  {
+    "source": "PHY2_MAGNETIC_FIELD0",
+    "target": "PHY2_MAGNETIC_FORCE1"
+  },
+  {
+    "source": "PHY2_MAGNETIC_FIELD0",
+    "target": "PHY2_MAGNETIC_MATERIALS3"
+  },
+  {
+    "source": "PHY2_MAGNETIC_FIELD1",
+    "target": "PHY2_INDUCTION2"
+  },
+  {
+    "source": "PHY2_MAGNETIC_FIELD2",
+    "target": "PHY2_MAGNETIC_FIELD4"
+  },
+  {
+    "source": "PHY2_MAGNETIC_FORCE0",
+    "target": "PHY2_MAGNETIC_FORCE3"
+  },
+  {
+    "source": "PHY2_MAGNETIC_FORCE0",
+    "target": "PHY2_MAGNETIC_FORCE4"
+  },
+  {
+    "source": "PHY2_MAGNETIC_FORCE1",
+    "target": "PHY2_MAGNETIC_FORCE2"
+  },
+  {
+    "source": "PHY2_MAGNETIC_FORCE1",
+    "target": "PHY2_MAGNETIC_FORCE5"
+  },
+  {
+    "source": "PHY2_MAGNETIC_FORCE1",
+    "target": "PHY2_MAGNETIC_FORCE6"
+  },
+  {
+    "source": "PHY2_MAGNETIC_MATERIALS0",
+    "target": "PHY2_MAGNETIC_MATERIALS1"
+  },
+  {
+    "source": "PHY2_MAGNETIC_MATERIALS0",
+    "target": "PHY2_MAGNETIC_MATERIALS2"
+  },
+  {
+    "source": "PHY2_MAGNETIC_MATERIALS1",
+    "target": "PHY2_MAGNETIC_FIELD4"
+  },
+  {
+    "source": "PHY2_MAGNETIC_MATERIALS3",
+    "target": "PHY2_MAGNETIC_MATERIALS4"
+  },
+  {
+    "source": "PHY2_MATTER_WAVES0",
+    "target": "PHY2_MATTER_WAVES1"
+  },
+  {
+    "source": "PHY2_MATTER_WAVES1",
+    "target": "PHY2_MATTER_WAVES2"
+  },
+  {
+    "source": "PHY2_METER_BRIDGE0",
+    "target": "PHY2_METER_BRIDGE1"
+  },
+  {
+    "source": "PHY2_METER_BRIDGE2",
+    "target": "PHY2_METER_BRIDGE4"
+  },
+  {
+    "source": "PHY2_NUCLEUS0",
+    "target": "PHY2_NUCLEUS1"
+  },
+  {
+    "source": "PHY2_NUCLEUS0",
+    "target": "PHY2_NUCLEUS2"
+  },
+  {
+    "source": "PHY2_NUCLEUS1",
+    "target": "PHY2_FISSION_FUSION1"
+  },
+  {
+    "source": "PHY2_OHM0",
+    "target": "PHY2_CIRCUITS0"
+  },
+  {
+    "source": "PHY2_OHM0",
+    "target": "PHY2_CIRCUITS4"
+  },
+  {
+    "source": "PHY2_OHM0",
+    "target": "PHY2_OHM1"
+  },
+  {
+    "source": "PHY2_OHM0",
+    "target": "PHY2_OHM4"
+  },
+  {
+    "source": "PHY2_OHM1",
+    "target": "PHY2_OHM2"
+  },
+  {
+    "source": "PHY2_OHM1",
+    "target": "PHY2_OHM3"
+  },
+  {
+    "source": "PHY2_OPTICAL_INSTRUMENTS0",
+    "target": "PHY2_OPTICAL_INSTRUMENTS1"
+  },
+  {
+    "source": "PHY2_PHOTOELECTRIC0",
+    "target": "PHY2_PHOTOELECTRIC1"
+  },
+  {
+    "source": "PHY2_PHOTOELECTRIC1",
+    "target": "PHY2_ATOMIC_MODELS5"
+  },
+  {
+    "source": "PHY2_PHOTOELECTRIC1",
+    "target": "PHY2_PHOTOELECTRIC2"
+  },
+  {
+    "source": "PHY2_PHOTOELECTRIC1",
+    "target": "PHY2_PHOTOELECTRIC3"
+  },
+  {
+    "source": "PHY2_PHOTOELECTRIC1",
+    "target": "PHY2_PHOTOELECTRIC6"
+  },
+  {
+    "source": "PHY2_PHOTOELECTRIC1",
+    "target": "PHY2_PHOTOELECTRIC8"
+  },
+  {
+    "source": "PHY2_PHOTOELECTRIC1",
+    "target": "PHY2_SEMICONDUCTOR3"
+  },
+  {
+    "source": "PHY2_PHOTOELECTRIC1",
+    "target": "PHY2_XRAY3"
+  },
+  {
+    "source": "PHY2_PHOTOELECTRIC2",
+    "target": "PHY2_MATTER_WAVES0"
+  },
+  {
+    "source": "PHY2_PHOTOELECTRIC2",
+    "target": "PHY2_XRAY1"
+  },
+  {
+    "source": "PHY2_PHOTOELECTRIC3",
+    "target": "PHY2_PHOTOELECTRIC4"
+  },
+  {
+    "source": "PHY2_PHOTOELECTRIC7",
+    "target": "PHY2_XRAY0"
+  },
+  {
+    "source": "PHY2_PHOTOELECTRIC8",
+    "target": "PHY2_PHOTOELECTRIC7"
+  },
+  {
+    "source": "PHY2_POLARISATION0",
+    "target": "PHY2_POLARISATION1"
+  },
+  {
+    "source": "PHY2_RADIOACTIVITY0",
+    "target": "PHY2_FISSION_FUSION2"
+  },
+  {
+    "source": "PHY2_RADIOACTIVITY0",
+    "target": "PHY2_RADIOACTIVITY1"
+  },
+  {
+    "source": "PHY2_RADIOACTIVITY1",
+    "target": "PHY2_RADIOACTIVITY2"
+  },
+  {
+    "source": "PHY2_RADIOACTIVITY2",
+    "target": "PHY2_RADIOACTIVITY3"
+  },
+  {
+    "source": "PHY2_RADIOACTIVITY2",
+    "target": "PHY2_RADIOACTIVITY6"
+  },
+  {
+    "source": "PHY2_RADIOACTIVITY3",
+    "target": "PHY2_RADIOACTIVITY4"
+  },
+  {
+    "source": "PHY2_RADIOACTIVITY4",
+    "target": "PHY2_RADIOACTIVITY5"
+  },
+  {
+    "source": "PHY2_REFLECTION0",
+    "target": "PHY2_REFLECTION1"
+  },
+  {
+    "source": "PHY2_REFLECTION1",
+    "target": "PHY2_REFLECTION2"
+  },
+  {
+    "source": "PHY2_REFLECTION1",
+    "target": "PHY2_REFRACTION6"
+  },
+  {
+    "source": "PHY2_REFRACTION0",
+    "target": "PHY2_POLARISATION1"
+  },
+  {
+    "source": "PHY2_REFRACTION0",
+    "target": "PHY2_REFRACTION1"
+  },
+  {
+    "source": "PHY2_REFRACTION0",
+    "target": "PHY2_REFRACTION2"
+  },
+  {
+    "source": "PHY2_REFRACTION0",
+    "target": "PHY2_REFRACTION5"
+  },
+  {
+    "source": "PHY2_REFRACTION0",
+    "target": "PHY2_REFRACTION8"
+  },
+  {
+    "source": "PHY2_REFRACTION1",
+    "target": "PHY2_REFRACTION3"
+  },
+  {
+    "source": "PHY2_REFRACTION1",
+    "target": "PHY2_REFRACTION4"
+  },
+  {
+    "source": "PHY2_REFRACTION2",
+    "target": "PHY2_REFRACTION9"
+  },
+  {
+    "source": "PHY2_REFRACTION5",
+    "target": "PHY2_OPTICAL_INSTRUMENTS2"
+  },
+  {
+    "source": "PHY2_REFRACTION5",
+    "target": "PHY2_REFRACTION6"
+  },
+  {
+    "source": "PHY2_REFRACTION5",
+    "target": "PHY2_REFRACTION7"
+  },
+  {
+    "source": "PHY2_REFRACTION6",
+    "target": "PHY2_OPTICAL_INSTRUMENTS0"
+  },
+  {
+    "source": "PHY2_REFRACTION8",
+    "target": "PHY2_INTERFERENCE0"
+  },
+  {
+    "source": "PHY2_RELATIVITY0",
+    "target": "PHY2_RELATIVITY1"
+  },
+  {
+    "source": "PHY2_RELATIVITY0",
+    "target": "PHY2_RELATIVITY3"
+  },
+  {
+    "source": "PHY2_RELATIVITY0",
+    "target": "PHY2_RELATIVITY4"
+  },
+  {
+    "source": "PHY2_RELATIVITY0",
+    "target": "PHY2_RELATIVITY7"
+  },
+  {
+    "source": "PHY2_RELATIVITY0",
+    "target": "PHY2_RELATIVITY8"
+  },
+  {
+    "source": "PHY2_RELATIVITY3",
+    "target": "PHY2_RELATIVITY2"
+  },
+  {
+    "source": "PHY2_RELATIVITY5",
+    "target": "PHY2_RELATIVITY6"
+  },
+  {
+    "source": "PHY2_RELATIVITY7",
+    "target": "PHY2_FISSION_FUSION0"
+  },
+  {
+    "source": "PHY2_RELATIVITY7",
+    "target": "PHY2_FISSION_FUSION4"
+  },
+  {
+    "source": "PHY2_RELATIVITY7",
+    "target": "PHY2_NUCLEUS0"
+  },
+  {
+    "source": "PHY2_RELATIVITY7",
+    "target": "PHY2_RELATIVITY5"
+  },
+  {
+    "source": "PHY2_RELATIVITY7",
+    "target": "PHY2_SOLAR_SYSTEM0"
+  },
+  {
+    "source": "PHY2_SEMICONDUCTOR0",
+    "target": "PHY2_DIODE0"
+  },
+  {
+    "source": "PHY2_SEMICONDUCTOR0",
+    "target": "PHY2_SEMICONDUCTOR1"
+  },
+  {
+    "source": "PHY2_SEMICONDUCTOR0",
+    "target": "PHY2_SEMICONDUCTOR2"
+  },
+  {
+    "source": "PHY2_SEMICONDUCTOR2",
+    "target": "PHY2_SEMICONDUCTOR3"
+  },
+  {
+    "source": "PHY2_SEMICONDUCTOR2",
+    "target": "PHY2_SEMICONDUCTOR4"
+  },
+  {
+    "source": "PHY2_SOLAR_SYSTEM0",
+    "target": "PHY2_SOLAR_SYSTEM1"
+  },
+  {
+    "source": "PHY2_SOLAR_SYSTEM0",
+    "target": "PHY2_SOLAR_SYSTEM2"
+  },
+  {
+    "source": "PHY2_SOLAR_SYSTEM1",
+    "target": "PHY2_COSMOLOGY1"
+  },
+  {
+    "source": "PHY2_SOLAR_SYSTEM3",
+    "target": "PHY2_COSMOLOGY0"
+  },
+  {
+    "source": "PHY2_THERMO_LAWS0",
+    "target": "PHY2_THERMO_LAWS1"
+  },
+  {
+    "source": "PHY2_THERMO_LAWS0",
+    "target": "PHY2_THERMO_LAWS3"
+  },
+  {
+    "source": "PHY2_THERMO_LAWS0",
+    "target": "PHY2_THERMO_LAWS5"
+  },
+  {
+    "source": "PHY2_THERMO_LAWS1",
+    "target": "PHY2_HEAT_ENGINE3"
+  },
+  {
+    "source": "PHY2_THERMO_LAWS1",
+    "target": "PHY2_HEAT_TEMPERATURE7"
+  },
+  {
+    "source": "PHY2_THERMO_LAWS1",
+    "target": "PHY2_THERMO_LAWS2"
+  },
+  {
+    "source": "PHY2_THERMO_LAWS1",
+    "target": "PHY2_THERMO_LAWS6"
+  },
+  {
+    "source": "PHY2_THERMO_LAWS3",
+    "target": "PHY2_THERMO_LAWS4"
+  },
+  {
+    "source": "PHY2_TRANSFORMER0",
+    "target": "PHY2_TRANSFORMER1"
+  },
+  {
+    "source": "PHY2_TRANSISTOR0",
+    "target": "PHY2_TRANSISTOR1"
+  },
+  {
+    "source": "PHY2_TRANSISTOR1",
+    "target": "PHY2_TRANSISTOR2"
+  },
+  {
+    "source": "PHY2_TRANSISTOR2",
+    "target": "PHY2_LOGIC_GATES0"
+  },
+  {
+    "source": "PHY2_XRAY0",
+    "target": "PHY2_XRAY2"
+  },
+  {
+    "source": "PHY2_XRAY3",
+    "target": "PHY2_SOLAR_SYSTEM3"
   }
 ]
