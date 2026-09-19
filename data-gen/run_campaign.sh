@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
 # Runs one full attempt of the question-generation campaign end to end:
 # checks key health, runs generation (real model) until either every tuple
-# is done or every key is exhausted for the day, then pushes whatever was
-# generated to Supabase and prints a summary.
+# is done or every key is exhausted for the day (generate_question_gemini.py
+# already detects that and stops on its own - see its watchdog thread; this
+# script doesn't need to re-implement that), then pushes whatever was
+# generated to Supabase and prints a summary. Shows a live progress bar
+# while generation runs.
+#
+# WINDOWS: run this from Git Bash (the same shell used to develop this
+# pipeline), not cmd.exe or plain PowerShell - neither understands bash
+# syntax. From a Git Bash terminal in data-gen/:  bash run_campaign.sh
 #
 # Safe to re-run as many times as needed (e.g. once a day after keys reset):
 # generation resumes from gemini_progress_v2.json automatically, and the
@@ -10,11 +17,11 @@
 # destructive.
 #
 # Usage:
-#   ./run_campaign.sh              # full real run
-#   ./run_campaign.sh --limit 6    # small test-model pilot (passes through
-#                                   #  to generate_question_gemini.py; add
-#                                   #  --real yourself if you want it to
-#                                   #  spend production quota)
+#   bash run_campaign.sh              # full real run
+#   bash run_campaign.sh --limit 6    # small test-model pilot (passes
+#                                      #  through to generate_question_gemini.py;
+#                                      #  add --real yourself if you want it
+#                                      #  to spend production quota)
 
 set -uo pipefail
 cd "$(dirname "$0")"
@@ -51,7 +58,55 @@ echo "=== 2/3: running generation (--real), logging to $LOG ==="
 echo "    (resumes automatically from gemini_progress_v2.json; stops cleanly"
 echo "     on its own once either every tuple is done or every key is"
 echo "     exhausted for today - re-run this script again later either way)"
-"$PY" generate_question_gemini.py --real "$@" 2>&1 | tee "$LOG"
+
+# Runs fully in the background so the verbose per-tuple log (hundreds of
+# [verify]/[ratelimit] lines) goes to $LOG only, and this terminal can show
+# a clean, single-line, live-updating progress bar instead.
+"$PY" generate_question_gemini.py --real "$@" > "$LOG" 2>&1 &
+GEN_PID=$!
+
+# The total tuple count depends on --limit/--sample-topics if passed, so
+# read it back from the run's own "Tuples to generate: N" line rather than
+# hardcoding it.
+TOTAL=""
+for _ in $(seq 1 60); do
+    TOTAL=$(sed -n 's/.*Tuples to generate: \([0-9]*\).*/\1/p' "$LOG" 2>/dev/null | head -1)
+    [ -n "$TOTAL" ] && break
+    sleep 1
+done
+if [ -z "$TOTAL" ]; then
+    echo "  (couldn't read the tuple total yet - skipping the progress bar; check $LOG directly)"
+    TOTAL=0
+fi
+
+if [ "$TOTAL" -gt 0 ]; then
+    BAR_WIDTH=50
+    while kill -0 "$GEN_PID" 2>/dev/null; do
+        DONE=$("$PY" -c "
+import json
+try:
+    print(len(json.load(open('gemini_progress_v2.json', encoding='utf-8'))))
+except Exception:
+    print(0)
+" 2>/dev/null)
+        [ -z "$DONE" ] && DONE=0
+        PCT=$((DONE * 100 / TOTAL))
+        [ "$PCT" -gt 100 ] && PCT=100
+        FILLED=$((PCT * BAR_WIDTH / 100))
+        EMPTY=$((BAR_WIDTH - FILLED))
+        BAR=$(printf '%*s' "$FILLED" '' | tr ' ' '#')$(printf '%*s' "$EMPTY" '' | tr ' ' '-')
+        printf "\r  [%s] %3d%%  (%d/%d tuples)   " "$BAR" "$PCT" "$DONE" "$TOTAL"
+        sleep 5
+    done
+    echo
+fi
+
+wait "$GEN_PID"
+GEN_EXIT=$?
+if [ "$GEN_EXIT" -ne 0 ]; then
+    echo "  generation exited with code $GEN_EXIT - check $LOG for details"
+fi
+tail -5 "$LOG"
 
 echo
 echo "=== 3/3: pushing generated questions to Supabase ==="
