@@ -1,0 +1,395 @@
+% Chapter 5 -- Rubric: PO4 (4.1)
+\chapter{Investigation and Evaluation}
+\label{ch:evaluation}
+
+\section{Experimental Investigation}
+\label{sec:investigation}
+
+This is a development-focused project, so the investigations reported here are
+those that validated --- or refuted --- specific design decisions. Four are
+presented. Each states the question it was asked to settle, the method, and the
+conclusion actually drawn, including the two cases where the investigation
+overturned the team's initial position.
+
+\subsection{Investigation 1: is local model inference viable for content generation?}
+
+\textbf{Question.} Can the question bank be generated on the team's own hardware
+using locally hosted open-weight models, avoiding any external API dependency
+and any cost?
+
+\textbf{Method.} A generation pipeline was implemented against locally served
+quantised models (7B and 3B parameter classes) on CPU-only laptops, and measured
+on real specifications drawn from the ontology, with prompt sizes of roughly
+4--6\,k tokens and completions of roughly 3\,k tokens per call.
+
+\textbf{Findings.} Two independent failures. On throughput, the measured
+per-call latency extrapolated to multiple weeks of continuous computation for a
+single full pass over the 2{,}580-specification space then in scope --- longer
+than the remaining project schedule, on machines also needed for development. On
+correctness, a subtler defect appeared: models emit \LaTeX{} commands such as
+\verb|\tan| and \verb|\frac| with single backslashes, and a strict JSON parser
+does not reject these --- for the subset of letters that happen to be legal JSON
+escapes it silently consumes the backslash and substitutes a control character.
+The corruption therefore produced no error at all, and was found only by reading
+output.
+
+\textbf{Conclusion.} The local approach was abandoned on throughput grounds, and
+a hosted API adopted with key pooling to raise the rate ceiling. The escape
+defect was not specific to local models --- it recurred with the hosted model at a
+measured 13.4\% of one early production batch --- so an escape-repair pass was
+made unconditional in both the ingest and generation paths. This is the clearest
+case in the project of an investigation changing the architecture: the design in
+\Cref{sec:generation-pipeline} exists because this one failed.
+
+\subsection{Investigation 2: is the ontology's granularity sufficient to support the gating policy?}
+
+\textbf{Question.} The conjunctive gate in \Cref{eq:gating} acts on a skill's
+direct prerequisites. Does the first ontology supply enough structure for that
+gate to do anything?
+
+\textbf{Method.} Structural analysis of the 430-skill graph: skills per topic,
+syllabus coverage, and the fraction of skills with no prerequisite edge at all.
+
+\textbf{Findings.} Two deficits, both fatal to the gate. The graph averaged
+fewer than four skills per topic, and a topic holding three skills cannot
+localise a failure \emph{within} itself --- which is the system's entire
+purpose. And a substantial fraction of skills had no incoming edge at all; a
+gate with no parents to test degenerates to the ungated case, so for those
+skills \Cref{eq:gating} was doing nothing.
+
+Note that the binding measure here is coverage and connectedness, not the raw
+edges-per-skill ratio. That ratio is similar before and after the rebuild
+(1.1 against 1.03), and deliberately so: the rebuild added roughly four times
+as many skills, so holding the ratio while eliminating isolated skills entirely
+means the edges are distributed across the graph rather than concentrated in a
+few dense topics. A higher ratio achieved by piling edges onto already-connected
+skills would not have fixed either deficit above.
+
+\textbf{Conclusion.} The ontology, not the engine, was the binding constraint.
+This motivated the full-corpus rebuild (\Cref{sec:ontology-rebuild}), which
+raised the graph to 1{,}688 skills and 1{,}743 edges with every one of the 183
+syllabus topics populated and no isolated skills. \Cref{tab:ontology-effects}
+reports the rebuild's structural effect.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Structural effect of the ontology rebuild and its editorial pass}
+  \label{tab:ontology-effects}
+  \begin{tabular}{lrr}
+    \toprule
+    Property & Before editorial pass & After \\
+    \midrule
+    Syllabus topics holding no skill & 54 & 0 \\
+    Unresolved prerequisite references & 46 & 0 \\
+    Isolated skills (no edge at all) & 6 & 0 \\
+    Topics with no internal learning order & 5 & 0 \\
+    Near-orphan fragments (2--6 skills) & 91 & 32 \\
+    Connected components & 187 & 87 \\
+    Largest connected component & 203 & 482 \\
+    Maximum DAG depth & 7 & 9 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Investigation 3: can prerequisite edges be proposed mechanically?}
+
+\textbf{Question.} After the rebuild, 91 fragments of 2--6 skills remained
+disconnected from the main graph. Can the missing edges be proposed
+automatically rather than authored by hand?
+
+\textbf{Method.} Two scoring functions were implemented and their proposals
+read individually against the subject matter. The first scored candidate parents
+by token overlap with the orphaned skill. The second scored by
+\emph{topic hub-ness} --- preferring the candidate at the lowest Bloom tier with
+the most dependents.
+
+\textbf{Findings.} Token overlap produced roughly 40\% usable proposals. Its
+failures were systematic rather than random: it proposed lateral links between
+peers that merely share vocabulary --- zero-order kinetics ``requiring''
+first-order kinetics, the cosine rule ``requiring'' the sine rule --- and in one
+case proposed a pair in both directions, which would have closed a cycle.
+Hub-based scoring raised usable proposals to roughly two thirds. Of 83 proposals
+finally reviewed, 48 were applied (several with the direction reversed from what
+was proposed) and 35 were rejected outright, their fragments left deliberately
+disconnected rather than wrongly connected.
+
+\textbf{Conclusion.} Mechanical proposal is a useful accelerator and an
+unacceptable authority. A wrong prerequisite edge is worse than a missing one,
+because \Cref{eq:pullup} propagates along it and will credit a learner for a
+skill they have never demonstrated. The 32 fragments that survive are recorded
+as requiring a domain expert rather than another heuristic.
+
+\subsection{Investigation 4: do automated quality heuristics over-flag?}
+
+\textbf{Question.} Two validators were written to find defects in the generated
+ontology: one flagging skills that fuse two actions, and one flagging ``Bloom
+inversions'' --- edges whose prerequisite sits at a \emph{higher} Bloom tier than
+the skill requiring it. Are their outputs trustworthy?
+
+\textbf{Method.} Every flag from both checks was read against the underlying
+skill or edge.
+
+\textbf{Findings.} The multi-action check flagged 173 skills, of which over half
+were false positives, and was replaced by a stricter criterion yielding 47
+candidates --- of which 20 were genuine splits and 27 were rejected on reading.
+The Bloom-inversion check flagged 147 edges; hand review found \emph{3}
+genuinely reversed. The check's premise was wrong, not the data: Bloom tier
+measures cognitive demand, not teaching order, and a low-tier fact \emph{about}
+an operation is routinely learned after the operation itself. For example,
+recalling that a determinant with two equal rows is zero (Remember) legitimately
+depends on being able to evaluate a determinant (Apply).
+
+\textbf{Conclusion.} The inversion check was downgraded from error to advisory
+rather than deleted, with its reasoning recorded so the next contributor does not
+reinstate it. The transferable finding is that on this project mechanical
+heuristics over-flagged by roughly the same large factor twice, and that the
+correct response is to calibrate a heuristic against hand review before treating
+its output as a defect list.
+
+\section{Performance Evaluation}
+\label{sec:evaluation}
+
+\subsection{Setup and acceptance criteria}
+
+The engine is evaluated by an automated end-to-end harness that runs the real
+diagnostic, mastery-update, topic-practice and spillover code paths against an
+in-memory stand-in for the database, seeded with a synthetic learner and a
+question bank drawn from the compiled ontology. It requires no credentials and
+no network, which is what makes it runnable by any developer before a merge.
+Acceptance is binary per check: all checks must pass.
+
+\subsection{Results}
+
+The harness reports \textbf{18 checks passed, 0 failed}, reproduced on the
+current tree against the adopted 1{,}688-skill ontology. \Cref{tab:smoke} lists
+what each check establishes.
+
+One property of the harness should be read before its results are interpreted.
+It selects a section automatically and sizes the diagnostic to that section's
+skill count, so the absolute figures it prints depend on which section it picks
+--- on the current tree that is a small one (eight skills). The checks therefore
+establish that each mechanism \emph{runs and holds its invariants}; they are not
+a measurement of how far evidence propagates in a large section, which would
+require a section with real depth and a populated question bank. The propagation
+guarantee is carried by the invariant check, not by counting how many skills
+moved.
+
+\begin{table}[htbp]
+  \centering
+  \caption{End-to-end verification harness: checks and what each establishes}
+  \label{tab:smoke}
+  \begin{tabularx}{\textwidth}{>{\hsize=0.42\hsize}Y>{\hsize=0.82\hsize}Y>{\hsize=1.76\hsize}Y}
+    \toprule
+    Area & Check & Establishes \\
+    \midrule
+    Ontology & Graph builds (1{,}688 skills); catalogue topics all resolve (183); no legacy topic codes remain & The served ontology is internally consistent and the catalogue cannot reference a topic that does not exist \\
+    Question search & Tier-1 filter matches by topic \emph{code}; filtering by display label matches nothing & Regression guard for the defect in \Cref{sec:revisions} \\
+    Diagnostic & Session starts, sized to the section (8 skills in the section exercised); question carries its subject; topic shown as label (\texttt{PHY1\_ERRORS} $\rightarrow$ ``Errors and Significant Figures''); every question answered & The adaptive loop runs to completion, sizes itself to the section, and returns learner-presentable metadata (FR3, FR12) \\
+    Mastery & Mastery unlocked after diagnostic; written to \texttt{user\_skill}; section state reports subject & The update path persists per-skill mastery and releases the diagnostic gate (FR4, FR7) \\
+    Invariant & No ancestor sits below its descendant & \Cref{eq:pullup} holds globally after a full session --- the correctness property in NFR1 \\
+    Mastery view & View unlocked; graph returns nodes and edges for the section; table rows carry subject & The visualisation contract holds (FR10) \\
+    Practice & Topic practice serves and accepts questions & Post-diagnostic flow works (FR8) \\
+    Spillover & Fires on repeated wrong answers, reporting its triggering rule (rule A, repeated missing prerequisite) & The prerequisite-detection policy triggers on the intended evidence (FR9) \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+The ontology is separately validated by a structural checker, which reports
+\textbf{zero errors}: the graph is acyclic, every one of the 183 topics holds at
+least one skill, no skill is isolated, and no prerequisite reference is
+unresolved.
+
+\subsection{Evaluation against requirements}
+
+\Cref{tab:traceability} traces every functional and non-functional requirement
+from \Cref{ch:requirements} to the evidence that it is met, or to the deviation
+recorded in \Cref{sec:revisions} where it is not. Two entries are not claims of
+success: FR13 is partially met and NFR2 was never measured.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Requirements traceability and status}
+  \label{tab:traceability}
+  \begin{tabularx}{\textwidth}{>{\hsize=0.3\hsize}Y>{\hsize=0.45\hsize}Y>{\hsize=2.25\hsize}Y}
+    \toprule
+    Req. & Status & Evidence or deviation \\
+    \midrule
+    FR1 & Met, reduced & Account creation and sign-in work, but without a password (\Cref{sec:deviations-auth}) \\
+    FR2 & Met & Catalogue endpoint serves ontology-derived courses, sections and topics; verified by harness \\
+    FR3 & Met & Diagnostic runs to a full 30-question session in the harness \\
+    FR4 & Met & Bloom-conditioned update implemented per \Cref{tab:bloom-params}; exercised on every answered question \\
+    FR5 & Met & Ancestor pull-up implemented; the invariant that no ancestor sits below its descendant is verified explicitly after a full session \\
+    FR6 & Met & Conjunctive gate implemented per \Cref{eq:gating} \\
+    FR7 & Met & Mastery view locked before, unlocked after the diagnostic \\
+    FR8 & Met & Topic practice served and answered questions in the harness \\
+    FR9 & Met & Spillover fired and reported its triggering rule \\
+    FR10 & Met & Mastery graph (nodes and edges for the section) and table both returned \\
+    FR11 & Met & Retake endpoint resets section mastery and clears sessions \\
+    FR12 & Met & Mathematics renders through KaTeX; literal newline handling fixed during implementation \\
+    FR13 & \textbf{Partially met} & Pipeline is complete and validated, but the bank covers only part of the specification space (\Cref{sec:eval-limits}) \\
+    FR14 & Met & Interface strings available in English and Bangla \\
+    \midrule
+    NFR1 & Met & Acyclicity enforced at insertion; ancestor invariant checked by harness; validator reports zero errors \\
+    NFR2 & \textbf{Not measured} & No latency benchmark was run (\Cref{sec:eval-limits}) \\
+    NFR3 & Met & Fallback ladder exercised; a missing item marks the skill tested and advances \\
+    NFR4 & Met & Ontology compiled from source by script; generated files are not hand-edited \\
+    NFR5 & Met & Harness runs with no credentials and no network \\
+    NFR6 & Met & Entire system developed and run on CPU-only laptops \\
+    NFR7 & Met & Bangla content with \LaTeX{} mathematics end to end \\
+    NFR8 & Met & Credentials held in a git-ignored environment file, server-side only \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsection{Evaluation against objectives}
+
+O1--O5, O7 and O8 are met as evidenced above.
+
+\textbf{O6 (question bank) is partially met}, and the shortfall is worth
+quantifying rather than leaving as an adjective. The pipeline is built,
+validated, and has generated and loaded real verified items; what is incomplete
+is coverage of the specification space. Two figures bound the gap. Against the
+legacy 430-skill ontology the space was $430 \times 6 = 2{,}580$
+(skill, Bloom level) specifications, and generation had reached roughly a fifth
+of it when the rebuild superseded that target. Against the now-adopted
+1{,}688-skill ontology the space is $1{,}688 \times 6 = 10{,}128$
+specifications, and because the existing items are keyed to legacy skill
+identifiers they do not transfer: coverage against the served ontology therefore
+starts close to zero and the generation run is outstanding in full. This is the
+same debt identified in \Cref{sec:deviations-adoption}, and it is the single
+largest piece of remaining work (\Cref{sec:future}).
+
+\textbf{O3 is met in implementation but unvalidated in effect} --- the
+propagation is provably consistent, but whether the resulting estimates
+correspond to real learner knowledge is exactly the question the next subsection
+says was not answered.
+
+\subsection{Limitations of this evaluation}
+\label{sec:eval-limits}
+
+The evaluation above is structural and functional. It establishes that the
+system computes what it was designed to compute and that its invariants hold. It
+does \textbf{not} establish that the system helps anyone learn, and the report
+makes no such claim. Specifically:
+
+\begin{itemize}
+  \item \textbf{No human participants.} There was no user study, no classroom
+    trial, and no usability testing with members of the target cohort. Every
+    claim about learner benefit in this report is an argument from design, not a
+    measurement.
+  \item \textbf{No fitted parameters.} $P(L_0)$, $P(T)$ and the Bloom-conditioned
+    $P(G), P(S)$ values are pedagogical priors, not estimates. The literature is
+    explicit that fitted and individualised parameters outperform fixed ones
+    \cite{yudelson2013individualized,baker2008more}; this system cannot do that
+    until it has response data, which it cannot have before deployment.
+  \item \textbf{No predictive validation.} The standard quantitative check on a
+    knowledge-tracing model --- does it predict the next response better than a
+    baseline, measured by AUC on held-out data --- was not performed, because
+    there is no held-out learner data.
+  \item \textbf{No performance benchmark.} NFR2 was not measured; the system is
+    subjectively responsive in use, which is not evidence.
+  \item \textbf{Ontology unreviewed by domain experts.} The rebuilt graph is
+    structurally valid but its subject-matter correctness has been verified only
+    by the team. 32 disconnected fragments and a body of hand-authored
+    prerequisite edges are explicitly awaiting review by a chemist and a
+    physicist.
+  \item \textbf{Question bank coverage is partial}, so a full-coverage session is
+    not yet reachable for every topic. Two consequences follow that the harness
+    cannot surface, because it seeds synthetic items rather than reading the real
+    bank. First, the Bloom ladder degrades: the engine requests a question one
+    band above the learner's current band, and where the bank holds no item at
+    that level the nearby-Bloom fallback
+    ($[0,+1,-1,+2,-2,+3,-3]$) supplies whatever exists, so the cognitive
+    progression the design intends is weaker in practice than in specification.
+    Second, the graph-nearby search tiers are exercised far less than the
+    fallback, for the same reason. Both resolve with coverage, not with code.
+  \item \textbf{The harness measures mechanism, not magnitude.} It sizes each
+    run to the section it selects, so its printed figures vary with that choice
+    and are evidence that each path executes and its invariants hold --- not a
+    measurement of how far evidence propagates across a large, well-connected
+    section.
+\end{itemize}
+
+\section{Deviations and Design Revisions}
+\label{sec:revisions}
+
+\subsection{Topic filter matched no rows (found, analysed, fixed)}
+
+\textbf{Deviation.} The diagnostic's first two search tiers returned nothing,
+ever. Every question was silently arriving from the untargeted fallback, so
+topic-targeted and graph-nearby selection --- two thirds of the selection design
+--- were dead code in practice.
+
+\textbf{Cause.} The \texttt{questions.topic} column is a foreign key to
+\texttt{ontology\_topics} and therefore holds a topic \emph{code}
+(\texttt{MAT\_MATRIX}), while the search filtered it by the catalogue
+\emph{display label} (``Matrices and Determinants''). The two can never be
+equal, so the filter matched no row. Nothing failed loudly: a query returning
+zero rows is a valid query, and the fallback dutifully supplied a question, so
+sessions looked healthy.
+
+\textbf{Revision.} The filter was corrected to compare codes, and --- more
+importantly --- two checks were added to the harness: one asserting that a
+code-based filter matches, and one asserting that a label-based filter matches
+\emph{nothing}. The second check is the one that matters; it fails if anyone
+reintroduces the confusion.
+
+\subsection{Session state is not persistent}
+\label{sec:deviations-session}
+
+\textbf{Deviation.} Diagnostic and practice sessions live in process memory, so
+a backend restart discards every in-flight session (NFR-adjacent, and a
+production defect).
+
+\textbf{Analysis.} The session objects hold graph traversal state that was not
+designed for serialisation. Persisting them properly means either a session
+store or reconstructing session state from the durable mastery table on demand.
+
+\textbf{Decision.} Not revised, deliberately. The deployment target for this
+project is a single demonstration process where the failure mode is a lost
+session rather than lost mastery --- mastery itself \emph{is} persisted. The
+correct fix is recorded as production hardening rather than disguised.
+
+\subsection{Authentication is username-only}
+\label{sec:deviations-auth}
+
+\textbf{Deviation.} A learner signs in with a username and no password; the
+client holds the resulting identity in browser storage. This does not meet the
+access-control expectations of \Cref{sec:standards}.
+
+\textbf{Analysis.} The system stores no data that is sensitive in itself beyond
+performance history, and the prototype's users are the team. Authentication was
+therefore deprioritised against the ontology work, which was on the critical
+path for every other subsystem.
+
+\textbf{Decision.} Not revised within the project. It is the first item of
+production hardening (\Cref{sec:future}), and is stated here rather than
+presented as a design choice, because it is not one --- it is an accepted debt.
+
+\subsection{Ontology adoption, and the coverage debt it exposes}
+\label{sec:deviations-adoption}
+
+\textbf{Deviation.} For most of the project the application served the 430-skill
+legacy ontology while the validated 1{,}688-skill rebuild sat beside it,
+unadopted. Adoption has since been carried out: the compiled catalogue in
+\texttt{Backend/tree\_data/} is now generated from the rebuild --- 1{,}688
+skills across all 183 syllabus topics --- and the generation pipeline's ontology
+source has been repointed to the rebuild so that the two cannot drift apart.
+
+\textbf{Analysis.} Adoption was deliberately held back rather than forgotten,
+because it is not merely a file swap. The existing question bank is keyed to
+legacy skill identifiers, so switching the catalogue does not carry the content
+across with it: a system that knows about 1{,}688 skills but holds questions for
+a fraction of them can diagnose more finely in principle while being able to ask
+about less in practice. Adopting therefore converts a \emph{structural} deficit
+into a \emph{coverage} deficit --- the right trade, because coverage is bought
+by a generation run whereas structure had to be rebuilt by hand, but it is a
+debt and is recorded as one.
+
+\textbf{Decision.} Adopt, then generate --- the order finally taken, with the
+consequence stated explicitly rather than presented as complete. The outstanding
+generation run against the enlarged specification space is quantified in
+\Cref{sec:budget} and carried as the first item of
+\Cref{sec:future}. Until it is complete, question-bank coverage against the
+served ontology is the system's binding limitation, and \Cref{sec:eval-limits}
+records it as such.
