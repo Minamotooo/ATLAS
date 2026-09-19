@@ -15,12 +15,24 @@ reset): generation resumes from gemini_progress_v2.json automatically, and
 the Supabase push dedups against what's already there. Nothing here is
 destructive.
 
-Usage (run from the data-gen/ directory, with the venv active or its
-python.exe used directly). All arguments pass straight through to
-generate_question_gemini.py:
-    python run_campaign.py --real               # full real run (spends production quota)
-    python run_campaign.py --limit 6             # small pilot, cheap test model (no --real)
-    python run_campaign.py --real --limit 6      # small pilot, real model
+Usage (run from the data-gen/ directory). All arguments pass straight
+through to generate_question_gemini.py:
+    ./.venv/Scripts/python.exe run_campaign.py --real          # full real run
+    ./.venv/Scripts/python.exe run_campaign.py --limit 6       # small pilot, cheap test model (no --real)
+    ./.venv/Scripts/python.exe run_campaign.py --real --limit 6
+
+MUST be run with the venv's own python.exe, not a bare `python` on PATH -
+this script spawns generate_question_gemini.py as a subprocess using
+whichever interpreter is running IT (sys.executable), so if that's the
+wrong one, the child silently runs outside the venv too. Confirmed
+directly: bare `python run_campaign.py` on a machine where `python`
+resolves to a system install (not the venv) let the key-health-check and
+run_campaign.py's own imports (requests, tqdm) succeed - those happened
+to also be present system-wide - right up until the child process tried
+to load sentence-transformers/torch for the KB and failed with a
+confusing RuntimeError from deep inside Retriever.__init__, nothing
+about it hinting at the real cause. main() checks for this directly at
+startup now and fails fast with a clear message instead.
 
 Requires: venv set up per README.md section 7, keys/.gemini_keys, and
 Backend/.env (SUPABASE_URL / SUPABASE_SERVICE_KEY).
@@ -196,7 +208,35 @@ REAL_MODEL = "gemini-3.5-flash-lite"
 TEST_MODEL = "gemini-3.1-flash-lite"
 
 
+def check_interpreter() -> None:
+    """
+    Fail fast and clearly if this isn't running under the venv's own
+    python.exe. This script spawns generate_question_gemini.py using
+    sys.executable (whichever interpreter is running THIS script), so a
+    wrong interpreter here means the child silently runs outside the venv
+    too - and generate_question_gemini.py needs sentence-transformers/torch
+    for the KB, which run_campaign.py itself never imports. Confirmed
+    directly: bare `python run_campaign.py` (resolving to a system
+    install here, not the venv) got all the way through the key check and
+    into generation before failing with a confusing RuntimeError from deep
+    inside Retriever.__init__ - nothing about it pointed at the real cause.
+    """
+    try:
+        import sentence_transformers  # noqa: F401
+        import torch  # noqa: F401
+    except ImportError as exc:
+        raise SystemExit(
+            f"ERROR: this interpreter ({sys.executable}) can't import "
+            f"sentence-transformers/torch ({exc}).\n"
+            f"This almost always means you ran `python run_campaign.py` with a "
+            f"bare `python` that resolves to some OTHER install, not this "
+            f"project's venv. Run it with the venv's own interpreter instead:\n"
+            f"    ./.venv/Scripts/python.exe run_campaign.py {' '.join(sys.argv[1:])}"
+        )
+
+
 def main() -> None:
+    check_interpreter()
     extra_args = sys.argv[1:]
     # Always check against REAL_MODEL specifically, even for a --limit test-
     # model pilot: Gemini's quota is per-model
