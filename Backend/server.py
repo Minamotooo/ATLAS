@@ -26,6 +26,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from supabase import create_client
 
+from admin_ontology import router as admin_ontology_router
 from bloom_taxonomy import BloomLevel, get_level_from_mastery
 from diagnostic import DiagnosticSession, QuestionSpec
 from mastery_updater import MasteryUpdater, UpdateMode
@@ -42,6 +43,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(admin_ontology_router)
 
 db = create_client(os.environ["SUPABASE_URL"], os.environ["SUPABASE_SERVICE_KEY"])
 

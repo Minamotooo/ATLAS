@@ -10,6 +10,7 @@ import SectionMasteryPage from './pages/SectionMasteryPage';
 import TopicPracticePage from './pages/TopicPracticePage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
+import AdminOntologyPage from './pages/admin/AdminOntologyPage';
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
               <Route path="/courses/:courseId/sections/:sectionId" element={<SectionPage />} />
               <Route path="/courses/:courseId/sections/:sectionId/mastery" element={<SectionMasteryPage />} />
               <Route path="/courses/:courseId/sections/:sectionId/topics/:topicCode/practice" element={<TopicPracticePage />} />
+              <Route path="/admin/ontology" element={<AdminOntologyPage />} />
             </Route>
           </Routes>
         </BrowserRouter>

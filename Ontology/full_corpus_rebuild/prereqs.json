@@ -11709,5 +11709,29 @@
       "full": "Calculate the energy of a photon from its wavelength or its frequency.",
       "depth": 0
     }
+  ],
+  "notun_skill": [
+    {
+      "id": "CHE1_IONIC_BOND0",
+      "full": "Recall the distinction between ionic and covalent bonding character and the electronegativity difference that separates them.",
+      "depth": 0
+    },
+    {
+      "id": "PHY1_CIRCULAR_MOTION3",
+      "full": "Determine the maximum speed at which a vehicle can round an unbanked curve without skidding.",
+      "depth": 0
+    },
+    {
+      "id": "PHY1_DIMENSIONS0",
+      "full": "Recall the dimensional formula of a given physical quantity.",
+      "depth": 0
+    }
+  ],
+  "notun_skill2": [
+    {
+      "id": "PHY1_CIRCULAR_MOTION2",
+      "full": "Determine the angle of banking of a road or a railway track for a stated speed.",
+      "depth": 0
+    }
   ]
 }
