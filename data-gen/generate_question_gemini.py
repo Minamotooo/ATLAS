@@ -175,6 +175,18 @@ class KeyState:
         self.label = label
         self.lock = threading.Lock()
         self._limiters: dict[str, _ModelLimiter] = {}
+        # Per-KEY (not per key+model): serializes every outbound HTTP call
+        # for this key across ALL callers/models. wait_for_turn() only paces
+        # calls against the SAME model's _ModelLimiter, so nothing previously
+        # stopped a generation call and a verification call for the same key
+        # - or two verify_worker threads that round-robin onto the same key
+        # while an earlier call for it is still in flight (4 verify threads
+        # cycling through 18 keys can easily lap a slow call) - from actually
+        # being in flight at the same instant. Holding this for the whole
+        # wait+call+response cycle guarantees at most one in-flight request
+        # per key at any time, which is what the account's real per-key RPM
+        # limit needs, regardless of how many threads/models touch it.
+        self.http_lock = threading.Lock()
 
     def _limiter(self, model: str) -> _ModelLimiter:
         with self.lock:
@@ -307,27 +319,37 @@ def gemini_generate(key_state: KeyState, model: str, system_prompt: str, user_pr
         if key_state.is_exhausted(model):
             return None, "key exhausted"
 
-        key_state.wait_for_turn(model)
-        # A fresh single-use executor per call, not a shared pool: if requests'
-        # own timeout=60 fails to fire (observed platform issue) and the call
-        # blocks forever past _HTTP_HARD_TIMEOUT_SEC, .result(timeout=...) only
-        # abandons OUR wait - the underlying thread stays blocked forever. A
-        # shared fixed-size pool would permanently lose that worker slot, and
-        # after enough leaks (observed after ~40min/~650 calls under heavy
-        # rate-limit retry volume) every slot is gone and ALL future calls
-        # queue forever with zero free workers - a full stall. A disposable
-        # one-off executor lets the leaked thread die alone without shrinking
-        # capacity for calls that come after it.
-        one_shot = concurrent.futures.ThreadPoolExecutor(max_workers=1, thread_name_prefix="gemini-http")
-        try:
-            resp = one_shot.submit(requests.post, url, json=payload, timeout=60) \
-                .result(timeout=_HTTP_HARD_TIMEOUT_SEC)
-        except concurrent.futures.TimeoutError:
-            return None, f"network error: hard timeout after {_HTTP_HARD_TIMEOUT_SEC}s (requests' own timeout did not fire)"
-        except requests.RequestException as exc:
-            return None, f"network error: {exc}"
-        finally:
-            one_shot.shutdown(wait=False)
+        # Held across wait_for_turn's sleep AND the call itself: this key's
+        # per-model pacers are independent of each other (see http_lock's
+        # docstring), so without this, a generation call and a verification
+        # call - or two verify_worker threads round-robined onto the same
+        # key - could both be in flight for this key at once. Holding the
+        # lock this early means a second caller doesn't even start its OWN
+        # wait_for_turn timer until the first caller's full cycle is done,
+        # which is the strict "one in-flight request per key, ever" this
+        # exists for.
+        with key_state.http_lock:
+            key_state.wait_for_turn(model)
+            # A fresh single-use executor per call, not a shared pool: if requests'
+            # own timeout=60 fails to fire (observed platform issue) and the call
+            # blocks forever past _HTTP_HARD_TIMEOUT_SEC, .result(timeout=...) only
+            # abandons OUR wait - the underlying thread stays blocked forever. A
+            # shared fixed-size pool would permanently lose that worker slot, and
+            # after enough leaks (observed after ~40min/~650 calls under heavy
+            # rate-limit retry volume) every slot is gone and ALL future calls
+            # queue forever with zero free workers - a full stall. A disposable
+            # one-off executor lets the leaked thread die alone without shrinking
+            # capacity for calls that come after it.
+            one_shot = concurrent.futures.ThreadPoolExecutor(max_workers=1, thread_name_prefix="gemini-http")
+            try:
+                resp = one_shot.submit(requests.post, url, json=payload, timeout=60) \
+                    .result(timeout=_HTTP_HARD_TIMEOUT_SEC)
+            except concurrent.futures.TimeoutError:
+                return None, f"network error: hard timeout after {_HTTP_HARD_TIMEOUT_SEC}s (requests' own timeout did not fire)"
+            except requests.RequestException as exc:
+                return None, f"network error: {exc}"
+            finally:
+                one_shot.shutdown(wait=False)
 
         if resp.status_code == 429:
             retry_after = None
@@ -756,9 +778,41 @@ def main() -> None:
     accum_lock = threading.Lock()
     MAX_VERIFY_RETRIES = 2
 
+    # Set when the watchdog below detects every key is exhausted for
+    # GENERATION_MODEL with tuples still stuck in work_q - a state no
+    # worker can ever clear on its own. Without this, gen_workers exit
+    # (each checks is_exhausted() and returns), but verify_workers keep
+    # looping in `while not all_done()` forever: pending_verify_q goes
+    # empty and stays empty (nothing left generates), yet work_q is
+    # non-empty and nothing is left alive to drain it, so all_done() can
+    # never become True. Observed directly (2026-09-19): the process sat
+    # alive but fully idle for ~1h45m after every key hit the new
+    # consecutive-429 exhaustion threshold, with zero indication anything
+    # was wrong short of noticing the progress file had stopped moving.
+    stuck = threading.Event()
+
     def all_done() -> bool:
+        if stuck.is_set():
+            return True
         with flight_lock:
             return in_flight["n"] == 0 and work_q.empty() and pending_verify_q.empty()
+
+    def watchdog() -> None:
+        while not stuck.is_set():
+            time.sleep(15)
+            with flight_lock:
+                nothing_pending_verify = pending_verify_q.empty()
+                work_left = work_q.qsize()
+            if in_flight["n"] == 0:
+                return  # legitimately finished, not stuck
+            if work_left > 0 and nothing_pending_verify and \
+                    all(ks.is_exhausted(GENERATION_MODEL) for ks in key_states):
+                print(f"\n[FATAL] All {len(key_states)} keys are exhausted for "
+                      f"{GENERATION_MODEL} and {work_left} tuple(s) remain unprocessed. "
+                      f"No key can make further progress this run - stopping instead of "
+                      f"spinning forever. Re-run once at least one key's quota has reset.")
+                stuck.set()
+                return
 
     def finalize_success(tup: dict, questions: list, verified_ok: bool) -> None:
         with out_lock:
@@ -893,16 +947,21 @@ def main() -> None:
     N_VERIFY_WORKERS = min(4, len(key_states))
     gen_threads = [threading.Thread(target=gen_worker, args=(ks,), daemon=True) for ks in key_states]
     verify_threads = [threading.Thread(target=verify_worker, daemon=True) for _ in range(N_VERIFY_WORKERS)]
+    watchdog_thread = threading.Thread(target=watchdog, daemon=True)
 
     start = time.time()
-    for t in gen_threads + verify_threads:
+    for t in gen_threads + verify_threads + [watchdog_thread]:
         t.start()
     for t in gen_threads + verify_threads:
         t.join()
     elapsed = time.time() - start
 
-    print(f"\nDone in {elapsed:.1f}s. ok={stats['ok']} failed={stats['failed']} "
-          f"total_questions={len(all_questions)}")
+    if stuck.is_set():
+        print(f"\nStopped after {elapsed:.1f}s (all keys exhausted, work remaining) - "
+              f"ok={stats['ok']} failed={stats['failed']} total_questions={len(all_questions)}")
+    else:
+        print(f"\nDone in {elapsed:.1f}s. ok={stats['ok']} failed={stats['failed']} "
+              f"total_questions={len(all_questions)}")
     for ks in key_states:
         gen_calls = ks.daily_count_for(GENERATION_MODEL)
         gen_exh = ks.is_exhausted(GENERATION_MODEL)
