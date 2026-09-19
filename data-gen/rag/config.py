@@ -50,7 +50,15 @@ SUBJECT_ALIASES = {
 }
 
 # Generation loop defaults
-N_QUESTIONS = 3
+# Target questions accumulated per (skill, bloom) tuple before it's finalized
+# (generate_verified_pool / verify_worker still accept a batch's overshoot
+# past this - see generate_question_gemini.py - so a tuple can still end up
+# with 2-3 if a single call happens to return that many valid at once; this
+# only lowers how many are actively PURSUED per tuple). Was 3 since the
+# project's original commit (never an explicit requirement - see git log);
+# lowered to 1 on request to cut generation-call volume per tuple, since
+# each key's real quota is limited (15 RPM / 500 RPD).
+N_QUESTIONS = 1
 TUPLES_PATH = ONTOLOGY_SOURCE_DIR / "tuples.json"
 PREREQS_PATH = ONTOLOGY_SOURCE_DIR / "prereqs.json"
 MAX_JSON_RETRIES = 2
