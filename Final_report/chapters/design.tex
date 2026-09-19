@@ -1,0 +1,565 @@
+% Chapter 4 -- Rubric: PO3 (3.3, 3.4), PO5 (5.1)
+\chapter{System Design and Implementation}
+\label{ch:design}
+
+\section{Functional Design and Sub-problem Partitioning}
+\label{sec:architecture}
+
+The problem decomposes into five subsystems with a deliberate dependency
+order. The knowledge ontology is upstream of everything: it defines the skills
+the engine reasons about, the topics the interface displays, and the
+specifications the content pipeline must generate against. The inference engine
+depends on the ontology but not on the content; the content pipeline depends on
+the ontology but not on the engine; the API composes engine and content; the
+interface depends only on the API. This ordering is what allowed the ontology to
+be rebuilt late in the project (\Cref{sec:ontology-rebuild}) without rewriting
+the engine.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+      font=\small,
+      box/.style={draw, rounded corners=2pt, align=center, minimum height=9mm,
+                  inner xsep=3mm, fill=gray!8},
+      store/.style={draw, align=center, minimum height=9mm, inner xsep=3mm,
+                    fill=gray!18},
+      off/.style={draw, dashed, rounded corners=2pt, align=center,
+                  minimum height=9mm, inner xsep=3mm},
+      arr/.style={-{Stealth[length=2mm]}, thick}
+    ]
+    % --- serving path -------------------------------------------------
+    \node[box] (ui) at (0,0) {React + Vite client\\{\scriptsize diagnostic, practice, mastery views}};
+    \node[box] (api) at (0,-2.1) {FastAPI application\\{\scriptsize \texttt{server.py} --- 14 endpoints}};
+    \node[box] (engine) at (0,-4.2) {Adaptive engine\\{\scriptsize BKT $+$ mastery policy $+$ diagnostic}};
+    \node[store] (db) at (0,-6.3) {PostgreSQL (Supabase)\\{\scriptsize learners, mastery, questions, ontology}};
+
+    \draw[arr] (ui) -- node[right=1mm]{\scriptsize HTTP / JSON} (api);
+    \draw[arr] (api) -- node[right=1mm]{\scriptsize in-process calls} (engine);
+    \draw[arr] (engine) -- node[right=1mm]{\scriptsize reads / writes} (db);
+
+    % --- ontology ------------------------------------------------------
+    \node[store] (onto) at (-5.4,-4.2) {Compiled ontology\\{\scriptsize \texttt{tree\_data/*.json}}};
+    \node[off] (build) at (-5.4,-2.1) {Ontology compiler\\{\scriptsize \texttt{build\_from\_ontology.py}}};
+    \node[off] (src) at (-5.4,0) {Ontology source\\{\scriptsize skills, edges, topics}};
+    \draw[arr] (src) -- (build);
+    \draw[arr] (build) -- (onto);
+    \draw[arr] (onto) -- node[above]{\scriptsize loaded at boot} (engine);
+
+    % --- content pipeline ----------------------------------------------
+    \node[off] (corpus) at (5.4,0) {Source corpus\\{\scriptsize 6 books, 4{,}474 records}};
+    \node[off] (rag) at (5.4,-2.1) {RAG retrieval\\{\scriptsize embeddings $+$ top-$k$}};
+    \node[off] (gen) at (5.4,-4.2) {Generate $+$ verify\\{\scriptsize two-model pipeline}};
+    \draw[arr] (corpus) -- (rag);
+    \draw[arr] (rag) -- (gen);
+    \draw[arr] (gen) -- node[below, align=center]{\scriptsize validated\\[-1mm]\scriptsize items} (db);
+    \draw[arr] (onto.south) |- (-5.4,-7.2) -- node[below]{\scriptsize skill $\times$ Bloom specifications} (5.4,-7.2) -| (gen.south);
+
+    \begin{scope}[on background layer]
+      \node[draw, dotted, rounded corners, fit=(src)(build)(onto), inner sep=3mm,
+            label={[font=\scriptsize\itshape]below:offline build}] {};
+      \node[draw, dotted, rounded corners, fit=(corpus)(rag)(gen), inner sep=3mm,
+            label={[font=\scriptsize\itshape]below:offline pipeline}] {};
+    \end{scope}
+  \end{tikzpicture}
+  \caption{System architecture. Solid boxes are the online serving path;
+    dashed boxes are offline processes that run before serving and write their
+    artefacts into the compiled ontology and the question bank.}
+  \label{fig:architecture}
+\end{figure}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Subsystem responsibilities}
+  \label{tab:modules}
+  \begin{tabularx}{\textwidth}{>{\hsize=0.55\hsize}Y>{\hsize=0.7\hsize}Y>{\hsize=1.75\hsize}Y}
+    \toprule
+    Subsystem & Location & Responsibility \\
+    \midrule
+    Knowledge ontology & \path{Ontology/}, \path{Backend/tree_data/} & Defines skills, their Bloom levels, their topics, and the prerequisite edges between them. Compiled from source into the served JSON artefacts by a build script that enforces acyclicity and applies transitive reduction. \\
+    Inference engine & \path{Backend/bkt.py}, \path{bloom_taxonomy.py}, \path{mastery_updater.py}, \path{skill.py}, \path{skill_tree.py} & Maintains and updates per-skill mastery; owns the graph, its cycle check and its topological ordering. \\
+    Session logic & \path{Backend/diagnostic.py}, session state in \path{server.py} & Runs a diagnostic or practice session: which skill to test next, which Bloom level, which question, when to stop. \\
+    Serving API & \path{Backend/server.py} & Exposes catalogue, session and mastery endpoints; composes engine and database. \\
+    Content pipeline & \path{data-gen/} & Parses the corpus, builds a retrieval index, generates and verifies questions, loads them to the database. \\
+    Client & \path{Frontend/} & Renders the catalogue, question flow and mastery views; handles bilingual display and mathematical typesetting. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\paragraph{Where standards shaped the partition.} Two boundaries in
+\Cref{fig:architecture} exist for reasons from \Cref{sec:standards} rather than
+for reasons of convenience. First, the privileged database key lives only in the
+API process: the client never holds a credential that can write to the database,
+which is why there is no direct client-to-database arrow even though the
+database vendor supports one. Second, the corpus sits strictly inside the
+offline pipeline and is never served: generated items reach the database, but
+the copyrighted source text never leaves the build environment.
+
+\paragraph{Safety considerations.} The system carries no physical-safety risk,
+but it does carry a decision-quality risk: a learner may reallocate study time
+during a high-stakes year on the strength of a wrong inference. The design
+response is conservatism in the gating policy --- the threshold for declaring a
+prerequisite mastered is deliberately high (0.95), so the system prefers to keep
+a learner practising a foundation slightly too long over releasing them from it
+too early.
+
+\section{Design Refinement and Simulation}
+\label{sec:detailed-design}
+
+\subsection{The knowledge-tracing model}
+\label{sec:bkt-model}
+
+Each skill's mastery is a latent binary variable; the engine maintains
+$P(L_n)$, the probability that the learner has learned the skill after $n$
+opportunities. Four parameters govern its evolution: the prior $P(L_0)$, the
+learning rate $P(T)$, the slip probability $P(S)$ and the guess probability
+$P(G)$ \cite{corbett1995knowledge}. Each response triggers a two-step update.
+
+Step 1, the Bayesian posterior given the observed response:
+\begin{align}
+  P(L_n \mid \text{correct}) &=
+    \frac{P(L_n)\,\bigl(1-P(S)\bigr)}
+         {P(L_n)\,\bigl(1-P(S)\bigr) + \bigl(1-P(L_n)\bigr)\,P(G)}
+  \label{eq:posterior-correct}\\[2mm]
+  P(L_n \mid \text{incorrect}) &=
+    \frac{P(L_n)\,P(S)}
+         {P(L_n)\,P(S) + \bigl(1-P(L_n)\bigr)\,\bigl(1-P(G)\bigr)}
+  \label{eq:posterior-incorrect}
+\end{align}
+
+Step 2, the learning transition --- the chance that the opportunity itself
+taught the skill:
+\begin{equation}
+  P(L_{n+1}) = P(L_n \mid \text{evidence})
+             + \bigl(1 - P(L_n \mid \text{evidence})\bigr)\,P(T)
+  \label{eq:transition}
+\end{equation}
+
+Mastery is persisted as a percentage on $[0,100]$ and related to the
+probability form by $P(L) = \text{mastery}/100$. The implementation is
+deliberately \emph{stateless} --- it takes a probability and an observation and
+returns a probability, holding no learner state --- so that the entire model can
+be replaced by an individualised or neural variant
+\cite{yudelson2013individualized,piech2015deep} without altering a single call
+site. That is the concrete design provision for the successor identified in
+\Cref{sec:alternatives}.
+
+\subsection{Conditioning the noise parameters on cognitive level}
+
+The refinement that distinguishes this engine from textbook BKT is that $P(G)$
+and $P(S)$ are not constants but functions of the question's Bloom level. A
+four-option recall item is guessable; an analysis item is not. Conversely, a
+learner who knows an analysis-level procedure has more opportunities to slip
+while executing it. \Cref{tab:bloom-params} gives the values used.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Bloom-conditioned guess and slip parameters, and the mastery band each level occupies}
+  \label{tab:bloom-params}
+  \begin{tabular}{lccc}
+    \toprule
+    Bloom level & $P(G)$ & $P(S)$ & Mastery band \\
+    \midrule
+    Remember   & 0.30 & 0.05 & 0.00 -- 16.67 \\
+    Understand & 0.25 & 0.08 & 16.67 -- 33.33 \\
+    Apply      & 0.18 & 0.12 & 33.33 -- 50.00 \\
+    Analyze    & 0.12 & 0.18 & 50.00 -- 66.67 \\
+    Evaluate   & 0.08 & 0.22 & 66.67 -- 83.33 \\
+    Create     & 0.05 & 0.25 & 83.33 -- 100.00 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The 0--100 mastery scale is partitioned into six equal bands of
+$100/6 \approx 16.67$ points, one per level, so that a mastery value maps
+directly to a cognitive level. This is what makes the selection rule expressible:
+the next question is requested one band above the learner's current band, which
+is the zone-of-proximal-development rule \cite{vygotsky1978mind} rendered
+arithmetically.
+
+\subsection{The three-phase mastery update policy}
+\label{sec:mastery-policy}
+
+Every response runs three phases in order.
+
+\textbf{Phase 1 --- Bloom-conditioned BKT.} Look up $P(G), P(S)$ for the
+question's Bloom level, compute the effective transition rate (Phase 3), and
+apply \Cref{eq:posterior-correct,eq:posterior-incorrect,eq:transition} to the
+answered skill.
+
+\textbf{Phase 2 --- Ancestor pull-up.} If the response was correct, traverse the
+skill's ancestors breadth-first and raise each to at least the answered skill's
+new posterior:
+\begin{equation}
+  P(a) \leftarrow \max\bigl(P(a),\, P(s)\bigr)
+  \qquad \forall a \in \operatorname{ancestors}(s)
+  \label{eq:pullup}
+\end{equation}
+The justification is evidential: correctly executing a skill is evidence that
+its prerequisites are held, because the skill is not executable without them.
+The asymmetry is deliberate --- an \emph{incorrect} response propagates nothing
+downward to prerequisites, because failure is ambiguous. It may indicate a
+missing prerequisite, but it may equally indicate a slip at the top level, and
+penalising every ancestor for one wrong answer would make the estimate
+unstable. Locating the responsible prerequisite is instead the job of the
+spillover rules, which use option-level evidence rather than a blanket penalty.
+
+\textbf{Phase 3 --- Conjunctive transition gating.} A skill's learning rate is
+not constant. For a skill $s$ with direct prerequisites
+$\operatorname{parents}(s)$:
+\begin{equation}
+  P(T)_s =
+  \begin{cases}
+    \tau_{\text{base}} & \text{if } \min_{p \in \operatorname{parents}(s)} P(L_p) \ge \theta \\[1mm]
+    \tau_{\text{locked}} & \text{otherwise}
+  \end{cases}
+  \label{eq:gating}
+\end{equation}
+with $\theta = 0.95$, $\tau_{\text{base}} = 0.10$ in normal practice,
+$0.20$ during a diagnostic (where the aim is to move the estimate quickly), and
+$\tau_{\text{locked}} = 0.01$. The gate is \emph{conjunctive} --- every
+prerequisite must clear the threshold, not merely the average or the best one.
+This is the formal expression of the project's central claim: a learner cannot
+be credited with advancing on a skill while a foundation beneath it is missing.
+Its correctness depends entirely on $\operatorname{parents}(s)$ being the
+\emph{direct} prerequisites, which is why the ontology build applies transitive
+reduction (\Cref{sec:ontology-rebuild}); a redundant shortcut edge would let a
+skill unlock while its true intermediate prerequisite was still unmastered.
+
+\subsection{Adaptive question selection}
+
+A diagnostic cannot test 430 skills in 30 questions, so it must choose skills
+whose outcome is maximally informative about the rest of the graph. The engine
+scores each untested skill by a balanced-volume heuristic:
+\begin{equation}
+  \operatorname{score}(s) =
+  \frac{u_{\uparrow}(s) + u_{\downarrow}(s) + 1}
+       {1 + \lvert u_{\uparrow}(s) - u_{\downarrow}(s) \rvert}
+  \label{eq:selection}
+\end{equation}
+where $u_{\uparrow}$ and $u_{\downarrow}$ are the counts of untested ancestors
+and untested descendants. The numerator rewards skills that touch many unknowns;
+the denominator rewards \emph{balance}. A skill with 20 unknown descendants and
+no unknown ancestors is a root whose failure tells us little about what lies
+above it; a skill sitting between two large unknown regions bisects the graph,
+and its outcome constrains both directions. This is the knowledge-space insight
+\cite{doignon1985spaces} applied as a greedy heuristic.
+
+Priors are initialised by depth: root skills start at 0.70 mastery and the
+deepest skills at 0.20, interpolated linearly between, encoding the assumption
+that foundational material is more likely already held.
+
+Having chosen a skill and a target Bloom level, the engine searches for an item
+through a fallback ladder, because the ideal item frequently does not exist in
+a partially generated bank: (i) same skill, nearby Bloom level, matching topic;
+(ii) same skill, nearby Bloom level, any topic; (iii) same topic, graph-nearby
+skills ordered by distance, preferring the lowest-mastery candidate. ``Nearby
+Bloom'' means the offsets $[0,+1,-1,+2,-2,+3,-3]$ tried in that order. If no
+tier yields an item, the skill is marked tested and the session advances --- the
+design decision that a missing question must never stall a session (NFR3).
+
+\subsection{Prerequisite spillover}
+
+During topic practice, two rules detect that failure is caused by something
+upstream rather than by the topic itself. Rule A fires when at least three of
+the last five wrong answers implicate the same missing prerequisite, evidence
+that comes from the \texttt{option\_missing\_prerequisites} table --- each
+distractor is annotated with the skill whose absence would lead a learner to
+choose it. Rule B fires when rolling accuracy over the last eight attempts falls
+below 40\% \emph{and} some candidate prerequisite has mastery below 0.60; the
+weakest such prerequisite is chosen. Either rule injects two prerequisite-focused
+questions before returning to the topic traversal. Rule A is precise but needs
+distractor annotations; Rule B is a coarser safety net that works without them.
+
+\subsection{The skill graph, and its rebuild}
+\label{sec:ontology-rebuild}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+      font=\scriptsize,
+      skill/.style={draw, rounded corners=2pt, minimum width=30mm,
+                    minimum height=7mm, align=center, fill=gray!8},
+      arr/.style={-{Stealth[length=1.8mm]}}
+    ]
+    \node[skill] (alg)  at (0,0)    {Simplify an algebraic expression\\{\tiny Apply}};
+    \node[skill] (diff) at (-3.6,-1.8) {Differentiate a polynomial\\{\tiny Apply}};
+    \node[skill] (rec)  at (0.2,-1.8)  {Recognise when parts applies\\{\tiny Understand}};
+    \node[skill] (pick) at (0.2,-3.6)  {Choose $u$ and $dv$\\{\tiny Apply}};
+    \node[skill] (ibp)  at (-1.7,-5.4) {Evaluate an integral by parts\\{\tiny Apply}};
+
+    \draw[arr] (alg) -- (rec);
+    \draw[arr] (rec) -- (pick);
+    \draw[arr] (pick) -- (ibp);
+    \draw[arr] (diff) -- (ibp);
+    \draw[arr] (alg) to[out=180,in=90] (diff);
+  \end{tikzpicture}
+  \caption{A fragment of the skill graph, illustrating the granularity target.
+    ``Integration by parts'' is not one node but a chain: recognising
+    applicability, choosing the decomposition, and executing it --- each
+    separately testable, and each with its own prerequisites, so that a failure
+    can be localised to the step that actually broke.}
+  \label{fig:skill-fragment}
+\end{figure}
+
+The first ontology was derived from a sample of the corpus and yielded 430
+skills across 66 topics with 471 edges. In use it proved too coarse: a topic
+held on average fewer than four skills, so a failure inside a topic could not be
+localised further, and the conjunctive gate had too few edges to act on. The
+graph was therefore rebuilt from the complete corpus --- all 4{,}474 parsed
+records of all six books --- at a granularity where a node names one action.
+\Cref{tab:ontology-compare} compares the two.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Legacy ontology versus full-corpus rebuild}
+  \label{tab:ontology-compare}
+  \begin{tabular}{lrr}
+    \toprule
+    Property & Legacy (served) & Rebuild \\
+    \midrule
+    Skills & 430 & 1{,}688 \\
+    Prerequisite edges & 471 & 1{,}743 \\
+    Topics covered & 66 & 183 of 183 \\
+    Corpus coverage & sample & all 4{,}474 records \\
+    Maximum graph depth & 7 & 9 \\
+    Isolated skills & --- & 0 \\
+    Unresolved prerequisite references & --- & 0 \\
+    Connected components (largest) & --- & 87 (482) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Rebuilt ontology by subject}
+  \label{tab:ontology-subject}
+  \begin{tabular}{lrrrr}
+    \toprule
+    Subject & Skills & Edges & Edges per skill & Topics \\
+    \midrule
+    Chemistry   & 886 & 868 & 0.97 & 59 \\
+    Mathematics & 446 & 499 & 1.10 & 52 \\
+    Physics     & 356 & 376 & 1.06 & 72 \\
+    \midrule
+    Total       & 1{,}688 & 1{,}743 & 1.03 & 183 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The build is reproducible rather than hand-maintained: a compiler reads the
+ontology source, applies an editorial layer (topic aliases and display labels),
+checks the graph for cycles, applies transitive reduction, and emits the JSON
+artefacts the server loads. Transitive reduction is not cosmetic --- as
+\Cref{eq:gating} shows, a shortcut edge would let a skill unlock while its true
+intermediate prerequisite was unmastered.
+
+\subsection{Data model}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Database schema}
+  \label{tab:schema}
+  \begin{tabularx}{\textwidth}{>{\hsize=0.65\hsize}Y>{\hsize=1.35\hsize}Y}
+    \toprule
+    Table & Contents and constraints \\
+    \midrule
+    \texttt{users} & Learner identity: surrogate UUID, unique username. \\
+    \texttt{user\_skill} & Per-learner, per-skill mastery on $[0,100]$; composite primary key; cascades on learner or skill deletion. \\
+    \texttt{skills} & Skill identifier and description; description is NOT NULL. \\
+    \texttt{questions} & Stem, Bloom level, and topic. \texttt{topic} is a foreign key to \texttt{ontology\_topics}, so it stores a topic \emph{code}, never a display label. \\
+    \texttt{question\_options} & Four options per question, label constrained to A--D, correctness flag, and a per-option explanation. \\
+    \path{option_missing_prerequisites} & Maps a distractor to the skill whose absence explains choosing it --- the evidence source for spillover Rule A. \\
+    \texttt{ontology\_topics}, \texttt{ontology\_skill\_topics}, \texttt{ontology\_skill\_edges} & The ontology mirrored into the database for referential integrity of questions and skills. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Two deliberate omissions are worth stating. There is no \texttt{subject} column
+anywhere: subject is a property of the ontology, derived at read time and
+plumbed through the API, so that the database never holds a second copy of a
+fact the ontology owns. And the transition probability $P(T)_s$ is not
+persisted: it is recomputed from current parent mastery on every request, so it
+can never fall out of sync with the values it is derived from.
+
+\subsection{API surface}
+
+The API is a flat, session-oriented REST surface of 14 endpoints
+(\Cref{tab:api}). The two session families are deliberately symmetric ---
+\texttt{start}, \texttt{status}, \texttt{next}, \texttt{answer} --- so the client
+can drive either flow with one component.
+
+\begin{table}[htbp]
+  \centering
+  \caption{API endpoints}
+  \label{tab:api}
+  \begin{tabularx}{\textwidth}{>{\hsize=1.05\hsize}Y>{\hsize=0.95\hsize}Y}
+    \toprule
+    Endpoint & Purpose \\
+    \midrule
+    \texttt{GET /catalog} & Courses, sections and topics from the compiled ontology \\
+    \texttt{GET /users/\{name\}/}, \texttt{POST /users/} & Look up and create a learner \\
+    \texttt{GET .../sections/\{id\}/state} & Diagnostic gate and lock state for a section \\
+    \texttt{GET .../sections/\{id\}/mastery} & Mastery graph and table for visualisation \\
+    \texttt{POST .../diagnostic/retake} & Reset section mastery and clear its sessions \\
+    \texttt{POST /diagnostic/start} & Begin a diagnostic session \\
+    \texttt{GET /diagnostic/\{id\}/status}, \texttt{/next} & Session progress; fetch next selected question \\
+    \texttt{POST /diagnostic/\{id\}/answer} & Submit a response; triggers the three-phase update \\
+    \texttt{POST /topic-practice/start} & Begin practice on one topic \\
+    \texttt{GET /topic-practice/\{id\}/status}, \texttt{/next} & Progress; next question, including injected spillover items \\
+    \texttt{POST /topic-practice/\{id\}/answer} & Submit a response; evaluates spillover rules \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsection{Content generation pipeline}
+\label{sec:generation-pipeline}
+
+The pipeline turns the corpus into items aligned to the ontology. Source books
+are parsed into structured records; a multilingual embedding model
+\cite{reimers2019sentence} indexes them; for each (skill, Bloom level)
+specification the top-$k$ relevant records are retrieved and supplied to a
+generator model as grounding \cite{lewis2020retrieval}.
+
+The design decision that matters most is the second stage. A generated item is
+not accepted on the generator's own word: a \emph{different, cheaper} model
+independently checks that the item is on-topic for the claimed skill, and
+\emph{blind re-solves} it --- it is shown the question and options but not the
+marked answer --- and the item is accepted only if its independent answer agrees
+with the marked one. Letting a model grade its own output biases towards false
+confidence; an independent judge with no sight of the expected answer is a real
+check. The cost asymmetry is deliberate: generation uses the stronger model
+because it is the harder task, verification uses the cheaper one because
+agreement checking is easier than authoring, and verification calls are batched
+across several specifications to reduce call count.
+
+\subsection{Design calculations}
+
+\textbf{Generation space.} With one item per (skill, Bloom level) pair, the
+legacy ontology implies $430 \times 6 = 2{,}580$ specifications; the rebuilt
+ontology implies $1{,}688 \times 6 = 10{,}128$. At the observed generation
+pattern this is the dominant cost driver in the project and the reason adoption
+of the rebuilt ontology is gated on a budgeted generation run
+(\Cref{sec:budget}).
+
+\textbf{Storage.} A question with four options and explanations occupies on the
+order of a few kilobytes. A complete bank at rebuild scale is therefore of the
+order of tens of megabytes --- immaterial against any database tier. Learner
+data is smaller still: one row per learner per skill, so a cohort of
+$10{,}000$ learners against 1{,}688 skills is under $2\times10^7$ rows of two
+identifiers and a float, which is well within commodity capacity.
+
+\textbf{Inference cost.} One response costs one constant-time Bayesian update
+plus an ancestor traversal bounded by graph depth (9) and a successor refresh
+over direct children. The engine is not the scaling bottleneck; database round
+trips during question search are.
+
+\section{Application of Tools}
+\label{sec:tools}
+
+% Rendered as a longtable (not a float) so it flows across pages at readable
+% size instead of being squeezed onto one rotated page.
+\setlength{\LTcapwidth}{\textwidth}
+{\small\setstretch{1.1}
+\begin{longtable}{@{}p{30mm}p{52mm}p{\dimexpr\textwidth-30mm-52mm-4\tabcolsep\relax}@{}}
+  \caption{Tool selection, justification, and relevant limitations}
+  \label{tab:tools}\\
+    \toprule
+    Tool & Why selected & Relevant limitations \\
+    \midrule
+  \endfirsthead
+    \multicolumn{3}{@{}l}{\small\itshape \tablename~\thetable{} --- continued from previous page}\\[2pt]
+    \toprule
+    Tool & Why selected & Relevant limitations \\
+    \midrule
+  \endhead
+    \midrule
+    \multicolumn{3}{r@{}}{\small\itshape continued on next page}\\
+  \endfoot
+    \bottomrule
+  \endlastfoot
+    Python 3 & The engine is mathematical and graph-oriented; Python keeps \Cref{eq:posterior-correct}--\Cref{eq:gating} readable enough to audit against the policy document. & Slower than a compiled language --- immaterial here, since the update is constant-time. \\
+    FastAPI $+$ Uvicorn & Typed request/response models via Pydantic catch malformed payloads at the boundary; automatic OpenAPI documentation made the API self-describing for the frontend developers. & The asynchronous model gives no benefit as used, since the engine is synchronous and CPU-light. \\
+    Supabase (PostgreSQL) & A managed relational store with a usable free tier. Relational integrity is not optional here --- foreign keys are what stop a question referencing a skill that no longer exists. & The free tier pauses idle projects; the client library adds a network round trip where raw SQL would allow one query. \\
+    React 18 $+$ Vite & Component model suits a question-at-a-time flow with shared state; Vite's fast rebuilds mattered on laptop hardware. & Single-page delivery means a large first-load bundle, worsened by mathematical typesetting fonts. \\
+    KaTeX & Renders \LaTeX{} mathematics synchronously and quickly, and outputs accessible markup rather than images \cite{wcag21}. & Supports a subset of \LaTeX{}; unsupported macros in generated content must be caught before serving. \\
+    Tailwind CSS & Utility classes kept styling consistent across developers without a design system. & Verbose markup; class strings are hard to review in diffs. \\
+    Gemini API & After local generation proved infeasible on CPU (\Cref{sec:feasibility}), a hosted model supplied the throughput; free-tier keys could be pooled to raise it further. & Rate limits shape the pipeline's architecture; a hosted model is a dependency the project does not control, and model updates can silently change output quality. \\
+    Sentence-transformers & Multilingual embeddings are required for a Bangla corpus; English-only models retrieve poorly here \cite{reimers2019sentence}. & A large download and CPU-bound indexing; embedding quality on Bangla mathematical text is materially worse than on English prose. \\
+    Git and GitHub & Version control and the integration point for five developers working on separable subsystems. & --- \\
+\end{longtable}}
+
+\section{Implementation}
+\label{sec:implementation}
+
+\textbf{Engine.} The model was implemented from the equations rather than from a
+library, which was the right call for auditability: the policy document and the
+code state the same constants, and a reviewer can check one against the other.
+The graph enforces its own invariant --- adding a prerequisite edge provisionally
+inserts it, runs a three-colour depth-first search over the whole graph, and
+rolls the edge back if it would close a cycle. The graph cannot enter an invalid
+state through the public interface.
+
+\textbf{Ontology.} Generated artefacts are never hand-edited. The source is
+compiled by script, and the editorial decisions that cannot be derived from data
+--- topic aliases, display labels, course and section layout --- live in a single
+configuration file. Rebuilding is a one-command operation, which is what made a
+late full rebuild affordable.
+
+\textbf{Content pipeline.} Two failures shaped the implementation more than any
+design intent. The first: source books are machine-extracted, and one corrupt
+record in the Chemistry corpus --- a string containing a \LaTeX{} macro repeated
+tens of thousands of times and never terminated --- desynchronised the parser and
+destroyed 334 neighbouring records. The parser was rewritten to resynchronise
+by decoding one object at a time, so a bad record now costs only itself. The
+second: language models emit \LaTeX{} with single backslashes, and a strict JSON
+parser silently consumes several of those escapes as control characters rather
+than raising an error, corrupting text invisibly. This affected a measured
+13.4\% of one early batch. The fix is an escape-repair pass applied before every
+parse, in both the ingest and generation paths. Both failures are documented in
+the repository so that a future contributor does not rediscover them.
+
+\textbf{Frontend.} The mathematics rendering component is the non-obvious piece:
+it splits mixed Bangla-and-\LaTeX{} strings on delimiters, renders the
+mathematical segments through KaTeX, renders the rest as text, and normalises
+newline sequences that arrive literally from generated content.
+
+\textbf{Process.} Work was carried out in a shared Git repository with
+subsystem-aligned branches merged into a main line --- 93 commits across roughly
+five and a half months from five contributors. In place of a formal CI service,
+the project relies on a credential-free test harness that any developer can run
+in seconds before merging (\Cref{sec:evaluation}), plus a chain of handover
+documents that record the state and rationale of each subsystem at the point it
+changed hands. Those documents are themselves an engineering artefact: they
+exist because the project spanned several months and five people, and knowledge
+that lived only in one contributor's head was repeatedly found to be the
+project's real bottleneck.
+
+\section{Deployment}
+\label{sec:deployment}
+
+\textbf{Target environment.} The system deploys as two processes and one managed
+service: a Python ASGI application serving the API, a static bundle for the
+client, and the hosted PostgreSQL instance. A container definition is provided
+for the backend. Configuration is by environment variables --- the database URL
+and service key --- supplied through a file that is excluded from version
+control; the client takes the API base URL at build time and defaults to the
+local backend.
+
+\textbf{Release process.} The ontology is compiled and its report inspected;
+generated questions are validated and loaded with a dry run first; the backend
+and client are then started. The deliberate ordering reflects the dependency
+chain in \Cref{fig:architecture}: content cannot be loaded against an ontology
+that has not been compiled.
+
+\textbf{Operation and maintenance.} The prototype is operated by the project
+team. Monitoring is limited to structured logging of question-search behaviour
+--- each search prints which tier matched and how long the database query took,
+which is what made the topic-code defect in \Cref{sec:revisions} visible.
+Backup is delegated to the managed database service.
+
+\textbf{Resources consumed.} One small application process (well under a
+gigabyte of memory, since the loaded graph is a few thousand nodes), one static
+file bundle, and a database holding tens of megabytes. Offline, the pipeline
+consumes CPU for embedding the corpus and external API calls for generation ---
+the only materially resource-hungry part of the system, and the subject of the
+environmental assessment in \Cref{sec:sustainability}.
