@@ -85,11 +85,11 @@ PROGRESS_PATH = _DATA_GEN / "gemini_progress_v2.json"
 # Conservative default; adjusted downward automatically if a 429 says otherwise.
 DEFAULT_RPM = 15
 MAX_RETRIES_PER_TUPLE = 2
-# A key/model pair that racks up this many CONSECUTIVE 429s (reset to 0 by
-# any success) gets marked exhausted rather than retried forever. See
-# note_rate_limited's docstring for why this threshold is set high and not
-# the low one ("4") that was tried and reverted earlier in this file's
-# history - that was a pacing false-positive; this is a different situation.
+# A key/model pair that racks up this many CONSECUTIVE fully-failed LOGICAL
+# CALLS (each of which already retried up to MAX_429_RETRIES times - this
+# is NOT a count of raw 429 responses, see note_call_exhausted's docstring
+# for why that distinction is the whole fix) gets marked exhausted rather
+# than retried forever. Reset to 0 by any success.
 CONSECUTIVE_429_EXHAUSTION_THRESHOLD = 10
 # Batched verification: up to this many tuples' worth of questions go into
 # ONE verification call, cutting call count ~N-fold vs one call per tuple.
@@ -164,6 +164,13 @@ class _ModelLimiter:
         self.daily_count = 0
         self.exhausted = False
         self.consecutive_429s = 0
+        # Separate from consecutive_429s (which counts every individual 429
+        # response, INCLUDING all the ones inside one call's own
+        # MAX_429_RETRIES retry loop) - this counts fully-failed LOGICAL
+        # CALLS: a whole tuple attempt that exhausted all of its own retries
+        # without ever succeeding. See note_call_exhausted's docstring for
+        # why exhaustion is gated on this, not on consecutive_429s.
+        self.consecutive_failed_calls = 0
         # Per (key, model): serializes every outbound HTTP call for this
         # exact key+model pair. wait_for_turn() only paces calls against
         # the SAME model's _ModelLimiter, so nothing previously stopped two
@@ -225,37 +232,26 @@ class KeyState:
     def note_success(self, model: str) -> None:
         lim = self._limiter(model)
         lim.consecutive_429s = 0
+        lim.consecutive_failed_calls = 0
         lim.daily_count += 1
 
     def note_rate_limited(self, model: str, retry_after: float | None) -> None:
         """
         429s are transient by nature - the server itself hands back a
-        retryDelay, which only makes sense if waiting recovers the key. A
-        SMALL number of them does NOT mark the key exhausted: an earlier
-        version did after 4 consecutive 429s, reasoning that repeats meant
-        the daily cap - that was wrong. Confirmed directly: a key marked
-        "exhausted" this way during a real batch responded HTTP 200
-        immediately when tested moments later. The actual cause was
-        gemini-3.1-flash-lite's per-key RPM being lower than DEFAULT_RPM
-        assumed, so 10 keys all pacing at the same (too-fast) rate all hit
-        429s in the same run - a pacing problem, not a capacity one. Fixed
-        by adaptively slowing this key's OWN pacing (min_interval grows on
-        each 429) rather than giving up on it.
-
-        That fix still stands for a burst of a few 429s. But a key that
-        keeps getting 429'd for CONSECUTIVE_429_EXHAUSTION_THRESHOLD (10)
-        calls in a row - already paced at up to min_interval=60s by this
-        same adaptive logic - is a materially different signal than the
-        original false positive: this isn't "our pacing is a bit too fast
-        and will settle," it's sustained rejection despite already being
-        slow, observed directly during the full-corpus real run (2026-09-19)
-        as several keys racking up 400-500+ consecutive 429s while a
-        [gen] FAILED ... "exhausted internal retries" tuple loss started
-        appearing. Left unbounded, a key in that state gets retried forever
-        (every ~60s) for no benefit - genuine 401/403 (mark_blocked) is
-        still the only OTHER thing that marks exhausted; this is a second,
-        narrower path for a consecutive-429 streak long enough that
-        "temporary pacing hiccup" no longer fits the evidence.
+        retryDelay, which only makes sense if waiting recovers the key. This
+        never marks the key exhausted by itself - an earlier version did
+        after 4 consecutive 429s, reasoning that repeats meant the daily
+        cap - that was wrong. Confirmed directly: a key marked "exhausted"
+        this way during a real batch responded HTTP 200 immediately when
+        tested moments later. The actual cause was gemini-3.1-flash-lite's
+        per-key RPM being lower than DEFAULT_RPM assumed, so 10 keys all
+        pacing at the same (too-fast) rate all hit 429s in the same run - a
+        pacing problem, not a capacity one. Fixed by adaptively slowing this
+        key's OWN pacing (min_interval grows on each 429) rather than giving
+        up on it. Exhaustion is tracked separately now, in
+        note_call_exhausted - see its docstring for why counting individual
+        429s here (rather than whole failed calls) reintroduced this exact
+        false positive a second time, just with a higher threshold.
         """
         lim = self._limiter(model)
         lim.consecutive_429s += 1
@@ -272,14 +268,41 @@ class KeyState:
             # we'd rather retry sooner and eat another 429 than block that long.
             backoff = min(60.0, retry_after) if retry_after else min(45.0, 2.0 ** lim.consecutive_429s)
             lim.next_allowed = time.monotonic() + backoff
-            if lim.consecutive_429s >= CONSECUTIVE_429_EXHAUSTION_THRESHOLD:
-                lim.exhausted = True
-        if lim.exhausted and lim.consecutive_429s == CONSECUTIVE_429_EXHAUSTION_THRESHOLD:
-            print(f"[ratelimit] {self.label}/{model} marked EXHAUSTED after "
-                  f"{lim.consecutive_429s} consecutive 429s - no longer retried this run")
-        elif backoff >= 5.0:
+        if backoff >= 5.0:
             print(f"[ratelimit] {self.label}/{model} backing off {backoff:.1f}s "
                   f"(consecutive 429s={lim.consecutive_429s}, new min_interval={lim.min_interval:.1f}s)")
+
+    def note_call_exhausted(self, model: str) -> None:
+        """
+        Called once per LOGICAL CALL that exhausted its own MAX_429_RETRIES
+        (12) without ever succeeding - not once per individual 429 response.
+
+        This replaces counting raw 429s (consecutive_429s) for exhaustion,
+        because that reintroduced the exact false-positive this project
+        already hit once before, just at a higher threshold. All 18 worker
+        threads fire their first request within the same second or two at
+        the start of a run - a real but brief startup burst. A single
+        unlucky tuple's own retry loop can rack up 10+ consecutive 429s BY
+        ITSELF within that one burst, tripping the old check before the
+        adaptive backoff it had just applied even got a chance to work.
+        Confirmed directly, twice (2026-09-19): every key the pipeline
+        marked "exhausted" answered a standalone test with HTTP 200 within
+        minutes, both times.
+
+        Counting fully-failed calls instead means 10 in a row: ten SEPARATE
+        tuple attempts, each of which already retried up to 12 times with
+        growing backoff, must ALL fail before giving up - a much stronger,
+        more deliberate signal that a burst clearing on its own can't trip.
+        """
+        lim = self._limiter(model)
+        with self.lock:
+            lim.consecutive_failed_calls += 1
+            if lim.consecutive_failed_calls >= CONSECUTIVE_429_EXHAUSTION_THRESHOLD:
+                lim.exhausted = True
+        if lim.exhausted and lim.consecutive_failed_calls == CONSECUTIVE_429_EXHAUSTION_THRESHOLD:
+            print(f"[ratelimit] {self.label}/{model} marked EXHAUSTED after "
+                  f"{CONSECUTIVE_429_EXHAUSTION_THRESHOLD} consecutive fully-failed calls "
+                  f"- no longer retried this run")
 
     def mark_blocked(self, model: str) -> None:
         """Permanent per-key failure (401/403) - unlike rate-limiting, no
@@ -403,6 +426,10 @@ def gemini_generate(key_state: KeyState, model: str, system_prompt: str, user_pr
         except (KeyError, IndexError, json.JSONDecodeError) as exc:
             return None, f"parse error: {exc} | raw: {json.dumps(resp.json())[:300]}"
 
+    # Every retry in the loop above was a 429 and none ever succeeded - one
+    # whole fully-failed logical call. See note_call_exhausted's docstring
+    # for why exhaustion is counted here, not per individual 429 response.
+    key_state.note_call_exhausted(model)
     return None, "rate limited (429) - exhausted internal retries"
 
 
