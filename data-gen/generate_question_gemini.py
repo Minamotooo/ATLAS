@@ -85,6 +85,12 @@ PROGRESS_PATH = _DATA_GEN / "gemini_progress_v2.json"
 # Conservative default; adjusted downward automatically if a 429 says otherwise.
 DEFAULT_RPM = 15
 MAX_RETRIES_PER_TUPLE = 2
+# A key/model pair that racks up this many CONSECUTIVE 429s (reset to 0 by
+# any success) gets marked exhausted rather than retried forever. See
+# note_rate_limited's docstring for why this threshold is set high and not
+# the low one ("4") that was tried and reverted earlier in this file's
+# history - that was a pacing false-positive; this is a different situation.
+CONSECUTIVE_429_EXHAUSTION_THRESHOLD = 10
 # Batched verification: up to this many tuples' worth of questions go into
 # ONE verification call, cutting call count ~N-fold vs one call per tuple.
 BATCH_VERIFY_SIZE = 8
@@ -198,17 +204,32 @@ class KeyState:
     def note_rate_limited(self, model: str, retry_after: float | None) -> None:
         """
         429s are transient by nature - the server itself hands back a
-        retryDelay, which only makes sense if waiting recovers the key. This
-        NEVER marks the key exhausted: an earlier version did after 4
-        consecutive 429s, reasoning that repeats meant the daily cap - that
-        was wrong. Confirmed directly: a key marked "exhausted" this way
-        during a real batch responded HTTP 200 immediately when tested
-        moments later. The actual cause was gemini-3.1-flash-lite's per-key
-        RPM being lower than DEFAULT_RPM assumed, so 10 keys all pacing at
-        the same (too-fast) rate all hit 429s in the same run - a pacing
-        problem, not a capacity one. Fixed by adaptively slowing this key's
-        OWN pacing (min_interval grows on each 429) rather than giving up on
-        it - only a genuine 401/403 (mark_blocked) is treated as permanent.
+        retryDelay, which only makes sense if waiting recovers the key. A
+        SMALL number of them does NOT mark the key exhausted: an earlier
+        version did after 4 consecutive 429s, reasoning that repeats meant
+        the daily cap - that was wrong. Confirmed directly: a key marked
+        "exhausted" this way during a real batch responded HTTP 200
+        immediately when tested moments later. The actual cause was
+        gemini-3.1-flash-lite's per-key RPM being lower than DEFAULT_RPM
+        assumed, so 10 keys all pacing at the same (too-fast) rate all hit
+        429s in the same run - a pacing problem, not a capacity one. Fixed
+        by adaptively slowing this key's OWN pacing (min_interval grows on
+        each 429) rather than giving up on it.
+
+        That fix still stands for a burst of a few 429s. But a key that
+        keeps getting 429'd for CONSECUTIVE_429_EXHAUSTION_THRESHOLD (10)
+        calls in a row - already paced at up to min_interval=60s by this
+        same adaptive logic - is a materially different signal than the
+        original false positive: this isn't "our pacing is a bit too fast
+        and will settle," it's sustained rejection despite already being
+        slow, observed directly during the full-corpus real run (2026-09-19)
+        as several keys racking up 400-500+ consecutive 429s while a
+        [gen] FAILED ... "exhausted internal retries" tuple loss started
+        appearing. Left unbounded, a key in that state gets retried forever
+        (every ~60s) for no benefit - genuine 401/403 (mark_blocked) is
+        still the only OTHER thing that marks exhausted; this is a second,
+        narrower path for a consecutive-429 streak long enough that
+        "temporary pacing hiccup" no longer fits the evidence.
         """
         lim = self._limiter(model)
         lim.consecutive_429s += 1
@@ -225,7 +246,12 @@ class KeyState:
             # we'd rather retry sooner and eat another 429 than block that long.
             backoff = min(60.0, retry_after) if retry_after else min(45.0, 2.0 ** lim.consecutive_429s)
             lim.next_allowed = time.monotonic() + backoff
-        if backoff >= 5.0:
+            if lim.consecutive_429s >= CONSECUTIVE_429_EXHAUSTION_THRESHOLD:
+                lim.exhausted = True
+        if lim.exhausted and lim.consecutive_429s == CONSECUTIVE_429_EXHAUSTION_THRESHOLD:
+            print(f"[ratelimit] {self.label}/{model} marked EXHAUSTED after "
+                  f"{lim.consecutive_429s} consecutive 429s - no longer retried this run")
+        elif backoff >= 5.0:
             print(f"[ratelimit] {self.label}/{model} backing off {backoff:.1f}s "
                   f"(consecutive 429s={lim.consecutive_429s}, new min_interval={lim.min_interval:.1f}s)")
 
