@@ -85,6 +85,11 @@ PROGRESS_PATH = _DATA_GEN / "gemini_progress_v2.json"
 # Conservative default; adjusted downward automatically if a 429 says otherwise.
 DEFAULT_RPM = 15
 MAX_RETRIES_PER_TUPLE = 2
+# On a 429, retry exactly 3 times at these fixed delays (1st retry after
+# 10s, 2nd after 30s, 3rd after 60s) - not adaptive, not server-driven.
+# After all 3 still fail, the call is treated as timed out (one
+# fully-failed logical call - see note_call_exhausted).
+RETRY_DELAYS_SEC = [10.0, 30.0, 60.0]
 # A key/model pair that racks up this many CONSECUTIVE fully-failed LOGICAL
 # CALLS (each of which already retried up to MAX_429_RETRIES times - this
 # is NOT a count of raw 429 responses, see note_call_exhausted's docstring
@@ -163,13 +168,10 @@ class _ModelLimiter:
         self.next_allowed = 0.0
         self.daily_count = 0
         self.exhausted = False
-        self.consecutive_429s = 0
-        # Separate from consecutive_429s (which counts every individual 429
-        # response, INCLUDING all the ones inside one call's own
-        # MAX_429_RETRIES retry loop) - this counts fully-failed LOGICAL
-        # CALLS: a whole tuple attempt that exhausted all of its own retries
-        # without ever succeeding. See note_call_exhausted's docstring for
-        # why exhaustion is gated on this, not on consecutive_429s.
+        # Counts fully-failed LOGICAL CALLS: a whole tuple attempt that
+        # exhausted its own RETRY_DELAYS_SEC schedule without ever
+        # succeeding - NOT individual 429 responses (that was tried and is
+        # why this field exists; see note_call_exhausted's docstring).
         self.consecutive_failed_calls = 0
         # Per (key, model): serializes every outbound HTTP call for this
         # exact key+model pair. wait_for_turn() only paces calls against
@@ -231,51 +233,60 @@ class KeyState:
 
     def note_success(self, model: str) -> None:
         lim = self._limiter(model)
-        lim.consecutive_429s = 0
         lim.consecutive_failed_calls = 0
         lim.daily_count += 1
 
-    def note_rate_limited(self, model: str, retry_after: float | None) -> None:
+    def note_rate_limited(self, model: str, retry_after: float | None, attempt: int) -> None:
         """
-        429s are transient by nature - the server itself hands back a
-        retryDelay, which only makes sense if waiting recovers the key. This
-        never marks the key exhausted by itself - an earlier version did
-        after 4 consecutive 429s, reasoning that repeats meant the daily
-        cap - that was wrong. Confirmed directly: a key marked "exhausted"
-        this way during a real batch responded HTTP 200 immediately when
-        tested moments later. The actual cause was gemini-3.1-flash-lite's
-        per-key RPM being lower than DEFAULT_RPM assumed, so 10 keys all
-        pacing at the same (too-fast) rate all hit 429s in the same run - a
-        pacing problem, not a capacity one. Fixed by adaptively slowing this
-        key's OWN pacing (min_interval grows on each 429) rather than giving
-        up on it. Exhaustion is tracked separately now, in
-        note_call_exhausted - see its docstring for why counting individual
-        429s here (rather than whole failed calls) reintroduced this exact
-        false positive a second time, just with a higher threshold.
+        Fixed retry schedule on a 429: RETRY_DELAYS_SEC (10s, 30s, 60s) for
+        the 1st/2nd/3rd retry respectively, not adaptive and not driven by
+        the server's own suggested retryDelay (logged for visibility only -
+        Gemini sometimes hands back a RetryInfo.retryDelay measured in TENS
+        OF MINUTES, a different quota bucket resetting, e.g. RPD; honoring
+        that literally would mean one `time.sleep()` blocking this key/model
+        for that entire duration with zero visibility, which looked exactly
+        like a hung pipeline). After 3 retries all fail, the call is treated
+        as timed out - see note_call_exhausted, called from gemini_generate's
+        fallthrough once this key/model has been through the whole schedule
+        without success.
+
+        `attempt` is the CALLER's own local retry-loop index (0 = first
+        try, before any retry), not a value stored on this object - an
+        earlier version kept a persistent consecutive_429s counter here
+        instead, incremented on every 429 and only reset on success. That
+        meant a call that failed all 3 retries left the counter elevated
+        for whatever call came next on this key+model, so a FRESH tuple's
+        very first retry could be computed as if it were already deep into
+        someone else's retry schedule (observed directly: log lines like
+        "retry 5/3"). Taking the index from the caller's own loop variable
+        means each call's retry schedule always starts at 10s truly fresh,
+        regardless of what a previous, unrelated call did.
+
+        Deliberately never marks the key exhausted by itself, however many
+        times this fires - only note_call_exhausted (a count of whole
+        fully-failed calls, not of individual 429s like this) does that.
+        An earlier version marked exhausted directly from repeated 429s
+        here, at two different thresholds, and both were false positives:
+        a key marked "exhausted" this way answered a standalone test with
+        HTTP 200 within minutes, twice, confirmed directly. Not this
+        function's job to guess exhaustion - it only enforces the fixed
+        wait between retries.
         """
         lim = self._limiter(model)
-        lim.consecutive_429s += 1
+        delay = RETRY_DELAYS_SEC[min(attempt, len(RETRY_DELAYS_SEC) - 1)]
         with self.lock:
-            # Adaptive: each 429 means our pacing for this (key, model) is
-            # still too fast, so slow it down permanently, not just once.
-            lim.min_interval = min(60.0, lim.min_interval * 1.6)
-            # Cap even the server-provided retryDelay. Gemini sometimes hands
-            # back a RetryInfo.retryDelay measured in TENS OF MINUTES (a
-            # different quota bucket resetting, e.g. RPD) - honoring that
-            # literally means one `time.sleep()` call blocks this key/model
-            # for that entire duration with zero visibility, which looked
-            # exactly like a hung pipeline. 60s matches the fallback ceiling:
-            # we'd rather retry sooner and eat another 429 than block that long.
-            backoff = min(60.0, retry_after) if retry_after else min(45.0, 2.0 ** lim.consecutive_429s)
-            lim.next_allowed = time.monotonic() + backoff
-        if backoff >= 5.0:
-            print(f"[ratelimit] {self.label}/{model} backing off {backoff:.1f}s "
-                  f"(consecutive 429s={lim.consecutive_429s}, new min_interval={lim.min_interval:.1f}s)")
+            lim.next_allowed = time.monotonic() + delay
+        suggested = f", server suggested {retry_after:.1f}s" if retry_after else ""
+        shown_attempt = min(attempt + 1, len(RETRY_DELAYS_SEC))
+        print(f"[ratelimit] {self.label}/{model} retry {shown_attempt}/{len(RETRY_DELAYS_SEC)} "
+              f"in {delay:.0f}s{suggested}")
 
     def note_call_exhausted(self, model: str) -> None:
         """
         Called once per LOGICAL CALL that exhausted its own MAX_429_RETRIES
-        (12) without ever succeeding - not once per individual 429 response.
+        (MAX_429_RETRIES, currently 3, at the fixed RETRY_DELAYS_SEC
+        schedule) without ever succeeding - not once per individual 429
+        response.
 
         This replaces counting raw 429s (consecutive_429s) for exhaustion,
         because that reintroduced the exact false-positive this project
@@ -283,16 +294,15 @@ class KeyState:
         threads fire their first request within the same second or two at
         the start of a run - a real but brief startup burst. A single
         unlucky tuple's own retry loop can rack up 10+ consecutive 429s BY
-        ITSELF within that one burst, tripping the old check before the
-        adaptive backoff it had just applied even got a chance to work.
-        Confirmed directly, twice (2026-09-19): every key the pipeline
-        marked "exhausted" answered a standalone test with HTTP 200 within
-        minutes, both times.
+        ITSELF within that one burst, tripping the old check before its own
+        retry delay even got a chance to work. Confirmed directly, twice
+        (2026-09-19): every key the pipeline marked "exhausted" answered a
+        standalone test with HTTP 200 within minutes, both times.
 
         Counting fully-failed calls instead means 10 in a row: ten SEPARATE
-        tuple attempts, each of which already retried up to 12 times with
-        growing backoff, must ALL fail before giving up - a much stronger,
-        more deliberate signal that a burst clearing on its own can't trip.
+        tuple attempts, each of which already went through the whole 3-try
+        schedule, must ALL fail before giving up - a much stronger, more
+        deliberate signal that a burst clearing on its own can't trip.
         """
         lim = self._limiter(model)
         with self.lock:
@@ -316,7 +326,7 @@ class KeyState:
         return self._limiter(model).daily_count
 
 
-MAX_429_RETRIES = 12  # separate from MAX_RETRIES_PER_TUPLE - a rate limit is not a content problem
+MAX_429_RETRIES = len(RETRY_DELAYS_SEC)  # separate from MAX_RETRIES_PER_TUPLE - a rate limit is not a content problem
 
 
 def gemini_generate(key_state: KeyState, model: str, system_prompt: str, user_prompt: str,
@@ -395,7 +405,7 @@ def gemini_generate(key_state: KeyState, model: str, system_prompt: str, user_pr
                             retry_after = float(delay[:-1])
             except Exception:
                 pass
-            key_state.note_rate_limited(model, retry_after)
+            key_state.note_rate_limited(model, retry_after, _429_attempt)
             if key_state.is_exhausted(model):
                 # Repeated 429s even after backoff - this is the daily cap, not
                 # the per-minute one. Stop hammering this key for this model.
@@ -480,7 +490,11 @@ def verify_batch_combined(
     self-assessment bias that folding a check into generation itself would.
 
     items: list of (tup, questions) pairs. Returns, per item in the same
-    order: (call_succeeded, [(on_topic, answer_matches), ...]).
+    order: (call_succeeded, [(on_topic, answer_matches), ...]) - always
+    True/real verdicts now, since a failed call raises instead (see below).
+
+    Raises RuntimeError if the call itself didn't produce a usable response
+    at all - callers must retry, not treat that as a verdict.
     """
     blocks = []
     for ti, (tup, questions) in enumerate(items):
@@ -499,13 +513,29 @@ def verify_batch_combined(
         + '\n\nশুধুমাত্র JSON দাও: {"results": [{"on_topic": true/false, "correct_answer": "A"}, ...]} '
         "— উপরের ক্রম অনুযায়ী (টিউপল ১-এর সব প্রশ্ন প্রথমে, তারপর টিউপল ২, ইত্যাদি)।"
     )
-    parsed, _err = gemini_generate(
+    parsed, err = gemini_generate(
         key_state, ANSWER_VERIFICATION_MODEL, VERIFY_SYSTEM_PROMPT, prompt,
         response_schema=VERIFY_SCHEMA,
     )
     if not isinstance(parsed, dict) or not isinstance(parsed.get("results"), list) \
             or len(parsed["results"]) != total_questions:
-        return [(False, [(True, None)] * len(qs)) for _, qs in items]
+        # The call itself didn't produce a usable response (network/rate-limit
+        # failure, or a malformed body) - NOT a verdict that every question
+        # passed. Raising (instead of the previous
+        # `return [(False, [(True, None)] * len(qs)) for _, qs in items]`)
+        # lets callers distinguish "not verified" from "call failed, retry":
+        # verify_worker already has a try/except around this call that
+        # requeues on exception, but the old return value bypassed it
+        # entirely - on_topic=True/answer_ok=None never triggers verify_worker's
+        # rejection branch, so a failed call was silently treated as "every
+        # question passed" and could reach the final corpus, just tagged
+        # _verified=False in metadata nothing downstream checks. Same bug
+        # class as audit_questions.py's VerifyCallFailed, fixed there first;
+        # this was the one other place it existed. combined_validity (the
+        # other caller) already wraps this call in try/except and treats an
+        # exception as "not valid" either way, so this doesn't change its
+        # behavior.
+        raise RuntimeError(f"verify call failed: {err or 'malformed response'}")
 
     flat = parsed["results"]
     out: list[tuple[bool, list[tuple[bool, bool | None]]]] = []
@@ -894,7 +924,21 @@ def main() -> None:
             else:
                 if err == "key exhausted":
                     work_q.put((idx, tup))  # still in_flight - another gen thread/key will pick it up
-                    return
+                    return  # this key really is done - stop this worker
+                if err and "rate limited (429)" in err:
+                    # This tuple timed out on this key (see RETRY_DELAYS_SEC /
+                    # note_call_exhausted), but the key itself isn't
+                    # necessarily exhausted - is_exhausted() may still be
+                    # False. Requeue the TUPLE for another shot (maybe a
+                    # different key, maybe this one again later), but keep
+                    # this worker going rather than exiting: previously this
+                    # fell through to finalize_failure, permanently marking
+                    # the tuple "done" (indistinguishable from success) after
+                    # one bad run of luck - a real data-loss bug, worse once
+                    # MAX_429_RETRIES dropped from 12 to 3 (a tuple hits this
+                    # far more easily now).
+                    work_q.put((idx, tup))  # still in_flight - not done, no key exhaustion either
+                    continue
                 finalize_failure(tup, err or "unknown generation error", "gen")
 
     verify_key_idx = {"i": 0}
