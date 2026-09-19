@@ -114,6 +114,12 @@ the user explicitly asks in that specific message. Read-only exploration
   routes, the `data-gen` question-generation pipeline, known limitations.
 - [HANDOFF.md](HANDOFF.md), [HANDOFF2.md](HANDOFF2.md) — chronological dev history
   and rationale for major decisions.
+- [Prompts/](Prompts/) — **every prompt that shaped the project's content**,
+  in pipeline order: syllabus → taxonomy → ontology extraction → editorial QA →
+  question generation → verification. Each file explains its purpose, where it
+  lives in code, and the design decisions behind it. `Prompts/README.md` is the
+  index. Prompts 05–07 are copies of live strings in `data-gen/` — the code is
+  the source of truth for those.
 - [HANDOFF5.md](HANDOFF5.md) — **start here for anything ontology- or
   question-generation-related.** The ontology is finished; HANDOFF5 records its
   final state, the decisions already taken (so they are not relitigated), the
