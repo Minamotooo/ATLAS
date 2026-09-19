@@ -1,0 +1,32 @@
+Bloom expansion: 1688 tuples -> 10128 (all 6 levels)
+Generation model: gemini-3.1-flash-lite  (test model)
+Verification model: gemini-3.1-flash-lite (always, regardless of --real)
+Loaded 18 API keys from F:\Repositories\ATLAS\keys\.gemini_keys
+Loading retriever + KB ...
+Loading sentence-transformers on CPU: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  10%|#         | 20/199 [00:00<00:00, 192.55it/s]Loading weights:  27%|##6       | 53/199 [00:00<00:00, 261.96it/s]Loading weights:  41%|####1     | 82/199 [00:00<00:00, 270.21it/s]Loading weights:  62%|######2   | 124/199 [00:00<00:00, 326.31it/s]Loading weights: 100%|##########| 199/199 [00:00<00:00, 419.08it/s]
+Retriever backend: sentence-transformers (sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2)
+KB size: 4474 items
+Tuples to generate: 3
+Already done (resume): 3 | remaining: 0
+
+Done in 0.0s. ok=0 failed=0 total_questions=5036
+  key1: generation=0 calls (exhausted=False) | verification=0 calls (exhausted=False)
+  key2: generation=0 calls (exhausted=False) | verification=0 calls (exhausted=False)
+  key3: generation=0 calls (exhausted=False) | verification=0 calls (exhausted=False)
+  key4: generation=0 calls (exhausted=False) | verification=0 calls (exhausted=False)
+  key5: generation=0 calls (exhausted=False) | verification=0 calls (exhausted=False)
+  key6: generation=0 calls (exhausted=False) | verification=0 calls (exhausted=False)
+  key7: generation=0 calls (exhausted=False) | verification=0 calls (exhausted=False)
+  key8: generation=0 calls (exhausted=False) | verification=0 calls (exhausted=False)
+  key9: generation=0 calls (exhausted=False) | verification=0 calls (exhausted=False)
+  key10: generation=0 calls (exhausted=False) | verification=0 calls (exhausted=False)
+  key11: generation=0 calls (exhausted=False) | verification=0 calls (exhausted=False)
+  key12: generation=0 calls (exhausted=False) | verification=0 calls (exhausted=False)
+  key13: generation=0 calls (exhausted=False) | verification=0 calls (exhausted=False)
+  key14: generation=0 calls (exhausted=False) | verification=0 calls (exhausted=False)
+  key15: generation=0 calls (exhausted=False) | verification=0 calls (exhausted=False)
+  key16: generation=0 calls (exhausted=False) | verification=0 calls (exhausted=False)
+  key17: generation=0 calls (exhausted=False) | verification=0 calls (exhausted=False)
+  key18: generation=0 calls (exhausted=False) | verification=0 calls (exhausted=False)
