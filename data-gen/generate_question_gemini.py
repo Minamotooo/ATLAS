@@ -362,6 +362,7 @@ def gemini_generate(key_state: KeyState, model: str, system_prompt: str, user_pr
     }
     url = f"{API_BASE}/{model}:generateContent?key={key_state.key}"
 
+    last_retry_status: int | None = None
     for _429_attempt in range(MAX_429_RETRIES + 1):
         if key_state.is_exhausted(model):
             return None, "key exhausted"
@@ -394,21 +395,37 @@ def gemini_generate(key_state: KeyState, model: str, system_prompt: str, user_pr
             finally:
                 one_shot.shutdown(wait=False)
 
-        if resp.status_code == 429:
+        # 429 (rate limit) and transient 5xx (Gemini's own infrastructure
+        # under load, e.g. 503 "This model is currently experiencing high
+        # demand") get the SAME fixed retry treatment. Before this, only 429
+        # did - a 503 fell straight through to the generic `!= 200` branch
+        # below with zero retries, immediately failing the whole call.
+        # Confirmed directly: a real Gemini-side 503 outage (2026-09-24)
+        # permanently finalized 16 tuples with zero output and no chance to
+        # retry, since generate_schema_valid_tuple's own error path treats
+        # any non-429/non-"key exhausted" error as immediately final (see
+        # gen_worker) - unlike a 429 timeout, which correctly requeues.
+        # 401/403 (below) remain separate: those are permanent per-key
+        # failures, not transient server-side ones, so still exhaust the
+        # key immediately rather than retrying.
+        if resp.status_code == 429 or resp.status_code in (500, 502, 503, 504):
+            last_retry_status = resp.status_code
             retry_after = None
-            try:
-                body = resp.json()
-                for detail in body.get("error", {}).get("details", []):
-                    if detail.get("@type", "").endswith("RetryInfo"):
-                        delay = detail.get("retryDelay", "")
-                        if delay.endswith("s"):
-                            retry_after = float(delay[:-1])
-            except Exception:
-                pass
+            if resp.status_code == 429:
+                try:
+                    body = resp.json()
+                    for detail in body.get("error", {}).get("details", []):
+                        if detail.get("@type", "").endswith("RetryInfo"):
+                            delay = detail.get("retryDelay", "")
+                            if delay.endswith("s"):
+                                retry_after = float(delay[:-1])
+                except Exception:
+                    pass
             key_state.note_rate_limited(model, retry_after, _429_attempt)
             if key_state.is_exhausted(model):
-                # Repeated 429s even after backoff - this is the daily cap, not
-                # the per-minute one. Stop hammering this key for this model.
+                # Repeated failures even after backoff - stop hammering this
+                # key for this model (daily cap for 429s; sustained outage
+                # for 5xx - either way, no point in retrying anymore).
                 return None, "key exhausted"
             continue  # wait_for_turn enforces the backoff on the next loop iteration
 
@@ -436,11 +453,14 @@ def gemini_generate(key_state: KeyState, model: str, system_prompt: str, user_pr
         except (KeyError, IndexError, json.JSONDecodeError) as exc:
             return None, f"parse error: {exc} | raw: {json.dumps(resp.json())[:300]}"
 
-    # Every retry in the loop above was a 429 and none ever succeeded - one
-    # whole fully-failed logical call. See note_call_exhausted's docstring
-    # for why exhaustion is counted here, not per individual 429 response.
+    # Every retry in the loop above was a 429/5xx and none ever succeeded -
+    # one whole fully-failed logical call. See note_call_exhausted's
+    # docstring for why exhaustion is counted here, not per individual
+    # 429/5xx response. Report the actual last status seen (429 vs e.g. 503
+    # are different real causes - a message that always says "429" even
+    # when every retry was actually a 503 would be actively misleading).
     key_state.note_call_exhausted(model)
-    return None, "rate limited (429) - exhausted internal retries"
+    return None, f"rate limited/unavailable (last status {last_retry_status}) - exhausted internal retries"
 
 
 VERIFY_SYSTEM_PROMPT = (
@@ -925,7 +945,7 @@ def main() -> None:
                 if err == "key exhausted":
                     work_q.put((idx, tup))  # still in_flight - another gen thread/key will pick it up
                     return  # this key really is done - stop this worker
-                if err and "rate limited (429)" in err:
+                if err and "exhausted internal retries" in err:
                     # This tuple timed out on this key (see RETRY_DELAYS_SEC /
                     # note_call_exhausted), but the key itself isn't
                     # necessarily exhausted - is_exhausted() may still be
