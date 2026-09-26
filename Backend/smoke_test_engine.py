@@ -65,6 +65,14 @@ class FakeQuery:
         self.rows = self.rows[:n]
         return self
 
+    def order(self, col, desc=False):
+        self.rows = sorted(self.rows, key=lambda r: r.get(col), reverse=desc)
+        return self
+
+    def range(self, start, end):
+        self.rows = self.rows[start:end + 1]
+        return self
+
     def maybe_single(self):
         self._single = True
         return self
@@ -84,7 +92,10 @@ class FakeQuery:
 
     def execute(self):
         if self._mode == "select":
-            rows = self._expand(self.rows)
+            # Real PostgREST truncates every response at max-rows (1000 on this
+            # project) no matter what .limit() asks for. Emulate it, or unpaged
+            # full-table reads look correct here and break against the live DB.
+            rows = self._expand(self.rows[:FakeSupabase.MAX_ROWS])
             data = (rows[0] if rows else None) if self._single else rows
             return types.SimpleNamespace(data=data, error=None)
 
@@ -126,6 +137,8 @@ class FakeQuery:
 
 
 class FakeSupabase:
+    MAX_ROWS = 1000
+
     PKS = {
         "users": ("user_id",),
         "skills": ("skill_id",),
@@ -195,7 +208,7 @@ def seed(db, tree_dir: Path, section, topic_skills, skill_descriptions, skill_ed
                         {
                             "question_id": q["id"],
                             "option_label": label,
-                            "option_text": f"option {label}",
+                            "option_text": f"value {i + 1}",
                             "is_correct": i == 0,
                             "explanation": "because",
                         },
@@ -260,8 +273,20 @@ def main() -> int:
     print(f"\n  using section: {course['title']} / {section['title']}")
 
     made = seed(db, tree, section, topic_skills, skill_desc, skill_edges)
-    server.EXISTING_SKILL_IDS = {r["skill_id"] for r in db.tables["skills"]}
     print(f"  seeded {made} questions, {len(db.tables['skills'])} skills")
+
+    # Load through the real function against the row-capped stand-in, so an
+    # unpaged read (which silently kept only 1000 of the skills) fails here.
+    server.EXISTING_SKILL_IDS = server._load_existing_skill_ids()
+    check("skill-ID load survives the 1000-row cap",
+          server.EXISTING_SKILL_IDS == {r["skill_id"] for r in db.tables["skills"]},
+          f"{len(server.EXISTING_SKILL_IDS)} of {len(db.tables['skills'])} loaded")
+    emptied = [
+        s["id"] for c in server.PLATFORM_CATALOG["courses"] for s in c["sections"]
+        if s.get("enabled") and not server._section_skill_ids(s)
+    ]
+    check("no enabled section resolves to zero skills", not emptied,
+          f"{len(emptied)} emptied" if emptied else "all sections populated")
 
     print("\n=== 2. topic-coded question search (regression guard) ===")
     code = section["topics"][0]["skill_topic_code"]
@@ -276,12 +301,51 @@ def main() -> int:
     user_id = "11111111-1111-1111-1111-111111111111"
     db.tables["users"].append({"user_id": user_id, "user_name": "smoke"})
 
+    # Prior progress outside this section, which the diagnostic must build on.
+    section_skill_set = set(server._section_skill_ids(section))
+    practised = next(sid for sid in skill_desc if sid not in section_skill_set)
+    db.tables["user_skill"].append({"user_id": user_id, "skill_id": practised, "mastery_level": 88.0})
+
     start = server.start_diagnostic(
         server.DiagnosticStartRequest(user_id=user_id, section_id=section["id"])
     )
     sess = start["session_id"]
     total = start["total_questions"]
     check("diagnostic started", start["question"] is not None, f"length {total}")
+
+    run = server.DIAGNOSTIC_RUNS[sess]
+    check("diagnostic only selects the section's own skills",
+          set(run.diagnostic_session.tested) == section_skill_set,
+          f"{len(run.diagnostic_session.tested)} selectable, section has {len(section_skill_set)}")
+    seeded = run.state_cache[practised]["mastery"]
+    check("stored mastery seeds the session instead of the prior", seeded == 88.0,
+          f"{practised} starts at {seeded}")
+    served_skills = [start["question"]["skill_id"]]
+
+    first_options = start["question"]["options"]
+    leaked = sorted({k for o in first_options for k in o} - {"label", "text"})
+    check("question options carry only label and text", not leaked,
+          f"leaks {leaked}" if leaked else "no explanation / missing_prerequisites")
+
+    source = next(r for r in db.tables["questions"] if r["id"] == start["question"]["question_id"])
+    source_row = {**source, "question_options": [o for o in db.tables["question_options"]
+                                                  if o["question_id"] == source["id"]]}
+    correct_text = next(o["option_text"] for o in source_row["question_options"] if o["is_correct"])
+    positions, kept_key = set(), True
+    for _ in range(60):
+        shuffled = server._shuffle_options(source_row)
+        key = [o for o in shuffled["question_options"] if o["is_correct"]]
+        kept_key &= len(key) == 1 and key[0]["option_text"] == correct_text
+        positions.add(key[0]["option_label"])
+    check("shuffle keeps exactly one correct option, same text", kept_key)
+    check("shuffle moves the correct option", len(positions) > 1, f"seen at {sorted(positions)}")
+    check("shuffle leaves the source row untouched",
+          [o["option_label"] for o in source_row["question_options"]] == list("ABCD"))
+    positional = {**source_row, "question_options": [
+        {**o, "option_text": "উত্তর খ সঠিক"} if o["option_label"] == "D" else o
+        for o in source_row["question_options"]]}
+    check("options that reference other options keep their order",
+          server._shuffle_options(positional) is positional)
     check("question carries subject", bool(start["question"].get("subject")),
           start["question"].get("subject", ""))
     check("topic shown as display label, not code",
@@ -297,7 +361,13 @@ def main() -> int:
         nxt = server.get_next_diagnostic_question(sess)
         if nxt.get("completed") or not nxt.get("question"):
             break
-        correct = next(o["label"] for o in nxt["question"]["options"] if o["label"] == "A")
+        served_skills.append(nxt["question"]["skill_id"])
+        # Options are shuffled per serve, so read the key from the run, not the position.
+        correct = next(o["option_label"] for o in run.current_question_row["question_options"]
+                       if o.get("is_correct"))
+        payload_labels = [o["label"] for o in nxt["question"]["options"]]
+        if correct not in payload_labels:
+            check("served labels match the stored shuffled row", False, f"{correct} not in {payload_labels}")
         res = server.submit_diagnostic_answer(
             sess, server.DiagnosticAnswerRequest(selected_option_label=correct)
         )
@@ -306,6 +376,10 @@ def main() -> int:
             break
 
     check("diagnostic answered every question", answered == total, f"{answered}/{total}")
+    outside = [s for s in served_skills if s not in section_skill_set]
+    check("every diagnostic question belongs to the section", not outside,
+          f"{len(outside)} of {len(served_skills)} from other sections" if outside
+          else f"{len(set(served_skills))} distinct skills, all in-section")
     state = server.get_section_state(user_id, section["id"])
     check("mastery unlocked after diagnostic", not state["mastery_locked"])
     check("section state reports subject", state.get("subject") == course["subject"],
@@ -350,8 +424,11 @@ def main() -> int:
             nxt = server.get_next_topic_practice_question(tp_sess)
             if not nxt.get("question"):
                 break
+            tp_run = server.TOPIC_PRACTICE_RUNS[tp_sess]
+            wrong = next(o["option_label"] for o in tp_run.current_question_row["question_options"]
+                         if not o.get("is_correct"))
             res = server.submit_topic_practice_answer(
-                tp_sess, server.TopicPracticeAnswerRequest(selected_option_label="B")
+                tp_sess, server.TopicPracticeAnswerRequest(selected_option_label=wrong)
             )
             wrong_streak += 1
             if res.get("spillover_activated"):

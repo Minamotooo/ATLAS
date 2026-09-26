@@ -79,7 +79,7 @@ python -m venv .venv && pip install -r requirements.txt   # if not already done
 python smoke_test_engine.py
 ```
 
-Expect `18 passed, 0 failed`. This runs the full diagnostic → mastery-update →
+Expect `27 passed, 0 failed`. This runs the full diagnostic → mastery-update →
 topic-practice → spillover flow against an in-memory Supabase stand-in — use it to
 confirm the engine logic itself is sound even when there's no live database
 connection. If this fails, that's a real regression worth investigating; if only the
