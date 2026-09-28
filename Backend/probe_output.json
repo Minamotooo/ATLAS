@@ -1,0 +1,48 @@
+{
+  "session_id": "545f55da-404f-4c68-b49e-49deedfc7f77",
+  "section_id": "mat1_ch01_matrix",
+  "question_index": 1,
+  "total_questions": 5,
+  "question": {
+    "question_id": 13390,
+    "bloom_level": "Evaluate",
+    "skill_id": "CHE_ACIDBASE20",
+    "skill_description": "Calculate the pH of a buffer solution formed from a weak acid and its conjugate-base salt using the Henderson-Hasselbalch equation, pH = pKa + log([salt]/[acid]).",
+    "subject": "Chemistry",
+    "topic": "Buffers and Salt Hydrolysis",
+    "topic_code": "CHE1_BUFFER",
+    "question_stem": "বাফার দ্রবণে সমমোলার এসিড ও লবণ মিশ্রित করলে $\\text{pH} = \\text{pK}_a$ হয়—এই সত্যতা যাচাইয়ের জন্য দুই জন পরীক্ষার্থী দুটি যুক্তি দিলেন। শিক্ষার্থী X বললেন \"যেহেতু $\\log(1) = 0$, তাই লগ পদ বাদ যায়\" এবং শিক্ষার্থী Y বললেন \"লবণ ও এসিডের ঘনমাত্রা সমান হলে অনুপাত শূন্য হয় তাই pH বৃদ্ধি পায়\"। কে সঠিক রায় দিয়েছেন?",
+    "options": [
+      {
+        "label": "A",
+        "text": "শিক্ষার্থী Y সঠিক কারণ অনুপাত শূন্য হলে হিসাব সহজ হয়।",
+        "explanation": "সমমোলার দ্রবণে লবণ ও এসিডের অনুপাত ১ হয়, শূন্য নয়।",
+        "missing_prerequisites": [
+          "CHE_STOICHIOMETRY13"
+        ]
+      },
+      {
+        "label": "B",
+        "text": "উভয় শিক্ষার্থীই ভুল কারণ সমমোলার দ্রবণে pH সর্বদা ৭ হয়।",
+        "explanation": "দুর্বল এসিড ও সবল ক্ষারের লবণের মিশ্রণে গঠিত বাফারের pH সবসময় ৭ হয় না, তা pKa এর ওপর নির্ভর করে।",
+        "missing_prerequisites": [
+          "CHE_STOICHIOMETRY13"
+        ]
+      },
+      {
+        "label": "C",
+        "text": "শিক্ষার্থী X সঠিক, কারণ $[\\text{Salt}] = [\\text{Acid}]$ হলে $\\frac{[\\text{Salt}]}{[\\text{Acid}]} = 1$ এবং $\\log(1) = 0$ হয়।",
+        "explanation": "Henderson-Hasselbalch সমীকরণে লবণ ও এসিডের ঘনমাত্রা সমান হলে $\\log(1) = 0$ হওয়ায় $\\text{pH} = \\text{pK}_a$ হয়।",
+        "missing_prerequisites": []
+      },
+      {
+        "label": "D",
+        "text": "উভয় শিক্ষার্থীই সঠিক কারণ তাদের উভয়েরই চূড়ান্ত ফল একই।",
+        "explanation": "শিক্ষার্থী Y এর যুক্তি ভুল কারণ $\\log(0)$ অসংজ্ঞায়িত এবং অনুপাত ১ হওয়া বাঞ্ছনীয়।",
+        "missing_prerequisites": [
+          "CHE_STOICHIOMETRY13"
+        ]
+      }
+    ]
+  }
+}

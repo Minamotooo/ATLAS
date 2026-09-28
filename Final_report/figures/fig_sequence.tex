@@ -1,0 +1,43 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[fig, font=\scriptsize,
+      head/.style={proc, text width=24mm, font=\footnotesize, fill=gray!10},
+      msg/.style={->, draw=inkSecondary, thin},
+      msgHi/.style={->, draw=vizBlue, line width=0.7pt},
+      ret/.style={->, draw=inkSecondary, thin, dashed},
+      act/.style={draw=inkSecondary, fill=white, minimum width=2mm, inner sep=0pt}]
+    \def\xa{0} \def\xb{4.3} \def\xc{8.6} \def\xd{12.9}
+    \node[head] (h1) at (\xa,0) {Browser\\{\tiny React client}};
+    \node[head] (h2) at (\xb,0) {API\\{\tiny FastAPI}};
+    \node[head] (h3) at (\xc,0) {Engine\\{\tiny session, updater}};
+    \node[head] (h4) at (\xd,0) {Database\\{\tiny Supabase}};
+    \foreach \x in {\xa,\xb,\xc,\xd} \draw[axisLine, dashed] (\x,-0.6) -- (\x,-10.6);
+    % start
+    \draw[msg] (\xa,-1.1) -- node[above]{\texttt{POST /diagnostic/start}} (\xb,-1.1);
+    \draw[msg] (\xb,-1.6) -- node[above, pos=0.75]{stored mastery (paged)} (\xd,-1.6);
+    \draw[ret] (\xd,-2.0) -- (\xb,-2.0);
+    \draw[msg] (\xb,-2.5) -- node[above]{new session: section's skills, seeded} (\xc,-2.5);
+    % loop
+    \draw[vizBlue, rounded corners=2pt] (-1.4,-3.0) rectangle (14.3,-10.3);
+    \node[font=\scriptsize\bfseries, text=vizBlue, anchor=north east, fill=white] at (14.25,-3.05) {loop: until the section's length};
+    \draw[msg] (\xa,-3.7) -- node[above]{\texttt{GET /next}} (\xb,-3.7);
+    \draw[msg] (\xb,-4.2) -- node[above]{next skill (balanced volume), Bloom level} (\xc,-4.2);
+    \draw[ret] (\xc,-4.6) -- (\xb,-4.6);
+    \draw[msg] (\xb,-5.3) -- node[above, pos=0.75]{fallback ladder (usually one query)} (\xd,-5.3);
+    \draw[ret] (\xd,-5.7) -- (\xb,-5.7);
+    \draw[msgHi] (\xb,-6.3) -- node[above]{question: options shuffled; no key, no tags} (\xa,-6.3);
+    \draw[msg] (\xa,-7.2) -- node[above]{\texttt{POST /answer} (displayed label)} (\xb,-7.2);
+    \draw[msg] (\xb,-7.7) -- node[above]{graded answer} (\xc,-7.7);
+    \node[act, minimum height=10mm, anchor=north] at (\xc,-7.7) {};
+    \node[note, anchor=west, text width=30mm] at (\xc+0.2,-8.2) {three-phase update (\Cref{fig:three-phase})};
+    \draw[ret] (\xc,-8.8) -- node[above]{changed skills} (\xb,-8.8);
+    \draw[msg] (\xb,-9.3) -- node[above, pos=0.75]{upsert \texttt{user\_skill}} (\xd,-9.3);
+    \draw[msgHi] (\xb,-9.8) -- node[above]{correct?, explanation, 95\% alerts} (\xa,-9.8);
+  \end{tikzpicture}
+  \caption[One diagnostic, request by request]{One diagnostic, request by request. Sessions live in the API process;
+    only mastery is persisted. The answer key never leaves the server before the
+    learner answers: options are shuffled when a question is first served, the
+    shuffled copy is kept as the session's current question, and the answer is
+    graded against the label the learner saw.}
+  \label{fig:sequence}
+\end{figure}

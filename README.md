@@ -206,6 +206,24 @@ not queryable in SQL directly).
 CORS is wide open (`allow_origins=["*"]`) — fine for a local/demo deployment, not for
 production.
 
+### Admin surfaces
+
+Two isolated FastAPI routers, each gated by the same `require_admin` dependency
+(`Backend/admin_ontology.py`): a request must carry an `X-User-Name` header whose
+value is in the comma-separated `ADMIN_USERNAMES` environment variable, or the
+endpoint returns `403`. Neither surface touches the live diagnostic/practice
+serving path.
+
+| Router | Prefix | Purpose |
+|---|---|---|
+| `admin_ontology.py` | `/admin/ontology/*` | Browse and edit the full-corpus ontology rebuild (`Ontology/full_corpus_rebuild/`) — separate from, and without effect on, the served catalog until a deliberate rebuild+adopt step |
+| `admin_stats.py` | `/admin/stats/*` | `GET /overview` — aggregate mastery statistics (per-subject averages, mastery distribution, weakest/strongest skills cohort-wide). `GET /export?format=csv\|json` — full (student, skill, mastery) data export, read live from `user_skill`/`users` |
+
+`admin_stats.py` reads only what the app durably persists: final mastery per
+skill per student. There is no per-question attempt log (diagnostic/practice
+sessions are in-memory, per §9), so the export is a current snapshot, not a
+historical log.
+
 ---
 
 ## 6. Frontend routes (`Frontend/src/App.jsx`)
@@ -219,6 +237,8 @@ production.
 | `/courses/:courseId/sections/:sectionId` | `SectionPage` — diagnostic flow |
 | `/courses/:courseId/sections/:sectionId/mastery` | `SectionMasteryPage` — mastery map/table |
 | `/courses/:courseId/sections/:sectionId/topics/:topicCode/practice` | `TopicPracticePage` |
+| `/admin/ontology` | `AdminOntologyPage` — ontology rebuild browser/editor |
+| `/admin/stats` | `AdminStatsPage` — aggregate student-performance stats + export |
 
 Bilingual (English/Bangla) via `LanguageContext`. Session is a plain `user_id`/`user_name`
 pair kept in `localStorage` via `AuthContext` — there is no token, password, or
@@ -291,10 +311,6 @@ node Backend/tree_data/generate_ontology_sync_sql.js
 
 ## 9. Known limitations & open items
 
-- **`Backend/Dockerfile`'s `CMD` is stale** — it runs `uvicorn main:app`, but the
-  actual entrypoint module is `server.py` (`uvicorn server:app`). There is no
-  `main.py`; the container as written will not start. Needs a one-line fix before
-  Docker deployment is attempted.
 - **No real authentication.** Login is username-only (no password), and the
   frontend session is just a `user_id`/`user_name` pair in `localStorage` with no
   server-side token. Fine for a classroom demo, not for anything handling real

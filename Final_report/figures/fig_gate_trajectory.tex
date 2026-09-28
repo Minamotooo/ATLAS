@@ -1,0 +1,49 @@
+% Engine output: skill C (Apply) with one prerequisite P; the same 14 answers
+% (wrong at 3 and 7) with P either mastered (0.97) or weak (0.40).
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[atlas, height=62mm, width=0.92\linewidth,
+        xmin=0, xmax=10.4, ymin=0, ymax=1.05,
+        xtick={0,...,10}, ytick={0,0.25,0.5,0.75,0.95},
+        yticklabels={0,0.25,0.5,0.75,0.95},
+        xlabel={answers on skill C (all correct except the 3rd and 7th)},
+        ylabel={$P(L)$},
+        legend columns=3,
+        legend style={at={(0.5,-0.3)}, anchor=north,
+          /tikz/every even column/.append style={column sep=4mm}},
+        clip=false]
+      \fill[gray!8] (axis cs:0,0) rectangle (axis cs:5,1.05);
+      \node[font=\scriptsize, text=inkSecondary, anchor=north west, align=left]
+        at (axis cs:1.35,0.36) {second learner's gate closed\\($P(T)_C = 0.01$, answers 1--5)};
+      \draw[inkMuted, line width=0.5pt] (axis cs:0,0.95) -- (axis cs:10.4,0.95);
+      \node[font=\scriptsize, text=inkSecondary, anchor=north east] at (axis cs:10.4,0.94) {mastery threshold};
+      \addplot[vizBlue, mark=*, mark size=1.6pt] coordinates {
+        (0,0.20) (1,0.595) (2,0.890) (3,0.5879) (4,0.8872) (5,0.9772) (6,0.9957)
+        (7,0.9743) (8,0.9952) (9,0.9991) (10,0.9998)};
+      \addlegendentry{C, prerequisite already mastered}
+      \addplot[vizOrange, densely dashed, mark=square*, mark size=1.5pt] coordinates {
+        (0,0.20) (1,0.5545) (2,0.8603) (3,0.4792) (4,0.8200) (5,0.9574) (6,0.9919)
+        (7,0.9524) (8,0.9909) (9,0.9983) (10,0.9997)};
+      \addlegendentry{C, prerequisite starts at 0.40}
+      \addplot[vizAqua, thin, mark=triangle*, mark size=1.8pt] coordinates {
+        (0,0.40) (1,0.5545) (2,0.8603) (3,0.8603) (4,0.8603) (5,0.9574) (6,0.9919)
+        (7,0.9919) (8,0.9919) (9,0.9983) (10,0.9997)};
+      \addlegendentry{its prerequisite P (pulled up)}
+      \node[font=\scriptsize, text=statusBad] at (axis cs:3,0.04) {$\times$ wrong};
+      \node[font=\scriptsize, text=statusBad] at (axis cs:7,0.04) {$\times$ wrong};
+      \node[font=\scriptsize, text=inkSecondary, anchor=west] at (axis cs:5.1,0.62)
+        {P passes 0.95 at answer 5: gate opens};
+      \draw[inkSecondary, thin] (axis cs:5.1,0.66) -- (axis cs:5.02,0.93);
+    \end{axis}
+  \end{tikzpicture}
+  \caption[The conjunctive gate in practice]{The conjunctive gate in practice, computed by the engine. Two learners
+    give the same answers on a skill C whose one prerequisite P is either already
+    mastered (gate open, $P(T)_C = 0.10$) or starts at 0.40 (gate closed,
+    $P(T)_C = 0.01$). The Bayesian evidence dominates: the closed-gate learner
+    trails by at most 0.11. Each correct answer on C also pulls P up to C's
+    value, so P crosses 0.95 at the fifth answer and the gate opens. The gate
+    therefore withholds only the unobserved learning credit; the ordering between
+    a skill and its prerequisites comes from pull-up.}
+  \label{fig:gate-trajectory}
+\end{figure}

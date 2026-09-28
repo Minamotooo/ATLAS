@@ -1,0 +1,36 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[fig, node distance=4.5mm,
+      tier/.style={proc, text width=64mm, align=left},
+      ask/.style={decision, aspect=2.6}]
+    \node[term] (in) {target: skill $s$, Bloom level $b$ (one band above the estimate)};
+    \node[tier, below=of in] (t1) {\textbf{Tier 1}\enspace same skill $s$, nearby level, $s$'s own topic};
+    \node[ask, below=of t1] (q1) {found?};
+    \node[tier, below=of q1] (t1b) {\textbf{Tier 1b}\enspace same skill $s$, nearby level, any topic};
+    \node[ask, below=of t1b] (q2) {found?};
+    \node[tier, below=of q2] (t2) {\textbf{Tier 2}\enspace skills near $s$ in the same topic, by graph
+      distance, lowest mastery first};
+    \node[ask, below=of t2] (q3) {found?};
+    \node[term, below=of q3, fill=gray!8] (skip) {mark $s$ tested, move to the next skill (never stall)};
+    \node[procHi, text width=40mm, font=\small] (serve) at ($(q2)+(64mm,0)$) {shuffle and relabel\\the options, withhold\\explanations and tags,\\serve the question};
+    \foreach \a/\b in {in/t1, t1/q1, q1/t1b, t1b/q2, q2/t2, t2/q3, q3/skip}
+      \draw[flow] (\a) -- node[lbl, right=1pt, pos=0.45]{} (\b);
+    \node[lbl, right=1pt] at ($(q1.south)!0.5!(t1b.north)$) {no};
+    \node[lbl, right=1pt] at ($(q2.south)!0.5!(t2.north)$) {no};
+    \node[lbl, right=1pt] at ($(q3.south)!0.5!(skip.north)$) {no};
+    \draw[flowHi] (q1.east) -| node[lbl, pos=0.25, above]{yes} (serve.north);
+    \draw[flowHi] (q2.east) -- node[lbl, above]{yes} (serve.west);
+    \draw[flowHi] (q3.east) -| node[lbl, pos=0.25, below]{yes} (serve.south);
+    \node[note, text width=38mm, anchor=north] at ([yshift=-17mm]serve.south)
+      {``nearby level'' tries $b$, $b{+}1$, $b{-}1$, $b{+}2$, $b{-}2$, $b{+}3$, $b{-}3$ in that order};
+    \node[note, text width=33mm, anchor=east, text=statusBad] at ([xshift=-3mm]t2.west)
+      {a Tier-2 item tests a neighbour of $s$, but the answer is still credited to $s$};
+  \end{tikzpicture}
+  \caption[The question-search fallback ladder]{The fallback ladder that finds a question for the skill and level the
+    diagnostic has chosen. Each tier widens the search; a skill with nothing to
+    ask is skipped rather than stalling the session. Whatever tier supplies the
+    item, the answer updates the \emph{target} skill at the \emph{target} level
+    --- the source of the attribution gap measured in
+    \Cref{sec:revisions-attribution}.}
+  \label{fig:fallback-ladder}
+\end{figure}

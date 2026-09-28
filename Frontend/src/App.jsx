@@ -10,6 +10,8 @@ import SectionMasteryPage from './pages/SectionMasteryPage';
 import TopicPracticePage from './pages/TopicPracticePage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
+import AdminOntologyPage from './pages/admin/AdminOntologyPage';
+import AdminStatsPage from './pages/admin/AdminStatsPage';
 
 export default function App() {
   return (
@@ -26,6 +28,8 @@ export default function App() {
               <Route path="/courses/:courseId/sections/:sectionId" element={<SectionPage />} />
               <Route path="/courses/:courseId/sections/:sectionId/mastery" element={<SectionMasteryPage />} />
               <Route path="/courses/:courseId/sections/:sectionId/topics/:topicCode/practice" element={<TopicPracticePage />} />
+              <Route path="/admin/ontology" element={<AdminOntologyPage />} />
+              <Route path="/admin/stats" element={<AdminStatsPage />} />
             </Route>
           </Routes>
         </BrowserRouter>

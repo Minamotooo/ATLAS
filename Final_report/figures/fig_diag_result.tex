@@ -1,0 +1,47 @@
+% Data: live run of the Ideal Gas section, end-to-end check of 2026-09-28.
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[fig]
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=\masteryfill{99.98}, text=\masterytext{99.98}] (GL0) at (0.00,-0.00) {\textbf{GL0} {\tiny ideal gas equation, $R$}\\[-1pt]{\tiny 70\,$\rightarrow$}\,\textbf{100\%}\enspace $\checkmark$};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=\masteryfill{95.72}, text=\masterytext{95.72}] (GL1) at (3.05,1.88) {\textbf{GL1} {\tiny $P$, $V$ or $T$ from $PV{=}nRT$}\\[-1pt]{\tiny 64\,$\rightarrow$}\,\textbf{96\%}\enspace $\checkmark$};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=\masteryfill{44.19}, text=\masterytext{44.19}] (KT3) at (3.05,0.00) {\textbf{KT3} {\tiny molecules in a volume}\\[-1pt]{\tiny 64\,$\rightarrow$}\,\textbf{44\%}\enspace $\times$};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=\masteryfill{99.53}, text=\masterytext{99.53}] (KT0) at (3.05,-2.50) {\textbf{KT0} {\tiny kinetic postulates, $k_B$}\\[-1pt]{\tiny 64\,$\rightarrow$}\,\textbf{100\%}\enspace $\checkmark$};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=\masteryfill{94.65}, text=\masterytext{94.65}] (GL2) at (6.10,3.75) {\textbf{GL2} {\tiny rising-bubble volume}\\[-1pt]{\tiny 59\,$\rightarrow$}\,\textbf{95\%}\enspace $\checkmark$};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=\masteryfill{40.41}, text=\masterytext{40.41}] (GL3) at (6.10,2.50) {\textbf{GL3} {\tiny moles or mass of a gas}\\[-1pt]{\tiny 59\,$\rightarrow$}\,\textbf{40\%}\enspace $\times$};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=\masteryfill{40.41}, text=\masterytext{40.41}] (GL4) at (6.10,1.25) {\textbf{GL4} {\tiny density of a gas}\\[-1pt]{\tiny 59\,$\rightarrow$}\,\textbf{40\%}\enspace $\times$};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=\masteryfill{40.41}, text=\masterytext{40.41}] (MS3) at (6.10,-0.00) {\textbf{MS3} {\tiny humidity, dew point}\\[-1pt]{\tiny 59\,$\rightarrow$}\,\textbf{40\%}\enspace $\times$};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=\masteryfill{40.41}, text=\masterytext{40.41}] (KT1) at (6.10,-1.25) {\textbf{KT1} {\tiny mean free path}\\[-1pt]{\tiny 59\,$\rightarrow$}\,\textbf{40\%}\enspace $\times$};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=\masteryfill{93.39}, text=\masterytext{93.39}] (KT2) at (6.10,-2.50) {\textbf{KT2} {\tiny average kinetic energy}\\[-1pt]{\tiny 59\,$\rightarrow$}\,\textbf{93\%}\enspace $\checkmark$};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=\masteryfill{40.41}, text=\masterytext{40.41}] (MS2) at (6.10,-3.75) {\textbf{MS2} {\tiny specific heats, degrees of freedom}\\[-1pt]{\tiny 59\,$\rightarrow$}\,\textbf{40\%}\enspace $\times$$^{\dagger}$};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=\masteryfill{91.85}, text=\masterytext{91.85}] (MS0) at (9.15,-2.50) {\textbf{MS0} {\tiny rms speed}\\[-1pt]{\tiny 53\,$\rightarrow$}\,\textbf{92\%}\enspace $\checkmark$};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=\masteryfill{16.61}, text=\masterytext{16.61}] (MS1) at (12.20,-2.50) {\textbf{MS1} {\tiny $T$ for a given rms speed}\\[-1pt]{\tiny 48\,$\rightarrow$}\,\textbf{17\%}\enspace $\times$};
+    \draw[dagEdge] (GL0.east) -- (GL1.west);
+    \draw[dagEdge] (GL0.east) -- (KT0.west);
+    \draw[dagEdge] (GL0.east) -- (KT3.west);
+    \draw[dagEdge] (GL1.east) -- (GL2.west);
+    \draw[dagEdge] (GL1.east) -- (GL3.west);
+    \draw[dagEdge] (GL1.east) -- (GL4.west);
+    \draw[dagEdge] (GL1.east) -- (MS3.west);
+    \draw[dagEdge] (KT0.east) -- (KT1.west);
+    \draw[dagEdge] (KT0.east) -- (KT2.west);
+    \draw[dagEdge] (KT0.east) -- (MS2.west);
+    \draw[dagEdge] (KT2.east) -- (MS0.west);
+    \draw[dagEdge] (MS0.east) -- (MS1.west);
+    \begin{scope}[shift={(3.4,-5.6)}]
+      \foreach \c/\t [count=\i from 0] in {seq100/0--19, seq200/20--39, seq300/40--59, seq400/60--79, seq500/80--94, seq700/95--100}
+        { \fill[\c] (\i*1.25,0) rectangle ++(1.15,0.26);
+          \node[font=\tiny, text=inkSecondary, below] at (\i*1.25+0.575,0) {\t}; }
+      \node[font=\scriptsize, text=inkSecondary, anchor=east] at (-0.15,0.13) {mastery after (\%)};
+    \end{scope}
+  \end{tikzpicture}
+  \caption[A live diagnostic in the Ideal Gas section]{The Ideal Gas section after a 13-question diagnostic against the live
+    question bank, answering the first six correctly and the rest wrongly. Each
+    node shows the depth-based prior and the estimate afterwards; $\checkmark$
+    and $\times$ mark the answers the engine credited to that skill. The correct
+    answers on KT0 and GL1 lifted the root GL0 to 100\% before it was asked
+    (pull-up), while the wrong answers left their own skills near 40\%.
+    $^{\dagger}$MS2 has no question in the bank at the requested level, so the
+    fallback ladder served an MS0 item in its place and the answer was credited
+    to MS2 (\Cref{sec:revisions-attribution}).}
+  \label{fig:diag-result}
+\end{figure}

@@ -24,8 +24,8 @@ by different amounts. Second, a correct response propagates upward through the
 prerequisite graph, raising every ancestor to at least the descendant's
 posterior, since demonstrating a dependent skill is evidence for the skills it
 depends on. Third, a skill's learning-rate parameter is gated conjunctively:
-it rises only when \emph{all} of its direct prerequisites are mastered,
-preventing a learner from appearing to advance past an unmastered foundation.
+it rises only when \emph{all} of its direct prerequisites are mastered, so a
+skill is not assumed to be learning while a foundation beneath it is missing.
 An adaptive diagnostic selects each next question by a balanced-volume
 heuristic over untested ancestors and descendants, at one Bloom level above the
 learner's current estimated band.
@@ -35,20 +35,24 @@ text with embedded \LaTeX{} mathematics, and a PostgreSQL (Supabase) store. A
 retrieval-augmented generation pipeline over six HSC textbooks (4{,}474 parsed
 question records) produces the question bank, with a two-model
 generate-then-verify design in which a second model blind-re-solves each
-generated item before it is accepted. The knowledge structure itself was the
+generated item before it is accepted; it has produced 12{,}223 verified questions
+covering 89\% of the 10{,}128 (skill, Bloom level) specifications. The knowledge structure itself was the
 dominant engineering effort: an initial 430-skill ontology derived from a
 sample of the corpus proved too sparse to support the gating policy, and was
 rebuilt from the full corpus into 1{,}688 skills and 1{,}743 prerequisite edges
 covering all 183 syllabus topics, validated as an acyclic graph of depth 9 with
 no isolated skills.
 
-Verification is structural and functional rather than empirical: an 18-check
-end-to-end harness exercises the diagnostic, mastery propagation, the
-ancestor-ordering invariant and prerequisite spillover against an in-memory
-database stand-in, and passes completely; the ontology passes an automated
-structural validator with zero errors. The system has not yet been evaluated
-with human learners, and establishing that its mastery estimates predict real
-performance remains the principal item of future work.
+Verification is structural and functional rather than empirical: a 29-check
+credential-free harness exercises the diagnostic, mastery propagation and
+prerequisite spillover against an in-memory database stand-in and passes
+completely; a live end-to-end check drives every flow in all 51 sections against
+the production question bank; and the ontology passes an automated structural
+validator with zero errors. The live check also exposed defects that remain
+open, among them that the ancestor ordering is not kept through wrong answers
+and that selection is slow where the bank is thin. The system has not yet been
+evaluated with human learners, and establishing that its mastery estimates
+predict real performance remains the principal item of future work.
 
 \vspace{12pt}
 \noindent\textbf{Keywords:} Bayesian Knowledge Tracing; adaptive learning;

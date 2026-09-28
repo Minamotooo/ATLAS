@@ -19,14 +19,16 @@ This matches the convention established in MasteryUpdater.
 Diagnostic flow
 ---------------
 1.  INIT
-    Write a depth-based prior to every skill via db_update:
+    Seed every skill via db_update with the student's stored mastery; skills
+    with no stored value get a depth-based prior:
         root skills  (depth 0) → DEFAULT_MASTERY_ROOT  (70%)
         deepest skills         → DEFAULT_MASTERY_LEAF  (20%)
     p_learned is set to mastery / 100.
 
 2.  SELECT SKILL
-    Among all untested skills, pick the one whose count of unknown ancestors
-    and unknown descendants is most balanced.
+    Among the untested skills in scope (candidate_skill_ids, e.g. one
+    section), pick the one whose count of unknown in-scope ancestors and
+    descendants is most balanced.
 
 3.  SELECT BLOOM LEVEL
     Derive the skill's current Bloom level from p_learned × 100, then
@@ -45,7 +47,7 @@ Diagnostic flow
 from __future__ import annotations
 
 import random
-from typing import Callable, Dict, NamedTuple, Optional, Tuple
+from typing import Callable, Dict, Iterable, NamedTuple, Optional, Tuple
 
 from bloom_taxonomy import BloomLevel, get_level_from_mastery
 from mastery_updater import MasteryUpdater, UpdateMode
@@ -98,6 +100,12 @@ class DiagnosticSession:
     mastery_updater : Optional policy updater instance. If not provided,
               a default MasteryUpdater(skill_tree) is created.
     stop_threshold  : Session ends when the untested fraction drops below this.
+    candidate_skill_ids : Skills this session may test (e.g. one section's).
+              Selection and the balanced-volume heuristic only see these;
+              the full tree is still used for propagation. None = whole tree.
+    stored_mastery  : {skill_id: mastery %} already recorded for this student.
+              These seed the session; the depth prior applies only to skills
+              with no stored value, so a diagnostic never discards real progress.
 
     Usage
     -----
@@ -117,6 +125,8 @@ class DiagnosticSession:
         db_update:      DbUpdate,
         mastery_updater: Optional[MasteryUpdater] = None,
         stop_threshold: float = _STOP_THRESHOLD,
+        candidate_skill_ids: Optional[Iterable[str]] = None,
+        stored_mastery: Optional[Dict[str, float]] = None,
     ) -> None:
         if not 0.0 <= stop_threshold < 1.0:
             raise ValueError("stop_threshold must be in [0, 1).")
@@ -128,11 +138,15 @@ class DiagnosticSession:
         self.mastery_updater = mastery_updater or MasteryUpdater(skill_tree)
         self.stop_threshold = stop_threshold
 
-        # True once record_answer() has been called for that skill.
-        self.tested: Dict[str, bool] = {
-            skill.skill_id: False for skill in skill_tree
-        }
+        # True once record_answer() has been called for that skill. Holds only
+        # the skills this session may test; anything else is out of scope.
+        if candidate_skill_ids is None:
+            scope = [skill.skill_id for skill in skill_tree]
+        else:
+            scope = [sid for sid in candidate_skill_ids if sid in skill_tree]
+        self.tested: Dict[str, bool] = {sid: False for sid in scope}
 
+        self._stored_mastery: Dict[str, float] = dict(stored_mastery or {})
         self._depths:    Dict[str, int] = _compute_depths(skill_tree)
         self._max_depth: int = max(self._depths.values(), default=0)
 
@@ -217,12 +231,18 @@ class DiagnosticSession:
 
     # ================================================================== private: init
     def _initialise_mastery(self) -> None:
-        """Write a depth-based mastery prior for every skill via db_update."""
+        """
+        Seed every skill: the student's stored mastery where it exists, else the
+        depth-based prior. Seeding priors over stored values would make the
+        first answer on an already-practised skill overwrite real progress.
+        """
         for skill in self.skill_tree:
-            sid     = skill.skill_id
-            mastery = _depth_to_mastery(self._depths[sid], self._max_depth)
-            p       = mastery / 100.0
-            self.db_update(self.userid, sid, mastery, p)
+            sid = skill.skill_id
+            if sid in self._stored_mastery:
+                mastery = max(0.0, min(100.0, float(self._stored_mastery[sid])))
+            else:
+                mastery = _depth_to_mastery(self._depths[sid], self._max_depth)
+            self.db_update(self.userid, sid, mastery, mastery / 100.0)
 
     # ================================================================== private: selection
     def _select_skill(self) -> str:
@@ -230,19 +250,23 @@ class DiagnosticSession:
         Pick the untested skill that best splits the remaining unknown set.
         Maximises 1 / (1 + |unknown_ancestors − unknown_descendants|).
         """
-        untested_ids = {sid for sid, done in self.tested.items() if not done}
+        # Sorted so ties break the same way in every process; iterating a set
+        # of strings follows per-process hash randomisation.
+        untested_ids = sorted(sid for sid, done in self.tested.items() if not done)
 
         best_id:    Optional[str] = None
         best_score: float         = -1.0
 
         for sid in untested_ids:
+            # Only in-scope relatives count as unknown: a skill outside the
+            # session's scope will never be tested here, so it can't be split.
             unknown_anc  = sum(
                 1 for s in self.skill_tree.get_all_ancestors(sid)
-                if not self.tested[s.skill_id]
+                if self.tested.get(s.skill_id) is False
             )
             unknown_desc = sum(
                 1 for s in self.skill_tree.get_all_descendants(sid)
-                if not self.tested[s.skill_id]
+                if self.tested.get(s.skill_id) is False
             )
             # score = 1.0 / (1.0 + abs(unknown_anc - unknown_desc)) 
             # The "Balanced Volume" heuristic
@@ -253,7 +277,7 @@ class DiagnosticSession:
                 best_score = score
                 best_id    = sid
 
-        return best_id or next(iter(untested_ids))
+        return best_id or untested_ids[0]
 
     def _select_bloom(self, skill_id: str) -> BloomLevel:
         """One Bloom level above current mastery estimate, clamped to CREATE."""

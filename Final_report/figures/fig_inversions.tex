@@ -1,0 +1,28 @@
+% Data (end-to-end check, 2026-09-28): diagnostics in all 51 sections against the real
+% question bank (offline copy), counting prerequisite edges whose parent ends
+% below its child.
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[atlas, xbar, height=44mm, width=0.66\linewidth, bar width=4mm,
+        xmin=0, xmax=10, ytick=data, symbolic y coords={all_correct,mostly_correct,alternate,all_wrong},
+        yticklabels={{every answer correct},{two in three correct},{every other answer correct},{every answer wrong}}, yticklabel style={font=\scriptsize, text=inkPrimary},
+        ymajorgrids=false, xmajorgrids, enlarge y limits=0.22, clip=false,
+        xlabel={in-section prerequisite edges left inverted (\%)},
+        every axis plot/.append style={line width=0pt}]
+      \addplot[fill=vizOrange, draw=none] coordinates {(0.00,all_correct) (4.12,mostly_correct) (5.58,alternate) (7.77,all_wrong)};
+      \node[font=\scriptsize, text=inkSecondary, anchor=west] at (axis cs:0.15,all_correct) {0 edges, 0 sections};
+      \node[font=\scriptsize, text=inkSecondary, anchor=west] at (axis cs:4.27,mostly_correct) {62 edges, 30 sections};
+      \node[font=\scriptsize, text=inkSecondary, anchor=west] at (axis cs:5.73,alternate) {84 edges, 34 sections};
+      \node[font=\scriptsize, text=inkSecondary, anchor=west] at (axis cs:7.92,all_wrong) {117 edges, 10 sections};
+    \end{axis}
+  \end{tikzpicture}
+  \caption[Ancestor-ordering inversions by answer pattern]{How often the ordering ``no ancestor below its descendant'' survives a
+    diagnostic, over all 51 sections (1{,}505 in-section edges) for four answer
+    patterns. With only correct answers it always holds, because pull-up runs
+    after every success. A wrong answer lowers only the answered skill: if a
+    descendant already sits higher --- credited by an earlier correct answer, or
+    simply still at its depth-based prior --- the order is broken, and nothing
+    restores it (\Cref{sec:revisions-ordering}).}
+  \label{fig:inversions}
+\end{figure}

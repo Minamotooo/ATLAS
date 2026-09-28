@@ -1,0 +1,52 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[fig,
+      jstep/.style={proc, text width=21mm, font=\scriptsize, minimum height=12mm, fill=white},
+      stepE/.style={jstep, fill=gray!10},
+      stepA/.style={jstep, fill=seq100, draw=vizBlue}]
+    % lanes (columns 2.75 cm apart)
+    \foreach \y/\t in {0/Learner, -2.1/{ATLAS\\engine}, -4.2/{Offline\\and admin}} {
+      \draw[lane] (-2.55,\y+0.9) rectangle (12.45,\y-0.9);
+      \node[font=\scriptsize\bfseries, text=inkSecondary, align=center] at (-1.85,\y) {\t};
+    }
+    % learner lane
+    \node[jstep] (l1) at (0.2,0) {\textbf{Sign up}, pick a course};
+    \node[jstep] (l2) at (2.95,0) {\textbf{Take the diagnostic}\\{\tiny 5--30 questions}};
+    \node[jstep] (l3) at (5.7,0) {\textbf{Answer}\\{\tiny Bangla, KaTeX maths}};
+    \node[jstep] (l4) at (8.45,0) {\textbf{Mastery map}\\{\tiny skills coloured by $P(L)$}};
+    \node[jstep] (l5) at (11.2,0) {\textbf{Practise} a weak topic};
+    % engine lane
+    \node[stepE] (e1) at (0.2,-2.1) {\textbf{Load graph}\\{\tiny 1{,}688 skills}};
+    \node[stepE] (e2) at (2.95,-2.1) {\textbf{Scope, seed}\\{\tiny section, stored mastery}};
+    \node[stepE] (e4) at (5.7,-2.1) {\textbf{Pick next}\\{\tiny one level up}};
+    \node[stepE] (e3) at (8.45,-2.1) {\textbf{Update}\\{\tiny BKT, pull-up, gates}};
+    \node[stepE] (e5) at (11.2,-2.1) {\textbf{Spillover}\\{\tiny missing prerequisite}};
+    % offline / admin lane
+    \node[stepA] (a1) at (0.2,-4.2) {\textbf{Build ontology}\\{\tiny compile, validate}};
+    \node[stepA] (a2) at (2.95,-4.2) {\textbf{Generate, verify}\\{\tiny 12{,}223 questions}};
+    \node[stepA] (a3) at (5.7,-4.2) {\textbf{Curate graph}\\{\tiny edit skills, edges}};
+    \node[stepA] (a4) at (8.45,-4.2) {\textbf{Cohort statistics}};
+    \node[stepA] (a5) at (11.2,-4.2) {\textbf{Export data}\\{\tiny CSV / JSON}};
+    % flows
+    \draw[flow] (l1) -- (l2);
+    \draw[flow] (l2) -- (e2);
+    \draw[flow] (e2) -- (e4);
+    \draw[flowHi] (e4) -- node[lbl, left=0.5mm]{question} (l3);
+    \draw[flowHi] (l3.south east) -- node[lbl, pos=0.5, above right=-0.5mm]{answer} (e3.north west);
+    \draw[flowHi] (e3) -- (e4);
+    \draw[flow] (e3) -- node[lbl, right=0.5mm]{done} (l4);
+    \draw[flow] (l4) -- (l5);
+    \draw[flow] (l5) -- (e5);
+    \draw[flow] (e1) -- (e2);
+    \draw[flow] (a1) -- (e1);
+    \draw[flow] (a2) -- (e4);
+    \draw[flow, dashed] (a3.south) -- ++(0,-0.55) -| node[lbl, pos=0.25, below]{rebuild} (a1.south);
+    \draw[flow] (a4) -- (a5);
+  \end{tikzpicture}
+  \caption[The learner's journey through ATLAS]{The learner's journey through ATLAS and what the engine and the
+    offline and administrative side do at each step. The blue loop is the core
+    of the system: each answer updates mastery and chooses the next question,
+    until the section's diagnostic length is reached. Graph edits made by an
+    administrator reach learners only after the ontology is rebuilt (dashed).}
+  \label{fig:user-journey}
+\end{figure}

@@ -14,9 +14,13 @@ partly because those boundaries are the ones that let several people work
 without blocking each other: the engine, the content pipeline and the client
 each depend on the ontology's \emph{interface} but not on each other's internals.
 
-\Cref{fig:gantt} shows the schedule. The version-control history records 93
-commits between April and September 2026, and the phases below are drawn from
-it rather than from an idealised plan.
+\Cref{fig:gantt} shows the schedule. The
+version-control history (\Cref{fig:commits}) records 119 commits between April
+and September 2026 in three bursts --- the engine, API and first interface in
+April; retrieval and the first per-subject ontologies in July; the generation
+pipeline, the ontology rebuild, the administrator tools and this report in
+September. No work reached the shared repository between the bursts, so the
+chart is the plan of record rather than a trace of the commit history.
 
 \begin{figure}[htbp]
   \centering
@@ -40,6 +44,8 @@ it rather than from an idealised plan.
     original plan; it was forced by Investigation 2 (\Cref{sec:investigation}).}
   \label{fig:gantt}
 \end{figure}
+
+\input{figures/fig_commits}
 
 \paragraph{Where actual progress differed from plan.} Three deviations, each
 instructive.
@@ -196,7 +202,7 @@ the expert review before any user-facing launch.
 
 % TODO: This is the one section that cannot be written from the repository.
 % The table below records the subsystem ownership that IS visible in the git
-% history (93 commits, five contributors) -- map each row to the right member,
+% history (119 commits, five contributors) -- map each row to the right member,
 % correct anything misattributed, and add each member's own account of
 % decision-making participation and on-time completion. An examiner will expect
 % names here, not roles alone.

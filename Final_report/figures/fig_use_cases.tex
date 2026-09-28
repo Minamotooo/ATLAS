@@ -1,0 +1,46 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[fig,
+      uc/.style={ellipse, draw=inkSecondary, fill=gray!6, align=center, font=\scriptsize,
+                 minimum width=38mm, minimum height=9mm, inner sep=1pt},
+      ucx/.style={uc, fill=seq100, draw=vizBlue},
+      actor/.pic={
+        \draw[inkSecondary, line width=0.8pt] (0,0.62) circle (0.17)
+          (0,0.45) -- (0,0.05) (-0.28,0.32) -- (0.28,0.32)
+          (0,0.05) -- (-0.22,-0.32) (0,0.05) -- (0.22,-0.32);}]
+    \draw[axisLine, rounded corners=3pt, fill=gray!2] (-3.25,-5.05) rectangle (6.6,3.4);
+    \node[font=\footnotesize\bfseries, text=inkSecondary, anchor=south west] at (-3.25,3.45) {ATLAS system boundary};
+    % learner use cases
+    \node[uc] (u1) at (-0.8,2.7) {Sign up / sign in\\{\tiny FR1}};
+    \node[uc] (u2) at (-0.8,1.55) {Browse the catalogue\\{\tiny FR2}};
+    \node[uc] (u3) at (-0.8,0.4) {Take a section diagnostic\\{\tiny FR3, FR7}};
+    \node[uc] (u4) at (-0.8,-0.75) {Practise a topic\\{\tiny FR8}};
+    \node[uc] (u5) at (-0.8,-1.9) {View mastery map and table\\{\tiny FR10}};
+    \node[uc] (u6) at (-0.8,-3.05) {Retake a section\\{\tiny FR11}};
+    \node[uc] (u7) at (-0.8,-4.2) {Switch interface language\\{\tiny FR14}};
+    % included / extending behaviour
+    \node[ucx] (x1) at (3.6,0.4) {Update mastery (BKT,\\pull-up, gating) {\tiny FR4--FR6}};
+    \node[ucx] (x2) at (3.6,-0.75) {Prerequisite spillover\\{\tiny FR9}};
+    \draw[dashed, ->, inkSecondary] (u3) -- node[lbl, above]{\tiny\guillemotleft include\guillemotright} (x1);
+    \draw[dashed, ->, inkSecondary] (u4.east) -- (x1.south west);
+    \draw[dashed, ->, inkSecondary] (x2) -- node[lbl, below]{\tiny\guillemotleft extend\guillemotright} (u4);
+    % admin use cases
+    \node[uc] (a1) at (3.6,2.7) {Curate the skill graph\\{\tiny FR15}};
+    \node[uc] (a2) at (3.6,-2.45) {View cohort statistics\\{\tiny FR16}};
+    \node[uc] (a3) at (3.6,-3.75) {Export performance data\\{\tiny FR16}};
+    % actors
+    \pic at (-4.4,-0.4) {actor};
+    \node[font=\scriptsize, text=inkPrimary] (L) at (-4.4,-1.05) {Learner};
+    \pic at (8.0,-0.4) {actor};
+    \node[font=\scriptsize, text=inkPrimary] (A) at (8.0,-1.05) {Administrator};
+    \foreach \u in {u1,u2,u3,u4,u5,u6,u7} \draw[inkMuted] (-4.1,-0.1) -- (\u.west);
+    \foreach \u in {a1,a2,a3} \draw[inkMuted] (7.7,-0.1) -- (\u.east);
+  \end{tikzpicture}
+  \caption[Use cases mapped to functional requirements]{Use cases, labelled with the functional requirements of
+    \Cref{tab:functional} they realise. The shaded cases are not requested by
+    the learner directly: every diagnostic and practice answer triggers the
+    mastery update, and spillover extends practice when repeated failure points
+    at a missing prerequisite. The administrator cases were added late in the
+    project (FR15, FR16).}
+  \label{fig:use-cases}
+\end{figure}

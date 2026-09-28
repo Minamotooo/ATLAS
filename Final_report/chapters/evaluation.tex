@@ -144,7 +144,10 @@ rather than deleted, with its reasoning recorded so the next contributor does no
 reinstate it. The transferable finding is that on this project mechanical
 heuristics over-flagged by roughly the same large factor twice, and that the
 correct response is to calibrate a heuristic against hand review before treating
-its output as a defect list.
+its output as a defect list. \Cref{fig:heuristics} puts the numbers of
+Investigations 3 and 4 side by side.
+
+\input{figures/fig_heuristics}
 
 \section{Performance Evaluation}
 \label{sec:evaluation}
@@ -156,11 +159,17 @@ diagnostic, mastery-update, topic-practice and spillover code paths against an
 in-memory stand-in for the database, seeded with a synthetic learner and a
 question bank drawn from the compiled ontology. It requires no credentials and
 no network, which is what makes it runnable by any developer before a merge.
-Acceptance is binary per check: all checks must pass.
+Acceptance is binary per check: all checks must pass. Its stand-in database
+truncates every response at 1{,}000 rows, as the hosted one does, so that an
+unpaged read fails in the harness rather than only in production
+(\Cref{sec:revisions-rowcap}).
+
+A second, live check (\Cref{sec:live-check}) runs the same flows through the
+HTTP interface against the production question bank, in every section.
 
 \subsection{Results}
 
-The harness reports \textbf{18 checks passed, 0 failed}, reproduced on the
+The harness reports \textbf{29 checks passed, 0 failed}, reproduced on the
 current tree against the adopted 1{,}688-skill ontology. \Cref{tab:smoke} lists
 what each check establishes.
 
@@ -171,104 +180,194 @@ skill count, so the absolute figures it prints depend on which section it picks
 establish that each mechanism \emph{runs and holds its invariants}; they are not
 a measurement of how far evidence propagates in a large section, which would
 require a section with real depth and a populated question bank. The propagation
-guarantee is carried by the invariant check, not by counting how many skills
-moved.
+guarantee is carried by the invariant checks, not by counting how many skills
+moved. Two synthetic learners are used: one answers every diagnostic question
+correctly, for the global ordering check; the other alternates right and wrong,
+so that topic practice has unmastered skills to work on and spillover can fire.
 
-\begin{table}[htbp]
-  \centering
+\setlength{\LTcapwidth}{\textwidth}
+\begingroup
+\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{19mm}>{\raggedright\arraybackslash}p{37mm}>{\raggedright\arraybackslash}p{\dimexpr\textwidth-56mm-4\tabcolsep\relax}@{}}
   \caption{End-to-end verification harness: checks and what each establishes}
-  \label{tab:smoke}
-  \begin{tabularx}{\textwidth}{>{\hsize=0.42\hsize}Y>{\hsize=0.82\hsize}Y>{\hsize=1.76\hsize}Y}
+  \label{tab:smoke}\\
     \toprule
     Area & Check & Establishes \\
     \midrule
-    Ontology & Graph builds (1{,}688 skills); catalogue topics all resolve (183); no legacy topic codes remain & The served ontology is internally consistent and the catalogue cannot reference a topic that does not exist \\
+  \endfirsthead
+    \multicolumn{3}{@{}l}{\small\itshape \tablename~\thetable{} --- continued from previous page}\\[2pt]
+    \toprule
+    Area & Check & Establishes \\
+    \midrule
+  \endhead
+    \midrule
+    \multicolumn{3}{r@{}}{\small\itshape continued on next page}\\
+  \endfoot
+    \bottomrule
+  \endlastfoot
+    Ontology & Graph builds (1{,}688 skills); catalogue topics all resolve (183); no legacy topic codes remain; all 1{,}688 skill ids load through the 1{,}000-row cap; no section resolves to zero skills & The served ontology is internally consistent, the catalogue cannot reference a topic that does not exist, and every section can be diagnosed \\
     Question search & Tier-1 filter matches by topic \emph{code}; filtering by display label matches nothing & Regression guard for the defect in \Cref{sec:revisions} \\
-    Diagnostic & Session starts, sized to the section (8 skills in the section exercised); question carries its subject; topic shown as label (\texttt{PHY1\_ERRORS} $\rightarrow$ ``Errors and Significant Figures''); every question answered & The adaptive loop runs to completion, sizes itself to the section, and returns learner-presentable metadata (FR3, FR12) \\
+    Diagnostic & Session starts, sized to the section (8 skills in the section exercised); selects only the section's skills, and every question served belongs to it; stored mastery seeds the session; question carries its subject; topic shown as label (\texttt{PHY1\_ERRORS} $\rightarrow$ ``Errors and Significant Figures''); every question answered & The adaptive loop stays inside its section, builds on earlier progress, runs to completion, and returns learner-presentable metadata (FR3, FR12) \\
+    Answer key & Options carry only label and text; shuffling keeps exactly one key and moves it, leaves the stored question untouched, and keeps the order of options that refer to one another & The client cannot read the answer from the payload or from its position (\Cref{sec:revisions-key}) \\
     Mastery & Mastery unlocked after diagnostic; written to \texttt{user\_skill}; section state reports subject & The update path persists per-skill mastery and releases the diagnostic gate (FR4, FR7) \\
-    Invariant & No ancestor sits below its descendant & \Cref{eq:pullup} holds globally after a full session --- the correctness property in NFR1 \\
+    Ordering & No ancestor below its descendant after the all-correct session; for the mixed learner, every ancestor at least as high as the answered skill right after each correct answer & \Cref{eq:pullup} behaves as specified. The global ordering after mixed answers is reported, not asserted (\Cref{sec:revisions-ordering}) \\
     Mastery view & View unlocked; graph returns nodes and edges for the section; table rows carry subject & The visualisation contract holds (FR10) \\
     Practice & Topic practice serves and accepts questions & Post-diagnostic flow works (FR8) \\
     Spillover & Fires on repeated wrong answers, reporting its triggering rule (rule A, repeated missing prerequisite) & The prerequisite-detection policy triggers on the intended evidence (FR9) \\
-    \bottomrule
-  \end{tabularx}
-\end{table}
+\end{longtable}
+\endgroup
 
 The ontology is separately validated by a structural checker, which reports
 \textbf{zero errors}: the graph is acyclic, every one of the 183 topics holds at
 least one skill, no skill is isolated, and no prerequisite reference is
 unresolved.
 
-\subsection{Evaluation against requirements}
+\subsection{Live end-to-end check}
+\label{sec:live-check}
 
-\Cref{tab:traceability} traces every functional and non-functional requirement
-from \Cref{ch:requirements} to the evidence that it is met, or to the deviation
-recorded in \Cref{sec:revisions} where it is not. Two entries are not claims of
-success: FR13 is partially met and NFR2 was never measured.
+The harness proves that each mechanism runs on synthetic data; it cannot show
+how the system behaves on the real question bank. A second check therefore
+drives the actual FastAPI application through its HTTP interface, using an
+in-process client, against the production database. The question, option, skill
+and topic tables are read live. The learner tables are held in memory, seeded
+from the real rows, so the run cannot alter any learner's data; a write to any
+live table would have been blocked and reported, and none was attempted. The
+script creates a learner and, in every one of the 51 sections, takes the
+diagnostic with mixed answers, then a topic-practice session that begins with
+deliberate wrong answers. It also retakes a section, seeds a diagnostic from a
+real learner's stored mastery, and calls every administrative endpoint, running
+the ontology editor against scratch copies of its source files.
+\Cref{tab:live-check} summarises the outcome.
 
 \begin{table}[htbp]
   \centering
-  \caption{Requirements traceability and status}
-  \label{tab:traceability}
-  \begin{tabularx}{\textwidth}{>{\hsize=0.3\hsize}Y>{\hsize=0.45\hsize}Y>{\hsize=2.25\hsize}Y}
+  \caption{Live end-to-end check against the production question bank (51 sections, 4{,}862 requests, 14{,}066 assertions)}
+  \label{tab:live-check}
+  \begin{tabularx}{\textwidth}{>{\hsize=0.45\hsize}Y>{\hsize=1.55\hsize}Y}
     \toprule
-    Req. & Status & Evidence or deviation \\
+    Flow & Result \\
     \midrule
-    FR1 & Met, reduced & Account creation and sign-in work, but without a password (\Cref{sec:deviations-auth}) \\
-    FR2 & Met & Catalogue endpoint serves ontology-derived courses, sections and topics; verified by harness \\
-    FR3 & Met & Diagnostic runs to a full 30-question session in the harness \\
-    FR4 & Met & Bloom-conditioned update implemented per \Cref{tab:bloom-params}; exercised on every answered question \\
-    FR5 & Met & Ancestor pull-up implemented; the invariant that no ancestor sits below its descendant is verified explicitly after a full session \\
-    FR6 & Met & Conjunctive gate implemented per \Cref{eq:gating} \\
-    FR7 & Met & Mastery view locked before, unlocked after the diagnostic \\
-    FR8 & Met & Topic practice served and answered questions in the harness \\
-    FR9 & Met & Spillover fired and reported its triggering rule \\
-    FR10 & Met & Mastery graph (nodes and edges for the section) and table both returned \\
-    FR11 & Met & Retake endpoint resets section mastery and clears sessions \\
-    FR12 & Met & Mathematics renders through KaTeX; literal newline handling fixed during implementation \\
-    FR13 & \textbf{Partially met} & Pipeline is complete and validated, but the bank covers only part of the specification space (\Cref{sec:eval-limits}) \\
-    FR14 & Met & Interface strings available in English and Bangla \\
-    \midrule
-    NFR1 & Met & Acyclicity enforced at insertion; ancestor invariant checked by harness; validator reports zero errors \\
-    NFR2 & \textbf{Not measured} & No latency benchmark was run (\Cref{sec:eval-limits}) \\
-    NFR3 & Met & Fallback ladder exercised; a missing item marks the skill tested and advances \\
-    NFR4 & Met & Ontology compiled from source by script; generated files are not hand-edited \\
-    NFR5 & Met & Harness runs with no credentials and no network \\
-    NFR6 & Met & Entire system developed and run on CPU-only laptops \\
-    NFR7 & Met & Bangla content with \LaTeX{} mathematics end to end \\
-    NFR8 & Met & Credentials held in a git-ignored environment file, server-side only \\
+    Diagnostic & All 51 sections start and serve questions; 979 answers. Every question served belongs to its section, none repeats within a session, and grading of the shuffled label agrees with the bank's key in 979 of 979 cases, returning that option's explanation. \\
+    Topic practice & A session starts in every section; 510 answers, graded correctly in all 509 that could be matched (one question had two options with identical text). Spillover activated 84 times and served 130 prerequisite questions. \\
+    Retake and seeding & Retake clears the section's mastery and relocks it. A real learner's 64 stored values seed a new session unchanged, and starting a diagnostic writes nothing. \\
+    Administration & Statistics count every one of the 285 mastery rows and 23 learners; both exports are complete; every ontology-editor operation and error case behaves as specified on the scratch copies, and the real ontology files are unchanged afterwards. \\
+    Failures & 4 of 77 checks (38 assertions): ten sections appear diagnosed before their own diagnostic (\Cref{sec:revisions-unlock}), and eight end the diagnostic short of its advertised length (\Cref{sec:revisions-length}). \\
     \bottomrule
   \end{tabularx}
 \end{table}
 
+\Cref{fig:diag-result,fig:practice-trace} follow one learner through one section
+with the same setup, the Ideal Gas and Kinetic Theory section, answering the
+first six diagnostic questions correctly and the rest wrongly; the questions
+served there are identical on every repetition. They show the mechanisms of
+\Cref{ch:design}
+acting on real items: pull-up crediting a root skill before it is asked,
+spillover recognising that three failures share a prerequisite, and the session
+ending by itself once every topic skill passes the threshold.
+
+\input{figures/fig_diag_result}
+\input{figures/fig_practice_trace}
+
+\paragraph{Responsiveness.} The same run is the project's first measurement of
+NFR2 (\Cref{fig:latency}). Submitting an answer takes a median of 12\,ms,
+because the update is arithmetic over the in-memory session. Choosing a new
+question takes a median of 180\,ms but has a long tail --- 1.1\,s at the 90th
+percentile, 2.0\,s at the 95th and 99\,s in the worst case --- and the tail sits
+in the Physics sections, where the bank is thinnest and the fallback ladder
+issues up to 100 queries for one selection. The figures come from a single
+client with no network between client and API, but with real round trips from
+the developer's machine to the hosted database, so they bound the latency a
+single learner sees from below and say nothing about concurrent load.
+
+\input{figures/fig_latency}
+
+\subsection{Evaluation against requirements}
+
+\Cref{tab:traceability} traces every functional and non-functional requirement
+from \Cref{ch:requirements} to the evidence that it is met, or to the deviation
+recorded in \Cref{sec:revisions} where it is not. Entries marked as partly met,
+or met with a defect, point to the deviation that qualifies them; the evidence
+comes from the harness and from the live check of \Cref{sec:live-check}.
+
+\setlength{\LTcapwidth}{\textwidth}
+\begingroup
+\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{14mm}>{\raggedright\arraybackslash}p{21mm}>{\raggedright\arraybackslash}p{\dimexpr\textwidth-35mm-4\tabcolsep\relax}@{}}
+  \caption{Requirements traceability and status}
+  \label{tab:traceability}\\
+    \toprule
+    Req. & Status & Evidence or deviation \\
+    \midrule
+  \endfirsthead
+    \multicolumn{3}{@{}l}{\small\itshape \tablename~\thetable{} --- continued from previous page}\\[2pt]
+    \toprule
+    Req. & Status & Evidence or deviation \\
+    \midrule
+  \endhead
+    \midrule
+    \multicolumn{3}{r@{}}{\small\itshape continued on next page}\\
+  \endfoot
+    \bottomrule
+  \endlastfoot
+    FR1 & Met, reduced & Account creation and sign-in work, but without a password (\Cref{sec:deviations-auth}) \\
+    FR2 & Met & Catalogue endpoint serves ontology-derived courses, sections and topics; all 51 sections resolve to skills \\
+    FR3 & Met & Diagnostic runs to completion in the harness and in all 51 sections live; eight sections end short of their advertised length (\Cref{sec:revisions-length}) \\
+    FR4 & Met & Bloom-conditioned update implemented per \Cref{tab:bloom-params}; exercised on every answered question; some answers are scored at the target rather than the served level (\Cref{sec:revisions-attribution}) \\
+    FR5 & Met & Pull-up verified after every correct answer; the ordering it sets is not kept through later wrong answers (\Cref{sec:revisions-ordering}) \\
+    FR6 & Met & Conjunctive gate implemented per \Cref{eq:gating}; its effect measured in \Cref{fig:gate-trajectory} \\
+    FR7 & Met, with a defect & Mastery view locked before, unlocked after the diagnostic; but ten of 51 sections unlock early (\Cref{sec:revisions-unlock}) \\
+    FR8 & Met & Topic practice served and answered questions in the harness and in every section live \\
+    FR9 & Met & Spillover fired and reported its triggering rule in the harness, and 84 times live \\
+    FR10 & Met & Mastery graph (nodes and edges for the section) and table both returned \\
+    FR11 & Met & Retake endpoint resets section mastery and clears sessions \\
+    FR12 & Met, with defects & Mathematics renders through KaTeX, but 1{,}015 served questions (8.3\%) contain content the renderer cannot display correctly (\Cref{sec:revisions-render}) \\
+    FR13 & Largely met & 9{,}037 of the 10{,}128 specifications (89\%) hold a verified question; 41 skills have none (\Cref{fig:bank-coverage}) \\
+    FR14 & Met & Interface strings available in English and Bangla \\
+    FR15 & Met & Skill and edge creation, edits, deletion, cycle and duplicate rejection verified on scratch copies of the ontology source \\
+    FR16 & Met & Statistics and both export formats verified against the live data \\
+    \midrule
+    NFR1 & \textbf{Partly met} & Acyclicity enforced at insertion and validated with zero errors; the ancestor ordering holds after correct answers but not through later wrong ones (\Cref{sec:revisions-ordering}) \\
+    NFR2 & \textbf{Partly met} & Median 12\,ms to submit an answer and 180\,ms to select a question, but 2\,s at the 95th percentile and up to 99\,s in thin Physics sections (\Cref{fig:latency}) \\
+    NFR3 & Met & Fallback ladder exercised live; a missing item marks the skill tested and advances; no session stalled \\
+    NFR4 & Met & Ontology compiled from source by script; generated files are not hand-edited \\
+    NFR5 & Met & Harness runs with no credentials and no network (29 checks) \\
+    NFR6 & Met & Entire system developed and run on CPU-only laptops \\
+    NFR7 & Met & Bangla content with \LaTeX{} mathematics end to end \\
+    NFR8 & Met & Credentials held in a git-ignored environment file, server-side only \\
+\end{longtable}
+\endgroup
+
+\needspace{12\baselineskip}
 \subsection{Evaluation against objectives}
 
-O1--O5, O7 and O8 are met as evidenced above.
+O1, O2, O4, O5, O7 and O8 are met as evidenced above; O3 and O6 are qualified
+below.
 
-\textbf{O6 (question bank) is partially met}, and the shortfall is worth
-quantifying rather than leaving as an adjective. The pipeline is built,
-validated, and has generated and loaded real verified items; what is incomplete
-is coverage of the specification space. Two figures bound the gap. Against the
-legacy 430-skill ontology the space was $430 \times 6 = 2{,}580$
-(skill, Bloom level) specifications, and generation had reached roughly a fifth
-of it when the rebuild superseded that target. Against the now-adopted
-1{,}688-skill ontology the space is $1{,}688 \times 6 = 10{,}128$
-specifications, and because the existing items are keyed to legacy skill
-identifiers they do not transfer: coverage against the served ontology therefore
-starts close to zero and the generation run is outstanding in full. This is the
-same debt identified in \Cref{sec:deviations-adoption}, and it is the single
-largest piece of remaining work (\Cref{sec:future}).
+\textbf{O6 (question bank) is largely met}, and what remains is worth
+quantifying rather than leaving as an adjective. The generation run against the
+adopted ontology has been carried out: 12{,}223 verified questions sit on the
+1{,}688 served skills, and 9{,}037 of the $1{,}688 \times 6 = 10{,}128$
+(skill, Bloom level) specifications --- 89\% --- hold at least one
+(\Cref{fig:bank-coverage}). The shortfall is concentrated. Physics covers 74\% of
+its specifications against 92\% for Chemistry and 96\% for Mathematics, and 41
+skills, 31 of them in Physics, have no question at all. A further 7{,}692
+questions in the database are keyed to 487 legacy skill identifiers and cannot
+be reached by the engine. Quality is now the larger gap than quantity: 8.3\% of
+served questions carry a rendering defect (\Cref{sec:revisions-render}), and 38\%
+of the distractor tags that spillover reads still name legacy skills.
 
-\textbf{O3 is met in implementation but unvalidated in effect} --- the
-propagation is provably consistent, but whether the resulting estimates
-correspond to real learner knowledge is exactly the question the next subsection
-says was not answered.
+\textbf{O3 is met in implementation, with one qualification, and unvalidated in
+effect.} Pull-up behaves as specified after every correct answer, but the
+ordering it establishes is not maintained when a later wrong answer lowers an
+ancestor (\Cref{fig:inversions}). And whether the resulting estimates correspond
+to real learner knowledge is exactly the question the next subsection says was
+not answered.
 
 \subsection{Limitations of this evaluation}
 \label{sec:eval-limits}
 
 The evaluation above is structural and functional. It establishes that the
-system computes what it was designed to compute and that its invariants hold. It
+system computes what it was designed to compute, and where it does not. It
 does \textbf{not} establish that the system helps anyone learn, and the report
 makes no such claim. Specifically:
 
@@ -286,23 +385,26 @@ makes no such claim. Specifically:
     knowledge-tracing model --- does it predict the next response better than a
     baseline, measured by AUC on held-out data --- was not performed, because
     there is no held-out learner data.
-  \item \textbf{No performance benchmark.} NFR2 was not measured; the system is
-    subjectively responsive in use, which is not evidence.
+  \item \textbf{No load test.} Latency was measured for a single client
+    (\Cref{fig:latency}); how the system behaves with many learners at once is
+    unknown.
   \item \textbf{Ontology unreviewed by domain experts.} The rebuilt graph is
     structurally valid but its subject-matter correctness has been verified only
     by the team. 32 disconnected fragments and a body of hand-authored
     prerequisite edges are explicitly awaiting review by a chemist and a
     physicist.
-  \item \textbf{Question bank coverage is partial}, so a full-coverage session is
-    not yet reachable for every topic. Two consequences follow that the harness
-    cannot surface, because it seeds synthetic items rather than reading the real
-    bank. First, the Bloom ladder degrades: the engine requests a question one
-    band above the learner's current band, and where the bank holds no item at
-    that level the nearby-Bloom fallback
+  \item \textbf{Question bank coverage is incomplete}: 89\% of specifications
+    overall, 74\% in Physics. The consequences only the live check can surface,
+    because the harness seeds synthetic items. Where the bank holds no item at
+    the requested Bloom level, the nearby-level fallback
     ($[0,+1,-1,+2,-2,+3,-3]$) supplies whatever exists, so the cognitive
-    progression the design intends is weaker in practice than in specification.
-    Second, the graph-nearby search tiers are exercised far less than the
-    fallback, for the same reason. Both resolve with coverage, not with code.
+    progression is weaker in practice than in specification; and the answer is
+    then scored with the guess and slip of the \emph{requested} level. In the
+    live check that was the case for 9.3\% of diagnostic answers and 31\% of
+    practice answers, and 2.8\% of diagnostic answers were credited to a
+    different skill from the one the item tested
+    (\Cref{sec:revisions-attribution}). Coverage narrows this gap; only a code
+    change closes it.
   \item \textbf{The harness measures mechanism, not magnitude.} It sizes each
     run to the section it selects, so its printed figures vary with that choice
     and are evidence that each path executes and its invariants hold --- not a
@@ -386,10 +488,133 @@ into a \emph{coverage} deficit --- the right trade, because coverage is bought
 by a generation run whereas structure had to be rebuilt by hand, but it is a
 debt and is recorded as one.
 
-\textbf{Decision.} Adopt, then generate --- the order finally taken, with the
-consequence stated explicitly rather than presented as complete. The outstanding
-generation run against the enlarged specification space is quantified in
-\Cref{sec:budget} and carried as the first item of
-\Cref{sec:future}. Until it is complete, question-bank coverage against the
-served ontology is the system's binding limitation, and \Cref{sec:eval-limits}
-records it as such.
+\textbf{Decision.} Adopt, then generate --- the order finally taken. The
+generation run against the enlarged specification space has since been carried
+out and has repaid most of the debt: 89\% of the specifications now hold a
+verified question (\Cref{fig:bank-coverage}). What remains is concentrated in
+Physics, in 41 skills with no question, and in 7{,}692 legacy-keyed questions
+that the engine cannot reach; \Cref{sec:future} carries it.
+
+The subsections that follow record the deviations found by the full end-to-end
+check of \Cref{sec:live-check}. The first three were fixed during that check; the
+rest are open and are stated with the measurement that exposed them.
+
+\subsection{Skill identifiers truncated at 1{,}000 rows (found, fixed)}
+\label{sec:revisions-rowcap}
+
+\textbf{Deviation.} All 41 Physics and Mathematics sections resolved to no
+skills, so their diagnostics could not start. \textbf{Cause.} The hosted database
+interface truncates every response at 1{,}000 rows whatever the query asks for,
+and the server read its list of known skill identifiers --- which filters every
+section --- from the 2{,}212-row \texttt{skills} table in one unpaged request. The
+1{,}000 rows it kept held all 886 Chemistry skills and none of the 802 Physics and
+Mathematics ones. \textbf{Revision.} The read now pages through the table. The harness's
+stand-in database truncates at 1{,}000 rows like the real one, and asserts that
+every identifier loads and that no section is empty.
+
+\subsection{Diagnostic ignored its section and stored mastery (found, fixed)}
+\label{sec:revisions-scope}
+
+\textbf{Deviation.} The diagnostic chose skills from the whole 1{,}688-skill graph
+rather than from the section under test, so every section opened with the same
+Physics question; and it seeded every skill with the depth prior, overwriting
+mastery the learner had already earned. \textbf{Revision.} Candidates are now the
+section's skills only, stored mastery seeds the session, the prior applies only
+where nothing is stored, and the seeded values are not written back as if they
+were evidence. The harness checks all three; live, every one of the 979
+diagnostic questions fell inside its section and 64 real stored values seeded a
+session unchanged.
+
+\subsection{Answer key readable by the client (found, fixed)}
+\label{sec:revisions-key}
+
+\textbf{Deviation.} Every question sent to the browser carried each option's
+explanation and missing-prerequisite tags. The correct option is the one with no
+missing prerequisite, so the answer could be read from the network response.
+Independently, the bank stores the key as option A or B in 76\% of questions
+(\Cref{fig:answer-position}). \textbf{Revision.} Questions now carry only each
+option's label and text; the chosen option's explanation is returned with the
+result. Options are shuffled when a question is first served, the shuffled copy
+is what the session grades, and the key's position is therefore uniform. The 23
+questions whose options refer to one another by letter or position (``all of the
+above'') keep their order.
+
+\input{figures/fig_answer_position}
+
+\subsection{Ancestor ordering not kept through wrong answers (found, open)}
+\label{sec:revisions-ordering}
+
+\textbf{Deviation.} NFR1 and the earlier harness stated that no skill ever sits
+below one of its descendants. That holds only while answers are correct. A wrong
+answer lowers the answered skill alone, so a skill whose descendant was credited
+earlier, or whose descendant is still at a higher prior, falls below it and stays
+there. The earlier harness answered every question correctly and never exercised
+the case. \textbf{Measurement.} Over all 51 sections, 4--8\% of in-section edges
+end a mixed-answer diagnostic inverted (\Cref{fig:inversions}).
+\textbf{Status.} Open. Restoring the order needs a policy decision --- lower the
+descendant as well when an ancestor is failed, or cap the ancestor's fall at its
+highest descendant --- and either changes what a wrong answer means, so it was not
+made unilaterally. The harness now asserts the property pull-up does guarantee
+and reports the inversions it finds.
+
+\input{figures/fig_inversions}
+
+\subsection{Fallback items credited to the target skill (found, open)}
+\label{sec:revisions-attribution}
+
+\textbf{Deviation.} When the fallback ladder supplies an item from a neighbouring
+skill (Tier 2) or from a different Bloom level, the answer is still applied to
+the \emph{target} skill with the \emph{target} level's guess and slip.
+\textbf{Measurement.} In a diagnostic over all 51 sections, 27 of 979 answers
+(2.8\%) were credited to a skill other than the one the item tested, and 91
+(9.3\%) were scored at a level other than the item's; in topic practice, 114 of
+371 answers (31\%) were scored at the wrong level. \Cref{fig:diag-result} shows
+one case. \textbf{Status.} Open; the remedy is to update the skill and level of
+the item actually served.
+
+\subsection{Diagnostic length overstated (found, open)}
+\label{sec:revisions-length}
+
+\textbf{Deviation.} A section's advertised diagnostic length is its skill count,
+capped at 30, but 41 skills have no question. Fourteen sections advertise more
+questions than they have skills to ask about; Tier 2 fills part of the gap, and
+in the live check eight sections ended early (Kinematics after 16 of 19), leaving
+a completion screen that reads as if questions were skipped.
+\textbf{Status.} Open; the remedy is to size the diagnostic by the skills that
+can be asked about.
+
+\subsection{Sections unlocked by another section's diagnostic (found, open)}
+\label{sec:revisions-unlock}
+
+\textbf{Deviation.} A section counts as diagnosed as soon as the learner has any
+stored mastery for any of its skills. Propagation crosses section boundaries ---
+pull-up raises prerequisites that belong to neighbouring sections --- so a
+diagnostic in one section can mark others as done. In the live check ten of the
+51 sections appeared diagnosed before their own diagnostic, which skips the
+diagnostic prompt and opens practice on mostly untested skills.
+\textbf{Status.} Open; the remedy is to record completion explicitly for each
+learner and section.
+
+\subsection{Rendering defects in generated content (found, open)}
+\label{sec:revisions-render}
+
+\textbf{Deviation.} Replaying the client's own splitting logic and KaTeX over
+every stored stem, option and explanation shows 1{,}015 served questions (8.3\%)
+that do not display correctly: 854 contain \LaTeX{} outside the mathematics
+delimiters, which appears as raw source; 238 have unbalanced delimiters; 202
+contain a command beginning with \verb|\n| that the newline normalisation splits;
+and 111 contain \LaTeX{} KaTeX cannot parse (a question may have more than one).
+\textbf{Status.} Open; the remedies are a repair pass at load time and a
+normalisation that leaves mathematics alone.
+
+\subsection{Ontology mirror in the database is stale (found, open)}
+\label{sec:revisions-mirror}
+
+\textbf{Deviation.} The database's copy of topic memberships and prerequisite
+edges still describes the legacy ontology: none of its 567 memberships and only 2
+of its 666 edges match the served graph. \textbf{Analysis.} Nothing misbehaves
+today, because the engine loads the graph from the compiled catalogue and the
+foreign keys that matter --- question to skill and to topic code --- point at
+current rows. But any query that reads structure from the database gets the
+wrong graph. \textbf{Status.} Open; sync the two tables from the compiled
+catalogue, or drop them.

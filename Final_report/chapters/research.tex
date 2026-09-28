@@ -14,7 +14,8 @@ Knowledge Tracing (BKT), introduced by Corbett and Anderson
 mastery is a hidden binary variable, and four parameters govern its evolution
 --- a prior $P(L_0)$, a learning rate $P(T)$, and two noise terms, the slip
 probability $P(S)$ (knowing but answering wrongly) and the guess probability
-$P(G)$ (not knowing but answering correctly). The model's durability comes from
+$P(G)$ (not knowing but answering correctly); \Cref{fig:bkt-hmm} in
+\Cref{ch:design} draws it as a two-state model. The model's durability comes from
 the fact that these four parameters are interpretable to a teacher, which is not
 true of most of its successors.
 
@@ -147,7 +148,9 @@ prerequisite model of \emph{this} syllabus, (ii) inference that is interpretable
 per skill and propagates across prerequisite structure, and (iii) Bangla content
 with correct mathematical typesetting. Platforms that have the content lack the
 model; platforms that have the model lack the content and the language. ATLAS
-targets that intersection.
+targets that intersection (\Cref{fig:gap-venn}).
+
+\input{figures/fig_gap_venn}
 
 \section{Market and User Research}
 \label{sec:market}
@@ -202,7 +205,8 @@ free tiers extend to production; \Cref{sec:economics} models the real operating
 cost.
 
 \textbf{Operational.} The adoption question is the binding one. The system asks
-a student to spend 30 questions on a diagnostic before it gives them anything,
+a student to answer a diagnostic of up to 30 questions (sized to the section,
+between 5 and 30) before it gives them anything,
 which is a real cost to a user under time pressure who is accustomed to
 immediate practice. Mitigation is to make the diagnostic itself feel like
 practice --- it serves genuine past-paper-style questions, not artificial

@@ -25,7 +25,10 @@ or does not know the derivative of the function involved. These are four
 different deficits requiring four different remedies, and they are invisible in
 a score. A human tutor localises them by watching the student work --- which is
 precisely what one-to-one tutoring is effective at, and precisely what does not
-scale to a national cohort \cite{vanlehn2011relative}.
+scale to a national cohort \cite{vanlehn2011relative}. \Cref{fig:four-gaps}
+makes the point concrete.
+
+\input{figures/fig_four_gaps}
 
 The consequence is misallocated study time. A student who does not know which
 of their foundations is weak has no rational basis for choosing what to study
@@ -78,6 +81,11 @@ Formulated in engineering terms:
     same for all learners.
 \end{itemize}
 
+\Cref{fig:adaptive-loop} draws this formulation as the loop the system runs on
+every response.
+
+\input{figures/fig_adaptive_loop}
+
 \noindent\textbf{Engineering knowledge demanded.} The formulation above is not
 solvable by routine application of standard components. It requires: probability
 theory and Bayesian inference (the latent-state update); graph theory (acyclicity
@@ -99,8 +107,9 @@ of one or more of the knowledge profiles K3--K8 listed in
 % Rendered as a longtable (not a float) so it flows across pages at readable
 % size instead of being squeezed onto one rotated page.
 \setlength{\LTcapwidth}{\textwidth}
-{\small\setstretch{1.1}
-\begin{longtable}{@{}p{11mm}p{56mm}p{\dimexpr\textwidth-11mm-56mm-4\tabcolsep\relax}@{}}
+\begingroup
+\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{11mm}>{\raggedright\arraybackslash}p{56mm}>{\raggedright\arraybackslash}p{\dimexpr\textwidth-11mm-56mm-4\tabcolsep\relax}@{}}
   \caption{Complex engineering problem characteristics (P1--P7) and evidence from this project}
   \label{tab:complexity}\\
     \toprule
@@ -131,7 +140,8 @@ of one or more of the knowledge profiles K3--K8 listed in
     Learners want the shortest path to a higher score; teachers want syllabus fidelity and correct content; the system's own policy wants maximal information per question. These pull in different directions --- the most informative question is often not the most encouraging one. \Cref{sec:requirements} tabulates the conflicts. \\
     P7 & \textbf{Interdependence.} Is a high-level problem including many component parts or sub-problems. &
     Five interdependent subsystems: the knowledge ontology, the inference engine, the question bank and its generation pipeline, the serving API, and the learner-facing interface. The ontology is upstream of all others --- its granularity determines what the engine can infer and what the generator must produce, which is why a sparse first ontology forced a full rebuild (\Cref{sec:ontology-rebuild}). \\
-\end{longtable}}
+\end{longtable}
+\endgroup
 
 \begin{table}[htbp]
   \centering
@@ -189,10 +199,13 @@ evaluates the delivered system against each.
 
 \textbf{Included:} the three admission-test subjects; multiple-choice items
 with four options; a single-process web deployment sufficient for demonstration;
-Bangla content with \LaTeX{} mathematics; English and Bangla interface text.
+Bangla content with \LaTeX{} mathematics; English and Bangla interface text; and
+an administrator view for curating the skill graph and for cohort-level mastery
+statistics with data export.
 
 \textbf{Explicitly excluded:} written/subjective answer grading; handwriting or
-image input; mobile-native applications; teacher-facing classroom analytics;
-multi-tenant institutional deployment; live proctoring; and any claim of
+image input; mobile-native applications; per-class teacher dashboards and
+classroom management; multi-tenant institutional deployment; live proctoring;
+and any claim of
 improved examination outcomes, which would require a controlled study with human
 participants that this project did not undertake (\Cref{sec:eval-limits}).

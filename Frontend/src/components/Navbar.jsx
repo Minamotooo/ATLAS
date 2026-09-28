@@ -148,6 +148,30 @@ export default function Navbar() {
                   {t("courses.mastery")}
                 </button>
               ))}
+            {user && (
+              <Link
+                to="/admin/ontology"
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  location.pathname.startsWith("/admin/ontology")
+                    ? "text-white bg-white/15"
+                    : "text-atlas-200 hover:text-white hover:bg-white/10"
+                }`}
+              >
+                Admin
+              </Link>
+            )}
+            {user && (
+              <Link
+                to="/admin/stats"
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  location.pathname.startsWith("/admin/stats")
+                    ? "text-white bg-white/15"
+                    : "text-atlas-200 hover:text-white hover:bg-white/10"
+                }`}
+              >
+                Performance
+              </Link>
+            )}
           </div>
 
           {/* Right Actions */}
@@ -244,6 +268,24 @@ export default function Navbar() {
                   {t("courses.mastery")} (Locked)
                 </span>
               ))}
+            {user && (
+              <Link
+                to="/admin/ontology"
+                onClick={() => setMobileOpen(false)}
+                className="block px-4 py-3 rounded-xl text-sm font-medium text-atlas-200 hover:bg-white/10 hover:text-white transition-colors"
+              >
+                Admin
+              </Link>
+            )}
+            {user && (
+              <Link
+                to="/admin/stats"
+                onClick={() => setMobileOpen(false)}
+                className="block px-4 py-3 rounded-xl text-sm font-medium text-atlas-200 hover:bg-white/10 hover:text-white transition-colors"
+              >
+                Performance
+              </Link>
+            )}
             <hr className="my-2 border-white/10" />
             {user ? (
               <>

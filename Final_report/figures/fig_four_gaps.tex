@@ -1,0 +1,32 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[fig,
+      cause/.style={proc, text width=44mm, align=left, fill=white},
+      skl/.style={skillNode, minimum width=27mm, fill=seq100}]
+    \node[proc, text width=33mm, fill=white, line width=0.8pt] (q) at (0,0)
+      {$\displaystyle\int x\,e^{x}\,dx = \;?$\\[2pt]
+       {\scriptsize answered wrongly}\\[1pt]
+       {\scriptsize a question bank says: \textbf{wrong}}};
+    \foreach \y/\c/\s [count=\i] in
+      {2.1/{does not recognise that integration by parts applies}/{Recognise parts},
+       0.7/{recognises it, but chooses $u$ and $dv$ the wrong way round}/{Choose $u$, $dv$},
+      -0.7/{chooses correctly, then slips in the algebra of the simpler integral}/{Simplify expression},
+      -2.1/{cannot differentiate the function that was chosen as $u$}/{Differentiate}} {
+      \node[cause] (c\i) at (5.0,\y) {\scriptsize\c};
+      \node[skl] (s\i) at (10.0,\y) {\s};
+      \draw[flow, thin] (q.east) -- (c\i.west);
+      \draw[flowHi, thin] (c\i.east) -- (s\i.west);
+    }
+    \node[note, anchor=south] at (5.0,2.95) {four different deficits \dots};
+    \node[note, anchor=south] at (10.0,2.95) {\dots\ four different skills to repair};
+    \node[note, text width=118mm, anchor=north] at (5.0,-3.0)
+      {ATLAS separates them with option-level evidence (each distractor names the skill
+       whose absence explains it) and with the prerequisite graph of \Cref{fig:skill-fragment}.};
+  \end{tikzpicture}
+  \caption[One wrong answer, four different deficits]{Why a score cannot direct study. One wrong answer to one integration
+    question is consistent with four different deficits, each located at a
+    different skill and each needing a different remedy. The same answer sheet
+    looks identical in all four cases, which is why localisation has to come from
+    a model of the prerequisite structure rather than from the score.}
+  \label{fig:four-gaps}
+\end{figure}

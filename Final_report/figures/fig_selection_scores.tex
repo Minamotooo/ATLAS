@@ -1,0 +1,40 @@
+% Data: live run of the Ideal Gas section, end-to-end check of 2026-09-28.
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[fig]
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=white] (GL0) at (0.00,-0.00) {\textbf{GL0} {\tiny ideal gas equation, $R$}\\[-1pt]{\tiny $u_\uparrow{=}0$, $u_\downarrow{=}12$:} \textbf{1.00}};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=white] (GL1) at (3.05,1.88) {\textbf{GL1} {\tiny $P$, $V$ or $T$ from $PV{=}nRT$}\\[-1pt]{\tiny $u_\uparrow{=}1$, $u_\downarrow{=}4$:} \textbf{1.50}};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=white] (KT3) at (3.05,0.00) {\textbf{KT3} {\tiny molecules in a volume}\\[-1pt]{\tiny $u_\uparrow{=}1$, $u_\downarrow{=}0$:} \textbf{1.00}};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=white] (KT0) at (3.05,-2.50) {\textbf{KT0} {\tiny kinetic postulates, $k_B$}\\[-1pt]{\tiny $u_\uparrow{=}1$, $u_\downarrow{=}5$:} \textbf{1.40}};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=white] (GL2) at (6.10,3.75) {\textbf{GL2} {\tiny rising-bubble volume}\\[-1pt]{\tiny $u_\uparrow{=}2$, $u_\downarrow{=}0$:} \textbf{1.00}};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=white] (GL3) at (6.10,2.50) {\textbf{GL3} {\tiny moles or mass of a gas}\\[-1pt]{\tiny $u_\uparrow{=}2$, $u_\downarrow{=}0$:} \textbf{1.00}};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=white] (GL4) at (6.10,1.25) {\textbf{GL4} {\tiny density of a gas}\\[-1pt]{\tiny $u_\uparrow{=}2$, $u_\downarrow{=}0$:} \textbf{1.00}};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=white] (MS3) at (6.10,-0.00) {\textbf{MS3} {\tiny humidity, dew point}\\[-1pt]{\tiny $u_\uparrow{=}2$, $u_\downarrow{=}0$:} \textbf{1.00}};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=white] (KT1) at (6.10,-1.25) {\textbf{KT1} {\tiny mean free path}\\[-1pt]{\tiny $u_\uparrow{=}2$, $u_\downarrow{=}0$:} \textbf{1.00}};
+    \node[skillNode, minimum width=26mm, text width=24mm, draw=vizBlue, line width=0.9pt, fill=seq100] (KT2) at (6.10,-2.50) {\textbf{KT2} {\tiny average kinetic energy}\\[-1pt]{\tiny $u_\uparrow{=}2$, $u_\downarrow{=}2$:} \textbf{5.00} {\tiny\color{vizBlue}\bfseries asked first}};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=white] (MS2) at (6.10,-3.75) {\textbf{MS2} {\tiny specific heats, degrees of freedom}\\[-1pt]{\tiny $u_\uparrow{=}2$, $u_\downarrow{=}0$:} \textbf{1.00}};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=white] (MS0) at (9.15,-2.50) {\textbf{MS0} {\tiny rms speed}\\[-1pt]{\tiny $u_\uparrow{=}3$, $u_\downarrow{=}1$:} \textbf{1.67}};
+    \node[skillNode, minimum width=26mm, text width=24mm, fill=white] (MS1) at (12.20,-2.50) {\textbf{MS1} {\tiny $T$ for a given rms speed}\\[-1pt]{\tiny $u_\uparrow{=}4$, $u_\downarrow{=}0$:} \textbf{1.00}};
+    \draw[dagEdge] (GL0.east) -- (GL1.west);
+    \draw[dagEdge] (GL0.east) -- (KT0.west);
+    \draw[dagEdge] (GL0.east) -- (KT3.west);
+    \draw[dagEdge] (GL1.east) -- (GL2.west);
+    \draw[dagEdge] (GL1.east) -- (GL3.west);
+    \draw[dagEdge] (GL1.east) -- (GL4.west);
+    \draw[dagEdge] (GL1.east) -- (MS3.west);
+    \draw[dagEdge] (KT0.east) -- (KT1.west);
+    \draw[dagEdge] (KT0.east) -- (KT2.west);
+    \draw[dagEdge] (KT0.east) -- (MS2.west);
+    \draw[dagEdge] (KT2.east) -- (MS0.west);
+    \draw[dagEdge] (MS0.east) -- (MS1.west);
+  \end{tikzpicture}
+  \caption[Balanced-volume scores for a real section]{Choosing the first diagnostic question in the Ideal Gas and Kinetic
+    Theory section (13 skills, 12 prerequisite edges; GL = gas laws, KT = kinetic
+    theory, MS = molecular speeds). Each skill is scored by
+    \Cref{eq:selection} from its untested ancestors $u_\uparrow$ and descendants
+    $u_\downarrow$. The root GL0 touches every skill but only from one side
+    ($1.00$); KT2 sits between two unknown regions of equal size and scores
+    $5.00$, so its outcome says the most about both, and the live diagnostic
+    asked it first.}
+  \label{fig:selection-scores}
+\end{figure}

@@ -14,6 +14,7 @@ from __future__ import annotations
 import json
 import os
 import random
+import re
 import time
 import uuid
 from dataclasses import dataclass, field
@@ -26,6 +27,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from supabase import create_client
 
+from admin_ontology import router as admin_ontology_router
+from admin_stats import router as admin_stats_router
 from bloom_taxonomy import BloomLevel, get_level_from_mastery
 from diagnostic import DiagnosticSession, QuestionSpec
 from mastery_updater import MasteryUpdater, UpdateMode
@@ -42,6 +45,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(admin_ontology_router)
+app.include_router(admin_stats_router)
 
 db = create_client(os.environ["SUPABASE_URL"], os.environ["SUPABASE_SERVICE_KEY"])
 
@@ -466,25 +472,74 @@ def _extract_supabase_payload(response):
 
 
 def _load_existing_skill_ids() -> set[str]:
-    """Return all known skill IDs from DB; fallback to empty set on query issues."""
+    """
+    Return all known skill IDs from DB; fallback to empty set on query issues.
+
+    PostgREST silently caps every response at the project's max-rows (1000),
+    whatever .limit() asks for. The skills table holds more than that, and
+    _section_skill_ids filters every section through this set, so a single
+    unpaged select silently emptied most Mathematics and Physics sections.
+    """
     try:
-        result = db.table("skills").select("skill_id").limit(10000).execute()
-        data, error = _extract_supabase_payload(result)
-        if error:
-            print(f"WARN: could not load skills table IDs: {error}")
-            return set()
+        ids: set[str] = set()
+        page_size = 1000
+        offset = 0
+        while True:
+            result = (
+                db.table("skills")
+                .select("skill_id")
+                .order("skill_id")
+                .range(offset, offset + page_size - 1)
+                .execute()
+            )
+            data, error = _extract_supabase_payload(result)
+            if error:
+                print(f"WARN: could not load skills table IDs: {error}")
+                return set()
 
-        rows = data or []
-        if isinstance(rows, dict):
-            rows = [rows]
-
-        return {row["skill_id"] for row in rows if row.get("skill_id")}
+            rows = data or []
+            if isinstance(rows, dict):
+                rows = [rows]
+            ids.update(row["skill_id"] for row in rows if row.get("skill_id"))
+            if len(rows) < page_size:
+                return ids
+            offset += page_size
     except Exception as exc:
         print(f"WARN: failed loading skills table IDs: {exc}")
         return set()
 
 
 EXISTING_SKILL_IDS = _load_existing_skill_ids()
+
+
+def _stored_mastery_for_user(user_id: str) -> Dict[str, float]:
+    """
+    Every mastery value already recorded for this user, paged past the
+    1000-row response cap. Seeds a diagnostic so it builds on real progress
+    instead of starting each skill from the depth prior and overwriting it.
+    """
+    stored: Dict[str, float] = {}
+    page_size = 1000
+    offset = 0
+    while True:
+        result = (
+            db.table("user_skill")
+            .select("skill_id, mastery_level")
+            .eq("user_id", user_id)
+            .order("skill_id")
+            .range(offset, offset + page_size - 1)
+            .execute()
+        )
+        data, error = _extract_supabase_payload(result)
+        if error:
+            raise HTTPException(status_code=500, detail=f"Could not load stored mastery: {error}")
+        rows = data or []
+        for row in rows:
+            if row.get("skill_id") is not None:
+                stored[row["skill_id"]] = float(row.get("mastery_level") or 0.0)
+        if len(rows) < page_size:
+            return stored
+        offset += page_size
 
 
 def _diagnostic_length_for_section(section_skill_ids: List[str]) -> int:
@@ -910,6 +965,41 @@ def _select_random_question_row(
     return _pick_unseen_question(rows, run.used_question_ids)
 
 
+# Option text that points at another option by letter ("উত্তর খ সঠিক") or by
+# position ("all of the above"). Moving such options would break the reference.
+_POSITIONAL_OPTION_RE = re.compile(
+    r"\b(?:option|choice|answer)s?\s*\(?[A-D]\)?(?![A-Za-z])"
+    r"|(?:উত্তর|বিকল্প|অপশন)\s*\(?[কখগঘ]\)?"
+    r"|\babove\b|উপরের|ওপরের|উপরোক্ত",
+    re.IGNORECASE,
+)
+
+
+def _shuffle_options(row: dict) -> dict:
+    """
+    Return a copy of a question row with its options in random order, relabelled
+    A, B, C... in that order.
+
+    In the bank the correct answer is skewed heavily towards A and B. Shuffling once,
+    when the question is served, means that skew can't be used to guess. The copy is
+    what gets stored as the run's current question, so a re-fetch shows the same order
+    and the answer handlers, which match on the displayed label, need no mapping.
+    The source row is left untouched. Questions whose options refer to one another
+    keep their original order.
+    """
+    options = sorted(row.get("question_options") or [], key=lambda item: item.get("option_label", ""))
+    if len(options) < 2 or any(_POSITIONAL_OPTION_RE.search(o.get("option_text") or "") for o in options):
+        return row
+
+    labels = [o.get("option_label") for o in options]
+    shuffled = random.sample(options, len(options))
+    relabelled = [
+        {**option, "option_label": label, "original_option_label": option.get("option_label")}
+        for option, label in zip(shuffled, labels)
+    ]
+    return {**row, "question_options": relabelled}
+
+
 def _question_payload(row: dict, topic_code_to_display: Dict[str, str]) -> dict:
     # questions.topic holds a topic_code (FK -> ontology_topics). Resolve it to the
     # catalog display name so the UI shows "Matrices and Determinants", not "MAT_MATRIX".
@@ -922,18 +1012,15 @@ def _question_payload(row: dict, topic_code_to_display: Dict[str, str]) -> dict:
         if skill and skill.topics:
             topic_value = topic_code_to_display.get(skill.topics[0], skill.topics[0])
 
+    # Only label and text go out before the answer. Each option's explanation and
+    # missing prerequisites stay server-side: the correct option is the one with no
+    # missing prerequisites, so sending them would give the answer away.
+    # The explanation for the chosen option comes back in the answer response.
     options = row.get("question_options") or []
-    normalized_options = []
-    for option in sorted(options, key=lambda item: item.get("option_label", "")):
-        missing = option.get("option_missing_prerequisites") or []
-        normalized_options.append(
-            {
-                "label": option.get("option_label"),
-                "text": option.get("option_text"),
-                "explanation": option.get("explanation") or "",
-                "missing_prerequisites": [m.get("missing_skill_id") for m in missing if m.get("missing_skill_id")],
-            }
-        )
+    normalized_options = [
+        {"label": option.get("option_label"), "text": option.get("option_text")}
+        for option in sorted(options, key=lambda item: item.get("option_label", ""))
+    ]
 
     return {
         "question_id": row["id"],
@@ -970,6 +1057,7 @@ def _next_topic_practice_question(run: TopicPracticeRun) -> Optional[dict]:
             bloom_level=bloom_level,
         )
         if row is not None:
+            row = _shuffle_options(row)
             run.current_question_row = row
             run.current_skill_id = spillover_skill
             run.current_bloom_level = bloom_level
@@ -1019,6 +1107,7 @@ def _next_topic_practice_question(run: TopicPracticeRun) -> Optional[dict]:
             )
             continue
 
+        row = _shuffle_options(row)
         run.current_question_row = row
         run.current_skill_id = skill_id
         run.current_bloom_level = bloom_level
@@ -1257,6 +1346,7 @@ def _next_question_for_run(run: DiagnosticRun) -> Optional[dict]:
             skill_id=skill_id,
             bloom_level=bloom_level,
         )
+        row = _shuffle_options(row)
         run.current_question_row = row
         run.used_question_ids.add(int(row["id"]))
         _debug_search_log(
@@ -1284,6 +1374,7 @@ def _next_question_for_run(run: DiagnosticRun) -> Optional[dict]:
             continue
 
         run.current_spec = spec
+        row = _shuffle_options(row)
         run.current_question_row = row
         run.used_question_ids.add(int(row["id"]))
         _debug_search_log(
@@ -1770,15 +1861,20 @@ def start_diagnostic(request: DiagnosticStartRequest):
         max_questions=_diagnostic_length_for_section(section_skill_ids),
     )
 
+    # The full tree still drives propagation (ancestor pull-up, successor
+    # gating), but only the section's skills are ever selected for testing.
     run.diagnostic_session = DiagnosticSession(
         skill_tree=SKILL_TREE,
         userid=request.user_id,
         db_fetch=run.db_fetch,
         db_update=run.db_update,
         stop_threshold=0.0,
+        candidate_skill_ids=section_skill_ids,
+        stored_mastery=_stored_mastery_for_user(request.user_id),
     )
 
-    # Initial priors are runtime defaults for this diagnostic session; avoid writing all rows immediately.
+    # Seeded values are runtime state for this session, not new evidence;
+    # don't write them back. Only answers produce writes.
     run.clear_dirty_states()
 
     DIAGNOSTIC_RUNS[session_id] = run

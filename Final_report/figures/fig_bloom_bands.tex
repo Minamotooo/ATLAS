@@ -1,0 +1,31 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[fig, x=1.5mm, y=1mm]
+    \foreach \name/\g/\s [count=\i from 0] in
+      {Remember/0.30/0.05, Understand/0.25/0.08, Apply/0.18/0.12,
+       Analyze/0.12/0.18, Evaluate/0.08/0.22, Create/0.05/0.25} {
+      \pgfmathsetmacro{\xa}{\i*100/6}
+      \pgfmathsetmacro{\xb}{(\i+1)*100/6}
+      \pgfmathsetmacro{\shade}{6+\i*3}
+      \fill[gray!\shade] (\xa,0) rectangle (\xb,9);
+      \draw[white, line width=1pt] (\xb,0) -- (\xb,9);
+      \node[font=\scriptsize\bfseries, text=inkPrimary] at ({(\xa+\xb)/2},5.8) {\name};
+      \node[font=\tiny, text=inkSecondary] at ({(\xa+\xb)/2},2.6) {$G\,{=}\,\g$, $S\,{=}\,\s$};
+    }
+    \foreach \v in {0,16.67,33.33,50,66.67,83.33,100}
+      \node[font=\tiny, text=inkMuted, above] at (\v,9) {\v};
+    \node[font=\scriptsize, text=inkSecondary] at (50,17) {mastery estimate (\%) and the Bloom band it falls in};
+    % worked example: a learner at 42% is in Apply, so the next item is Analyze
+    \fill[inkPrimary] (42,-0.6) -- (40.8,-3.6) -- (43.2,-3.6) -- cycle;
+    \node[font=\scriptsize, text=inkPrimary, anchor=north] at (42,-3.8) {learner at 42\%};
+    \draw[vizBlue, line width=0.9pt, rounded corners=1pt] (50,0) rectangle (66.67,9);
+    \draw[flowHi, rounded corners=3pt] (44.5,-2.2) -- (58.3,-2.2) -- (58.3,-0.4);
+    \node[font=\scriptsize, text=vizBlue, anchor=north west] at (59.3,-1.4) {next question: Analyze (one level up)};
+  \end{tikzpicture}
+  \caption[Mastery bands and the one-level-up selection rule]{The 0--100 mastery scale is cut into six equal bands, one per Bloom
+    level, each with its own guess and slip values (\Cref{tab:bloom-params}). The
+    selection rule reads the band a learner is in and asks one level above it,
+    capped at Create: a learner estimated at 42\% sits in Apply, so the next
+    question is an Analyze item.}
+  \label{fig:bloom-bands}
+\end{figure}
