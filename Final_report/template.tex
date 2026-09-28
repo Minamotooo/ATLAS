@@ -13,6 +13,16 @@
 % pgfplots, the colour palette and the shared figure styles (figures/*.tex).
 \input{figures/figstyle}
 
+% Let tables and figures share a page with text instead of floating onto a
+% half-empty page of their own.
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.8}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+
 % ---------------------------------------------------------------------
 \newcommand{\ProjectTitle}{ATLAS: An Adaptive Tutoring System using
 Bayesian Knowledge Tracing over a Prerequisite Skill Graph}
@@ -51,8 +61,11 @@ Bayesian Knowledge Tracing over a Prerequisite Skill Graph}
 \input{chapters/management_impact}
 \input{chapters/conclusion}
 
+\renewcommand{\bibname}{References}
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{References}
 \bibliographystyle{IEEEtran}
 \bibliography{references}
-\addcontentsline{toc}{chapter}{References}
 
 \end{document}

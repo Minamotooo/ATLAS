@@ -57,9 +57,12 @@
 \Cref{fig:use-cases} shows the same requirements from the side of the two
 actors who use the system.
 
+\input{figures/fig_use_cases}
+
 \subsection{Non-functional requirements}
 
-\begin{table}[htbp]
+\begin{table}[H]
+  \singlespacing
   \centering
   \caption{Non-functional requirements}
   \label{tab:nonfunctional}
@@ -79,8 +82,6 @@ actors who use the system.
   \end{tabularx}
 \end{table}
 
-\input{figures/fig_use_cases}
-
 \subsection{Constraints}
 
 \textbf{Time:} one academic session, with the team also carrying a full course
@@ -96,6 +97,12 @@ memory (\Cref{sec:deviations-session}).
 
 \section{Regulatory Requirements and Standards}
 \label{sec:standards}
+
+No single code of practice governs an adaptive tutoring system, so the
+obligations that do apply were collected from data protection, web security,
+accessibility, copyright and professional ethics. \Cref{tab:standards} lists
+each one, why it applies to ATLAS, how the design responds, and the gaps that
+remain.
 
 \begin{table}[htbp]
   \centering
@@ -163,7 +170,8 @@ maximise learning gain under the network's predictions.
 hidden-state model, link skills by prerequisite edges, and propagate evidence
 along those edges.
 
-\begin{table}[htbp]
+\begin{table}[H]
+  \singlespacing
   \centering
   \caption{Evaluation of candidate solutions against criteria drawn from the requirements}
   \label{tab:alternatives}
