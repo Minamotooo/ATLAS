@@ -34,8 +34,9 @@ prerequisite graph, gated conjunctively --- is built and demonstrably
 self-consistent. The single most valuable thing the project learned is not in
 the engine at all: it is that the knowledge structure, not the inference
 algorithm, is the binding constraint on a system like this. A sophisticated
-update rule over a graph with 1.1 edges per skill has almost nothing to reason
-with. Most of the engineering effort in the second half of the project went into
+update rule has almost nothing to reason with over a graph that holds fewer
+than four skills per topic and leaves many skills with no prerequisite at all;
+what fixed it was coverage and connectedness, not a denser edge ratio. Most of the engineering effort in the second half of the project went into
 the ontology for exactly that reason, and that is the finding most likely to
 transfer to anyone attempting similar work.
 
