@@ -1,0 +1,54 @@
+% Data: full end-to-end check of 2026-09-28 (in-process
+% client against the production database; 4,862 requests).
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+    \begin{semilogxaxis}[atlas, height=70mm, width=0.78\linewidth,
+        xmin=5, xmax=1.2e5, ymin=0.4, ymax=8.6,
+        ytick={8,7,6,5,4,3,2,1}, yticklabels={{diagnostic: start},{diagnostic: next question},{diagnostic: submit answer},{practice: start},{practice: next question},{practice: submit answer},{mastery view},{section state}},
+        yticklabel style={font=\scriptsize, text=inkPrimary},
+        ymajorgrids=false, xmajorgrids, major grid style={draw=gridLine, solid},
+        xlabel={response time (ms), log scale},
+        boxplot/draw direction=x, boxplot/box extend=0.5,
+        clip=false]
+      \addplot+[boxplot prepared={lower whisker=176.8, lower quartile=185.9, median=196.8, upper quartile=324.0, upper whisker=2760.6, draw position=8}, fill=seq100, draw=seq600, solid] coordinates {};
+      \addplot+[boxplot prepared={lower whisker=89.3, lower quartile=166.4, median=180.4, upper quartile=281.1, upper whisker=2010.1, draw position=7}, fill=seq100, draw=seq600, solid] coordinates {};
+      \addplot+[boxplot prepared={lower whisker=9.3, lower quartile=10.2, median=11.8, upper quartile=16.2, upper whisker=96.5, draw position=6}, fill=seq100, draw=seq600, solid] coordinates {};
+      \addplot+[boxplot prepared={lower whisker=164.2, lower quartile=170.0, median=181.7, upper quartile=209.3, upper whisker=500.7, draw position=5}, fill=seq100, draw=seq600, solid] coordinates {};
+      \addplot+[boxplot prepared={lower whisker=154.0, lower quartile=166.7, median=185.0, upper quartile=464.2, upper whisker=926.3, draw position=4}, fill=seq100, draw=seq600, solid] coordinates {};
+      \addplot+[boxplot prepared={lower whisker=9.7, lower quartile=10.5, median=11.6, upper quartile=14.2, upper whisker=48.5, draw position=3}, fill=seq100, draw=seq600, solid] coordinates {};
+      \addplot+[boxplot prepared={lower whisker=9.0, lower quartile=10.4, median=12.4, upper quartile=16.4, upper whisker=55.8, draw position=2}, fill=seq100, draw=seq600, solid] coordinates {};
+      \addplot+[boxplot prepared={lower whisker=8.9, lower quartile=9.6, median=10.7, upper quartile=13.4, upper whisker=85.4, draw position=1}, fill=seq100, draw=seq600, solid] coordinates {};
+      \addplot[only marks, mark=x, mark size=2.2pt, draw=statusBad] coordinates {(67470.9,8) (98990.5,7) (1007.4,6) (1248.7,5) (2500.1,4) (513.2,3) (971.7,2) (833.6,1)};
+      \node[font=\tiny, text=inkSecondary, anchor=west] at (axis cs:140000.0,8) {n\,=\,53};
+      \node[font=\tiny, text=inkSecondary, anchor=west] at (axis cs:140000.0,7) {n\,=\,1047};
+      \node[font=\tiny, text=inkSecondary, anchor=west] at (axis cs:140000.0,6) {n\,=\,979};
+      \node[font=\tiny, text=inkSecondary, anchor=west] at (axis cs:140000.0,5) {n\,=\,62};
+      \node[font=\tiny, text=inkSecondary, anchor=west] at (axis cs:140000.0,4) {n\,=\,490};
+      \node[font=\tiny, text=inkSecondary, anchor=west] at (axis cs:140000.0,3) {n\,=\,510};
+      \node[font=\tiny, text=inkSecondary, anchor=west] at (axis cs:140000.0,2) {n\,=\,102};
+      \node[font=\tiny, text=inkSecondary, anchor=west] at (axis cs:140000.0,1) {n\,=\,103};
+      \draw[inkMuted] (axis cs:1000,0.4) -- (axis cs:1000,8.6);
+      \node[font=\tiny, text=inkSecondary, anchor=south] at (axis cs:1000,8.6) {1\,s};
+    \end{semilogxaxis}
+  \end{tikzpicture}\par\medskip
+  \begin{tikzpicture}
+    \begin{axis}[atlasbar, height=42mm, width=0.62\linewidth, bar width=7mm,
+        symbolic x coords={1,2--7,8--14,15--50,>50}, xtick=data,
+        xlabel={database queries needed to find the next diagnostic question},
+        ylabel={selections}, ymax=1000,
+        nodes near coords, nodes near coords style={font=\scriptsize, text=inkSecondary}]
+      \addplot[fill=vizBlue, draw=none] coordinates {(1,855) (2--7,132) (8--14,23) (15--50,17) (>50,3)};
+    \end{axis}
+  \end{tikzpicture}
+  \caption[Responsiveness measured in the live check]{Responsiveness (NFR2), measured over 4{,}862 requests of the live
+    end-to-end run. \emph{Top:} boxes span the 25th--75th percentile with the
+    median marked; whiskers reach the 5th and 95th; $\times$ is the slowest
+    call. Answer submission is fast (median about 12\,ms); choosing a new
+    question has a median near 180\,ms but a long tail. \emph{Bottom:} the tail
+    comes from the fallback ladder, counted by replaying the same code over a
+    copy of the bank. 855 of 1{,}030 selections need a single query, but
+    where the bank is thin the ladder issues one query per candidate (skill,
+    level) pair, up to 100, and each is a round trip to the hosted database.}
+  \label{fig:latency}
+\end{figure}

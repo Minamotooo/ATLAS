@@ -1,0 +1,32 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[fig, node distance=5mm,
+      ask/.style={decision, aspect=3.4, text width=38mm, font=\scriptsize}]
+    \node[term, text width=62mm] (in) {wrong answer on a topic question, and the chosen
+      distractor names a missing prerequisite};
+    \node[ask, below=6mm of in] (a) {\textbf{Rule A}: of the last 5 answers, do
+      $\ge 3$ wrong ones name the same prerequisite $p$?};
+    \node[ask, below=7mm of a] (b) {\textbf{Rule B}: last 8 answers under 40\%
+      correct, and a named prerequisite below 0.60?};
+    \node[proc, below=7mm of b, text width=50mm] (cont) {no spillover: continue the topic traversal};
+    \node[procHi, right=8mm of b, text width=32mm] (inj) {inject \textbf{2} questions on $p$
+      (Rule B: the weakest named prerequisite), then resume the topic};
+    \draw[flow] (in) -- (a);
+    \draw[flow] (a) -- node[lbl, right=1pt]{no} (b);
+    \draw[flow] (b) -- node[lbl, right=1pt]{no} (cont);
+    \draw[flowHi] (a.east) -| node[lbl, pos=0.25, above]{yes} (inj.north);
+    \draw[flowHi] (b.east) -- node[lbl, above]{yes} (inj.west);
+    \node[note, text width=32mm, anchor=north] at ([yshift=-3mm]inj.south)
+      {Rule A is precise but needs the distractor annotations};
+    \node[note, text width=26mm, anchor=east] at ([xshift=-3mm]b.west)
+      {coarse safety net: low accuracy and a weak prerequisite};
+  \end{tikzpicture}
+  \caption[Prerequisite spillover rules]{Prerequisite spillover during topic practice. Every distractor in the
+    bank is annotated with the skill whose absence would lead a learner to choose
+    it (\texttt{option\_missing\_prerequisites}); Rule A acts on that evidence
+    directly, Rule B on accuracy and mastery. Spillover is considered only after
+    a wrong answer whose distractor carries such a tag and only when no spillover
+    is already running. \Cref{fig:practice-trace} shows Rule A firing in a live
+    session.}
+  \label{fig:spillover-rules}
+\end{figure}

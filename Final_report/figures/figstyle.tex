@@ -1,0 +1,87 @@
+%======================================================================
+%  Shared styles for every figure in the report (TikZ diagrams and
+%  pgfplots charts). Input once from template.tex.
+%
+%  Colour roles follow one rule each: vizBlue/vizOrange/vizAqua identify
+%  series (in that fixed order); the seq* ramp encodes magnitude (mastery);
+%  ink* colours carry all text. Every chart also uses a second channel
+%  (marker shape, line style or a direct label) so it reads in greyscale.
+%======================================================================
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{groupplots,statistics,fillbetween}
+\usetikzlibrary{calc,shapes.geometric,shapes.misc,decorations.pathreplacing,
+  matrix,patterns,backgrounds,fit,positioning,arrows.meta}
+
+% ---- colours ---------------------------------------------------------
+\definecolor{vizBlue}{HTML}{2A78D6}
+\definecolor{vizOrange}{HTML}{EB6834}
+\definecolor{vizAqua}{HTML}{1BAF7A}
+\definecolor{inkPrimary}{HTML}{0B0B0B}
+\definecolor{inkSecondary}{HTML}{52514E}
+\definecolor{inkMuted}{HTML}{898781}
+\definecolor{gridLine}{HTML}{E1E0D9}
+\definecolor{axisLine}{HTML}{C3C2B7}
+\definecolor{statusGood}{HTML}{0CA30C}
+\definecolor{statusBad}{HTML}{D03B3B}
+% sequential (single hue) ramp, light -> dark
+\definecolor{seq100}{HTML}{CDE2FB}
+\definecolor{seq200}{HTML}{9EC5F4}
+\definecolor{seq300}{HTML}{6DA7EC}
+\definecolor{seq400}{HTML}{3987E5}
+\definecolor{seq500}{HTML}{256ABF}
+\definecolor{seq600}{HTML}{184F95}
+\definecolor{seq700}{HTML}{0D366B}
+
+% ---- diagram styles --------------------------------------------------
+\tikzset{
+  fig/.style={font=\small, >={Stealth[length=2mm]}},
+  proc/.style={draw=inkSecondary, rounded corners=2pt, align=center,
+    minimum height=8mm, inner xsep=2.5mm, inner ysep=1.5mm, fill=gray!8},
+  procHi/.style={proc, draw=vizBlue, fill=seq100, line width=0.8pt},
+  store/.style={draw=inkSecondary, align=center, minimum height=8mm,
+    inner xsep=2.5mm, fill=gray!18},
+  offline/.style={proc, dashed, fill=white},
+  decision/.style={draw=inkSecondary, diamond, aspect=2.2, align=center,
+    inner sep=1pt, fill=white, font=\scriptsize},
+  term/.style={draw=inkSecondary, rounded rectangle, align=center,
+    minimum height=7mm, inner xsep=3mm, fill=white},
+  flow/.style={->, thick, draw=inkSecondary},
+  flowHi/.style={->, very thick, draw=vizBlue},
+  note/.style={font=\scriptsize\itshape, text=inkSecondary, align=center},
+  lbl/.style={font=\scriptsize, text=inkSecondary, fill=white, inner sep=1pt},
+  lane/.style={draw=axisLine, fill=gray!3},
+  laneTitle/.style={font=\footnotesize\bfseries, text=inkSecondary, rotate=90,
+    anchor=south},
+  skillNode/.style={draw=inkSecondary, rounded corners=2pt, align=center,
+    font=\scriptsize, inner sep=1.2mm, minimum width=19mm, minimum height=8mm},
+  dagEdge/.style={-{Stealth[length=1.6mm]}, draw=inkMuted},
+}
+
+% ---- chart styles ----------------------------------------------------
+\pgfplotsset{
+  atlas/.style={
+    width=\linewidth, height=55mm,
+    axis lines*=left, axis line style={draw=axisLine},
+    tick style={draw=axisLine}, tick align=outside,
+    ticklabel style={font=\scriptsize, text=inkSecondary},
+    label style={font=\footnotesize, text=inkSecondary},
+    title style={font=\footnotesize\bfseries, text=inkPrimary},
+    legend style={font=\scriptsize, text=inkSecondary, draw=none, fill=none},
+    legend cell align=left,
+    grid=none, ymajorgrids, major grid style={draw=gridLine, solid},
+    every axis plot/.append style={line width=1pt},
+    scaled ticks=false,
+  },
+  atlasbar/.style={atlas, ybar, bar width=4.5mm, enlarge x limits=0.08,
+    ymin=0, every axis plot/.append style={line width=0pt}},
+}
+% Ink that stays readable on a given mastery fill.
+\newcommand{\masterytext}[1]{\ifdim #1pt<60pt inkPrimary\else white\fi}
+% A percentage mastery value -> ramp colour (used by the mastery maps).
+\newcommand{\masteryfill}[1]{%
+  \ifdim #1pt<20pt seq100\else
+  \ifdim #1pt<40pt seq200\else
+  \ifdim #1pt<60pt seq300\else
+  \ifdim #1pt<80pt seq400\else
+  \ifdim #1pt<95pt seq500\else seq700\fi\fi\fi\fi\fi}

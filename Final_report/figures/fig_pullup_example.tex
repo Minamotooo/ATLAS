@@ -1,0 +1,45 @@
+% Numbers are the engine's own output (MasteryUpdater, regular practice mode)
+% for one correct Apply-level answer on "Choose u and dv".
+\begin{figure}[htbp]
+  \centering
+  \newcommand{\pnode}[5]{% id, position, label, mastery %, gate text
+    \node[skillNode, minimum width=25mm, fill=\masteryfill{#4}, text=\masterytext{#4}]
+      (#1) at #2 {#3\\\textbf{#4\%}\enspace{\tiny #5}};}
+  \begin{tikzpicture}[fig]
+    \begin{scope}
+      \node[font=\footnotesize\bfseries, text=inkPrimary] at (0,1.05) {before};
+      \pnode{a1}{(0,0)}{Simplify expression}{62}{gate open}
+      \pnode{d1}{(-1.75,-1.55)}{Differentiate}{97}{locked}
+      \pnode{r1}{(1.5,-1.55)}{Recognise parts}{45}{locked}
+      \pnode{p1}{(1.5,-3.1)}{Choose $u$, $dv$}{30}{locked}
+      \pnode{i1}{(0,-4.65)}{Integrate by parts}{10}{locked}
+      \foreach \u/\v in {a1/r1, a1/d1, r1/p1, p1/i1, d1/i1} \draw[dagEdge] (\u) -- (\v);
+    \end{scope}
+    \begin{scope}[xshift=7.4cm]
+      \node[font=\footnotesize\bfseries, text=inkPrimary] at (0,1.05) {after one correct answer on ``Choose $u$, $dv$''};
+      \pnode{a2}{(0,0)}{Simplify expression}{68}{gate open}
+      \pnode{d2}{(-1.75,-1.55)}{Differentiate}{97}{locked}
+      \pnode{r2}{(1.5,-1.55)}{Recognise parts}{68}{locked}
+      \pnode{p2}{(1.5,-3.1)}{Choose $u$, $dv$}{68}{locked}
+      \pnode{i2}{(0,-4.65)}{Integrate by parts}{10}{locked}
+      \foreach \u/\v in {a2/r2, a2/d2, r2/p2, p2/i2, d2/i2} \draw[dagEdge] (\u) -- (\v);
+      \draw[flowHi] (p2.east) to[out=20, in=-20] node[lbl, right, text=vizBlue]{pull-up} (r2.east);
+      \draw[flowHi] (r2.north east) to[out=70, in=0] (a2.east);
+      \node[font=\scriptsize, text=statusGood, anchor=west] at ([xshift=1mm,yshift=-3mm]p2.south east) {$\checkmark$ answered};
+    \end{scope}
+    % mastery key
+    \begin{scope}[yshift=-6.0cm, xshift=1.2cm]
+      \foreach \c/\t [count=\i from 0] in {seq100/0--19, seq200/20--39, seq300/40--59, seq400/60--79, seq500/80--94, seq700/95--100}
+        { \fill[\c] (\i*1.25,0) rectangle ++(1.15,0.28);
+          \node[font=\tiny, text=inkSecondary, below] at (\i*1.25+0.575,0) {\t}; }
+      \node[font=\scriptsize, text=inkSecondary, anchor=east] at (-0.15,0.14) {mastery (\%)};
+    \end{scope}
+  \end{tikzpicture}
+  \caption[The policy on the integration-by-parts fragment]{The policy on the skill fragment of \Cref{fig:skill-fragment}. One
+    correct answer on ``Choose $u$ and $dv$'' raises it from 30\% to 68\% (Phase
+    1; its gate is locked because ``Recognise parts'' is below 95\%, so it
+    learns at $0.01$). Phase 2 then lifts both of its ancestors to the same
+    68\%. ``Integrate by parts'' is untouched: pull-up never flows downward, and
+    its gate stays locked until both of its parents reach 95\%.}
+  \label{fig:pullup-example}
+\end{figure}

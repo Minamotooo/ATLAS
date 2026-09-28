@@ -1,0 +1,77 @@
+% Data: live run of the Ideal Gas section, end-to-end check of 2026-09-28.
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[atlas, height=62mm, width=0.92\linewidth,
+        xmin=-0.3, xmax=12.6, ymin=0, ymax=104,
+        xtick={0,...,12}, xticklabels={}, ytick={0,20,40,60,80,95},
+        ylabel={mastery (\%)},
+        legend columns=3,
+        legend style={at={(0.5,-0.3)}, anchor=north,
+          /tikz/every even column/.append style={column sep=4mm}},
+        clip=false]
+      \fill[seq100] (axis cs:3.5,0) rectangle (axis cs:5.5,104);
+      \node[font=\scriptsize, text=seq600, align=center, anchor=north] at (axis cs:4.5,82) {spillover:\\2 questions\\on GL1};
+      \draw[inkMuted, line width=0.5pt] (axis cs:-0.3,95) -- (axis cs:12.6,95);
+      \addplot[vizBlue, mark=*, mark size=1.5pt] coordinates {(0,40.41) (1,40.41) (2,20.96) (3,20.96) (4,20.96) (5,20.96) (6,20.96) (7,60.81) (8,60.81) (9,94.42) (10,94.42) (11,99.65) (12,99.65)};
+      \addlegendentry{GL3 moles or mass}
+      \addplot[vizOrange, densely dashed, mark=square*, mark size=1.4pt] coordinates {(0,40.41) (1,40.41) (2,40.41) (3,20.96) (4,20.96) (5,20.96) (6,20.96) (7,20.96) (8,60.81) (9,60.81) (10,94.42) (11,94.42) (12,99.65)};
+      \addlegendentry{GL4 density}
+      \addplot[vizAqua, mark=triangle*, mark size=1.7pt] coordinates {(0,95.72) (1,95.72) (2,95.72) (3,95.72) (4,99.73) (5,99.98) (6,99.98) (7,99.98) (8,99.98) (9,99.98) (10,99.98) (11,99.98) (12,99.98)};
+      \addlegendentry{GL1 the prerequisite}
+      \node[font=\scriptsize, text=inkPrimary, anchor=north west, align=left] at (axis cs:0.15,86) {Rule A fires after answer 3:\\three misses all blame GL1};
+      \draw[inkSecondary, thin] (axis cs:2.2,75) -- (axis cs:3,23);
+      \node[font=\scriptsize, text=inkSecondary] at (axis cs:1,-7) {1};
+      \node[font=\scriptsize, text=statusBad] at (axis cs:1,-14) {$\times$};
+      \node[font=\tiny, text=inkSecondary] at (axis cs:1,-20.5) {GL2};
+      \node[font=\scriptsize, text=inkSecondary] at (axis cs:2,-7) {2};
+      \node[font=\scriptsize, text=statusBad] at (axis cs:2,-14) {$\times$};
+      \node[font=\tiny, text=inkSecondary] at (axis cs:2,-20.5) {GL3};
+      \node[font=\scriptsize, text=inkSecondary] at (axis cs:3,-7) {3};
+      \node[font=\scriptsize, text=statusBad] at (axis cs:3,-14) {$\times$};
+      \node[font=\tiny, text=inkSecondary] at (axis cs:3,-20.5) {GL4};
+      \node[font=\scriptsize, text=inkSecondary] at (axis cs:4,-7) {4};
+      \node[font=\scriptsize, text=statusGood] at (axis cs:4,-14) {$\checkmark$};
+      \node[font=\tiny, text=inkSecondary] at (axis cs:4,-20.5) {GL1};
+      \node[font=\scriptsize, text=inkSecondary] at (axis cs:5,-7) {5};
+      \node[font=\scriptsize, text=statusGood] at (axis cs:5,-14) {$\checkmark$};
+      \node[font=\tiny, text=inkSecondary] at (axis cs:5,-20.5) {GL1};
+      \node[font=\scriptsize, text=inkSecondary] at (axis cs:6,-7) {6};
+      \node[font=\scriptsize, text=statusGood] at (axis cs:6,-14) {$\checkmark$};
+      \node[font=\tiny, text=inkSecondary] at (axis cs:6,-20.5) {GL2};
+      \node[font=\scriptsize, text=inkSecondary] at (axis cs:7,-7) {7};
+      \node[font=\scriptsize, text=statusGood] at (axis cs:7,-14) {$\checkmark$};
+      \node[font=\tiny, text=inkSecondary] at (axis cs:7,-20.5) {GL3};
+      \node[font=\scriptsize, text=inkSecondary] at (axis cs:8,-7) {8};
+      \node[font=\scriptsize, text=statusGood] at (axis cs:8,-14) {$\checkmark$};
+      \node[font=\tiny, text=inkSecondary] at (axis cs:8,-20.5) {GL4};
+      \node[font=\scriptsize, text=inkSecondary] at (axis cs:9,-7) {9};
+      \node[font=\scriptsize, text=statusGood] at (axis cs:9,-14) {$\checkmark$};
+      \node[font=\tiny, text=inkSecondary] at (axis cs:9,-20.5) {GL3};
+      \node[font=\scriptsize, text=inkSecondary] at (axis cs:10,-7) {10};
+      \node[font=\scriptsize, text=statusGood] at (axis cs:10,-14) {$\checkmark$};
+      \node[font=\tiny, text=inkSecondary] at (axis cs:10,-20.5) {GL4};
+      \node[font=\scriptsize, text=inkSecondary] at (axis cs:11,-7) {11};
+      \node[font=\scriptsize, text=statusGood] at (axis cs:11,-14) {$\checkmark$};
+      \node[font=\tiny, text=inkSecondary] at (axis cs:11,-20.5) {GL3};
+      \node[font=\scriptsize, text=inkSecondary] at (axis cs:12,-7) {12};
+      \node[font=\scriptsize, text=statusGood] at (axis cs:12,-14) {$\checkmark$};
+      \node[font=\tiny, text=inkSecondary] at (axis cs:12,-20.5) {GL4};
+      \node[font=\tiny, text=inkSecondary, anchor=east] at (axis cs:0.4,-7) {answer};
+      \node[font=\tiny, text=inkSecondary, anchor=east] at (axis cs:0.4,-14) {result};
+      \node[font=\tiny, text=inkSecondary, anchor=east] at (axis cs:0.4,-20.5) {skill};
+    \end{axis}
+  \end{tikzpicture}
+  \caption[Live topic practice with spillover]{Topic practice on Ideal Gas Laws after the diagnostic of
+    \Cref{fig:diag-result}, against the live bank. The first three answers are
+    wrong, and every distractor chosen names GL1 as the missing prerequisite, so
+    spillover Rule A fires and injects two GL1 questions (shaded) --- although GL1
+    was already estimated at 96\%, since Rule A does not consult the
+    prerequisite's own estimate (Rule B does). Practice then
+    returns to the topic and cycles through the skills still below the 95\%
+    threshold (grey line); each correct answer moves one skill by one
+    Bloom-conditioned update. The session
+    ends by itself after twelve answers, when all five topic skills pass the
+    threshold (GL0 and GL2, already above it, are not plotted).}
+  \label{fig:practice-trace}
+\end{figure}

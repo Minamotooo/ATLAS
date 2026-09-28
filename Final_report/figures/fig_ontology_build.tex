@@ -1,0 +1,29 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[fig,
+      st/.style={proc, text width=31.5mm, font=\scriptsize, minimum height=16mm, align=center},
+      art/.style={store, text width=31.5mm, font=\scriptsize, minimum height=12mm}]
+    \node[st, fill=white] (c) at (0,0) {\textbf{1 Corpus}\\6 admission-test question banks and the HSC topic hierarchy; 4{,}474 parsed records};
+    \node[st] (x) at (4.1,0) {\textbf{2 Extraction}\\27 batches (Chemistry b01--09, Mathematics b10--18, Physics b19--27): skills and prerequisites per record};
+    \node[st] (k) at (8.2,0) {\textbf{3 Consolidation}\\retag topics, merge duplicates, split two-action skills, author foundations, backfill edges};
+    \node[st] (v) at (12.3,0) {\textbf{4 Validation}\\acyclic; every topic populated; no isolated skill; no unresolved reference};
+    \node[art] (src) at (12.3,-2.7) {ontology source\\\texttt{tuples.json}, \texttt{prereqs.json}\\1{,}688 skills, 1{,}743 edges};
+    \node[st, fill=seq100, draw=vizBlue] (b) at (8.2,-2.7) {\textbf{5 Compile}\\topic aliases and labels, cycle check, transitive reduction: 1{,}743 $\rightarrow$ 1{,}683 edges};
+    \node[art] (td) at (4.1,-2.7) {served catalogue\\\texttt{tree\_data/*.json}\\183 topics, 51 sections};
+    \node[st, fill=white] (use) at (0,-2.7) {loaded by the server at boot; skill and topic ids mirrored into the database};
+    \draw[flow] (c) -- (x);
+    \draw[flow] (x) -- (k);
+    \draw[flow] (k) -- (v);
+    \draw[flow] (v) -- (src);
+    \draw[flow] (src) -- (b);
+    \draw[flow] (b) -- (td);
+    \draw[flow] (td) -- (use);
+    \draw[flow, dashed] (v.north) -- ++(0,0.5) -| node[lbl, pos=0.25, above]{defects found: fix and re-validate} (k.north);
+  \end{tikzpicture}
+  \caption[How the skill graph was built]{How the skill graph was built. Stages 1--4 produced the ontology source
+    offline; stage 5 is a one-command, reproducible compile, so the served
+    catalogue is never edited by hand. Transitive reduction removes the 60 edges
+    already implied by a longer path, which the conjunctive gate
+    (\Cref{eq:gating}) requires.}
+  \label{fig:ontology-build}
+\end{figure}

@@ -1,0 +1,40 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[fig, node distance=5mm,
+      wide/.style={text width=74mm}]
+    \node[term] (in) {Response to a question on skill $s$ at Bloom level $b$};
+    \node[proc, wide, below=of in] (p1) {\textbf{Phase 1 --- Bloom-conditioned BKT}\\[1pt]
+      look up $P(G), P(S)$ for $b$ (\Cref{tab:bloom-params}); take $P(T)_s$
+      from the gate (\Cref{eq:gating}); apply the posterior
+      (\Cref{eq:posterior-correct,eq:posterior-incorrect}) and the transition
+      (\Cref{eq:transition}) to $s$};
+    \node[decision, below=of p1] (d) {correct?};
+    \node[procHi, wide, below=7mm of d] (p2) {\textbf{Phase 2 --- ancestor pull-up}\\[1pt]
+      breadth-first over every ancestor $a$ of $s$:
+      $P(a) \leftarrow \max\bigl(P(a), P(s)\bigr)$ (\Cref{eq:pullup})};
+    \node[proc, wide, below=of p2] (p3) {\textbf{Phase 3 --- gate refresh}\\[1pt]
+      recompute $P(T)$ for each direct child of $s$: $\tau_{\text{base}}$
+      only if \emph{every} parent is at $\ge 0.95$, otherwise $0.01$};
+    \node[store, below=of p3] (db) {changed skills written to \texttt{user\_skill}};
+
+    \draw[flow] (in) -- (p1);
+    \draw[flow] (p1) -- (d);
+    \draw[flowHi] (d) -- node[lbl, right=1mm]{yes} (p2);
+    \draw[flow] (p2) -- (p3);
+    \draw[flow] (p3) -- (db);
+    \draw[flow] (d.east) -- ++(38mm,0) coordinate (nb) |- (p3.east);
+    \node[note, text width=25mm, anchor=north west] at ([xshift=2mm,yshift=-2mm]nb)
+      {no: nothing is pushed down to prerequisites --- a miss is ambiguous};
+
+    \node[note, text width=29mm, anchor=east] at ([xshift=-3mm]p1.west) {the evidence moves $s$ itself};
+    \node[note, text width=29mm, anchor=east] at ([xshift=-3mm]p2.west) {a success is evidence its foundations are held};
+    \node[note, text width=29mm, anchor=east] at ([xshift=-3mm]p3.west) {a child's learning rate opens only once all of its parents are mastered};
+  \end{tikzpicture}
+  \caption[The three-phase mastery update]{The three-phase update that every response triggers. Phase 1 is
+    textbook BKT with Bloom-conditioned noise; Phase 2 lifts every ancestor to at
+    least the answered skill after a success; Phase 3 keeps each child's learning
+    rate in step with its parents. Only correct answers propagate, which is also
+    why a later wrong answer can break the ordering Phase 2 set
+    (\Cref{sec:revisions-ordering}).}
+  \label{fig:three-phase}
+\end{figure}

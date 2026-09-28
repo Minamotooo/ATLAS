@@ -1,0 +1,41 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[fig,
+      state/.style={circle, draw=inkSecondary, fill=gray!8, minimum size=19mm,
+                    align=center, font=\footnotesize},
+      obs/.style={draw=inkSecondary, rounded corners=2pt, fill=white,
+                  minimum width=21mm, minimum height=7mm, font=\footnotesize}]
+    % hidden layer
+    \node[state] (U) at (0,0) {Not\\learned};
+    \node[state, draw=vizBlue, fill=seq100, line width=0.8pt] (K) at (6.0,0) {Learned};
+    \draw[flowHi] (U) -- node[above=1pt, lbl]{learns: $P(T)$} (K);
+    \path[flow] (U) edge[loop above, min distance=9mm, in=120, out=60]
+      node[above, lbl]{$1-P(T)$} (U);
+    \path[flow] (K) edge[loop above, min distance=9mm, in=120, out=60]
+      node[above, lbl]{$1$ \;(no forgetting)} (K);
+    \node[lbl, anchor=east] (prior) at (-1.9,0.95) {start: $P(L_0)$};
+    \draw[flow, thin] (prior.south) to[out=-90, in=150] (U.north west);
+    % observed layer
+    \node[obs] (Uc) at (-1.35,-3.1) {correct};
+    \node[obs] (Uw) at (1.35,-3.1) {incorrect};
+    \node[obs] (Kc) at (4.65,-3.1) {correct};
+    \node[obs] (Kw) at (7.35,-3.1) {incorrect};
+    \draw[flow, thin] (U) -- node[lbl, pos=0.55, left=1mm]{guess $P(G)$} (Uc);
+    \draw[flow, thin] (U) -- node[lbl, pos=0.55, right=1mm]{$1-P(G)$} (Uw);
+    \draw[flow, thin] (K) -- node[lbl, pos=0.55, left=1mm]{$1-P(S)$} (Kc);
+    \draw[flow, thin] (K) -- node[lbl, pos=0.55, right=1mm]{slip $P(S)$} (Kw);
+    % layer labels
+    \node[note, anchor=west] at (8.6,0) {hidden:\\never observed};
+    \node[note, anchor=west] at (8.6,-3.1) {observed:\\the answer};
+    \begin{scope}[on background layer]
+      \fill[gray!4] (-2.6,-3.75) rectangle (10.6,-2.45);
+    \end{scope}
+  \end{tikzpicture}
+  \caption[BKT as a two-state hidden Markov model]{Bayesian Knowledge Tracing as a two-state hidden Markov model. The
+    engine never sees which state a learner is in, only the answers, so it keeps
+    $P(L)$, the probability of the \emph{Learned} state, and revises it with
+    \Cref{eq:posterior-correct,eq:posterior-incorrect,eq:transition} after every
+    response. Guess and slip are what make a single answer weak evidence: a
+    right answer may be a guess, and a wrong one may be a slip.}
+  \label{fig:bkt-hmm}
+\end{figure}

@@ -1,0 +1,27 @@
+% Data (end-to-end check, 2026-09-28): bank order (all 12223 questions on served skills)
+% vs. the order learners saw in the live end-to-end run (1489 served questions).
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[atlasbar, height=52mm, width=0.7\linewidth, bar width=6mm,
+        symbolic x coords={A,B,C,D}, xtick=data, enlarge x limits=0.2,
+        ylabel={share of questions (\%)}, ymax=48, clip=false,
+        xlabel={position of the correct option}, legend columns=2,
+        legend style={at={(0.5,1.04)}, anchor=south, /tikz/every even column/.append style={column sep=4mm}},
+        nodes near coords={\pgfmathprintnumber[fixed, precision=0]{\pgfplotspointmeta}},
+        nodes near coords style={font=\tiny, text=inkSecondary}]
+      \addplot[fill=axisLine, draw=none] coordinates {(A,35.2) (B,41.2) (C,17.8) (D,5.9)};
+      \addlegendentry{as stored in the bank}
+      \addplot[fill=vizBlue, draw=none] coordinates {(A,26.0) (B,25.7) (C,23.2) (D,25.1)};
+      \addlegendentry{as served after shuffling}
+      \draw[inkSecondary, line width=0.6pt] (axis cs:A,25) -- (axis cs:D,25);
+      \node[font=\scriptsize, text=inkSecondary, anchor=west] at ([xshift=9mm]axis cs:D,25) {uniform: 25\%};
+    \end{axis}
+  \end{tikzpicture}
+  \caption[Position of the correct option, stored and served]{Where the correct answer sits. In the bank, the key is A or B in
+    76\% of questions and D in only 6\%, so a learner who always picked B
+    would score 41\% without reading a question. Options are now shuffled
+    when a question is served (\Cref{sec:revisions-key}); across the 1{,}489 questions
+    served in the live run the key's position is close to uniform.}
+  \label{fig:answer-position}
+\end{figure}

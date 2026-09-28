@@ -1,0 +1,22 @@
+% Data: `git log` (ISO weeks of 2026).
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[atlasbar, height=46mm, width=0.95\linewidth, bar width=3.2mm,
+        xmin=13.4, xmax=39.6, ymax=31,
+        xtick={14,18,23,27,31,36}, xticklabels={Apr,May,Jun,Jul,Aug,Sep},
+        xlabel={week of 2026}, ylabel={commits},
+        nodes near coords, nodes near coords style={font=\tiny, text=inkSecondary},
+        enlarge x limits=false]
+      \addplot[fill=vizBlue, draw=none] coordinates {(14,27) (15,24) (28,1) (30,10) (36,16) (37,14) (38,25) (39,2)};
+      \node[font=\scriptsize, text=inkSecondary, align=left, anchor=west] at (axis cs:15.8,22) {$\leftarrow$ engine, API,\\\phantom{$\leftarrow$} first interface};
+      \node[font=\scriptsize, text=inkSecondary, align=left, anchor=west] at (axis cs:30.7,9) {$\leftarrow$ retrieval,\\\phantom{$\leftarrow$} first ontologies};
+      \node[font=\scriptsize, text=inkSecondary, align=right, anchor=east] at (axis cs:35.3,22) {generation pipeline, $\rightarrow$\\ontology rebuild, admin, report \phantom{$\rightarrow$}};
+    \end{axis}
+  \end{tikzpicture}
+  \caption[Version-control activity by week]{Version-control activity: 119 commits between 5 April and 26
+    September 2026. Work reached the shared repository in three bursts, so the
+    schedule in \Cref{fig:gantt} is the plan of record rather than a trace of the
+    commit history.}
+  \label{fig:commits}
+\end{figure}

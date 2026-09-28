@@ -1,0 +1,37 @@
+% Data: live question bank, full end-to-end check of 2026-09-28.
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[atlas, xbar stacked, height=38mm, width=0.7\linewidth, bar width=5mm,
+        xmin=0, xmax=100, ytick=data, symbolic y coords={Physics,Chemistry,Mathematics}, clip=false,
+        yticklabel style={font=\scriptsize, text=inkPrimary},
+        ymajorgrids=false, xmajorgrids, xlabel={(skill, Bloom level) specifications with at least one question (\%)},
+        enlarge y limits=0.35, legend columns=2,
+        legend style={at={(0.5,-0.52)}, anchor=north, /tikz/every even column/.append style={column sep=4mm}}]
+      \addplot[fill=vizBlue, draw=white, line width=1pt] coordinates {(74.2,Physics) (92.0,Chemistry) (95.7,Mathematics)};
+      \addlegendentry{covered}
+      \addplot[fill=gray!18, draw=white, line width=1pt] coordinates {(25.8,Physics) (8.0,Chemistry) (4.3,Mathematics)};
+      \addlegendentry{no question yet}
+      \node[font=\scriptsize, text=inkPrimary, anchor=west] at (axis cs:101,Physics) {\textbf{74\%}\enspace 1{,}585 of 2{,}136};
+      \node[font=\scriptsize, text=inkPrimary, anchor=west] at (axis cs:101,Chemistry) {\textbf{92\%}\enspace 4{,}890 of 5{,}316};
+      \node[font=\scriptsize, text=inkPrimary, anchor=west] at (axis cs:101,Mathematics) {\textbf{96\%}\enspace 2{,}562 of 2{,}676};
+    \end{axis}
+  \end{tikzpicture}\par\bigskip
+  \begin{tikzpicture}
+    \begin{axis}[atlasbar, height=44mm, width=0.62\linewidth, bar width=8mm,
+        symbolic x coords={0,1-5,6-10,11-20,21-50}, xtick=data,
+        xticklabels={0, 1--5, 6--10, 11--20, 21--50},
+        xlabel={questions per served skill}, ylabel={skills}, ymax=1200,
+        nodes near coords, nodes near coords style={font=\scriptsize, text=inkSecondary}]
+      \addplot[fill=vizBlue, draw=none] coordinates {(0,41) (1-5,325) (6-10,1048) (11-20,253) (21-50,21)};
+    \end{axis}
+  \end{tikzpicture}
+  \caption[Question-bank coverage of the served ontology]{The question bank against the served ontology. \emph{Top:} 9{,}037 of the
+    $1{,}688 \times 6 = 10{,}128$ generation specifications (89\%) hold at least one
+    verified question; Physics is the thin subject. \emph{Bottom:} a typical skill
+    has six to ten questions spread over its Bloom levels, and 41 skills (31 of them
+    in Physics) have none, which is what shortens some diagnostics
+    (\Cref{sec:revisions-length}). A further 7{,}692 questions in the database are keyed to
+    487 legacy skill identifiers and are unreachable by the engine.}
+  \label{fig:bank-coverage}
+\end{figure}

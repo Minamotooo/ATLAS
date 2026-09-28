@@ -1,0 +1,46 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+    \begin{groupplot}[atlas,
+        group style={group size=2 by 1, horizontal sep=14mm},
+        width=0.5\linewidth, height=62mm,
+        xmin=0, xmax=1, ymin=0, ymax=1,
+        xtick={0,0.25,0.5,0.75,1}, ytick={0,0.25,0.5,0.75,1},
+        xlabel={mastery before the answer, $P(L_n)$},
+        domain=0:1, samples=90, no markers]
+      % ---- after a correct answer
+      \nextgroupplot[title={after a \emph{correct} answer},
+                     ylabel={$P(L_n \mid \text{answer})$}]
+        \addplot[inkMuted, line width=0.4pt, forget plot] {x};
+        \addplot[vizBlue] {x*0.95/(x*0.95+(1-x)*0.30)};
+        \addplot[vizOrange, densely dashed] {x*0.88/(x*0.88+(1-x)*0.18)};
+        \addplot[vizAqua, dashdotted] {x*0.75/(x*0.75+(1-x)*0.05)};
+        \addplot[only marks, mark=*, mark size=1.8pt, draw=white, fill=inkPrimary, forget plot]
+          coordinates {(0.30,0.576) (0.30,0.865)};
+        \node[font=\scriptsize, text=inkPrimary, anchor=west] at (axis cs:0.03,0.95) {Create};
+        \node[font=\scriptsize, text=inkPrimary, anchor=west] at (axis cs:0.33,0.47) {Remember};
+        \node[font=\scriptsize, text=inkSecondary, anchor=west, align=left]
+          at (axis cs:0.50,0.17) {one correct answer\\from 0.30 (dots):\\Remember $\rightarrow$ 0.58\\Create $\rightarrow$ 0.87};
+        \node[font=\scriptsize, text=inkMuted, rotate=45, anchor=north] at (axis cs:0.80,0.80) {no change};
+      % ---- after an incorrect answer
+      \nextgroupplot[title={after an \emph{incorrect} answer},
+                     legend style={at={(0.02,0.98)}, anchor=north west, fill=white}]
+        \addplot[inkMuted, line width=0.4pt, forget plot] {x};
+        \addplot[vizBlue] {x*0.05/(x*0.05+(1-x)*0.70)};
+        \addlegendentry{Remember ($G{=}0.30$, $S{=}0.05$)}
+        \addplot[vizOrange, densely dashed] {x*0.12/(x*0.12+(1-x)*0.82)};
+        \addlegendentry{Apply ($G{=}0.18$, $S{=}0.12$)}
+        \addplot[vizAqua, dashdotted] {x*0.25/(x*0.25+(1-x)*0.95)};
+        \addlegendentry{Create ($G{=}0.05$, $S{=}0.25$)}
+        \node[font=\scriptsize, text=inkMuted, rotate=45, anchor=north] at (axis cs:0.62,0.62) {no change};
+    \end{groupplot}
+  \end{tikzpicture}
+  \caption[Effect of the Bloom level on a single update]{How far one answer moves the estimate depends on the question's Bloom
+    level (\Cref{eq:posterior-correct,eq:posterior-incorrect}, parameters from
+    \Cref{tab:bloom-params}; the learning transition is omitted to isolate the
+    effect). A correct answer on a Create item is strong evidence because it is
+    hard to guess; the same answer on a Remember item is weaker because nearly a
+    third of non-knowers ($P(G) = 0.30$) would pick it anyway. Wrong answers show
+    the mirror image: a miss on a Create item is partly forgiven as a slip.}
+  \label{fig:bloom-update}
+\end{figure}

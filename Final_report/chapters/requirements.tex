@@ -15,7 +15,7 @@
     \toprule
     Stakeholder & Expectation & Conflict with other stakeholders \\
     \midrule
-    Admission candidate (primary user) & Shortest path to a higher score; immediate practice; questions that feel like the real examination; no wasted time. & Wants to start practising at once; the system wants a 30-question diagnostic first. Wants encouragement; the most informative question is the one they are about 50--70\% likely to fail. \\
+    Admission candidate (primary user) & Shortest path to a higher score; immediate practice; questions that feel like the real examination; no wasted time. & Wants to start practising at once; the system wants a diagnostic of up to 30 questions first. Wants encouragement; the most informative question is the one they are about 50--70\% likely to fail. \\
     Teacher / coaching instructor & Syllabus fidelity, factually correct content, results that map to chapters they teach. & Thinks in chapters; the engine thinks in skills that cut across chapters. Requires content correctness guarantees that a generative pipeline cannot fully give. \\
     Project team (developer) & A system that is demonstrably correct, maintainable, and finishable within one academic session. & Correctness argues for hand-authored content and expert-reviewed ontology; the schedule argues for automation. \\
     Supervisor / examiner & Evidence of engineering depth, rigour, and honest evaluation. & An honest evaluation reports unvalidated components, which conflicts with the team's interest in presenting a finished product. \\
@@ -48,9 +48,14 @@
     FR12 & Questions render Bangla text with embedded \LaTeX{} mathematics correctly. & O6, O7 \\
     FR13 & The question bank is generated from the source corpus and aligned to skill, Bloom level and topic. & O6 \\
     FR14 & The interface is available in English and Bangla. & O7 \\
+    FR15 & An administrator can curate the skill graph: add, edit and delete skills and prerequisite edges, with every edit checked for cycles. & O1 \\
+    FR16 & An administrator can view cohort-level mastery statistics and export all per-skill performance data as CSV or JSON. & O7 \\
     \bottomrule
   \end{tabularx}
 \end{table}
+
+\Cref{fig:use-cases} shows the same requirements from the side of the two
+actors who use the system.
 
 \subsection{Non-functional requirements}
 
@@ -73,6 +78,8 @@
     \bottomrule
   \end{tabularx}
 \end{table}
+
+\input{figures/fig_use_cases}
 
 \subsection{Constraints}
 

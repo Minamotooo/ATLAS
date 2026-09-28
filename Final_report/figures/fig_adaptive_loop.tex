@@ -1,0 +1,26 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[fig, node distance=6mm,
+      big/.style={proc, text width=48mm}]
+    \node[proc, text width=30mm, fill=white] (u) at (0,0) {\textbf{Learner} $u$};
+    \node[big] (inf) at (5.4,1.55) {\textbf{Infer}\\[1pt]{\scriptsize update $P(L_{u,s})$ for the answered
+      skill, then propagate along the prerequisite graph}};
+    \node[big] (sel) at (5.4,-1.55) {\textbf{Select}\\[1pt]{\scriptsize choose the next skill at the
+      knowledge frontier, a Bloom level one band above, and a question}};
+    \node[store, text width=30mm] (graph) at (11.3,1.55) {skill graph $(S,E)$\\{\scriptsize acyclic, depth 9}};
+    \node[store, text width=30mm] (bank) at (11.3,-1.55) {question bank\\{\scriptsize tagged with skill, Bloom, topic}};
+    \draw[flowHi] (u.north) |- node[lbl, pos=0.75, above]{response $(q_t, c_t)$} (inf.west);
+    \draw[flowHi] (inf.south) -- node[lbl, right=1pt]{posterior over all $s \in S$} (sel.north);
+    \draw[flowHi] (sel.west) -| node[lbl, pos=0.25, below]{next question $q_{t+1}$} (u.south);
+    \draw[flow] (graph) -- (inf);
+    \draw[flow] (bank) -- (sel);
+    \node[note, text width=40mm, anchor=north] at (5.4,-3.0)
+      {output to the learner: a mastery map --- which skill, specifically, is missing};
+  \end{tikzpicture}
+  \caption[The problem as a closed inference--selection loop]{The problem as a closed loop. Each response is weak, noisy evidence
+    about one skill; the inference step turns it into a posterior over every skill
+    in the graph, and the selection step spends the next question where that
+    posterior is least certain. The two stores are the fixed inputs defined in
+    \Cref{sec:problem-statement}.}
+  \label{fig:adaptive-loop}
+\end{figure}

@@ -1,0 +1,33 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[fig,
+      st/.style={proc, text width=30mm, font=\scriptsize, minimum height=21mm},
+      gate/.style={procHi, text width=30mm, font=\scriptsize, minimum height=21mm}]
+    \node[st] (r) at (0,0) {\textbf{Retrieve}\\multilingual MiniLM-L12 embeddings over the corpus; the 5 closest passages};
+    \node[st] (g) at (4.0,0) {\textbf{Generate}\\Gemini 3.5 Flash-Lite writes a new MCQ: 4 options, one key, an explanation per option, each distractor tagged with a missing prerequisite};
+    \node[gate] (v) at (8.0,0) {\textbf{Verify}\\Gemini 3.1 Flash-Lite: is it on-topic for the \emph{exact} skill? does a blind re-solve agree with the key?};
+    \node[store, text width=30mm, font=\scriptsize, minimum height=21mm] (l) at (12.2,0)
+      {\textbf{Load}\\dry run and dedup; written to \texttt{questions}, options and distractor tags};
+    \node[store, text width=30mm, font=\scriptsize] (c) at (0,2.55)
+      {\textbf{Corpus}: six HSC question banks, parsed and escape-repaired};
+    \node[term, font=\scriptsize, text width=62mm] (spec) at (6.0,2.55)
+      {for each of the $1{,}688 \times 6 = 10{,}128$ (skill, Bloom) specifications:
+       skill id and description, Bloom level, topic, prerequisite chain};
+    \draw[flow] (c) -- (r);
+    \draw[flow] (r) -- (g);
+    \draw[flow] (g) -- (v);
+    \draw[flowHi] (v) -- node[lbl, above]{pass} (l);
+    \draw[flow] (spec.south -| g.north) -- (g.north);
+    \node[font=\scriptsize, text=statusBad, anchor=north] (rej) at (8.0,-1.95) {fail: discarded};
+    \draw[flow] (v.south) -- (rej.north);
+    \node[note, text width=140mm, anchor=north] at (6.1,-2.55)
+      {18 pooled API keys; rate limits tracked per (key, model); progress checkpointed so an
+       interrupted run resumes. Outcome: 9{,}037 of the 10{,}128 specifications hold at least one
+       verified item (\Cref{fig:bank-coverage}).};
+  \end{tikzpicture}
+  \caption[The question-generation pipeline]{The question-generation pipeline. The decisive stage is verification
+    by a different model that sees the question and options but not the marked
+    answer: an item is kept only if that independent solve agrees with the key
+    and the item tests the exact target skill.}
+  \label{fig:generation-pipeline}
+\end{figure}

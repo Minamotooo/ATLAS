@@ -17,12 +17,12 @@
     \midrule
     O1 & Achieved & 1{,}688 skills, 1{,}743 edges, all 183 syllabus topics populated; validated acyclic, depth 9, zero isolated skills, zero unresolved references; adopted as the served catalogue \\
     O2 & Achieved & Bloom-conditioned BKT implemented from the equations; exercised on every response by the verification harness \\
-    O3 & Achieved in implementation & Ancestor pull-up and conjunctive gating implemented; the ancestor-ordering invariant is checked explicitly and holds. Whether the resulting estimates match real learner knowledge is untested \\
-    O4 & Achieved & The diagnostic sizes itself to the section under test, runs to completion, and releases the mastery gate; the ancestor invariant holds afterwards \\
-    O5 & Achieved & Topic practice runs to the mastery threshold; spillover fires on the intended evidence \\
-    O6 & \textbf{Partially achieved} & Pipeline built, validated, and producing verified items; coverage incomplete, and reset by adoption --- the $1{,}688 \times 6 = 10{,}128$ specification space is largely ungenerated because existing items are keyed to legacy skill identifiers \\
-    O7 & Achieved & Seven-route web client with diagnostic, practice and mastery views, bilingual, with Bangla and \LaTeX{} rendering \\
-    O8 & Achieved & 18-check end-to-end harness, credential-free, passing completely \\
+    O3 & Achieved in implementation & Ancestor pull-up and conjunctive gating implemented; pull-up verified after every correct answer, but the ordering is not kept through later wrong answers (4--8\% of edges invert). Whether the estimates match real learner knowledge is untested \\
+    O4 & Achieved & The diagnostic stays inside the section under test, builds on stored mastery, runs to completion in all 51 sections and releases the mastery gate; eight sections end short of their advertised length \\
+    O5 & Achieved & Topic practice runs to the mastery threshold; spillover fires on the intended evidence, 84 times in the live check \\
+    O6 & \textbf{Largely achieved} & 12{,}223 verified questions on the served skills; 9{,}037 of the $1{,}688 \times 6 = 10{,}128$ specifications (89\%) covered, Physics 74\%; 41 skills without a question; 8.3\% of served questions have rendering defects \\
+    O7 & Achieved & Ten-route web client (eight learner routes, two administrator) with diagnostic, practice and mastery views, bilingual, with Bangla and \LaTeX{} rendering \\
+    O8 & Achieved & 29-check credential-free harness passing completely, and a live end-to-end check across all 51 sections (\Cref{sec:live-check}) \\
     \bottomrule
   \end{tabularx}
 \end{table}
@@ -49,18 +49,21 @@ Stated plainly, and in the order that matters:
   \item \textbf{No fitted parameters.} All model parameters are pedagogical
     priors; the literature is clear that fitted and individualised parameters do
     better \cite{yudelson2013individualized,baker2008more}.
-  \item \textbf{Question-bank coverage is the binding limitation.} The rebuilt
-    ontology has been adopted as the served catalogue, which is the right
-    outcome structurally but converts the project's structural deficit into a
-    coverage one: existing items are keyed to legacy skill identifiers, so the
-    $10{,}128$-specification space against the served ontology is largely
-    ungenerated. The system can now diagnose more finely than it can ask.
+  \item \textbf{Question-bank quality now limits more than its size.} The
+    generation run covers 89\% of the specification space, but Physics lags at
+    74\%, 41 skills have no question, 8.3\% of served questions render wrongly,
+    and 7{,}692 legacy-keyed questions are unreachable.
+  \item \textbf{Open engine defects found by the end-to-end check}
+    (\Cref{sec:revisions}): the ancestor ordering is not kept through wrong
+    answers; fallback items are credited to the target skill and level; some
+    diagnostics end early; one section's diagnostic can unlock another; and
+    question selection has a long latency tail in thin sections.
   \item \textbf{The ontology has not been reviewed by domain experts} --- 32
     disconnected fragments and a body of hand-authored chemistry edges await a
     chemist and a physicist.
-  \item \textbf{Production-readiness gaps:} no password authentication,
-    in-memory session state, wide-open CORS, no accessibility audit, no
-    performance benchmark.
+  \item \textbf{Production-readiness gaps:} no password authentication (the
+    administrator pages trust a username header), in-memory session state,
+    wide-open CORS, no accessibility audit, no load test.
 \end{enumerate}
 
 \subsection{Future work}
@@ -71,13 +74,22 @@ server-side sessions; persistent session state; CORS restriction. These are
 small, well-understood, and are the difference between a demonstrator and
 something that may lawfully hold real learner data.
 
-\textbf{Completing the knowledge base --- the largest outstanding item.} The
-rebuilt ontology is adopted and the generator has been repointed at it; what
-remains is the budgeted generation run itself across the
-$1{,}688 \times 6 = 10{,}128$ specification space, prioritised by the topics a
-learner reaches first rather than run uniformly. Alongside it, domain-expert
-review of the 32 disconnected fragments and the hand-authored edges, since a
-wrong prerequisite edge propagates silently under \Cref{eq:pullup}.
+\textbf{Closing the engine defects the end-to-end check found.} Credit each
+answer to the skill and Bloom level of the item actually served; record
+diagnostic completion per learner and section instead of inferring it from any
+stored mastery; size each diagnostic by the skills that can be asked about;
+bound the fallback ladder's queries; and decide how a wrong answer on an
+ancestor should interact with the ordering its descendants imply
+(\Cref{sec:revisions}).
+
+\textbf{Completing the knowledge base.} The generation run has covered 89\% of
+the $1{,}688 \times 6 = 10{,}128$ specifications; what remains is the other 1{,}091,
+Physics first, and re-keying or regenerating the 7{,}692 legacy questions. The
+bank also needs a repair pass for the 1{,}015 questions that render wrongly, and
+its distractor tags need pointing at served skills, since 38\% still name legacy
+ones. Alongside it, domain-expert review of the 32 disconnected fragments and the
+hand-authored edges, since a wrong prerequisite edge propagates silently under
+\Cref{eq:pullup}.
 
 \textbf{Establishing efficacy --- the most important item.} A controlled study
 with real candidates: does the system's mastery estimate predict performance on

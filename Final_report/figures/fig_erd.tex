@@ -1,0 +1,45 @@
+% Columns and foreign keys verified against the live database (PostgREST
+% embedded-select probes); row counts from the full end-to-end check.
+\begin{figure}[htbp]
+  \centering
+  % \entity[extra style]{id}{position}{width}{table name}{body}
+  \newcommand{\entity}[6][]{%
+    \node[draw=inkSecondary, fill=white, rounded corners=1.5pt, inner sep=1.2mm, align=left,
+          anchor=north, text width=#4, font=\scriptsize, #1] (#2) at #3
+      {\textbf{\texttt{#5}}\\[-0.6mm]{\color{axisLine}\rule{#4}{0.4pt}}\\[-0.4mm]\ttfamily #6};}
+  \newcommand{\rows}[1]{{\rmfamily\tiny\color{inkMuted}#1}}
+  \newcommand{\fk}{{\rmfamily\tiny\ FK}}
+  \begin{tikzpicture}[fig]
+    \entity{users}{(0,0)}{30mm}{users}{\underline{user\_id}\\user\_name\\created\_at\\\rows{23 rows}}
+    \entity{us}{(0,-3.0)}{30mm}{user\_skill}{\underline{user\_id}\fk\\\underline{skill\_id}\fk\\mastery\_level\\\rows{285 rows}}
+    \entity{skills}{(4.05,-3.0)}{30mm}{skills}{\underline{skill\_id}\\skill\_description\\created\_at\\\rows{2{,}212 rows (1{,}688 served)}}
+    \entity{q}{(8.1,-3.0)}{31mm}{questions}{\underline{id}\\skill\_id\fk\\bloom\_level\\topic\fk{} {\rmfamily\tiny(a code)}\\question\_stem\\\rows{19{,}915 rows}}
+    \entity{qo}{(8.1,-7.1)}{31mm}{question\_options}{\underline{id}\\question\_id\fk\\option\_label {\rmfamily\tiny A--D}\\option\_text\\is\_correct\\explanation\\\rows{79{,}660 rows}}
+    \entity{omp}{(4.05,-7.1)}{32mm}{option\_missing\_prereq.}{\underline{option\_id}\fk\\\underline{missing\_skill\_id}\fk\\\rows{51{,}166 rows}}
+    \entity{ot}{(12.0,0)}{30mm}{ontology\_topics}{\underline{topic\_code}\\topic\_label\\\rows{257 rows (183 served)}}
+    \entity[dashed]{ost}{(12.0,-3.0)}{32mm}{ontology\_skill\_topics}{topic\_code\fk\\skill\_id\fk\\\rows{567 rows, all legacy}}
+    \entity[dashed]{ose}{(4.05,0)}{30mm}{ontology\_skill\_edges}{source\_skill\_id\fk\\target\_skill\_id\fk\\\rows{666 rows, legacy}}
+    \begin{scope}[-{Stealth[length=1.6mm]}, draw=inkSecondary]
+      \draw (us.north) -- (users.south);
+      \draw (us.east) -- (skills.west);
+      \draw (q.west) -- (skills.east);
+      \draw (qo.north) -- (q.south);
+      \draw (omp.east) -- (qo.west);
+      \draw (omp.north) -- (skills.south);
+      \draw (q.north) |- (ot.west);
+      \draw (ost.north) -- (ot.south);
+      \draw (ost.west) -- ++(-2mm,0) |- ($(skills.north east)+(-4mm,4mm)$) -- ($(skills.north east)+(-4mm,0)$);
+      \draw (ose.south) -- (skills.north);
+    \end{scope}
+    \node[note, anchor=north west, text width=33mm, align=left] at (-1.6,-5.2)
+      {arrows run from a foreign key to the table it references;\\
+       dashed tables mirror the legacy 430-skill ontology and are not synced with the
+       served one (\Cref{sec:revisions-mirror})};
+  \end{tikzpicture}
+  \caption[Database schema with foreign keys and row counts]{The database schema, with row counts from the end-to-end check.
+    Learner state is a single table, \texttt{user\_skill}; the transition
+    probability is recomputed on every request rather than stored. Every
+    question, option and distractor tag is tied to a skill by a foreign key, so
+    the bank cannot reference a skill the database does not know.}
+  \label{fig:erd}
+\end{figure}

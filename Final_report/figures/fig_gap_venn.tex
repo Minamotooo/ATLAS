@@ -1,0 +1,34 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[fig]
+    \def\r{2.35}
+    \coordinate (A) at (90:1.45);
+    \coordinate (B) at (210:1.45);
+    \coordinate (C) at (330:1.45);
+    \begin{scope}[blend group=multiply]
+      \fill[seq100] (A) circle (\r);
+      \fill[gray!14] (B) circle (\r);
+      \fill[gray!7] (C) circle (\r);
+    \end{scope}
+    \draw[inkSecondary] (A) circle (\r) (B) circle (\r) (C) circle (\r);
+    \node[font=\footnotesize\bfseries, text=inkPrimary, align=center] at (90:4.25)
+      {fine-grained model of \emph{this} syllabus};
+    \node[font=\footnotesize\bfseries, text=inkPrimary, align=center, anchor=north east] at (215:3.75)
+      {interpretable per-skill inference\\over prerequisite structure};
+    \node[font=\footnotesize\bfseries, text=inkPrimary, align=center, anchor=north west] at (325:3.75)
+      {Bangla content with\\typeset mathematics};
+    % placements (\Cref{tab:existing})
+    \node[font=\scriptsize, text=inkSecondary, align=center] at (90:2.55) {(no surveyed\\system)};
+    \node[font=\scriptsize, text=inkSecondary, align=center] at (222:2.55) {ALEKS,\\Knewton-style\\engines, pyBKT};
+    \node[font=\scriptsize, text=inkSecondary, align=center] at (314:2.75) {10 Minute School,\\Shikho, printed\\banks, coaching};
+    \node[draw=vizBlue, fill=white, line width=0.9pt, rounded corners=2pt, font=\scriptsize\bfseries,
+          text=vizBlue] at (0,0) {ATLAS};
+    \node[font=\scriptsize, text=inkSecondary, align=center] at (4.9,-0.4) {outside all three:\\Quizlet, Anki,\\Google Forms};
+  \end{tikzpicture}
+  \caption[The gap no surveyed solution fills]{The gap identified in \Cref{sec:related}. Each surveyed category (\Cref{tab:existing})
+    covers at most one of the three capabilities the problem needs: platforms
+    with the content lack the model, platforms with the model lack the content
+    and the language, and no system models the HSC syllabus at skill
+    granularity. ATLAS targets the intersection.}
+  \label{fig:gap-venn}
+\end{figure}

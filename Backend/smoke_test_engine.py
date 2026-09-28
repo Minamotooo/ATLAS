@@ -408,7 +408,47 @@ def main() -> int:
           f"{len(view['map']['nodes'])} nodes / {len(view['map']['edges'])} edges")
     check("table rows carry subject", all("subject" in r for r in view["table"]))
 
-    print("\n=== 6. topic practice + spillover ===")
+    # An all-correct diagnostic leaves the whole topic mastered, so topic practice
+    # and spillover need a second learner who got some answers wrong.
+    print("\n=== 6. mixed answers: pull-up per answer ===")
+    mixed_id = "22222222-2222-2222-2222-222222222222"
+    db.tables["users"].append({"user_id": mixed_id, "user_name": "smoke-mixed"})
+    start2 = server.start_diagnostic(
+        server.DiagnosticStartRequest(user_id=mixed_id, section_id=section["id"])
+    )
+    sess2 = start2["session_id"]
+    run2 = server.DIAGNOSTIC_RUNS[sess2]
+    pullup_breaks, n = [], 0
+    while True:
+        nxt = server.get_next_diagnostic_question(sess2)
+        if nxt.get("completed") or not nxt.get("question"):
+            break
+        opts = run2.current_question_row["question_options"]
+        want_correct = n % 2 == 0
+        label = next(o["option_label"] for o in opts if bool(o.get("is_correct")) == want_correct)
+        answered_skill = run2.current_spec.skill_id
+        res = server.submit_diagnostic_answer(
+            sess2, server.DiagnosticAnswerRequest(selected_option_label=label)
+        )
+        n += 1
+        if res["is_correct"]:
+            # Phase 2's guarantee: right after a correct answer, no ancestor is below it.
+            m = {sid: run2.db_fetch(mixed_id, sid)["mastery"] for sid in [answered_skill] +
+                 [a.skill_id for a in server.SKILL_TREE.get_all_ancestors(answered_skill)]}
+            pullup_breaks += [a for a, v in m.items() if v + 1e-6 < m[answered_skill]]
+        if res["completed"]:
+            break
+    check("after each correct answer, every ancestor is at least as high",
+          not pullup_breaks, f"{len(pullup_breaks)} breaks" if pullup_breaks else f"{n} answers checked")
+    mm = server._mastery_map_for_user(mixed_id, section_skills)
+    inversions = [(e["source"], e["target"]) for e in skill_edges
+                  if e["source"] in mm and e["target"] in mm and mm[e["source"]] + 1e-6 < mm[e["target"]]]
+    # Not a pass/fail check: a later wrong answer on an ancestor can leave it below a
+    # descendant (Final report, the ordering-invariant deviation). Printed so it stays visible.
+    print(f"  [INFO] ordering inversions after a mixed-answer diagnostic: {len(inversions)}")
+
+    print("\n=== 7. topic practice + spillover ===")
+    user_id = mixed_id
     tp = server.start_topic_practice(
         server.TopicPracticeStartRequest(
             user_id=user_id, section_id=section["id"], topic_code=code
