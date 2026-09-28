@@ -490,10 +490,15 @@ debt and is recorded as one.
 
 \textbf{Decision.} Adopt, then generate --- the order finally taken. The
 generation run against the enlarged specification space has since been carried
-out and has repaid most of the debt: 89\% of the specifications now hold a
-verified question (\Cref{fig:bank-coverage}). What remains is concentrated in
-Physics, in 41 skills with no question, and in 7{,}692 legacy-keyed questions
-that the engine cannot reach; \Cref{sec:future} carries it.
+out and has repaid most of the debt: 89\% of the specifications held a verified
+question as measured for the evaluation in \Cref{sec:live-check}
+(\Cref{fig:bank-coverage}), rising to 94.1\% (9{,}535 of 10{,}128 specifications,
+12{,}343 questions, only 10 of 1{,}688 skills still with none) as the generation
+run continued past that measurement --- the pipeline is designed to be resumable
+and was left running rather than stopped at the figure quoted for evaluation.
+Coverage figures elsewhere in this chapter are the evaluation snapshot and are
+not restated here. What remains is concentrated in Physics, and in 7{,}692
+legacy-keyed questions that the engine cannot reach; \Cref{sec:future} carries it.
 
 The subsections that follow record the deviations found by the full end-to-end
 check of \Cref{sec:live-check}. The first three were fixed during that check; the
@@ -593,7 +598,12 @@ diagnostic in one section can mark others as done. In the live check ten of the
 51 sections appeared diagnosed before their own diagnostic, which skips the
 diagnostic prompt and opens practice on mostly untested skills.
 \textbf{Status.} Open; the remedy is to record completion explicitly for each
-learner and section.
+learner and section. This and the ordering defect of
+\Cref{sec:revisions-ordering} share one root cause: the system has no explicit,
+persisted notion of ``this learner has diagnosed this section,'' so both a
+skill's rank relative to its descendants and a section's completion state are
+inferred from mastery values that pull-up can move for reasons unrelated to
+either --- a single completion record per learner and section would close both.
 
 \subsection{Rendering defects in generated content (found, open)}
 \label{sec:revisions-render}
