@@ -38,3 +38,7 @@ data-gen/audit_report.json
 
 # Corpus repair backups
 *.orig
+
+# Logs
+
+gemini_run_*.log
