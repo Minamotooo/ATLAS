@@ -25,11 +25,11 @@ chart is the plan of record rather than a trace of the commit history.
 \begin{figure}[htbp]
   \centering
   \begin{ganttchart}[
-      hgrid, vgrid, x unit=0.78cm,
+      hgrid, vgrid, x unit=1.1cm,
       time slot format=isodate-yearmonth, time slot unit=month,
       title label font=\small, bar label font=\small,
       bar/.style={fill=gray!40}
-    ]{2026-03}{2026-12}
+    ]{2026-03}{2026-09}
     \gantttitlecalendar{year, month=shortname} \\
     \ganttbar{Requirements \& research}{2026-03}{2026-04} \\
     \ganttbar{Engine design \& BKT core}{2026-04}{2026-06} \\
@@ -37,8 +37,8 @@ chart is the plan of record rather than a trace of the commit history.
     \ganttbar{API \& frontend}{2026-06}{2026-08} \\
     \ganttbar{Content pipeline}{2026-07}{2026-09} \\
     \ganttbar{Ontology rebuild}{2026-09}{2026-09} \\
-    \ganttbar{Testing \& hardening}{2026-08}{2026-10} \\
-    \ganttbar{Report \& presentation}{2026-10}{2026-12}
+    \ganttbar{Testing \& hardening}{2026-08}{2026-09} \\
+    \ganttbar{Report \& presentation}{2026-09}{2026-09}
   \end{ganttchart}
   \caption{Project schedule. The ontology rebuild in September was not in the
     original plan; it was forced by Investigation 2 (\Cref{sec:investigation}).}
@@ -219,7 +219,7 @@ the expert review before any user-facing launch.
     Aurchi Chowdhury (2105083) & Backend API \& sessions & FastAPI service, session lifecycle for diagnostic and practice, the tiered question search, and the spillover rules. \\
     Omar Abdur Razzaque (2105094) & Content pipeline & Corpus parsing and repair, retrieval index, the generate-then-verify generation pipeline, and the database loader with its validation pass. \\
     Sakif Naieb Raiyan (2105065) & Frontend & React client, the question-answer flow, mastery visualisation, bilingual interface, and mathematical rendering. \\
-    Rubaiyat -E- Zaman (I2105104) & Ontology & Skill extraction from the corpus, the ontology compiler, the full-corpus rebuild and its editorial pass, and the structural validators. \\
+    Rubaiyat -E- Zaman (2105104) & Ontology & Skill extraction from the corpus, the ontology compiler, the full-corpus rebuild and its editorial pass, and the structural validators. \\
     \bottomrule
   \end{tabularx}
 \end{table}
