@@ -468,7 +468,7 @@ export default function SectionMasteryPage() {
   return (
     <div className="min-h-screen bg-atlas-50/50">
       {/* Page header */}
-      <div className="bg-gradient-to-r from-atlas-700 via-atlas-800 to-atlas-900 text-white">
+      <div className="hero-band">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
           <Link
             to={`/courses/${courseId}/sections/${sectionId}`}
@@ -841,6 +841,8 @@ export default function SectionMasteryPage() {
                     {/* ── Cytoscape canvas ── */}
                     <div
                       ref={cyRef}
+                      data-native-cursor
+                      data-lenis-prevent
                       style={{ flex: 1, background: "#fafbfc", minWidth: 0 }}
                     />
 

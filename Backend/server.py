@@ -1479,6 +1479,130 @@ def get_catalog():
     return PLATFORM_CATALOG
 
 
+# Cached for a few minutes: counting the question bank pages through ~20k rows.
+_PUBLIC_STATS_TTL_SEC = 600.0
+_PUBLIC_STATS_CACHE: Dict[str, object] = {"at": 0.0, "data": None}
+
+
+def _count_served_questions() -> int:
+    """Questions whose skill is in the served ontology (legacy-keyed items excluded)."""
+    served = set(SKILL_DESCRIPTIONS)
+    total, offset, page_size = 0, 0, 1000
+    while True:
+        result = (db.table("questions").select("skill_id").order("id")
+                  .range(offset, offset + page_size - 1).execute())
+        data, error = _extract_supabase_payload(result)
+        if error:
+            raise HTTPException(status_code=500, detail=f"Could not count questions: {error}")
+        rows = data or []
+        total += sum(1 for row in rows if row.get("skill_id") in served)
+        if len(rows) < page_size:
+            return total
+        offset += page_size
+
+
+@app.get("/stats/public")
+def get_public_stats():
+    """Real platform figures for the landing page (no learner data beyond a count)."""
+    now = time.time()
+    cached = _PUBLIC_STATS_CACHE.get("data")
+    if cached is not None and now - float(_PUBLIC_STATS_CACHE["at"]) < _PUBLIC_STATS_TTL_SEC:
+        return cached
+
+    courses = PLATFORM_CATALOG.get("courses", [])
+    sections = [s for c in courses for s in c.get("sections", []) if s.get("enabled")]
+    learners_result = db.table("users").select("user_id", count="exact").limit(1).execute()
+    data = {
+        "subjects": len(courses),
+        "sections": len(sections),
+        "topics": sum(len(s.get("topics", [])) for s in sections),
+        "skills": len(SKILL_DESCRIPTIONS),
+        "skills_by_subject": {
+            subject: sum(1 for sid in SKILL_DESCRIPTIONS if SKILL_SUBJECTS.get(sid) == subject)
+            for subject in sorted({c.get("subject") for c in courses if c.get("subject")})
+        },
+        "prerequisite_edges": len(SKILL_EDGES),
+        "questions": _count_served_questions(),
+        "learners": int(getattr(learners_result, "count", 0) or 0),
+    }
+    _PUBLIC_STATS_CACHE.update(at=now, data=data)
+    return data
+
+
+@app.on_event("startup")
+def _warm_public_stats() -> None:
+    """Fill the stats cache off the request path so the landing page never waits on it."""
+    import threading
+
+    def _run():
+        try:
+            get_public_stats()
+        except Exception as exc:  # the endpoint recomputes on demand if this fails
+            print(f"WARN: could not pre-compute public stats: {exc}")
+
+    threading.Thread(target=_run, daemon=True).start()
+
+
+@app.get("/users/{user_id}/progress")
+def get_user_progress(user_id: str):
+    """
+    One learner's progress across the whole catalogue in a single request.
+
+    A section counts as diagnosed by the same rule _section_state uses, so the
+    courses dashboard and the section pages always agree. Mastery for a section
+    is the mean over all of its skills (an untouched skill counts as 0); course and
+    overall figures average the skills of diagnosed sections only.
+    """
+    stored = _stored_mastery_for_user(user_id)
+    out_courses: List[dict] = []
+    overall_values: List[float] = []
+    mastered_total = 0
+    first_unlocked: Optional[dict] = None
+
+    for course in PLATFORM_CATALOG.get("courses", []):
+        course_values: List[float] = []
+        out_sections: List[dict] = []
+        for section in course.get("sections", []):
+            if not section.get("enabled"):
+                continue
+            skill_ids = _section_skill_ids(section)
+            progress = SECTION_PROGRESS.get(_progress_key(user_id, section["id"]), {})
+            has_records = any(sid in stored for sid in skill_ids)
+            diagnosed = bool(progress.get("diagnostic_completed", has_records))
+            values = [stored.get(sid, 0.0) for sid in skill_ids]
+            mastered = sum(1 for v in values if v >= MASTERY_NOTIFY_THRESHOLD)
+            if diagnosed and values:
+                course_values += values
+                mastered_total += mastered
+                if first_unlocked is None:
+                    first_unlocked = {"course_id": course["id"], "section_id": section["id"]}
+            out_sections.append({
+                "section_id": section["id"],
+                "diagnosed": diagnosed,
+                "skills": len(skill_ids),
+                "skills_mastered": mastered if diagnosed else 0,
+                "mastery": round(sum(values) / len(values), 1) if diagnosed and values else None,
+            })
+        overall_values += course_values
+        out_courses.append({
+            "course_id": course["id"],
+            "subject": course.get("subject"),
+            "sections_total": len(out_sections),
+            "sections_diagnosed": sum(1 for s in out_sections if s["diagnosed"]),
+            "mastery": round(sum(course_values) / len(course_values), 1) if course_values else None,
+            "sections": out_sections,
+        })
+
+    return {
+        "user_id": user_id,
+        "courses": out_courses,
+        "active_courses": sum(1 for c in out_courses if c["sections_diagnosed"] > 0),
+        "average_mastery": round(sum(overall_values) / len(overall_values), 1) if overall_values else None,
+        "skills_mastered": mastered_total,
+        "first_unlocked_section": first_unlocked,
+    }
+
+
 @app.get("/users/{user_name}/")
 def get_user(user_name: str):
     result = (

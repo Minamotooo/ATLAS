@@ -367,7 +367,7 @@ export default function AdminOntologyPage() {
 
   return (
     <div className="min-h-screen bg-atlas-50/50">
-      <div className="bg-gradient-to-r from-atlas-700 via-atlas-800 to-atlas-900 text-white">
+      <div className="hero-band">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
           <h1 className="font-display text-2xl font-bold">Ontology Admin</h1>
           <p className="text-atlas-200 text-sm mt-1">
@@ -479,7 +479,7 @@ export default function AdminOntologyPage() {
                 <div className="px-2 py-1 text-xs text-gray-400">
                   {topicGraph.topics.length} topic(s) in {subject} · click a topic to drill in
                 </div>
-                <div ref={cyContainerRef} style={{ width: '100%', height: 'min(65vh, 560px)' }} />
+                <div ref={cyContainerRef} data-native-cursor data-lenis-prevent style={{ width: '100%', height: 'min(65vh, 560px)' }} />
               </div>
             )
           ) : graphError ? (
@@ -495,7 +495,7 @@ export default function AdminOntologyPage() {
                 {selectedTopics.length > 1 ? ` across ${selectedTopics.length} selected topics` : ''}
                 {graph.count > graph.core_count && ` · ${graph.count - graph.core_count} shown faded as cross-topic context`}
               </div>
-              <div ref={cyContainerRef} style={{ width: '100%', height: 'min(65vh, 560px)' }} />
+              <div ref={cyContainerRef} data-native-cursor data-lenis-prevent style={{ width: '100%', height: 'min(65vh, 560px)' }} />
             </div>
           )}
         </div>

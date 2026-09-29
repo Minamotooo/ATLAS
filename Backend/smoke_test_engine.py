@@ -408,6 +408,14 @@ def main() -> int:
           f"{len(view['map']['nodes'])} nodes / {len(view['map']['edges'])} edges")
     check("table rows carry subject", all("subject" in r for r in view["table"]))
 
+    prog = server.get_user_progress(user_id)
+    course_prog = next(c for c in prog["courses"] if c["course_id"] == course["id"])
+    check("progress summary reflects the diagnosed section",
+          prog["active_courses"] >= 1 and course_prog["sections_diagnosed"] >= 1
+          and prog["average_mastery"] is not None
+          and prog["first_unlocked_section"] == {"course_id": course["id"], "section_id": section["id"]},
+          f"avg {prog['average_mastery']}%, {prog['skills_mastered']} skills mastered")
+
     # An all-correct diagnostic leaves the whole topic mastered, so topic practice
     # and spillover need a second learner who got some answers wrong.
     print("\n=== 6. mixed answers: pull-up per answer ===")

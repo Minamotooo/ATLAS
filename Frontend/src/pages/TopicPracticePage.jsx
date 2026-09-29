@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth, buildApiUrl } from '../context/AuthContext';
 import MathText from '../components/MathText';
+import { useStudyTimer } from '../lib/studyTime';
 import {
   AlertCircle,
   ArrowLeft,
@@ -22,6 +23,8 @@ export default function TopicPracticePage() {
   const { courseId, sectionId, topicCode } = useParams();
   const { lang } = useLanguage();
   const { user, loading } = useAuth();
+  // Counts active time on this page toward the dashboard's weekly study time.
+  useStudyTimer(user?.user_id);
   const navigate = useNavigate();
 
   const [section, setSection] = useState(null);
@@ -326,7 +329,7 @@ export default function TopicPracticePage() {
 
   return (
     <div className="min-h-screen bg-atlas-50/50">
-      <div className="bg-gradient-to-r from-atlas-700 via-atlas-800 to-atlas-900 text-white">
+      <div className="hero-band">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8">
           <Link to={`/courses/${courseId}/sections/${sectionId}`} className="inline-flex items-center gap-1.5 text-white/80 hover:text-white text-sm mb-4 transition-colors">
             <ArrowLeft size={16} />

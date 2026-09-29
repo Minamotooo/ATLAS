@@ -193,7 +193,7 @@ export default function LessonsPage() {
 
   return (
     <div className="min-h-screen bg-atlas-50/50">
-      <div className="bg-gradient-to-r from-atlas-700 via-atlas-800 to-atlas-900 text-white relative overflow-hidden">
+      <div className="hero-band relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-8">
           <Link to="/courses" className="inline-flex items-center gap-1.5 text-white/80 hover:text-white text-sm mb-4 transition-colors">
