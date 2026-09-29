@@ -42,3 +42,7 @@ data-gen/audit_report.json
 # Logs
 
 gemini_run_*.log
+
+# LaTeX audit suite (local only)
+data-gen/latex_audit/
+Signatures/
