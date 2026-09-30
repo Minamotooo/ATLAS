@@ -43,6 +43,6 @@ data-gen/audit_report.json
 
 gemini_run_*.log
 
-# Signatures (kept local, not pushed)
+# LaTeX audit suite (local only)
+data-gen/latex_audit/
 Signatures/
-Final_report/figures/signatures/

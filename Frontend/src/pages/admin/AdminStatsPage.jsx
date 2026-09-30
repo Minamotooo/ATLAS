@@ -178,7 +178,7 @@ export default function AdminStatsPage() {
 
   return (
     <div className="min-h-screen bg-atlas-50/50">
-      <div className="bg-gradient-to-r from-atlas-700 via-atlas-800 to-atlas-900 text-white">
+      <div className="hero-band">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
           <div className="flex items-center justify-between flex-wrap gap-3">
             <div>
@@ -229,7 +229,7 @@ export default function AdminStatsPage() {
               </button>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid sm:grid-cols-3 gap-4">
               <StatCard
                 label="Total students"
                 value={overview.total_students}
@@ -245,11 +245,6 @@ export default function AdminStatsPage() {
                 label="Skills in ontology"
                 value={overview.total_skills_in_ontology}
                 sub={`${overview.by_subject.length} subjects tracked`}
-              />
-              <StatCard
-                label="Export"
-                value=" "
-                sub={null}
               />
             </div>
 

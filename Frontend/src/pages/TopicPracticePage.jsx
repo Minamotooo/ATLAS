@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth, buildApiUrl } from '../context/AuthContext';
 import MathText from '../components/MathText';
+import { useStudyTimer } from '../lib/studyTime';
 import {
   AlertCircle,
   ArrowLeft,
@@ -22,6 +23,8 @@ export default function TopicPracticePage() {
   const { courseId, sectionId, topicCode } = useParams();
   const { lang } = useLanguage();
   const { user, loading } = useAuth();
+  // Counts active time on this page toward the dashboard's weekly study time.
+  useStudyTimer(user?.user_id);
   const navigate = useNavigate();
 
   const [section, setSection] = useState(null);
@@ -326,7 +329,7 @@ export default function TopicPracticePage() {
 
   return (
     <div className="min-h-screen bg-atlas-50/50">
-      <div className="bg-gradient-to-r from-atlas-700 via-atlas-800 to-atlas-900 text-white">
+      <div className="hero-band">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8">
           <Link to={`/courses/${courseId}/sections/${sectionId}`} className="inline-flex items-center gap-1.5 text-white/80 hover:text-white text-sm mb-4 transition-colors">
             <ArrowLeft size={16} />
@@ -386,12 +389,9 @@ export default function TopicPracticePage() {
 
             {question && (
               <div className="mt-5 rounded-xl border border-atlas-200 bg-white p-4 sm:p-5">
-                <div className="flex items-center justify-between gap-3 mb-3">
-                  <p className="text-xs font-semibold tracking-wide uppercase text-atlas-700">
-                    Question {currentQuestionNumber}
-                  </p>
-                  <p className="text-xs text-gray-500">Session: {practiceRun?.sessionId}</p>
-                </div>
+                <p className="text-xs font-semibold tracking-wide uppercase text-atlas-700 mb-3">
+                  Question {currentQuestionNumber}
+                </p>
 
                 <div className="mb-4 rounded-lg bg-gray-50 border border-gray-200 px-3 py-2 text-xs text-gray-600">
                   <span className="font-semibold text-gray-700">Mode:</span> {question.delivery_mode || 'topic'} | <span className="font-semibold text-gray-700">Skill:</span> {question.skill_id} | <span className="font-semibold text-gray-700">Bloom:</span> {question.bloom_level}
@@ -416,6 +416,10 @@ export default function TopicPracticePage() {
                       >
                         <span className="font-semibold mr-2">{option.label}.</span>
                         <MathText text={option.text} />
+                        {/* Only sent when the backend runs with DEMO_SHOW_ANSWERS=1 */}
+                        {option.is_correct && (
+                          <span aria-hidden="true" className="ml-2 inline-block h-2 w-2 rounded-full bg-emerald-500 align-middle" />
+                        )}
                       </button>
                     );
                   })}

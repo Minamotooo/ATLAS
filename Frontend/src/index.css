@@ -1,100 +1,333 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-    font-size: clamp(16px, 1.1vw + 8px, 20px);
-  }
-  
-  body {
-    @apply font-sans text-gray-800 bg-atlas-50/30 antialiased;
-    min-height: 100vh;
-  }
+/* =========================================================================
+   Design tokens. Tailwind carries the same values (tailwind.config.js);
+   these are for hand-written CSS, inline styles and the WebGL scene.
+   ========================================================================= */
+:root {
+  /* colour */
+  --ink: 23 19 46;            /* #17132E  text, primary fills */
+  --ink-soft: 58 53 90;       /* #3A355A */
+  --ink-muted: 88 83 122;     /* #58537A  secondary text, 6.5:1 on paper */
+  --paper: 251 248 243;       /* #FBF8F3  page */
+  --paper-deep: 243 237 227;  /* #F3EDE3 */
+  --violet: 85 51 240;        /* #5533F0  brand */
+  --violet-deep: 68 36 204;   /* #4424CC */
+  --gold: 245 168 0;          /* #F5A800 */
+  --gold-soft: 255 209 92;    /* #FFD15C */
+  --coral: 255 90 54;         /* #FF5A36 */
+  --mint: 14 165 125;         /* #0EA57D */
 
-  ::selection {
-    @apply bg-atlas-200 text-atlas-900;
-  }
+  /* spacing (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --section-y: clamp(4.5rem, 3rem + 6vw, 9rem);
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+
+  /* radius */
+  --radius-sm: 0.75rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 1.75rem;
+  --radius-xl: 2.5rem;
+  --radius-pill: 999px;
+
+  /* shadow */
+  --shadow-soft: 0 1px 2px rgb(var(--ink) / 0.06), 0 8px 24px -8px rgb(var(--ink) / 0.12);
+  --shadow-lift: 0 2px 4px rgb(var(--ink) / 0.06), 0 24px 48px -16px rgb(var(--ink) / 0.22);
+  --shadow-glow: 0 0 0 1px rgb(var(--violet) / 0.18), 0 12px 40px -10px rgb(var(--violet) / 0.45);
+
+  /* type scale (fluid) */
+  --text-xs: clamp(0.75rem, 0.72rem + 0.12vw, 0.8125rem);
+  --text-sm: clamp(0.875rem, 0.84rem + 0.15vw, 0.9375rem);
+  --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --text-lg: clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
+
+  /* motion: every duration and easing in the app comes from here or
+     src/motion/tokens.js, which holds the same values for GSAP */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);          /* expo out: entrances */
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);      /* quart in-out: curtains */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);   /* playful overshoot: presses */
+  --dur-fast: 180ms;
+  --dur-base: 420ms;
+  --dur-slow: 900ms;
 }
 
-@layer components {
-  .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-atlas-600 to-atlas-700 text-white font-semibold rounded-xl shadow-md hover:shadow-lg hover:from-atlas-700 hover:to-atlas-800 transition-all duration-200 active:scale-95;
+@layer base {
+  html {
+    font-size: clamp(16px, 0.9vw + 9px, 19px);
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
   }
+
+  /* Lenis owns smooth scrolling when motion is allowed. */
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+  .lenis.lenis-stopped { overflow: hidden; }
+
+  body {
+    @apply font-sans antialiased;
+    color: rgb(var(--ink));
+    background-color: rgb(var(--paper));
+    min-height: 100vh;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  /* Headings: display face, tight tracking. Bangla falls back to Noto Serif Bengali. */
+  h1, h2, h3 { text-wrap: balance; }
+  .font-display { font-optical-sizing: auto; letter-spacing: -0.02em; }
+
+  ::selection { background: rgb(var(--gold-soft)); color: rgb(var(--ink)); }
+
+  /* One visible, high-contrast focus ring everywhere (keyboard users only). */
+  :focus { outline: none; }
+  :focus-visible {
+    outline: 3px solid rgb(var(--violet));
+    outline-offset: 3px;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0 6px rgb(var(--gold-soft) / 0.75);
+  }
+
+  img { max-width: 100%; height: auto; }
+}
+
+/* =========================================================================
+   Components. These class names were already used across the app, so
+   restyling them here carries the new system into every page.
+   ========================================================================= */
+@layer components {
+  .btn {
+    @apply relative inline-flex items-center justify-center gap-2 font-semibold select-none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius-pill);
+    transition:
+      transform var(--dur-fast) var(--ease-spring),
+      box-shadow var(--dur-base) var(--ease-out),
+      background-color var(--dur-base) var(--ease-out),
+      color var(--dur-base) var(--ease-out),
+      border-color var(--dur-base) var(--ease-out);
+    will-change: transform;
+  }
+  .btn:active { transform: scale(0.96); }
+  .btn:disabled, .btn[aria-disabled='true'] { @apply cursor-not-allowed opacity-60; transform: none; }
+
+  /* Ink pill with a gold sheen that sweeps across on hover. */
+  .btn-primary {
+    @apply btn text-white overflow-hidden;
+    background: rgb(var(--ink));
+    box-shadow: var(--shadow-soft);
+  }
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 30%, rgb(var(--gold-soft) / 0.55) 50%, transparent 70%);
+    transform: translateX(-120%);
+    transition: transform var(--dur-slow) var(--ease-out);
+    pointer-events: none;
+  }
+  .btn-primary:hover { background: rgb(var(--violet-deep)); box-shadow: var(--shadow-glow); }
+  .btn-primary:hover::after { transform: translateX(120%); }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-atlas-700 font-semibold rounded-xl border-2 border-atlas-200 hover:border-atlas-400 hover:bg-atlas-50 transition-all duration-200 active:scale-95;
+    @apply btn;
+    color: rgb(var(--ink));
+    background: rgb(255 255 255 / 0.85);
+    border: 2px solid rgb(var(--ink) / 0.14);
   }
+  .btn-secondary:hover { border-color: rgb(var(--ink)); background: #fff; box-shadow: var(--shadow-soft); }
 
   .btn-accent {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-warm-400 to-warm-500 text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-95;
+    @apply btn;
+    color: rgb(var(--ink));
+    background: linear-gradient(135deg, rgb(var(--gold-soft)), rgb(var(--gold)));
+    box-shadow: 0 10px 28px -12px rgb(var(--gold) / 0.8);
   }
+  .btn-accent:hover { box-shadow: 0 16px 36px -12px rgb(var(--gold) / 0.95); }
 
   .card {
-    @apply bg-white rounded-2xl shadow-soft border border-gray-100 overflow-hidden transition-all duration-300;
+    @apply overflow-hidden;
+    background: #fff;
+    border: 1px solid rgb(var(--ink) / 0.08);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    transition:
+      transform var(--dur-base) var(--ease-out),
+      box-shadow var(--dur-base) var(--ease-out),
+      border-color var(--dur-base) var(--ease-out);
   }
 
+  /* Lift plus a cursor-following spotlight (--mx/--my set by SpotlightCard). */
   .card-hover {
-    @apply card hover:shadow-lg hover:-translate-y-1 hover:border-atlas-200;
+    @apply card relative;
   }
+  .card-hover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 0%), rgb(var(--violet) / 0.09), transparent 45%);
+    opacity: 0;
+    transition: opacity var(--dur-base) var(--ease-out);
+    pointer-events: none;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+    border-color: rgb(var(--violet) / 0.35);
+  }
+  .card-hover:hover::before { opacity: 1; }
 
   .input-field {
-    @apply w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 focus:border-atlas-400 focus:ring-2 focus:ring-atlas-100 focus:outline-none transition-all duration-200;
+    @apply w-full outline-none;
+    padding: 0.85rem 1.1rem;
+    background: #fff;
+    color: rgb(var(--ink));
+    border: 2px solid rgb(var(--ink) / 0.14);
+    border-radius: var(--radius-sm);
+    transition: border-color var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+  }
+  .input-field::placeholder { color: rgb(var(--ink-muted) / 0.85); }
+  .input-field:hover { border-color: rgb(var(--ink) / 0.3); }
+  .input-field:focus { border-color: rgb(var(--violet)); box-shadow: 0 0 0 5px rgb(var(--violet) / 0.14); }
+
+  /* Page header band used by the app pages: a deep ink mesh with grain. */
+  .hero-band {
+    position: relative;
+    isolation: isolate;
+    color: #fff;
+    background:
+      radial-gradient(60% 120% at 12% 0%, rgb(var(--violet) / 0.9), transparent 60%),
+      radial-gradient(45% 90% at 88% 20%, rgb(var(--coral) / 0.55), transparent 60%),
+      radial-gradient(40% 80% at 70% 110%, rgb(var(--gold) / 0.45), transparent 60%),
+      rgb(var(--ink));
+  }
+  .hero-band::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: var(--grain);
+    opacity: 0.18;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-semibold uppercase;
+    font-size: var(--text-xs);
+    letter-spacing: 0.16em;
+    color: rgb(var(--violet-deep));
+  }
+
+  /* Tracking breaks Bangla conjunct shaping; keep it for Latin only. */
+  :lang(bn) .eyebrow, :lang(bn) [class*='tracking-['] { letter-spacing: 0.01em; }
+
+  .chip {
+    @apply inline-flex items-center gap-2 font-semibold;
+    padding: 0.4rem 0.9rem;
+    font-size: var(--text-sm);
+    border-radius: var(--radius-pill);
+    background: rgb(255 255 255 / 0.8);
+    border: 1px solid rgb(var(--ink) / 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  .glass {
+    background: rgb(255 255 255 / 0.72);
+    border: 1px solid rgb(255 255 255 / 0.9);
+    box-shadow: var(--shadow-lift);
+    backdrop-filter: blur(16px) saturate(1.3);
+    -webkit-backdrop-filter: blur(16px) saturate(1.3);
+  }
+
+  /* A gradient word inside a display heading. */
+  .text-shine {
+    /* background-clip: text only paints inside the box, so give italic
+       overhangs and ascenders room (the negative margin keeps the layout) */
+    padding: 0.12em 0.08em;
+    margin: -0.12em -0.08em;
+    background: linear-gradient(100deg, rgb(var(--violet)) 0%, rgb(var(--coral)) 55%, rgb(var(--gold)) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .container-wide {
+    width: 100%;
+    max-width: 88rem;
+    margin-inline: auto;
+    padding-inline: var(--gutter);
   }
 }
 
 @layer utilities {
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 0.5s ease-out forwards;
-  }
-
-  .animate-slide-up {
-    animation: slideUp 0.5s ease-out forwards;
-  }
+  /* The landing page's "scroll" cue only where the hero has room for it. */
+  .scroll-cue { display: none; }
+  @media (min-width: 640px) and (min-height: 820px) { .scroll-cue { display: flex; } }
+  .animate-float { animation: float 7s var(--ease-in-out) infinite; }
+  .animate-fade-in { animation: fadeIn var(--dur-base) var(--ease-out) both; }
+  .animate-slide-up { animation: slideUp var(--dur-slow) var(--ease-out) both; }
+  .scrollbar-hide { scrollbar-width: none; }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(0, -12px, 0) rotate(-1.5deg); }
 }
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translate3d(0, 24px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes marquee { to { transform: translate3d(-50%, 0, 0); } }
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.7; }
+  100% { transform: scale(2.2); opacity: 0; }
 }
 
-::-webkit-scrollbar {
-  width: 6px;
+/* Paper grain: a tiny inline SVG noise tile, fixed over the page. */
+:root {
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  background-image: var(--grain);
+  opacity: 0.045;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
+/* ---- custom cursor (only when html.has-cursor is set: fine pointer, motion allowed) ---- */
+html.has-cursor, html.has-cursor * { cursor: none; }
+html.has-cursor :is(input, textarea, select, [contenteditable='true'], canvas, [data-native-cursor], [data-native-cursor] *) {
+  cursor: auto !important;
 }
+html.has-cursor :is(input[type='text'], input[type='search'], textarea) { cursor: text !important; }
 
-::-webkit-scrollbar-thumb {
-  background: #c7d2fe;
-  border-radius: 9999px;
+/* ---- scrollbar ---- */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: rgb(var(--paper-deep)); }
+::-webkit-scrollbar-thumb { background: rgb(var(--ink) / 0.35); border-radius: 999px; border: 2px solid rgb(var(--paper-deep)); }
+::-webkit-scrollbar-thumb:hover { background: rgb(var(--violet)); }
+
+/* ---- reduced motion: keep state changes, drop movement ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .card-hover:hover { transform: none; }
 }
-
-::-webkit-scrollbar-thumb:hover {
-  background: #818cf8;
-}
-

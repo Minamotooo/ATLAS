@@ -33,6 +33,13 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
+      // The codebase does not use PropTypes (no prop-types dependency).
+      'react/prop-types': 'off',
     },
+  },
+  {
+    // React Three Fiber elements take three.js props (geometry, material, ...).
+    files: ['src/three/**/*.{js,jsx}'],
+    rules: { 'react/no-unknown-property': 'off' },
   },
 ]
