@@ -229,7 +229,7 @@ export default function AdminStatsPage() {
               </button>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid sm:grid-cols-3 gap-4">
               <StatCard
                 label="Total students"
                 value={overview.total_students}
@@ -245,11 +245,6 @@ export default function AdminStatsPage() {
                 label="Skills in ontology"
                 value={overview.total_skills_in_ontology}
                 sub={`${overview.by_subject.length} subjects tracked`}
-              />
-              <StatCard
-                label="Export"
-                value=" "
-                sub={null}
               />
             </div>
 

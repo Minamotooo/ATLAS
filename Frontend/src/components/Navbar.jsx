@@ -3,7 +3,6 @@ import { useLanguage } from "../context/LanguageContext";
 import { useAuth } from "../context/AuthContext";
 import { Menu, X, Globe, Lock, LogOut } from "lucide-react";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { fetchProgress } from "../lib/progress";
 
 const LOCKED_TITLE = "Complete diagnostic to unlock mastery";
 
@@ -16,38 +15,11 @@ export default function Navbar() {
   const { t, lang, toggleLang } = useLanguage();
   const { user, signOut } = useAuth();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [masteryLinkPath, setMasteryLinkPath] = useState("");
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const isMasteryRoute = location.pathname.includes("/mastery");
   const isCoursesRoute =
     location.pathname.startsWith("/courses") && !isMasteryRoute;
-
-  // One request (GET /users/{id}/progress) instead of one per section. The
-  // first diagnosed section is exactly the first one whose mastery view unlocks.
-  useEffect(() => {
-    let ignore = false;
-    if (!user?.user_id) {
-      setMasteryLinkPath("");
-      return undefined;
-    }
-    fetchProgress(user.user_id, { fresh: true })
-      .then((progress) => {
-        if (ignore) return;
-        const first = progress?.first_unlocked_section;
-        setMasteryLinkPath(
-          first
-            ? `/courses/${first.course_id}/sections/${first.section_id}/mastery`
-            : "",
-        );
-      })
-      .catch(() => {
-        if (!ignore) setMasteryLinkPath("");
-      });
-    return () => {
-      ignore = true;
-    };
-  }, [user?.user_id, location.pathname]);
 
   // Close the mobile sheet on navigation and on Escape.
   useEffect(() => setMobileOpen(false), [location.pathname]);
@@ -70,12 +42,14 @@ export default function Navbar() {
     { to: "/courses", label: t("nav.courses"), active: isCoursesRoute },
   ];
   if (user) {
+    // /mastery shows every diagnosed section, with its own empty state.
     links.push({
-      to: masteryLinkPath,
+      to: "/mastery",
       label: t("courses.mastery"),
       active: isMasteryRoute,
-      locked: !masteryLinkPath,
     });
+  }
+  if (user?.is_admin) {
     links.push({
       to: "/admin/ontology",
       label: "Admin",
@@ -107,7 +81,7 @@ export default function Navbar() {
     const ro = new ResizeObserver(measure);
     ro.observe(list);
     return () => ro.disconnect();
-  }, [activeIndex, lang, links.length, masteryLinkPath]);
+  }, [activeIndex, lang, links.length]);
 
   const itemClass = (active) =>
     `relative z-10 rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-300 ${

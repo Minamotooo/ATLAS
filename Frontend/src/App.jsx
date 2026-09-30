@@ -13,6 +13,7 @@ import SignupPage from './pages/SignupPage';
 
 // The graph-heavy pages pull in Cytoscape; load them only when visited.
 const SectionMasteryPage = lazy(() => import('./pages/SectionMasteryPage'));
+const MasteryPage = lazy(() => import('./pages/MasteryPage'));
 const AdminOntologyPage = lazy(() => import('./pages/admin/AdminOntologyPage'));
 const AdminStatsPage = lazy(() => import('./pages/admin/AdminStatsPage'));
 
@@ -37,6 +38,7 @@ export default function App() {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/signup" element={<SignupPage />} />
                 <Route path="/courses" element={<CoursesPage />} />
+                <Route path="/mastery" element={<MasteryPage />} />
                 <Route path="/courses/:courseId" element={<LessonsPage />} />
                 <Route path="/courses/:courseId/sections/:sectionId" element={<SectionPage />} />
                 <Route path="/courses/:courseId/sections/:sectionId/mastery" element={<SectionMasteryPage />} />

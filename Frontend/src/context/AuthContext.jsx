@@ -17,7 +17,18 @@ export function AuthProvider({ children }) {
     try {
       const saved = localStorage.getItem(storageKey);
       if (saved) {
-        setUser(JSON.parse(saved));
+        const savedUser = JSON.parse(saved);
+        setUser(savedUser);
+        // Re-read the account so fields added since login (is_admin) stay current.
+        fetch(buildApiUrl(`/users/${encodeURIComponent(savedUser.user_name)}/`))
+          .then((response) => (response.ok ? response.json() : null))
+          .then((fresh) => {
+            if (fresh?.user_id === savedUser.user_id) {
+              localStorage.setItem(storageKey, JSON.stringify(fresh));
+              setUser(fresh);
+            }
+          })
+          .catch(() => {});
       }
     } catch (error) {
       console.warn('Failed to read saved auth user', error);

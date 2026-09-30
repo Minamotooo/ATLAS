@@ -27,7 +27,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from supabase import create_client
 
-from admin_ontology import router as admin_ontology_router
+from admin_ontology import _admin_usernames, router as admin_ontology_router
 from admin_stats import router as admin_stats_router
 from bloom_taxonomy import BloomLevel, get_level_from_mastery
 from diagnostic import DiagnosticSession, QuestionSpec
@@ -64,6 +64,8 @@ SKILL_SUBJECTS_PATH = TREE_DIR / "skill_subjects.json"
 # Target diagnostic length. A run is capped at the section's skill count, since
 # DiagnosticSession tests each skill at most once (see _diagnostic_length_for_section).
 DIAGNOSTIC_QUESTION_COUNT = int(os.getenv("DIAGNOSTIC_QUESTION_COUNT", "30"))
+# Demo aid: send each option's is_correct with the question (see _question_payload).
+DEMO_SHOW_ANSWERS = os.getenv("DEMO_SHOW_ANSWERS", "0") == "1"
 DIAGNOSTIC_MIN_QUESTION_COUNT = 5
 MASTERY_NOTIFY_THRESHOLD = 95.0
 TOPIC_PRACTICE_MASTERY_THRESHOLD = 95.0
@@ -1016,11 +1018,15 @@ def _question_payload(row: dict, topic_code_to_display: Dict[str, str]) -> dict:
     # missing prerequisites stay server-side: the correct option is the one with no
     # missing prerequisites, so sending them would give the answer away.
     # The explanation for the chosen option comes back in the answer response.
+    # DEMO_SHOW_ANSWERS=1 is the one exception: it marks the correct option so a
+    # presenter can steer a live demo. Never enable it for real students.
     options = row.get("question_options") or []
-    normalized_options = [
-        {"label": option.get("option_label"), "text": option.get("option_text")}
-        for option in sorted(options, key=lambda item: item.get("option_label", ""))
-    ]
+    normalized_options = []
+    for option in sorted(options, key=lambda item: item.get("option_label", "")):
+        item = {"label": option.get("option_label"), "text": option.get("option_text")}
+        if DEMO_SHOW_ANSWERS:
+            item["is_correct"] = bool(option.get("is_correct"))
+        normalized_options.append(item)
 
     return {
         "question_id": row["id"],
@@ -1473,6 +1479,23 @@ def _reset_section_journey(user_id: str, section_id: str) -> dict:
     }
 
 
+def _section_is_diagnosed(
+    user_id: str, section: dict, skill_ids: List[str], stored: Dict[str, float]
+) -> bool:
+    """Same rule as _section_state, but against an already-loaded mastery dict."""
+    progress = SECTION_PROGRESS.get(_progress_key(user_id, section["id"]), {})
+    has_records = any(sid in stored for sid in skill_ids)
+    return bool(progress.get("diagnostic_completed", has_records))
+
+
+def _user_payload(row: dict) -> dict:
+    return {
+        "user_id": row["user_id"],
+        "user_name": row["user_name"],
+        "is_admin": row["user_name"] in _admin_usernames(),
+    }
+
+
 # ------------------------------------------------------------------ endpoints: catalog + user auth
 @app.get("/catalog")
 def get_catalog():
@@ -1566,9 +1589,7 @@ def get_user_progress(user_id: str):
             if not section.get("enabled"):
                 continue
             skill_ids = _section_skill_ids(section)
-            progress = SECTION_PROGRESS.get(_progress_key(user_id, section["id"]), {})
-            has_records = any(sid in stored for sid in skill_ids)
-            diagnosed = bool(progress.get("diagnostic_completed", has_records))
+            diagnosed = _section_is_diagnosed(user_id, section, skill_ids, stored)
             values = [stored.get(sid, 0.0) for sid in skill_ids]
             mastered = sum(1 for v in values if v >= MASTERY_NOTIFY_THRESHOLD)
             if diagnosed and values:
@@ -1619,10 +1640,7 @@ def get_user(user_name: str):
     if data is None:
         raise HTTPException(status_code=404, detail=f"No data for user '{user_name}'.")
 
-    return {
-        "user_id": data["user_id"],
-        "user_name": data["user_name"],
-    }
+    return _user_payload(data)
 
 
 @app.post("/users/")
@@ -1669,10 +1687,7 @@ def create_user(user: UserCreate):
                 raise HTTPException(status_code=500, detail="Insert succeeded but no user row was returned.")
 
         row = insert_data[0] if isinstance(insert_data, list) else insert_data
-        return {
-            "user_id": row["user_id"],
-            "user_name": row["user_name"],
-        }
+        return _user_payload(row)
 
     except HTTPException:
         raise
@@ -1738,6 +1753,77 @@ def get_section_mastery(user_id: str, section_id: str):
             "nodes": map_nodes,
             "edges": map_edges,
         },
+    }
+
+
+@app.get("/users/{user_id}/mastery")
+def get_user_mastery(user_id: str, subject: Optional[str] = None):
+    """
+    One learner's mastery across every section they have diagnosed, as a single
+    table + map. Unlike the per-section view, prerequisite edges that cross
+    section boundaries are kept (flagged cross_section), so a skill shows the
+    prerequisite it depends on from another chapter. `subject` narrows the
+    table/map; the section list and subject counts always cover everything.
+    """
+    stored = _stored_mastery_for_user(user_id)
+    out_sections: List[dict] = []
+    skill_sections: Dict[str, List[str]] = {}
+    subject_skills: Dict[str, set] = {}
+
+    for course in PLATFORM_CATALOG.get("courses", []):
+        course_subject = course.get("subject") or ""
+        for section in course.get("sections", []):
+            if not section.get("enabled"):
+                continue
+            skill_ids = _section_skill_ids(section)
+            if not skill_ids or not _section_is_diagnosed(user_id, section, skill_ids, stored):
+                continue
+            values = [stored.get(sid, 0.0) for sid in skill_ids]
+            out_sections.append({
+                "course_id": course["id"],
+                "section_id": section["id"],
+                "title": section.get("title") or section["id"],
+                "title_bn": section.get("title_bn"),
+                "subject": course_subject,
+                "skills": len(skill_ids),
+                "skills_mastered": sum(1 for v in values if v >= MASTERY_NOTIFY_THRESHOLD),
+                "mastery": round(sum(values) / len(values), 1),
+            })
+            subject_skills.setdefault(course_subject, set()).update(skill_ids)
+            if subject and course_subject != subject:
+                continue
+            for sid in skill_ids:
+                skill_sections.setdefault(sid, []).append(section.get("title") or section["id"])
+
+    rows: List[dict] = []
+    for sid in sorted(skill_sections):
+        skill = SKILL_TREE.get_skill(sid)
+        rows.append({
+            "skill_id": sid,
+            "skill_description": SKILL_DESCRIPTIONS.get(sid, ""),
+            "subject": SKILL_SUBJECTS.get(sid, ""),
+            "topics": [TOPIC_LABELS.get(code, code) for code in (skill.topics if skill else [])],
+            "sections": skill_sections[sid],
+            "mastery": round(stored.get(sid, 0.0), 2),
+        })
+
+    edges: List[dict] = []
+    for edge in SKILL_EDGES:
+        src, dst = edge["source"], edge["target"]
+        if src in skill_sections and dst in skill_sections:
+            shared = set(skill_sections[src]) & set(skill_sections[dst])
+            edges.append({"source": src, "target": dst, "cross_section": not shared})
+
+    return {
+        "user_id": user_id,
+        "subject": subject,
+        "subjects": [
+            {"subject": name, "skills": len(ids)} for name, ids in subject_skills.items()
+        ],
+        "sections": out_sections,
+        "table": rows,
+        "map": {"nodes": rows, "edges": edges},
+        "cross_section_edges": sum(1 for e in edges if e["cross_section"]),
     }
 
 

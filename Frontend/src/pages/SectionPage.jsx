@@ -672,15 +672,10 @@ export default function SectionPage() {
 
             {diagnosticRun?.question && (
               <div className="mt-5 rounded-xl border border-atlas-200 bg-white p-4 sm:p-5">
-                <div className="flex items-center justify-between gap-3 mb-3">
-                  <p className="text-xs font-semibold tracking-wide uppercase text-atlas-700">
-                    Question {currentQuestionNumber} of{" "}
-                    {diagnosticRun.totalQuestions}
-                  </p>
-                  <p className="text-xs text-gray-500">
-                    Session: {diagnosticRun.sessionId}
-                  </p>
-                </div>
+                <p className="text-xs font-semibold tracking-wide uppercase text-atlas-700 mb-3">
+                  Question {currentQuestionNumber} of{" "}
+                  {diagnosticRun.totalQuestions}
+                </p>
 
                 <div className="mb-4 rounded-lg bg-gray-50 border border-gray-200 px-3 py-2 text-xs text-gray-600">
                   <span className="font-semibold text-gray-700">Skill:</span>{" "}
@@ -714,6 +709,13 @@ export default function SectionPage() {
                           {option.label}.
                         </span>
                         <MathText text={option.text} />
+                        {/* Only sent when the backend runs with DEMO_SHOW_ANSWERS=1 */}
+                        {option.is_correct && (
+                          <span
+                            aria-hidden="true"
+                            className="ml-2 inline-block h-2 w-2 rounded-full bg-emerald-500 align-middle"
+                          />
+                        )}
                       </button>
                     );
                   })}
