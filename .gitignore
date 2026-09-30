@@ -42,3 +42,7 @@ data-gen/audit_report.json
 # Logs
 
 gemini_run_*.log
+
+# Signatures (kept local, not pushed)
+Signatures/
+Final_report/figures/signatures/
