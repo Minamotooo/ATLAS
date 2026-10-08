@@ -11,6 +11,10 @@ built on Bayesian Knowledge Tracing over a prerequisite skill graph.
 
 **1,688** skills &nbsp;·&nbsp; **1,683** prerequisite links &nbsp;·&nbsp; **51** sections &nbsp;·&nbsp; **12k+** questions
 
+<br>
+
+<a href="https://atlas-indol-one.vercel.app/"><img src="docs/hero.jpg" alt="ATLAS home page: 'Learn smarter, not harder' beside a globe of 1,688 linked skills" width="900"></a>
+
 </div>
 
 ## How it works
