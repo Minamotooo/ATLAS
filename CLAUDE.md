@@ -121,8 +121,7 @@ the user explicitly asks in that specific message. Read-only exploration
 
 ## Full documentation map
 
-- [README.md](README.md) — short GitHub landing page (features, screenshots in
-  `docs/screenshots/`, quick start).
+- [README.md](README.md) — short GitHub landing page (live demo link, quick start).
 - [ARCHITECTURE.md](ARCHITECTURE.md) — architecture, full API reference, DB schema,
   frontend routes, the `data-gen` question-generation pipeline, known limitations.
 - [DEPLOY.md](DEPLOY.md) — production deployment (Vercel frontend + Render API via
