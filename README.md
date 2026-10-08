@@ -4,7 +4,7 @@
 
 Adaptive tutoring for HSC Physics, Chemistry and Higher Mathematics.
 
-[**Live demo**](https://atlas-indol-one.vercel.app/) · [Architecture](ARCHITECTURE.md) · [Deploy](DEPLOY.md)
+<a href="https://atlas-indol-one.vercel.app/"><img src="https://img.shields.io/badge/Live_demo-atlas--indol--one.vercel.app-4f46e5?style=for-the-badge&logo=vercel&logoColor=white" alt="Live demo" height="44"></a>
 
 ![React](https://img.shields.io/badge/React-18-20232a?logo=react)
 ![FastAPI](https://img.shields.io/badge/FastAPI-Python-009688?logo=fastapi&logoColor=white)
@@ -48,5 +48,5 @@ python Backend/smoke_test_engine.py
 | `data-gen/` | Question generation pipeline |
 | `Ontology/` | Skill ontology built from the textbooks |
 
-The exact mastery rules are in
+More detail is in [ARCHITECTURE.md](ARCHITECTURE.md). The exact mastery rules are in
 [`BKT-DAG Policy For Skill Mastery.txt`](BKT-DAG%20Policy%20For%20Skill%20Mastery.txt).
