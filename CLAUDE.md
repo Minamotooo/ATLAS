@@ -2,7 +2,7 @@
 
 Instructions for Claude Code (or any agent) operating in this repository. Read this
 before running anything. For deep architecture/API/data-model detail, see
-[README.md](README.md) — this file only covers what's needed to get the app running.
+[ARCHITECTURE.md](ARCHITECTURE.md) — this file only covers what's needed to get the app running.
 
 ## What this project is
 
@@ -121,8 +121,10 @@ the user explicitly asks in that specific message. Read-only exploration
 
 ## Full documentation map
 
-- [README.md](README.md) — architecture, full API reference, DB schema, frontend
-  routes, the `data-gen` question-generation pipeline, known limitations.
+- [README.md](README.md) — short GitHub landing page (features, screenshots in
+  `docs/screenshots/`, quick start).
+- [ARCHITECTURE.md](ARCHITECTURE.md) — architecture, full API reference, DB schema,
+  frontend routes, the `data-gen` question-generation pipeline, known limitations.
 - [DEPLOY.md](DEPLOY.md) — production deployment (Vercel frontend + Render API via
   `render.yaml`), the one-time DB migration for `users.password_hash`, and the
   free-tier caveats. The Docker build context is the repo root, not `Backend/`.

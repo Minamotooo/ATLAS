@@ -95,7 +95,7 @@ Environment**. Separate several origins with commas.
 - **Cold starts.** A free Render service sleeps after about 15 minutes without
   traffic. The next request wakes it, which takes about a minute.
 - **In-progress sessions are lost** on every sleep, restart or redeploy, because
-  diagnostic and topic-practice sessions live in memory (see README §9). Mastery
+  diagnostic and topic-practice sessions live in memory (see ARCHITECTURE.md §9). Mastery
   already written to Supabase is safe, and learners stay logged in because their
   tokens are signed with the stable `AUTH_SECRET`.
 - **Admin ontology edits don't persist.** The editor at `/admin/ontology` writes to
