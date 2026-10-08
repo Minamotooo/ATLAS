@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth, buildApiUrl } from '../context/AuthContext';
+import { useAuth, authFetch, buildApiUrl } from '../context/AuthContext';
 import {
   Search, BookOpen, TrendingUp, Clock, ArrowRight, BarChart3, AlertCircle,
   Atom, FlaskConical, Sigma, Award, LogOut,
@@ -75,7 +75,7 @@ export default function CoursesPage() {
       setCatalogError('');
 
       try {
-        const response = await fetch(buildApiUrl('/catalog'));
+        const response = await authFetch(buildApiUrl('/catalog'));
         if (!response.ok) {
           throw new Error(`Catalog request failed (${response.status})`);
         }

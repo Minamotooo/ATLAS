@@ -23,7 +23,9 @@ from __future__ import annotations
 import json
 import os
 import sys
+import time
 import types
+import uuid
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -32,6 +34,8 @@ sys.path.insert(0, str(HERE))
 os.environ.setdefault("SUPABASE_URL", "http://stub.local")
 os.environ.setdefault("SUPABASE_SERVICE_KEY", "stub-key")
 os.environ.setdefault("NEXT_QUESTION_DEBUG_LOGS", "false")
+# Checked against production behaviour, whatever a local .env sets for demos.
+os.environ["DEMO_SHOW_ANSWERS"] = "0"
 
 BLOOMS = ["Remember", "Understand", "Apply", "Analyze", "Evaluate", "Create"]
 
@@ -161,6 +165,8 @@ class FakeSupabase:
         if table in self._seq and "id" not in row:
             self._seq[table] += 1
             row["id"] = self._seq[table]
+        if table == "users" and "user_id" not in row:
+            row["user_id"] = str(uuid.uuid4())  # the column's gen_random_uuid() default
         keys = self.PKS.get(table, ())
         if keys and all(k in row for k in keys):
             for existing in self.tables[table]:
@@ -307,7 +313,8 @@ def main() -> int:
     db.tables["user_skill"].append({"user_id": user_id, "skill_id": practised, "mastery_level": 88.0})
 
     start = server.start_diagnostic(
-        server.DiagnosticStartRequest(user_id=user_id, section_id=section["id"])
+        server.DiagnosticStartRequest(user_id=user_id, section_id=section["id"]),
+        auth=server.AuthUser(user_id, "smoke"),
     )
     sess = start["session_id"]
     total = start["total_questions"]
@@ -422,7 +429,8 @@ def main() -> int:
     mixed_id = "22222222-2222-2222-2222-222222222222"
     db.tables["users"].append({"user_id": mixed_id, "user_name": "smoke-mixed"})
     start2 = server.start_diagnostic(
-        server.DiagnosticStartRequest(user_id=mixed_id, section_id=section["id"])
+        server.DiagnosticStartRequest(user_id=mixed_id, section_id=section["id"]),
+        auth=server.AuthUser(mixed_id, "smoke-mixed"),
     )
     sess2 = start2["session_id"]
     run2 = server.DIAGNOSTIC_RUNS[sess2]
@@ -460,7 +468,8 @@ def main() -> int:
     tp = server.start_topic_practice(
         server.TopicPracticeStartRequest(
             user_id=user_id, section_id=section["id"], topic_code=code
-        )
+        ),
+        auth=server.AuthUser(user_id, "smoke-mixed"),
     )
     if tp.get("question") is None:
         check("topic practice produced a question", tp.get("completed") is True,
@@ -485,6 +494,86 @@ def main() -> int:
         check("topic practice served questions", wrong_streak > 0, f"{wrong_streak} answered")
         check("spillover fired on repeated wrong answers", spill is not None,
               str(spill.get("reason")) if spill else "did not trigger")
+
+    # Sections 3-7 call endpoint functions directly, which skips FastAPI's
+    # dependencies; this one goes over HTTP so the auth guards actually run.
+    print("\n=== 8. passwords + tokens (over HTTP) ===")
+    import jwt
+    from fastapi.testclient import TestClient
+
+    import auth
+
+    client = TestClient(server.app)
+    os.environ["ADMIN_USERNAMES"] = "smoke-admin"
+
+    def bearer(token):
+        return {"Authorization": f"Bearer {token}"}
+
+    def login(name, password):
+        return client.post("/auth/login", json={"user_name": name, "password": password})
+
+    signup = client.post("/auth/signup", json={"user_name": "learner", "password": "correct horse"})
+    check("signup returns a token", signup.status_code == 200 and bool(signup.json().get("token")),
+          str(signup.status_code))
+    token, me = signup.json()["token"], signup.json()["user"]["user_id"]
+    stored_hash = next(r for r in db.tables["users"] if r["user_name"] == "learner")["password_hash"]
+    check("password stored only as a salted hash",
+          stored_hash.startswith("scrypt$") and "correct horse" not in stored_hash)
+    check("duplicate username refused",
+          client.post("/auth/signup", json={"user_name": "learner", "password": "another one"}).status_code == 409)
+    check("short password refused",
+          client.post("/auth/signup", json={"user_name": "shorty", "password": "1234567"}).status_code == 400)
+    check("admin-listed name cannot self-register",
+          client.post("/auth/signup", json={"user_name": "smoke-admin", "password": "longenough"}).status_code == 403)
+
+    check("wrong password refused", login("learner", "wrong horse").status_code == 401)
+    check("unknown user gets the same answer as a wrong password", login("nobody", "whatever1").status_code == 401)
+    relog = login("learner", "correct horse")
+    check("right password logs in", relog.status_code == 200 and relog.json()["user"]["user_id"] == me)
+    check("pre-password account cannot log in until a password is set", login("smoke", "anything1").status_code == 403)
+    check("/auth/me returns the token's account",
+          client.get("/auth/me", headers=bearer(token)).json().get("user_name") == "learner")
+
+    check("learner routes need a token", client.get(f"/users/{me}/progress").status_code == 401)
+    check("own progress readable with a token",
+          client.get(f"/users/{me}/progress", headers=bearer(token)).status_code == 200)
+    check("another learner's progress refused",
+          client.get(f"/users/{mixed_id}/progress", headers=bearer(token)).status_code == 403)
+    forged = jwt.encode({"sub": mixed_id, "exp": int(time.time()) + 60}, "not-the-real-secret-but-long-enough-for-hs256", algorithm="HS256")
+    check("token signed with another secret refused",
+          client.get(f"/users/{mixed_id}/progress", headers=bearer(forged)).status_code == 401)
+    expired = jwt.encode({"sub": me, "exp": int(time.time()) - 1}, auth.AUTH_SECRET, algorithm="HS256")
+    check("expired token refused",
+          client.get(f"/users/{me}/progress", headers=bearer(expired)).status_code == 401)
+
+    diag = client.post("/diagnostic/start", json={"user_id": me, "section_id": section["id"]}, headers=bearer(token))
+    check("diagnostic starts over HTTP with a token", diag.status_code == 200, str(diag.status_code))
+    check("cannot start a diagnostic as someone else",
+          client.post("/diagnostic/start", json={"user_id": mixed_id, "section_id": section["id"]},
+                      headers=bearer(token)).status_code == 403)
+    other = client.post("/auth/signup", json={"user_name": "learner2", "password": "second pass"}).json()["token"]
+    if diag.status_code == 200:
+        sess_id = diag.json()["session_id"]
+        check("another learner cannot read the session",
+              client.get(f"/diagnostic/{sess_id}/status", headers=bearer(other)).status_code == 403)
+        check("owner can read the session",
+              client.get(f"/diagnostic/{sess_id}/status", headers=bearer(token)).status_code == 200)
+
+    check("admin routes refuse a learner",
+          client.get("/admin/ontology/meta", headers=bearer(token)).status_code == 403)
+    check("X-User-Name header alone no longer grants admin",
+          client.get("/admin/ontology/meta", headers={"X-User-Name": "smoke-admin"}).status_code == 401)
+    db.tables["users"].append({"user_id": str(uuid.uuid4()), "user_name": "smoke-admin",
+                               "password_hash": auth.hash_password("admin pass")})
+    admin_login = login("smoke-admin", "admin pass")
+    check("admin logs in and is flagged admin",
+          admin_login.status_code == 200 and admin_login.json()["user"]["is_admin"] is True)
+    check("admin token opens admin routes",
+          client.get("/admin/ontology/meta", headers=bearer(admin_login.json()["token"])).status_code == 200)
+
+    codes = [login("learner2", "bad guess").status_code for _ in range(auth.LOGIN_MAX_FAILURES)]
+    check("repeated failures are throttled, even for the right password",
+          codes == [401] * auth.LOGIN_MAX_FAILURES and login("learner2", "second pass").status_code == 429)
 
     print(f"\n=== {len(PASS)} passed, {len(FAIL)} failed ===")
     for f in FAIL:

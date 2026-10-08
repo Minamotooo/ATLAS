@@ -1,0 +1,10 @@
+# Docker context is the repo root (see Backend/Dockerfile). Ship only what the
+# API needs -- never the local .env (it holds the Supabase service key).
+*
+!Backend/
+!Ontology/full_corpus_rebuild/tuples.json
+!Ontology/full_corpus_rebuild/prereqs.json
+Backend/.env
+Backend/.venv/
+**/__pycache__/
+Backend/tree_data/generated/

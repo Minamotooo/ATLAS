@@ -65,7 +65,7 @@ export default function AdminOntologyPage() {
     if (!user) return;
     setMetaError('');
     try {
-      const response = await adminFetch('/admin/ontology/meta', user.user_name);
+      const response = await adminFetch('/admin/ontology/meta');
       if (response.status === 403) {
         setAuthState('forbidden');
         return;
@@ -93,7 +93,7 @@ export default function AdminOntologyPage() {
     setTopicGraphLoading(true);
     setTopicGraphError('');
     try {
-      const response = await adminFetch(`/admin/ontology/topic-graph?subject=${encodeURIComponent(subject)}`, user.user_name);
+      const response = await adminFetch(`/admin/ontology/topic-graph?subject=${encodeURIComponent(subject)}`);
       if (!response.ok) throw new Error(`Request failed (${response.status})`);
       setTopicGraph(await response.json());
     } catch (error) {
@@ -121,7 +121,7 @@ export default function AdminOntologyPage() {
       if (selectedTopics.length > 0) params.set('topics', selectedTopics.join(','));
       if (search.trim()) params.set('search', search.trim());
       if (bloom) params.set('bloom', bloom);
-      const response = await adminFetch(`/admin/ontology/graph?${params.toString()}`, user.user_name);
+      const response = await adminFetch(`/admin/ontology/graph?${params.toString()}`);
       if (!response.ok) throw new Error(`Request failed (${response.status})`);
       const payload = await response.json();
       setGraph(payload);
@@ -313,7 +313,7 @@ export default function AdminOntologyPage() {
 
   async function handleDeleteSkill(skillId, force = false) {
     setActionError('');
-    const response = await adminFetch(`/admin/ontology/skills/${encodeURIComponent(skillId)}${force ? '?force=true' : ''}`, user.user_name, {
+    const response = await adminFetch(`/admin/ontology/skills/${encodeURIComponent(skillId)}${force ? '?force=true' : ''}`, {
       method: 'DELETE',
     });
     if (response.status === 409 && !force) {
@@ -334,7 +334,7 @@ export default function AdminOntologyPage() {
 
   async function handleRemoveEdge(fromId, toId) {
     setActionError('');
-    const response = await adminFetch('/admin/ontology/edges', user.user_name, {
+    const response = await adminFetch('/admin/ontology/edges', {
       method: 'DELETE',
       body: JSON.stringify({ from_id: fromId, to_id: toId }),
     });
@@ -574,7 +574,6 @@ export default function AdminOntologyPage() {
           meta={meta}
           defaultSubject={subject}
           defaultTopic={selectedTopics.length === 1 ? selectedTopics[0] : ''}
-          username={user.user_name}
           onClose={() => setShowAddSkill(false)}
           onCreated={async () => {
             setShowAddSkill(false);
@@ -587,7 +586,6 @@ export default function AdminOntologyPage() {
         <AddTopicModal
           existingTopicKeys={topicsForSubject.map((t) => t.topic_key)}
           subject={subject}
-          username={user.user_name}
           onClose={() => setShowAddTopic(false)}
           onCreated={async (newTopicKey) => {
             setShowAddTopic(false);
@@ -599,7 +597,6 @@ export default function AdminOntologyPage() {
 
       {showAddEdge && selectedNode && (
         <AddEdgeModal
-          username={user.user_name}
           targetSkill={selectedNode}
           onClose={() => setShowAddEdge(false)}
           onCreated={async () => {
@@ -611,7 +608,6 @@ export default function AdminOntologyPage() {
 
       {showRenameTopic && selectedTopics.length === 1 && (
         <RenameTopicModal
-          username={user.user_name}
           topicKey={selectedTopics[0]}
           currentTopic={topicsForSubject.find((t) => t.topic_key === selectedTopics[0])}
           onClose={() => setShowRenameTopic(false)}
@@ -718,7 +714,7 @@ function ModalShell({ title, onClose, children }) {
   );
 }
 
-function AddSkillModal({ meta, defaultSubject, defaultTopic, username, onClose, onCreated }) {
+function AddSkillModal({ meta, defaultSubject, defaultTopic, onClose, onCreated }) {
   const [skillId, setSkillId] = useState('');
   const [skillFull, setSkillFull] = useState('');
   const [subject, setSubject] = useState(defaultSubject || '');
@@ -741,7 +737,7 @@ function AddSkillModal({ meta, defaultSubject, defaultTopic, username, onClose, 
     }
     setSubmitting(true);
     try {
-      const response = await adminFetch('/admin/ontology/skills', username, {
+      const response = await adminFetch('/admin/ontology/skills', {
         method: 'POST',
         body: JSON.stringify({
           skill_id: skillId.trim(),
@@ -828,7 +824,7 @@ function AddSkillModal({ meta, defaultSubject, defaultTopic, username, onClose, 
   );
 }
 
-function AddTopicModal({ existingTopicKeys, subject, username, onClose, onCreated }) {
+function AddTopicModal({ existingTopicKeys, subject, onClose, onCreated }) {
   const [topicKey, setTopicKey] = useState('');
   const [topicLabel, setTopicLabel] = useState('');
   const [skillId, setSkillId] = useState('');
@@ -851,7 +847,7 @@ function AddTopicModal({ existingTopicKeys, subject, username, onClose, onCreate
     }
     setSubmitting(true);
     try {
-      const response = await adminFetch('/admin/ontology/skills', username, {
+      const response = await adminFetch('/admin/ontology/skills', {
         method: 'POST',
         body: JSON.stringify({
           skill_id: skillId.trim(),
@@ -919,7 +915,7 @@ function AddTopicModal({ existingTopicKeys, subject, username, onClose, onCreate
   );
 }
 
-function AddEdgeModal({ username, targetSkill, onClose, onCreated }) {
+function AddEdgeModal({ targetSkill, onClose, onCreated }) {
   const [prereqId, setPrereqId] = useState('');
   const [error, setError] = useState('');
   const [submitting, setSubmitting] = useState(false);
@@ -933,7 +929,7 @@ function AddEdgeModal({ username, targetSkill, onClose, onCreated }) {
     }
     setSubmitting(true);
     try {
-      const response = await adminFetch('/admin/ontology/edges', username, {
+      const response = await adminFetch('/admin/ontology/edges', {
         method: 'POST',
         body: JSON.stringify({ from_id: prereqId.trim(), to_id: targetSkill.id }),
       });
@@ -965,7 +961,7 @@ function AddEdgeModal({ username, targetSkill, onClose, onCreated }) {
   );
 }
 
-function RenameTopicModal({ username, topicKey, currentTopic, onClose, onSaved }) {
+function RenameTopicModal({ topicKey, currentTopic, onClose, onSaved }) {
   const [label, setLabel] = useState(currentTopic?.topic_label || '');
   const [subject, setSubject] = useState(currentTopic?.subject || '');
   const [error, setError] = useState('');
@@ -976,7 +972,7 @@ function RenameTopicModal({ username, topicKey, currentTopic, onClose, onSaved }
     setError('');
     setSubmitting(true);
     try {
-      const response = await adminFetch(`/admin/ontology/topics/${encodeURIComponent(topicKey)}`, username, {
+      const response = await adminFetch(`/admin/ontology/topics/${encodeURIComponent(topicKey)}`, {
         method: 'PATCH',
         body: JSON.stringify({ topic_label: label.trim(), subject }),
       });

@@ -6,7 +6,7 @@ import {
   CheckCircle2, XCircle, Atom, FlaskConical, Sigma,
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-import { buildApiUrl } from '../context/AuthContext';
+import { authFetch, buildApiUrl } from '../context/AuthContext';
 import Footer from '../components/Footer';
 import MathText from '../components/MathText';
 import { fetchPublicStats } from '../lib/progress';
@@ -57,7 +57,7 @@ export default function LandingPage() {
       .then((s) => !ignore && setStats(s))
       .catch(() => {})
       .finally(() => !ignore && setStatsSettled(true));
-    fetch(buildApiUrl('/catalog'))
+    authFetch(buildApiUrl('/catalog'))
       .then((r) => (r.ok ? r.json() : null))
       .then((payload) => {
         if (ignore || !payload) return;

@@ -3,7 +3,7 @@
  * across the whole catalogue. The navbar and the courses page both need it on
  * the same navigation, so results are shared for a few seconds.
  */
-import { buildApiUrl } from '../context/AuthContext';
+import { authFetch, buildApiUrl } from '../context/AuthContext';
 
 const TTL_MS = 8000;
 const cache = new Map(); // userId -> { at, promise }
@@ -13,7 +13,7 @@ export function fetchProgress(userId, { fresh = false } = {}) {
   const hit = cache.get(userId);
   if (!fresh && hit && Date.now() - hit.at < TTL_MS) return hit.promise;
 
-  const promise = fetch(buildApiUrl(`/users/${encodeURIComponent(userId)}/progress`)).then((res) => {
+  const promise = authFetch(buildApiUrl(`/users/${encodeURIComponent(userId)}/progress`)).then((res) => {
     if (!res.ok) throw new Error(`Progress request failed (${res.status})`);
     return res.json();
   });
@@ -23,7 +23,7 @@ export function fetchProgress(userId, { fresh = false } = {}) {
 }
 
 export function fetchPublicStats() {
-  return fetch(buildApiUrl('/stats/public')).then((res) => {
+  return authFetch(buildApiUrl('/stats/public')).then((res) => {
     if (!res.ok) throw new Error(`Stats request failed (${res.status})`);
     return res.json();
   });

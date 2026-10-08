@@ -4,12 +4,20 @@ import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
 import { UserRound, ArrowRight } from 'lucide-react';
 import AuthShell from '../components/AuthShell';
+import PasswordField from '../components/PasswordField';
+
+const errorKeys = {
+  invalid_credentials: 'auth.loginErrorInvalid',
+  password_not_set: 'auth.loginErrorPasswordNotSet',
+  too_many_attempts: 'auth.loginErrorThrottled',
+};
 
 export default function LoginPage() {
   const { t } = useLanguage();
   const { signIn, user } = useAuth();
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
@@ -26,22 +34,18 @@ export default function LoginPage() {
     setMessage('');
 
     const trimmedUsername = username.trim();
-    if (!trimmedUsername) {
+    if (!trimmedUsername || !password) {
       setError(t('auth.loginErrorEmpty'));
       return;
     }
 
     setLoading(true);
     try {
-      await signIn(trimmedUsername);
+      await signIn(trimmedUsername, password);
       setMessage(t('auth.loginSuccess'));
       window.setTimeout(() => navigate('/courses'), 600);
     } catch (err) {
-      if (err.message === 'not_found') {
-        setError(t('auth.loginErrorNotFound'));
-      } else {
-        setError(t('auth.loginErrorServer'));
-      }
+      setError(t(errorKeys[err.message] || 'auth.loginErrorServer'));
     } finally {
       setLoading(false);
     }
@@ -60,21 +64,34 @@ export default function LoginPage() {
     >
       <div className="mb-8">
         <p className="eyebrow">{t('nav.login')}</p>
-        <h2 className="mt-3 font-display text-3xl font-bold text-ink">{t('auth.usernameLabel')}</h2>
+        <h2 className="mt-3 font-display text-3xl font-bold text-ink">{t('auth.loginFormTitle')}</h2>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-5" noValidate>
-        <label className="block text-sm font-semibold text-ink-soft" htmlFor="login-username">
-          {t('auth.usernameLabel')}
-        </label>
-        <input
-          id="login-username"
-          value={username}
-          onChange={(event) => setUsername(event.target.value)}
-          type="text"
-          placeholder={t('auth.usernamePlaceholder')}
-          className="input-field !mt-2"
-          autoComplete="username"
+        <div>
+          <label className="block text-sm font-semibold text-ink-soft" htmlFor="login-username">
+            {t('auth.usernameLabel')}
+          </label>
+          <input
+            id="login-username"
+            value={username}
+            onChange={(event) => setUsername(event.target.value)}
+            type="text"
+            placeholder={t('auth.usernamePlaceholder')}
+            className="input-field mt-2"
+            autoComplete="username"
+            aria-invalid={error ? true : undefined}
+            aria-describedby={error ? 'login-error' : undefined}
+          />
+        </div>
+
+        <PasswordField
+          id="login-password"
+          label={t('auth.passwordLabel')}
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+          placeholder={t('auth.passwordPlaceholder')}
+          autoComplete="current-password"
           aria-invalid={error ? true : undefined}
           aria-describedby={error ? 'login-error' : undefined}
         />

@@ -2,7 +2,7 @@
 server.py
 ---------
 FastAPI backend for ATLAS:
-- Username-based login/signup
+- Username + password login/signup with bearer tokens (see auth.py)
 - Course/section/topic catalog API
 - Section state API (diagnostic gate + lock state)
 - Fixed-length diagnostic flow (30 questions, one-by-one)
@@ -22,13 +22,26 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException
+from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from supabase import create_client
 
-from admin_ontology import _admin_usernames, router as admin_ontology_router
+from admin_ontology import router as admin_ontology_router
 from admin_stats import router as admin_stats_router
+from auth import (
+    PASSWORD_MIN_LENGTH,
+    AuthUser,
+    admin_usernames,
+    check_login_throttle,
+    clear_login_failures,
+    current_user,
+    hash_password,
+    issue_token,
+    record_login_failure,
+    require_self,
+    verify_password,
+)
 from bloom_taxonomy import BloomLevel, get_level_from_mastery
 from diagnostic import DiagnosticSession, QuestionSpec
 from mastery_updater import MasteryUpdater, UpdateMode
@@ -39,9 +52,12 @@ load_dotenv()
 # ------------------------------------------------------------------ setup
 app = FastAPI(title="Adaptive Engine Server")
 
+# Comma-separated; a deployment can pin this to its frontend's origin.
+CORS_ORIGINS = [o.strip() for o in (os.getenv("CORS_ORIGINS") or "*").split(",") if o.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=CORS_ORIGINS,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -110,8 +126,9 @@ def _preview_values(values: Optional[List[str]], max_items: int = 4) -> str:
 
 
 # ------------------------------------------------------------------ models
-class UserCreate(BaseModel):
-    user_name: str
+class Credentials(BaseModel):
+    user_name: str = Field(..., min_length=1, max_length=64)
+    password: str = Field(..., min_length=1, max_length=128)
 
 
 class DiagnosticStartRequest(BaseModel):
@@ -1492,8 +1509,34 @@ def _user_payload(row: dict) -> dict:
     return {
         "user_id": row["user_id"],
         "user_name": row["user_name"],
-        "is_admin": row["user_name"] in _admin_usernames(),
+        "is_admin": row["user_name"] in admin_usernames(),
     }
+
+
+def _session_payload(row: dict) -> dict:
+    return {"token": issue_token(row["user_id"], row["user_name"]), "user": _user_payload(row)}
+
+
+def _require_own_session(runs: dict):
+    """Route guard: a diagnostic/practice session is only usable by the learner who started it."""
+    def guard(session_id: str, auth: AuthUser = Depends(current_user)) -> None:
+        run = runs.get(session_id)
+        if run is not None and run.user_id != auth.user_id:
+            raise HTTPException(status_code=403, detail="This session belongs to another learner.")
+    return guard
+
+
+def _require_same_user(auth: AuthUser, user_id: str) -> None:
+    if user_id != auth.user_id:
+        raise HTTPException(status_code=403, detail="You can only start sessions for your own account.")
+
+
+def _user_row_by_name(user_name: str) -> Optional[dict]:
+    result = db.table("users").select("*").eq("user_name", user_name).maybe_single().execute()
+    data, error = _extract_supabase_payload(result)
+    if error:
+        raise HTTPException(status_code=500, detail=str(error))
+    return data
 
 
 # ------------------------------------------------------------------ endpoints: catalog + user auth
@@ -1566,7 +1609,7 @@ def _warm_public_stats() -> None:
     threading.Thread(target=_run, daemon=True).start()
 
 
-@app.get("/users/{user_id}/progress")
+@app.get("/users/{user_id}/progress", dependencies=[Depends(require_self)])
 def get_user_progress(user_id: str):
     """
     One learner's progress across the whole catalogue in a single request.
@@ -1624,70 +1667,41 @@ def get_user_progress(user_id: str):
     }
 
 
-@app.get("/users/{user_name}/")
-def get_user(user_name: str):
-    result = (
-        db.table("users")
-        .select("*")
-        .eq("user_name", user_name)
-        .maybe_single()
-        .execute()
-    )
+@app.post("/auth/signup")
+def signup(payload: Credentials):
+    user_name = payload.user_name.strip()
+    if not user_name:
+        raise HTTPException(status_code=400, detail="Username cannot be empty.")
+    if len(payload.password) < PASSWORD_MIN_LENGTH:
+        raise HTTPException(status_code=400, detail=f"Password must be at least {PASSWORD_MIN_LENGTH} characters.")
+    # Admin accounts are created with set_password.py, never by self-signup:
+    # otherwise the first visitor to register an allow-listed name becomes admin.
+    if user_name in admin_usernames():
+        raise HTTPException(status_code=403, detail="This username is reserved.")
 
-    data, error = _extract_supabase_payload(result)
-    if error:
-        raise HTTPException(status_code=500, detail=str(error))
-    if data is None:
-        raise HTTPException(status_code=404, detail=f"No data for user '{user_name}'.")
-
-    return _user_payload(data)
-
-
-@app.post("/users/")
-def create_user(user: UserCreate):
     try:
-        result = (
-            db.table("users")
-            .select("*")
-            .eq("user_name", user.user_name)
-            .maybe_single()
-            .execute()
-        )
-
-        data, error = _extract_supabase_payload(result)
-        if error:
-            raise HTTPException(status_code=500, detail=str(error))
-        if data is not None:
-            raise HTTPException(status_code=409, detail=f"User '{user.user_name}' already exists.")
+        if _user_row_by_name(user_name) is not None:
+            raise HTTPException(status_code=409, detail=f"User '{user_name}' already exists.")
 
         insert_result = (
             db.table("users")
-            .insert({"user_name": user.user_name})
+            .insert({"user_name": user_name, "password_hash": hash_password(payload.password)})
             .execute()
         )
         insert_data, insert_error = _extract_supabase_payload(insert_result)
 
         if insert_error:
             if "duplicate" in str(insert_error).lower() or "unique" in str(insert_error).lower():
-                raise HTTPException(status_code=409, detail=f"User '{user.user_name}' already exists.")
+                raise HTTPException(status_code=409, detail=f"User '{user_name}' already exists.")
             raise HTTPException(status_code=500, detail=f"Insert failed: {insert_error}")
 
         if insert_data is None:
-            lookup_result = (
-                db.table("users")
-                .select("*")
-                .eq("user_name", user.user_name)
-                .maybe_single()
-                .execute()
-            )
-            insert_data, lookup_error = _extract_supabase_payload(lookup_result)
-            if lookup_error:
-                raise HTTPException(status_code=500, detail=f"Insert lookup failed: {lookup_error}")
+            insert_data = _user_row_by_name(user_name)
             if insert_data is None:
                 raise HTTPException(status_code=500, detail="Insert succeeded but no user row was returned.")
 
         row = insert_data[0] if isinstance(insert_data, list) else insert_data
-        return _user_payload(row)
+        return _session_payload(row)
 
     except HTTPException:
         raise
@@ -1696,13 +1710,44 @@ def create_user(user: UserCreate):
         raise HTTPException(status_code=500, detail=str(exc))
 
 
+@app.post("/auth/login")
+def login(payload: Credentials, request: Request):
+    user_name = payload.user_name.strip()
+    throttle_key = f"{request.client.host if request.client else '-'}|{user_name}"
+    check_login_throttle(throttle_key)
+
+    row = _user_row_by_name(user_name)
+    if row is not None and not row.get("password_hash"):
+        raise HTTPException(
+            status_code=403,
+            detail="This account has no password yet. Ask an administrator to set one.",
+        )
+    if row is None or not verify_password(payload.password, row["password_hash"]):
+        record_login_failure(throttle_key)
+        raise HTTPException(status_code=401, detail="Incorrect username or password.")
+
+    clear_login_failures(throttle_key)
+    return _session_payload(row)
+
+
+@app.get("/auth/me")
+def get_me(auth: AuthUser = Depends(current_user)):
+    result = db.table("users").select("*").eq("user_id", auth.user_id).maybe_single().execute()
+    data, error = _extract_supabase_payload(result)
+    if error:
+        raise HTTPException(status_code=500, detail=str(error))
+    if data is None:
+        raise HTTPException(status_code=401, detail="Account no longer exists.")
+    return _user_payload(data)
+
+
 # ------------------------------------------------------------------ endpoints: section state + mastery
-@app.get("/users/{user_id}/sections/{section_id}/state")
+@app.get("/users/{user_id}/sections/{section_id}/state", dependencies=[Depends(require_self)])
 def get_section_state(user_id: str, section_id: str):
     return _section_state(user_id=user_id, section_id=section_id)
 
 
-@app.get("/users/{user_id}/sections/{section_id}/mastery")
+@app.get("/users/{user_id}/sections/{section_id}/mastery", dependencies=[Depends(require_self)])
 def get_section_mastery(user_id: str, section_id: str):
     state = _section_state(user_id=user_id, section_id=section_id)
     if state["mastery_locked"]:
@@ -1756,7 +1801,7 @@ def get_section_mastery(user_id: str, section_id: str):
     }
 
 
-@app.get("/users/{user_id}/mastery")
+@app.get("/users/{user_id}/mastery", dependencies=[Depends(require_self)])
 def get_user_mastery(user_id: str, subject: Optional[str] = None):
     """
     One learner's mastery across every section they have diagnosed, as a single
@@ -1827,7 +1872,7 @@ def get_user_mastery(user_id: str, subject: Optional[str] = None):
     }
 
 
-@app.post("/users/{user_id}/sections/{section_id}/diagnostic/retake")
+@app.post("/users/{user_id}/sections/{section_id}/diagnostic/retake", dependencies=[Depends(require_self)])
 def retake_section_diagnostic(user_id: str, section_id: str):
     reset_result = _reset_section_journey(user_id=user_id, section_id=section_id)
     return {
@@ -1840,7 +1885,8 @@ def retake_section_diagnostic(user_id: str, section_id: str):
 
 # ------------------------------------------------------------------ endpoints: topic practice flow
 @app.post("/topic-practice/start")
-def start_topic_practice(request: TopicPracticeStartRequest):
+def start_topic_practice(request: TopicPracticeStartRequest, auth: AuthUser = Depends(current_user)):
+    _require_same_user(auth, request.user_id)
     section = _get_section(request.section_id)
     if section is None:
         raise HTTPException(status_code=404, detail=f"Unknown section '{request.section_id}'.")
@@ -1906,7 +1952,7 @@ def start_topic_practice(request: TopicPracticeStartRequest):
     }
 
 
-@app.get("/topic-practice/{session_id}/status")
+@app.get("/topic-practice/{session_id}/status", dependencies=[Depends(_require_own_session(TOPIC_PRACTICE_RUNS))])
 def get_topic_practice_status(session_id: str):
     run = TOPIC_PRACTICE_RUNS.get(session_id)
     if run is None:
@@ -1918,7 +1964,7 @@ def get_topic_practice_status(session_id: str):
     }
 
 
-@app.get("/topic-practice/{session_id}/next")
+@app.get("/topic-practice/{session_id}/next", dependencies=[Depends(_require_own_session(TOPIC_PRACTICE_RUNS))])
 def get_next_topic_practice_question(session_id: str):
     started_at = time.perf_counter()
     run = TOPIC_PRACTICE_RUNS.get(session_id)
@@ -1966,7 +2012,7 @@ def get_next_topic_practice_question(session_id: str):
     }
 
 
-@app.post("/topic-practice/{session_id}/answer")
+@app.post("/topic-practice/{session_id}/answer", dependencies=[Depends(_require_own_session(TOPIC_PRACTICE_RUNS))])
 def submit_topic_practice_answer(session_id: str, request: TopicPracticeAnswerRequest):
     run = TOPIC_PRACTICE_RUNS.get(session_id)
     if run is None:
@@ -2050,7 +2096,8 @@ def submit_topic_practice_answer(session_id: str, request: TopicPracticeAnswerRe
 
 # ------------------------------------------------------------------ endpoints: diagnostic flow
 @app.post("/diagnostic/start")
-def start_diagnostic(request: DiagnosticStartRequest):
+def start_diagnostic(request: DiagnosticStartRequest, auth: AuthUser = Depends(current_user)):
+    _require_same_user(auth, request.user_id)
     section = _get_section(request.section_id)
     if section is None:
         raise HTTPException(status_code=404, detail=f"Unknown section '{request.section_id}'.")
@@ -2109,7 +2156,7 @@ def start_diagnostic(request: DiagnosticStartRequest):
     }
 
 
-@app.get("/diagnostic/{session_id}/status")
+@app.get("/diagnostic/{session_id}/status", dependencies=[Depends(_require_own_session(DIAGNOSTIC_RUNS))])
 def get_diagnostic_status(session_id: str):
     run = DIAGNOSTIC_RUNS.get(session_id)
     if run is None:
@@ -2126,7 +2173,7 @@ def get_diagnostic_status(session_id: str):
     }
 
 
-@app.get("/diagnostic/{session_id}/next")
+@app.get("/diagnostic/{session_id}/next", dependencies=[Depends(_require_own_session(DIAGNOSTIC_RUNS))])
 def get_next_diagnostic_question(session_id: str):
     started_at = time.perf_counter()
     run = DIAGNOSTIC_RUNS.get(session_id)
@@ -2193,7 +2240,7 @@ def get_next_diagnostic_question(session_id: str):
     }
 
 
-@app.post("/diagnostic/{session_id}/answer")
+@app.post("/diagnostic/{session_id}/answer", dependencies=[Depends(_require_own_session(DIAGNOSTIC_RUNS))])
 def submit_diagnostic_answer(session_id: str, request: DiagnosticAnswerRequest):
     run = DIAGNOSTIC_RUNS.get(session_id)
     if run is None:

@@ -1,0 +1,28 @@
+# Render Blueprint for the ATLAS API (Backend/). The frontend is deployed
+# separately on Vercel -- see DEPLOY.md for the full walkthrough.
+# Values marked `sync: false` are typed into the Render dashboard on first
+# deploy and never live in this file.
+services:
+  - type: web
+    name: atlas-api
+    runtime: docker
+    plan: free
+    # Pick the region closest to your Supabase project: every request makes
+    # several database round trips.
+    region: singapore
+    dockerfilePath: ./Backend/Dockerfile
+    dockerContext: .
+    healthCheckPath: /catalog
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: AUTH_SECRET
+        generateValue: true
+      - key: ADMIN_USERNAMES
+        value: admin
+      - key: DEMO_SHOW_ANSWERS
+        value: "0"
+      - key: NEXT_QUESTION_DEBUG_LOGS
+        value: "false"

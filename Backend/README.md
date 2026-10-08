@@ -8,9 +8,22 @@ serving admission-test (BUET/KUET/RUET) Mathematics, Physics and Chemistry.
 ```bash
 python -m venv .venv && .venv/Scripts/activate      # Windows
 pip install -r requirements.txt
-# create Backend/.env with SUPABASE_URL and SUPABASE_SERVICE_KEY
+# create Backend/.env with SUPABASE_URL, SUPABASE_SERVICE_KEY and AUTH_SECRET
 uvicorn server:app --reload --port 8000
 ```
+
+## Accounts
+
+Login is username + password (`auth.py`): scrypt hashes in `users.password_hash`,
+HS256 bearer tokens signed with `AUTH_SECRET`. Admin accounts and password resets go
+through the CLI, since self-signup refuses names in `ADMIN_USERNAMES`:
+
+```bash
+python set_password.py <username> [--create]
+python set_password.py --list-missing
+```
+
+Deployment (Render + Vercel) is covered in [`../DEPLOY.md`](../DEPLOY.md).
 
 ## Ontology
 
@@ -34,7 +47,9 @@ Editorial decisions (topic aliases, display labels, course/section layout) live 
 ```
 
 Runs the diagnostic, mastery propagation and topic-practice spillover end to end
-against an in-memory stand-in for Supabase. No credentials needed.
+against an in-memory stand-in for Supabase, then drives signup/login, token checks,
+per-learner and session ownership, admin gating and login throttling over HTTP.
+No credentials needed.
 
 ## Schema
 

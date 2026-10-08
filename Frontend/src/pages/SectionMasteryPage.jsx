@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
-import { useAuth, buildApiUrl } from "../context/AuthContext";
+import { useAuth, authFetch, buildApiUrl } from "../context/AuthContext";
 import { AlertCircle, ArrowLeft, Layers, Lock, RefreshCw } from "lucide-react";
 import MasteryExplorer from "../components/MasteryExplorer";
 
@@ -35,8 +35,8 @@ export default function SectionMasteryPage() {
 
       try {
         const [catalogResponse, masteryResponse] = await Promise.all([
-          fetch(buildApiUrl("/catalog")),
-          fetch(
+          authFetch(buildApiUrl("/catalog")),
+          authFetch(
             buildApiUrl(
               `/users/${encodeURIComponent(user.user_id)}/sections/${encodeURIComponent(sectionId)}/mastery`,
             ),

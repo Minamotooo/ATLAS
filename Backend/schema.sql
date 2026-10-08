@@ -10,10 +10,15 @@
 --   * question_options.option_label is CHECK-constrained to exactly A/B/C/D.
 --   * skills.skill_description is NOT NULL (empty string is acceptable, NULL is not).
 --   * There is no subject column anywhere, and no p_transition column on user_skill.
+--   * users.password_hash is a salted scrypt hash written by Backend/auth.py. It is
+--     NULL for accounts created before passwords existed; those cannot log in until
+--     Backend/set_password.py gives them one. Added to an existing DB with:
+--       alter table public.users add column if not exists password_hash text;
 
 create table public.users (
   user_id uuid not null default gen_random_uuid (),
   user_name text not null,
+  password_hash text null,
   created_at timestamp with time zone not null default now(),
   constraint users_pkey primary key (user_id),
   constraint users_user_name_key unique (user_name)

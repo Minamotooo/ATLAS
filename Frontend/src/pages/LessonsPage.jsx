@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { useAuth, buildApiUrl } from '../context/AuthContext';
+import { useAuth, authFetch, buildApiUrl } from '../context/AuthContext';
 import {
   ArrowLeft,
   BookOpen,
@@ -41,7 +41,7 @@ export default function LessonsPage() {
       setCourseError('');
 
       try {
-        const response = await fetch(buildApiUrl('/catalog'));
+        const response = await authFetch(buildApiUrl('/catalog'));
         if (!response.ok) {
           throw new Error(`Catalog request failed (${response.status})`);
         }
@@ -100,7 +100,7 @@ export default function LessonsPage() {
       const entries = await Promise.all(
         enabledSections.map(async (section) => {
           try {
-            const response = await fetch(
+            const response = await authFetch(
               buildApiUrl(`/users/${encodeURIComponent(user.user_id)}/sections/${encodeURIComponent(section.id)}/state`)
             );
             if (!response.ok) {

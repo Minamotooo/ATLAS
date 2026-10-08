@@ -26,6 +26,8 @@ learner's current Bloom's-Taxonomy zone of proximal development.
 ATLAS/
 ├── Backend/                   FastAPI adaptive engine (Python)
 │   ├── server.py                 API routes, session state, question-selection policy
+│   ├── auth.py                   Password hashing (scrypt), bearer tokens, route guards
+│   ├── set_password.py           Admin CLI: set/reset a password, create admin accounts
 │   ├── bkt.py                    Stateless Bayesian Knowledge Tracing model
 │   ├── bloom_taxonomy.py         Bloom levels ↔ 0–100 mastery bands
 │   ├── mastery_updater.py        3-phase policy: Bloom-conditioned BKT, ancestor
@@ -33,8 +35,9 @@ ATLAS/
 │   ├── skill.py / skill_tree.py  Skill DAG (cycle-checked, topologically sortable)
 │   ├── diagnostic.py             Adaptive diagnostic session (skill selection heuristic)
 │   ├── schema.sql                Live Supabase DDL (hand-maintained, source of truth)
-│   ├── smoke_test_engine.py      18-check end-to-end test, no DB credentials needed
-│   ├── requirements.txt, Dockerfile, README.md
+│   ├── smoke_test_engine.py      End-to-end engine + auth test, no DB credentials needed
+│   ├── requirements.txt, README.md
+│   ├── Dockerfile                Built from the repo root (see DEPLOY.md)
 │   └── tree_data/
 │       ├── ontology_source/         AUTHORITATIVE ontology input (HTML + JSON)
 │       ├── ontology_config.json     Editorial layer — topic aliases, labels, course layout
@@ -46,7 +49,7 @@ ATLAS/
 │   └── src/
 │       ├── pages/                 One component per route (see §5)
 │       ├── components/            Layout, Navbar, Footer, MathText (LaTeX renderer)
-│       └── context/                AuthContext (localStorage session), LanguageContext (en/bn)
+│       └── context/                AuthContext (token session, authFetch), LanguageContext (en/bn)
 │
 ├── data-gen/                  Offline question-bank generation pipeline
 │   ├── rag/                       Retrieval-augmented generation: ingest, embed, retrieve
@@ -59,6 +62,7 @@ ATLAS/
 ├── documents/                 6 source textbooks (Math/Physics/Chemistry) — RAG corpus
 ├── keys/.gemini_keys          Gemini API keys, one per line — gitignored, not in repo
 ├── HANDOFF.md, HANDOFF2.md    Dev handoff notes (chronological, read for history)
+├── DEPLOY.md, render.yaml     Deployment: Vercel (frontend) + Render (API)
 └── BKT-DAG Policy For Skill Mastery.txt   The policy spec — describes real code behavior
 ```
 
@@ -167,7 +171,7 @@ disagree, fix the file).
 
 | Table | Purpose |
 |---|---|
-| `users` | Username only, no password (see §8 limitations) |
+| `users` | Username + `password_hash` (salted scrypt; NULL for accounts made before passwords existed) |
 | `user_skill` | Per-user mastery level (0–100) per skill |
 | `skills` | Skill catalog (id, description) |
 | `questions` | Question stem, Bloom level, topic code (FK → `ontology_topics`, **not** a display label) |
@@ -186,11 +190,21 @@ not queryable in SQL directly).
 
 ## 5. API reference (`Backend/server.py`)
 
+Every route except `/catalog`, `/stats/public`, `/auth/signup` and `/auth/login`
+needs `Authorization: Bearer <token>`. `/users/{user_id}/...` routes answer only for
+the token's own `user_id`, and a diagnostic/practice session only for the learner who
+started it (`403` otherwise). Tokens are HS256 JWTs signed with `AUTH_SECRET`, valid
+for 7 days. Logins are throttled after 5 failures per IP + username for 15 minutes.
+
 | Method & path | Purpose |
 |---|---|
-| `GET /catalog` | Full course/section/topic catalog |
-| `GET /users/{user_name}/` | Look up a user by name |
-| `POST /users/` | Create a user (username only) |
+| `GET /catalog` | Full course/section/topic catalog (public) |
+| `GET /stats/public` | Landing-page platform figures (public) |
+| `POST /auth/signup` | `{user_name, password}` → `{token, user}`. `409` taken, `403` admin-reserved name, `400` password under 8 chars |
+| `POST /auth/login` | `{user_name, password}` → `{token, user}`. `401` wrong credentials, `403` account has no password yet, `429` throttled |
+| `GET /auth/me` | The token's account, with a fresh `is_admin` |
+| `GET /users/{user_id}/progress` | Progress summary across the whole catalogue |
+| `GET /users/{user_id}/mastery` | Learner-wide mastery table + map |
 | `GET /users/{user_id}/sections/{section_id}/state` | Diagnostic/lock state for a section |
 | `GET /users/{user_id}/sections/{section_id}/mastery` | Mastery map + table for visualization |
 | `POST /users/{user_id}/sections/{section_id}/diagnostic/retake` | Reset mastery + sessions for a section |
@@ -203,16 +217,18 @@ not queryable in SQL directly).
 | `GET /topic-practice/{session_id}/next` | Fetch the next topic-practice question |
 | `POST /topic-practice/{session_id}/answer` | Submit an answer, may trigger spillover |
 
-CORS is wide open (`allow_origins=["*"]`) — fine for a local/demo deployment, not for
-production.
+CORS allows any origin unless `CORS_ORIGINS` (comma-separated) pins it. That is
+acceptable because auth uses bearer tokens, not cookies.
 
 ### Admin surfaces
 
 Two isolated FastAPI routers, each gated by the same `require_admin` dependency
-(`Backend/admin_ontology.py`): a request must carry an `X-User-Name` header whose
-value is in the comma-separated `ADMIN_USERNAMES` environment variable, or the
-endpoint returns `403`. Neither surface touches the live diagnostic/practice
-serving path.
+(`Backend/auth.py`): the request's bearer token must belong to a username listed in
+the comma-separated `ADMIN_USERNAMES` environment variable, or the endpoint returns
+`403`. This is checked on every request, so removing a name takes effect
+immediately. Admin accounts can't self-register; create them with
+`Backend/set_password.py <name> --create`. Neither surface touches the live
+diagnostic/practice serving path.
 
 | Router | Prefix | Purpose |
 |---|---|---|
@@ -231,7 +247,7 @@ historical log.
 | Route | Page |
 |---|---|
 | `/` | `LandingPage` |
-| `/login`, `/signup` | `LoginPage`, `SignupPage` (username-only, no password) |
+| `/login`, `/signup` | `LoginPage`, `SignupPage` (username + password) |
 | `/courses` | `CoursesPage` — course list |
 | `/courses/:courseId` | `LessonsPage` — sections within a course |
 | `/courses/:courseId/sections/:sectionId` | `SectionPage` — diagnostic flow |
@@ -240,9 +256,9 @@ historical log.
 | `/admin/ontology` | `AdminOntologyPage` — ontology rebuild browser/editor |
 | `/admin/stats` | `AdminStatsPage` — aggregate student-performance stats + export |
 
-Bilingual (English/Bangla) via `LanguageContext`. Session is a plain `user_id`/`user_name`
-pair kept in `localStorage` via `AuthContext` — there is no token, password, or
-server-side session; see §8.
+Bilingual (English/Bangla) via `LanguageContext`. `AuthContext` keeps the session
+(`{token, user}`) in `localStorage`. Every API call goes through its `authFetch`, a
+drop-in for `fetch` that attaches the token and signs the user out on a `401`.
 
 Question stems, options, and explanations mix Bangla text with inline (`$...$`) or
 display (`$$...$$`) LaTeX. These are rendered client-side by
@@ -286,6 +302,8 @@ pip install -r requirements.txt
 # create Backend/.env:
 #   SUPABASE_URL=...
 #   SUPABASE_SERVICE_KEY=...
+#   AUTH_SECRET=...        any long random string; without it each restart signs you out
+#   ADMIN_USERNAMES=admin  optional, comma-separated
 uvicorn server:app --reload --port 8000
 
 # Frontend (separate terminal)
@@ -294,7 +312,7 @@ npm install
 npm run dev        # defaults to http://localhost:8000 for the API (VITE_API_BASE_URL)
 ```
 
-No-credentials sanity check (18 checks against an in-memory Supabase stand-in):
+No-credentials sanity check (54 checks, engine + auth, against an in-memory Supabase stand-in):
 ```bash
 Backend/.venv/Scripts/python.exe Backend/smoke_test_engine.py
 ```
@@ -311,10 +329,9 @@ node Backend/tree_data/generate_ontology_sync_sql.js
 
 ## 9. Known limitations & open items
 
-- **No real authentication.** Login is username-only (no password), and the
-  frontend session is just a `user_id`/`user_name` pair in `localStorage` with no
-  server-side token. Fine for a classroom demo, not for anything handling real
-  accounts.
+- **Minimal account management.** There's no in-app password change or reset;
+  an admin resets passwords with `Backend/set_password.py`. Accounts created
+  before passwords existed can't log in until they're given one.
 - **Sessions are in-memory** on the backend (diagnostic runs, topic-practice runs,
   section progress). A backend restart silently drops every active session.
 - **Bloom coverage is thin.** The source ontology assigns one Bloom level per skill
@@ -327,8 +344,8 @@ node Backend/tree_data/generate_ontology_sync_sql.js
   generated and loaded, so coverage varies a lot by topic.
 - **No `subject` column in the DB** — subject is derived from the ontology at read
   time. Filtering questions by subject in raw SQL needs a migration first.
-- **CORS is wide open** (`allow_origins=["*"]`) — acceptable for local/demo use, not
-  for a public deployment.
+- **CORS defaults to any origin.** Pin it with `CORS_ORIGINS` for a public deployment
+  (see [`DEPLOY.md`](DEPLOY.md)).
 
 ---
 

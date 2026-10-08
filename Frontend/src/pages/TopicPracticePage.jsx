@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { useAuth, buildApiUrl } from '../context/AuthContext';
+import { useAuth, authFetch, buildApiUrl } from '../context/AuthContext';
 import MathText from '../components/MathText';
 import { useStudyTimer } from '../lib/studyTime';
 import {
@@ -68,7 +68,7 @@ export default function TopicPracticePage() {
       setAwaitingNextQuestion(false);
 
       try {
-        const catalogResponse = await fetch(buildApiUrl('/catalog'));
+        const catalogResponse = await authFetch(buildApiUrl('/catalog'));
         if (!catalogResponse.ok) {
           throw new Error(`Catalog request failed (${catalogResponse.status})`);
         }
@@ -88,7 +88,7 @@ export default function TopicPracticePage() {
 
         let statePayload = null;
         if (foundSection.enabled) {
-          const stateResponse = await fetch(
+          const stateResponse = await authFetch(
             buildApiUrl(`/users/${encodeURIComponent(user.user_id)}/sections/${encodeURIComponent(sectionId)}/state`)
           );
           if (!stateResponse.ok) {
@@ -158,7 +158,7 @@ export default function TopicPracticePage() {
     setRunError('');
 
     try {
-      const response = await fetch(buildApiUrl('/topic-practice/start'), {
+      const response = await authFetch(buildApiUrl('/topic-practice/start'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -200,7 +200,7 @@ export default function TopicPracticePage() {
     setRunError('');
 
     try {
-      const response = await fetch(buildApiUrl(`/topic-practice/${encodeURIComponent(practiceRun.sessionId)}/answer`), {
+      const response = await authFetch(buildApiUrl(`/topic-practice/${encodeURIComponent(practiceRun.sessionId)}/answer`), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ selected_option_label: selectedOptionLabel }),
@@ -261,7 +261,7 @@ export default function TopicPracticePage() {
     setRunError('');
 
     try {
-      const response = await fetch(buildApiUrl(`/topic-practice/${encodeURIComponent(practiceRun.sessionId)}/next`));
+      const response = await authFetch(buildApiUrl(`/topic-practice/${encodeURIComponent(practiceRun.sessionId)}/next`));
       if (!response.ok) {
         let detail = `Failed to fetch next question (${response.status})`;
         try {

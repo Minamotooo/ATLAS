@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
-import { useAuth, buildApiUrl } from "../context/AuthContext";
+import { useAuth, authFetch, buildApiUrl } from "../context/AuthContext";
 import MathText from "../components/MathText";
 import { useStudyTimer } from "../lib/studyTime";
 import {
@@ -70,7 +70,7 @@ export default function SectionPage() {
       setRetakeError("");
 
       try {
-        const catalogResponse = await fetch(buildApiUrl("/catalog"));
+        const catalogResponse = await authFetch(buildApiUrl("/catalog"));
         if (!catalogResponse.ok) {
           throw new Error(`Catalog request failed (${catalogResponse.status})`);
         }
@@ -89,7 +89,7 @@ export default function SectionPage() {
 
         let statePayload = null;
         if (foundSection.enabled) {
-          const stateResponse = await fetch(
+          const stateResponse = await authFetch(
             buildApiUrl(
               `/users/${encodeURIComponent(user.user_id)}/sections/${encodeURIComponent(sectionId)}/state`,
             ),
@@ -135,7 +135,7 @@ export default function SectionPage() {
 
     setLoadingSectionState(true);
     try {
-      const response = await fetch(
+      const response = await authFetch(
         buildApiUrl(
           `/users/${encodeURIComponent(user.user_id)}/sections/${encodeURIComponent(sectionId)}/state`,
         ),
@@ -185,7 +185,7 @@ export default function SectionPage() {
     setRetakeError("");
 
     try {
-      const response = await fetch(buildApiUrl("/diagnostic/start"), {
+      const response = await authFetch(buildApiUrl("/diagnostic/start"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -251,7 +251,7 @@ export default function SectionPage() {
     setAnswerError("");
 
     try {
-      const response = await fetch(
+      const response = await authFetch(
         buildApiUrl(
           `/users/${encodeURIComponent(user.user_id)}/sections/${encodeURIComponent(section.id)}/diagnostic/retake`,
         ),
@@ -312,7 +312,7 @@ export default function SectionPage() {
     setAnswerError("");
 
     try {
-      const response = await fetch(
+      const response = await authFetch(
         buildApiUrl(
           `/diagnostic/${encodeURIComponent(diagnosticRun.sessionId)}/answer`,
         ),
@@ -403,7 +403,7 @@ export default function SectionPage() {
     setAnswerError("");
 
     try {
-      const response = await fetch(
+      const response = await authFetch(
         buildApiUrl(
           `/diagnostic/${encodeURIComponent(diagnosticRun.sessionId)}/next`,
         ),

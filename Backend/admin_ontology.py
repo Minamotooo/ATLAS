@@ -27,30 +27,20 @@ one rewrites that string across every skill that carries it.
 from __future__ import annotations
 
 import json
-import os
 import threading
 from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
 
-from fastapi import APIRouter, Depends, Header, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field
+
+from auth import require_admin
 
 BASE_DIR = Path(__file__).resolve().parent
 REBUILD_DIR = BASE_DIR.parent / "Ontology" / "full_corpus_rebuild"
 TUPLES_PATH = REBUILD_DIR / "tuples.json"
 PREREQS_PATH = REBUILD_DIR / "prereqs.json"
-
-
-def _admin_usernames() -> Set[str]:
-    raw = os.environ.get("ADMIN_USERNAMES", "")
-    return {u.strip() for u in raw.split(",") if u.strip()}
-
-
-def require_admin(x_user_name: Optional[str] = Header(default=None)) -> str:
-    if not x_user_name or x_user_name not in _admin_usernames():
-        raise HTTPException(status_code=403, detail="Admin access required")
-    return x_user_name
 
 
 def _find_cycle_from(children: Dict[str, Set[str]], start: str) -> bool:

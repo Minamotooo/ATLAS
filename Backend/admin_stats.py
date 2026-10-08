@@ -36,7 +36,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import Response
 from supabase import create_client
 
-from admin_ontology import require_admin
+from auth import require_admin
 
 load_dotenv()
 

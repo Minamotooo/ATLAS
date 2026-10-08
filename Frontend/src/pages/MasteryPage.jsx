@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
-import { useAuth, buildApiUrl } from "../context/AuthContext";
+import { useAuth, authFetch, buildApiUrl } from "../context/AuthContext";
 import { AlertCircle, ArrowRight, BookOpen, RefreshCw } from "lucide-react";
 import MasteryExplorer from "../components/MasteryExplorer";
 
@@ -32,7 +32,7 @@ export default function MasteryPage() {
       setPageError("");
       try {
         const query = subject ? `?subject=${encodeURIComponent(subject)}` : "";
-        const response = await fetch(
+        const response = await authFetch(
           buildApiUrl(`/users/${encodeURIComponent(user.user_id)}/mastery${query}`),
         );
         if (!response.ok) throw new Error(`Mastery request failed (${response.status})`);

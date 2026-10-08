@@ -102,7 +102,7 @@ export default function AdminStatsPage() {
     if (!user) return;
     setOverviewError('');
     try {
-      const response = await adminFetch('/admin/stats/overview', user.user_name);
+      const response = await adminFetch('/admin/stats/overview');
       if (response.status === 403) {
         setAuthState('forbidden');
         return;
@@ -133,7 +133,7 @@ export default function AdminStatsPage() {
     setExportError('');
     setExportingFormat(format);
     try {
-      const response = await adminFetch(`/admin/stats/export?format=${format}`, user.user_name);
+      const response = await adminFetch(`/admin/stats/export?format=${format}`);
       if (!response.ok) {
         throw new Error(`Export failed (${response.status})`);
       }

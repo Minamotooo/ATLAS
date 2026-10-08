@@ -24,7 +24,13 @@ have handed you this file separately (email, LMS attachment, etc.), to be placed
 ```
 SUPABASE_URL=https://<project>.supabase.co
 SUPABASE_SERVICE_KEY=<service role key>
+AUTH_SECRET=<long random string>    # optional locally; see below
+ADMIN_USERNAMES=admin               # optional, comma-separated
 ```
+
+`AUTH_SECRET` signs login tokens. If it's missing the server still starts, using a
+random per-process secret, so every restart signs everyone out. That's acceptable
+locally, but a deployment must set it (`render.yaml` generates one).
 
 **If it's missing:** do not invent, guess, or stub these values into a real `.env` —
 `Backend/server.py` reads them with `os.environ["SUPABASE_URL"]` at import time and
@@ -79,8 +85,9 @@ python -m venv .venv && pip install -r requirements.txt   # if not already done
 python smoke_test_engine.py
 ```
 
-Expect `30 passed, 0 failed`. This runs the full diagnostic → mastery-update →
-topic-practice → spillover flow against an in-memory Supabase stand-in — use it to
+Expect `54 passed, 0 failed`. This runs the full diagnostic → mastery-update →
+topic-practice → spillover flow against an in-memory Supabase stand-in, then the
+password/token/ownership/admin checks over HTTP — use it to
 confirm the engine logic itself is sound even when there's no live database
 connection. If this fails, that's a real regression worth investigating; if only the
 live server (Step 2) fails while this passes, the problem is almost certainly
@@ -91,9 +98,13 @@ missing/invalid Supabase credentials, not the code.
 - **Sessions are in-memory** (diagnostic runs, topic-practice runs, section
   progress). Restarting the backend silently drops every active session. Expected
   for the project's current stage, not a bug.
-- **Login is username-only, no password.** `AuthContext` just stores
-  `user_id`/`user_name` in `localStorage`. Not a security bug to patch here.
-- **CORS is wide open** (`allow_origins=["*"]`). Intentional for local/demo use.
+- **Accounts with a NULL `password_hash` can't log in** (`403` from `/auth/login`).
+  These were created before passwords existed. An admin gives them one with
+  `Backend/set_password.py`; don't add a "claim on first login" path.
+- **Admin names can't self-register.** `/auth/signup` refuses anything in
+  `ADMIN_USERNAMES`; otherwise the first visitor to pick that name would be admin.
+- **CORS defaults to `*`** (overridable with `CORS_ORIGINS`). Intentional: auth
+  uses bearer tokens, not cookies.
 - **`questions.topic` in the DB stores a topic CODE** (e.g. `MAT_MATRIX`), not a
   display label — expected, don't "fix" data that looks uses codes instead of
   readable names.
@@ -112,6 +123,9 @@ the user explicitly asks in that specific message. Read-only exploration
 
 - [README.md](README.md) — architecture, full API reference, DB schema, frontend
   routes, the `data-gen` question-generation pipeline, known limitations.
+- [DEPLOY.md](DEPLOY.md) — production deployment (Vercel frontend + Render API via
+  `render.yaml`), the one-time DB migration for `users.password_hash`, and the
+  free-tier caveats. The Docker build context is the repo root, not `Backend/`.
 - [HANDOFF.md](HANDOFF.md), [HANDOFF2.md](HANDOFF2.md) — chronological dev history
   and rationale for major decisions.
 - [Prompts/](Prompts/) — **every prompt that shaped the project's content**,
