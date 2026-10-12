@@ -39,9 +39,9 @@ ATLAS/
 │   ├── requirements.txt, README.md
 │   ├── Dockerfile                Built from the repo root (see DEPLOY.md)
 │   └── tree_data/
-│       ├── ontology_source/         AUTHORITATIVE ontology input (HTML + JSON)
+│       ├── ontology_source/         Legacy 430-skill ontology (reference only, not served)
 │       ├── ontology_config.json     Editorial layer — topic aliases, labels, course layout
-│       ├── build_from_ontology.py   Compiles ontology_source/ + config → the *.json below
+│       ├── build_from_ontology.py   Compiles Ontology/full_corpus_rebuild/ + config → the *.json below
 │       ├── *.json                   Generated — do not hand-edit
 │       └── sync_ontology_to_supabase.sql / generate_ontology_sync_sql.js
 │
@@ -59,9 +59,15 @@ ATLAS/
 │   ├── load_questions_to_supabase.py  Validates + loads generated questions into the DB
 │   └── requirements.txt
 │
+├── Ontology/
+│   └── full_corpus_rebuild/      The adopted 1,688-skill ontology (tuples.json, prereqs.json),
+│                                  its validator and STATUS.md
+├── Prompts/                   Every LLM prompt used to build the ontology and questions
 ├── documents/                 6 source textbooks (Math/Physics/Chemistry) — RAG corpus
 ├── keys/.gemini_keys          Gemini API keys, one per line — gitignored, not in repo
-├── HANDOFF.md, HANDOFF2.md    Dev handoff notes (chronological, read for history)
+├── Final_report/              Final report (Group07_ATLAS.pdf) + LaTeX source
+├── Presentation/              Slides
+├── HANDOFF*.md                Dev handoff notes (chronological, read for history)
 ├── DEPLOY.md, render.yaml     Deployment: Vercel (frontend) + Render (API)
 └── BKT-DAG Policy For Skill Mastery.txt   The policy spec — describes real code behavior
 ```
@@ -124,8 +130,10 @@ and easier to slip on:
 ### 3.3 Skill DAG ([`skill.py`](Backend/skill.py), [`skill_tree.py`](Backend/skill_tree.py))
 
 Skills form a directed acyclic graph of prerequisites (cycle-checked, topologically
-sortable). Compiled from `Backend/tree_data/ontology_source/` — currently **430
-skills, 66 canonical topics, 471 prerequisite edges**, max depth 7.
+sortable). Compiled into `Backend/tree_data/*.json` from the full-corpus ontology in
+`Ontology/full_corpus_rebuild/`: **1,688 skills, 183 topics, 1,743 prerequisite
+edges** (1,683 after transitive reduction), max depth 9. The earlier 430-skill
+ontology in `Backend/tree_data/ontology_source/` is kept only for reference.
 
 ### 3.4 Mastery propagation & gating ([`mastery_updater.py`](Backend/mastery_updater.py))
 
@@ -249,6 +257,7 @@ historical log.
 | `/` | `LandingPage` |
 | `/login`, `/signup` | `LoginPage`, `SignupPage` (username + password) |
 | `/courses` | `CoursesPage` — course list |
+| `/mastery` | `MasteryPage` — learner-wide mastery across all sections |
 | `/courses/:courseId` | `LessonsPage` — sections within a course |
 | `/courses/:courseId/sections/:sectionId` | `SectionPage` — diagnostic flow |
 | `/courses/:courseId/sections/:sectionId/mastery` | `SectionMasteryPage` — mastery map/table |
@@ -276,8 +285,8 @@ Offline pipeline, independent of the running app:
    local retrieval knowledge base (`rag/kb/items.jsonl`, gitignored, rebuild with
    `python -m rag.ingest`).
 2. **Generate** (`generate_question_gemini.py`): for each (skill, Bloom-level) tuple
-   — 430 skills × 6 Bloom levels = 2,580 tuples — retrieves relevant KB material,
-   prompts the Gemini API for MCQs grounded in it.
+   (10,128 specifications for the adopted ontology) retrieves relevant KB material
+   and prompts the Gemini API for MCQs grounded in it.
 3. **Verify**: a second, cheaper Gemini model independently checks each question is
    on-topic and blind-re-solves it (no access to the marked answer) to confirm the
    correct option. Only questions passing both checks are kept.
@@ -318,9 +327,10 @@ Backend/.venv/Scripts/python.exe Backend/smoke_test_engine.py
 ```
 
 To change the ontology (topic aliases, display labels, course/section layout), edit
-`Backend/tree_data/ontology_config.json`, then:
+`Backend/tree_data/ontology_config.json`, then recompile from the adopted ontology
+(without `--source-dir` the script reads the legacy 430-skill folder):
 ```bash
-python Backend/tree_data/build_from_ontology.py --out-dir Backend/tree_data --force
+python Backend/tree_data/build_from_ontology.py --source-dir Ontology/full_corpus_rebuild --out-dir Backend/tree_data --force
 node Backend/tree_data/generate_ontology_sync_sql.js
 # run the generated tree_data/sync_ontology_to_supabase.sql in Supabase
 ```
@@ -334,14 +344,10 @@ node Backend/tree_data/generate_ontology_sync_sql.js
   before passwords existed can't log in until they're given one.
 - **Sessions are in-memory** on the backend (diagnostic runs, topic-practice runs,
   section progress). A backend restart silently drops every active session.
-- **Bloom coverage is thin.** The source ontology assigns one Bloom level per skill
-  (mostly *Apply*), but both the diagnostic and topic practice request a question one
-  Bloom level above the learner's current band. Until the 6-level-expanded question
-  bank (`EXPAND_ALL_BLOOM_LEVELS` in `data-gen`) is fully generated, most of that
-  ladder falls back to nearby-Bloom search rather than a real climb.
-- **Question bank is a work in progress** — see `HANDOFF2.md` §5 for the live count;
-  as of that writing only ~18% of the (skill × Bloom-level) tuple space had been
-  generated and loaded, so coverage varies a lot by topic.
+- **Question bank coverage is high but not complete.** 12,223 verified questions
+  cover 89% of the 10,128 (skill, Bloom level) specifications. Where a requested
+  level has no question, selection falls back to a nearby Bloom level or a nearby
+  skill in the DAG.
 - **No `subject` column in the DB** — subject is derived from the ontology at read
   time. Filtering questions by subject in raw SQL needs a migration first.
 - **CORS defaults to any origin.** Pin it with `CORS_ORIGINS` for a public deployment

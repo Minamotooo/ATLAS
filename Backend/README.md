@@ -8,7 +8,7 @@ serving admission-test (BUET/KUET/RUET) Mathematics, Physics and Chemistry.
 ```bash
 python -m venv .venv && .venv/Scripts/activate      # Windows
 pip install -r requirements.txt
-# create Backend/.env with SUPABASE_URL, SUPABASE_SERVICE_KEY and AUTH_SECRET
+# copy .env.example to .env and fill in SUPABASE_URL, SUPABASE_SERVICE_KEY and AUTH_SECRET
 uvicorn server:app --reload --port 8000
 ```
 
@@ -27,12 +27,14 @@ Deployment (Render + Vercel) is covered in [`../DEPLOY.md`](../DEPLOY.md).
 
 ## Ontology
 
-The ontology ships as source in `tree_data/ontology_source/` and is compiled into the
-files the server loads:
+The served ontology is compiled from `../Ontology/full_corpus_rebuild/` (1,688 skills)
+into the files the server loads. Always pass `--source-dir`: without it the script
+reads the legacy 430-skill `tree_data/ontology_source/`, which is kept only as a
+reference.
 
 ```bash
-python tree_data/build_from_ontology.py --report-only          # inspect
-python tree_data/build_from_ontology.py --out-dir tree_data --force
+python tree_data/build_from_ontology.py --source-dir ../Ontology/full_corpus_rebuild --report-only   # inspect
+python tree_data/build_from_ontology.py --source-dir ../Ontology/full_corpus_rebuild --out-dir tree_data --force
 node tree_data/generate_ontology_sync_sql.js                   # regenerate the SQL
 # then run tree_data/sync_ontology_to_supabase.sql in Supabase
 ```
